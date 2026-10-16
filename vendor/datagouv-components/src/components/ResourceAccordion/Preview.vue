@@ -1,0 +1,232 @@
+<template>
+  <div>
+    <PreviewUnavailable v-if="hasError">
+      {{ t("L'aperçu de ce fichier n'a pas pu être chargé. Téléchargez-le depuis l'onglet Téléchargements.") }}
+    </PreviewUnavailable>
+    <PreviewLoader v-else-if="loading" />
+    <div
+      v-else
+      class="-mx-4"
+    >
+      <div class="bg-blue-100 text-datagouv fr-hidden fr-unhidden-md p-4">
+        <div class="fr-grid-row fr-grid-row--middle fr-grid-row--gutters">
+          <div
+            class="fr-col-auto"
+            v-html="franceSvg"
+          />
+          <div class="fr-col">
+            <p class="fr-text--bold fr-m-0">
+              {{ t("Explorer les données en détail") }}
+            </p>
+            <p class="fr-text--sm fr-m-0 italic">
+              {{ t("Utiliser notre outil pour obtenir un aperçu des données, en savoir plus sur les différentes colonnes ou réaliser des filtres et des tris.") }}
+            </p>
+          </div>
+          <p class="fr-col-auto fr-my-0">
+            <BrandedButton
+              :href="resource.preview_url"
+              :icon="RiExternalLinkFill"
+              icon-right
+              @click="trackEvent('Jeux de données', 'Explorer les données', 'Bouton : explorer les données')"
+            >
+              {{ t("Explorer les données") }}
+            </BrandedButton>
+          </p>
+        </div>
+      </div>
+      <div class="fr-table fr-table--no-background fr-p-0 fr-m-0">
+        <table class="fr-mb-3w">
+          <caption class="sr-only">
+            {{ t('Prévisualisation de {name}', { name: resource.title }) }}
+          </caption>
+          <thead>
+            <tr>
+              <th
+                v-for="(col, index) in columns"
+                :key="index"
+                scope="col"
+              >
+                <BrandedButton
+                  color="tertiary"
+                  :icon="isSortedBy(col) && sortConfig && sortConfig.direction === 'asc' ? RiArrowUpLine : RiArrowDownLine"
+                  icon-right
+                  size="xs"
+                  @click="sortByField(col)"
+                >
+                  <!-- There is a weird bug with `sr-only`, I needed to add a relative parent to avoid full page x scrolling into the void…  -->
+                  <span class="relative">
+                    {{ col }}
+                    <span class="sr-only">{{ sortConfig && sortConfig.direction === 'desc' ? t("Trier par ordre croissant") : t("Trier par ordre décroissant") }}</span>
+                  </span>
+                </BrandedButton>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(row, rowIndex) in rows"
+              :key="rowIndex"
+            >
+              <td
+                v-for="(col, colIndex) in columns"
+                :key="colIndex"
+                class="cell-padding"
+              >
+                <div class="fr-grid-row fr-grid-row--middle fr-text--xs w-full style-cell">
+                  <div class="fr-my-auto">
+                    {{ row[col] }}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <Pagination
+        class="fr-mt-3w"
+        :page="currentPage"
+        :page-size="pageSize"
+        :total-results="rowCount"
+        @change="changePage"
+      />
+      <div class="fr-px-5v">
+        <TranslationT keypath="Dernière mise à jour de la prévisualisation : {date}">
+          <template #date>
+            <FormattedDate :date="parsingFinishedAt" />
+          </template>
+        </TranslationT> —
+        {{ t('{count} colonnes', columns.length) }} —
+        {{ t('Lignes {count}', rowCount) }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed, onMounted, ref } from 'vue'
+import { RiArrowDownLine, RiArrowUpLine, RiExternalLinkFill } from '@remixicon/vue'
+import Pagination from '../Pagination.vue'
+import { getData, type SortConfig } from '../../functions/tabularApi'
+import FormattedDate from '../FormattedDate.vue'
+import TranslationT from '../TranslationT.vue'
+import { trackEvent } from '../../functions/matomo'
+import type { Resource } from '../../types/resources'
+import { useComponentsConfig } from '../../config'
+import BrandedButton from '../BrandedButton.vue'
+import PreviewUnavailable from './PreviewUnavailable.vue'
+import { useTranslation } from '../../composables/useTranslation'
+import franceSvg from './france.svg?raw'
+import PreviewLoader from './PreviewLoader.vue'
+
+const props = defineProps<{ resource: Resource }>()
+
+const { t } = useTranslation()
+
+const rows = ref<Array<Record<string, unknown>>>([])
+const columns = ref<Array<string>>([])
+const loading = ref(true)
+const hasError = ref(false)
+const sortConfig = ref<SortConfig | null>(null)
+const rowCount = ref(0)
+const config = useComponentsConfig()
+const pageSize = computed(() => config.tabularApiPageSize || 15)
+const currentPage = ref(1)
+
+/**
+ * Check if the preview is sorted by the provided column
+ */
+function isSortedBy(col: string) {
+  return col === sortConfig.value?.column
+}
+
+/**
+ * Retrieve preview necessary infos
+ */
+async function getTableInfos(page: number, sortConfig?: SortConfig | null) {
+  try {
+    // Check that this function return wanted data
+    const response = await getData(config, props.resource.id, page, sortConfig)
+    if ('data' in response && response.data && 0 in response.data) {
+      // Update existing rows
+      rows.value = response.data
+      columns.value = Object.keys(response.data[0]).filter(item => item !== '__id')
+      rowCount.value = response.meta.total
+      currentPage.value = page
+      loading.value = false
+    }
+    else {
+      hasError.value = true
+      loading.value = false
+    }
+  }
+  catch {
+    hasError.value = true
+    loading.value = false
+  }
+};
+
+/**
+ * Change page
+ */
+function changePage(page: number) {
+  getTableInfos(page, sortConfig.value)
+}
+
+/**
+ * Sort by a specific column
+ */
+function sortByField(col: string) {
+  if (sortConfig.value && sortConfig.value.column === col) {
+    if (sortConfig.value.direction === 'asc') {
+      sortConfig.value.direction = 'desc'
+    }
+    else {
+      sortConfig.value.direction = 'asc'
+    }
+  }
+  else {
+    if (!sortConfig.value) {
+      sortConfig.value = {
+        column: col,
+        direction: 'asc',
+      }
+    }
+    else {
+      sortConfig.value.column = col
+      sortConfig.value.direction = 'asc'
+    }
+  }
+  currentPage.value = 1
+  getTableInfos(currentPage.value, sortConfig.value)
+};
+
+const parsingFinishedAt = computed(() => props.resource.extras['analysis:parsing:finished_at'] as string | undefined)
+
+onMounted(() => {
+  getTableInfos(currentPage.value)
+})
+</script>
+
+<style scoped>
+.style-cell {
+  height: 3rem;
+  overflow-y: auto;
+}
+
+.col-width {
+  width: 20rem;
+}
+
+.cell-padding {
+  padding: 0.5rem 0rem 0.5rem 1.2rem!important;
+}
+
+td {
+  border-right: 1px solid #CECECE;
+  border-bottom: 1px solid #CECECE;
+}
+
+th {
+  border-right: 1px solid #CECECE;
+}
+</style>

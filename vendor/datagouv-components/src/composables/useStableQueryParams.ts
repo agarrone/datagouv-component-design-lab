@@ -1,0 +1,127 @@
+import { computed, ref, watch, type Ref } from 'vue'
+import type { SearchTypeConfig } from '../types/search'
+import { configKey, forEachActiveCustomFilter, type CustomFilterEntry } from './useSearchFilter'
+
+type FilterRefs = Record<string, Ref<unknown>>
+
+interface StableQueryParamsOptions {
+  typeConfig: SearchTypeConfig | undefined
+  allFilters: FilterRefs
+  customFilterRegistry: Map<string, CustomFilterEntry>
+  q: Ref<string>
+  sort: Ref<string | undefined>
+  page: Ref<number>
+  pageSize: number
+  currentType: Ref<string>
+}
+
+/**
+ * Creates a stable ref for query params that only updates when content actually changes.
+ * Applies hiddenFilters first, then user filters (which can override hiddenFilters).
+ * Sort and pagination are only sent for the displayed type, so changing them
+ * refetches that type alone.
+ */
+export function useStableQueryParams(options: StableQueryParamsOptions) {
+  const { typeConfig, allFilters, customFilterRegistry, q, sort, page, pageSize, currentType } = options
+  const stableParams = ref<Record<string, unknown>>({})
+
+  const buildParams = () => {
+    const params: Record<string, unknown> = {}
+    const typeKey = typeConfig ? configKey(typeConfig) : undefined
+    const isDisplayedType = typeKey === undefined || typeKey === currentType.value
+
+    // 1. Apply hiddenFilters first (can be overridden by user filters)
+    if (typeConfig?.hiddenFilters) {
+      for (const hf of typeConfig.hiddenFilters) {
+        if (hf) {
+          params[hf.key as string] = hf.value
+        }
+      }
+    }
+
+    // 2. Get enabled filters for this type
+    const enabledFilters = [
+      ...(typeConfig?.basicFilters ?? []),
+      ...(typeConfig?.advancedFilters ?? []),
+    ]
+
+    // 3. Apply user filter values (only enabled ones)
+    // Skip undefined/null/empty values so they're not sent to the API
+    for (const filterName of enabledFilters) {
+      const filterRef = allFilters[filterName as string]
+      if (filterRef) {
+        const value = filterRef.value
+        if (value !== undefined && value !== '' && value !== null) {
+          params[filterName as string] = value
+        }
+      }
+    }
+
+    // 3.5. Apply custom filter values. Concatenate into an array on collision
+    // so a custom filter mapped onto a built-in apiParam (e.g. theme → tag)
+    // combines with an existing built-in value instead of overwriting it.
+    // Pass the current type key so filters scoped to specific types are excluded
+    // from background fetches for other types.
+    forEachActiveCustomFilter(customFilterRegistry, (apiParam, value) => {
+      const existing = params[apiParam]
+      if (existing === undefined) {
+        params[apiParam] = value
+      }
+      else {
+        params[apiParam] = Array.isArray(existing) ? [...existing, value] : [existing, value]
+      }
+    }, typeKey)
+
+    // 4. Always include q
+    if (q.value) {
+      params.q = q.value
+    }
+
+    // 5. Sort and pagination only apply to the displayed type. The other tabs
+    // are fetched for their `total` alone, which is invariant under sort and
+    // page, so sending those there would refetch every tab on each sort or
+    // page change. They ask for a single result for the same reason.
+    if (isDisplayedType) {
+      const sortToUse = sort.value ?? typeConfig?.defaultSort
+      if (sortToUse) {
+        const validSortValues = typeConfig?.sortOptions?.map(o => o.value as string) ?? []
+        if (validSortValues.includes(sortToUse)) {
+          params.sort = sortToUse
+        }
+        else if (import.meta.env.DEV && typeConfig?.defaultSort && typeConfig?.sortOptions && sortToUse === typeConfig.defaultSort) {
+          console.warn(`[GlobalSearch] defaultSort "${typeConfig.defaultSort}" is not in sortOptions for "${typeConfig.class}". Valid values: ${validSortValues.join(', ')}`)
+        }
+      }
+      params.page = page.value
+    }
+    params.page_size = isDisplayedType ? pageSize : 1
+
+    return params
+  }
+
+  // Computed that reads all custom filter values, establishing reactive dependencies
+  // on both the Map mutations (shallowReactive) and each entry's ref.value.
+  const customFilterValues = computed(() => {
+    const snapshot: Record<string, unknown> = {}
+    for (const [urlParam, entry] of customFilterRegistry) {
+      snapshot[urlParam] = entry.ref.value
+    }
+    return snapshot
+  })
+
+  // Watch all dependencies and update only if content changed
+  watch(
+    [q, sort, page, currentType, ...Object.values(allFilters), customFilterValues],
+    () => {
+      const newParams = buildParams()
+      // JSON.stringify comparison is safe here because buildParams() builds the object deterministically
+      // (keys are always added in the same order), avoiding the key ordering edge case.
+      if (JSON.stringify(newParams) !== JSON.stringify(stableParams.value)) {
+        stableParams.value = newParams
+      }
+    },
+    { immediate: true },
+  )
+
+  return stableParams
+}

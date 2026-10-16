@@ -1,0 +1,84 @@
+import type { User } from './users'
+import type { Badges } from './badges'
+import type { PageBloc } from './pages'
+
+export type MemberRole = 'admin' | 'editor' | 'partial_editor'
+
+export type Member = {
+  role: MemberRole
+  label: string
+  user: User
+  since: string | null
+}
+
+export type OrganizationSuggest = { id: string, image_url: string, name: string }
+
+export type OrganizationOrSuggest = Organization | OrganizationReference | OrganizationSuggest
+
+export type NewOrganization = {
+  acronym: string | null
+  name: string
+  business_number_id: string | null
+  description: string
+  url: string | null
+  logo: string
+}
+
+export type OrganizationReference = {
+  class: 'Organization'
+  id: string
+  name: string
+  acronym: string | null
+  slug: string
+  uri: string
+  page: string
+  logo: string
+  logo_thumbnail: string
+  badges: Badges
+  permissions: { delete: boolean, edit: boolean, harvest: boolean, members: boolean, private: boolean }
+}
+
+export type Organization = {
+  id: OrganizationReference['id']
+  name: OrganizationReference['name']
+  acronym: OrganizationReference['acronym']
+  slug: OrganizationReference['slug']
+  uri: OrganizationReference['uri']
+  page: OrganizationReference['page']
+  logo: OrganizationReference['logo']
+  logo_thumbnail: OrganizationReference['logo_thumbnail']
+  badges: OrganizationReference['badges']
+  permissions: OrganizationReference['permissions']
+  url: string // URL of the org website
+  description: string
+  business_number_id: string
+  created_at: string
+  last_modified: string
+  deleted: string | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  extras: Record<string, any>
+  members: Array<Member>
+  metrics: {
+    dataservices: number
+    dataservices_by_months: Record<string, number>
+    datasets: number
+    datasets_by_months: Record<string, number>
+    followers: number
+    members: number
+    reuses: number
+    reuses_by_months: Record<string, number>
+    views: number
+  }
+  // Editorial blocs powering the organization "Présentation" tab. Excluded from
+  // the default API read mask, so only present when requested with X-Fields.
+  // Read through the API's `public_presentation_blocs`: hidden from the public until
+  // published, but always returned to organization administrators.
+  presentation_blocs?: Array<PageBloc>
+  // Publication date of the blocs. `null` means draft (never public); a set date
+  // means published. Like `presentation_blocs`, only present when requested with
+  // X-Fields.
+  presentation_blocs_published_at?: string | null
+  banner_color?: string | null
+  banner_image?: string | null
+  banner_image_position?: number
+}

@@ -1,0 +1,45 @@
+<template>
+  <div
+    class="group flex items-center justify-between gap-2 rounded border p-2.5"
+    :data-banner-action-type="type"
+    :class="{
+      '!border-new-info bg-new-info-light text-new-info': type === 'primary',
+      '!border-new-error bg-new-error-light text-new-error': type === 'danger',
+      '!border-new-warning bg-new-warning-light text-new-warning': type === 'warning',
+    }"
+  >
+    <div>
+      <div class="text-gray-900">
+        <slot name="title">
+          {{ title }}
+        </slot>
+      </div>
+      <div
+        v-if="$slots.default"
+        class="text-xs mt-1"
+      >
+        <slot />
+      </div>
+    </div>
+    <div v-if="$slots.button">
+      <slot name="button" />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { provide, type InjectionKey } from 'vue'
+
+export const bannerActionTypeKey = Symbol() as InjectionKey<'primary' | 'danger' | 'warning'>
+</script>
+
+<script setup lang="ts">
+const props = defineProps<{
+  type: 'primary' | 'danger' | 'warning'
+  // Optional so the title can be a slot, for instance to make it the toggle of a
+  // disclosure whose panel lives in the banner
+  title?: string
+}>()
+
+provide(bannerActionTypeKey, props.type)
+</script>

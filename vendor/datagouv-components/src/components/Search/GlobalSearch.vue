@@ -1,0 +1,846 @@
+<template>
+  <form
+    class="group/form"
+    data-input-color="blue"
+    @submit.prevent
+  >
+    <div
+      v-if="!hideSearchInput"
+      class="flex flex-wrap items-center justify-between"
+      data-cy="search"
+    >
+      <SearchInput
+        v-model="q"
+        :placeholder="resolvedPlaceholder"
+        :auto-focus
+      />
+    </div>
+    <div class="grid grid-cols-12 mt-2 md:mt-5">
+      <div
+        v-if="showSidebar"
+        class="col-span-12 md:col-span-4 lg:col-span-3 md:space-y-8"
+      >
+        <div v-if="config.length > 1">
+          <Sidemenu :button-text="t('Type')">
+            <template #title>
+              {{ t('Type') }}
+            </template>
+            <RadioGroup
+              v-model="currentType"
+              name="search-type"
+            >
+              <RadioInput
+                v-for="typeConfig in config"
+                :key="configKey(typeConfig)"
+                :value="configKey(typeConfig)"
+                :count="resultsMap[configKey(typeConfig)]?.data.value?.total"
+                :loading="resultsMap[configKey(typeConfig)]?.countsLoading.value"
+                :icon="typeConfig.icon ?? strategies[typeConfig.class].icon"
+              >
+                {{ typeConfig.name || strategies[typeConfig.class].name }}
+              </RadioInput>
+            </RadioGroup>
+          </Sidemenu>
+        </div>
+
+        <div v-if="activeFilters.length > 0 || $slots['custom-filters-top'] || $slots['custom-filters-bottom']">
+          <Sidemenu :button-text="t('Filtres')">
+            <template #title>
+              {{ t('Filtres') }}
+            </template>
+            <slot
+              name="custom-filters-top"
+              :current-type="currentType"
+            />
+            <BasicAndAdvancedFilters
+              v-slot="{ isEnabled, getOrder }"
+              :basic-filters="activeBasicFilters"
+              :advanced-filters="activeAdvancedFilters"
+            >
+              <OrganizationSelect
+                v-if="isEnabled('organization')"
+                v-model:id="organizationId"
+                :style="{ order: getOrder('organization') }"
+              />
+              <OrganizationTypeSelect
+                v-if="isEnabled('organization_badge')"
+                v-model="organizationType"
+                :style="{ order: getOrder('organization_badge') }"
+              />
+              <TagSelect
+                v-if="isEnabled('tag')"
+                v-model:id="tag"
+                :style="{ order: getOrder('tag') }"
+              />
+              <FormatSelect
+                v-if="isEnabled('format')"
+                v-model:id="format"
+                :style="{ order: getOrder('format') }"
+              />
+              <LicenseSelect
+                v-if="isEnabled('license')"
+                v-model:id="license"
+                :style="{ order: getOrder('license') }"
+              />
+              <SchemaSelect
+                v-if="isEnabled('schema')"
+                v-model:id="schema"
+                :style="{ order: getOrder('schema') }"
+              />
+              <GeozoneSelect
+                v-if="isEnabled('geozone')"
+                v-model:id="geozone"
+                :style="{ order: getOrder('geozone') }"
+              />
+              <GranularitySelect
+                v-if="isEnabled('granularity')"
+                v-model:id="granularity"
+                :style="{ order: getOrder('granularity') }"
+              />
+              <ReuseTopicSelect
+                v-if="isEnabled('topic')"
+                v-model:id="topic"
+                :style="{ order: getOrder('topic') }"
+              />
+              <FormatFamilyFilter
+                v-if="isEnabled('format_family')"
+                v-model="formatFamily"
+                :facets="getFacets('format_family')"
+                :loading="facetsLoading"
+                :style="{ order: getOrder('format_family') }"
+              />
+              <AccessTypeFilter
+                v-if="isEnabled('access_type')"
+                v-model="accessType"
+                :facets="getFacets('access_type')"
+                :loading="facetsLoading"
+                :style="{ order: getOrder('access_type') }"
+              />
+              <LastUpdateRangeFilter
+                v-if="isEnabled('last_update_range')"
+                v-model="lastUpdateRange"
+                :facets="getFacets('last_update')"
+                :loading="facetsLoading"
+                :style="{ order: getOrder('last_update_range') }"
+              />
+              <ProducerTypeFilter
+                v-if="isEnabled('producer_type')"
+                v-model="producerType"
+                :facets="getFacets('producer_type')"
+                :loading="facetsLoading"
+                :exclude="currentTypeConfig?.class === 'organizations' ? ['user'] : []"
+                :style="{ order: getOrder('producer_type') }"
+              />
+              <DatasetBadgeFilter
+                v-if="isEnabled('badge')"
+                v-model="badge"
+                :facets="getFacets('badge')"
+                :loading="facetsLoading"
+                :style="{ order: getOrder('badge') }"
+              />
+              <ReuseTypeFilter
+                v-if="isEnabled('type')"
+                v-model="reuseType"
+                :facets="getFacets('type')"
+                :loading="facetsLoading"
+                :style="{ order: getOrder('type') }"
+              />
+              <slot
+                name="filters"
+                :is-enabled="isEnabled"
+                :get-order="getOrder"
+              />
+            </BasicAndAdvancedFilters>
+            <slot
+              name="custom-filters-bottom"
+              :current-type="currentType"
+            />
+            <div
+              v-if="hasFilters"
+              class="mt-6 text-center"
+            >
+              <BrandedButton
+                color="secondary"
+                :icon="RiCloseCircleLine"
+                class="w-full justify-center"
+                type="button"
+                @click="resetFilters"
+              >
+                {{ t('Réinitialiser les filtres') }}
+              </BrandedButton>
+            </div>
+          </Sidemenu>
+        </div>
+      </div>
+      <section
+        ref="results"
+        class="col-span-12 mt-4 md:mt-0 search-results"
+        :class="showSidebar ? 'md:col-span-8 lg:col-span-9 md:pl-8' : ''"
+      >
+        <div
+          v-if="searchResults?.total"
+          class="flex flex-wrap gap-4 items-center justify-between pb-2"
+        >
+          <p
+            class="fr-col-auto my-0"
+            role="status"
+            data-testid="search-result-count"
+          >
+            {{ t("{count} résultats | {count} résultat | {count} résultats", searchResults.total) }}
+          </p>
+          <div class="fr-col-auto fr-grid-row fr-grid-row--middle gap-4">
+            <div class="flex items-center">
+              <label
+                for="sort-search"
+                class="fr-col-auto text-sm m-0 mr-2"
+              >
+                {{ t('Trier par :') }}
+              </label>
+              <div class="fr-col">
+                <select
+                  id="sort-search"
+                  v-model="effectiveSort"
+                  class="fr-select text-sm shadow-input-blue!"
+                >
+                  <option
+                    v-if="!currentTypeConfig?.defaultSort"
+                    :value="undefined"
+                  >
+                    {{ t('Pertinence') }}
+                  </option>
+                  <option
+                    v-for="option in allSortOptions"
+                    :key="option.value"
+                    :value="option.value"
+                    :hidden="!activeSortValues.has(option.value)"
+                  >
+                    {{ option.label }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <BrandedButton
+              v-if="rssUrl"
+              :href="rssUrl"
+              :title="t('Flux RSS')"
+              color="secondary"
+              size="sm"
+              :icon="RiRssLine"
+              icon-only
+              external
+              target="_blank"
+            />
+          </div>
+        </div>
+        <transition mode="out-in">
+          <LoadingBlock
+            v-slot="{ data: results }"
+            :status="searchResultsStatus!"
+            :data="searchResults"
+          >
+            <div v-if="results && results.data.length">
+              <ul class="space-y-4 mt-2 p-0 relative z-2 list-none">
+                <li
+                  v-for="result in results.data"
+                  :key="result.id"
+                  class="p-0"
+                >
+                  <template v-if="currentTypeConfig?.class === 'datasets'">
+                    <slot
+                      name="dataset"
+                      :dataset="result"
+                    >
+                      <DatasetCard :dataset="(result as Dataset)" />
+                    </slot>
+                  </template>
+                  <template v-else-if="currentTypeConfig?.class === 'dataservices'">
+                    <slot
+                      name="dataservice"
+                      :dataservice="result"
+                    >
+                      <DataserviceCard :dataservice="(result as Dataservice)" />
+                    </slot>
+                  </template>
+                  <template v-else-if="currentTypeConfig?.class === 'reuses'">
+                    <slot
+                      name="reuse"
+                      :reuse="result"
+                    >
+                      <ReuseHorizontalCard :reuse="(result as ReuseV2)" />
+                    </slot>
+                  </template>
+                  <template v-else-if="currentTypeConfig?.class === 'organizations'">
+                    <slot
+                      name="organization"
+                      :organization="result"
+                    >
+                      <OrganizationHorizontalCard :organization="(result as Organization)" />
+                    </slot>
+                  </template>
+                  <template v-else-if="currentTypeConfig?.class === 'topics'">
+                    <slot
+                      name="topic"
+                      :topic="result"
+                    >
+                      <TopicCard :topic="(result as TopicV2)" />
+                    </slot>
+                  </template>
+                </li>
+              </ul>
+              <Pagination
+                v-if="results && results.total > pageSize"
+                :page
+                :page-size
+                :total-results="results.total"
+                class="mt-4"
+                @change="changePage"
+              />
+            </div>
+            <div
+              v-else
+              class="mt-4"
+            >
+              <slot
+                name="no-results"
+                :has-filters="hasFilters"
+                :reset-filters="resetFilters"
+              >
+                <div class="rounded p-6 flex flex-wrap gap-4 bg-blue-light text-datagouv">
+                  <div class="flex-none">
+                    <img
+                      class="w-20"
+                      :src="magnifyingGlassSrc"
+                      alt=""
+                    >
+                  </div>
+                  <div class="flex-1 min-w-48">
+                    <p class="font-bold mb-2">
+                      {{ t(`Vous n'avez pas trouvé ce que vous cherchez ?`) }}
+                    </p>
+                    <p class="mt-1 mb-3">
+                      {{ t("Essayez de réinitialiser les filtres pour élargir votre recherche.") }}
+                      <template v-if="showForumLink">
+                        <br>
+                        {{ t("Vous pouvez aussi regarder les demandes en cours et soumettre la vôtre sur notre forum dédié à la recherche et à l'ouverture de données.") }}
+                      </template>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <BrandedButton
+                        color="secondary"
+                        type="button"
+                        @click="resetFilters"
+                      >
+                        {{ t("Réinitialiser les filtres") }}
+                      </BrandedButton>
+                      <BrandedButton
+                        v-if="showForumLink"
+                        color="tertiary"
+                        :href="componentsConfig.forumUrl"
+                        :icon="RiLightbulbLine"
+                        keep-margins-even-without-borders
+                      >
+                        {{ t("Voir le forum") }}
+                      </BrandedButton>
+                    </div>
+                  </div>
+                </div>
+              </slot>
+            </div>
+          </LoadingBlock>
+        </transition>
+      </section>
+    </div>
+  </form>
+</template>
+
+<script setup lang="ts">
+import { computed, provide, ref, shallowReactive, useSlots, watch, useTemplateRef, type Component, type ComputedRef, type Ref } from 'vue'
+import { useRouteQuery } from '@vueuse/router'
+import { useRoute } from 'vue-router'
+import { RiBookShelfLine, RiBuilding2Line, RiCloseCircleLine, RiDatabase2Line, RiLightbulbLine, RiLineChartLine, RiRssLine, RiTerminalLine } from '@remixicon/vue'
+import magnifyingGlassSrc from '../../../assets/illustrations/magnifying_glass.svg?url'
+import { useTranslation } from '../../composables/useTranslation'
+import { useDebouncedRef } from '../../composables/useDebouncedRef'
+import { configKey, forEachActiveCustomFilter, isCustomFilterActive, searchFilterContextKey, type CustomFilterEntry } from '../../composables/useSearchFilter'
+import { useStableQueryParams } from '../../composables/useStableQueryParams'
+import { useComponentsConfig } from '../../config'
+import { useFetch } from '../../functions/api'
+import { isEqualExcept } from '../../functions/helpers'
+import { scrollToBlockTop } from '../../functions/scroll'
+import type { AsyncDataRequestStatus } from '../../functions/api.types'
+import type { Dataset } from '../../types/datasets'
+import type { Dataservice } from '../../types/dataservices'
+import type { Organization } from '../../types/organizations'
+import type { ReuseV2 } from '../../types/reuses'
+import type { TopicV2 } from '../../types/topics'
+import type { GlobalSearchConfig, SearchResponseByClass, SearchType, SortOption, FacetItem } from '../../types/search'
+import { getDefaultGlobalSearchConfig } from '../../types/search'
+import BrandedButton from '../BrandedButton.vue'
+import LoadingBlock from '../LoadingBlock.vue'
+import Pagination from '../Pagination.vue'
+import RadioGroup from '../RadioGroup.vue'
+import RadioInput from '../RadioInput.vue'
+import DatasetCard from '../DatasetCard.vue'
+import DataserviceCard from '../DataserviceCard.vue'
+import OrganizationHorizontalCard from '../OrganizationHorizontalCard.vue'
+import ReuseHorizontalCard from '../ReuseHorizontalCard.vue'
+import TopicCard from '../TopicCard.vue'
+import SearchInput from './SearchInput.vue'
+import Sidemenu from './Sidemenu.vue'
+import BasicAndAdvancedFilters from './BasicAndAdvancedFilters.vue'
+import OrganizationSelect from '../Form/OrganizationSelect.vue'
+import OrganizationTypeSelect from '../Form/OrganizationTypeSelect.vue'
+import TagSelect from '../Form/TagSelect.vue'
+import FormatSelect from '../Form/FormatSelect.vue'
+import LicenseSelect from '../Form/LicenseSelect.vue'
+import SchemaSelect from '../Form/SchemaSelect.vue'
+import GeozoneSelect from '../Form/GeozoneSelect.vue'
+import GranularitySelect from '../Form/GranularitySelect.vue'
+import ReuseTopicSelect from '../Form/ReuseTopicSelect.vue'
+import FormatFamilyFilter from './Filter/FormatFamilyFilter.vue'
+import AccessTypeFilter from './Filter/AccessTypeFilter.vue'
+import LastUpdateRangeFilter from './Filter/LastUpdateRangeFilter.vue'
+import ProducerTypeFilter from './Filter/ProducerTypeFilter.vue'
+import DatasetBadgeFilter from './Filter/DatasetBadgeFilter.vue'
+import ReuseTypeFilter from './Filter/ReuseTypeFilter.vue'
+
+const props = withDefaults(defineProps<{
+  config?: GlobalSearchConfig
+  placeholder?: string | null
+  hideSearchInput?: boolean
+  autoFocus?: boolean
+}>(), {
+  config: getDefaultGlobalSearchConfig,
+  hideSearchInput: false,
+  autoFocus: true,
+})
+
+const emit = defineEmits<{
+  resultsCount: [total: number]
+}>()
+
+// defineModel's default is static and can't depend on props, so we cast and initialize manually
+const currentType = defineModel<string>('type') as Ref<string>
+if (!currentType.value) currentType.value = configKey(props.config[0] ?? { class: 'datasets' })
+
+const { t } = useTranslation()
+const componentsConfig = useComponentsConfig()
+const route = useRoute()
+
+// Custom filter registry for useSearchFilter composable
+const customFilterRegistry = shallowReactive(new Map<string, CustomFilterEntry>())
+// Per-filter watch stoppers: each registered filter gets its own watcher so a
+// value change resets page to 1, but registration itself does not (the value
+// came from the URL, not from a user action).
+const customFilterStops = new Map<string, () => void>()
+
+// Initial type is used to determine which fetch should be SSR (non-lazy)
+const initialType = currentType.value
+
+const currentTypeConfig = computed(() =>
+  props.config.find(c => configKey(c) === currentType.value),
+)
+
+// Precedence: prop → per-type config → strategy default.
+// null at any level means "no placeholder".
+const resolvedPlaceholder = computed(() => {
+  if (props.placeholder !== undefined) return props.placeholder ?? ''
+  const cfg = currentTypeConfig.value
+  if (cfg && 'placeholder' in cfg) return cfg.placeholder ?? ''
+  return strategies[cfg?.class ?? 'datasets'].placeholder
+})
+
+const activeBasicFilters = computed(() =>
+  (currentTypeConfig.value?.basicFilters ?? []) as string[],
+)
+
+const activeAdvancedFilters = computed(() =>
+  (currentTypeConfig.value?.advancedFilters ?? []) as string[],
+)
+
+const activeSortOptions = computed(() =>
+  currentTypeConfig.value?.sortOptions ?? [],
+)
+
+const activeSortValues = computed(() =>
+  new Set(activeSortOptions.value.map(o => o.value as string)),
+)
+
+// Deduplicated union of all sort options across all search types.
+// Rendered as hidden <option> elements so the <select> always has a stable
+// intrinsic width regardless of which type is currently active.
+const allSortOptions = computed(() => {
+  const seen = new Set<string>()
+  return props.config.flatMap(c => (c.sortOptions ?? []) as SortOption<string>[]).filter((o) => {
+    if (seen.has(o.value)) return false
+    seen.add(o.value)
+    return true
+  })
+})
+
+const activeFilters = computed(() => [
+  ...(currentTypeConfig.value?.basicFilters ?? []),
+  ...(currentTypeConfig.value?.advancedFilters ?? []),
+] as string[])
+
+const slots = useSlots()
+const showSidebar = computed(() => props.config.length > 1 || activeFilters.value.length > 0 || !!slots['custom-filters-top'] || !!slots['custom-filters-bottom'])
+
+// URL query params
+const q = useRouteQuery<string>('q', '')
+const { debounced: qDebounced, flush: flushQ } = useDebouncedRef(q, componentsConfig.searchDebounce ?? 300)
+// When the search input is hidden, the parent owns the input and is expected
+// to debounce user typing itself (otherwise typing would land in the URL
+// instantly via v-model and stack two debounces). Bypass the internal debounce
+// so URL-driven q changes hit the fetch params immediately.
+const qForParams = computed(() => props.hideSearchInput ? q.value : qDebounced.value)
+const page = useRouteQuery('page', 1, { transform: Number })
+const sort = useRouteQuery<string | undefined>('sort')
+const effectiveSort = computed({
+  get: () => sort.value ?? currentTypeConfig.value?.defaultSort,
+  set: (value) => { sort.value = value },
+})
+
+provide(searchFilterContextKey, {
+  register(urlParam, entry) {
+    customFilterRegistry.set(urlParam, entry)
+    customFilterStops.set(urlParam, watch(entry.ref, () => page.value = 1))
+  },
+  unregister(urlParam) {
+    customFilterStops.get(urlParam)?.()
+    customFilterStops.delete(urlParam)
+    customFilterRegistry.delete(urlParam)
+  },
+})
+
+// Filter values
+const organizationId = useRouteQuery<string | undefined>('organization')
+const organizationType = useRouteQuery<string | undefined>('organization_badge')
+const tag = useRouteQuery<string | undefined>('tag')
+const format = useRouteQuery<string | undefined>('format')
+const license = useRouteQuery<string | undefined>('license')
+const schema = useRouteQuery<string | undefined>('schema')
+const geozone = useRouteQuery<string | undefined>('geozone')
+const granularity = useRouteQuery<string | undefined>('granularity')
+const badge = useRouteQuery<string | undefined>('badge')
+const topic = useRouteQuery<string | undefined>('topic')
+
+// New simple filters
+const formatFamily = useRouteQuery<string | undefined>('format_family')
+const accessType = useRouteQuery<string | undefined>('access_type')
+const lastUpdateRange = useRouteQuery<string | undefined>('last_update_range')
+const producerType = useRouteQuery<string | undefined>('producer_type')
+const reuseType = useRouteQuery<string | undefined>('type')
+
+const pageSize = 20
+
+// All filter values as a record
+const allFilters: Record<string, Ref<unknown>> = {
+  organization: organizationId,
+  organization_badge: organizationType,
+  tag,
+  format,
+  license,
+  schema,
+  geozone,
+  granularity,
+  badge,
+  topic,
+  format_family: formatFamily,
+  access_type: accessType,
+  last_update_range: lastUpdateRange,
+  producer_type: producerType,
+  type: reuseType,
+}
+
+// Reset page, sort and filters when changing type. Every reset below goes
+// through useRouteQuery, so VueUse coalesces them into a single router.replace
+// (its shared _queriesQueue flushes once on nextTick). Custom filters are cleared
+// here too, rather than in useSearchFilter's onunmount, so their URL change joins
+// that same batch instead of racing it with a separate router.replace.
+watch(currentType, () => {
+  // page=1 is the default and is dropped from the URL, so only reset when needed.
+  if (page.value !== 1) page.value = 1
+
+  // Reset sort if not valid
+  const validSortValues = activeSortOptions.value.map(o => o.value as string)
+  if (sort.value && !validSortValues.includes(sort.value)) {
+    sort.value = undefined
+  }
+
+  // Reset built-in filters that are not enabled for the new type
+  for (const [filterName, filterRef] of Object.entries(allFilters)) {
+    if (filterRef.value !== undefined && !activeFilters.value.includes(filterName)) {
+      filterRef.value = undefined
+    }
+  }
+
+  // Reset type-scoped custom filters that don't apply to the new type
+  for (const entry of customFilterRegistry.values()) {
+    if (entry.typeKeys && !entry.typeKeys.includes(currentType.value) && isCustomFilterActive(entry)) {
+      entry.ref.value = entry.defaultValue
+    }
+  }
+})
+
+// Create stable params for each type
+const stableParamsOptions = {
+  allFilters,
+  customFilterRegistry,
+  q: qForParams,
+  sort,
+  page,
+  pageSize,
+  currentType,
+}
+
+// Refs produced by the fetch, before the counts loading state is attached.
+type SearchResultRefs<C extends SearchType> = {
+  class: C
+  data: Ref<SearchResponseByClass[C] | null>
+  status: Ref<AsyncDataRequestStatus>
+}
+
+// Discriminated union: each variant carries its own response type so a `class`
+// narrow gives the precise shape of `data.value` (no cast needed).
+type SearchEntry = {
+  [K in SearchType]: SearchResultRefs<K> & {
+    countsLoading: ComputedRef<boolean>
+  }
+}[SearchType]
+
+// One strategy per class consolidates everything that varies by class:
+// metadata (icon/name/placeholder), endpoint, and a typed fetch factory.
+type SearchStrategy<C extends SearchType> = {
+  url: string
+  icon: Component
+  name: string
+  placeholder: string
+  fetch: (
+    params: Ref<Record<string, unknown>>,
+    server: boolean,
+  ) => Promise<SearchResultRefs<C>>
+}
+
+function makeStrategy<C extends SearchType>(
+  cls: C,
+  meta: Omit<SearchStrategy<C>, 'fetch'>,
+): SearchStrategy<C> {
+  return {
+    ...meta,
+    fetch: async (params, server) => {
+      const { data, status } = await useFetch<SearchResponseByClass[C]>(
+        meta.url,
+        { params, lazy: true, server },
+      )
+      // Tautologically equivalent to SearchResultRefs<C>, but TS cannot prove
+      // it on a generic C, so we assert.
+      return { class: cls, data, status } as SearchResultRefs<C>
+    },
+  }
+}
+
+const strategies: { [K in SearchType]: SearchStrategy<K> } = {
+  datasets: makeStrategy('datasets', {
+    url: '/api/2/datasets/search/',
+    icon: RiDatabase2Line,
+    name: t('Jeux de données'),
+    placeholder: t('ex. élections présidentielles'),
+  }),
+  dataservices: makeStrategy('dataservices', {
+    url: '/api/2/dataservices/search/',
+    icon: RiTerminalLine,
+    name: t('API'),
+    placeholder: t('ex: SIRENE'),
+  }),
+  reuses: makeStrategy('reuses', {
+    url: '/api/2/reuses/search/',
+    icon: RiLineChartLine,
+    name: t('Réutilisations'),
+    placeholder: t('Rechercher une réutilisation de données'),
+  }),
+  organizations: makeStrategy('organizations', {
+    url: '/api/2/organizations/search/',
+    icon: RiBuilding2Line,
+    name: t('Organisations'),
+    placeholder: t('Rechercher une organisation'),
+  }),
+  topics: makeStrategy('topics', {
+    url: '/api/2/topics/search/',
+    icon: RiBookShelfLine,
+    name: t('Thématiques'),
+    placeholder: t('Rechercher une thématique'),
+  }),
+}
+
+// `sort`, `page` and `page_size` change which results come back, never how many
+// there are nor how the API aggregates them: a refetch that touches only those
+// cannot change a single count we display.
+const COUNT_INVARIANT_PARAMS = ['sort', 'page', 'page_size']
+
+// One params + fetch per config entry, keyed by configKey
+const resultsMap: Record<string, SearchEntry> = {}
+for (const c of props.config) {
+  const key = configKey(c)
+  const params = useStableQueryParams({ ...stableParamsOptions, typeConfig: c })
+  const result = await strategies[c.class].fetch(params, initialType === key)
+
+  // A reload that only moves sort or pagination leaves every count where it is,
+  // so it must not replace them with loading dots. The comparison is against the
+  // params the displayed counts came from, so that two changes in a row cannot
+  // clear the loading state owed to the first one. `data` already holds a value
+  // for the type rendered on the server; no applied params means the initial
+  // load, which does need its loading state.
+  const appliedParams = ref(result.data.value ? params.value : null)
+  watch(result.data, () => {
+    appliedParams.value = params.value
+  })
+
+  const countsCanChange = computed(() => !appliedParams.value
+    || !isEqualExcept(params.value, appliedParams.value, COUNT_INVARIANT_PARAMS))
+
+  const countsLoading = computed(() => countsCanChange.value
+    && (result.status.value === 'pending' || result.status.value === 'idle'))
+
+  // Same generic-C limitation as in makeStrategy: the union is narrowed by key.
+  resultsMap[key] = { ...result, countsLoading } as SearchEntry
+}
+
+// Reset page on filter/sort change. Custom filters (registered via
+// useSearchFilter) have their own watchers set up in `provide`, so they're
+// intentionally excluded here to avoid resetting the page when a filter
+// registers with its URL-derived value.
+const filtersForReset = computed(() => ({
+  q: qForParams.value,
+  organization: organizationId.value,
+  organization_badge: organizationType.value,
+  tag: tag.value,
+  format: format.value,
+  license: license.value,
+  schema: schema.value,
+  geozone: geozone.value,
+  granularity: granularity.value,
+  badge: badge.value,
+  topic: topic.value,
+  format_family: formatFamily.value,
+  access_type: accessType.value,
+  last_update_range: lastUpdateRange.value,
+  producer_type: producerType.value,
+  type: reuseType.value,
+}))
+
+watch(filtersForReset, () => page.value = 1)
+watch(sort, () => page.value = 1)
+
+const hasFilters = computed(() => {
+  return q.value
+    || organizationId.value
+    || organizationType.value
+    || tag.value
+    || format.value
+    || license.value
+    || schema.value
+    || geozone.value
+    || granularity.value
+    || badge.value
+    || topic.value
+    || formatFamily.value
+    || accessType.value
+    || lastUpdateRange.value
+    || producerType.value
+    || reuseType.value
+    || Array.from(customFilterRegistry.values()).some(isCustomFilterActive)
+})
+
+const showForumLink = computed(() => (currentType.value === 'datasets' || currentType.value === 'dataservices') && !!componentsConfig.forumUrl)
+
+function resetFilters() {
+  organizationId.value = undefined
+  organizationType.value = undefined
+  tag.value = undefined
+  format.value = undefined
+  license.value = undefined
+  schema.value = undefined
+  geozone.value = undefined
+  granularity.value = undefined
+  badge.value = undefined
+  topic.value = undefined
+  formatFamily.value = undefined
+  accessType.value = undefined
+  lastUpdateRange.value = undefined
+  producerType.value = undefined
+  reuseType.value = undefined
+  for (const entry of customFilterRegistry.values()) {
+    entry.ref.value = entry.defaultValue
+  }
+  q.value = ''
+  flushQ()
+}
+
+const searchResults = computed(() => resultsMap[currentType.value]?.data.value)
+const searchResultsStatus = computed(() => resultsMap[currentType.value]?.status.value)
+
+watch(searchResults, (results) => {
+  if (results) emit('resultsCount', results.total)
+}, { immediate: true })
+
+// RSS feed URL for datasets
+const rssUrl = computed(() => {
+  if (currentTypeConfig.value?.class !== 'datasets') return null
+
+  const params = new URLSearchParams()
+
+  // Add hidden filters first
+  if (currentTypeConfig.value?.hiddenFilters) {
+    for (const hf of currentTypeConfig.value.hiddenFilters) {
+      if (hf?.value) params.set(hf.key as string, String(hf.value))
+    }
+  }
+
+  // Add active filters
+  if (qForParams.value) params.set('q', qForParams.value)
+  if (organizationId.value) params.set('organization', organizationId.value)
+  if (organizationType.value) params.set('organization_badge', organizationType.value)
+  if (tag.value) params.set('tag', tag.value)
+  if (format.value) params.set('format', format.value)
+  if (license.value) params.set('license', license.value)
+  if (schema.value) params.set('schema', schema.value)
+  if (geozone.value) params.set('geozone', geozone.value)
+  if (granularity.value) params.set('granularity', granularity.value)
+  if (badge.value) params.set('badge', badge.value)
+  if (topic.value) params.set('topic', topic.value)
+
+  forEachActiveCustomFilter(customFilterRegistry, (apiParam, value) => {
+    params.set(apiParam, value)
+  }, currentTypeConfig.value ? configKey(currentTypeConfig.value) : undefined)
+
+  // Add sort if set
+  if (effectiveSort.value) params.set('sort', effectiveSort.value)
+
+  const queryString = params.toString()
+  const basePath = '/api/1/datasets/recent.atom'
+  return `${componentsConfig.apiBase}${basePath}${queryString ? '?' + queryString : ''}`
+})
+
+// Facets for filters
+const currentFacets = computed(() => searchResults.value?.facets)
+const facetsLoading = computed(() => resultsMap[currentType.value]?.countsLoading.value ?? false)
+
+function getFacets(key: string): FacetItem[] | undefined {
+  if (!currentFacets.value) return undefined
+  return (currentFacets.value as Record<string, FacetItem[]>)[key]
+}
+
+// Scroll handling
+const resultsRef = useTemplateRef('results')
+
+// Every criteria lives in the URL, custom filters included, so watching the
+// query covers them all: whenever the result list is replaced, bring its top
+// back into view rather than leaving the reader in the middle of a list they
+// have not seen yet.
+watch(() => route.query, () => scrollToBlockTop(resultsRef.value))
+
+function changePage(newPage: number) {
+  page.value = newPage
+}
+</script>

@@ -1,0 +1,75 @@
+import { useTranslation } from '../composables/useTranslation'
+
+export const filesize = (val: number) => {
+  const { t, locale } = useTranslation()
+  const suffix = t('o')
+  const formatter = new Intl.NumberFormat(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+  const units = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z']
+  for (const unit of units) {
+    if (Math.abs(val) < 1024.0) {
+      return `${formatter.format(val)} ${unit}${suffix}`.trim()
+    }
+    val /= 1024.0
+  }
+  return `${formatter.format(val)} Y${suffix}`.trim()
+}
+
+export const summarize = (val: number, fractionDigits = 0) => {
+  const toFixedIfNotZero = (value: number) => {
+    const asString = value.toFixed(fractionDigits)
+    if (!asString.includes('.')) {
+      return asString
+    }
+
+    // Remove trailing "0" to not show "1.0" but only "1"
+    return asString.replace(/0+$/, '').replace(/\.$/, '')
+  }
+
+  if (!val) {
+    return '0'
+  }
+  const units = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z']
+  for (const unit of units) {
+    if (Math.abs(val) < 1000.0) {
+      return `${toFixedIfNotZero(val)}${unit}`
+    }
+    val /= 1000.0
+  }
+  return `${toFixedIfNotZero(val)}Y`
+}
+
+// Guards any value that ends up in an `href`: only absolute http(s) URLs are allowed.
+// Some of these URLs come from resource extras, which are freely writable by the
+// resource owner, so an unguarded value could carry a `javascript:` or `data:` scheme
+// and execute in the platform origin when a visitor clicks the link.
+export const isSafeHttpUrl = (value: unknown): value is string => {
+  if (typeof value !== 'string') return false
+  try {
+    const { protocol } = new URL(value)
+    return protocol === 'http:' || protocol === 'https:'
+  }
+  catch {
+    return false
+  }
+}
+
+export const removeKeys = <T extends Record<string, unknown>>(object: T, keys: Array<string>): Partial<T> => {
+  return Object.fromEntries(
+    Object.entries(object).filter(([key]) => !keys.includes(key)),
+  ) as Partial<T>
+}
+
+export const isEqualExcept = <T extends Record<string, unknown>>(a: T, b: T, keys: Array<string>): boolean => {
+  return JSON.stringify(removeKeys(a, keys)) === JSON.stringify(removeKeys(b, keys))
+}
+
+export const escapeCsvValue = (value: string | number | null | undefined): string => {
+  if (value === null || value === undefined || value === '') {
+    return ''
+  }
+  const stringValue = String(value)
+  if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+    return `"${stringValue.replace(/"/g, '""')}"`
+  }
+  return stringValue
+}
