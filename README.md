@@ -10,7 +10,7 @@ Atelier personnel pour examiner les composants de data.gouv.fr et proposer des a
 - Suivre uniquement le statut des propositions : brouillon, soumise, en discussion, intégrée ou refusée.
 - Partager un aperçu et du code avec les développeurs, sans contribution obligatoire au dépôt source.
 
-## Organisation prévue
+## Organisation
 
 - `vendor/datagouv-components/` : copie versionnée des composants d’origine, accompagnée de leur licence.
 - `src/` : catalogue, exemples et vues de comparaison.
@@ -19,6 +19,28 @@ Atelier personnel pour examiner les composants de data.gouv.fr et proposer des a
 - `upstream.lock.json` : dépôt et commit d’origine utilisés.
 
 Le catalogue et les propositions sont propres à ce dépôt. Les changements de composants sont isolés et documentés pour faciliter leur reprise par l’équipe.
+
+## Proposer une évolution
+
+Modifier le composant avec Codex dans `vendor/datagouv-components/src/components/`. Ajouter ou ajuster son exemple dans `src/Demo.vue`. Dans `src/App.vue`, le registre `previews` indique les composants dont un aperçu est configuré.
+
+Ajouter une entrée dans le tableau `proposals/proposals.json` :
+
+```json
+{
+  "id": "bouton-01",
+  "component": "BrandedButton",
+  "title": "Titre de la proposition",
+  "status": "brouillon",
+  "problem": "Écart observé",
+  "intention": "Résultat de design attendu",
+  "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+  "sourcePath": "vendor/datagouv-components/src/components/BrandedButton.vue",
+  "reviewUrl": ""
+}
+```
+
+Le site est statique : il ne modifie pas GitHub depuis le navigateur. Le téléchargement proposé dans les fiches prépare seulement ce modèle. La sauvegarde et le changement de statut passent par Codex et un commit dans ce dépôt. Pour une proposition isolée, utiliser une branche `codex/nom-de-la-proposition`, puis son aperçu Vercel.
 
 ## Mises à jour
 
@@ -29,15 +51,23 @@ Chaque proposition conserve la référence source utilisée, afin d’identifier
 ## Hébergement
 
 Vercel est la cible d’hébergement. Ce dépôt pourra y être importé une fois la première application exécutable disponible.
-Aucun service Vercel n’est encore connecté.
+La configuration Vite est fournie dans `vercel.json`. Dans Vercel, importer le dépôt à sa racine, installer avec `npm ci`, construire avec `npm run build` et utiliser `dist` comme dossier de sortie. Aucune variable d’environnement n’est nécessaire.
 
 ## État du projet
 
-Initialisation locale : copie des composants et inventaire automatique disponibles. Le catalogue et la prévisualisation restent à construire.
+Première version : catalogue de 167 fichiers Vue (composants et sous-composants internes), recherche et filtres, code consultable pour chaque fiche, huit aperçus réels et liste des propositions versionnées. Les aperçus restants, la comparaison avant/après et la synchronisation automatique restent à compléter.
 
 ## Commandes disponibles
 
-Node.js 22 ou supérieur est recommandé.
+Node.js 22.12 ou supérieur est requis.
+
+```sh
+npm ci
+npm run dev
+npm run build
+```
+
+Le serveur de développement fournit un aperçu local. Les modifications des composants sont visibles à chaud. Sur Vercel, chaque envoi GitHub reconstruit le site.
 
 ```sh
 node scripts/inventory.mjs

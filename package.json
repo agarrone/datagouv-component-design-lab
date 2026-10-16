@@ -1,0 +1,33 @@
+{
+  "name": "datagouv-component-design-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/inventory.mjs && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "inventory": "node scripts/inventory.mjs",
+    "source:check": "node scripts/check-upstream.mjs"
+  },
+  "dependencies": {
+    "@remixicon/vue": "^4.6.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.8.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
+  }
+}
