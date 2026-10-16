@@ -22,7 +22,7 @@ Le catalogue et les propositions sont propres à ce dépôt. Les changements de 
 
 ## Proposer une évolution
 
-Modifier le composant avec Codex dans `vendor/datagouv-components/src/components/`. Ajouter ou ajuster son exemple dans `src/Demo.vue`. Dans `src/App.vue`, le registre `previews` indique les composants dont un aperçu est configuré.
+Modifier le composant avec Codex dans `vendor/datagouv-components/src/components/`. Ajouter ou ajuster son exemple dans `src/Demo.vue`. `src/demoRegistry.js` centralise les composants, leurs paramètres de démonstration et la couverture des aperçus. `src/fixtures.js` contient les données fictives, `src/ContextDemo.vue` les compositions et `src/demoApi.js` les réponses locales pour les formulaires et tableaux. Les composants sont importés à la demande.
 
 Ajouter une entrée dans le tableau `proposals/proposals.json` :
 
@@ -55,7 +55,7 @@ La configuration Vite est fournie dans `vercel.json`. Dans Vercel, importer le d
 
 ## État du projet
 
-Première version : catalogue de 167 fichiers Vue (composants et sous-composants internes), recherche et filtres, code consultable pour chaque fiche, huit aperçus réels et liste des propositions versionnées. Les aperçus restants, la comparaison avant/après et la synchronisation automatique restent à compléter.
+Première version : catalogue de 167 fichiers Vue (composants et sous-composants internes), recherche et filtres, code consultable pour chaque fiche, 167 exemples configurés et liste des propositions versionnées. Les éléments composés (onglets, radio, tableaux) sont montrés dans leur contexte. Les exemples emploient des données fictives locales. Data Fair et PMTiles illustrent leur état indisponible ; les fonds des cartes Leaflet et WMS nécessitent le réseau. La comparaison avant/après et la synchronisation automatique restent à compléter.
 
 ## Commandes disponibles
 
@@ -77,3 +77,9 @@ node scripts/check-upstream.mjs
 La première commande régénère `data/components.json` à partir de tous les fichiers Vue présents dans la bibliothèque (y compris les sous-composants internes). La seconde identifie les fichiers modifiés depuis la copie source. L'inventaire ne signifie pas que chaque composant dispose déjà d'un exemple rendu.
 
 La synchronisation automatique reste à implémenter. `upstream.lock.json` conserve les empreintes de la version de référence pour éviter d'écraser les propositions.
+
+## Dépendances des exemples
+
+La configuration `.npmrc` désactive les scripts de cycle de vie des dépendances : le catalogue utilise leurs distributions précompilées. `npm ci` et `npm run build` ont été vérifiés avec ce réglage. Le DSFR est fixé à la version 1.15.3 ; MapLibre utilise la version 6 corrigée, avec un adaptateur de namespace dans `src/compat/maplibre.js` pour les imports par défaut du code source. Le code amont reste inchangé.
+
+Le middleware Vite sert les données de démonstration localement. Les réécritures Vercel servent leurs équivalents statiques pour les lecteurs historiques et les suggestions. Le tri et les filtres du tableau de démonstration principal sont locaux ; ce catalogue ne se connecte pas à une API de production.

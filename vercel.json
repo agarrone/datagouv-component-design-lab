@@ -1,5 +1,27 @@
 {
   "framework": "vite",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/demo-api/api/resources/:id/profile/",
+      "destination": "/demo/profile.json"
+    },
+    {
+      "source": "/demo-api/api/resources/:id/data/",
+      "destination": "/demo/data.json"
+    },
+    {
+      "source": "/api/1/spatial/zones/suggest/",
+      "destination": "/demo/zones.json"
+    },
+    {
+      "source": "/demo-api/api/1/tags/suggest/",
+      "destination": "/demo/tags.json"
+    },
+    {
+      "source": "/demo-api/api/1/organizations/suggest/",
+      "destination": "/demo/organizations.json"
+    }
+  ]
 }

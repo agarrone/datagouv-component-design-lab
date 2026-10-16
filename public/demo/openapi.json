@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API des territoires · démonstration",
+    "version": "1.0.0",
+    "description": "Documentation fictive pour les exemples du catalogue."
+  },
+  "servers": [
+    {
+      "url": "https://example.org/api"
+    }
+  ],
+  "paths": {
+    "/communes": {
+      "get": {
+        "summary": "Lister les communes",
+        "tags": [
+          "Communes"
+        ],
+        "parameters": [
+          {
+            "name": "nom",
+            "in": "query",
+            "required": false,
+            "description": "Rechercher une commune par son nom",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste des communes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "nom"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "description": "Code INSEE de la commune",
+                        "example": "35238"
+                      },
+                      "nom": {
+                        "type": "string",
+                        "description": "Nom de la commune",
+                        "example": "Rennes"
+                      },
+                      "population": {
+                        "type": "integer",
+                        "description": "Population municipale",
+                        "example": 225081
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "code": "35238",
+                    "nom": "Rennes",
+                    "population": 225081
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Commune": {
+        "type": "object",
+        "required": [
+          "code",
+          "nom"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code INSEE de la commune",
+            "example": "35238"
+          },
+          "nom": {
+            "type": "string",
+            "description": "Nom de la commune",
+            "example": "Rennes"
+          },
+          "population": {
+            "type": "integer",
+            "description": "Population municipale",
+            "example": 225081
+          }
+        }
+      }
+    }
+  }
+}
