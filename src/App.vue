@@ -47,11 +47,11 @@ function downloadProposal(c) {
       <button :class="{active: view === 'propositions'}" @click="navigate('propositions')"><RiGitBranchLine />Propositions <span class="nav-count">{{ proposals.length }}</span></button>
       <button :class="{active: view === 'guide'}" @click="navigate('guide')"><RiBookOpenLine />Mode d’emploi</button>
     </nav>
-    <div class="sidebar-note"><span class="live-dot"></span> Source versionnée<p>Un espace pour observer,<br>ajuster et partager.</p><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">Ouvrir le dépôt <RiArrowRightUpLine /></a></div>
+    <div class="sidebar-note"><span class="live-dot"></span> Source versionnée<a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">Ouvrir le dépôt <RiArrowRightUpLine /></a></div>
     <div class="sidebar-bottom">Source · datagouv/cdata<br><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">{{ lock.commit.slice(0, 7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : view === 'catalogue' ? 'Bibliothèque de composants' : view === 'guide' ? 'Mode d’emploi' : 'Propositions' }}</span><span class="personal-label">Atelier personnel <span class="avatar">AG</span></span></header>
+    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : view === 'catalogue' ? 'Bibliothèque de composants' : view === 'guide' ? 'Mode d’emploi' : 'Propositions' }}</span></header>
     <main id="main">
       <template v-if="view === 'catalogue' && !selected">
         <div class="eyebrow">OBSERVER. AJUSTER. PARTAGER.</div>
@@ -68,9 +68,8 @@ function downloadProposal(c) {
         <button class="back-button" @click="navigate('catalogue')"><RiArrowLeftLine />Tous les composants</button><div class="eyebrow">{{ category(selected) }}</div><div class="detail-heading"><div><h1 class="detail-title">{{ selected.name }}</h1><p class="intro">{{ selected.path }}</p></div><button class="button" @click="downloadProposal(selected)">Préparer une proposition <RiArrowRightUpLine /></button></div>
         <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>
         <div class="tabs" role="tablist" aria-label="Contenu du composant"><button v-if="previews.has(selected.id)" role="tab" :aria-selected="tab==='preview'" @click="tab='preview'">Aperçu et états</button><button role="tab" :aria-selected="tab==='code'" @click="tab='code'">Code source</button></div>
-        <section v-if="tab==='preview'" class="preview-panel"><div class="panel-label">RENDU DU COMPOSANT RÉEL <span>Interagis avec l’exemple</span></div><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
+        <section v-if="tab==='preview'" class="preview-panel"><div class="panel-label">RENDU DU COMPOSANT RÉEL</div><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
         <section v-else class="source-panel"><div class="panel-label">{{ selected.name }}.vue <span>Lecture seule · modifications dans Codex</span></div><pre v-if="code"><code>{{ code }}</code></pre><p v-else role="status">{{ error || 'Chargement du code…' }}</p></section>
-        <div class="note"><RiCodeSLine /><div><strong>Une intention de design, du code pour l’illustrer.</strong><p>Modifie ce composant avec Codex, puis documente ta proposition dans <code>proposals/proposals.json</code>. Le bouton ci-dessus télécharge un modèle à compléter ; il ne sauvegarde rien sur le site.</p></div></div>
         <div v-if="!previews.has(selected.id)" class="note">Ce composant est inventorié. Son exemple interactif doit encore être configuré avec les données et le contexte nécessaires.</div>
       </template>
       <template v-else-if="view==='propositions'">
@@ -83,7 +82,6 @@ function downloadProposal(c) {
         <div class="guide-list"><article><b>01</b><div><h2>Observer l’existant</h2><p>Retrouve les composants dans le catalogue. Les aperçus utilisent les fichiers Vue de la bibliothèque avec des données fictives. Les sous-composants sont présentés dans leur contexte. Chaque fiche donne aussi accès au code et à sa source d’origine.</p></div></article><article><b>02</b><div><h2>Ajuster avec Codex</h2><p>Décris l’incohérence et le résultat attendu dans ce chat. Les modifications se font dans <code>vendor/datagouv-components/</code>, les exemples dans <code>src/Demo.vue</code>.</p></div></article><article><b>03</b><div><h2>Documenter la proposition</h2><p>Ajoute une entrée à <code>proposals/proposals.json</code> avec Codex : composant, problème, intention, statut et commit source. Les statuts suivent la proposition : brouillon, soumise, en discussion, intégrée ou refusée.</p></div></article><article><b>04</b><div><h2>Partager un résultat testable</h2><p>Une branche GitHub permet de conserver chaque proposition et d’obtenir un aperçu Vercel. Partage l’URL avec l’équipe ; les développeurs décident comment reprendre le code.</p></div></article></div>
         <div class="note"><RiGitBranchLine /><div><strong>Garder le lien avec l’origine</strong><p>La copie de référence est identifiée par un commit. <code>npm run source:check</code> repère les modifications locales. La mise à jour depuis l’origine doit encore être accompagnée avec Codex : aucune proposition n’est écrasée automatiquement.</p></div></div>
       </template>
-      <footer><span>data.gouv.fr · Component Design Lab</span><span>Atelier indépendant · Composants sous licence MIT</span></footer>
     </main>
   </div>
 </template>
