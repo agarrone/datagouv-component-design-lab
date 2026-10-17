@@ -21,7 +21,7 @@ export const colors = [...css.matchAll(/--color-([\w-]+):\s*(#[\da-fA-F]+)\s*;/g
 export const fonts = [
  {name:'Marianne',token:'--font-marianne',family:'Marianne, Arial, sans-serif',detail:'Famille sans empattement déclarée par la bibliothèque et chargée dans le lab. Graisses disponibles avec le DSFR : 300, 400, 500 et 700.',available:true},
  {name:'Spectral',token:'--font-spectral',family:'Spectral, Georgia, serif',detail:'Famille avec empattements déclarée dans le thème. Le DSFR charge ici les graisses 400 et 900 ; aucun usage systématique n’est imposé par la bibliothèque.',available:true},
- {name:'Noto Sans Mono',token:'--font-mono',family:'"Noto Sans Mono", ui-monospace, monospace',detail:'Famille déclarée pour le code. Noto Sans Mono n’est pas chargé dans ce lab : l’aperçu utilise la police monospace de ton système.',available:false},
+ {name:'Noto Sans Mono',token:'--font-mono',family:'"Noto Sans Mono", ui-monospace, monospace',detail:'Famille monospace pour le code. Graisses chargées : 400, 500 et 700.',available:true},
  {name:'URW Gothic',token:'--font-gothic',family:'"URW Gothic", sans-serif',detail:'Famille déclarée dans le thème, mais non chargée dans le lab. Pas d’aperçu substitué.',available:false},
 ];
 export const typography=['xs','sm','base','lg','xl','2xl','3xl','4xl'].map(name=>{
