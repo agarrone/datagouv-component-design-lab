@@ -67,7 +67,7 @@ const clicks = ref(0);
     <template v-else>
       <p v-if="description" class="demo-description">{{ description }}</p>
       <Suspense><template #default>
-        <div v-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/') }">
+        <div v-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/'), 'demo-card-part': ['ObjectCardHeader','ObjectCardBadge'].includes(name), 'demo-card-badge':name==='ObjectCardBadge' }">
           <component :is="C[name]" v-bind="genericProps" v-on="listeners">
             <template v-if="slotText" #default>{{ slotText }}</template>
             <template v-else-if="name==='ResourceAccordion/PreviewWrapper'" #default="{data}"><pre>{{ data }}</pre></template>
@@ -81,12 +81,17 @@ const clicks = ref(0);
 </template>
 
 <style>
-.demo-content { display: flex; flex-direction: column; justify-content: center; gap: 24px; width: 100%; font-family: Marianne, Arial, sans-serif; }
+/* Base commune des exemples et des panneaux téléportés, indépendante du chrome du lab. */
+.demo-content, #tooltips { font: 400 1rem/1.5 Marianne, Arial, sans-serif; color: var(--text-default-grey, #161616); letter-spacing: normal; text-align: start; font-synthesis: initial; }
+.demo-content { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+.demo-generic:has(canvas) { min-height: 240px; }
 .demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .demo-compact { pointer-events: none; }
 .demo-summary { text-align: center; color: #000091; font-size: 13px; }
 .demo-summary small { display: block; margin-top: 12px; color: #8c93a1; font-size: 10px; }
 .demo-description { color: #727b8d; font-size: 12px; line-height: 1.8; margin: 0; }
 .demo-generic { width: 100%; min-width: 0; }
+.demo-card-part { position: relative; }
+.demo-card-badge { min-height: 48px; }
 .demo-icon svg { width: 48px; height: 48px; }
 </style>
