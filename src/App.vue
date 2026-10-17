@@ -8,12 +8,15 @@ import Demo from './Demo.vue';
 import ExplorerNode from './ExplorerNode.vue';
 import Fundamentals from './Fundamentals.vue';
 import Inconsistencies from './Inconsistencies.vue';
+import TypeOverview from './TypeOverview.vue';
+import { typePages } from './typePages';
 import DemoBoundary from './DemoBoundary.vue';
 import { previews } from './demoRegistry';
 import { componentContext } from './componentContext';
 import { previewContexts } from './previewContexts';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
+const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const filter = ref('all');
 const selected = ref(null);
@@ -88,6 +91,7 @@ function route() {
   const hash = decodeURIComponent(location.hash.slice(1));
   if(hash==='main') return;
   const [page,section] = hash.split('/');
+  if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences'].includes(page)) {
     selected.value=null; view.value=page;
     nextTick(()=>{if(section) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
@@ -114,6 +118,8 @@ function downloadProposal(c) {
       <button :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined" @click="navigate('fondamentaux')"><RiPaletteLine />Fondamentaux</button>
       <button :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined" @click="navigate('incoherences')"><RiCheckboxMultipleBlankLine />Incohérences</button>
     </nav>
+    <div class="type-nav-label">VUES D’ENSEMBLE</div>
+    <nav class="type-nav" aria-label="Composants par type"><button v-for="(page,id) in typePages" :key="id" :class="{active:view===`types/${id}`}" :aria-current="view===`types/${id}`?'page':undefined" @click="navigate(`types/${id}`)">{{ page.label }}</button></nav>
     <div class="workspace-label">EXPLORATEUR</div>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
@@ -127,10 +133,11 @@ function downloadProposal(c) {
     <div class="sidebar-bottom">Source · datagouv/cdata<br><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">{{ lock.commit.slice(0, 7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : 'Bibliothèque de composants' }}</span></header>
+    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : typePage ? typePage.label : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : 'Bibliothèque de composants' }}</span></header>
     <main id="main">
       <Fundamentals v-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" @open-component="openComponent" />
+      <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Les composants,<br><span>dans le détail.</span></h1><p class="intro">Explorer la bibliothèque data.gouv.fr, repérer les incohérences<br class="desktop"> et donner forme aux prochaines évolutions.</p></div></div>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>

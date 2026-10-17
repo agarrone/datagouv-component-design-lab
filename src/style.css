@@ -125,3 +125,24 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 
 .issue-filters { display:flex; flex-wrap:wrap; gap:12px; }
 @media(max-width:760px) { .reference-toolbar { align-items:flex-start; flex-direction:column; } }
+
+.type-nav-label { margin:22px 12px 8px; font-size:10px; letter-spacing:1px; color:#7b8597; font-weight:700; }
+.sidebar .type-nav { flex-shrink:0; gap:2px; }
+.sidebar .type-nav button { padding:8px 12px; }
+.sidebar:has(.type-nav) .workspace-label { margin-top:22px; }
+.type-overview-toolbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:28px 0 32px; font-size:12px; color:#687286; }
+.type-overview-toolbar [role=group] { display:flex; gap:4px; }
+.type-overview-toolbar button { padding:8px 14px; background:#eef0f5; border-radius:4px; color:#536078; }
+.type-overview-toolbar button[aria-pressed=true] { background:#000091; color:white; }
+.type-section { margin-bottom:40px; }
+.type-section > h2 { font-size:20px; margin:0 0 18px; letter-spacing:normal; }
+.type-examples { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; align-items:start; }
+.type-examples-list { grid-template-columns:minmax(0,1fr); }
+.type-example { min-width:0; border:1px solid #e0e4ec; border-radius:5px; background:white; }
+.type-example-heading { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 12px; padding:14px 18px; border-bottom:1px solid #e8ebf1; }
+.type-example-heading h3 { font-size:12px; line-height:1.6; margin:0; letter-spacing:normal; overflow-wrap:anywhere; }
+.type-example-heading h3 span { font-weight:400; color:#687286; }
+.type-example-heading button { font-size:11px; color:#000091; background:none; padding:4px 0; }
+.type-example-render { padding:24px; min-width:0; position:relative; }
+@media(max-width:1100px) { .type-examples { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:760px) { .sidebar .type-nav { flex-direction:row; flex-wrap:wrap; margin-top:0; } .sidebar .type-nav button { flex:1; } .type-nav-label { margin-top:18px; } .type-example-render { padding:18px; } }
