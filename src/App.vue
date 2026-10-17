@@ -1,10 +1,11 @@
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
 import Demo from './Demo.vue';
+import ExplorerNode from './ExplorerNode.vue';
 import DemoBoundary from './DemoBoundary.vue';
 import { previews } from './demoRegistry';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
@@ -14,6 +15,57 @@ const selected = ref(null);
 const tab = ref('preview');
 const code = ref('');
 const error = ref('');
+const explorerQuery = ref('');
+const explorerNav = ref(null);
+const expandedFolders = ref(new Set());
+function toggleFolder(id) {
+  const next = new Set(expandedFolders.value);
+  next.has(id) ? next.delete(id) : next.add(id);
+  expandedFolders.value = next;
+}
+const tree = (() => {
+  const root = {children: []};
+  for(const component of inventory) {
+    const parts = component.id.split('/');
+    const filename = parts.pop();
+    if(!parts.length) parts.push('Essentiels');
+    let parent = root;
+    let path = '';
+    for(const part of parts) {
+      path = path ? `${path}/${part}` : part;
+      let folder = parent.children.find(node => node.id === `folder:${path}`);
+      if(!folder) {folder = {id:`folder:${path}`,label:part,children:[],count:0}; parent.children.push(folder);}
+      folder.count++;
+      parent = folder;
+    }
+    parent.children.push({id:`file:${component.id}`,label:filename,component});
+  }
+  function sort(nodes) {nodes.sort((a,b)=>Number(!!b.children)-Number(!!a.children)||a.label.localeCompare(b.label));for(const n of nodes) if(n.children) sort(n.children);}
+  sort(root.children);
+  return root.children;
+})();
+const explorerTree = computed(() => {
+  const q = explorerQuery.value.trim().toLowerCase();
+  if(!q) return tree;
+  function match(nodes) {
+    return nodes.flatMap(node => {
+      if(node.label.toLowerCase().includes(q) || node.component?.id.toLowerCase().includes(q)) return [node];
+      if(!node.children) return [];
+      const children = match(node.children);
+      return children.length ? [{...node,children}] : [];
+    });
+  }
+  return match(tree);
+});
+function revealComponent(component) {
+  const parts = component.id.split('/');
+  parts.pop();
+  if(!parts.length) parts.push('Essentiels');
+  const next = new Set(expandedFolders.value);
+  parts.forEach((_,index)=>next.add(`folder:${parts.slice(0,index+1).join('/')}`));
+  expandedFolders.value = next;
+  nextTick(()=>explorerNav.value?.querySelector('[aria-current="page"]')?.scrollIntoView({block:'nearest'}));
+}
 const category = c => c.id.includes('/') ? c.id.split('/')[0] : 'Essentiels';
 const categories = [...new Set(inventory.map(category))].sort();
 const ordered = [...inventory].sort((a,b) => Number(previews.has(b.id)) - Number(previews.has(a.id)) || a.id.localeCompare(b.id));
@@ -21,7 +73,7 @@ const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCa
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 const statuses = { brouillon: 'Brouillon', soumise: 'Soumise', 'en-discussion': 'En discussion', integree: 'Intégrée', refusee: 'Refusée' };
 async function select(c, update = true) {
-  selected.value = c; tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
+  selected.value = c; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
   if (update) location.hash = encodeURIComponent(c.id);
   if (c) try { const content = await raw[`../${c.path}`](); if (selected.value?.id === c.id) code.value = content; } catch { if (selected.value?.id === c.id) error.value = 'Le code source n’a pas pu être chargé.'; }
   window.scrollTo(0,0);
@@ -41,9 +93,14 @@ function downloadProposal(c) {
   <a class="skip-link" href="#main">Aller au contenu</a>
   <aside class="sidebar">
     <a href="#" class="brand" @click.prevent="navigate()"><span class="brand-symbol">d.</span><span>data.gouv.fr<small>COMPONENT DESIGN LAB</small></span></a>
-    <div class="workspace-label">ESPACE DE DESIGN</div>
-    <nav aria-label="Navigation principale">
-      <button class="active" @click="navigate()"><RiGridLine />Composants <span class="nav-count">{{ inventory.length }}</span></button>
+    <div class="workspace-label">EXPLORATEUR</div>
+    <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
+    <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
+      <button class="explorer-overview" :class="{ active: !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
+      <ul class="explorer-root">
+        <ExplorerNode v-for="node in explorerTree" :key="node.id" :node="node" :expanded="expandedFolders" :selected-id="selected?.id" :searching="!!explorerQuery.trim()" @toggle="toggleFolder" @select="select($event)" />
+      </ul>
+      <p v-if="!explorerTree.length" class="explorer-empty">Aucun fichier trouvé.</p>
     </nav>
     <div class="sidebar-note"><span class="live-dot"></span> Source versionnée<a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">Ouvrir le dépôt <RiArrowRightUpLine /></a></div>
     <div class="sidebar-bottom">Source · datagouv/cdata<br><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">{{ lock.commit.slice(0, 7) }} <RiExternalLinkLine /></a></div>

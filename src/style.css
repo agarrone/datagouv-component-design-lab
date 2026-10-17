@@ -19,3 +19,39 @@ main { padding-bottom: 40px; }
 .proposal-empty-message { padding: 32px; background: #fff; border: 1px solid #e0e5ef; border-radius: 5px; color: #7c8495; font-size: 13px; }
 .component-proposals .proposal h3 { margin-top: 18px; font-size: 18px; }
 .component-proposals .proposal h4 { font-size: 12px; margin: 20px 0 8px; }
+:root { --lab-sidebar-width: 300px; }
+.sidebar { width: var(--lab-sidebar-width); padding: 28px 16px 16px; gap: 0; }
+.shell { margin-left: var(--lab-sidebar-width); }
+.sidebar .brand { flex-shrink: 0; padding: 0 6px; }
+.sidebar .workspace-label { margin: 32px 12px 14px; flex-shrink: 0; }
+.explorer-search { display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 14px; border: 1px solid #e0e3ea; border-radius: 4px; color: #8a92a2; flex-shrink: 0; }
+.explorer-search svg { width: 15px; height: 15px; }
+.explorer-search input { width: 100%; min-width: 0; height: 35px; background: transparent; border: 0; color: #394457; font-size: 11px; }
+.sidebar .explorer-nav { display: block; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: thin; padding: 0 3px 16px 0; }
+.explorer-root, .explorer-children { list-style: none; margin: 0; padding: 0; }
+.explorer-children { margin-left: 14px; padding-left: 7px; border-left: 1px solid #eceef3; }
+.sidebar .explorer-nav button { width: 100%; min-width: 0; gap: 7px; border-radius: 4px; padding: 8px 7px; margin: 2px 0; font-size: 11px; line-height: 1.5; font-weight: 400; }
+.sidebar .explorer-nav button:hover { background: #f3f4f8; color: #1d2433; }
+.sidebar .explorer-nav .explorer-folder { color: #596275; font-weight: 700; }
+.explorer-nav svg { width: 15px; height: 15px; flex-shrink: 0; }
+.explorer-nav .explorer-chevron { width: 12px; height: 12px; color: #939bac; }
+.explorer-chevron.is-open { transform: rotate(90deg); }
+.explorer-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+.explorer-count { margin-left: auto; flex-shrink: 0; color: #929bad; font-size: 10px; font-weight: 400; }
+.explorer-extension { font-size: 10px; color: #a0a7b5; }
+.sidebar .explorer-nav .explorer-overview { margin-bottom: 12px; padding: 10px 9px; }
+.sidebar .explorer-nav .explorer-file.is-selected { background: #eeeeff; color: #000091; font-weight: 700; }
+.sidebar .explorer-nav .explorer-file.is-selected .explorer-extension { color: #8585c7; }
+.explorer-empty { color: #8b93a2; font-size: 11px; padding: 12px 8px; }
+.sidebar .sidebar-note { margin-top: 0; padding: 14px 10px; flex-shrink: 0; }
+.sidebar .sidebar-bottom { padding: 12px 10px 0; flex-shrink: 0; }
+@media(max-width:1150px) { :root { --lab-sidebar-width: 260px; } }
+@media(max-width:760px) {
+  .sidebar { width: auto; padding: 18px; }
+  .shell { margin-left: 0; }
+  .sidebar .workspace-label { display: none; }
+  .explorer-search { margin-top: 20px; margin-bottom: 10px; }
+  .sidebar .explorer-nav { max-height: 30vh; margin-top: 0; padding-bottom: 0; flex: auto; }
+  .sidebar .explorer-nav button { justify-content: flex-start; flex: none; }
+  .sidebar .sidebar-note, .sidebar .sidebar-bottom { display: none; }
+}
