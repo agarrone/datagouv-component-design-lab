@@ -55,7 +55,7 @@ La configuration Vite est fournie dans `vercel.json`. Dans Vercel, importer le d
 
 ## État du projet
 
-Première version : catalogue de 167 fichiers Vue (composants et sous-composants internes), recherche et filtres, code consultable pour chaque fiche, 167 exemples configurés et liste des propositions versionnées. Les éléments composés (onglets, radio, tableaux) sont montrés dans leur contexte. Les exemples emploient des données fictives locales. Data Fair et PMTiles illustrent leur état indisponible ; les fonds des cartes Leaflet et WMS nécessitent le réseau. La comparaison avant/après et la synchronisation automatique restent à compléter.
+Première version : catalogue de 167 fichiers Vue (composants et sous-composants internes), recherche et filtres, code consultable pour chaque fiche, 167 exemples configurés et propositions versionnées dans chaque fiche de composant. Les éléments composés (onglets, radio, tableaux) sont montrés dans leur contexte. Les exemples emploient des données fictives locales. Data Fair et PMTiles illustrent leur état indisponible ; les fonds des cartes Leaflet et WMS nécessitent le réseau. La comparaison avant/après et la synchronisation automatique restent à compléter.
 
 ## Commandes disponibles
 
@@ -83,3 +83,5 @@ La synchronisation automatique reste à implémenter. `upstream.lock.json` conse
 La configuration `.npmrc` désactive les scripts de cycle de vie des dépendances : le catalogue utilise leurs distributions précompilées. `npm ci` et `npm run build` ont été vérifiés avec ce réglage. Le DSFR est fixé à la version 1.15.3 ; MapLibre utilise la version 6 corrigée, avec un adaptateur de namespace dans `src/compat/maplibre.js` pour les imports par défaut du code source. Le code amont reste inchangé.
 
 Le middleware Vite sert les données de démonstration localement. Les réécritures Vercel servent leurs équivalents statiques pour les lecteurs historiques et les suggestions. Le tri et les filtres du tableau de démonstration principal sont locaux ; ce catalogue ne se connecte pas à une API de production.
+
+Les propositions sont affichées dans l’onglet « Propositions » du composant auquel leur champ `component` correspond. Il n’y a plus de page de propositions séparée ni de mode d’emploi dans le site.

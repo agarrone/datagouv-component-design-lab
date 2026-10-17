@@ -13,3 +13,9 @@ main { padding-bottom: 40px; }
 .component-card .card-info h3 { margin: 0; }
 
 .component-card .card-info p { margin: 8px 0 0; }
+
+.component-proposals { margin-top: 24px; }
+.component-proposals .section-title { gap: 20px; flex-wrap: wrap; }
+.proposal-empty-message { padding: 32px; background: #fff; border: 1px solid #e0e5ef; border-radius: 5px; color: #7c8495; font-size: 13px; }
+.component-proposals .proposal h3 { margin-top: 18px; font-size: 18px; }
+.component-proposals .proposal h4 { font-size: 12px; margin: 20px 0 8px; }
