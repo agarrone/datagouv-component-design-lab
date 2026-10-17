@@ -79,7 +79,7 @@ const clicks = ref(0);
 </template>
 
 <style>
-.demo-content { display: flex; flex-direction: column; justify-content: center; gap: 24px; width: 100%; font-family: Arial, sans-serif; }
+.demo-content { display: flex; flex-direction: column; justify-content: center; gap: 24px; width: 100%; font-family: Marianne, Arial, sans-serif; }
 .demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .demo-compact { pointer-events: none; }
 .demo-summary { text-align: center; color: #000091; font-size: 13px; }
