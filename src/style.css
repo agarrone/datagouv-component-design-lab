@@ -118,3 +118,7 @@ main { padding-bottom: 40px; }
 @media(max-width:760px) { .sidebar .reference-nav { flex-direction: row; margin: 20px 0 0; } .sidebar .reference-nav button { flex: 1; justify-content: flex-start; } .font-grid { grid-template-columns: 1fr; } .swatch-grid,.breakpoint-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .type-scale > div { grid-template-columns: 90px 1fr; } .type-scale > div > span:last-child { grid-column: 1/-1; } .spacing-scale > div { grid-template-columns: 110px 45px 1fr; gap: 10px; } .issue-card { padding: 20px; } }
 
 .component-context { margin: 0 0 20px; color: #536078; font-size: 14px; line-height: 1.7; max-width: 80ch; }
+
+.contextual-preview { margin-top: 24px; }
+h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
+.preview-hint { margin: 16px 24px 0; font-size: 13px; color: #536078; line-height: 1.6; }

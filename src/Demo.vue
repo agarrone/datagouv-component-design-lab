@@ -15,12 +15,12 @@ import SegmentedControl from '../vendor/datagouv-components/src/components/Segme
 import AnimatedLoader from '../vendor/datagouv-components/src/components/AnimatedLoader.vue';
 import BouncingDots from '../vendor/datagouv-components/src/components/BouncingDots.vue';
 import './demo.css';
-const props = defineProps({ name: String, compact: Boolean });
+const props = defineProps({ name: String, compact: Boolean, contextual: Boolean, sampleProps: Object });
 const overrides = reactive({});
 const updateModel = value => { overrides.modelValue = value; };
 const updatePage = value => { if(props.name==='Pagination') overrides.page=value; };
 const genericProps = computed(() => {
-  const base = {...samples[props.name], ...overrides};
+  const base = {...samples[props.name], ...props.sampleProps, ...overrides};
   if (props.name==='Search/SearchInput' && !('modelValue' in base)) base.modelValue='';
   if (props.name.startsWith('Search/Filter/') && !('modelValue' in base)) base.modelValue=undefined;
   return base;
@@ -72,7 +72,7 @@ const clicks = ref(0);
             <template v-else-if="name==='Search/BasicAndAdvancedFilters'" #default="{isEnabled}"><component v-if="isEnabled('territoire')" :is="C['Form/SelectGroup']" label="Territoire" :options="[{label:'France entière',value:'fr'}]"/><component v-if="isEnabled('licence')" :is="C.LicenseBadge" :license="fixtures.license"/></template>
           </component>
         </div>
-        <ContextDemo v-else :name="name" />
+        <ContextDemo v-else :name="name" :contextual="contextual" />
       </template><template #fallback><p role="status">Chargement de l’exemple…</p></template></Suspense>
     </template>
   </div>

@@ -11,6 +11,7 @@ import Inconsistencies from './Inconsistencies.vue';
 import DemoBoundary from './DemoBoundary.vue';
 import { previews } from './demoRegistry';
 import { componentContext } from './componentContext';
+import { previewContexts } from './previewContexts';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
 const query = ref('');
@@ -145,7 +146,10 @@ function downloadProposal(c) {
         <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>
         <div class="tabs" role="tablist" aria-label="Contenu du composant"><button v-if="previews.has(selected.id)" role="tab" :aria-selected="tab==='preview'" @click="tab='preview'">Aperçu et états</button><button role="tab" :aria-selected="tab==='code'" @click="tab='code'">Code source</button><button role="tab" :aria-selected="tab==='proposals'" @click="tab='proposals'">Propositions ({{ componentProposals.length }})</button></div>
         <p v-if="tab==='preview' && componentContext[selected.id]" class="component-context">{{ componentContext[selected.id] }}</p>
-        <section v-if="tab==='preview'" class="preview-panel"><div class="panel-label">RENDU DU COMPOSANT RÉEL</div><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
+        <template v-if="tab==='preview'">
+          <section class="preview-panel"><h2 class="panel-label">{{ previewContexts[selected.id] ? 'Élément isolé' : 'Rendu du composant réel' }}</h2><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
+          <section v-if="previewContexts[selected.id]" class="preview-panel contextual-preview"><h2 class="panel-label">Dans son contexte · {{ previewContexts[selected.id].label }}</h2><p v-if="previewContexts[selected.id].hint" class="preview-hint">{{ previewContexts[selected.id].hint }}</p><div class="demo-stage"><DemoBoundary :key="selected.id + '-context'" :name="selected.id"><Demo :name="previewContexts[selected.id].name" :sample-props="previewContexts[selected.id].props" contextual /></DemoBoundary></div></section>
+        </template>
         <section v-else-if="tab==='code'" class="source-panel"><div class="panel-label">{{ selected.name }}.vue <span>Lecture seule · modifications dans Codex</span></div><pre v-if="code"><code>{{ code }}</code></pre><p v-else role="status">{{ error || 'Chargement du code…' }}</p></section>
         <section v-else class="component-proposals" aria-label="Propositions pour ce composant">
           <div class="section-title"><h2>Propositions pour {{ selected.name }}</h2><button class="button" title="Télécharger un modèle de proposition" @click="downloadProposal(selected)">Préparer une proposition <RiArrowRightUpLine /></button></div>
