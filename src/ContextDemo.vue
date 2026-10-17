@@ -4,7 +4,7 @@ import { components as C } from './demoRegistry';
 import { provideTabularContext } from '../vendor/datagouv-components/src/components/TabularExplorer/useTabularContext';
 import { RiText } from '@remixicon/vue';
 import * as f from './fixtures';
-const props=defineProps({name:String,contextual:Boolean});
+const props=defineProps({name:String,contextual:Boolean,sampleProps:Object});
 const radioName = `demo-radio-${useId()}`;
 const page=ref(1),radio=ref('all'),counter=ref(0),sort=ref(null),filters=ref({Commune:{contains:'e'}}),globalSearch=ref(''),visibleColumns=ref(new Set(['Commune','Population','Annee'])),mobileFilterOpen=ref(false);
 const columns=['Commune','Population','Annee'];
@@ -28,20 +28,20 @@ provideTabularContext({tableData:computed(()=>({data:filteredRows.value,meta:{to
 </script>
 <template>
  <div v-if="name.startsWith('Tabs/') && !contextual" class="context-tabs">
-  <component :is="C['Tabs/TabGroup']">
+  <component :is="C['Tabs/TabGroup']" v-bind="name==='Tabs/TabGroup' ? sampleProps : {}">
    <component v-if="name==='Tabs/Tab'||name==='Tabs/TabList'||name==='Tabs/TabGroup'" :is="C['Tabs/TabList']"><component :is="C['Tabs/Tab']">Présentation</component><template v-if="name==='Tabs/TabList'"><component :is="C['Tabs/Tab']">Données</component><component :is="C['Tabs/Tab']">Documentation</component></template></component>
    <component v-if="name==='Tabs/TabPanel'||name==='Tabs/TabPanels'||name==='Tabs/TabGroup'" :is="C['Tabs/TabPanels']"><component :is="C['Tabs/TabPanel']"><p>Les données de population des communes françaises, leurs sources et leur périmètre.</p></component></component>
   </component>
  </div>
  <div v-else-if="name.startsWith('Tabs/')" class="context-tabs">
-  <component :is="C['Tabs/TabGroup']"><component :is="C['Tabs/TabList']"><component :is="C['Tabs/Tab']">Présentation</component><component :is="C['Tabs/Tab']">Données</component><component :is="C['Tabs/Tab']">Documentation</component></component><component :is="C['Tabs/TabPanels']"><component :is="C['Tabs/TabPanel']"><p>Les données de population des communes françaises, leurs sources et leur périmètre.</p></component><component :is="C['Tabs/TabPanel']"><p>4 communes · Format CSV · Millésime 2025</p></component><component :is="C['Tabs/TabPanel']"><p>Une mise à jour annuelle. Les données sont diffusées sous Licence Ouverte.</p></component></component></component>
+  <component :is="C['Tabs/TabGroup']" v-bind="name==='Tabs/TabGroup' ? sampleProps : {}"><component :is="C['Tabs/TabList']"><component :is="C['Tabs/Tab']">Présentation</component><component :is="C['Tabs/Tab']">Données</component><component :is="C['Tabs/Tab']">Documentation</component></component><component :is="C['Tabs/TabPanels']"><component :is="C['Tabs/TabPanel']"><p>Les données de population des communes françaises, leurs sources et leur périmètre.</p></component><component :is="C['Tabs/TabPanel']"><p>4 communes · Format CSV · Millésime 2025</p></component><component :is="C['Tabs/TabPanel']"><p>Une mise à jour annuelle. Les données sont diffusées sous Licence Ouverte.</p></component></component></component>
  </div>
  <component v-else-if="name.startsWith('Description') && contextual" :is="name.startsWith('DescriptionList') ? C.DescriptionList : 'dl'">
-  <div v-for="item in [['Producteur','Observatoire des territoires'],['Licence','Licence Ouverte 2.0']]" :key="item[0]"><component :is="name.startsWith('DescriptionList') ? C.DescriptionListTerm : C.DescriptionTerm">{{ item[0] }}</component><component :is="name.startsWith('DescriptionList') ? C.DescriptionListDetails : C.DescriptionDetails">{{ item[1] }}</component></div>
+  <div v-for="item in [['Producteur','Observatoire des territoires'],['Licence','Licence Ouverte 2.0']]" :key="item[0]"><component :is="name.startsWith('DescriptionList') ? C.DescriptionListTerm : C.DescriptionTerm">{{ item[0] }}</component><component :is="name.startsWith('DescriptionList') ? C.DescriptionListDetails : C.DescriptionDetails" v-bind="name==='DescriptionDetails' ? sampleProps : {}">{{ item[1] }}</component></div>
  </component>
  <component v-else-if="name==='DescriptionList'" :is="C.DescriptionList"><div><component :is="C.DescriptionListTerm">Producteur</component><component :is="C.DescriptionListDetails">Observatoire des territoires</component></div><div><component :is="C.DescriptionListTerm">Licence</component><component :is="C.DescriptionListDetails">Licence Ouverte 2.0</component></div></component>
  <dl v-else-if="name==='DescriptionTerm'||name==='DescriptionListTerm'"><component :is="C[name]">Producteur</component><dd class="sr-only">Observatoire des territoires</dd></dl>
- <dl v-else-if="name==='DescriptionDetails'||name==='DescriptionListDetails'"><dt class="sr-only">Producteur</dt><component :is="C[name]">Observatoire des territoires</component></dl>
+ <dl v-else-if="name==='DescriptionDetails'||name==='DescriptionListDetails'"><dt class="sr-only">Producteur</dt><component :is="C[name]" v-bind="sampleProps">Observatoire des territoires</component></dl>
  <component v-else-if="name==='RadioGroup'||name==='RadioInput'" :is="C.RadioGroup" v-model="radio" :name="radioName" legend="Type de contenu"><component :is="C.RadioInput" value="all" :count="24">Tous les contenus</component><template v-if="name==='RadioGroup'"><component :is="C.RadioInput" value="datasets" :count="16">Jeux de données</component><component :is="C.RadioInput" value="api" :count="8">API</component></template></component>
  <component v-else-if="name==='Tooltip'" :is="C.Tooltip"><component :is="C.BrandedButton" color="secondary">Survole ou sélectionne ce bouton</component><template #tooltip>Les données sont mises à jour chaque année.</template></component>
  <component v-else-if="name==='Toggletip'" :is="C.Toggletip"><span>À propos de ces données</span><template #toggletip>Ces indicateurs sont des données fictives utilisées dans le catalogue.</template></component>

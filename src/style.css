@@ -149,3 +149,22 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 
 .sidebar .type-nav { max-height:210px; overflow-y:auto; }
 @media(max-width:760px) { .sidebar .type-nav { max-height:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); } .sidebar .type-nav button { justify-content:flex-start; } }
+
+.component-options { margin:24px 0; border:1px solid #e0e4ec; border-radius:5px; background:white; }
+.component-options > summary { padding:18px 22px; cursor:pointer; font-size:14px; font-weight:700; color:#394457; }
+.component-options > summary span { font-weight:400; color:#7b8597; }
+.component-options-body { padding:0 22px 22px; font-size:12px; color:#536078; }
+.options-heading { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+.options-heading p { margin:0; }
+.options-heading button { color:#000091; background:none; padding:6px 0; }
+.options-table-scroll { overflow-x:auto; }
+.options-table { width:100%; border-collapse:collapse; text-align:left; font-size:12px; }
+.options-table th,.options-table td { padding:12px; border-bottom:1px solid #e8ebf1; vertical-align:top; }
+.options-table thead th { background:#f6f7fa; font-weight:700; }
+.options-table tbody th { font-weight:400; min-width:160px; }
+.options-table th a { color:#000091; }
+.options-table code { overflow-wrap:anywhere; white-space:normal; }
+.options-table p { font-size:11px; line-height:1.6; margin:7px 0 0; }
+.option-requirement { display:block; color:#7b8597; font-size:10px; margin-top:5px; }
+.option-toggle { display:flex; align-items:center; gap:8px; white-space:nowrap; cursor:pointer; }
+.options-table select { max-width:200px; padding:5px; background:white; border:1px solid #d5dae5; border-radius:3px; }

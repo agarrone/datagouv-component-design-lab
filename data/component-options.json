@@ -1,0 +1,4466 @@
+{
+  "ActivityList/ActivityActor": {
+    "props": [
+      {
+        "name": "actor",
+        "type": "ActivityActor",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "size",
+        "type": "number",
+        "required": false,
+        "default": "12",
+        "defaultValue": 12,
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "withLink",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 33
+      }
+    ],
+    "unresolved": false
+  },
+  "ActivityList/ActivityList": {
+    "props": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 112
+      },
+      {
+        "name": "user",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 113
+      }
+    ],
+    "unresolved": false
+  },
+  "ActivityList/UserActivityList": {
+    "props": [
+      {
+        "name": "user",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "AnimatedLoader": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'white'",
+        "required": false,
+        "default": "'primary'",
+        "defaultValue": "primary",
+        "choices": [
+          "primary",
+          "white"
+        ],
+        "comment": "",
+        "line": 5
+      }
+    ],
+    "unresolved": false
+  },
+  "AppLink": {
+    "props": [
+      {
+        "name": "to",
+        "type": "string | RouteLocationRaw | null | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 37
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 38
+      }
+    ],
+    "unresolved": false
+  },
+  "Avatar": {
+    "props": [
+      {
+        "name": "rounded",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 19
+      },
+      {
+        "name": "size",
+        "type": "number",
+        "required": false,
+        "default": "40",
+        "defaultValue": 40,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "user",
+        "type": "User | UserReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "AvatarWithName": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User | UserReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "size",
+        "type": "number",
+        "required": false,
+        "default": "12",
+        "defaultValue": 12,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "withLink",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 49
+      }
+    ],
+    "unresolved": false
+  },
+  "BannerAction": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'primary' | 'danger' | 'warning'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "primary",
+          "danger",
+          "warning"
+        ],
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "Optional so the title can be a slot, for instance to make it the toggle of a disclosure whose panel lives in the banner",
+        "line": 41
+      }
+    ],
+    "unresolved": false
+  },
+  "BouncingDots": {
+    "props": [],
+    "unresolved": false
+  },
+  "BrandedButton": {
+    "props": [
+      {
+        "name": "size",
+        "type": "'2xs' | 'xs' | 'sm' | 'lg' | 'xl'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "2xs",
+          "xs",
+          "sm",
+          "lg",
+          "xl"
+        ],
+        "comment": "",
+        "line": 61
+      },
+      {
+        "name": "color",
+        "type": "ColorType",
+        "required": false,
+        "default": null,
+        "choices": [
+          "primary",
+          "secondary",
+          "tertiary",
+          "warning",
+          "danger",
+          "brown-illustration",
+          "green-illustration",
+          "white-flat"
+        ],
+        "comment": "",
+        "line": 62
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 63
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 64
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "iconAttrs",
+        "type": "Record<string, string>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 66
+      },
+      {
+        "name": "href",
+        "type": "string | RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 67
+      },
+      {
+        "name": "newTab",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 68
+      },
+      {
+        "name": "iconOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 69
+      },
+      {
+        "name": "iconOnlyOnMobile",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 70
+      },
+      {
+        "name": "iconRight",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 71
+      },
+      {
+        "name": "keepMarginsEvenWithoutBorders",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 72
+      },
+      {
+        "name": "type",
+        "type": "'submit' | 'button'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "submit",
+          "button"
+        ],
+        "comment": "",
+        "line": 73
+      }
+    ],
+    "unresolved": false
+  },
+  "Chart/ChartViewer": {
+    "props": [
+      {
+        "name": "chart",
+        "type": "Chart | ChartForApi",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "series",
+        "type": "{ data: Record<string, Array<Record<string, unknown>>> columns: ColumnsDefinition }",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "Chart/ChartViewerWrapper": {
+    "props": [
+      {
+        "name": "chart",
+        "type": "Chart | ChartForApi",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 33
+      }
+    ],
+    "unresolved": false
+  },
+  "ChartCard": {
+    "props": [
+      {
+        "name": "chart",
+        "type": "Chart",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 102
+      },
+      {
+        "name": "chartUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 103
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 104
+      }
+    ],
+    "unresolved": false
+  },
+  "ClientOnly": {
+    "props": [],
+    "unresolved": false
+  },
+  "CopyButton": {
+    "props": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "copiedLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 50
+      },
+      {
+        "name": "hideLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 51
+      },
+      {
+        "name": "iconOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Like hideLabel but keeps the default icon and has no bordered box — just the plain copy icon with an sr-only label.",
+        "line": 54
+      },
+      {
+        "name": "reverse",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 55
+      }
+    ],
+    "unresolved": false
+  },
+  "DataserviceCard": {
+    "props": [
+      {
+        "name": "dataservice",
+        "type": "Dataservice",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 148
+      },
+      {
+        "name": "dataserviceUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 149
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
+        "line": 151
+      },
+      {
+        "name": "showDescription",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 152
+      },
+      {
+        "name": "titleTag",
+        "type": "TitleTag",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 153
+      }
+    ],
+    "unresolved": false
+  },
+  "DataserviceQuality": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "DataserviceQuality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "hideWarnings",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 76
+      }
+    ],
+    "unresolved": false
+  },
+  "DataserviceQualityInline": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "DataserviceQuality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "DataserviceQualityTooltipContent": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "DataserviceQuality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetCard": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 150
+      },
+      {
+        "name": "datasetUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 151
+      },
+      {
+        "name": "datasetUrlInNewTab",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 152
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
+        "line": 154
+      },
+      {
+        "name": "showDescriptionShort",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 155
+      },
+      {
+        "name": "titleTag",
+        "type": "TitleTag",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 156
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetInformation/DatasetEmbedSection": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2 | DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 32
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetInformation/DatasetInformationSection": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 59
+      },
+      {
+        "name": "tagUrl",
+        "type": "(tag: string) => string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetInformation/DatasetSchemaSection": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2 | DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetInformation/DatasetSpatialSection": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetInformation/DatasetTemporalitySection": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetLabelTag": {
+    "props": [
+      {
+        "name": "badge",
+        "type": "TranslatedBadge",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "url",
+        "type": "string | RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetQuality": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "Quality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 72
+      },
+      {
+        "name": "hideWarnings",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 73
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetQualityInline": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "Quality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetQualityTooltipContent": {
+    "props": [
+      {
+        "name": "quality",
+        "type": "Quality",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 74
+      }
+    ],
+    "unresolved": false
+  },
+  "DateRangeDetails": {
+    "props": [
+      {
+        "name": "range",
+        "type": "{ start: string, end: string | null }",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 10
+      }
+    ],
+    "unresolved": false
+  },
+  "DescriptionDetails": {
+    "props": [
+      {
+        "name": "withEllipsis",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 17
+      }
+    ],
+    "unresolved": false
+  },
+  "DescriptionList": {
+    "props": [],
+    "unresolved": false
+  },
+  "DescriptionListDetails": {
+    "props": [],
+    "unresolved": false
+  },
+  "DescriptionListTerm": {
+    "props": [],
+    "unresolved": false
+  },
+  "DescriptionTerm": {
+    "props": [],
+    "unresolved": false
+  },
+  "DiscussionMessageCard": {
+    "props": [
+      {
+        "name": "discussion",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "discussionUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "ExtraAccordion": {
+    "props": [
+      {
+        "name": "buttonText",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "titleText",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 76
+      },
+      {
+        "name": "extra",
+        "type": "Record<string, unknown>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 77
+      },
+      {
+        "name": "titleLevel",
+        "type": "'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "div"
+        ],
+        "comment": "",
+        "line": 78
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/BadgeSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "TranslatedBadge | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 22
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/FormatSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 20
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/GeozoneSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "SpatialZone | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 30
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 31
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/GranularitySelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "Granularity | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 21
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/LicenseSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "License | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 22
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/Listbox": {
+    "props": [
+      {
+        "name": "options",
+        "type": "Array<T>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 71
+      },
+      {
+        "name": "getOptionId",
+        "type": "(option: T) => string | number",
+        "required": false,
+        "default": "(option: T): string | number => { if (typeof option === 'string') return option if (typeof option === 'number') return option if (typeof option === 'object' && 'id' in option) return option.id as string throw new Error('Please set getOptionId()') }",
+        "comment": "",
+        "line": 72
+      },
+      {
+        "name": "displayValue",
+        "type": "(option: T | null) => string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 73
+      },
+      {
+        "name": "isDisabled",
+        "type": "(option: T | null) => boolean",
+        "required": false,
+        "default": "(option: T | null): boolean => { if (option && typeof option === 'object' && 'disabled' in option) return option.disabled as boolean return false }",
+        "comment": "",
+        "line": 74
+      },
+      {
+        "name": "modelValue",
+        "type": "T | null",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 90
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/OrganizationSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "Organization | OrganizationSuggest | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 36
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 37
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 40
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/OrganizationTypeSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/ReuseTopicSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "ReuseTopic | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 21
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/SchemaSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "RegisteredSchema | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 24
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/SearchableSelect": {
+    "props": [
+      {
+        "name": "validText",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 174
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 175
+      },
+      {
+        "name": "warningText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 176
+      },
+      {
+        "name": "hintText",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 177
+      },
+      {
+        "name": "explanation",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 178
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 179
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 180
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 181
+      },
+      {
+        "name": "hideLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 182
+      },
+      {
+        "name": "getOptionId",
+        "type": "(option: T) => string | number",
+        "required": false,
+        "default": "(option: T): string | number => { if (typeof option === 'string') return option if (typeof option === 'number') return option if (typeof option === 'object' && 'id' in option) return option.id as string throw new Error('Please set getOptionId()') }",
+        "comment": "",
+        "line": 184
+      },
+      {
+        "name": "groupBy",
+        "type": "(option: T) => string",
+        "required": false,
+        "default": "(): string => ''",
+        "comment": "",
+        "line": 185
+      },
+      {
+        "name": "displayValue",
+        "type": "(option: ModelType) => string",
+        "required": false,
+        "default": "(): string => ''",
+        "comment": "",
+        "line": 186
+      },
+      {
+        "name": "filter",
+        "type": "(option: T, query: string) => boolean",
+        "required": false,
+        "default": "(option: T, query: string): boolean => { const searchables = [] if (typeof option === 'string') searchables.push(option) if (typeof option === 'number') searchables.push(option.toString()) if (typeof option === 'object') { for (const value of Object.values(option)) { if (typeof value !== 'string') continue searchables.push(value) } } for (const searchable of searchables) { if (searchable.toLocaleLowerCase().includes(query.toLocaleLowerCase())) { return true } } return false }",
+        "comment": "",
+        "line": 187
+      },
+      {
+        "name": "options",
+        "type": "Array<T>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 188
+      },
+      {
+        "name": "suggest",
+        "type": "(query: string) => Promise<Array<T>>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 189
+      },
+      {
+        "name": "allowNewOption",
+        "type": "(query: string) => T",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 190
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 192
+      },
+      {
+        "name": "multiple",
+        "type": "Multiple",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 193
+      },
+      {
+        "name": "modelValue",
+        "type": "ModelType | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 232
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/SelectGroup": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | boolean | null",
+        "required": false,
+        "default": "undefined",
+        "comment": "",
+        "line": 86,
+        "model": true
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 79
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 80
+      },
+      {
+        "name": "hasError",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "hintText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "isValid",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 83
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 84
+      },
+      {
+        "name": "hideLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 85
+      },
+      {
+        "name": "options",
+        "type": "Array<SelectOption>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 87
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 88
+      },
+      {
+        "name": "validText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 89
+      },
+      {
+        "name": "hideNullOption",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 90
+      }
+    ],
+    "unresolved": false
+  },
+  "Form/TagSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 21
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "FormattedDate": {
+    "props": [
+      {
+        "name": "date",
+        "type": "Date | string | null | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "format",
+        "type": "'date' | 'relative' | 'from-now'",
+        "required": false,
+        "default": "'date'",
+        "defaultValue": "date",
+        "choices": [
+          "date",
+          "relative",
+          "from-now"
+        ],
+        "comment": "`date`: the full date. `relative`: \"3 days ago\" while the date is less than a\nmonth old, the full date beyond. `from-now`: always relative, however old.",
+        "line": 29
+      },
+      {
+        "name": "options",
+        "type": "Intl.DateTimeFormatOptions",
+        "required": false,
+        "default": "() => ({})",
+        "comment": "",
+        "line": 30
+      }
+    ],
+    "unresolved": false
+  },
+  "Icons/Archive": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/Code": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/Documentation": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/File": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/Image": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/Link": {
+    "props": [],
+    "unresolved": false
+  },
+  "Icons/Table": {
+    "props": [],
+    "unresolved": false
+  },
+  "InfiniteLoader": {
+    "props": [
+      {
+        "name": "root",
+        "type": "HTMLElement | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "LeafletMap": {
+    "props": [
+      {
+        "name": "geojson",
+        "type": "GeoJsonObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 13
+      }
+    ],
+    "unresolved": false
+  },
+  "LicenseBadge": {
+    "props": [
+      {
+        "name": "license",
+        "type": "License",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "LoadingBlock": {
+    "props": [
+      {
+        "name": "status",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 34
+      },
+      {
+        "name": "data",
+        "type": "T | null | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      }
+    ],
+    "unresolved": false
+  },
+  "MarkdownViewer": {
+    "props": [
+      {
+        "name": "content",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 13
+      },
+      {
+        "name": "minHeading",
+        "type": "1 | 2 | 3 | 4 | 5 | 6",
+        "required": false,
+        "default": "3",
+        "defaultValue": 3,
+        "choices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "noHeadings",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 15
+      },
+      {
+        "name": "size",
+        "type": "'sm' | 'md'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "sm",
+          "md"
+        ],
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCard": {
+    "props": [
+      {
+        "name": "articleClass",
+        "type": "string | string[] | Record<string, boolean>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 30
+      },
+      {
+        "name": "mediaSize",
+        "type": "'sm' | 'lg' | 'xl'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "sm",
+          "lg",
+          "xl"
+        ],
+        "comment": "",
+        "line": 31
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCardBadge": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCardHeader": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      },
+      {
+        "name": "url",
+        "type": "RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 36
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 37
+      },
+      {
+        "name": "titleTag",
+        "type": "TitleTag",
+        "required": false,
+        "default": "'h3'",
+        "defaultValue": "h3",
+        "comment": "",
+        "line": 38
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCardOwner": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "OrganizationReference | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "owner",
+        "type": "UserReference | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "undefined falls back to organization.page; pass null to render plain, non-linked text",
+        "line": 48
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCardShortDescription": {
+    "props": [
+      {
+        "name": "text",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 15
+      },
+      {
+        "name": "maxLength",
+        "type": "number",
+        "required": false,
+        "default": "300",
+        "defaultValue": 300,
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/ContentTypeSelect": {
+    "props": [
+      {
+        "name": "contentTypes",
+        "type": "string[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/EndpointRequest": {
+    "props": [
+      {
+        "name": "endpoint",
+        "type": "Endpoint",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 119
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/EndpointResponses": {
+    "props": [
+      {
+        "name": "responses",
+        "type": "Record<string, OpenAPIV3.ResponseObject>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 78
+      },
+      {
+        "name": "spec",
+        "type": "OpenAPIV3.Document",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 79
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/OpenApiViewer": {
+    "props": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 183
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/SchemaPanel": {
+    "props": [
+      {
+        "name": "spec",
+        "type": "OpenAPIV3.Document",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "schema",
+        "type": "OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      }
+    ],
+    "unresolved": false
+  },
+  "OpenApiViewer/SchemaTree": {
+    "props": [
+      {
+        "name": "spec",
+        "type": "OpenAPIV3.Document",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 61
+      },
+      {
+        "name": "schema",
+        "type": "OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 62
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationCard": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 84
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationHorizontalCard": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 81
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationLogo": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "OrganizationOrSuggest",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "sizeClass",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationNameWithCertificate": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 54
+      },
+      {
+        "name": "showAcronym",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "showType",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "size",
+        "type": "'xl' | 'base' | 'sm' | 'xs'",
+        "required": false,
+        "default": "'base'",
+        "defaultValue": "base",
+        "choices": [
+          "xl",
+          "base",
+          "sm",
+          "xs"
+        ],
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "colorClass",
+        "type": "string",
+        "required": false,
+        "default": "'text-new-primary'",
+        "defaultValue": "text-new-primary",
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "defaultValue": "div",
+        "comment": "",
+        "line": 59
+      }
+    ],
+    "unresolved": false
+  },
+  "OwnerType": {
+    "props": [
+      {
+        "name": "type",
+        "type": "OrganizationTypes | UserType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      },
+      {
+        "name": "size",
+        "type": "'base' | 'sm' | 'xs'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "base",
+          "sm",
+          "xs"
+        ],
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "color",
+        "type": "'black' | 'gray'",
+        "required": false,
+        "default": "'gray'",
+        "defaultValue": "gray",
+        "choices": [
+          "black",
+          "gray"
+        ],
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "OwnerTypeIcon": {
+    "props": [
+      {
+        "name": "type",
+        "type": "OrganizationTypes | UserType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
+  "PaddedContainer": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'white' | 'alt-grey'",
+        "required": false,
+        "default": "'white'",
+        "defaultValue": "white",
+        "choices": [
+          "white",
+          "alt-grey"
+        ],
+        "comment": "",
+        "line": 14
+      }
+    ],
+    "unresolved": false
+  },
+  "Pagination": {
+    "props": [
+      {
+        "name": "page",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "defaultValue": 1,
+        "comment": "The current page.",
+        "line": 113
+      },
+      {
+        "name": "pageSize",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "defaultValue": 20,
+        "comment": "The page size.",
+        "line": 117
+      },
+      {
+        "name": "totalResults",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "The number of items in the collection. It's used to calculated the number of pages.",
+        "line": 121
+      }
+    ],
+    "unresolved": false
+  },
+  "Placeholder": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'Dataset' | 'Dataservice' | 'Reuse' | 'Organization' | 'Topic' | 'Chart'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "Dataset",
+          "Dataservice",
+          "Reuse",
+          "Organization",
+          "Topic",
+          "Chart"
+        ],
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "PostCard": {
+    "props": [
+      {
+        "name": "post",
+        "type": "Post",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "postUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "ProgressBar": {
+    "props": [
+      {
+        "name": "value",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "defaultValue": 1,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "barClass",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "QualityItem": {
+    "props": [
+      {
+        "name": "passed",
+        "type": "boolean | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "messagePassed",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 29
+      },
+      {
+        "name": "messageFailed",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 30
+      }
+    ],
+    "unresolved": false
+  },
+  "QualityItemWarning": {
+    "props": [
+      {
+        "name": "qualityItem",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "QualityScore": {
+    "props": [
+      {
+        "name": "score",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "class",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "RadioGroup": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      },
+      {
+        "name": "legend",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 20
+      }
+    ],
+    "unresolved": false
+  },
+  "RadioInput": {
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "icon",
+        "type": "Component | string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "highlighted",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 50
+      }
+    ],
+    "unresolved": false
+  },
+  "ReadMore": {
+    "props": [
+      {
+        "name": "wantedHeight",
+        "type": "number",
+        "required": false,
+        "default": "284",
+        "defaultValue": 284,
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "maxHeight",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 46
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/DataStructure": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/Datafair.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/Downloads": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 155
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 156
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/EditButton": {
+    "props": [
+      {
+        "name": "datasetId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "isCommunityResource",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "resourceId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "disabledReason",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/ImagePreview.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 31
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/JsonPreview.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/MapContainer.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/Metadata": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/PdfPreview.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "fill",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fill the available height (fullscreen) instead of the default capped height.",
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/PdfSkeleton": {
+    "props": [
+      {
+        "name": "fill",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fill the available height (fullscreen) instead of the default capped height.",
+        "line": 40
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/Pmtiles.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 72
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 72
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/Preview": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 121
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/PreviewLoader": {
+    "props": [],
+    "unresolved": false
+  },
+  "ResourceAccordion/PreviewUnavailable": {
+    "props": [],
+    "unresolved": false
+  },
+  "ResourceAccordion/PreviewWrapper": {
+    "props": [
+      {
+        "name": "fileType",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "maxSize",
+        "type": "number | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "load",
+        "type": "() => Promise<unknown>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "fill",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fill the available height (fullscreen) instead of sizing to content.",
+        "line": 49
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/ResourceAccordion": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 348
+      },
+      {
+        "name": "expandedOnMount",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 349
+      },
+      {
+        "name": "isCommunityResource",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 350
+      },
+      {
+        "name": "resource",
+        "type": "Resource | CommunityResource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 351
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 352
+      },
+      {
+        "name": "resourceExternalUrl",
+        "type": "(resource: Resource | CommunityResource) => string",
+        "required": false,
+        "default": null,
+        "comment": "Overrides the \"Copier le lien\" target.",
+        "line": 354
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/ResourceIcon": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "{ format?: string | null, filetype: ResourceFileType | null }",
+        "required": true,
+        "default": null,
+        "comment": "We would like to use Resource | ResourceForm but ResourceForm is not in datagouv/components yet. We don't use `filetype` but we need otherwise TS don't like passing some object without `format` because it would have nothing in common with `{}`. We could do `{ format: … } | object` but it's really generic and I prefer to have something like `filetype` which is specific to resources' objects.",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/SchemaBadge": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 114
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/SchemaLoader": {
+    "props": [],
+    "unresolved": false
+  },
+  "ResourceAccordion/XmlPreview.client": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceExplorer": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 124
+      },
+      {
+        "name": "noResultsImage",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 125
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Fullscreen mode: dataset context bar (org / title / date + download + exit), the viewer fills the height and hides its inline actions (shown in the context bar).",
+        "line": 128
+      },
+      {
+        "name": "exitTo",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 129
+      },
+      {
+        "name": "exploreTo",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "Inline mode only: link builder for the \"Explorer\" button in the viewer header that opens the fullscreen explorer on the current resource.",
+        "line": 132
+      },
+      {
+        "name": "resourceExternalUrl",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "Overrides the \"Copier le lien\" target.",
+        "line": 134
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceExplorerHeader": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 69
+      },
+      {
+        "name": "resource",
+        "type": "Resource | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 70
+      },
+      {
+        "name": "exitTo",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 71
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceExplorerSidebar": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 176
+      },
+      {
+        "name": "groups",
+        "type": "ResourceGroup[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 177
+      },
+      {
+        "name": "selectedResourceId",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 178
+      },
+      {
+        "name": "collapsed",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 179
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 180
+      },
+      {
+        "name": "search",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 181
+      },
+      {
+        "name": "loadingType",
+        "type": "ResourceType | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 182
+      },
+      {
+        "name": "resourceTo",
+        "type": "(resource: Resource) => RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 183
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 184
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceExplorerViewer": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 227
+      },
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 228
+      },
+      {
+        "name": "resources",
+        "type": "Resource[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 229
+      },
+      {
+        "name": "resourceTo",
+        "type": "(resource: Resource) => RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 230
+      },
+      {
+        "name": "exploreTo",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "When provided (inline mode), shows an \"Explorer\" button next to the download action that opens the fullscreen explorer on the current resource.",
+        "line": 233
+      },
+      {
+        "name": "resourceExternalUrl",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "Overrides the \"Copier le lien\" target.",
+        "line": 235
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 236
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Fullscreen mode: make the viewer a flex column so the table fills down to the bottom, and hide the inline download/visit/copy actions — they're shown in the dataset context bar above. Inline mode (dataset page) shows them in the header.",
+        "line": 240
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceMainAction": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 150
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 151
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceSelector": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "resources",
+        "type": "Resource[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "selectedId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "resourceTo",
+        "type": "(resource: Resource) => RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 50
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceViewerHeader": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 106
+      },
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 107
+      },
+      {
+        "name": "resources",
+        "type": "Resource[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 108
+      },
+      {
+        "name": "resourceTo",
+        "type": "(resource: Resource) => RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 109
+      },
+      {
+        "name": "exploreTo",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 110
+      },
+      {
+        "name": "resourceExternalUrl",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "Overrides the \"Copier le lien\" target.",
+        "line": 112
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 113
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fullscreen mode hides the inline actions — they live in the dataset context bar above.",
+        "line": 115
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceExplorer/ResourceViewerSkeleton": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 79
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 80
+      },
+      {
+        "name": "resources",
+        "type": "Resource[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "resourceTo",
+        "type": "(resource: Resource) => RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "exploreTo",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 83
+      },
+      {
+        "name": "resourceExternalUrl",
+        "type": "(resource: Resource) => string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 84
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 85
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 86
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceIconBadge": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceListItem": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 170
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "Some previews (Data Fair, OpenAPI) depend on the dataset's organization.",
+        "line": 172
+      },
+      {
+        "name": "to",
+        "type": "RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 173
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 174
+      },
+      {
+        "name": "replace",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 175
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Full-width list: the row also shows the update date, size and downloads.",
+        "line": 177
+      }
+    ],
+    "unresolved": false
+  },
+  "ReuseCard": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 92
+      },
+      {
+        "name": "reuseUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "The reuseUrl is a route location object to allow Vue Router to navigate to the details of a reuse.\nIt is used as a separate prop to allow other sites using the package to define their own reuse pages.",
+        "line": 98
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "The organizationUrl is an optional route location object to allow Vue Router to navigate to the details of the organization linked to tha reuse.\nIt is used as a separate prop to allow other sites using the package to define their own organization pages.\nPass null instead of a route to render the organization name as plain, non-linked text.",
+        "line": 105
+      },
+      {
+        "name": "titleTag",
+        "type": "TitleTag",
+        "required": false,
+        "default": "'h3'",
+        "defaultValue": "h3",
+        "comment": "",
+        "line": 107
+      }
+    ],
+    "unresolved": false
+  },
+  "ReuseDetails": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 39
+      }
+    ],
+    "unresolved": false
+  },
+  "ReuseHorizontalCard": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 74
+      },
+      {
+        "name": "reuseUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
+        "line": 77
+      }
+    ],
+    "unresolved": false
+  },
+  "SchemaCard": {
+    "props": [
+      {
+        "name": "schema",
+        "type": "RegisteredSchema",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "selectable",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 83
+      },
+      {
+        "name": "active",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Highlighted by the keyboard inside the listbox, which is not the same as chosen",
+        "line": 85
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 86
+      },
+      {
+        "name": "showLinks",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 87
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/BasicAndAdvancedFilters": {
+    "props": [
+      {
+        "name": "basicFilters",
+        "type": "string[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "advancedFilters",
+        "type": "string[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 39
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/AccessTypeFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/DatasetBadgeFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/FilterButtonGroup": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 53
+      },
+      {
+        "name": "options",
+        "type": "FilterOption[]",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 54
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "allLabel",
+        "type": "string",
+        "required": false,
+        "default": "'Tous'",
+        "defaultValue": "Tous",
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 59
+      },
+      {
+        "name": "highlightActive",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/FormatFamilyFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/LastUpdateRangeFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/ProducerTypeFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "exclude",
+        "type": "string[]",
+        "required": false,
+        "default": "() => []",
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Filter/ReuseTypeFilter": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "facets",
+        "type": "FacetItem[]",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/GlobalSearch": {
+    "props": [
+      {
+        "name": "config",
+        "type": "GlobalSearchConfig",
+        "required": false,
+        "default": "getDefaultGlobalSearchConfig",
+        "comment": "",
+        "line": 408
+      },
+      {
+        "name": "placeholder",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 409
+      },
+      {
+        "name": "hideSearchInput",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 410
+      },
+      {
+        "name": "autoFocus",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 411
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 423
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/SearchInput": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 38
+      },
+      {
+        "name": "placeholder",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "autoFocus",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 42
+      }
+    ],
+    "unresolved": false
+  },
+  "Search/Sidemenu": {
+    "props": [
+      {
+        "name": "buttonText",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 34
+      }
+    ],
+    "unresolved": false
+  },
+  "SegmentedControl": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "options",
+        "type": "Array<SegmentedControlOption>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "grow",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Fill the available width and stretch the segments (default: fit content)",
+        "line": 49
+      },
+      {
+        "name": "underline",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Underline variant: left-aligned tabs over a bottom border, active segment in blue with a thicker blue underline (default: pill track)",
+        "line": 52
+      }
+    ],
+    "unresolved": false
+  },
+  "SimpleBanner": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'primary' | 'primary-frame' | 'warning' | 'gray' | 'danger' | 'success' | 'pink'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "primary",
+          "primary-frame",
+          "warning",
+          "gray",
+          "danger",
+          "success",
+          "pink"
+        ],
+        "comment": "",
+        "line": 14
+      }
+    ],
+    "unresolved": false
+  },
+  "SmallChart": {
+    "props": [
+      {
+        "name": "data",
+        "type": "Record<string, number>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "default": "30",
+        "defaultValue": 30,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "lastWithLowEmphasis",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "showAxisLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "type",
+        "type": "'line' | 'bar'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "line",
+          "bar"
+        ],
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": false,
+        "default": "120",
+        "defaultValue": 120,
+        "comment": "",
+        "line": 46
+      }
+    ],
+    "unresolved": false
+  },
+  "StatBox": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 172
+      },
+      {
+        "name": "data",
+        "type": "Record<string, number> | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 173
+      },
+      {
+        "name": "type",
+        "type": "'line' | 'bar'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "line",
+          "bar"
+        ],
+        "comment": "",
+        "line": 174
+      },
+      {
+        "name": "size",
+        "type": "'sm'",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 175
+      },
+      {
+        "name": "summary",
+        "type": "number | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 176
+      },
+      {
+        "name": "since",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 177
+      }
+    ],
+    "unresolved": false
+  },
+  "Tabs/Tab": {
+    "props": [],
+    "unresolved": false
+  },
+  "Tabs/TabGroup": {
+    "props": [
+      {
+        "name": "size",
+        "type": "'sm' | 'md'",
+        "required": false,
+        "default": "'md'",
+        "defaultValue": "md",
+        "choices": [
+          "sm",
+          "md"
+        ],
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "defaultIndex",
+        "type": "number",
+        "required": false,
+        "default": "0",
+        "defaultValue": 0,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "Tabs/TabList": {
+    "props": [],
+    "unresolved": false
+  },
+  "Tabs/TabPanel": {
+    "props": [],
+    "unresolved": false
+  },
+  "Tabs/TabPanels": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularActiveFilters": {
+    "props": [
+      {
+        "name": "withClear",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 115
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularCell": {
+    "props": [
+      {
+        "name": "value",
+        "type": "unknown",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "columnType",
+        "type": "ColumnType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "compact",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "noNumberFormat",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 45
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularCellPopover": {
+    "props": [
+      {
+        "name": "cell",
+        "type": "CellInfo | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 94
+      },
+      {
+        "name": "filters",
+        "type": "Record<string, ColumnFilters>",
+        "required": false,
+        "default": "() => ({})",
+        "model": true,
+        "line": 95
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularColumnsMenu": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularDateField": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "minValue",
+        "type": "DateValue",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 33
+      },
+      {
+        "name": "modelValue",
+        "type": "DateValue | undefined",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 36
+      },
+      {
+        "name": "placeholder",
+        "type": "DateValue",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 38
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularDateFilter": {
+    "props": [
+      {
+        "name": "column",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 246
+      },
+      {
+        "name": "filters",
+        "type": "Record<string, ColumnFilters>",
+        "required": false,
+        "default": "() => ({})",
+        "model": true,
+        "line": 249
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularExplorer": {
+    "props": [
+      {
+        "name": "resourceId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "searchInput",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "Whether the toolbar shows its search field. A page with a search of its own hides it and drives the search through `v-model:global-search` instead.",
+        "line": 45
+      },
+      {
+        "name": "initialFilters",
+        "type": "Record<string, ColumnFilters>",
+        "required": false,
+        "default": null,
+        "comment": "Filters seeded on mount, e.g. { 'Administration': { contains: 'Ministère' } }. The explorer owns them afterwards: later changes to this prop are ignored, so pass a fresh instance (or remount) to reset them. Ignored with `syncUrl`: the filters come from the URL then.",
+        "line": 50
+      },
+      {
+        "name": "initialSort",
+        "type": "SortConfig",
+        "required": false,
+        "default": null,
+        "comment": "Sort seeded on mount, e.g. { column: 'Séance', direction: 'desc' }. Same ownership rule as `initialFilters`: the explorer owns it afterwards, and the user can drop it from the active-sort chip. With `syncUrl`, it is the sort applied when the URL names none.",
+        "line": 55
+      },
+      {
+        "name": "syncUrl",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Keeps sort, filters and global search in the URL, so that going back to the page restores them. Only for an explorer that owns its page: the params are not namespaced.",
+        "line": 59
+      },
+      {
+        "name": "urlAliases",
+        "type": "Record<string, TabularUrlAlias>",
+        "required": false,
+        "default": null,
+        "comment": "With `syncUrl`, readable params for the simple filters of some columns, e.g. { administration: { column: 'Administration', operator: 'contains' } }. Any other filter goes into a JSON `filters` param.",
+        "line": 63
+      },
+      {
+        "name": "globalSearch",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "model": true,
+        "line": 75
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularFilterContent": {
+    "props": [
+      {
+        "name": "column",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 229
+      },
+      {
+        "name": "columnType",
+        "type": "ColumnType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 230
+      },
+      {
+        "name": "columnProfile",
+        "type": "TabularColumnProfile | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 231
+      },
+      {
+        "name": "nullPercent",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 232
+      },
+      {
+        "name": "totalLines",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 233
+      },
+      {
+        "name": "booleanCounts",
+        "type": "{ trueCount: number, falseCount: number }",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 234
+      },
+      {
+        "name": "sort",
+        "type": "SortConfig | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 237
+      },
+      {
+        "name": "filters",
+        "type": "Record<string, ColumnFilters>",
+        "required": false,
+        "default": "() => ({})",
+        "model": true,
+        "line": 238
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularFilterPopover": {
+    "props": [
+      {
+        "name": "column",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 74
+      },
+      {
+        "name": "columnType",
+        "type": "ColumnType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "columnProfile",
+        "type": "TabularColumnProfile | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 76
+      },
+      {
+        "name": "nullPercent",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 77
+      },
+      {
+        "name": "totalLines",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 78
+      },
+      {
+        "name": "booleanCounts",
+        "type": "{ trueCount: number, falseCount: number }",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 79
+      },
+      {
+        "name": "sort",
+        "type": "SortConfig | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 82
+      },
+      {
+        "name": "filters",
+        "type": "Record<string, ColumnFilters>",
+        "required": false,
+        "default": "() => ({})",
+        "model": true,
+        "line": 83
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularMobileFilterButton": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularMobileFilters": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularRowsInfo": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularSearchInput": {
+    "props": [],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularSkeleton": {
+    "props": [
+      {
+        "name": "fill",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fill the available height (fullscreen) instead of the default capped height.",
+        "line": 92
+      },
+      {
+        "name": "searchInput",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "Same as the explorer's: whether the toolbar has its search field.",
+        "line": 94
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularTable": {
+    "props": [
+      {
+        "name": "fill",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Fill the available height (fullscreen) instead of the default 70vh cap.",
+        "line": 275
+      },
+      {
+        "name": "fullBleed",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Break out of the host's padding so the table spans the whole screen while the toolbar stays inside the container. Used on the standalone explore pages.",
+        "line": 278
+      },
+      {
+        "name": "rowHref",
+        "type": "{ columns: string[], href: (row: TabularRow) => string }",
+        "required": false,
+        "default": null,
+        "comment": "When set, renders <a> tags inside the specified column cells for native browser UX (hover URL, ctrl+click, middle-click).",
+        "line": 281
+      },
+      {
+        "name": "noFormatColumns",
+        "type": "string[]",
+        "required": false,
+        "default": null,
+        "comment": "Columns listed here render their values raw (no number formatting). Useful for identifier columns.",
+        "line": 284
+      }
+    ],
+    "unresolved": false
+  },
+  "TabularExplorer/TabularToolbar": {
+    "props": [],
+    "unresolved": false
+  },
+  "Tag": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "type",
+        "type": "'secondary'",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "Toggletip": {
+    "props": [
+      {
+        "name": "buttonProps",
+        "type": "object",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 61
+      },
+      {
+        "name": "buttonClass",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 62
+      },
+      {
+        "name": "noMargin",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 63
+      },
+      {
+        "name": "styledButton",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 64
+      }
+    ],
+    "unresolved": false
+  },
+  "Tooltip": {
+    "props": [
+      {
+        "name": "tooltipClass",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 39
+      }
+    ],
+    "unresolved": false
+  },
+  "TopicCard": {
+    "props": [
+      {
+        "name": "topic",
+        "type": "TopicWithStats",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 126
+      },
+      {
+        "name": "topicUrl",
+        "type": "RouteLocationRaw",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 127
+      },
+      {
+        "name": "organizationUrl",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 128
+      },
+      {
+        "name": "showLogo",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 129
+      },
+      {
+        "name": "showStats",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 130
+      }
+    ],
+    "unresolved": false
+  },
+  "TranslationT": {
+    "props": [
+      {
+        "name": "keypath",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "tag",
+        "type": "string",
+        "required": false,
+        "default": "'span'",
+        "defaultValue": "span",
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "n",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
+  "ValueWatcher": {
+    "props": [
+      {
+        "name": "value",
+        "type": "T",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 9
+      }
+    ],
+    "unresolved": false
+  }
+}

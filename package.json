@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "node scripts/inventory.mjs && vite build",
+    "build": "npm run inventory && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "inventory": "node scripts/inventory.mjs",
+    "inventory": "node scripts/inventory.mjs && node scripts/component-options.mjs",
     "source:check": "node scripts/check-upstream.mjs"
   },
   "dependencies": {
@@ -60,6 +60,7 @@
     "@tailwindcss/vite": "^4.1.0",
     "@tsconfig/node22": "^22.0.0",
     "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/compiler-sfc": "^3.5.44",
     "@vue/tsconfig": "^0.8.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.9.0",

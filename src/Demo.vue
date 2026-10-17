@@ -74,7 +74,7 @@ const clicks = ref(0);
             <template v-else-if="name==='Search/BasicAndAdvancedFilters'" #default="{isEnabled}"><component v-if="isEnabled('territoire')" :is="C['Form/SelectGroup']" label="Territoire" :options="[{label:'France entière',value:'fr'}]"/><component v-if="isEnabled('licence')" :is="C.LicenseBadge" :license="fixtures.license"/></template>
           </component>
         </div>
-        <ContextDemo v-else :name="name" :contextual="contextual" />
+        <ContextDemo v-else :name="name" :contextual="contextual" :sample-props="sampleProps" />
       </template><template #fallback><p role="status">Chargement de l’exemple…</p></template></Suspense>
     </template>
   </div>

@@ -11,6 +11,7 @@ import Inconsistencies from './Inconsistencies.vue';
 import TypeOverview from './TypeOverview.vue';
 import { typePages } from './typePages';
 import DemoBoundary from './DemoBoundary.vue';
+import ComponentOptions from './ComponentOptions.vue';
 import { previews } from './demoRegistry';
 import { componentContext } from './componentContext';
 import { previewContexts } from './previewContexts';
@@ -22,6 +23,8 @@ const filter = ref('all');
 const selected = ref(null);
 const tab = ref('preview');
 const code = ref('');
+const previewOptions = ref({});
+const previewProps = computed(() => Object.keys(previewOptions.value).length ? previewOptions.value : undefined);
 const error = ref('');
 const explorerQuery = ref('');
 const explorerNav = ref(null);
@@ -81,7 +84,7 @@ const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCa
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 const statuses = { brouillon: 'Brouillon', soumise: 'Soumise', 'en-discussion': 'En discussion', integree: 'Intégrée', refusee: 'Refusée' };
 async function select(c, update = true) {
-  selected.value = c; view.value = 'catalogue'; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
+  previewOptions.value = {}; selected.value = c; view.value = 'catalogue'; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
   if (update) location.hash = encodeURIComponent(c.id);
   if (c) try { const content = await raw[`../${c.path}`](); if (selected.value?.id === c.id) code.value = content; } catch { if (selected.value?.id === c.id) error.value = 'Le code source n’a pas pu être chargé.'; }
   window.scrollTo(0,0);
@@ -152,10 +155,11 @@ function downloadProposal(c) {
         <button class="back-button" @click="navigate()"><RiArrowLeftLine />Tous les composants</button><div class="eyebrow">{{ category(selected) }}</div><div class="detail-heading"><div><h1 class="detail-title">{{ selected.name }}</h1><p class="intro">{{ selected.path }}</p></div></div>
         <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>
         <div class="tabs" role="tablist" aria-label="Contenu du composant"><button v-if="previews.has(selected.id)" role="tab" :aria-selected="tab==='preview'" @click="tab='preview'">Aperçu et états</button><button role="tab" :aria-selected="tab==='code'" @click="tab='code'">Code source</button><button role="tab" :aria-selected="tab==='proposals'" @click="tab='proposals'">Propositions ({{ componentProposals.length }})</button></div>
+        <ComponentOptions v-if="tab==='preview'" :key="selected.id" :component="selected" v-model="previewOptions" />
         <p v-if="tab==='preview' && componentContext[selected.id]" class="component-context">{{ componentContext[selected.id] }}</p>
         <template v-if="tab==='preview'">
-          <section class="preview-panel"><h2 class="panel-label">{{ previewContexts[selected.id] ? 'Élément isolé' : 'Rendu du composant réel' }}</h2><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
-          <section v-if="previewContexts[selected.id]" class="preview-panel contextual-preview"><h2 class="panel-label">Dans son contexte · {{ previewContexts[selected.id].label }}</h2><p v-if="previewContexts[selected.id].hint" class="preview-hint">{{ previewContexts[selected.id].hint }}</p><div class="demo-stage"><DemoBoundary :key="selected.id + '-context'" :name="selected.id"><Demo :name="previewContexts[selected.id].name" :sample-props="previewContexts[selected.id].props" contextual /></DemoBoundary></div></section>
+          <section class="preview-panel"><h2 class="panel-label">{{ previewContexts[selected.id] ? 'Élément isolé' : 'Rendu du composant réel' }}</h2><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" :sample-props="previewProps" /></DemoBoundary></div></section>
+          <section v-if="previewContexts[selected.id]" class="preview-panel contextual-preview"><h2 class="panel-label">Dans son contexte · {{ previewContexts[selected.id].label }}</h2><p v-if="previewContexts[selected.id].hint" class="preview-hint">{{ previewContexts[selected.id].hint }}</p><div class="demo-stage"><DemoBoundary :key="selected.id + '-context'" :name="selected.id"><Demo :name="previewContexts[selected.id].name" :sample-props="previewContexts[selected.id].name===selected.id ? {...previewContexts[selected.id].props,...previewOptions} : previewContexts[selected.id].props" contextual /></DemoBoundary></div></section>
         </template>
         <section v-else-if="tab==='code'" class="source-panel"><div class="panel-label">{{ selected.name }}.vue <span>Lecture seule · modifications dans Codex</span></div><pre v-if="code"><code>{{ code }}</code></pre><p v-else role="status">{{ error || 'Chargement du code…' }}</p></section>
         <section v-else class="component-proposals" aria-label="Propositions pour ce composant">
