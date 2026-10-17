@@ -1,14 +1,17 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine } from '@remixicon/vue';
+import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine, RiPaletteLine, RiCheckboxMultipleBlankLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
 import Demo from './Demo.vue';
 import ExplorerNode from './ExplorerNode.vue';
+import Fundamentals from './Fundamentals.vue';
+import Inconsistencies from './Inconsistencies.vue';
 import DemoBoundary from './DemoBoundary.vue';
 import { previews } from './demoRegistry';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
+const view = ref('catalogue');
 const query = ref('');
 const filter = ref('all');
 const selected = ref(null);
@@ -73,13 +76,25 @@ const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCa
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 const statuses = { brouillon: 'Brouillon', soumise: 'Soumise', 'en-discussion': 'En discussion', integree: 'Intégrée', refusee: 'Refusée' };
 async function select(c, update = true) {
-  selected.value = c; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
+  selected.value = c; view.value = 'catalogue'; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
   if (update) location.hash = encodeURIComponent(c.id);
   if (c) try { const content = await raw[`../${c.path}`](); if (selected.value?.id === c.id) code.value = content; } catch { if (selected.value?.id === c.id) error.value = 'Le code source n’a pas pu être chargé.'; }
   window.scrollTo(0,0);
 }
-function navigate() { selected.value = null; location.hash = ''; }
-function route() { const hash = decodeURIComponent(location.hash.slice(1)); const c = inventory.find(c => c.id === hash); if(c) select(c, false); else selected.value = null; }
+function navigate(page = 'catalogue') { selected.value = null; view.value = page; location.hash = page==='catalogue'?'':page; window.scrollTo(0,0); }
+function route() {
+  const hash = decodeURIComponent(location.hash.slice(1));
+  if(hash==='main') return;
+  const [page,section] = hash.split('/');
+  if(['fondamentaux','incoherences'].includes(page)) {
+    selected.value=null; view.value=page;
+    nextTick(()=>{if(section) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
+    return;
+  }
+  const c = inventory.find(c => c.id === hash);
+  if(c) select(c, false); else {selected.value = null; view.value='catalogue';}
+}
+function openComponent(id) {const component=inventory.find(c=>c.id===id);if(component) select(component);}
 onMounted(() => { route(); window.addEventListener('hashchange', route); });
 onUnmounted(() => window.removeEventListener('hashchange', route));
 function downloadProposal(c) {
@@ -93,10 +108,14 @@ function downloadProposal(c) {
   <a class="skip-link" href="#main">Aller au contenu</a>
   <aside class="sidebar">
     <a href="#" class="brand" @click.prevent="navigate()"><span class="brand-symbol">d.</span><span>data.gouv.fr<small>COMPONENT DESIGN LAB</small></span></a>
+    <nav class="reference-nav" aria-label="Références du design system">
+      <button :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined" @click="navigate('fondamentaux')"><RiPaletteLine />Fondamentaux</button>
+      <button :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined" @click="navigate('incoherences')"><RiCheckboxMultipleBlankLine />Incohérences</button>
+    </nav>
     <div class="workspace-label">EXPLORATEUR</div>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
-      <button class="explorer-overview" :class="{ active: !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
+      <button class="explorer-overview" :class="{ active: view==='catalogue' && !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
       <ul class="explorer-root">
         <ExplorerNode v-for="node in explorerTree" :key="node.id" :node="node" :expanded="expandedFolders" :selected-id="selected?.id" :searching="!!explorerQuery.trim()" @toggle="toggleFolder" @select="select($event)" />
       </ul>
@@ -106,9 +125,11 @@ function downloadProposal(c) {
     <div class="sidebar-bottom">Source · datagouv/cdata<br><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">{{ lock.commit.slice(0, 7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : 'Bibliothèque de composants' }}</span></header>
+    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : 'Bibliothèque de composants' }}</span></header>
     <main id="main">
-      <template v-if="!selected">
+      <Fundamentals v-if="view==='fondamentaux'" />
+      <Inconsistencies v-else-if="view==='incoherences'" @open-component="openComponent" />
+      <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Les composants,<br><span>dans le détail.</span></h1><p class="intro">Explorer la bibliothèque data.gouv.fr, repérer les incohérences<br class="desktop"> et donner forme aux prochaines évolutions.</p></div></div>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
         <section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>

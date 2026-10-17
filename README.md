@@ -85,3 +85,7 @@ La configuration `.npmrc` désactive les scripts de cycle de vie des dépendance
 Le middleware Vite sert les données de démonstration localement. Les réécritures Vercel servent leurs équivalents statiques pour les lecteurs historiques et les suggestions. Le tri et les filtres du tableau de démonstration principal sont locaux ; ce catalogue ne se connecte pas à une API de production.
 
 Les propositions sont affichées dans l’onglet « Propositions » du composant auquel leur champ `component` correspond. Il n’y a plus de page de propositions séparée ni de mode d’emploi dans le site.
+
+## Pages de référence
+
+`/#fondamentaux` présente les couleurs extraites du thème, les familles typographiques déclarées, l’échelle Tailwind installée, les espacements et les points de rupture. `/#incoherences` contient un premier relevé de cinq constats, avec statut, pistes à valider, composants concernés et références au commit source. Les données éditoriales sont dans `src/referenceData.js`. Un constat ne crée pas automatiquement une proposition.
