@@ -18,7 +18,7 @@ const count = computed(() => new Set(props.page.sections.flatMap(section => sect
       <div class="type-examples" :class="{ 'type-examples-list': layout==='list' }">
         <article v-for="item in section.items" :key="item.key" class="type-example">
           <header class="type-example-heading"><h3>{{ item.id.split('/').pop() }}<span v-if="item.label"> · {{ item.label }}</span></h3><button @click="$emit('open-component', item.id)" :aria-label="`Ouvrir la fiche ${item.id}${item.label ? ' · '+item.label : ''}`">Voir la fiche →</button></header>
-          <div class="type-example-render"><DemoBoundary :name="item.id"><Demo :name="item.id" :sample-props="item.props" /></DemoBoundary></div>
+          <div class="type-example-render"><DemoBoundary :name="item.id"><Demo :name="item.id" :sample-props="item.props" :contextual="item.contextual" /></DemoBoundary></div>
         </article>
       </div>
     </section>
