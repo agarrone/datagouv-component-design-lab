@@ -6,7 +6,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "npm run inventory && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "inventory": "node scripts/inventory.mjs && node scripts/component-options.mjs",
+    "inventory": "node scripts/inventory.mjs && node scripts/component-options.mjs && node scripts/sync-audit.mjs",
     "source:check": "node scripts/check-upstream.mjs"
   },
   "dependencies": {
