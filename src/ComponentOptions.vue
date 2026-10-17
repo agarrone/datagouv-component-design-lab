@@ -18,7 +18,7 @@ function update(option, value) {
 }
 </script>
 <template>
-  <details class="component-options" :key="component.id" :open="definition.props.length <= 6">
+  <details class="component-options" :key="component.id">
     <summary>Options du composant <span>({{ definition.props.length }})</span></summary>
     <div class="component-options-body">
       <p v-if="!definition.props.length">{{ definition.unresolved ? 'Consultez la déclaration des options dans le code source.' : 'Ce composant ne déclare pas de propriété. Son contenu peut être fourni par les composants enfants ou les slots.' }}</p>
