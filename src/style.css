@@ -8,3 +8,6 @@ html{background:#fafbfc}body{color:#1d2433;background:#fafbfc}a[href]{background
 .sidebar a[target="_blank"]::after, .detail-meta > a[target="_blank"]::after, .proposal > a[target="_blank"]::after { content: none !important; display: none !important; }
 .sidebar-note a { margin-top: 16px; }
 main { padding-bottom: 40px; }
+
+.component-card .card-info { min-height: 76px; gap: 16px; }
+.component-card .card-info h3 { margin: 0; }
