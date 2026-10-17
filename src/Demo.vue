@@ -38,7 +38,7 @@ const listeners = computed(() => {
   if(name==='ResourceExplorer/ResourceExplorerSidebar') for(const key of ['search','expanded','collapsed']) events[`update:${key}`]=value=>overrides[key]=value;
   return events;
 });
-const description = computed(() => descriptions[props.name] || (props.name.startsWith('Tabs/') ? descriptions.tabs : props.name.startsWith('Description') ? descriptions.descriptions : props.name.startsWith('TabularExplorer/') ? descriptions.table : ''));
+const description = computed(() => descriptions[props.name] || (props.name.startsWith('TabularExplorer/') ? descriptions.table : ''));
 const slotText = computed(() => ({ AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', LoadingBlock: 'Les données ont été chargées.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
 const router = useRouter();
 const DemoLink = defineComponent({props:['to','replace'], setup(linkProps,{attrs,slots}) {return ()=>h('a',{...attrs,href:typeof linkProps.to==='string'?linkProps.to:router.resolve(linkProps.to||'/').href,onClick(event){if(typeof linkProps.to==='object' || linkProps.to==='/demo'){event.preventDefault();router[linkProps.replace?'replace':'push'](linkProps.to);}}},slots.default?.());}});

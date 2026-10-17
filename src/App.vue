@@ -10,6 +10,7 @@ import Fundamentals from './Fundamentals.vue';
 import Inconsistencies from './Inconsistencies.vue';
 import DemoBoundary from './DemoBoundary.vue';
 import { previews } from './demoRegistry';
+import { componentContext } from './componentContext';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
 const query = ref('');
@@ -143,6 +144,7 @@ function downloadProposal(c) {
         <button class="back-button" @click="navigate()"><RiArrowLeftLine />Tous les composants</button><div class="eyebrow">{{ category(selected) }}</div><div class="detail-heading"><div><h1 class="detail-title">{{ selected.name }}</h1><p class="intro">{{ selected.path }}</p></div></div>
         <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>
         <div class="tabs" role="tablist" aria-label="Contenu du composant"><button v-if="previews.has(selected.id)" role="tab" :aria-selected="tab==='preview'" @click="tab='preview'">Aperçu et états</button><button role="tab" :aria-selected="tab==='code'" @click="tab='code'">Code source</button><button role="tab" :aria-selected="tab==='proposals'" @click="tab='proposals'">Propositions ({{ componentProposals.length }})</button></div>
+        <p v-if="tab==='preview' && componentContext[selected.id]" class="component-context">{{ componentContext[selected.id] }}</p>
         <section v-if="tab==='preview'" class="preview-panel"><div class="panel-label">RENDU DU COMPOSANT RÉEL</div><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" /></DemoBoundary></div></section>
         <section v-else-if="tab==='code'" class="source-panel"><div class="panel-label">{{ selected.name }}.vue <span>Lecture seule · modifications dans Codex</span></div><pre v-if="code"><code>{{ code }}</code></pre><p v-else role="status">{{ error || 'Chargement du code…' }}</p></section>
         <section v-else class="component-proposals" aria-label="Propositions pour ce composant">
