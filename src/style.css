@@ -11,3 +11,5 @@ main { padding-bottom: 40px; }
 
 .component-card .card-info { min-height: 76px; gap: 16px; }
 .component-card .card-info h3 { margin: 0; }
+
+.component-card .card-info p { margin: 8px 0 0; }

@@ -60,7 +60,7 @@ function downloadProposal(c) {
         <section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2><span>Code Vue · source versionnée</span></div>
           <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="filter" aria-label="Filtrer les composants"><option value="all">Toutes les familles</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
-          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3></div><span class="card-arrow">↗</span></div></article></div>
+          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
           <div v-else class="empty"><RiSearchLine /><h2>Aucun composant trouvé</h2><p>Essaie un autre nom ou une autre famille.</p><button class="button" @click="query='';filter='all'">Réinitialiser les filtres</button></div>
         </section>
       </template>
