@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine, RiPaletteLine, RiCheckboxMultipleBlankLine } from '@remixicon/vue';
+import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine, RiPaletteLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
@@ -13,6 +13,7 @@ import AuditTracking from './AuditTracking.vue';
 import { typePages } from './typePages';
 import DemoBoundary from './DemoBoundary.vue';
 import ComponentOptions from './ComponentOptions.vue';
+import SegmentedControlPage from './SegmentedControlPage.vue';
 import { previews } from './demoRegistry';
 import { componentContext } from './componentContext';
 import { previewContexts } from './previewContexts';
@@ -104,6 +105,7 @@ function route() {
   const c = inventory.find(c => c.id === hash);
   if(c) select(c, false); else {selected.value = null; view.value='catalogue';}
 }
+function openIssue(id) { location.hash='incoherences/'+id; }
 function openComponent(id) {const component=inventory.find(c=>c.id===id);if(component) select(component);}
 onMounted(() => { route(); window.addEventListener('hashchange', route); });
 onUnmounted(() => window.removeEventListener('hashchange', route));
@@ -118,14 +120,13 @@ function downloadProposal(c) {
   <a class="skip-link" href="#main">Aller au contenu</a>
   <aside class="sidebar">
     <a href="#" class="brand" @click.prevent="navigate()"><span class="brand-symbol">d.</span><span>data.gouv.fr<small>COMPONENT DESIGN LAB</small></span></a>
-    <nav class="reference-nav" aria-label="Références du design system">
-      <button :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined" @click="navigate('fondamentaux')"><RiPaletteLine />Fondamentaux</button>
-      <button :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined" @click="navigate('incoherences')"><RiCheckboxMultipleBlankLine />Incohérences</button>
-      <button :class="{active:view==='suivi'}" :aria-current="view==='suivi'?'page':undefined" @click="navigate('suivi')"><RiGridLine />Suivi des composants</button>
-    </nav>
-    <div class="type-nav-label">VUES D’ENSEMBLE</div>
-    <nav class="type-nav" aria-label="Composants par type"><button v-for="(page,id) in typePages" :key="id" :class="{active:view===`types/${id}`}" :aria-current="view===`types/${id}`?'page':undefined" @click="navigate(`types/${id}`)">{{ page.label }}</button></nav>
-    <div class="workspace-label">EXPLORATEUR</div>
+    <nav class="reference-nav" aria-label="Fondamentaux"><button :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined" @click="navigate('fondamentaux')"><RiPaletteLine />Fondamentaux</button></nav>
+    <div class="sidebar-browse">
+      <div class="type-nav-label">COMPOSANTS</div>
+      <nav class="type-nav" aria-label="Composants par type"><a href="#" :class="{active:view==='catalogue' && !selected}" :aria-current="view==='catalogue' && !selected?'page':undefined" @click.prevent="navigate()">Tous les composants <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}`}" :aria-current="view===`types/${id}`?'page':undefined" @click.prevent="navigate(`types/${id}`)">{{ page.label }}</a></nav>
+      <div class="type-nav-label">AUDIT</div>
+      <nav class="audit-nav" aria-label="Audit"><a href="#suivi" :class="{active:view==='suivi'}" :aria-current="view==='suivi'?'page':undefined" @click.prevent="navigate('suivi')">Suivi des composants</a><a href="#incoherences" :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined" @click.prevent="navigate('incoherences')">Incohérences</a></nav>
+      <details class="file-explorer"><summary>Explorateur de fichiers</summary>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
       <button class="explorer-overview" :class="{ active: view==='catalogue' && !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
@@ -134,8 +135,9 @@ function downloadProposal(c) {
       </ul>
       <p v-if="!explorerTree.length" class="explorer-empty">Aucun fichier trouvé.</p>
     </nav>
-    <div class="sidebar-note"><span class="live-dot"></span> Source versionnée<a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">Ouvrir le dépôt <RiArrowRightUpLine /></a></div>
-    <div class="sidebar-bottom">Source · datagouv/cdata<br><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">{{ lock.commit.slice(0, 7) }} <RiExternalLinkLine /></a></div>
+      </details>
+    </div>
+    <div class="sidebar-source"><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">GitHub <RiArrowRightUpLine /></a><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">Source · {{ lock.commit.slice(0,7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
     <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : typePage ? typePage.label : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi des composants' : 'Bibliothèque de composants' }}</span></header>
@@ -145,15 +147,17 @@ function downloadProposal(c) {
       <AuditTracking v-else-if="view==='suivi'" @open-component="openComponent" />
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
-        <div class="page-heading"><div><h1>Les composants,<br><span>dans le détail.</span></h1><p class="intro">Explorer la bibliothèque data.gouv.fr, repérer les incohérences<br class="desktop"> et donner forme aux prochaines évolutions.</p></div></div>
+        <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>
+        <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
         <section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
-          <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="filter" aria-label="Filtrer les composants"><option value="all">Toutes les familles</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
+          <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
           <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
           <div v-else class="empty"><RiSearchLine /><h2>Aucun composant trouvé</h2><p>Essaie un autre nom ou une autre famille.</p><button class="button" @click="query='';filter='all'">Réinitialiser les filtres</button></div>
         </section>
       </template>
+      <SegmentedControlPage v-else-if="selected?.id==='SegmentedControl'" :component="selected" :code="code" :error="error" :proposals="componentProposals" @open-issue="openIssue" @prepare-proposal="downloadProposal(selected)" />
       <template v-else-if="selected">
         <button class="back-button" @click="navigate()"><RiArrowLeftLine />Tous les composants</button><div class="eyebrow">{{ category(selected) }}</div><div class="detail-heading"><div><h1 class="detail-title">{{ selected.name }}</h1><p class="intro">{{ selected.path }}</p></div></div>
         <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>

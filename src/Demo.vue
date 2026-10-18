@@ -15,6 +15,7 @@ import SegmentedControl from '../vendor/datagouv-components/src/components/Segme
 import AnimatedLoader from '../vendor/datagouv-components/src/components/AnimatedLoader.vue';
 import BouncingDots from '../vendor/datagouv-components/src/components/BouncingDots.vue';
 import './demo.css';
+import { segmentedChoices } from './segmentedExamples';
 const props = defineProps({ name: String, compact: Boolean, contextual: Boolean, sampleProps: Object });
 const overrides = reactive({});
 const updateModel = value => { overrides.modelValue = value; };
@@ -61,7 +62,7 @@ const clicks = ref(0);
     <template v-else-if="name === 'SimpleBanner'"><SimpleBanner type="primary">Une nouvelle version de ces données est disponible.</SimpleBanner><template v-if="!compact"><SimpleBanner type="success">Vos modifications ont été enregistrées.</SimpleBanner><SimpleBanner type="warning">Vérifiez les informations avant publication.</SimpleBanner><SimpleBanner type="danger">La publication a échoué.</SimpleBanner></template></template>
     <BannerAction v-else-if="name === 'BannerAction'" :type="sampleProps?.type || 'primary'" title="Complétez la description des données">Une description précise facilite la réutilisation.<template #button><BrandedButton>Compléter</BrandedButton></template></BannerAction>
     <template v-else-if="name === 'ProgressBar'"><ProgressBar :value="0.65" bar-class="bg-new-primary" aria-label="Complétude : 65 %" /><template v-if="!compact"><ProgressBar :value="0.3" bar-class="bg-new-warning" aria-label="Complétude : 30 %" /><ProgressBar :value="1" bar-class="bg-new-success" aria-label="Complétude : 100 %" /></template></template>
-    <SegmentedControl v-else-if="name === 'SegmentedControl'" v-bind="sampleProps" v-model="active" :options="[{ value: 'all', label: 'Tout' }, { value: 'datasets', label: 'Données' }, { value: 'services', label: 'API' }]" />
+    <SegmentedControl v-else-if="name === 'SegmentedControl'" v-bind="sampleProps" v-model="active" :options="segmentedChoices" />
     <AnimatedLoader v-else-if="name === 'AnimatedLoader'" style="width: 32px; height: 32px" />
     <BouncingDots v-else-if="name === 'BouncingDots'" />
     <template v-else>
