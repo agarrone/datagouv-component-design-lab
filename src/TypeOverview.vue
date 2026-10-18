@@ -4,7 +4,7 @@ import Demo from './Demo.vue';
 import DemoBoundary from './DemoBoundary.vue';
 const props = defineProps({ page: { type: Object, required: true } });
 defineEmits(['open-component']);
-const layout = ref('grid');
+const layout = ref(props.page.layout || 'grid');
 const count = computed(() => new Set(props.page.sections.flatMap(section => section.items.map(item => item.id))).size);
 </script>
 
