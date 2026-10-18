@@ -13,8 +13,13 @@ import { typePages } from './typePages';
 import SegmentedControlPage from './SegmentedControlPage.vue';
 import ComponentPage from './ComponentPage.vue';
 import { previews } from './demoRegistry';
+import { issues } from './referenceData';
+import { auditStatuses } from './auditStatus';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
+const sectionId=ref('');
+const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
+const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const globalQuery = ref('');
@@ -104,15 +109,17 @@ function route() {
   if(hash==='main') return;
   returnFamilyId.value='';
   const [page,section] = hash.split('/');
+  sectionId.value=section || '';
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi'].includes(page)) {
     selected.value=null; view.value=page;
-    nextTick(()=>{if(section) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
+    nextTick(()=>{if(section && page!=='suivi') document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
     return;
   }
   const c = inventory.find(c => c.id === hash);
   if(c) { const from=new URLSearchParams(params).get('from'); returnFamilyId.value=typePages[from]?.sections.some(s=>s.items.some(i=>i.id===c.id)) ? from : ''; select(c, false); } else {selected.value = null; view.value='catalogue';}
 }
+function filterStatus(id) { location.hash=id==='all' ? 'suivi' : `suivi/${id}`; }
 function openIssue(id) { location.hash='incoherences/'+id; }
 function openComponent(id) {const component=inventory.find(c=>c.id===id);if(component) select(component);}
 onMounted(() => { route(); window.addEventListener('hashchange', route); });
@@ -126,12 +133,19 @@ function downloadProposal(c) {
 
 <template>
   <a class="skip-link" href="#main">Aller au contenu</a>
-  <aside class="sidebar">
+  <header class="site-header">
     <a href="#" class="brand" @click.prevent="navigate()"><span class="brand-symbol">d.</span><span>data.gouv.fr<small>COMPONENT DESIGN LAB</small></span></a>
+    <nav class="header-nav" aria-label="Navigation principale"><a href="#fondamentaux" :aria-current="view==='fondamentaux'?'page':undefined">Fondamentaux</a><a href="#" :aria-current="componentSection?'page':undefined">Composants</a><a href="#suivi" :aria-current="view==='suivi'?'page':undefined">Suivi</a><a href="#incoherences" :aria-current="view==='incoherences'?'page':undefined">Incohérences</a></nav>
     <form class="global-search" role="search" @submit.prevent="searchAll"><label class="explorer-search"><RiSearchLine /><input v-model="globalQuery" type="search" aria-label="Rechercher un composant" placeholder="Rechercher un composant…" @keydown.esc="globalQuery=''" /></label><div v-if="globalQuery.trim()" class="global-search-results"><a v-for="c in globalResults" :key="c.id" :href="`#${encodeURIComponent(c.id)}`" @click.prevent="searchSelect(c)">{{ c.id }}</a><p v-if="!globalResults.length">Aucun composant trouvé.</p><button type="submit">Voir tous les résultats →</button></div></form>
+  </header>
+  <aside class="sidebar">
     <div class="sidebar-browse">
-      <nav class="primary-nav" aria-label="Navigation principale"><a href="#fondamentaux" :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined">Fondamentaux</a><a href="#" :class="{active:view==='catalogue' || !!typePage}" :aria-current="view==='catalogue' && !selected?'page':undefined">Composants <span>{{ inventory.length }}</span></a><a href="#suivi" :class="{active:view==='suivi'}" :aria-current="view==='suivi'?'page':undefined">Suivi</a><a href="#incoherences" :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined">Incohérences</a></nav>
-      <details class="file-explorer"><summary>Explorateur de fichiers</summary>
+      <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='suivi' ? 'Suivi' : 'Incohérences' }}</div>
+      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
+      <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
+      <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
+      <nav v-else class="context-nav" aria-label="Constats d’incohérences"><a href="#incoherences" :class="{active:!sectionId}">Tous les constats</a><a v-for="issue in issues" :key="issue.id" :href="`#incoherences/${issue.id}`" :class="{active:sectionId===issue.id}" :aria-current="sectionId===issue.id?'location':undefined">{{ issue.title }}</a></nav>
+      <details v-if="componentSection" class="file-explorer"><summary>Explorateur de fichiers</summary>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
       <button class="explorer-overview" :class="{ active: view==='catalogue' && !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
@@ -148,8 +162,8 @@ function downloadProposal(c) {
     <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
       <Fundamentals v-if="view==='fondamentaux'" />
-      <Inconsistencies v-else-if="view==='incoherences'" @open-component="openComponent" />
-      <AuditTracking v-else-if="view==='suivi'" @open-component="openComponent" />
+      <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />
+      <AuditTracking v-else-if="view==='suivi'" :status="sectionId" @filter-status="filterStatus" @open-component="openComponent" />
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>

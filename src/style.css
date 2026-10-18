@@ -287,4 +287,28 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 .all-components > summary { cursor:pointer; font-weight:600; color:#000091; margin-bottom:24px; }
 @media(max-width:760px) { .sidebar .primary-nav { flex-direction:row; flex-wrap:wrap; } .global-search { margin:12px 0; } }
 
+/* Header global, navigation latérale propre à chaque rubrique. */
+.site-header { position:sticky; top:0; z-index:30; height:80px; display:flex; align-items:center; gap:32px; padding:0 28px; background:#fff; border-bottom:1px solid #e6e8ed; }
+.site-header .brand { font-size:18px; min-width:218px; }
+.site-header .brand-symbol { width:36px; height:36px; font-size:25px; }
+.header-nav { display:flex; align-items:stretch; align-self:stretch; gap:26px; }
+.header-nav > a { display:flex; align-items:center; font-size:13px; color:#687286; border-bottom:2px solid transparent; }
+.header-nav > a[aria-current=page] { color:#000091; border-color:#000091; font-weight:700; }
+.site-header .global-search { margin:0 0 0 auto; width:240px; min-width:180px; }
+.sidebar { top:80px; padding-top:26px; }
+.context-nav-title { font-size:12px; color:#1d2433; font-weight:700; padding:0 12px 18px; }
+.sidebar .context-nav { display:flex; flex-direction:column; gap:3px; margin:0; }
+.sidebar .context-nav a { font-size:12px; }
+.topbar { height:60px; }
+.reference-section,.issue-card { scroll-margin-top:100px; }
+.site-header a[target="_blank"]::after { content:none; }
+@media(max-width:1150px) { .site-header { gap:20px; padding:0 16px; } .site-header .brand { min-width:188px; font-size:16px; } .header-nav { gap:16px; } .site-header .global-search { width:200px; } }
+@media(max-width:900px) { .site-header { height:128px; min-height:128px; flex-wrap:wrap; gap:12px 24px; padding:14px 18px; } .site-header .brand { min-width:0; } .header-nav { order:3; flex-basis:100%; gap:24px; overflow-x:auto; } .header-nav > a { padding:8px 0; } .sidebar { top:128px; } .site-header .global-search { width:220px; } }
+@media(max-width:760px) { .site-header { position:relative; height:auto; min-height:128px; } .site-header .brand small { font-size:7px; } .site-header .global-search { width:180px; min-width:140px; flex:1; } .sidebar { position:static; padding:18px; } .sidebar-browse { max-height:28vh; margin:0; } .sidebar .context-nav { flex-direction:column; } .context-nav-title { padding-bottom:10px; } .topbar { height:auto; min-height:52px; padding:14px 20px; } .reference-section,.issue-card { scroll-margin-top:24px; } }
+
+.document-section { scroll-margin-top:100px; }
+.document-toc { top:100px; }
+@media(min-width:761px) and (max-width:900px) { .reference-section,.issue-card,.document-section { scroll-margin-top:148px; } }
+@media(max-width:760px) { .document-section { scroll-margin-top:24px; } }
+
 }

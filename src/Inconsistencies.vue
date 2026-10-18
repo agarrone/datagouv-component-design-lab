@@ -1,12 +1,14 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { issues } from './referenceData';
 import lock from '../upstream.lock.json';
 import Demo from './Demo.vue';
 import DemoBoundary from './DemoBoundary.vue';
 defineEmits(['open-component']);
+const props=defineProps({issueId:String});
 const filter=ref('all');
 const category=ref('all');
+watch(()=>props.issueId, id=>{if(id) {filter.value='all';category.value='all';}});
 const categories=[...new Set(issues.map(issue=>issue.category))];
 const comparisonItem=item=>typeof item==='string'?{id:item,label:item.split('/').pop()}:item;
 const shown=computed(()=>issues.filter(issue=>(filter.value==='all'||issue.status===filter.value)&&(category.value==='all'||issue.category===category.value)));
