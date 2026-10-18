@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { RiArrowRightUpLine, RiSearchLine, RiGridLine, RiExternalLinkLine, RiPaletteLine } from '@remixicon/vue';
+import { RiArrowRightUpLine, RiSearchLine, RiGridLine, RiExternalLinkLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
@@ -17,6 +17,14 @@ const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.
 const view = ref('catalogue');
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
+const globalQuery = ref('');
+const libraryOpen = ref(false);
+const returnFamilyId = ref('');
+const returnFamily = computed(() => typePages[returnFamilyId.value] ? {id:returnFamilyId.value,...typePages[returnFamilyId.value]} : null);
+const globalResults = computed(() => globalQuery.value.trim() ? inventory.filter(c => c.id.toLowerCase().includes(globalQuery.value.trim().toLowerCase())).slice(0,8) : []);
+function searchAll() { query.value=globalQuery.value.trim(); filter.value='all'; libraryOpen.value=true; globalQuery.value=''; navigate(); nextTick(()=>document.getElementById('library-heading')?.scrollIntoView({block:'start'})); }
+function searchSelect(c) { globalQuery.value=''; returnFamilyId.value=''; view.value='catalogue'; select(c); }
+
 const filter = ref('all');
 const selected = ref(null);
 const code = ref('');
@@ -78,15 +86,23 @@ const ordered = [...inventory].sort((a,b) => Number(previews.has(b.id)) - Number
 const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCase().includes(query.value.toLowerCase()) && (filter.value === 'all' || filter.value === 'preview' && previews.has(c.id) || category(c) === filter.value)));
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 async function select(c, update = true) {
-  selected.value = c; view.value = 'catalogue'; revealComponent(c); code.value = ''; error.value = '';
-  if (update) location.hash = encodeURIComponent(c.id);
+  const previousView=view.value; selected.value = c; revealComponent(c); code.value = ''; error.value = '';
+  if (update) {
+    const familyId=previousView.startsWith('types/') ? previousView.split('/')[1] : returnFamilyId.value;
+    const family=typePages[familyId];
+    returnFamilyId.value=family?.sections.some(s=>s.items.some(i=>i.id===c.id)) ? familyId : '';
+    location.hash = encodeURIComponent(c.id) + (returnFamilyId.value ? `?from=${returnFamilyId.value}` : '');
+  }
+  view.value='catalogue';
   if (c) try { const content = await raw[`../${c.path}`](); if (selected.value?.id === c.id) code.value = content; } catch { if (selected.value?.id === c.id) error.value = 'Le code source n’a pas pu être chargé.'; }
   window.scrollTo(0,0);
 }
-function navigate(page = 'catalogue') { selected.value = null; view.value = page; location.hash = page==='catalogue'?'':page; window.scrollTo(0,0); }
+function navigate(page = 'catalogue') { selected.value = null; returnFamilyId.value=''; view.value = page; location.hash = page==='catalogue'?'':page; window.scrollTo(0,0); }
 function route() {
-  const hash = decodeURIComponent(location.hash.slice(1));
+  const [encodedHash,params] = location.hash.slice(1).split('?');
+  const hash = decodeURIComponent(encodedHash);
   if(hash==='main') return;
+  returnFamilyId.value='';
   const [page,section] = hash.split('/');
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi'].includes(page)) {
@@ -95,7 +111,7 @@ function route() {
     return;
   }
   const c = inventory.find(c => c.id === hash);
-  if(c) select(c, false); else {selected.value = null; view.value='catalogue';}
+  if(c) { const from=new URLSearchParams(params).get('from'); returnFamilyId.value=typePages[from]?.sections.some(s=>s.items.some(i=>i.id===c.id)) ? from : ''; select(c, false); } else {selected.value = null; view.value='catalogue';}
 }
 function openIssue(id) { location.hash='incoherences/'+id; }
 function openComponent(id) {const component=inventory.find(c=>c.id===id);if(component) select(component);}
@@ -112,12 +128,9 @@ function downloadProposal(c) {
   <a class="skip-link" href="#main">Aller au contenu</a>
   <aside class="sidebar">
     <a href="#" class="brand" @click.prevent="navigate()"><span class="brand-symbol">d.</span><span>data.gouv.fr<small>COMPONENT DESIGN LAB</small></span></a>
-    <nav class="reference-nav" aria-label="Fondamentaux"><button :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined" @click="navigate('fondamentaux')"><RiPaletteLine />Fondamentaux</button></nav>
+    <form class="global-search" role="search" @submit.prevent="searchAll"><label class="explorer-search"><RiSearchLine /><input v-model="globalQuery" type="search" aria-label="Rechercher un composant" placeholder="Rechercher un composant…" @keydown.esc="globalQuery=''" /></label><div v-if="globalQuery.trim()" class="global-search-results"><a v-for="c in globalResults" :key="c.id" :href="`#${encodeURIComponent(c.id)}`" @click.prevent="searchSelect(c)">{{ c.id }}</a><p v-if="!globalResults.length">Aucun composant trouvé.</p><button type="submit">Voir tous les résultats →</button></div></form>
     <div class="sidebar-browse">
-      <div class="type-nav-label">COMPOSANTS</div>
-      <nav class="type-nav" aria-label="Composants par type"><a href="#" :class="{active:view==='catalogue' && !selected}" :aria-current="view==='catalogue' && !selected?'page':undefined" @click.prevent="navigate()">Tous les composants <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}`}" :aria-current="view===`types/${id}`?'page':undefined" @click.prevent="navigate(`types/${id}`)">{{ page.label }}</a></nav>
-      <div class="type-nav-label">AUDIT</div>
-      <nav class="audit-nav" aria-label="Audit"><a href="#suivi" :class="{active:view==='suivi'}" :aria-current="view==='suivi'?'page':undefined" @click.prevent="navigate('suivi')">Suivi des composants</a><a href="#incoherences" :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined" @click.prevent="navigate('incoherences')">Incohérences</a></nav>
+      <nav class="primary-nav" aria-label="Navigation principale"><a href="#fondamentaux" :class="{active:view==='fondamentaux'}" :aria-current="view==='fondamentaux'?'page':undefined">Fondamentaux</a><a href="#" :class="{active:view==='catalogue' || !!typePage}" :aria-current="view==='catalogue' && !selected?'page':undefined">Composants <span>{{ inventory.length }}</span></a><a href="#suivi" :class="{active:view==='suivi'}" :aria-current="view==='suivi'?'page':undefined">Suivi</a><a href="#incoherences" :class="{active:view==='incoherences'}" :aria-current="view==='incoherences'?'page':undefined">Incohérences</a></nav>
       <details class="file-explorer"><summary>Explorateur de fichiers</summary>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
@@ -132,7 +145,7 @@ function downloadProposal(c) {
     <div class="sidebar-source"><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">GitHub <RiArrowRightUpLine /></a><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">Source · {{ lock.commit.slice(0,7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><span>Design system <span class="slash">/</span> {{ selected ? selected.name : typePage ? typePage.label : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi des composants' : 'Bibliothèque de composants' }}</span></header>
+    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
       <Fundamentals v-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" @open-component="openComponent" />
@@ -140,14 +153,14 @@ function downloadProposal(c) {
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>
-        <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
+        <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><p>{{ page.description }}</p><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
-        <section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
+        <details class="all-components" :open="libraryOpen" @toggle="libraryOpen=$event.target.open"><summary>Tous les composants · {{ inventory.length }}</summary><section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
           <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
           <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
           <div v-else class="empty"><RiSearchLine /><h2>Aucun composant trouvé</h2><p>Essaie un autre nom ou une autre famille.</p><button class="button" @click="query='';filter='all'">Réinitialiser les filtres</button></div>
-        </section>
+        </section></details>
       </template>
       <SegmentedControlPage v-else-if="selected?.id==='SegmentedControl'" :component="selected" :code="code" :error="error" :proposals="componentProposals" @open-issue="openIssue" @prepare-proposal="downloadProposal(selected)" />
       <ComponentPage v-else-if="selected" :key="selected.id" :component="selected" :code="code" :error="error" :proposals="componentProposals" @open-issue="openIssue" @prepare-proposal="downloadProposal(selected)" />

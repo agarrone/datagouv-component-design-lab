@@ -20,7 +20,6 @@ const contextCode = `<script setup>\nimport { ref } from 'vue'\nimport { Segment
 </script>
 <template>
   <article class="component-document">
-    <a class="back-button" href="#types/navigation">← Navigation</a>
     <header class="component-document-heading"><div class="document-title-line"><h1>SegmentedControl</h1><span class="audit-status" :data-status="audit.SegmentedControl">{{ status }}</span></div><p class="intro">Choisir une valeur parmi plusieurs options exclusives, dans une barre de contrôles.</p><div class="detail-meta"><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
     <div class="document-layout"><div class="document-content">
       <section id="segmented-overview" class="document-section"><h2>Aperçu</h2><p>Présentation standard, sur une piste grise. Les choix de cet exemple sont fictifs.</p><ComponentExample name="SegmentedControl" label="Aperçu principal" :sample-props="options" :code="usageCode" /></section>

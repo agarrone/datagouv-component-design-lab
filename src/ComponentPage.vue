@@ -54,7 +54,6 @@ const proposalStatuses = {brouillon:'Brouillon',soumise:'Soumise','en-discussion
 </script>
 <template>
   <article class="component-document">
-    <a class="back-button" :href="families.length ? `#types/${families[0][0]}` : '#'">← {{ families.length ? families[0][1].label : 'Tous les composants' }}</a>
     <header class="component-document-heading"><div class="document-title-line"><h1>{{ component.name }}</h1><span class="audit-status" :data-status="audit[component.id]">{{ status }}</span></div><p v-if="componentContext[component.id]" class="intro">{{ componentContext[component.id] }}</p><div class="detail-meta"><span>{{ component.id }}</span><a v-for="[id,family] in families" :key="id" :href="`#types/${id}`">{{ family.label }}</a><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
     <div class="document-layout"><div class="document-content">
       <section v-if="previews.has(component.id)" id="component-overview" class="document-section"><h2>{{ context ? 'Élément isolé' : 'Aperçu' }}</h2><ComponentExample code-label="Code de l’exemple" :name="component.id" label="Aperçu principal" :sample-props="baseline" :code="exampleCode(component.id, baseline)" /></section>

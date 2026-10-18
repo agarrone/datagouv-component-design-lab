@@ -270,4 +270,21 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 .sidebar-source svg { width:12px; height:12px; }
 @media(max-width:760px) { .sidebar-source { display:none; } }
 
+/* Navigation principale et pages d’entrée. */
+.sidebar .primary-nav { display:flex; flex-direction:column; gap:6px; margin-top:14px; }
+.global-search { position:relative; margin:22px 0 12px; flex-shrink:0; }
+.global-search .explorer-search { margin:0; }
+.global-search-results { position:absolute; z-index:20; top:100%; left:0; right:0; background:white; border:1px solid #e0e4ec; border-radius:4px; box-shadow:0 8px 24px #151d2d18; max-height:50vh; overflow:auto; }
+.global-search-results a,.global-search-results button,.global-search-results p { display:block; width:100%; padding:12px; margin:0; font-size:12px; text-align:left; overflow-wrap:anywhere; }
+.global-search-results a:hover,.global-search-results button:hover { background:#eeeeff; }
+.global-search-results button { color:#000091; background:#f6f7fa; }
+.breadcrumbs { display:flex; align-items:center; flex-wrap:wrap; gap:12px; font-size:12px; }
+.breadcrumbs a { color:#000091; }
+.breadcrumbs > span[aria-hidden] { color:#a7adbb; }
+.family-overview p { color:#687286; font-size:12px; line-height:1.7; margin:0; }
+.family-overview a > span { margin-top:auto; }
+.all-components { margin-top:32px; border-top:1px solid #e0e4ec; padding-top:22px; }
+.all-components > summary { cursor:pointer; font-weight:600; color:#000091; margin-bottom:24px; }
+@media(max-width:760px) { .sidebar .primary-nav { flex-direction:row; flex-wrap:wrap; } .global-search { margin:12px 0; } }
+
 }
