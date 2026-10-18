@@ -3,5 +3,6 @@ export const auditStatuses = [
   { id: 'en-cours', label: 'En cours' },
   { id: 'a-corriger', label: 'À corriger' },
   { id: 'valide', label: 'Validé' },
+  { id: 'non-utilise-question', label: 'Non utilisé ?' },
 ];
 export const defaultAuditStatus = 'a-auditer';
