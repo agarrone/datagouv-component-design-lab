@@ -1,19 +1,13 @@
 <script setup>
 import { ref, provide, computed, reactive, h, defineComponent } from 'vue';
-import { components as C, originalPreviews, compactPreviews, samples, descriptions } from './demoRegistry';
+import { originalPreviews, compactPreviews, samples, descriptions } from './demoRegistry';
 import { mockUseFetch, mockFetch } from './demoApi';
 import ContextDemo from './ContextDemo.vue';
+import {usePreviewComponents} from './proposalComponents';
+const C=usePreviewComponents();
 import { useRouter } from 'vue-router';
 import * as fixtures from './fixtures';
 import { configKey } from '../vendor/datagouv-components/src/config';
-import BrandedButton from '../vendor/datagouv-components/src/components/BrandedButton.vue';
-import Tag from '../vendor/datagouv-components/src/components/Tag.vue';
-import SimpleBanner from '../vendor/datagouv-components/src/components/SimpleBanner.vue';
-import BannerAction from '../vendor/datagouv-components/src/components/BannerAction.vue';
-import ProgressBar from '../vendor/datagouv-components/src/components/ProgressBar.vue';
-import SegmentedControl from '../vendor/datagouv-components/src/components/SegmentedControl.vue';
-import AnimatedLoader from '../vendor/datagouv-components/src/components/AnimatedLoader.vue';
-import BouncingDots from '../vendor/datagouv-components/src/components/BouncingDots.vue';
 import './demo.css';
 import { segmentedChoices } from './segmentedExamples';
 const props = defineProps({ name: String, compact: Boolean, contextual: Boolean, sampleProps: Object });
@@ -51,20 +45,20 @@ const clicks = ref(0);
 <template>
   <div class="demo-content" :class="{ 'demo-compact': compact }">
     <div v-if="compact && !compactPreviews.has(name) && !name.startsWith('Icons/')" class="demo-summary"><span>{{ name.startsWith('Tabs/') ? 'Présentation  ·  Données  ·  Documentation' : name.split('/').pop() }}</span><small>Exemple interactif</small></div>
-    <div v-else-if="name === 'BrandedButton' && sampleProps" class="demo-row"><BrandedButton v-bind="sampleProps" @click="clicks++">{{ sampleProps.loading ? 'Chargement' : sampleProps.disabled ? 'Indisponible' : clicks ? `Cliqué ${clicks} fois` : 'Publier les données' }}</BrandedButton></div>
+    <div v-else-if="name === 'BrandedButton' && sampleProps" class="demo-row"><component :is="C.BrandedButton" v-bind="sampleProps" @click="clicks++">{{ sampleProps.loading ? 'Chargement' : sampleProps.disabled ? 'Indisponible' : clicks ? `Cliqué ${clicks} fois` : 'Publier les données' }}</component></div>
     <template v-else-if="name === 'BrandedButton'">
-      <div class="demo-row"><BrandedButton @click="clicks++">{{ clicks ? `Cliqué ${clicks} fois` : 'Publier les données' }}</BrandedButton><BrandedButton color="secondary">Annuler</BrandedButton></div>
-      <div v-if="!compact" class="demo-row"><BrandedButton color="tertiary">En savoir plus</BrandedButton><BrandedButton disabled>Indisponible</BrandedButton><BrandedButton loading>Chargement</BrandedButton></div>
-      <div v-if="!compact" class="demo-row"><BrandedButton size="xs">Petit</BrandedButton><BrandedButton size="sm">Standard</BrandedButton><BrandedButton size="lg">Grand</BrandedButton><BrandedButton color="danger">Supprimer</BrandedButton></div>
+      <div class="demo-row"><component :is="C.BrandedButton" @click="clicks++">{{ clicks ? `Cliqué ${clicks} fois` : 'Publier les données' }}</component><component :is="C.BrandedButton" color="secondary">Annuler</component></div>
+      <div v-if="!compact" class="demo-row"><component :is="C.BrandedButton" color="tertiary">En savoir plus</component><component :is="C.BrandedButton" disabled>Indisponible</component><component :is="C.BrandedButton" loading>Chargement</component></div>
+      <div v-if="!compact" class="demo-row"><component :is="C.BrandedButton" size="xs">Petit</component><component :is="C.BrandedButton" size="sm">Standard</component><component :is="C.BrandedButton" size="lg">Grand</component><component :is="C.BrandedButton" color="danger">Supprimer</component></div>
     </template>
-    <template v-else-if="name === 'Tag'"><div class="demo-row"><Tag type="secondary">Mobilité</Tag><Tag type="secondary">Données ouvertes</Tag><Tag type="secondary">Environnement</Tag></div></template>
-    <SimpleBanner v-else-if="name === 'SimpleBanner' && sampleProps?.type" :type="sampleProps.type">Une nouvelle version de ces données est disponible.</SimpleBanner>
-    <template v-else-if="name === 'SimpleBanner'"><SimpleBanner type="primary">Une nouvelle version de ces données est disponible.</SimpleBanner><template v-if="!compact"><SimpleBanner type="success">Vos modifications ont été enregistrées.</SimpleBanner><SimpleBanner type="warning">Vérifiez les informations avant publication.</SimpleBanner><SimpleBanner type="danger">La publication a échoué.</SimpleBanner></template></template>
-    <BannerAction v-else-if="name === 'BannerAction'" :type="sampleProps?.type || 'primary'" title="Complétez la description des données">Une description précise facilite la réutilisation.<template #button><BrandedButton>Compléter</BrandedButton></template></BannerAction>
-    <template v-else-if="name === 'ProgressBar'"><ProgressBar :value="0.65" bar-class="bg-new-primary" aria-label="Complétude : 65 %" /><template v-if="!compact"><ProgressBar :value="0.3" bar-class="bg-new-warning" aria-label="Complétude : 30 %" /><ProgressBar :value="1" bar-class="bg-new-success" aria-label="Complétude : 100 %" /></template></template>
-    <SegmentedControl v-else-if="name === 'SegmentedControl'" v-bind="sampleProps" v-model="active" :options="segmentedChoices" />
-    <AnimatedLoader v-else-if="name === 'AnimatedLoader'" style="width: 32px; height: 32px" />
-    <BouncingDots v-else-if="name === 'BouncingDots'" />
+    <template v-else-if="name === 'Tag'"><div class="demo-row"><component :is="C.Tag" type="secondary">Mobilité</component><component :is="C.Tag" type="secondary">Données ouvertes</component><component :is="C.Tag" type="secondary">Environnement</component></div></template>
+    <component :is="C.SimpleBanner" v-else-if="name === 'SimpleBanner' && sampleProps?.type" :type="sampleProps.type">Une nouvelle version de ces données est disponible.</component>
+    <template v-else-if="name === 'SimpleBanner'"><component :is="C.SimpleBanner" type="primary">Une nouvelle version de ces données est disponible.</component><template v-if="!compact"><component :is="C.SimpleBanner" type="success">Vos modifications ont été enregistrées.</component><component :is="C.SimpleBanner" type="warning">Vérifiez les informations avant publication.</component><component :is="C.SimpleBanner" type="danger">La publication a échoué.</component></template></template>
+    <component :is="C.BannerAction" v-else-if="name === 'BannerAction'" :type="sampleProps?.type || 'primary'" title="Complétez la description des données">Une description précise facilite la réutilisation.<template #button><component :is="C.BrandedButton">Compléter</component></template></component>
+    <template v-else-if="name === 'ProgressBar'"><component :is="C.ProgressBar" :value="0.65" bar-class="bg-new-primary" aria-label="Complétude : 65 %" /><template v-if="!compact"><component :is="C.ProgressBar" :value="0.3" bar-class="bg-new-warning" aria-label="Complétude : 30 %" /><component :is="C.ProgressBar" :value="1" bar-class="bg-new-success" aria-label="Complétude : 100 %" /></template></template>
+    <component :is="C.SegmentedControl" v-else-if="name === 'SegmentedControl'" v-bind="sampleProps" v-model="active" :options="segmentedChoices" />
+    <component :is="C.AnimatedLoader" v-else-if="name === 'AnimatedLoader'" style="width: 32px; height: 32px" />
+    <component :is="C.BouncingDots" v-else-if="name === 'BouncingDots'" />
     <template v-else>
       <p v-if="description" class="demo-description">{{ description }}</p>
       <Suspense><template #default>

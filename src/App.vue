@@ -12,15 +12,13 @@ import AuditTracking from './AuditTracking.vue';
 import { typePages } from './typePages';
 import SegmentedControlPage from './SegmentedControlPage.vue';
 import ComponentPage from './ComponentPage.vue';
-import ComponentCompare from './ComponentCompare.vue';
 import { previews } from './demoRegistry';
 import { issues } from './referenceData';
 import { auditStatuses } from './auditStatus';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
 const sectionId=ref('');
-const compareSelection=ref('');
-const componentSection=computed(()=>view.value==='catalogue' || view.value==='comparateur' || view.value.startsWith('types/'));
+const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
 const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
@@ -112,7 +110,7 @@ function route() {
   returnFamilyId.value='';
   const [page,section] = hash.split('/');
   sectionId.value=section || '';
-  if(page==='comparateur') {selected.value=null; view.value='comparateur'; compareSelection.value=new URLSearchParams(params).get('items') || ''; window.scrollTo(0,0); return;}
+  if(page==='comparateur') {navigate(); return;}
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi'].includes(page)) {
     selected.value=null; view.value=page;
@@ -144,7 +142,7 @@ function downloadProposal(c) {
   <aside class="sidebar">
     <div class="sidebar-browse">
       <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='suivi' ? 'Suivi' : 'Incohérences' }}</div>
-      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#comparateur" :class="{active:view==='comparateur'}" :aria-current="view==='comparateur'?'page':undefined">Comparateur</a><a href="#" :class="{active:!selected && !typePage && view!=='comparateur'}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
+      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
       <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
       <nav v-else class="context-nav" aria-label="Constats d’incohérences"><a href="#incoherences" :class="{active:!sectionId}">Tous les constats</a><a v-for="issue in issues" :key="issue.id" :href="`#incoherences/${issue.id}`" :class="{active:sectionId===issue.id}" :aria-current="sectionId===issue.id?'location':undefined">{{ issue.title }}</a></nav>
@@ -162,12 +160,11 @@ function downloadProposal(c) {
     <div class="sidebar-source"><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">GitHub <RiArrowRightUpLine /></a><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">Source · {{ lock.commit.slice(0,7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi' : view==='comparateur' ? 'Comparateur' : 'Composants' }}</span></nav></header>
+    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
       <Fundamentals v-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />
       <AuditTracking v-else-if="view==='suivi'" :status="sectionId" @filter-status="filterStatus" @open-component="openComponent" />
-      <ComponentCompare v-else-if="view==='comparateur'" :selection="compareSelection" @open-component="openComponent" />
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>

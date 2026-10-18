@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, useId } from 'vue';
-import { components as C } from './demoRegistry';
+import {usePreviewComponents} from './proposalComponents';
+const C=usePreviewComponents();
 import { provideTabularContext } from '../vendor/datagouv-components/src/components/TabularExplorer/useTabularContext';
 import { RiText } from '@remixicon/vue';
 import * as f from './fixtures';

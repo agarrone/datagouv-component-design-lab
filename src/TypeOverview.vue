@@ -5,7 +5,6 @@ import DemoBoundary from './DemoBoundary.vue';
 const props = defineProps({ page: { type: Object, required: true } });
 defineEmits(['open-component']);
 const layout = ref(props.page.layout || 'grid');
-const comparisonHref=computed(()=>`#comparateur?${new URLSearchParams({items:JSON.stringify([...new Set(props.page.sections.flatMap(s=>s.items.map(i=>i.id)))].slice(0,3))})}`);
 const count = computed(() => new Set(props.page.sections.flatMap(section => section.items.map(item => item.id))).size);
 </script>
 
@@ -13,7 +12,7 @@ const count = computed(() => new Set(props.page.sections.flatMap(section => sect
   <div class="type-overview">
     <h1>{{ page.label }}</h1>
     <p class="intro">{{ page.description }}</p>
-    <div class="type-overview-toolbar"><a :href="comparisonHref">Comparer cette catégorie →</a><span>{{ count }} composants</span><div role="group" aria-label="Disposition des aperçus"><button :aria-pressed="layout==='grid'" @click="layout='grid'">Grille</button><button :aria-pressed="layout==='list'" @click="layout='list'">Liste</button></div></div>
+    <div class="type-overview-toolbar"><span>{{ count }} composants</span><div role="group" aria-label="Disposition des aperçus"><button :aria-pressed="layout==='grid'" @click="layout='grid'">Grille</button><button :aria-pressed="layout==='list'" @click="layout='list'">Liste</button></div></div>
     <section v-for="section in page.sections" :key="section.title" class="type-section">
       <h2>{{ section.title }}</h2>
       <div class="type-examples" :class="{ 'type-examples-list': layout==='list' }">
