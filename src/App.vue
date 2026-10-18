@@ -1,32 +1,25 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { RiArrowRightUpLine, RiSearchLine, RiArrowLeftLine, RiGridLine, RiExternalLinkLine, RiPaletteLine } from '@remixicon/vue';
+import { RiArrowRightUpLine, RiSearchLine, RiGridLine, RiExternalLinkLine, RiPaletteLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
-import Demo from './Demo.vue';
 import ExplorerNode from './ExplorerNode.vue';
 import Fundamentals from './Fundamentals.vue';
 import Inconsistencies from './Inconsistencies.vue';
 import TypeOverview from './TypeOverview.vue';
 import AuditTracking from './AuditTracking.vue';
 import { typePages } from './typePages';
-import DemoBoundary from './DemoBoundary.vue';
-import ComponentOptions from './ComponentOptions.vue';
 import SegmentedControlPage from './SegmentedControlPage.vue';
+import ComponentPage from './ComponentPage.vue';
 import { previews } from './demoRegistry';
-import { componentContext } from './componentContext';
-import { previewContexts } from './previewContexts';
 const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
 const view = ref('catalogue');
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const filter = ref('all');
 const selected = ref(null);
-const tab = ref('preview');
 const code = ref('');
-const previewOptions = ref({});
-const previewProps = computed(() => Object.keys(previewOptions.value).length ? previewOptions.value : undefined);
 const error = ref('');
 const explorerQuery = ref('');
 const explorerNav = ref(null);
@@ -84,9 +77,8 @@ const categories = [...new Set(inventory.map(category))].sort();
 const ordered = [...inventory].sort((a,b) => Number(previews.has(b.id)) - Number(previews.has(a.id)) || a.id.localeCompare(b.id));
 const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCase().includes(query.value.toLowerCase()) && (filter.value === 'all' || filter.value === 'preview' && previews.has(c.id) || category(c) === filter.value)));
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
-const statuses = { brouillon: 'Brouillon', soumise: 'Soumise', 'en-discussion': 'En discussion', integree: 'Intégrée', refusee: 'Refusée' };
 async function select(c, update = true) {
-  previewOptions.value = {}; selected.value = c; view.value = 'catalogue'; revealComponent(c); tab.value = previews.has(c.id) ? 'preview' : 'code'; code.value = ''; error.value = '';
+  selected.value = c; view.value = 'catalogue'; revealComponent(c); code.value = ''; error.value = '';
   if (update) location.hash = encodeURIComponent(c.id);
   if (c) try { const content = await raw[`../${c.path}`](); if (selected.value?.id === c.id) code.value = content; } catch { if (selected.value?.id === c.id) error.value = 'Le code source n’a pas pu être chargé.'; }
   window.scrollTo(0,0);
@@ -158,29 +150,7 @@ function downloadProposal(c) {
         </section>
       </template>
       <SegmentedControlPage v-else-if="selected?.id==='SegmentedControl'" :component="selected" :code="code" :error="error" :proposals="componentProposals" @open-issue="openIssue" @prepare-proposal="downloadProposal(selected)" />
-      <template v-else-if="selected">
-        <button class="back-button" @click="navigate()"><RiArrowLeftLine />Tous les composants</button><div class="eyebrow">{{ category(selected) }}</div><div class="detail-heading"><div><h1 class="detail-title">{{ selected.name }}</h1><p class="intro">{{ selected.path }}</p></div></div>
-        <div class="detail-meta"><a :href="selected.sourceUrl" target="_blank" rel="noopener noreferrer">Voir la source d’origine <RiExternalLinkLine /></a><span>Référence {{ lock.commit.slice(0,7) }}</span></div>
-        <div class="tabs" role="tablist" aria-label="Contenu du composant"><button v-if="previews.has(selected.id)" role="tab" :aria-selected="tab==='preview'" @click="tab='preview'">Aperçu et états</button><button role="tab" :aria-selected="tab==='code'" @click="tab='code'">Code source</button><button role="tab" :aria-selected="tab==='proposals'" @click="tab='proposals'">Propositions ({{ componentProposals.length }})</button></div>
-        <ComponentOptions v-if="tab==='preview'" :key="selected.id" :component="selected" v-model="previewOptions" />
-        <p v-if="tab==='preview' && componentContext[selected.id]" class="component-context">{{ componentContext[selected.id] }}</p>
-        <template v-if="tab==='preview'">
-          <section class="preview-panel"><h2 class="panel-label">{{ previewContexts[selected.id] ? 'Élément isolé' : 'Rendu du composant réel' }}</h2><div class="demo-stage"><DemoBoundary :key="selected.id" :name="selected.id"><Demo :name="selected.id" :sample-props="previewProps" /></DemoBoundary></div></section>
-          <section v-if="previewContexts[selected.id]" class="preview-panel contextual-preview"><h2 class="panel-label">Dans son contexte · {{ previewContexts[selected.id].label }}</h2><p v-if="previewContexts[selected.id].hint" class="preview-hint">{{ previewContexts[selected.id].hint }}</p><div class="demo-stage"><DemoBoundary :key="selected.id + '-context'" :name="selected.id"><Demo :name="previewContexts[selected.id].name" :sample-props="previewContexts[selected.id].name===selected.id ? {...previewContexts[selected.id].props,...previewOptions} : previewContexts[selected.id].props" contextual /></DemoBoundary></div></section>
-        </template>
-        <section v-else-if="tab==='code'" class="source-panel"><div class="panel-label">{{ selected.name }}.vue <span>Lecture seule · modifications dans Codex</span></div><pre v-if="code"><code>{{ code }}</code></pre><p v-else role="status">{{ error || 'Chargement du code…' }}</p></section>
-        <section v-else class="component-proposals" aria-label="Propositions pour ce composant">
-          <div class="section-title"><h2>Propositions pour {{ selected.name }}</h2><button class="button" title="Télécharger un modèle de proposition" @click="downloadProposal(selected)">Préparer une proposition <RiArrowRightUpLine /></button></div>
-          <p v-if="!componentProposals.length" class="proposal-empty-message">Aucune proposition pour ce composant.</p>
-          <article v-for="p in componentProposals" :key="p.id" class="proposal">
-            <span class="status">{{ statuses[p.status] || p.status }}</span><h3>{{ p.title }}</h3>
-            <p v-if="p.problem">{{ p.problem }}</p>
-            <template v-if="p.intention"><h4>Modification proposée</h4><p>{{ p.intention }}</p></template>
-            <a v-if="p.reviewUrl && /^https:\/\//.test(p.reviewUrl)" :href="p.reviewUrl" target="_blank" rel="noopener noreferrer">Consulter la revue ↗</a>
-          </article>
-        </section>
-        <div v-if="!previews.has(selected.id)" class="note">Ce composant est inventorié. Son exemple interactif doit encore être configuré avec les données et le contexte nécessaires.</div>
-      </template>
+      <ComponentPage v-else-if="selected" :key="selected.id" :component="selected" :code="code" :error="error" :proposals="componentProposals" @open-issue="openIssue" @prepare-proposal="downloadProposal(selected)" />
     </main>
   </div>
 </template>
