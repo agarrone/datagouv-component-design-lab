@@ -6,7 +6,7 @@ Pour proposer une modification, créer ici un fichier Vue reprenant l’identifi
 - `SimpleBanner.vue` pour `SimpleBanner` ;
 - `Form/SelectGroup.vue` pour `Form/SelectGroup`.
 
-Le rendu « Proposition » de la fiche utilise ce fichier. En son absence, il utilise le composant d’origine et affiche « Identique à la version actuelle ».
+Le rendu « Proposition » de la fiche utilise ce fichier. En son absence, seule la version actuelle est affichée dans la fiche.
 
 Les deux versions reçoivent les mêmes données et réglages. Leurs interactions restent indépendantes.
 
