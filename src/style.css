@@ -314,4 +314,23 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 .site-header .brand { font-size:15px; font-weight:600; letter-spacing:normal; min-width:0; white-space:nowrap; }
 @media(max-width:900px) { .site-header .brand { white-space:normal; font-size:14px; } }
 
+.compare-controls { display:flex; align-items:end; flex-wrap:wrap; gap:18px; margin:28px 0 16px; }
+.compare-controls > label { display:flex; flex-direction:column; gap:8px; font-size:12px; color:#596275; }
+.compare-controls select,.compare-column select { padding:10px; border:1px solid #dce1ea; border-radius:4px; background:white; font-size:12px; max-width:100%; }
+.compare-controls .compare-context { flex-direction:row; align-items:center; align-self:center; }
+.compare-controls button:disabled { opacity:.45; cursor:default; }
+.compare-note,.compare-options > p { font-size:12px; line-height:1.8; color:#687286; }
+.compare-scroll { overflow-x:auto; margin-top:24px; padding-bottom:18px; }
+.compare-columns { display:flex; gap:20px; align-items:start; width:max-content; }
+.compare-column { width:calc(var(--compare-width) + 2px); flex-shrink:0; border:1px solid #e0e4ec; border-radius:5px; background:white; overflow:hidden; }
+.compare-column > header { padding:18px; border-bottom:1px solid #e0e4ec; display:flex; flex-direction:column; gap:12px; }
+.compare-column > header > label { font-size:12px; font-weight:700; }
+.compare-column small { font-size:11px; color:#687286; }
+.compare-column-links { display:flex; justify-content:space-between; gap:12px; }
+.compare-column-links button { padding:0; background:transparent; color:#000091; font-size:12px; }
+.compare-preview { width:var(--compare-width); min-height:200px; overflow:auto; }
+.compare-options { padding:16px; border-top:1px solid #e0e4ec; }
+.compare-options .component-options { margin:0; }
+.type-overview-toolbar > a { font-size:12px; color:#000091; }
+
 }
