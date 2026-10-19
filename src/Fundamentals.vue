@@ -1,13 +1,14 @@
 <script setup>
 import { ref, computed } from 'vue';
+import AssetFoundations from './AssetFoundations.vue';
 import { colors, fonts, typography, spacing, breakpoints, themeSource, evidence } from './referenceData';
 const colorFilter=ref('all');
 const shownColors=computed(()=>colors.filter(c=>colorFilter.value==='all'||c.group===colorFilter.value));
-const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées']];
+const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique']];
 </script>
 <template>
  <div class="reference-page">
-  <h1>Fondamentaux</h1><p class="intro">Les valeurs déclarées dans le code de la bibliothèque. Ce relevé ne remplace pas une charte de design validée.</p>
+  <h1>Fondamentaux</h1><p class="intro">Les valeurs, styles et assets présents dans le code de datagouv-components et de cdata. Ce relevé ne remplace pas une charte de design validée.</p>
   <nav class="reference-sections" aria-label="Sections des fondamentaux"><a v-for="[id,label] in anchors" :key="id" :href="`#fondamentaux/${id}`">{{ label }}</a></nav>
   <section id="couleurs" class="reference-section"><div class="section-title"><h2>Couleurs</h2><select v-model="colorFilter" aria-label="Filtrer les couleurs"><option value="all">Tous les jetons</option><option value="new">Préfixe new-</option><option value="other">Autres jetons</option></select></div><p>Les deux ensembles coexistent dans le thème. Leur nom est conservé pour retrouver la valeur dans le code.</p>
    <div class="swatch-grid"><article v-for="color in shownColors" :key="color.name" class="swatch-card"><div class="color-swatch" :class="{'invalid-swatch':!color.valid}" :style="color.valid?{backgroundColor:color.value}:{}" aria-hidden="true"></div><div class="swatch-description"><code>{{ color.name }}</code><span>{{ color.value }}<strong v-if="!color.valid"> · Valeur invalide</strong></span></div></article></div>
@@ -22,5 +23,6 @@ const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacemen
   </section>
   <section id="responsive" class="reference-section"><h2>Responsive</h2><p>Points de rupture explicitement redéfinis dans le thème de la bibliothèque.</p><div class="breakpoint-grid"><article v-for="point in breakpoints" :key="point.name" class="reference-card"><code>{{ point.name }}</code><strong>{{ point.value }} px</strong></article></div><p>Le point de rupture <code>2xl</code> est désactivé dans ce thème.</p><a class="reference-source" :href="evidence('css','--breakpoint-sm:').url" target="_blank" rel="noopener noreferrer">Voir les points de rupture ↗</a></section>
   <section id="regles" class="reference-section"><h2>Règles partagées</h2><div class="reference-card"><h3>Champs de formulaire</h3><p>La classe partagée <code>input</code> définit un fond gris, des coins supérieurs arrondis, une taille de texte base et un padding de 8 × 16 px à 16 px racine. Certains contrôles reposent directement sur les classes DSFR.</p><a class="reference-source" :href="evidence('css','.input {').url" target="_blank" rel="noopener noreferrer">Voir le style partagé ↗</a></div><div class="reference-card"><h3>États des contrôles</h3><p>BrandedButton distingue les états normal, survol, focus clavier, désactivé et chargement. Le chargement désactive aussi l’action. Les jetons du thème prévoient des couleurs de clic ; leur déclaration ne garantit pas qu’ils sont utilisés par chaque contrôle.</p><a class="reference-source" :href="evidence('button','const isDisabled =').url" target="_blank" rel="noopener noreferrer">Voir les états du bouton ↗</a></div><div class="reference-card"><h3>Points à harmoniser</h3><p>Les palettes, le focus, les arrondis et les ombres ne forment pas encore une règle unique applicable à tous les composants. Les écarts documentés figurent dans la page Incohérences.</p></div></section>
+ <AssetFoundations />
  </div>
 </template>

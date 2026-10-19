@@ -20,7 +20,7 @@ const raw = import.meta.glob(['../vendor/datagouv-components/src/components/**/*
 const view = ref('catalogue');
 const sectionId=ref('');
 const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
-const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées']];
+const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const globalQuery = ref('');
