@@ -11,7 +11,8 @@
     "check:preview-styles": "node scripts/check-preview-styles.mjs",
     "audit:usage": "node scripts/audit-component-usage.mjs --write-status",
     "test:usage-audit": "node --test scripts/audit-component-usage.test.mjs",
-    "source:import-cdata": "node scripts/import-cdata-components.mjs"
+    "source:import-cdata": "node scripts/import-cdata-components.mjs",
+    "test:categories": "node --test scripts/component-categories.test.mjs"
   },
   "dependencies": {
     "@e965/xlsx": "^0.20.3",

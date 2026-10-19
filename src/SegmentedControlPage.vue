@@ -1,4 +1,5 @@
 <script setup>
+import OriginTag from './OriginTag.vue';
 import { computed, ref } from 'vue';
 import ComponentExample from './ComponentExample.vue';
 import ComponentOptions from './ComponentOptions.vue';
@@ -16,11 +17,12 @@ const findings = issues.filter(issue=>issue.components.includes('SegmentedContro
 const sections = [{id:'overview',label:'Aperçu'},{id:'variants',label:'Variantes'},{id:'states',label:'États et interactions'},{id:'context',label:'Dans son contexte'},{id:'options',label:'Options'},{id:'audit',label:'Incohérences'},{id:'proposals',label:'Propositions'},{id:'source',label:'Code source'}];
 function scroll(id) { document.getElementById(`segmented-${id}`)?.scrollIntoView({block:'start',behavior:'auto'}); }
 const usageCode = computed(()=>segmentedUsage(options.value));
-const contextCode = `<script setup>\nimport { ref } from 'vue'\nimport { SegmentedControl } from '@datagouv/components-next'\nimport { RiEditLine, RiEyeLine } from '@remixicon/vue'\n\nconst mode = ref('edit')\nconst choices = [\n  { value: 'edit', label: 'Modifier', icon: RiEditLine },\n  { value: 'preview', label: 'Prévisualiser', icon: RiEyeLine },\n]\n<`+`/script>\n\n<template>\n  <div class="flex justify-end">\n    <SegmentedControl v-model="mode" :options="choices" />\n  </div>\n</template>`;
+const contextCode = `<script setup>
+import OriginTag from './OriginTag.vue';\nimport { ref } from 'vue'\nimport { SegmentedControl } from '@datagouv/components-next'\nimport { RiEditLine, RiEyeLine } from '@remixicon/vue'\n\nconst mode = ref('edit')\nconst choices = [\n  { value: 'edit', label: 'Modifier', icon: RiEditLine },\n  { value: 'preview', label: 'Prévisualiser', icon: RiEyeLine },\n]\n<`+`/script>\n\n<template>\n  <div class="flex justify-end">\n    <SegmentedControl v-model="mode" :options="choices" />\n  </div>\n</template>`;
 </script>
 <template>
   <article class="component-document">
-    <header class="component-document-heading"><div class="document-title-line"><h1>SegmentedControl</h1><span class="audit-status" :data-status="audit.SegmentedControl">{{ status }}</span></div><p class="intro">Choisir une valeur parmi plusieurs options exclusives, dans une barre de contrôles.</p><div class="detail-meta"><span class="origin-label">Bibliothèque datagouv-components</span><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
+    <header class="component-document-heading"><div class="document-title-line"><h1>SegmentedControl</h1><OriginTag /><span class="audit-status" :data-status="audit.SegmentedControl">{{ status }}</span></div><p class="intro">Choisir une valeur parmi plusieurs options exclusives, dans une barre de contrôles.</p><div class="detail-meta"><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
     <div class="document-layout"><div class="document-content">
       <section id="segmented-overview" class="document-section"><h2>Aperçu</h2><p>Présentation standard, sur une piste grise. Les choix de cet exemple sont fictifs.</p><ComponentExample name="SegmentedControl" label="Aperçu principal" :sample-props="options" :code="usageCode" /></section>
       <section id="segmented-variants" class="document-section"><h2>Variantes</h2><p>Un seul composant, configuré avec les options existantes <code>underline</code> et <code>grow</code>.</p><section v-for="variant in segmentedVariants" :key="variant.id" class="document-variant"><h3>{{ variant.title }}</h3><p>{{ variant.description }}</p><ComponentExample name="SegmentedControl" :label="variant.title" :sample-props="variant.props" :code="segmentedUsage(variant.props)" /></section></section>

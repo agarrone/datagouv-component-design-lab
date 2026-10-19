@@ -1,4 +1,5 @@
 import inventory from '../data/components.json';
+import applicationCategories from './applicationCategories.json';
 const items = ids => ids.map(id => ({ id, key: id }));
 export const typePages = {
   cards: { label: 'Cartes de contenu', description: 'Les cartes complètes, réunies pour comparer leur structure et leur densité.', sections: [
@@ -82,6 +83,41 @@ Object.assign(typePages, {
   ] },
 });
 
+const additions = {
+ forms: {label:'Formulaires et publication',description:'Les formulaires, leurs structures et les étapes de publication.',layout:'list'},
+ modals: {label:'Modales',description:'Les fenêtres de dialogue, de confirmation et de modification.'},
+ editorial: {label:'Contenus et édition',description:'Les éditeurs de texte, les blocs éditoriaux et la composition de pages.',layout:'list'},
+ discussions: {label:'Discussions',description:'Les fils de discussion, commentaires et formulaires de réponse.',layout:'list'},
+ notifications: {label:'Notifications et abonnements',description:'Les notifications, les abonnements et les demandes à traiter.'},
+ administration: {label:'Administration',description:'Les pages de gestion des contenus, des organisations et des comptes.',layout:'list'},
+};
+for(const [id,page] of Object.entries(additions))typePages[id]={...page,sections:[]};
+const sectionLabels={cards:'Cartes et listes de contenus',inputs:'Champs et sélecteurs applicatifs',banners:'Bandeaux applicatifs',actions:'Actions applicatives',navigation:'Liens, menus et structure de page',badges:'Statuts et badges applicatifs',tables:'Tableaux de gestion et éditeurs',search:'Recherche et filtres applicatifs',identity:'Logos, producteurs et images de partage',metadata:'Descriptions et coordonnées',loading:'Chargement des fichiers et des moissons',details:'Accordéons et contenus dépliables',visualization:'Configuration et suivi des statistiques',resources:'Ressources et documentation applicatives'};
+for(const [category,ids] of Object.entries(applicationCategories)){
+ const page=typePages[category];
+ if(!page)throw new Error(`Catégorie inconnue : ${category}`);
+ if(additions[category]){
+  const groups=new Map();
+  const labels={Form:'Structure des formulaires',Datasets:'Jeux de données et ressources',Dataservices:'API',Harvesters:'Moissonnage',Organization:'Organisations',Reuses:'Réutilisations',MarkdownEditor:'Éditeur Markdown',Pages:'Blocs et pages éditoriales',Posts:'Articles',Onboarding:'Présentation et découverte',Discussions:'Discussions et commentaires',Notifications:'Notifications',User:'Compte utilisateur',Admin:'Administration',Modal:'Fenêtres de dialogue'};
+  for(const id of ids){const folder=id.slice(6).split('/')[0];const title=labels[folder] || 'Autres éléments';if(!groups.has(title))groups.set(title,[]);groups.get(title).push(id);}
+  page.sections.push(...[...groups].map(([title,ids])=>({title,items:items(ids)})));
+ }else page.sections.push({title:sectionLabels[category],items:items(ids)});
+}
+// Compléter également le classement des sous-composants de la bibliothèque.
+const librarySections={
+ notifications:['Activité',['ActivityList/ActivityList','ActivityList/UserActivityList']],
+ navigation:['Éléments de navigation',['AppLink','Tabs/Tab','Tabs/TabList','Tabs/TabPanel','Tabs/TabPanels']],
+ cards:['Structure des cartes',['ObjectCard','ObjectCardHeader','ObjectCardShortDescription']],
+ badges:['Indicateurs de carte et de ressource',['ObjectCardBadge','ResourceAccordion/ResourceIcon']],
+ editorial:['Lecture et mise en page',['MarkdownViewer','PaddedContainer']],
+ resources:['Structure de l’explorateur',['ResourceAccordion/PreviewWrapper','ResourceExplorer/ResourceExplorerHeader','ResourceExplorer/ResourceExplorerSidebar','ResourceExplorer/ResourceExplorerViewer']],
+};
+for(const [category,[title,ids]] of Object.entries(librarySections))typePages[category].sections.push({title,items:items(ids)});
+typePages.icons={label:'Icônes',description:'Les icônes fournies par la bibliothèque.',sections:[{title:'Icônes',items:items(inventory.filter(c=>c.id.startsWith('Icons/')).map(c=>c.id))}]};
+typePages.utilities={label:'Utilitaires de rendu',description:'Les composants techniques de rendu, de traduction et d’observation des valeurs.',sections:[{title:'Rendu et réactivité',items:items(['ClientOnly','TranslationT','ValueWatcher'])}]};
+export const visibleTypePages={...typePages};
+
+// Ancien lien conservé pour les favoris ; les composants sont désormais classés par fonction.
 const applicationComponents=inventory.filter(c=>c.origin==='cdata');
 const applicationGroups=[...new Set(applicationComponents.map(c=>c.id.split('/').length>2?c.id.split('/')[1]:'Essentiels'))].sort();
 typePages.application={label:'Composants de l’application',description:'Les composants propres à cdata, hors bibliothèque datagouv-components. Leur code est conservé à la même référence.',sections:applicationGroups.map(group=>({title:group,items:items(applicationComponents.filter(c=>(c.id.split('/').length>2?c.id.split('/')[1]:'Essentiels')===group).map(c=>c.id))}))};

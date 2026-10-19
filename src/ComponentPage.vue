@@ -6,7 +6,8 @@ import Demo from './Demo.vue';
 import demoSource from './Demo.vue?raw';
 import contextSource from './ContextDemo.vue?raw';
 import registrySource from './demoRegistry.js?raw';
-import { typePages } from './typePages';
+import { typePages, visibleTypePages } from './typePages';
+import OriginTag from './OriginTag.vue';
 import { previews } from './demoRegistry';
 import { componentContext } from './componentContext';
 import { previewContexts } from './previewContexts';
@@ -21,7 +22,7 @@ const baseline = computed(() => ({...({SimpleBanner:{type:'primary'},BrandedButt
 const context = computed(() => previewContexts[props.component.id]);
 const status = computed(() => auditStatuses.find(s => s.id === audit[props.component.id])?.label || 'À auditer');
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
-const families = computed(() => Object.entries(typePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
+const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
   const seen = new Set();
   return Object.values(typePages).flatMap(p => p.sections.flatMap(s => s.items)).filter(item => {
@@ -54,7 +55,7 @@ const proposalStatuses = {brouillon:'Brouillon',soumise:'Soumise','en-discussion
 </script>
 <template>
   <article class="component-document">
-    <header class="component-document-heading"><div class="document-title-line"><h1>{{ component.name }}</h1><span class="audit-status" :data-status="audit[component.id]">{{ status }}</span></div><p v-if="componentContext[component.id]" class="intro">{{ componentContext[component.id] }}</p><div class="detail-meta"><span class="origin-label">{{ component.origin==='cdata' ? 'Application cdata · hors bibliothèque' : 'Bibliothèque datagouv-components' }}</span><span>{{ component.id }}</span><a v-for="[id,family] in families" :key="id" :href="`#types/${id}`">{{ family.label }}</a><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
+    <header class="component-document-heading"><div class="document-title-line"><h1>{{ component.name }}</h1><OriginTag :origin="component.origin" /><span class="audit-status" :data-status="audit[component.id]">{{ status }}</span></div><p v-if="componentContext[component.id]" class="intro">{{ componentContext[component.id] }}</p><div class="detail-meta"><span>{{ component.id }}</span><a v-for="[id,family] in families" :key="id" :href="`#types/${id}`">{{ family.label }}</a><a :href="component.sourceUrl" target="_blank" rel="noopener noreferrer">Source d’origine ↗</a><span>Référence {{ lock.commit.slice(0,7) }}</span></div></header>
     <div class="document-layout"><div class="document-content">
       <p v-if="!previews.has(component.id)" class="component-preview-pending">Code source et options importés. L’aperçu nécessite encore un exemple adapté aux dépendances de l’application (Nuxt, données ou services).</p>
       <section v-if="previews.has(component.id)" id="component-overview" class="document-section"><p v-if="component.id.includes('cdata/MarkdownEditor/') && !['cdata/MarkdownEditor/MarkdownEditor','cdata/MarkdownEditor/EditorButton'].includes(component.id)">Ce sous-composant est présenté dans l’éditeur complet, qui fournit son contexte technique. Certaines aides apparaissent en sélectionnant du texte, un lien ou un tableau.</p><p v-if="component.id==='cdata/Captchetat.client'">Image de démonstration locale ; aucune vérification CaptchEtat ni restitution audio réelle.</p><h2>{{ context ? 'Élément isolé' : 'Aperçu' }}</h2><ComponentExample code-label="Code de l’exemple" :name="component.id" label="Aperçu principal" :sample-props="baseline" :code="exampleCode(component.id, baseline)" /></section>

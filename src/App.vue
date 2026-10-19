@@ -9,7 +9,8 @@ import Fundamentals from './Fundamentals.vue';
 import Inconsistencies from './Inconsistencies.vue';
 import TypeOverview from './TypeOverview.vue';
 import AuditTracking from './AuditTracking.vue';
-import { typePages } from './typePages';
+import { typePages, visibleTypePages } from './typePages';
+import OriginTag from './OriginTag.vue';
 import SegmentedControlPage from './SegmentedControlPage.vue';
 import ComponentPage from './ComponentPage.vue';
 import { previews } from './demoRegistry';
@@ -143,7 +144,7 @@ function downloadProposal(c) {
   <aside class="sidebar">
     <div class="sidebar-browse">
       <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='suivi' ? 'Suivi' : 'Incohérences' }}</div>
-      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
+      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
       <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
       <nav v-else class="context-nav" aria-label="Constats d’incohérences"><a href="#incoherences" :class="{active:!sectionId}">Tous les constats</a><a v-for="issue in issues" :key="issue.id" :href="`#incoherences/${issue.id}`" :class="{active:sectionId===issue.id}" :aria-current="sectionId===issue.id?'location':undefined">{{ issue.title }}</a></nav>
@@ -169,12 +170,12 @@ function downloadProposal(c) {
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
         <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>
-        <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><p>{{ page.description }}</p><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
+        <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><p>{{ page.description }}</p><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
         <details class="all-components" :open="libraryOpen" @toggle="libraryOpen=$event.target.open"><summary>Tous les composants · {{ inventory.length }}</summary><section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
           <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="originFilter" aria-label="Filtrer par origine"><option value="all">Toutes les origines</option><option value="datagouv-components">Bibliothèque datagouv-components</option><option value="cdata">Application cdata</option></select><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
-          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p><span class="origin-label">{{ c.origin==='cdata' ? 'Application cdata' : 'Bibliothèque datagouv-components' }}</span></div><span class="card-arrow">↗</span></div></article></div>
+          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><div class="catalogue-title"><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><OriginTag :origin="c.origin" /></div><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
           <div v-else class="empty"><RiSearchLine /><h2>Aucun composant trouvé</h2><p>Essaie un autre nom ou une autre famille.</p><button class="button" @click="query='';filter='all'">Réinitialiser les filtres</button></div>
         </section></details>
       </template>

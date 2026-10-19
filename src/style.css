@@ -331,4 +331,8 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 
 .lazy-preview { min-height:120px; width:100%; background:#f6f7fa; color:#000091; font-size:12px; }
 
+.origin-tag { display:inline-flex; align-items:center; flex-shrink:0; padding:3px 7px; border-radius:4px; background:#eeeeff; color:#000091; font-size:10px; font-weight:500; line-height:1.5; letter-spacing:normal; white-space:nowrap; }
+.origin-tag[data-origin="cdata"] { background:#edf5f1; color:#18705b; }
+.type-example-title,.catalogue-title { display:flex; align-items:center; flex-wrap:wrap; gap:8px; min-width:0; }
+
 }
