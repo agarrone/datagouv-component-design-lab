@@ -1,0 +1,46 @@
+<template>
+  <BrandedButton
+    :color
+    :href="link"
+    :icon="RiEdit2Line"
+    size="xs"
+  >
+    {{ $t('Modifier') }}
+  </BrandedButton>
+</template>
+
+<script setup lang="ts">
+import type { ComponentProps } from 'vue-component-type-helpers'
+import { BrandedButton, throwOnNever } from '@datagouv/components-next'
+import { RiEdit2Line } from '@remixicon/vue'
+
+type ButtonColor = ComponentProps<typeof BrandedButton>['color']
+
+const props = withDefaults(defineProps<{
+  type: 'organizations' | 'users' | 'posts' | 'reuses' | 'dataservices' | 'datasets' | 'topics'
+  id: string
+  color?: ButtonColor
+}>(), {
+  color: 'warning',
+})
+
+const { t } = useTranslation()
+
+const link = computed(() => {
+  const base = `/admin/${props.type}/${props.id}/`
+  switch (props.type) {
+    case 'organizations':
+      return `${base}profile`
+    case 'users':
+      return `${base}profile`
+    case 'posts':
+    case 'reuses':
+    case 'dataservices':
+    case 'datasets':
+    case 'topics':
+      return base
+    default:
+      return throwOnNever(props.type as never, t('Aucun autre type défini'))
+  }
+})
+</script>

@@ -1,0 +1,278 @@
+<template>
+  <div>
+    <div
+      v-if="selectedDiscussion"
+      ref="selectedDiscussionBannerRef"
+      class="space-y-4"
+    >
+      <SimpleBanner
+
+        type="primary"
+        class="flex justify-between items-center"
+      >
+        <p class="!mb-0">
+          {{ $t('Vous consultez une discussion spécifique sur {subject}.', { subject: translatedType }) }}
+        </p>
+        <BrandedButton
+          color="tertiary"
+          keep-margins-even-without-borders
+          :icon="RiCloseCircleLine"
+          :href="hrefWithoutDiscussionId"
+        >
+          {{ $t("Voir toutes les discussions") }}
+        </BrandedButton>
+      </SimpleBanner>
+      <DiscussionCard
+        :thread="selectedDiscussion"
+        :subject
+        :follow-state="threadFollows.stateOf({ class: 'Discussion', id: selectedDiscussion.id })"
+        @change="updateSelectedDiscussion"
+      />
+    </div>
+    <div v-else>
+      <SimpleBanner
+        type="primary"
+        class="flex items-center gap-1 mb-5"
+      >
+        <RiInformationLine class="size-4" />
+        <TranslationT
+          keypath="Votre question porte sur autre chose que {type} ? {link}"
+          tag="span"
+        >
+          <template #type>
+            {{ translatedType }}
+          </template>
+          <template #link>
+            <a
+              target="_blank"
+              :href="config.public.forumUrl"
+            >Visiter notre forum</a>
+          </template>
+        </TranslationT>
+      </SimpleBanner>
+      <div class="flex flex-wrap justify-between items-center mb-5 gap-2">
+        <h2
+          v-if="pageData"
+          class="text-sm font-bold uppercase m-0 text-gray-title"
+        >
+          {{ t('{n} discussions | {n} discussion | {n} discussions', pageData.total) }}
+          <template v-if="closed">
+            {{ t('dont {n} clotûrées | dont {n} clotûrée | dont {n} clotûrées', closed) }}
+          </template>
+        </h2>
+
+        <div class="flex flex-wrap items-center md:gap-x-6 gap-2">
+          <AdminInput
+            v-model="q"
+            type="search"
+            :icon="RiSearchLine"
+            :placeholder="$t('Recherche')"
+          />
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Only the new discussions: their answers come from taking part in a
+                 thread, or following it. -->
+            <FollowToggle
+              v-if="me"
+              :scope="{ class: type, id: subject.id }"
+              event="discussion.new"
+              :state="subjectFollows.stateOf({ class: type, id: subject.id })"
+              :follow-label="t('Suivre les discussions')"
+              :unfollow-label="t('Ne plus suivre les discussions')"
+              :followed-message="t('Vous serez prévenu des nouvelles discussions')"
+              :unfollowed-message="t('Vous ne serez plus prévenu des nouvelles discussions')"
+            />
+            <BrandedButton
+              color="secondary"
+              size="xs"
+              :icon="RiAddLine"
+              @click="showDiscussionForm"
+            >
+              {{ t("Démarrer une nouvelle discussion") }}
+            </BrandedButton>
+          </div>
+        </div>
+      </div>
+
+      <NewDiscussionForm
+        v-if="newDiscussion"
+        class="mb-5"
+        :subject="{ class: type, id: subject.id }"
+        @new="refresh(); newDiscussion = false"
+        @close="newDiscussion = false"
+      />
+
+      <LoadingBlock
+        v-slot="{ data: pageData }"
+        :status
+        :data="pageData"
+      >
+        <div
+          v-if="pageData && pageData.total > 0"
+          class="space-y-5"
+        >
+          <div class="space-y-2.5">
+            <DiscussionCard
+              v-for="thread in pageData.data"
+              :key="thread.id"
+              :thread
+              :subject
+              :follow-state="threadFollows.stateOf({ class: 'Discussion', id: thread.id })"
+              @change="refresh"
+            />
+          </div>
+
+          <Pagination
+            :page="page"
+            :page-size="pageSize"
+            :total-results="pageData.total"
+            @change="(changedPage: number) => page = changedPage"
+          />
+        </div>
+      </LoadingBlock>
+
+      <div
+        v-if="status != 'pending' && pageData && !pageData.total"
+        class="flex flex-col items-center fr-my-3v"
+      >
+        <img
+          src="/illustrations/discussion.svg"
+          class="h-20"
+          alt=""
+        >
+
+        <template v-if="q">
+          <p class="fr-text--bold fr-my-3v">
+            {{ t(`Pas de résultats pour « {q} »`, { q }) }}
+          </p>
+          <BrandedButton
+            color="primary"
+            @click="resetFilters"
+          >
+            {{ $t('Réinitialiser la recherche') }}
+          </BrandedButton>
+        </template>
+        <template v-else>
+          <p class="fr-text--bold fr-my-3v">
+            {{ t(`Il n'y a pas encore de discussion`) }}
+          </p>
+        </template>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { BrandedButton, LoadingBlock, Pagination, SimpleBanner, TranslationT } from '@datagouv/components-next'
+import { RiAddLine, RiCloseCircleLine, RiInformationLine, RiSearchLine } from '@remixicon/vue'
+import { refDebounced } from '@vueuse/core'
+import NewDiscussionForm from './NewDiscussionForm.vue'
+import DiscussionCard from './DiscussionCard.vue'
+import FollowToggle from '../Notifications/FollowToggle.vue'
+import type { PaginatedArray, SortDirection } from '~/types/types'
+import { getSubjectDemonstrative } from '~/utils/discussions'
+import type { DiscussionSortedBy, DiscussionSubject, DiscussionSubjectTypes, Thread } from '~/types/discussions'
+import { useRouteQuery } from '@vueuse/router'
+
+const props = defineProps<{
+  type: DiscussionSubject['class']
+  subject: DiscussionSubjectTypes
+  closed?: number
+}>()
+
+const { t } = useTranslation()
+const config = useRuntimeConfig()
+
+const isClosed = ref(null as null | true | false)
+
+const page = ref(1)
+const pageSize = ref(20)
+const sortedBy = ref<DiscussionSortedBy>('created')
+const direction = ref<SortDirection>('desc')
+const sortDirection = computed(() => `${direction.value === 'asc' ? '' : '-'}${sortedBy.value}`)
+const q = ref('')
+const qDebounced = refDebounced(q, config.public.searchDebounce)
+
+const me = useMaybeMe()
+
+const newDiscussion = ref(false)
+
+function resetFilters() {
+  q.value = ''
+}
+
+function showDiscussionForm() {
+  if (me.value) {
+    newDiscussion.value = true
+  }
+  else {
+    navigateTo({ path: '/login', query: { next: route.fullPath } }, { external: true })
+  }
+}
+
+const translatedType = computed(() => getSubjectDemonstrative(t, props.type))
+
+const params = computed(() => {
+  const query = {
+    sort: sortDirection.value,
+    page_size: pageSize.value,
+    page: page.value,
+
+    q: qDebounced.value,
+  } as Record<string, string | number | null | boolean>
+
+  if (isClosed.value !== null) {
+    query['closed'] = isClosed.value ? 'true' : 'false'
+  }
+
+  if (props.subject) {
+    query['for'] = props.subject.id
+  }
+
+  return query
+})
+const { data: pageData, status, refresh } = await useAPI<PaginatedArray<Thread>>('/api/1/discussions/', { lazy: true, query: params })
+
+const route = useRoute()
+const { $api } = useNuxtApp()
+const selectedDiscussion = ref<Thread | null>(null)
+const hrefWithoutDiscussionId = computed(() => {
+  const { discussion_id: _, ...queryWithoutDiscussionId } = route.query
+  return { name: route.name ?? undefined, params: route.params, query: queryWithoutDiscussionId }
+})
+const selectedDiscussionBanner = useTemplateRef('selectedDiscussionBannerRef')
+const discussionId = useRouteQuery('discussion_id')
+
+async function updateSelectedDiscussion() {
+  if (discussionId.value) {
+    selectedDiscussion.value = await $api<Thread>(`/api/1/discussions/${discussionId.value}/`)
+  }
+}
+watchEffect(async () => {
+  if (discussionId.value) {
+    await updateSelectedDiscussion()
+    nextTick(() => {
+      selectedDiscussionBanner.value?.scrollIntoView({ behavior: 'smooth' })
+    })
+  }
+  else {
+    selectedDiscussion.value = null
+  }
+})
+
+// What the user receives on the subject and on each thread shown, read again whenever
+// they are: opening a discussion or answering in one makes the user follow it.
+const shownThreads = computed(() =>
+  [selectedDiscussion.value, ...(pageData.value?.data ?? [])]
+    .filter(thread => thread !== null)
+    .map(thread => ({ class: 'Discussion' as const, id: thread.id })),
+)
+const threadFollows = useFollowStates(shownThreads, 'discussion')
+const subjectFollows = useFollowStates(() => [{ class: props.type, id: props.subject.id }], 'discussion.new')
+onMounted(() => {
+  watch([pageData, selectedDiscussion], () => {
+    if (!me.value) return
+    threadFollows.read()
+    subjectFollows.read()
+  }, { immediate: true })
+})
+</script>

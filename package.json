@@ -7,10 +7,11 @@
     "build": "npm run check:preview-styles && npm run inventory && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "inventory": "node scripts/inventory.mjs && node scripts/component-options.mjs && node scripts/sync-audit.mjs",
-    "source:check": "node scripts/check-upstream.mjs",
+    "source:check": "node scripts/check-upstream.mjs && node scripts/check-cdata-components.mjs",
     "check:preview-styles": "node scripts/check-preview-styles.mjs",
     "audit:usage": "node scripts/audit-component-usage.mjs --write-status",
-    "test:usage-audit": "node --test scripts/audit-component-usage.test.mjs"
+    "test:usage-audit": "node --test scripts/audit-component-usage.test.mjs",
+    "source:import-cdata": "node scripts/import-cdata-components.mjs"
   },
   "dependencies": {
     "@floating-ui/vue": "^2.0.1",

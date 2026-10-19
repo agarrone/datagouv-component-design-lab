@@ -5,10 +5,10 @@ import { reconcileUsageStatuses } from './lib/usage-status.mjs';
 const load = file => readFile(new URL('../'+file, import.meta.url),'utf8').then(JSON.parse);
 const [report, inventory, lock] = await Promise.all(['data/component-usage.json','data/components.json','upstream.lock.json'].map(load));
 
-test('le rapport couvre chaque composant à la référence du lab', () => {
+test('le rapport couvre chaque composant de bibliothèque à la référence du lab', () => {
   assert.equal(report.commit, lock.commit);
-  assert.deepEqual(Object.keys(report.components).sort(), inventory.map(c=>c.id).sort());
-  assert.equal(Object.values(report.summary).reduce((a,b)=>a+b,0),inventory.length);
+  assert.deepEqual(Object.keys(report.components).sort(), inventory.filter(c=>c.origin!=='cdata').map(c=>c.id).sort());
+  assert.equal(Object.values(report.summary).reduce((a,b)=>a+b,0),inventory.filter(c=>c.origin!=='cdata').length);
 });
 test('les quatre candidats ont été vérifiés séparément des homonymes locaux et des exports', () => {
   const candidates=Object.entries(report.components).filter(([,c])=>['demo-only','no-runtime-reference'].includes(c.state));

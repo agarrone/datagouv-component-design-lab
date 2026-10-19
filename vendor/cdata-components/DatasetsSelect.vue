@@ -1,0 +1,85 @@
+<template>
+  <ObjectsSelect
+    v-model="selectedDatasets"
+    :single
+    :main-label="label"
+    :the-label="$t('le jeu de données')"
+    :a-label="$t('un jeu de données')"
+    :this-label="$t('ce jeu de données')"
+    :allow-reorder
+    :read-only
+    :suggest="suggestDataset"
+    :fetch="fetchDataset"
+    :object-image-url="(dataset) => ('image_url' in dataset && dataset.image_url) ? dataset.image_url : ''"
+    :is-full-object="(dataset) => ('harvest' in dataset) ? dataset : null"
+    :match-url="/\/datasets\/(.+?)\/?$/"
+  >
+    <template #default="{ object: dataset }">
+      <CardLg
+        class="flex-1 min-w-0"
+        :dataset
+      />
+    </template>
+    <template
+      v-if="$slots.empty"
+      #empty
+    >
+      <slot name="empty" />
+    </template>
+  </ObjectsSelect>
+</template>
+
+<script setup lang="ts">
+import type { Dataset, DatasetV2 } from '@datagouv/components-next'
+import CardLg from '~/components/dataset/card-lg.vue'
+import type { DatasetSuggest } from '~/types/types'
+
+const props = withDefaults(defineProps<{
+  single?: boolean
+  label?: string
+  allowReorder?: boolean
+  readOnly?: boolean
+  organizationId?: string
+}>(), {
+  single: false,
+  allowReorder: true,
+  readOnly: false,
+})
+
+const { $api } = useNuxtApp()
+
+const selectedDatasets = defineModel<Array<Dataset | DatasetV2 | DatasetSuggest>>({ required: true })
+
+// Dataset | DatasetV2: the model can receive Dataset from Reuse.datasets (typed in @datagouv/components-next).
+// ObjectsSelect infers T from fetch return type, so we need to include Dataset in the union
+// to allow the model to accept both. This should be fixed by updating Reuse.datasets type to DatasetV2.
+const fetchDataset = (id: string) => $api<Dataset | DatasetV2>(`/api/2/datasets/${id}/`)
+
+const suggestDataset = async (query: Record<string, string | number>): Promise<Array<DatasetSuggest>> => {
+  if (props.organizationId) {
+    const searchResults = await $api<{ data: Array<DatasetV2> }>('/api/2/datasets/search/', {
+      query: {
+        ...query,
+        page_size: 5,
+        organization: props.organizationId,
+      },
+    })
+
+    // Convertir les résultats de recherche en format DatasetSuggest
+    return searchResults.data.map(dataset => ({
+      id: dataset.id,
+      title: dataset.title,
+      slug: dataset.slug,
+      acronym: dataset.acronym || '',
+      page: dataset.page || '',
+      image_url: null, // L'API de recherche ne retourne pas image_url
+    }))
+  }
+  return await $api<Array<DatasetSuggest>>('/api/1/datasets/suggest/', {
+    query: {
+      ...query,
+      size: 5,
+    },
+  })
+}
+</script>

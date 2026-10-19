@@ -1,0 +1,146 @@
+<template>
+  <div>
+    <AdminBreadcrumb>
+      <BreadcrumbItem>{{ t('Réutilisations') }}</BreadcrumbItem>
+    </AdminBreadcrumb>
+
+    <h1 class="font-extrabold text-2xl text-gray-title mb-5">
+      {{ t("Réutilisations") }}
+    </h1>
+    <TransferRequestList
+      v-if="props.organization || props.user"
+      type="Reuse"
+      :recipient="(props.organization || props.user)!"
+      @done="refresh"
+    />
+    <div
+      v-if="pageData"
+      class="flex flex-wrap gap-x-4 gap-y-2 items-center"
+    >
+      <div class="w-full flex-none md:flex-1">
+        <h2 class="text-sm font-bold uppercase m-0">
+          {{ t('{n} réutilisations | {n} réutilisation | {n} réutilisations', pageData.total) }}
+        </h2>
+      </div>
+      <div class="flex-none">
+        <AdminInput
+          v-model="q"
+          type="search"
+          :icon="RiSearchLine"
+          :placeholder="$t('Recherche')"
+        />
+      </div>
+    </div>
+
+    <LoadingBlock
+      v-slot="{ data: pageData }"
+      :status
+      :data="pageData"
+    >
+      <div v-if="pageData && pageData.total > 0">
+        <AdminReusesTable
+          :activities="reuseActivities"
+          :reuses="pageData ? pageData.data : []"
+          :sort-direction="direction"
+          :sorted-by
+          @sort="sort"
+        />
+        <Pagination
+          :page="page"
+          :page-size="pageSize"
+          :total-results="pageData.total"
+          @change="(changedPage: number) => page = changedPage"
+        />
+      </div>
+    </LoadingBlock>
+
+    <div
+      v-if="status != 'pending' && pageData && !pageData.total"
+      class="flex flex-col items-center"
+    >
+      <img
+        src="/illustrations/reuse.svg"
+        class="h-20"
+        alt=""
+      >
+      <template v-if="q">
+        <p class="fr-text--bold fr-my-3v">
+          {{ t(`Pas de résultats pour « {q} »`, { q }) }}
+        </p>
+        <BrandedButton
+          color="primary"
+          @click="q = qDebounced = ''"
+        >
+          {{ $t('Réinitialiser les filtres') }}
+        </BrandedButton>
+      </template>
+      <template v-else>
+        <p class="fr-text--bold fr-my-3v">
+          {{ t(`Vous n'avez pas encore publié de réutilisation`) }}
+        </p>
+        <AdminPublishButton type="reuse" />
+      </template>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { LoadingBlock, Pagination, type Organization, type ReuseV2, type User } from '@datagouv/components-next'
+import { refDebounced } from '@vueuse/core'
+import { computed, ref } from 'vue'
+import { RiSearchLine } from '@remixicon/vue'
+import { BrandedButton } from '@datagouv/components-next'
+import AdminReusesTable from '../AdminTable/AdminReusesTable/AdminReusesTable.vue'
+import AdminBreadcrumb from '../Breadcrumbs/AdminBreadcrumb.vue'
+import BreadcrumbItem from '../Breadcrumbs/BreadcrumbItem.vue'
+import type { PaginatedArray, ReuseSortedBy, SortDirection } from '~/types/types'
+
+const { t } = useTranslation()
+
+const props = defineProps<{
+  organization?: Organization | null
+  user?: User | null
+}>()
+
+const { $api } = useNuxtApp()
+const config = useRuntimeConfig()
+
+const page = ref(1)
+const pageSize = ref(20)
+const sortedBy = ref<ReuseSortedBy>('created')
+const direction = ref<SortDirection>('desc')
+const sortDirection = computed(() => `${direction.value === 'asc' ? '' : '-'}${sortedBy.value}`)
+const q = ref('')
+const qDebounced = refDebounced(q, config.public.searchDebounce)
+const reuseActivities = ref({})
+
+function sort(column: ReuseSortedBy, newDirection: SortDirection) {
+  sortedBy.value = column
+  direction.value = newDirection
+}
+
+const params = computed(() => {
+  return {
+    organization: props.organization?.id,
+    owner: props.user?.id,
+
+    sort: sortDirection.value,
+    q: qDebounced.value,
+    page_size: pageSize.value,
+    page: page.value,
+  }
+})
+
+const { data: pageData, status, refresh } = await useAPI<PaginatedArray<ReuseV2>>('/api/2/reuses/', { lazy: true, query: params })
+
+watch(qDebounced, () => {
+  page.value = 1
+})
+
+watchEffect(async () => {
+  if (pageData.value) {
+    const activities = await getLatestActivitiesForObjects($api, pageData.value.data, 'created_at')
+    reuseActivities.value = { ...reuseActivities.value, ...activities }
+  }
+})
+</script>

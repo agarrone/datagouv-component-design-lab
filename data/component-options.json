@@ -4462,5 +4462,6459 @@
       }
     ],
     "unresolved": false
+  },
+  "cdata/AccessType/AccessTypeForm": {
+    "props": [
+      {
+        "name": "getFirstWarning",
+        "type": "(key: AccessTypeFormKeys) => string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "getFirstError",
+        "type": "(key: AccessTypeFormKeys) => string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "disallowOpenWithAccount",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "modelValue",
+        "type": "AccessTypeForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 61
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AccessTypes/AccessTypeBadge": {
+    "props": [
+      {
+        "name": "accessType",
+        "type": "AccessType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AccessTypes/AccessTypePanel": {
+    "props": [
+      {
+        "name": "object",
+        "type": "WithAccessType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "hideAccessLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Accordion/Accordion.global": {
+    "props": [
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 50
+      },
+      {
+        "name": "state",
+        "type": "AccordionState",
+        "required": false,
+        "default": "'default'",
+        "defaultValue": "default",
+        "comment": "",
+        "line": 51
+      },
+      {
+        "name": "heading",
+        "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'",
+        "required": false,
+        "default": "'h3'",
+        "defaultValue": "h3",
+        "choices": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6"
+        ],
+        "comment": "",
+        "line": 52
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Accordion/AccordionGroup.global": {
+    "props": [
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "defaultValue": "div",
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "withIcon",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ActionCard/ActionCard": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 51
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 52
+      },
+      {
+        "name": "actionsAlignment",
+        "type": "AxisAlignment",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 53
+      },
+      {
+        "name": "type",
+        "type": "'primary' | 'default'",
+        "required": false,
+        "default": "'default'",
+        "defaultValue": "default",
+        "choices": [
+          "primary",
+          "default"
+        ],
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "heading",
+        "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'",
+        "required": false,
+        "default": "'h2'",
+        "defaultValue": "h2",
+        "choices": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6"
+        ],
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "stretchHeight",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "content",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Admin/AdminDeleteModal": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 89
+      },
+      {
+        "name": "deleteUrl",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 90
+      },
+      {
+        "name": "deleteButtonLabel",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 91
+      },
+      {
+        "name": "deletableObject",
+        "type": "DeletableObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 92
+      },
+      {
+        "name": "objectType",
+        "type": "ObjectType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 93
+      },
+      {
+        "name": "objectTitle",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 94
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminBadge/AdminBadge": {
+    "props": [
+      {
+        "name": "type",
+        "type": "AdminBadgeType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 29
+      },
+      {
+        "name": "iconRight",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 30
+      },
+      {
+        "name": "noWrap",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "iconSize",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 32
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminBadge/DataserviceBadge": {
+    "props": [
+      {
+        "name": "dataservice",
+        "type": "Dataservice",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 6
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminBadge/DatasetBadge": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2 | DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 6
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminBadge/ReuseBadge": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 6
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminContentWithTooltip/AdminContentWithTooltip": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/AdminEmail": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminInput": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "default": "'text'",
+        "defaultValue": "text",
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 30
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminMembershipRequest/AdminMembershipRequest": {
+    "props": [
+      {
+        "name": "oid",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 210
+      },
+      {
+        "name": "request",
+        "type": "PendingMembershipRequest",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 211
+      },
+      {
+        "name": "showActions",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 212
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminOrgInvitation/AdminOrgInvitation": {
+    "props": [
+      {
+        "name": "invitation",
+        "type": "OrgInvitation",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 98
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminPublishButton/AdminPublishButton": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'dataset' | 'harvester' | 'reuse' | 'dataservice'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "dataset",
+          "harvester",
+          "reuse",
+          "dataservice"
+        ],
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminSidebar/AdminSidebarLink/AdminSidebarLink": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 33
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 34
+      },
+      {
+        "name": "to",
+        "type": "RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User",
+        "required": false,
+        "default": null,
+        "comment": "The logged in user, to show a menu with an avatar and \"My Profil\"",
+        "line": 223
+      },
+      {
+        "name": "organization",
+        "type": "OrganizationReference",
+        "required": false,
+        "default": null,
+        "comment": "An organization, to show a menu with its logo and name",
+        "line": 227
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable": {
+    "props": [
+      {
+        "name": "communityResources",
+        "type": "Array<CommunityResource>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 105
+      },
+      {
+        "name": "sortedBy",
+        "type": "CommunityResourceSortedBy",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 106
+      },
+      {
+        "name": "sortDirection",
+        "type": "SortDirection",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 107
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminContactPointsTable/AdminContactPointsTable": {
+    "props": [
+      {
+        "name": "contactPoints",
+        "type": "Array<ContactPoint>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 134
+      },
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 135
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminDataservicesTable/AdminDataservicesTable": {
+    "props": [
+      {
+        "name": "activities",
+        "type": "Record<string, Activity>",
+        "required": false,
+        "default": "() => ({})",
+        "comment": "",
+        "line": 121
+      },
+      {
+        "name": "dataservices",
+        "type": "Array<Dataservice>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 122
+      },
+      {
+        "name": "sortedBy",
+        "type": "DataserviceSortedBy",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 123
+      },
+      {
+        "name": "sortDirection",
+        "type": "SortDirection",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 124
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminDatasetsTable/AdminDatasetsTable": {
+    "props": [
+      {
+        "name": "activities",
+        "type": "Record<string, Activity>",
+        "required": false,
+        "default": "() => ({})",
+        "comment": "",
+        "line": 150
+      },
+      {
+        "name": "datasets",
+        "type": "Array<Dataset | DatasetV2>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 151
+      },
+      {
+        "name": "sortDirection",
+        "type": "SortDirection",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 152
+      },
+      {
+        "name": "sortedBy",
+        "type": "DatasetSortedBy",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 153
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable": {
+    "props": [
+      {
+        "name": "discussions",
+        "type": "Array<Thread>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 161
+      },
+      {
+        "name": "sortDirection",
+        "type": "SortDirection",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 162
+      },
+      {
+        "name": "sortedBy",
+        "type": "DiscussionSortedBy",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 163
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 164
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/AdminReusesTable/AdminReusesTable": {
+    "props": [
+      {
+        "name": "activities",
+        "type": "Record<string, Activity>",
+        "required": false,
+        "default": "() => ({})",
+        "comment": "",
+        "line": 115
+      },
+      {
+        "name": "reuses",
+        "type": "Array<Reuse | ReuseV2>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 116
+      },
+      {
+        "name": "sortedBy",
+        "type": "ReuseSortedBy",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 117
+      },
+      {
+        "name": "sortDirection",
+        "type": "SortDirection",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 118
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/Table/AdminTable": {
+    "props": [
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "fixed",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Fixes column widths to what the <th>s declare, instead of auto-sizing to content (which lets a long cell blow out every other column's width).",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/AdminTable/Table/AdminTableTh": {
+    "props": [
+      {
+        "name": "sorted",
+        "type": "SortDirection | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 37
+      },
+      {
+        "name": "align",
+        "type": "'left' | 'center' | 'right'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "left",
+          "center",
+          "right"
+        ],
+        "comment": "",
+        "line": 38
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Alert/Alert": {
+    "props": [
+      {
+        "name": "size",
+        "type": "AlertSize",
+        "required": false,
+        "default": "'md'",
+        "defaultValue": "md",
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "titleLevel",
+        "type": "TitleLevel",
+        "required": false,
+        "default": "'h3'",
+        "defaultValue": "h3",
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "type",
+        "type": "AlertType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/BadgeSelect": {
+    "props": [
+      {
+        "name": "entityType",
+        "type": "'organizations' | 'datasets' | 'reuses'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "organizations",
+          "datasets",
+          "reuses"
+        ],
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Badge>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/BannerNotif": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'warning' | 'primary'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "warning",
+          "primary"
+        ],
+        "comment": "",
+        "line": 53
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 54
+      },
+      {
+        "name": "badge",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "date",
+        "type": "Date",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 56
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/BannerReadOnly": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Brand/BrandBanner": {
+    "props": [],
+    "unresolved": true
+  },
+  "cdata/Brand/BrandCard": {
+    "props": [
+      {
+        "name": "theme",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 138
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 139
+      },
+      {
+        "name": "tagline",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 140
+      },
+      {
+        "name": "ctaUrl",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 141
+      },
+      {
+        "name": "ctaLabel",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 142
+      },
+      {
+        "name": "site",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 143
+      },
+      {
+        "name": "code",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 144
+      },
+      {
+        "name": "contact",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 145
+      },
+      {
+        "name": "size",
+        "type": "'medium' | 'large'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "medium",
+          "large"
+        ],
+        "comment": "",
+        "line": 146
+      },
+      {
+        "name": "border",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 147
+      },
+      {
+        "name": "imageSrc",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 148
+      },
+      {
+        "name": "imageAlt",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 149
+      },
+      {
+        "name": "useStaticImage",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 150
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 151
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Breadcrumb/Breadcrumb": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Breadcrumbs/AdminBreadcrumb": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Breadcrumbs/BreadcrumbItem": {
+    "props": [
+      {
+        "name": "to",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 26
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Buttons/EditButton": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'organizations' | 'users' | 'posts' | 'reuses' | 'dataservices' | 'datasets' | 'topics'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "organizations",
+          "users",
+          "posts",
+          "reuses",
+          "dataservices",
+          "datasets",
+          "topics"
+        ],
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "color",
+        "type": "ButtonColor",
+        "required": false,
+        "default": "'warning'",
+        "defaultValue": "warning",
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Captchetat.client": {
+    "props": [
+      {
+        "name": "errors",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 52
+      },
+      {
+        "name": "uuid",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 55
+      },
+      {
+        "name": "code",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 56
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/CdataLink": {
+    "props": [],
+    "unresolved": true
+  },
+  "cdata/Charts/AdminChartsPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Charts/ChartConfigurator": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "ChartForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 509
+      },
+      {
+        "name": "initialChart",
+        "type": "Chart",
+        "required": false,
+        "default": null,
+        "comment": "Full chart being edited, used only to initialize producer/resources/dataset\nand to keep the chart id for saving — the form data itself comes from the v-model",
+        "line": 518
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Charts/ChartFilterGroup": {
+    "props": [
+      {
+        "name": "group",
+        "type": "Array<Filter>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "combinator",
+        "type": "FilterGroupCombinator",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "canRemoveGroup",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "columnOptions",
+        "type": "Array<FilterColumnOption>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "conditionOptions",
+        "type": "Array<FilterCondition>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 48
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Charts/ChartFilterRow": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "Filter",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 56
+      },
+      {
+        "name": "index",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 59
+      },
+      {
+        "name": "combinator",
+        "type": "FilterGroupCombinator",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      },
+      {
+        "name": "columnOptions",
+        "type": "Array<FilterColumnOption>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 61
+      },
+      {
+        "name": "conditionOptions",
+        "type": "Array<FilterCondition>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 62
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/CommunityResources/AdminCommunityResourcesPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ContactPoint": {
+    "props": [
+      {
+        "name": "contact",
+        "type": "ContactPoint",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ContactPointSelect": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "ContactPointInForm | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 146
+      },
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 149
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 150
+      },
+      {
+        "name": "warningText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 151
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/AccessAudienceCondition": {
+    "props": [
+      {
+        "name": "audience",
+        "type": "AccessAudienceType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "condition",
+        "type": "AccessAudienceCondition",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/AdminDataservicesPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 122
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 123
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/AdminUpdateDataserviceDatasetsPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Dataservices/AdminUpdateDataservicePage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Dataservices/Card/Card": {
+    "props": [
+      {
+        "name": "dataservice",
+        "type": "Dataservice",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      },
+      {
+        "name": "style",
+        "type": "StyleValue",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 17
+      },
+      {
+        "name": "showDescription",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 18
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/DescribeDataservice": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 595
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 596
+      },
+      {
+        "name": "modelValue",
+        "type": "DataserviceForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 600
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/New/Step2AddDatasets": {
+    "props": [
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Dataset | DatasetV2 | DatasetSuggest>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 48
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Dataservices/New/Step3CompletePublication": {
+    "props": [
+      {
+        "name": "dataservice",
+        "type": "Dataservice",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 61
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/DataservicesSelect": {
+    "props": [
+      {
+        "name": "single",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 37
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "allowReorder",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 39
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 40
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Dataservice>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 47
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/DatasetAssignmentSelector": {
+    "props": [
+      {
+        "name": "organizationId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 95
+      },
+      {
+        "name": "modelValue",
+        "type": "Set<string>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 98
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/DatasetAssignmentTable": {
+    "props": [
+      {
+        "name": "datasets",
+        "type": "Array<DatasetV2>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 68
+      },
+      {
+        "name": "modelValue",
+        "type": "Set<string>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 71
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/AdminDatasetResourcesPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Datasets/AdminDatasetsPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 132
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 133
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/AdminUpdateDatasetPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Datasets/CompleteResourcePublicationStep": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "CommunityResource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/DescribeDataset": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "DatasetForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 802
+      },
+      {
+        "name": "submitLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 805
+      },
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 806
+      },
+      {
+        "name": "badges",
+        "type": "Array<Badge>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 807
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 808
+      },
+      {
+        "name": "readOnlyMessage",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 809
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/DescribeResource": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'create-community' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create-community",
+          "update"
+        ],
+        "comment": "",
+        "line": 409
+      },
+      {
+        "name": "inModal",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 410
+      },
+      {
+        "name": "formId",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 411
+      },
+      {
+        "name": "modelValue",
+        "type": "ResourceForm | CommunityResourceForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 419
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/DoiRequestModal": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 74
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/FileEditModal": {
+    "props": [
+      {
+        "name": "openOnMounted",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 214
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 215
+      },
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2 | Omit<Dataset, 'resources' | 'community_resources'>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 216
+      },
+      {
+        "name": "resource",
+        "type": "ResourceForm | CommunityResourceForm",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 217
+      },
+      {
+        "name": "buttonColor",
+        "type": "InstanceType<typeof BrandedButton>['$props']['color']",
+        "required": false,
+        "default": "'tertiary'",
+        "defaultValue": "tertiary",
+        "comment": "",
+        "line": 218
+      },
+      {
+        "name": "buttonSize",
+        "type": "InstanceType<typeof BrandedButton>['$props']['size']",
+        "required": false,
+        "default": "'xs'",
+        "defaultValue": "xs",
+        "comment": "",
+        "line": 219
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/FileEditModalFromQueryString.client": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "schemas",
+        "type": "SchemaResponseData",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/GeopfDatastoreSelector": {
+    "props": [
+      {
+        "name": "pinnedDatastoreId",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "Set on the dataset's first successful push, not editable afterwards.",
+        "line": 31
+      },
+      {
+        "name": "connected",
+        "type": "boolean | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "modelValue",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "model": true,
+        "line": 35
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/GeopfPanel": {
+    "props": [
+      {
+        "name": "datasetId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "Id, not slug: /geopf/login/ only resolves by id.",
+        "line": 44
+      },
+      {
+        "name": "connected",
+        "type": "boolean | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "reauthRequired",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 46
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/GeopfPullButton": {
+    "props": [
+      {
+        "name": "datasetId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "connected",
+        "type": "boolean | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "pull",
+        "type": "GeopfDatasetStatus['pull']",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "datasheetUrl",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "refresh",
+        "type": "() => Promise<void>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 45
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/GeopfPushStatus": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "GeopfPushableResource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 97
+      },
+      {
+        "name": "datasetId",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 98
+      },
+      {
+        "name": "connected",
+        "type": "boolean | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 99
+      },
+      {
+        "name": "datasetPrivate",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 100
+      },
+      {
+        "name": "datastoreId",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 101
+      },
+      {
+        "name": "refresh",
+        "type": "() => Promise<void>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 102
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/GeopfSyncPage": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 185
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/LegacyResourceList": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 103
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/New/Step1PublishingType": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Datasets/New/Step3AddResources": {
+    "props": [
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 186
+      },
+      {
+        "name": "resources",
+        "type": "Array<ResourceForm>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 187
+      },
+      {
+        "name": "datasetForm",
+        "type": "DatasetForm",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 188
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/New/Step4CompletePublication": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/Structured/Step1AssociateSchema": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "AssociateSchemaForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 231
+      },
+      {
+        "name": "publicationMode",
+        "type": "'new' | 'existing'",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 232,
+        "choices": [
+          "new",
+          "existing"
+        ]
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/Structured/Step2LoadData": {
+    "props": [
+      {
+        "name": "schema",
+        "type": "RegisteredSchema | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 140
+      },
+      {
+        "name": "publicationMode",
+        "type": "SchemaPublicationMode",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 141
+      },
+      {
+        "name": "resources",
+        "type": "Array<ResourceForm>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 151
+      },
+      {
+        "name": "useSpreadsheet",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 152
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/Structured/Step2Sheet": {
+    "props": [
+      {
+        "name": "schema",
+        "type": "RegisteredSchema | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 74
+      },
+      {
+        "name": "publicationMode",
+        "type": "SchemaPublicationMode",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "modelValue",
+        "type": "File | null",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 92
+      },
+      {
+        "name": "resources",
+        "type": "Array<ResourceForm>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 93
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/Structured/Step3DescribeDataset": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "DatasetForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 193
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/TabularEditor.client": {
+    "props": [
+      {
+        "name": "schema",
+        "type": "RegisteredSchema | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 181
+      },
+      {
+        "name": "schemaDetails",
+        "type": "SchemaDetails | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 182
+      },
+      {
+        "name": "uploadedFile",
+        "type": "File | null",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 189
+      },
+      {
+        "name": "resourceTitle",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 190
+      },
+      {
+        "name": "validationReport",
+        "type": "ValidationReport | null",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 191
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/UploadResourceModal": {
+    "props": [
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 100
+      },
+      {
+        "name": "extensions",
+        "type": "Array<string>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 101
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/DatasetsSelect": {
+    "props": [
+      {
+        "name": "single",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 39
+      },
+      {
+        "name": "allowReorder",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 40
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "organizationId",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Dataset | DatasetV2 | DatasetSuggest>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 51
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/DescriptionList/DescriptionList": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/DescriptionList/DescriptionListDetails": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/DescriptionList/DescriptionListTerm": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Design/ThemeTagFilter": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Discussions/CommentBlock": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 62
+      },
+      {
+        "name": "comment",
+        "type": "Comment",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 63
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 64
+      },
+      {
+        "name": "forDeleteInfo",
+        "type": "{ thread: Thread index: number }",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "forEditInfo",
+        "type": "{ thread: Thread index: number }",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 69
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DeleteCommentModal": {
+    "props": [
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "comment",
+        "type": "Comment",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "index",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DeleteThreadModal": {
+    "props": [
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 47
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DiscussionCard": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 109
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 110
+      },
+      {
+        "name": "respondImmediately",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "For callers whose own trigger already said \"respond\": clicking it should not land on a card where \"Répondre\" has to be clicked a second time.",
+        "line": 113
+      },
+      {
+        "name": "followState",
+        "type": "FollowState",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 114
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DiscussionCommentHeader": {
+    "props": [
+      {
+        "name": "comment",
+        "type": "Comment",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 68
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 69
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DiscussionsList": {
+    "props": [
+      {
+        "name": "type",
+        "type": "DiscussionSubject['class']",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 177
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 178
+      },
+      {
+        "name": "closed",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 179
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/DiscussionsPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 73
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 74
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/EditCommentModal": {
+    "props": [
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "comment",
+        "type": "Comment",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 83
+      },
+      {
+        "name": "index",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 84
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/NewDiscussionForm": {
+    "props": [
+      {
+        "name": "subject",
+        "type": "DiscussionSubject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 70
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/RespondForm": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 67
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/ThreadHeader": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 80
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "showActions",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "followState",
+        "type": "FollowState",
+        "required": false,
+        "default": null,
+        "comment": "What its follow button shows, read by the list of threads; no button without it.",
+        "line": 84
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Discussions/ThreadModal": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "modelValue",
+        "type": "boolean",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 33
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Divider": {
+    "props": [
+      {
+        "name": "color",
+        "type": "string",
+        "required": false,
+        "default": "'bg-gray-300'",
+        "defaultValue": "bg-gray-300",
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Elections/ElectionCard": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "to",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/DataserviceCard.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/DatasetCard.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/ListReuse.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/OrganizationCard.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/ReuseCard.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/SearchDataservice.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Embeds/SearchDataset.global": {
+    "props": [
+      {
+        "name": "slug",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/FileCard/FileCard": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "ResourceForm | CommunityResourceForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 179
+      },
+      {
+        "name": "showEditAndWarning",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 182
+      },
+      {
+        "name": "hideActions",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 183
+      },
+      {
+        "name": "extensions",
+        "type": "Array<string>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 184
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/FileCard/FileLoader": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/FollowButton": {
+    "props": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Form/FieldsetElement": {
+    "props": [
+      {
+        "name": "formKey",
+        "type": "KeysOfUnion<T>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 36
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Form/FormFieldset": {
+    "props": [
+      {
+        "name": "legend",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 33
+      },
+      {
+        "name": "noMarginsAndPadding",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 34
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Form/FormWithAccordions": {
+    "props": [
+      {
+        "name": "formInfo",
+        "type": "FormInfo<T>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "formId",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "noMargin",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 44
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Form/HelpAccordion": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 40
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Form/ToggleSwitch": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 46
+      },
+      {
+        "name": "labelTrue",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 47
+      },
+      {
+        "name": "labelFalse",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "modelValue",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 56
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/FullPageTabs/FullPageTabs": {
+    "props": [
+      {
+        "name": "links",
+        "type": "Array<{ href: string, label: string, count?: number }>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'h2'",
+        "defaultValue": "h2",
+        "comment": "",
+        "line": 36
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/GristTableViewer/GristTableViewer": {
+    "props": [
+      {
+        "name": "url",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "comment": "Source: either pass a Grist API URL to fetch from, or pass already-loaded records.",
+        "line": 175
+      },
+      {
+        "name": "data",
+        "type": "Array<T> | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 176
+      },
+      {
+        "name": "columns",
+        "type": "string[] | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 177
+      },
+      {
+        "name": "totalColumn",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 178
+      },
+      {
+        "name": "unit",
+        "type": "string | number | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 179
+      },
+      {
+        "name": "unitColumn",
+        "type": "string | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 180
+      },
+      {
+        "name": "filters",
+        "type": "Array<GristFilter<T>> | undefined",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 181
+      },
+      {
+        "name": "sortFn",
+        "type": "((a: T, b: T) => number) | undefined",
+        "required": false,
+        "default": null,
+        "comment": "Optional sort applied after filtering.",
+        "line": 183
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "External loading state — used when records are provided via `data`.",
+        "line": 185
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "External error message — used when records are provided via `data`.",
+        "line": 187
+      },
+      {
+        "name": "tableMinWidth",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "Minimum width of the table — when set, the table scrolls horizontally below this width. Useful for tables with many columns.",
+        "line": 190
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/AdminHarvestersPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 199
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/CompletePublicationStep": {
+    "props": [
+      {
+        "name": "harvester",
+        "type": "HarvesterSource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/DescribeHarvester": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 310
+      },
+      {
+        "name": "modelValue",
+        "type": "HarvesterForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 316
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/HarvesterBadge": {
+    "props": [
+      {
+        "name": "harvester",
+        "type": "HarvesterSource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 51
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/JobBadge": {
+    "props": [
+      {
+        "name": "job",
+        "type": "HarvesterJob | HarvesterJobPreview",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/JobPage": {
+    "props": [
+      {
+        "name": "job",
+        "type": "HarvesterJob | HarvesterJobPreview",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 308
+      },
+      {
+        "name": "items",
+        "type": "Array<HarvestItem>",
+        "required": false,
+        "default": "() => []",
+        "comment": "",
+        "line": 309
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Harvesters/PreviewLoader": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Harvesters/PreviewStep": {
+    "props": [
+      {
+        "name": "harvesterForm",
+        "type": "HarvesterForm",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 37
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/HeroBanner": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'green' | 'purple' | 'brown' | 'dark'",
+        "required": false,
+        "default": "'primary'",
+        "defaultValue": "primary",
+        "choices": [
+          "primary",
+          "green",
+          "purple",
+          "brown",
+          "dark"
+        ],
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/InputGroup/InputGroup": {
+    "props": [
+      {
+        "name": "ariaDescribedby",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 110
+      },
+      {
+        "name": "autocomplete",
+        "type": "string",
+        "required": false,
+        "default": "undefined",
+        "comment": "",
+        "line": 111
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 112
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 113
+      },
+      {
+        "name": "warningText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 114
+      },
+      {
+        "name": "hasError",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 115
+      },
+      {
+        "name": "hasWarning",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 116
+      },
+      {
+        "name": "headingLevels",
+        "type": "1 | 2 | 3 | 4",
+        "required": false,
+        "default": null,
+        "choices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "comment": "",
+        "line": 117
+      },
+      {
+        "name": "hintText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 118
+      },
+      {
+        "name": "isValid",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 119
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 120
+      },
+      {
+        "name": "hideLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 121
+      },
+      {
+        "name": "showLabelInside",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 122
+      },
+      {
+        "name": "minHeading",
+        "type": "1 | 2 | 3 | 4 | 5",
+        "required": false,
+        "default": null,
+        "choices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "comment": "",
+        "line": 123
+      },
+      {
+        "name": "modelValue",
+        "type": "string | Date | null",
+        "required": false,
+        "default": "undefined",
+        "comment": "",
+        "line": 124
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 125
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 126
+      },
+      {
+        "name": "spellcheck",
+        "type": "boolean",
+        "required": false,
+        "default": "undefined",
+        "comment": "",
+        "line": 127
+      },
+      {
+        "name": "type",
+        "type": "AllowedInputType",
+        "required": false,
+        "default": "'text'",
+        "defaultValue": "text",
+        "comment": "",
+        "line": 128
+      },
+      {
+        "name": "validText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 129
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 130
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/LinkCard": {
+    "props": [
+      {
+        "name": "to",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "external",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/LinkToSubject": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'Dataservice' | 'Dataset' | 'Reuse' | 'Organization' | 'Discussion' | 'User'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "Dataservice",
+          "Dataset",
+          "Reuse",
+          "Organization",
+          "Discussion",
+          "User"
+        ],
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "subject",
+        "type": "LinkToSubject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/LinkedToAccordion/LinkedToAccordion": {
+    "props": [
+      {
+        "name": "accordion",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 13
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/LogoAsText": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/LogoImage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/LogoNumeriqueGouv": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/LogoOnly": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/EditorButton": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 18
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/ImageModal/ImageModalButton": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/InternalEditor": {
+    "props": [],
+    "unresolved": true
+  },
+  "cdata/MarkdownEditor/MarkdownEditor": {
+    "props": [],
+    "unresolved": true
+  },
+  "cdata/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/Milkdown/TableTooltip/TableTooltip": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/Milkdown/TableTooltip/TooltipButton": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/MarkdownEditor/Milkdown/Tooltip/EditorTooltip": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/MenuSearch/MenuSearch": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Metrics/AdminDataservicesPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 177
+      },
+      {
+        "name": "user",
+        "type": "User",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 178
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Metrics/AdminDatasetsPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 224
+      },
+      {
+        "name": "user",
+        "type": "User",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 225
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Metrics/AdminIndexPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 113
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 114
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Metrics/AdminPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 56
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Metrics/AdminReusesPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 176
+      },
+      {
+        "name": "user",
+        "type": "User",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 177
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Modal/Modal.client": {
+    "props": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "Modal id to set for an external button `arial-controls`",
+        "line": 83
+      },
+      {
+        "name": "opened",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 84
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "Modale title, required for accessibility purpose",
+        "line": 86
+      },
+      {
+        "name": "showTitle",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "Removes modal title and adds it as aria-label",
+        "line": 88
+      },
+      {
+        "name": "size",
+        "type": "'sm' | 'md' | 'lg' | 'xl' | 'fullscreen'",
+        "required": false,
+        "default": "'md'",
+        "defaultValue": "md",
+        "choices": [
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "fullscreen"
+        ],
+        "comment": "The modal size, can be fullscreen for special ones",
+        "line": 91
+      },
+      {
+        "name": "form",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 93
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Modal/ModalWithButton": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "showTitle",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "size",
+        "type": "'sm' | 'md' | 'lg' | 'xl' | 'fullscreen'",
+        "required": false,
+        "default": "'md'",
+        "defaultValue": "md",
+        "choices": [
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "fullscreen"
+        ],
+        "comment": "",
+        "line": 50
+      },
+      {
+        "name": "form",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 51
+      },
+      {
+        "name": "modelValue",
+        "type": "boolean",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 61
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/Discussion": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "DiscussionNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "subject",
+        "type": "DiscussionSubjectTypes | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/FollowToggle": {
+    "props": [
+      {
+        "name": "scope",
+        "type": "NotificationScope",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "event",
+        "type": "NotificationEvent",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 29
+      },
+      {
+        "name": "state",
+        "type": "FollowState",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 30
+      },
+      {
+        "name": "followLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "unfollowLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "followedMessage",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "What the toast says once done.",
+        "line": 34
+      },
+      {
+        "name": "unfollowedMessage",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 35
+      },
+      {
+        "name": "iconOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 36
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/MembershipAccepted": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "MembershipAcceptedNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/MembershipRefused": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "MembershipRefusedNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/MembershipRequest": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "MembershipRequestNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 38
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/MuteConfirmation": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Notifications/NewBadge": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "NewBadgeNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/NewDataservice": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "DataserviceCreatedNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/NewReuse": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "ReuseCreatedNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/NotificationActions": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "UserNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 70
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/NotificationLayout": {
+    "props": [
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 78
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 79
+      },
+      {
+        "name": "notification",
+        "type": "UserNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 80
+      },
+      {
+        "name": "titleLink",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "titleLinkTitle",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 82
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/NotificationsList": {
+    "props": [
+      {
+        "name": "notifications",
+        "type": "Array<UserNotification>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/SubjectNotifications": {
+    "props": [
+      {
+        "name": "scope",
+        "type": "NotificationScope",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 63
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/TransferRequest": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "TransferRequestNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 54
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Notifications/ValidateHarvester": {
+    "props": [
+      {
+        "name": "notification",
+        "type": "ValidateHarvesterNotification",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ObjectsSelect": {
+    "props": [
+      {
+        "name": "single",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 123
+      },
+      {
+        "name": "mainLabel",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 124
+      },
+      {
+        "name": "theLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 125
+      },
+      {
+        "name": "aLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 126
+      },
+      {
+        "name": "thisLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 127
+      },
+      {
+        "name": "allowReorder",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 128
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 129
+      },
+      {
+        "name": "objectImageUrl",
+        "type": "(object: T | TSuggest) => string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 130
+      },
+      {
+        "name": "suggest",
+        "type": "(query: Record<string, string | number>) => Promise<Array<TSuggest>>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 131
+      },
+      {
+        "name": "fetch",
+        "type": "(id: string) => Promise<T>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 132
+      },
+      {
+        "name": "isFullObject",
+        "type": "(object: T | TSuggest) => T | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 133
+      },
+      {
+        "name": "matchUrl",
+        "type": "RegExp",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 134
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<T | TSuggest>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 146
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/OgImage/Default.takumi": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/OgImage/MainPage.takumi": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 3
+      },
+      {
+        "name": "uri",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 4
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/OgImage/ObjectPage.takumi": {
+    "props": [
+      {
+        "name": "objectTitle",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "orgName",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 19
+      },
+      {
+        "name": "orgLogo",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "ownerName",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "ownerAvatar",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "datasets",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "dataservices",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "views",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 25
+      },
+      {
+        "name": "downloads",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "reuses",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "followers",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingAudienceCard": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 26
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingCTA": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'green' | 'brown' | 'dark'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "primary",
+          "green",
+          "brown",
+          "dark"
+        ],
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingFeatureCard": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "size",
+        "type": "'large' | 'small'",
+        "required": false,
+        "default": "'small'",
+        "defaultValue": "small",
+        "choices": [
+          "large",
+          "small"
+        ],
+        "comment": "",
+        "line": 45
+      },
+      {
+        "name": "color",
+        "type": "'blue' | 'green'",
+        "required": false,
+        "default": "'blue'",
+        "defaultValue": "blue",
+        "choices": [
+          "blue",
+          "green"
+        ],
+        "comment": "",
+        "line": 46
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingHero": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'green' | 'brown' | 'dark'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "primary",
+          "green",
+          "brown",
+          "dark"
+        ],
+        "comment": "",
+        "line": 48
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "imageAlt",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 50
+      },
+      {
+        "name": "imagePosition",
+        "type": "'left' | 'right'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "left",
+          "right"
+        ],
+        "comment": "",
+        "line": 51
+      },
+      {
+        "name": "align",
+        "type": "'center' | 'left'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "center",
+          "left"
+        ],
+        "comment": "",
+        "line": 52
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingLogoGrid": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingParagraph": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingSection": {
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "background",
+        "type": "'white' | 'gray' | 'dark'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "white",
+          "gray",
+          "dark"
+        ],
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Onboarding/OnboardingTitle": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Onboarding/SmallCapsLabel": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/OpenApi/OpenApiProperties": {
+    "props": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 72
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 73
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/OpenApi/OpenApiProperty": {
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 84
+      },
+      {
+        "name": "schema",
+        "type": "unknown",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 85
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/AdminContactPointsPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 48
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/ListPage": {
+    "props": [
+      {
+        "name": "organizations",
+        "type": "PaginatedArray<Organization>",
+        "required": true,
+        "default": null,
+        "comment": "List of organizations to show",
+        "line": 96
+      },
+      {
+        "name": "initialQ",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "The starting q",
+        "line": 101
+      },
+      {
+        "name": "sort",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "The starting sort",
+        "line": 106
+      },
+      {
+        "name": "status",
+        "type": "RequestStatus",
+        "required": true,
+        "default": null,
+        "comment": "The API request status",
+        "line": 111
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/New/Step1CreateOrJoinOrganization": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Organization/New/Step2DescribeOrganization": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 269
+      },
+      {
+        "name": "errors",
+        "type": "Array<string>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 270
+      },
+      {
+        "name": "submitLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 271
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 272
+      },
+      {
+        "name": "showLegend",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 273
+      },
+      {
+        "name": "showWell",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 274
+      },
+      {
+        "name": "modelValue",
+        "type": "NewOrganization | Organization",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 281
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/New/Step3CompleteTheOrganization": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 101
+      },
+      {
+        "name": "errors",
+        "type": "Array<string>",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 102
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/Search": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/OrganizationOwner": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "logoSizeClass",
+        "type": "string",
+        "required": false,
+        "default": "'size-8'",
+        "defaultValue": "size-8",
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "nameSize",
+        "type": "'base' | 'sm' | 'xs'",
+        "required": false,
+        "default": "'base'",
+        "defaultValue": "base",
+        "choices": [
+          "base",
+          "sm",
+          "xs"
+        ],
+        "comment": "",
+        "line": 33
+      },
+      {
+        "name": "nameColor",
+        "type": "string",
+        "required": false,
+        "default": "'text-new-primary'",
+        "defaultValue": "text-new-primary",
+        "comment": "",
+        "line": 34
+      },
+      {
+        "name": "logoNoBorder",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 35
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 36
+      },
+      {
+        "name": "withLink",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 37
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organizations/BannerFlyout": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 109
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organizations/OrganizationBanner": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      },
+      {
+        "name": "positionOverride",
+        "type": "number | null",
+        "required": false,
+        "default": null,
+        "comment": "Local preview while repositioning; overrides the saved position.",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organizations/OrganizationBannerControls": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 97
+      },
+      {
+        "name": "repositioning",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 98
+      },
+      {
+        "name": "saving",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 99
+      },
+      {
+        "name": "position",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 100
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organizations/OrganizationBannerEditor": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/AccordionBlocEditor": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 172
+      },
+      {
+        "name": "modelValue",
+        "type": "AccordionListBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 175
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/AddBlocDropdown": {
+    "props": [
+      {
+        "name": "contentOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 99
+      },
+      {
+        "name": "forOrganization",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Organization presentation pages use a trimmed set: no Hero bloc, and the Markdown bloc lives in the layout group instead of its own \"Texte\" group.",
+        "line": 102
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/AddObjectCard": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/BlocWithTitleAndSubtitle": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 52
+      },
+      {
+        "name": "modelValue",
+        "type": "BlocWithSecondaryText",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 57
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/BrandedButtonEditor": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "color",
+        "type": "ComponentProps<typeof BrandedButton>['color']",
+        "required": false,
+        "default": "'primary'",
+        "defaultValue": "primary",
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "class",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "title",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 63
+      },
+      {
+        "name": "href",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 64
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/DataservicesListBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 63
+      },
+      {
+        "name": "modelValue",
+        "type": "DataservicesListBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/DatasetsListBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "modelValue",
+        "type": "DatasetsListBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 68
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/EditableText": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "tag",
+        "type": "'div' | 'p' | 'span'",
+        "required": false,
+        "default": "'div'",
+        "defaultValue": "div",
+        "choices": [
+          "div",
+          "p",
+          "span"
+        ],
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 22
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/EditoBlocs": {
+    "props": [
+      {
+        "name": "blocs",
+        "type": "Array<PageBloc>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 189
+      },
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 190
+      },
+      {
+        "name": "editable",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 191
+      },
+      {
+        "name": "striped",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 192
+      },
+      {
+        "name": "hideEditButton",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 193
+      },
+      {
+        "name": "forOrganization",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Trims the \"add bloc\" menu for organization presentation pages (no Hero, Markdown moved into the layout group). See AddBlocDropdown.",
+        "line": 196
+      },
+      {
+        "name": "mainColor",
+        "type": "ComponentProps<typeof BrandedButton>['color']",
+        "required": false,
+        "default": "'primary'",
+        "defaultValue": "primary",
+        "comment": "",
+        "line": 197
+      },
+      {
+        "name": "emptyCtaLabel",
+        "type": "string",
+        "required": false,
+        "default": "undefined",
+        "comment": "When set, the empty state is also shown in view mode (not just while editing) with this label on a CTA that enters edit mode. Hosts that pass it are responsible for only making the page editable (`editable`) for allowed users.",
+        "line": 201
+      },
+      {
+        "name": "onSave",
+        "type": "(blocs: Array<PageBloc>) => Promise<void>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 202
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/EditoFooter": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'green' | 'purple'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "primary",
+          "green",
+          "purple"
+        ],
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "searchUrl",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "searchLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/EditoSearchForm": {
+    "props": [
+      {
+        "name": "color",
+        "type": "'primary' | 'green' | 'purple'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "primary",
+          "green",
+          "purple"
+        ],
+        "comment": "",
+        "line": 55
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 56
+      },
+      {
+        "name": "subtitle",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "searchUrl",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 59
+      },
+      {
+        "name": "linkLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      },
+      {
+        "name": "linkUrl",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 61
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/HeroBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 75
+      },
+      {
+        "name": "modelValue",
+        "type": "HeroBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 78
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/LinksListBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 161
+      },
+      {
+        "name": "mainColor",
+        "type": "ComponentProps<typeof BrandedButton>['color']",
+        "required": false,
+        "default": "'primary'",
+        "defaultValue": "primary",
+        "comment": "",
+        "line": 162
+      },
+      {
+        "name": "modelValue",
+        "type": "LinksListBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 167
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/MarkdownBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 39
+      },
+      {
+        "name": "modelValue",
+        "type": "MarkdownBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 42
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/ReusesListBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 63
+      },
+      {
+        "name": "modelValue",
+        "type": "ReusesListBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/SiteEditoPage": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 57
+      },
+      {
+        "name": "publicPage",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 58
+      },
+      {
+        "name": "siteKey",
+        "type": "'datasets_blocs' | 'reuses_blocs' | 'dataservices_blocs'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "datasets_blocs",
+          "reuses_blocs",
+          "dataservices_blocs"
+        ],
+        "comment": "",
+        "line": 59
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Post/card": {
+    "props": [
+      {
+        "name": "post",
+        "type": "Post",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 36
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Posts/DescribePost": {
+    "props": [
+      {
+        "name": "submitLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 136
+      },
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 137
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 138
+      },
+      {
+        "name": "modelValue",
+        "type": "PostForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 140
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Posts/PostContentForm": {
+    "props": [
+      {
+        "name": "submitLabel",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "post",
+        "type": "PostForm",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 44
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/PreviewDashboard/DeltaIndicator": {
+    "props": [
+      {
+        "name": "value",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 24
+      },
+      {
+        "name": "unit",
+        "type": "DeltaUnit",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/PreviewDashboard/PercentageMeter": {
+    "props": [
+      {
+        "name": "value",
+        "type": "number | null",
+        "required": false,
+        "default": "0",
+        "defaultValue": 0,
+        "comment": "",
+        "line": 17
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ProducerSelect": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 64
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 65
+      },
+      {
+        "name": "warningText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 66
+      },
+      {
+        "name": "all",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 67
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 68
+      },
+      {
+        "name": "organizationsOnly",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 69
+      },
+      {
+        "name": "organizationPermissionNeed",
+        "type": "'delete' | 'edit' | 'harvest' | 'members' | 'private' | null",
+        "required": false,
+        "default": "null",
+        "comment": "",
+        "line": 70
+      },
+      {
+        "name": "modelValue",
+        "type": "Owned | null",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 77
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/RadioButtons": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "options",
+        "type": "Array<{ value: T, label: string, description?: string }>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "stacked",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "One option per row, instead of all of them on a single line. Needed as soon as the options carry a description.",
+        "line": 47
+      },
+      {
+        "name": "modelValue",
+        "type": "T",
+        "required": false,
+        "default": null,
+        "model": true,
+        "line": 51
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/RecommendationExternal": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 36
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/RecommendationsDatasets": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 31
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/RecommendationsReuses": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Required/Required": {
+    "props": [
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 10
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/RequiredExplanation/RequiredExplanation": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Reuses/AdminReusesPage": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 101
+      },
+      {
+        "name": "user",
+        "type": "User | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 102
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Reuses/AdminUpdateReuseDataservicesPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Reuses/AdminUpdateReuseDatasetsPage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Reuses/AdminUpdateReusePage": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Reuses/DescribeReuse": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "ReuseForm",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 432
+      },
+      {
+        "name": "type",
+        "type": "'create' | 'update'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "create",
+          "update"
+        ],
+        "comment": "",
+        "line": 434
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 435
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Reuses/New/Step2AddDatasetsAndDataservices": {
+    "props": [
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 49
+      },
+      {
+        "name": "datasets",
+        "type": "Array<DatasetV2 | DatasetSuggest>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 56
+      },
+      {
+        "name": "dataservices",
+        "type": "Array<Dataservice>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 57
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Reuses/New/Step3CompletePublication": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 66
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 67
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Reuses/ReuseCard": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 13
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ReusesSelect": {
+    "props": [
+      {
+        "name": "single",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 29
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 30
+      },
+      {
+        "name": "allowReorder",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Reuse>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 37
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Search/NoResults": {
+    "props": [
+      {
+        "name": "forumUrl",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 40
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/SectionCollapse": {
+    "props": [
+      {
+        "name": "buttonText",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 39
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 40
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/SelectAudiencesTypes": {
+    "props": [
+      {
+        "name": "modelValue",
+        "type": "Record<AccessAudienceType, AccessAudienceCondition>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 18
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Sidemenu/Sidemenu.global": {
+    "props": [
+      {
+        "name": "fixed",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "stickyFullHeight",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "showBorder",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "onRight",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "buttonText",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 45
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/SiteFooter/SiteFooter": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/SiteHeader/SiteHeader": {
+    "props": [
+      {
+        "name": "fluid",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 549
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Spam/ReportModal": {
+    "props": [
+      {
+        "name": "subject",
+        "type": "ReportSubject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 108
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Stepper/Stepper": {
+    "props": [
+      {
+        "name": "steps",
+        "type": "Array<Step>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "currentStep",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/SuiviDePublication/HvdStatutBadge": {
+    "props": [
+      {
+        "name": "statut",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 40
+      },
+      {
+        "name": "url",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "type",
+        "type": "AdminBadgeType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "linksToData",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 43
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Support/Card": {
+    "props": [
+      {
+        "name": "image",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Support/Choice": {
+    "props": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      },
+      {
+        "name": "active",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Support/Choices": {
+    "props": [
+      {
+        "name": "question",
+        "type": "Question",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 110
+      },
+      {
+        "name": "selected",
+        "type": "string | undefined",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 111
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Support/Title": {
+    "props": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 12
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TabLinks": {
+    "props": [
+      {
+        "name": "links",
+        "type": "Array<{ href: string, label: string, show?: boolean }>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TagsSelect": {
+    "props": [
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "warningText",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "modelValue",
+        "type": "Array<Tag>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 45
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TextClamp.client": {
+    "props": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 15
+      },
+      {
+        "name": "maxHeight",
+        "type": "string | number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 16
+      },
+      {
+        "name": "maxLines",
+        "type": "number",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 17
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 18
+      },
+      {
+        "name": "location",
+        "type": "'start' | 'middle' | 'end'",
+        "required": false,
+        "default": "'end'",
+        "defaultValue": "end",
+        "choices": [
+          "start",
+          "middle",
+          "end"
+        ],
+        "comment": "",
+        "line": 19
+      },
+      {
+        "name": "ellipsis",
+        "type": "string",
+        "required": false,
+        "default": "'…'",
+        "defaultValue": "…",
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "autoResize",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TransferBanner": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'Dataservice' | 'Dataset' | 'Reuse'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "Dataservice",
+          "Dataset",
+          "Reuse"
+        ],
+        "comment": "",
+        "line": 102
+      },
+      {
+        "name": "subject",
+        "type": "DatasetV2 | DatasetV2WithFullObject | Dataservice | Reuse",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 103
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 104
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TransferRequest": {
+    "props": [
+      {
+        "name": "transfer",
+        "type": "TransferRequest",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 130
+      },
+      {
+        "name": "showActions",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 131
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/TransferRequestList": {
+    "props": [
+      {
+        "name": "type",
+        "type": "'Dataset' | 'Dataservice' | 'Reuse'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "Dataset",
+          "Dataservice",
+          "Reuse"
+        ],
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "recipient",
+        "type": "User | Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/UploadGroup/UploadGroup": {
+    "props": [
+      {
+        "name": "accept",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 77
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 78
+      },
+      {
+        "name": "errorText",
+        "type": "string | null",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 79
+      },
+      {
+        "name": "hasError",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 80
+      },
+      {
+        "name": "hintText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 81
+      },
+      {
+        "name": "groupClass",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 82
+      },
+      {
+        "name": "isValid",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 83
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 84
+      },
+      {
+        "name": "multiple",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 85
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 86
+      },
+      {
+        "name": "showLabel",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 87
+      },
+      {
+        "name": "validText",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "defaultValue": "",
+        "comment": "",
+        "line": 88
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/AdminUserProfileHeader": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 49
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/AdminUserProfilePage": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 235
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/ApiTokensSection": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/User/ChangeEmailModal": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/User/ChangePasswordModal": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/User/CreateApiTokenModal": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/User/DeleteUserModal": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User & { email?: string }",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 104
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/RotatePasswordModal": {
+    "props": [
+      {
+        "name": "user",
+        "type": "User",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 66
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/TwoFactorSetupModal": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/dataset/card-lg": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      },
+      {
+        "name": "style",
+        "type": "StyleValue",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 17
+      },
+      {
+        "name": "showDescription",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 18
+      }
+    ],
+    "unresolved": false
   }
 }

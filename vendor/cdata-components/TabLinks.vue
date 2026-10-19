@@ -1,0 +1,36 @@
+<template>
+  <div class="flex justify-start overflow-auto">
+    <nav class="flex space-x-1 font-medium rounded border border-neutral-300">
+      <template
+        v-for="link in links"
+        :key="link.label"
+      >
+        <CdataLink
+          v-if="link.show === undefined ? true : link.show"
+          :to="link.href"
+          class="whitespace-nowrap md:whitespace-normal group block rounded bg-none bg-transparent border border-transparent -m-px no-underline outline-none aria-current-page:border aria-current-page:border-new-primary aria-current-page:text-new-primary p-1"
+          :aria-current="isCurrentTab(link.href) ? 'page': false"
+        >
+          <span class="rounded px-2">
+            {{ link.label }}
+          </span>
+        </CdataLink>
+      </template>
+    </nav>
+  </div>
+</template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  links: Array<{ href: string, label: string, show?: boolean }>
+}>()
+
+const isCurrentTab = useIsCurrentTab(() => props.links)
+</script>
+
+<style scoped>
+.group:not([aria-current='page']):hover span {
+  /* Could maybe be replaced by group-hover-not-aria-current-page:bg-white/50 ? */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+</style>

@@ -156,7 +156,7 @@ function chain(file,previous) {const refs=[];while(previous.get(file)){const ste
 const exportedNames=new Map();
 for(const entry of entrypoints)for(const item of models.get(entry).exports)for(const target of resolveExport(entry,item.name)){if(!exportedNames.has(target))exportedNames.set(target,[]);exportedNames.get(target).push({entry:entry.endsWith('chart.ts')?'@datagouv/components-next/chart':'@datagouv/components-next',name:item.name});}
 const components={};
-for(const component of inventory){const file=componentRoot+component.id+'.vue';if(!fileSet.has(file))throw new Error('Composant absent de la référence : '+component.id);
+for(const component of inventory.filter(c=>c.origin!=='cdata')){const file=componentRoot+component.id+'.vue';if(!fileSet.has(file))throw new Error('Composant absent de la référence : '+component.id);
  const references=[];for(const [parent,edges]of graph){if(edges.has(file))references.push(asLink({...edges.get(file),context:parent.startsWith(library)?'library':secondary(parent)?'demo-or-test':'application'}));}
  const state=runtime.has(file)?(chain(file,runtime).some(ref=>ref.uncertain)?'possible-reference':'referenced'):examples.has(file)?'demo-only':'no-runtime-reference';
  components[component.id]={state,exports:exportedNames.get(file)||[],runtimeChain:chain(file,runtime),demoChain:chain(file,examples),referenceCount:references.length,references:references.slice(0,12),localNamesakes:[...(localComponents.get(normalize(component.name))||[])].map(file=>({file,url:`${lock.repository}/blob/${commit}/${file}#L1`}))};

@@ -323,4 +323,10 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 .version-preview .example-stage { overflow:auto; }
 @media(max-width:1100px) { .version-previews.has-proposal { grid-template-columns:minmax(0,1fr); } .version-preview + .version-preview { border-left:0; border-top:1px solid #e0e4ec; } }
 
+.origin-label { display:block; font-size:10px; line-height:1.6; color:#596275; margin-top:6px; }
+.detail-meta .origin-label { margin:0; padding:3px 7px; background:#eeeeff; color:#000091; }
+.type-example > .origin-label,.component-preview-pending { padding:12px 18px; }
+.component-preview-pending { font-size:12px; line-height:1.8; color:#687286; background:#f6f7fa; }
+.detail-meta { flex-wrap:wrap; }
+
 }

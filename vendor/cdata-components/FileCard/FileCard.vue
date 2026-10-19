@@ -1,0 +1,210 @@
+<template>
+  <div class="border border-gray-default fr-p-1w">
+    <div class="fr-grid-row fr-grid-row--middle flex-nowrap md:flex-wrap justify-between">
+      <div class="fr-col-auto min-w-0">
+        <div class="flex items-center mb-1">
+          <ResourceIcon
+            :resource="resourceForm"
+            class="size-4 mr-1"
+          />
+          <h4 class="m-0 text-base/6 overflow-wrap-anywhere truncate">
+            {{ resourceForm.title || $t('Fichier sans nom') }}
+          </h4>
+        </div>
+        <div class="my-0 text-gray-medium flex flex-wrap items-center gap-1">
+          <div
+            v-if="resourceForm.schema?.name"
+            class="flex items-center space-x-1 text-sm m-0 overflow-wrap-anywhere truncate"
+          >
+            <RiInformationLine
+              aria-hidden="true"
+              class="size-3 shrink-0"
+            />
+            <span class="truncate">{{ $t('Schéma : {schema}', { schema: resourceForm.schema?.name }) }}</span>
+          </div>
+          <template v-if="resourceForm.filetype === 'file' && resourceForm.file && resourceForm.file.raw.name != resourceForm.title">
+            <RiSubtractLine
+              aria-hidden="true"
+              class="first:hidden size-3 mt-0.5"
+            />
+            <p class="text-sm m-0 overflow-wrap-anywhere truncate">
+              {{ resourceForm.file.raw.name }}
+            </p>
+          </template>
+
+          <template v-if="resourceForm.resource">
+            <RiSubtractLine
+              aria-hidden="true"
+              class="first:hidden size-3 mt-0.5"
+            />
+            <!-- Not sure if this date is useful, since it's about modification on a ressource  -->
+            <TranslationT
+              tag="p"
+              class="text-sm m-0"
+              keypath="Mis à jour {date}"
+            >
+              <template #date>
+                <FormattedDate
+                  :date="resourceForm.resource.last_modified"
+                  format="relative"
+                />
+              </template>
+            </TranslationT>
+          </template>
+
+          <template v-if="guessFormat(resourceForm, extensions)">
+            <RiSubtractLine
+              aria-hidden="true"
+              class="first:hidden size-3 mt-0.5"
+            />
+            <p class="text-sm m-0">
+              {{ guessFormat(resourceForm, extensions) }}
+              <template v-if="filesize">
+                ({{ formatFilesize(filesize) }})
+              </template>
+            </p>
+          </template>
+        </div>
+        <div
+          v-if="resourceForm.filetype === 'file'"
+          class="flex items-center space-x-1 text-gray-medium text-sm"
+        >
+          <RiMapPin2Line class="size-3 shrink-0" />
+          <span class="truncate">{{ $t('Emplacement : serveurs data.gouv.fr') }}</span>
+        </div>
+        <div
+          v-if="resourceForm.filetype === 'remote'"
+          class="flex items-center space-x-1 text-gray-medium text-sm"
+        >
+          <RiLink class="size-3 shrink-0" />
+          <span class="truncate">{{ $t('URL: {url}', { url: resourceForm.url }) }}</span>
+        </div>
+        <div
+          v-if="resourceForm.resource?.checksum"
+          class="flex items-center space-x-1 text-gray-medium text-sm"
+        >
+          <RiCodeSSlashLine class="size-3 shrink-0" />
+          <span class="truncate">{{ $t('Somme de contrôle : {checksum}', { checksum: resourceForm.resource?.checksum.value }) }}</span>
+        </div>
+      </div>
+      <div
+        v-if="!hideActions && !loaded"
+        class="fr-col-auto"
+      >
+        <FileLoader v-if="loading" />
+        <div
+          v-else
+          class="fr-grid-row fr-grid-row--middle flex-nowrap md:flex-wrap"
+        >
+          <p
+            v-if="showEditAndWarning"
+            class="fr-col-auto fr-mr-1w fr-m-0"
+          >
+            <FileEditModal
+              :resource="resourceForm"
+              button-color="secondary"
+              button-size="sm"
+              @submit="save"
+            />
+          </p>
+          <p class="fr-col-auto fr-m-0">
+            <BrandedButton
+              color="secondary"
+              :icon="RiDeleteBinLine"
+              icon-only
+              size="sm"
+              :title="$t('Supprimer le fichier')"
+              @click="$emit('delete')"
+            />
+          </p>
+        </div>
+      </div>
+    </div>
+    <template v-if="errors && showEditAndWarning">
+      <template
+        v-for="(fieldErrors, key) in errors"
+        :key="key"
+      >
+        <p
+          v-if="fieldErrors && fieldErrors.length"
+          class="fr-mt-1w fr-mb-0 fr-text--xs text-default-error"
+        >
+          <span
+            class="fr-icon-error-line fr-icon--sm"
+            aria-hidden="true"
+          />
+          {{ fieldErrors[0] }}
+        </p>
+      </template>
+    </template>
+    <template v-if="warnings && showEditAndWarning">
+      <template
+        v-for="(fieldWarnings, key) in warnings"
+        :key="key"
+      >
+        <p
+          v-if="fieldWarnings && fieldWarnings.length"
+          class="fr-mt-1w fr-mb-0 fr-text--xs text-default-warning"
+        >
+          <span
+            class="fr-icon-warning-line fr-icon--sm"
+            aria-hidden="true"
+          >
+            {{ fieldWarnings[0] }}
+          </span>
+        </p>
+      </template>
+    </template>
+    <p
+      v-if="resourceForm.filetype === 'file' && resourceForm.file?.state.status === 'failed'"
+      class="fr-mt-1w fr-mb-0 fr-text--xs text-default-error"
+    >
+      <span
+        class="fr-icon-error-line fr-icon--sm"
+        aria-hidden="true"
+      />
+      {{ resourceForm.file.state.message }}
+    </p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { BrandedButton, filesize as formatFilesize, FormattedDate, ResourceIcon, TranslationT } from '@datagouv/components-next'
+import { computed } from 'vue'
+import { RiCodeSSlashLine, RiDeleteBinLine, RiInformationLine, RiLink, RiMapPin2Line, RiSubtractLine } from '@remixicon/vue'
+import FileEditModal from '../Datasets/FileEditModal.vue'
+import FileLoader from './FileLoader.vue'
+import type { CommunityResourceForm, ResourceForm } from '~/types/types'
+
+const resourceForm = defineModel<ResourceForm | CommunityResourceForm>({ required: true })
+
+withDefaults(defineProps<{
+  showEditAndWarning?: boolean
+  hideActions?: boolean
+  extensions: Array<string>
+}>(), {
+  showEditAndWarning: true,
+  hideActions: false,
+})
+
+defineEmits<{
+  (e: 'delete' | 'edit'): void
+}>()
+
+const save = (close: () => void, form: ResourceForm | CommunityResourceForm) => {
+  // We don't want to link the `form` inside the modal to the
+  // model here because otherwise when clicking "cancel" the
+  // modification are still present
+  resourceForm.value = { ...form }
+  close()
+}
+
+const filesize = computed(() => getFilesize(resourceForm.value))
+
+const loading = computed(() => resourceForm.value.filetype === 'file' && resourceForm.value.file?.state.status === 'loading')
+const loaded = computed(() => resourceForm.value.filetype === 'file' && resourceForm.value.file?.state.status === 'uploaded')
+
+// Only useful to get potentials errors (no modification here)
+const { errors, warnings, validate } = useResourceForm(resourceForm)
+watchEffect(() => validate())
+</script>

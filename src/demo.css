@@ -1,2 +1,6 @@
 @import '../vendor/datagouv-components/assets/main.css';
 @source '../vendor/datagouv-components/src/components';
+
+@source "../vendor/cdata-components/Onboarding/SmallCapsLabel.vue";
+@source "../vendor/cdata-components/Onboarding/OnboardingParagraph.vue";
+@source "../vendor/cdata-components/Onboarding/OnboardingTitle.vue";

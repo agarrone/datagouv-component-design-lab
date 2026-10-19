@@ -15,7 +15,7 @@ import ComponentPage from './ComponentPage.vue';
 import { previews } from './demoRegistry';
 import { issues } from './referenceData';
 import { auditStatuses } from './auditStatus';
-const raw = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue', { query: '?raw', import: 'default' });
+const raw = import.meta.glob(['../vendor/datagouv-components/src/components/**/*.vue','../vendor/cdata-components/**/*.vue'], { query: '?raw', import: 'default' });
 const view = ref('catalogue');
 const sectionId=ref('');
 const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
@@ -31,6 +31,7 @@ function searchAll() { query.value=globalQuery.value.trim(); filter.value='all';
 function searchSelect(c) { globalQuery.value=''; returnFamilyId.value=''; view.value='catalogue'; select(c); }
 
 const filter = ref('all');
+const originFilter=ref('all');
 const selected = ref(null);
 const code = ref('');
 const error = ref('');
@@ -88,7 +89,7 @@ function revealComponent(component) {
 const category = c => c.id.includes('/') ? c.id.split('/')[0] : 'Essentiels';
 const categories = [...new Set(inventory.map(category))].sort();
 const ordered = [...inventory].sort((a,b) => Number(previews.has(b.id)) - Number(previews.has(a.id)) || a.id.localeCompare(b.id));
-const visible = computed(() => ordered.filter(c => `${c.name} ${c.id}`.toLowerCase().includes(query.value.toLowerCase()) && (filter.value === 'all' || filter.value === 'preview' && previews.has(c.id) || category(c) === filter.value)));
+const visible = computed(() => ordered.filter(c => (originFilter.value==='all'||c.origin===originFilter.value) && `${c.name} ${c.id}`.toLowerCase().includes(query.value.toLowerCase()) && (filter.value === 'all' || filter.value === 'preview' && previews.has(c.id) || category(c) === filter.value)));
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 async function select(c, update = true) {
   const previousView=view.value; selected.value = c; revealComponent(c); code.value = ''; error.value = '';
@@ -126,7 +127,7 @@ function openComponent(id) {const component=inventory.find(c=>c.id===id);if(comp
 onMounted(() => { route(); window.addEventListener('hashchange', route); });
 onUnmounted(() => window.removeEventListener('hashchange', route));
 function downloadProposal(c) {
-  const proposal = { id: `${c.name.toLowerCase()}-01`, component: c.id, title: `Améliorer ${c.name}`, status: 'brouillon', problem: '', intention: '', sourceCommit: lock.commit, sourcePath: c.path, reviewUrl: '' };
+  const proposal = { id: `${c.id.replaceAll('/','-').toLowerCase()}-01`, component: c.id, title: `Améliorer ${c.name}`, status: 'brouillon', problem: '', intention: '', sourceCommit: lock.commit, sourcePath: c.path, reviewUrl: '' };
   const url = URL.createObjectURL(new Blob([JSON.stringify(proposal, null, 2)+'\n'], {type:'application/json'}));
   const a = document.createElement('a'); a.href = url; a.download = `${proposal.id}.json`; a.click(); URL.revokeObjectURL(url);
 }
@@ -137,7 +138,7 @@ function downloadProposal(c) {
   <header class="site-header">
     <a href="#" class="brand" @click.prevent="navigate()"><span>data.gouv.fr Component design lab</span></a>
     <nav class="header-nav" aria-label="Navigation principale"><a href="#fondamentaux" :aria-current="view==='fondamentaux'?'page':undefined">Fondamentaux</a><a href="#" :aria-current="componentSection?'page':undefined">Composants</a><a href="#suivi" :aria-current="view==='suivi'?'page':undefined">Suivi</a><a href="#incoherences" :aria-current="view==='incoherences'?'page':undefined">Incohérences</a></nav>
-    <form class="global-search" role="search" @submit.prevent="searchAll"><label class="explorer-search"><RiSearchLine /><input v-model="globalQuery" type="search" aria-label="Rechercher un composant" placeholder="Rechercher un composant…" @keydown.esc="globalQuery=''" /></label><div v-if="globalQuery.trim()" class="global-search-results"><a v-for="c in globalResults" :key="c.id" :href="`#${encodeURIComponent(c.id)}`" @click.prevent="searchSelect(c)">{{ c.id }}</a><p v-if="!globalResults.length">Aucun composant trouvé.</p><button type="submit">Voir tous les résultats →</button></div></form>
+    <form class="global-search" role="search" @submit.prevent="searchAll"><label class="explorer-search"><RiSearchLine /><input v-model="globalQuery" type="search" aria-label="Rechercher un composant" placeholder="Rechercher un composant…" @keydown.esc="globalQuery=''" /></label><div v-if="globalQuery.trim()" class="global-search-results"><a v-for="c in globalResults" :key="c.id" :href="`#${encodeURIComponent(c.id)}`" @click.prevent="searchSelect(c)">{{ c.id }}<small class="origin-label">{{ c.origin==='cdata' ? 'Application cdata' : 'Bibliothèque datagouv-components' }}</small></a><p v-if="!globalResults.length">Aucun composant trouvé.</p><button type="submit">Voir tous les résultats →</button></div></form>
   </header>
   <aside class="sidebar">
     <div class="sidebar-browse">
@@ -171,9 +172,9 @@ function downloadProposal(c) {
         <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in typePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><p>{{ page.description }}</p><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
         <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
         <details class="all-components" :open="libraryOpen" @toggle="libraryOpen=$event.target.open"><summary>Tous les composants · {{ inventory.length }}</summary><section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
-          <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
+          <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="originFilter" aria-label="Filtrer par origine"><option value="all">Toutes les origines</option><option value="datagouv-components">Bibliothèque datagouv-components</option><option value="cdata">Application cdata</option></select><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
-          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
+          <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><p>{{ category(c) }}</p><span class="origin-label">{{ c.origin==='cdata' ? 'Application cdata' : 'Bibliothèque datagouv-components' }}</span></div><span class="card-arrow">↗</span></div></article></div>
           <div v-else class="empty"><RiSearchLine /><h2>Aucun composant trouvé</h2><p>Essaie un autre nom ou une autre famille.</p><button class="button" @click="query='';filter='all'">Réinitialiser les filtres</button></div>
         </section></details>
       </template>

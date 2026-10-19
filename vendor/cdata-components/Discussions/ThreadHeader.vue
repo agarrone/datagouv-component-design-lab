@@ -1,0 +1,101 @@
+<template>
+  <header class="space-y-1">
+    <div class="flex gap-3 sm:items-center sm:justify-between flex-col sm:flex-row">
+      <h3 class="m-0 text-base/normal text-gray-title flex items-start space-x-1">
+        <RiLockLine
+          v-if="thread.closed"
+          class="size-4"
+        />
+        <span class="flex-1">{{ thread.title }}</span>
+        <CopyButton
+          class="max-w-6/12"
+          :label="$t('Copier le lien vers cette discussion')"
+          :copied-label="$t('Lien copié')"
+          :text="getDiscussionUrl(thread.id, subject)"
+        />
+      </h3>
+      <div
+        v-if="showActions"
+        class="flex items-center gap-2 shrink-0"
+      >
+        <BrandedButton
+          v-if="isMeAdmin() && thread.spam?.status === 'potential_spam'"
+          color="warning"
+          size="xs"
+          @click="markAsNoSpam"
+        >
+          {{ $t('Marquer comme non spam') }}
+        </BrandedButton>
+        <FollowToggle
+          v-if="me && followState !== undefined"
+          :scope="{ class: 'Discussion', id: thread.id }"
+          event="discussion"
+          :state="followState"
+          :follow-label="$t('Suivre cette discussion')"
+          :unfollow-label="$t('Ne plus suivre cette discussion')"
+          :followed-message="$t('Vous suivez cette discussion')"
+          :unfollowed-message="mutedMessage({ scope: { class: 'Discussion', id: thread.id }, event: 'discussion' }, thread.title)"
+          icon-only
+        />
+        <EditCommentModal
+          v-if="firstComment.permissions.edit"
+          :subject
+          :thread="thread"
+          :comment="firstComment"
+          :index="0"
+          @edited="$emit('change')"
+        />
+        <DeleteThreadModal
+          v-if="thread.permissions.delete"
+          :subject
+          :thread
+          @deleted="$emit('change')"
+        />
+        <!-- ! firstComment.permissions.edit is temporary because we can own the comment but cannot delete it… -->
+        <ReportModal
+          v-if="! thread.permissions.delete && ! firstComment.permissions.edit"
+          :subject="{ class: 'Discussion', id: thread.id }"
+        />
+      </div>
+    </div>
+    <DiscussionCommentHeader
+      :subject
+      :comment="thread.discussion[0]"
+    />
+  </header>
+</template>
+
+<script setup lang="ts">
+import { RiLockLine } from '@remixicon/vue'
+import { BrandedButton, CopyButton } from '@datagouv/components-next'
+import ReportModal from '../Spam/ReportModal.vue'
+import DeleteThreadModal from './DeleteThreadModal.vue'
+import FollowToggle from '../Notifications/FollowToggle.vue'
+import DiscussionCommentHeader from './DiscussionCommentHeader.vue'
+import EditCommentModal from './EditCommentModal.vue'
+import type { DiscussionSubjectTypes, Thread } from '~/types/discussions'
+import type { FollowState } from '~/types/notifications'
+
+const props = withDefaults(defineProps<{
+  thread: Thread
+  subject: DiscussionSubjectTypes
+  showActions?: boolean
+  // What its follow button shows, read by the list of threads; no button without it.
+  followState?: FollowState
+}>(), {
+  showActions: false,
+})
+const emit = defineEmits<{
+  change: []
+}>()
+
+const me = useMaybeMe()
+const { mutedMessage } = useNotificationLabels()
+const firstComment = computed(() => props.thread.discussion[0])
+
+const { $api } = useNuxtApp()
+const markAsNoSpam = async () => {
+  await $api(`/api/1/discussions/${props.thread.id}/spam`, { method: 'DELETE' })
+  emit('change')
+}
+</script>

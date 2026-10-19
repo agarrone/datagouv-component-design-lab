@@ -1,0 +1,63 @@
+<template>
+  <div
+    v-if="loading"
+    class="flex justify-center items-center"
+  >
+    <PreviewLoader />
+  </div>
+  <div v-else-if="job">
+    <JobPage
+      :job
+      :items="job.items"
+    />
+    <div class="flex items-center justify-between">
+      <BrandedButton
+        color="secondary"
+        @click="$emit('previous')"
+      >
+        {{ $t('Précédent') }}
+      </BrandedButton>
+      <BrandedButton
+        color="primary"
+        @click="$emit('next')"
+      >
+        {{ $t('Suivant') }}
+      </BrandedButton>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { BrandedButton } from '@datagouv/components-next'
+import JobPage from './JobPage.vue'
+import PreviewLoader from './PreviewLoader.vue'
+import type { HarvesterForm, HarvesterJobPreview } from '~/types/harvesters'
+
+const props = defineProps<{
+  harvesterForm: HarvesterForm
+}>()
+
+defineEmits<{
+  previous: []
+  next: []
+}>()
+
+const { $api } = useNuxtApp()
+
+const loading = ref(false)
+const job = ref<HarvesterJobPreview | null>(null)
+
+onMounted(async () => {
+  loading.value = true
+
+  try {
+    job.value = await $api<HarvesterJobPreview>('/api/1/harvest/source/preview/', {
+      method: 'POST',
+      body: harvesterToApi(props.harvesterForm),
+    })
+  }
+  finally {
+    loading.value = false
+  }
+})
+</script>

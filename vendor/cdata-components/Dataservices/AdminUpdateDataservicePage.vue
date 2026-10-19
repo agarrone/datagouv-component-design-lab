@@ -1,0 +1,313 @@
+<template>
+  <LoadingBlock
+    v-slot="{ data: dataservice }"
+    :status
+    :data="dataservice"
+  >
+    <DescribeDataservice
+      v-if="dataserviceForm"
+      v-model="dataserviceForm"
+      type="update"
+      :can-edit="dataservice.permissions.edit"
+      @feature="feature"
+      @submit="save"
+    >
+      <template #aside>
+        <!-- Read again once saved: editing by hand makes a member follow it. -->
+        <SubjectNotifications
+          :key="dataservice.metadata_modified_at"
+          :scope="{ class: 'Dataservice', id: dataservice.id }"
+        />
+      </template>
+      <template #top>
+        <SimpleBanner
+          v-if="!dataservice.permissions.edit"
+          class="mb-4"
+          type="primary"
+        >
+          <p
+            class="font-bold"
+            :class="dataservice.organization ? 'mb-1' : 'm-0'"
+          >
+            {{ $t("Vous ne pouvez pas modifier cette API") }}
+          </p>
+          <p
+            v-if="dataservice.organization"
+            class="m-0 text-xs/5"
+          >
+            {{ $t("Demandez à un administrateur de {org} de vous donner accès à cette API.", { org: dataservice.organization.name }) }}
+          </p>
+        </SimpleBanner>
+        <BannerAction
+          v-if="dataservice.permissions.edit && !dataservice.deleted_at && !dataservice.archived_at"
+          class="mb-4"
+          type="primary"
+          :title="$t(`Modifier la visibilité de l'API`)"
+        >
+          <TranslationT
+            v-if="dataservice.private"
+            keypath="Cette API est actuellement {status}. Seul vous ou les membres de votre organisation pouvez la voir et y contribuer."
+          >
+            <template #status>
+              <strong>{{ $t('privée') }}</strong>
+            </template>
+          </TranslationT>
+          <TranslationT
+            v-else
+            keypath="Cette API est actuellement {status}. N'importe qui sur Internet peut voir cette API."
+          >
+            <template #status>
+              <strong>{{ $t('publique') }}</strong>
+            </template>
+          </TranslationT>
+
+          <template #button>
+            <BrandedButton
+              :loading="isLoading"
+              @click="switchDataservicePrivate"
+            >
+              {{ dataservice.private ? $t("Publier l'API") : $t('Passer en brouillon') }}
+            </BrandedButton>
+          </template>
+        </BannerAction>
+        <BannerAction
+          v-if="dataservice.permissions.edit && dataservice.deleted_at"
+          class="mb-4"
+          type="warning"
+          :title="$t('Restaurer cette API')"
+        >
+          {{ $t("Sans restauration l'API sera définitivement supprimée dans la nuit.") }}
+
+          <template #button>
+            <BrandedButton
+              :icon="RiArrowGoBackLine"
+              :loading="isLoading"
+              @click="restoreDataservice"
+            >
+              {{ $t('Restaurer') }}
+            </BrandedButton>
+          </template>
+        </BannerAction>
+      </template>
+      <template #button="attrs">
+        <div class="flex items-center gap-3">
+          <p
+            v-if="!dataservice.permissions.edit"
+            class="text-sm text-gray-medium m-0"
+          >
+            {{ t('Vous n\'avez pas la permission de modifier cette API.') }}
+          </p>
+          <BrandedButton
+            type="submit"
+            v-bind="attrs"
+            :loading="isLoading"
+            :disabled="!dataservice.permissions.edit"
+          >
+            {{ t("Sauvegarder") }}
+          </BrandedButton>
+        </div>
+      </template>
+      <template v-if="dataservice.permissions.edit">
+        <div class="mt-5 space-y-5">
+          <TransferBanner
+            type="Dataservice"
+            :subject="dataservice"
+            :label="$t(`Transférer l'API`)"
+          />
+          <BannerAction
+            type="warning"
+            :title="dataservice.archived_at ? $t('Désarchiver cette API') : $t('Archiver cette API')"
+          >
+            {{ $t("Une API archivée n'est plus indexée mais reste accessible aux utilisateurs avec un lien direct.") }}
+
+            <template #button>
+              <BrandedButton
+                :icon="RiArchiveLine"
+                @click="archiveDataservice"
+              >
+                {{ dataservice.archived_at ? $t('Désarchiver') : $t('Archiver') }}
+              </BrandedButton>
+            </template>
+          </BannerAction>
+          <BannerAction
+            v-if="!dataservice.deleted_at"
+            type="danger"
+            :title="$t(`Supprimer l'API`)"
+          >
+            {{ $t("Attention, cette action ne peut pas être annulée.") }}
+            <template #button>
+              <AdminDeleteModal
+                :title="$t('Êtes-vous sûr de vouloir supprimer cette API ?')"
+                :delete-url="`/api/1/dataservices/${route.params.id}`"
+                :delete-button-label="$t(`Supprimer l'API`)"
+                :deletable-object="dataservice"
+                object-type="dataservice"
+                :object-title="dataservice.title"
+                @deleted="onDataserviceDeleted"
+              >
+                <template #button="{ attrs, listeners }">
+                  <BrandedButton
+                    color="danger"
+                    size="xs"
+                    :icon="RiDeleteBin6Line"
+                    v-bind="attrs"
+                    v-on="listeners"
+                  >
+                    {{ $t('Supprimer') }}
+                  </BrandedButton>
+                </template>
+                <p class="fr-text--bold">
+                  {{ $t("Cette action est irréversible.") }}
+                </p>
+              </AdminDeleteModal>
+            </template>
+          </BannerAction>
+        </div>
+      </template>
+    </DescribeDataservice>
+  </LoadingBlock>
+</template>
+
+<script setup lang="ts">
+import { BannerAction, BrandedButton, LoadingBlock, SimpleBanner, TranslationT, toast } from '@datagouv/components-next'
+import type { Dataservice } from '@datagouv/components-next'
+import { RiArchiveLine, RiArrowGoBackLine, RiDeleteBin6Line } from '@remixicon/vue'
+import DescribeDataservice from '~/components/Dataservices/DescribeDataservice.vue'
+import AdminDeleteModal from '~/components/Admin/AdminDeleteModal.vue'
+import SubjectNotifications from '~/components/Notifications/SubjectNotifications.vue'
+import type { DataserviceForm } from '~/types/types'
+
+const { t } = useTranslation()
+const { $api } = useNuxtApp()
+
+const route = useRoute()
+const isLoading = ref(false)
+
+const url = computed(() => `/api/1/dataservices/${route.params.id}`)
+const { data: dataservice, status, refresh } = await useAPI<Dataservice>(url, { showErrorPage: true })
+const dataserviceForm = ref<DataserviceForm | null>(null)
+watchEffect(() => {
+  if (!dataservice.value) return
+  dataserviceForm.value = dataserviceToForm(dataservice.value)
+})
+
+async function save() {
+  if (!dataserviceForm.value || !dataservice.value) throw new Error('No dataservice form')
+
+  try {
+    isLoading.value = true
+
+    if (
+      dataserviceForm.value.contact_points
+      && dataserviceForm.value.owned?.organization
+    ) {
+      for (const contactPointKey in dataserviceForm.value.contact_points) {
+        if (dataserviceForm.value.contact_points[contactPointKey] && !('id' in dataserviceForm.value.contact_points[contactPointKey])) {
+          dataserviceForm.value.contact_points[contactPointKey] = await newContactPoint($api, dataserviceForm.value.owned?.organization, dataserviceForm.value.contact_points[contactPointKey])
+        }
+      }
+    }
+    await $api(`/api/1/dataservices/${dataservice.value.id}/`, {
+      method: 'PATCH',
+      body: JSON.stringify(dataserviceToApi(dataserviceForm.value, { private: dataserviceForm.value.private })),
+    })
+
+    toast.success(t('Fiche API mise à jour !'))
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+
+async function archiveDataservice() {
+  if (!dataserviceForm.value || !dataservice.value) throw new Error('No dataservice form')
+
+  try {
+    isLoading.value = true
+    await $api(`/api/1/dataservices/${dataservice.value.id}/`, {
+      method: 'PATCH',
+      body: JSON.stringify(dataserviceToApi(dataserviceForm.value, { archived_at: dataservice.value.archived_at ? null : new Date().toISOString() })),
+    })
+    await refresh()
+    if (dataservice.value?.archived_at) {
+      toast.success(t('API archivée !'))
+    }
+    else {
+      toast.success(t('API désarchivée !'))
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+
+async function switchDataservicePrivate() {
+  if (!dataserviceForm.value || !dataservice.value) throw new Error('No dataservice form')
+
+  try {
+    isLoading.value = true
+    await $api(`/api/1/dataservices/${dataservice.value.id}/`, {
+      method: 'PATCH',
+      body: JSON.stringify(dataserviceToApi(dataserviceForm.value, { private: !dataservice.value.private })),
+    })
+    await refresh()
+    if (dataservice.value?.private) {
+      toast.success(t('API passée en brouillon !'))
+    }
+    else {
+      toast.success(t('API publiée !'))
+    }
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+
+async function restoreDataservice() {
+  if (!dataserviceForm.value || !dataservice.value) throw new Error('No dataset form')
+  isLoading.value = true
+  try {
+    await $api(`/api/1/dataservices/${dataservice.value.id}/`, {
+      method: 'PATCH',
+      body: JSON.stringify(dataserviceToApi(dataserviceForm.value, { deleted_at: null })),
+    })
+    refresh()
+    toast.success(t('API restaurée !'))
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+
+function onDataserviceDeleted() {
+  refresh()
+  toast.success(t('API supprimée !'))
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+}
+
+async function feature() {
+  if (!dataservice.value) return
+  const method = dataservice.value.featured ? 'DELETE' : 'POST'
+  try {
+    isLoading.value = true
+    await $api(`/api/1/dataservices/${route.params.id}/featured`, {
+      method,
+    })
+    await refresh()
+    if (method === 'DELETE') {
+      toast.success(t('API retirée de la mise en avant !'))
+    }
+    else {
+      toast.success(t('API mise en avant !'))
+    }
+  }
+  catch {
+    toast.error(t('Impossible de mettre en avant cette API'))
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+</script>

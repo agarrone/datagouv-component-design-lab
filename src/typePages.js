@@ -1,3 +1,4 @@
+import inventory from '../data/components.json';
 const items = ids => ids.map(id => ({ id, key: id }));
 export const typePages = {
   cards: { label: 'Cartes de contenu', description: 'Les cartes complètes, réunies pour comparer leur structure et leur densité.', sections: [
@@ -80,3 +81,7 @@ Object.assign(typePages, {
     { title: 'Documentation d’API', items: items(['OpenApiViewer/OpenApiViewer','OpenApiViewer/EndpointRequest','OpenApiViewer/EndpointResponses','OpenApiViewer/SchemaPanel','OpenApiViewer/SchemaTree','OpenApiViewer/ContentTypeSelect']) },
   ] },
 });
+
+const applicationComponents=inventory.filter(c=>c.origin==='cdata');
+const applicationGroups=[...new Set(applicationComponents.map(c=>c.id.split('/').length>2?c.id.split('/')[1]:'Essentiels'))].sort();
+typePages.application={label:'Composants de l’application',description:'Les composants propres à cdata, hors bibliothèque datagouv-components. Leur code est conservé à la même référence.',sections:applicationGroups.map(group=>({title:group,items:items(applicationComponents.filter(c=>(c.id.split('/').length>2?c.id.split('/')[1]:'Essentiels')===group).map(c=>c.id))}))};

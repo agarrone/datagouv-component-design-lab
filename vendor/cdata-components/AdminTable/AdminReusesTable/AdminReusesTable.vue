@@ -1,0 +1,141 @@
+<template>
+  <AdminTable>
+    <thead>
+      <tr>
+        <AdminTableTh
+          :sorted="sorted('title')"
+          scope="col"
+          @sort="(direction: SortDirection) => $emit('sort', 'title', direction)"
+        >
+          {{ t("Titre de la réutilisation") }}
+        </AdminTableTh>
+        <AdminTableTh>
+          {{ t("Statut") }}
+        </AdminTableTh>
+        <AdminTableTh
+          :sorted="sorted('created')"
+          scope="col"
+          @sort="(direction: SortDirection) => $emit('sort', 'created', direction)"
+        >
+          {{ t("Créé le") }}
+        </AdminTableTh>
+        <AdminTableTh
+          :sorted="sorted('datasets')"
+          scope="col"
+          @sort="(direction: SortDirection) => $emit('sort', 'datasets', direction)"
+        >
+          {{ t("Jeux de données") }}
+        </AdminTableTh>
+        <AdminTableTh scope="col">
+          {{ t("Actions") }}
+        </AdminTableTh>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        v-for="reuse in reuses"
+        :key="reuse.id"
+      >
+        <td>
+          <AdminContentWithTooltip>
+            <CdataLink
+              class="fr-link fr-reset-link"
+              :href="getReuseAdminUrl(reuse)"
+            >
+              <TextClamp
+                :text="reuse.title"
+                :auto-resize="true"
+                :max-lines="2"
+              />
+            </CdataLink>
+          </AdminContentWithTooltip>
+        </td>
+        <td>
+          <ReuseBadge :reuse />
+        </td>
+        <td>
+          <div v-if="reuse.id in activities">
+            <p><FormattedDate :date="activities[reuse.id].created_at" /></p>
+            <p class="inline-flex items-center">
+              {{ t('par ') }}
+              <ActivityActor
+                class="fr-ml-1v"
+                :actor="activities[reuse.id].actor"
+              />
+            </p>
+          </div>
+          <template v-else>
+            <FormattedDate :date="reuse.created_at" />
+          </template>
+        </td>
+        <td class="font-mono text-right">
+          {{ summarize(datasetsCount(reuse)) }}
+        </td>
+        <td>
+          <BrandedButton
+            size="xs"
+            color="tertiary"
+            :href="reuse.page"
+            :icon="RiEyeLine"
+            :title="$t('Voir la page publique')"
+            icon-only
+            keep-margins-even-without-borders
+          />
+          <BrandedButton
+            v-if="reuse.permissions.edit"
+            size="xs"
+            color="tertiary"
+            :href="getReuseAdminUrl(reuse)"
+            :icon="RiPencilLine"
+            :title="$t('Modifier')"
+            icon-only
+            keep-margins-even-without-borders
+          />
+          <slot
+            name="actions"
+            :reuse
+          />
+        </td>
+      </tr>
+    </tbody>
+  </AdminTable>
+</template>
+
+<script setup lang="ts">
+import { ActivityActor, BrandedButton, summarize, FormattedDate } from '@datagouv/components-next'
+import type { Activity, Reuse, ReuseV2 } from '@datagouv/components-next'
+import { RiEyeLine, RiPencilLine } from '@remixicon/vue'
+import AdminTable from '../../../components/AdminTable/Table/AdminTable.vue'
+import AdminTableTh from '../../../components/AdminTable/Table/AdminTableTh.vue'
+import AdminContentWithTooltip from '../../../components/AdminContentWithTooltip/AdminContentWithTooltip.vue'
+import type { ReuseSortedBy, SortDirection } from '~/types/types'
+import ReuseBadge from '~/components/AdminBadge/ReuseBadge.vue'
+
+const props = withDefaults(defineProps<{
+  activities?: Record<string, Activity>
+  reuses: Array<Reuse | ReuseV2>
+  sortedBy: ReuseSortedBy
+  sortDirection: SortDirection
+}>(), {
+  activities: () => ({}),
+})
+
+defineEmits<{
+  (event: 'sort', column: ReuseSortedBy, direction: SortDirection): void
+}>()
+
+const { t } = useTranslation()
+
+// `datasets` is a full reference list on a v1 reuse but a lightweight link
+// (with a `total` counter) on a v2 reuse, depending on the endpoint feeding the table.
+function datasetsCount(reuse: Reuse | ReuseV2): number {
+  return Array.isArray(reuse.datasets) ? reuse.datasets.length : reuse.datasets.total
+}
+
+function sorted(column: ReuseSortedBy) {
+  if (props.sortedBy === column) {
+    return props.sortDirection
+  }
+  return null
+}
+</script>

@@ -89,3 +89,11 @@ Les propositions sont affichées dans l’onglet « Propositions » du composant
 ## Pages de référence
 
 `/#fondamentaux` présente les couleurs extraites du thème, les familles typographiques déclarées, l’échelle Tailwind installée, les espacements et les points de rupture. `/#incoherences` contient un premier relevé de cinq constats, avec statut, pistes à valider, composants concernés et références au commit source. Les données éditoriales sont dans `src/referenceData.js`. Un constat ne crée pas automatiquement une proposition.
+
+### Composants propres à l’application cdata
+
+Le catalogue inclut aussi les 260 fichiers Vue de `components/`, à la même référence que la bibliothèque. Ils sont conservés sans modification dans `vendor/cdata-components`. Le champ `origin` distingue `cdata` de `datagouv-components` ; le préfixe `cdata/` évite les collisions entre homonymes. La collection « Composants de l’application », la recherche et le filtre d’origine permettent de les retrouver.
+
+Le code source et les options sont disponibles pour tous. Trois exemples Onboarding autonomes sont rendus ; les autres aperçus doivent être configurés avec leurs dépendances Nuxt et données applicatives. Ils sont indiqués comme tels. L’analyse d’usage existante porte uniquement sur la bibliothèque ; les composants applicatifs restent « À auditer » et leur usage « Non analysé ».
+
+Pour réimporter depuis un checkout propre de `upstream` au commit de `upstream.lock.json` : `npm run source:import-cdata`, puis `npm run inventory`. `npm run source:check` vérifie les deux copies grâce à leurs empreintes. Cette opération ne modifie pas les propositions.

@@ -11,12 +11,18 @@ async function walk(dir) {
     : entry.name.endsWith('.vue') ? [join(dir, entry.name)] : []))).flat();
 }
 const lock = JSON.parse(await readFile(join(root, 'upstream.lock.json'), 'utf8'));
-const components = (await walk(directory)).sort().map(file => ({
-  id: relative(directory, file).replace(/\.vue$/, ''),
-  name: file.split('/').pop().replace(/\.vue$/, ''),
-  path: relative(root, file),
-  sourceUrl: `${lock.repository}/blob/${lock.commit}/datagouv-components/src/components/${relative(directory, file)}`,
-}));
+const components=[];
+for (const source of [
+  {directory, origin:'datagouv-components',prefix:'',sourcePath:'datagouv-components/src/components'},
+  {directory:join(root,'vendor/cdata-components'),origin:'cdata',prefix:'cdata/',sourcePath:'components'},
+]) for(const file of (await walk(source.directory)).sort()) components.push({
+  id:source.prefix+relative(source.directory,file).replace(/\.vue$/,''),
+  name:file.split('/').pop().replace(/\.vue$/,''),
+  origin:source.origin,
+  path:relative(root,file),
+  sourcePath:`${source.sourcePath}/${relative(source.directory,file)}`,
+  sourceUrl:`${lock.repository}/blob/${lock.commit}/${source.sourcePath}/${relative(source.directory,file)}`,
+});
 await mkdir(join(root, 'data'), { recursive: true });
 await writeFile(join(root, 'data/components.json'), JSON.stringify(components, null, 2) + '\n');
 console.log(`${components.length} composants Vue inventoriés.`);

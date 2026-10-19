@@ -2,1003 +2,3417 @@
   {
     "id": "ActivityList/ActivityActor",
     "name": "ActivityActor",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ActivityList/ActivityActor.vue",
+    "sourcePath": "datagouv-components/src/components/ActivityList/ActivityActor.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ActivityList/ActivityActor.vue"
   },
   {
     "id": "ActivityList/ActivityList",
     "name": "ActivityList",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ActivityList/ActivityList.vue",
+    "sourcePath": "datagouv-components/src/components/ActivityList/ActivityList.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ActivityList/ActivityList.vue"
   },
   {
     "id": "ActivityList/UserActivityList",
     "name": "UserActivityList",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ActivityList/UserActivityList.vue",
+    "sourcePath": "datagouv-components/src/components/ActivityList/UserActivityList.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ActivityList/UserActivityList.vue"
   },
   {
     "id": "AnimatedLoader",
     "name": "AnimatedLoader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/AnimatedLoader.vue",
+    "sourcePath": "datagouv-components/src/components/AnimatedLoader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/AnimatedLoader.vue"
   },
   {
     "id": "AppLink",
     "name": "AppLink",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/AppLink.vue",
+    "sourcePath": "datagouv-components/src/components/AppLink.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/AppLink.vue"
   },
   {
     "id": "Avatar",
     "name": "Avatar",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Avatar.vue",
+    "sourcePath": "datagouv-components/src/components/Avatar.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Avatar.vue"
   },
   {
     "id": "AvatarWithName",
     "name": "AvatarWithName",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/AvatarWithName.vue",
+    "sourcePath": "datagouv-components/src/components/AvatarWithName.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/AvatarWithName.vue"
   },
   {
     "id": "BannerAction",
     "name": "BannerAction",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/BannerAction.vue",
+    "sourcePath": "datagouv-components/src/components/BannerAction.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/BannerAction.vue"
   },
   {
     "id": "BouncingDots",
     "name": "BouncingDots",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/BouncingDots.vue",
+    "sourcePath": "datagouv-components/src/components/BouncingDots.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/BouncingDots.vue"
   },
   {
     "id": "BrandedButton",
     "name": "BrandedButton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/BrandedButton.vue",
+    "sourcePath": "datagouv-components/src/components/BrandedButton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/BrandedButton.vue"
   },
   {
     "id": "Chart/ChartViewer",
     "name": "ChartViewer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Chart/ChartViewer.vue",
+    "sourcePath": "datagouv-components/src/components/Chart/ChartViewer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Chart/ChartViewer.vue"
   },
   {
     "id": "Chart/ChartViewerWrapper",
     "name": "ChartViewerWrapper",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Chart/ChartViewerWrapper.vue",
+    "sourcePath": "datagouv-components/src/components/Chart/ChartViewerWrapper.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Chart/ChartViewerWrapper.vue"
   },
   {
     "id": "ChartCard",
     "name": "ChartCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ChartCard.vue",
+    "sourcePath": "datagouv-components/src/components/ChartCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ChartCard.vue"
   },
   {
     "id": "ClientOnly",
     "name": "ClientOnly",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ClientOnly.vue",
+    "sourcePath": "datagouv-components/src/components/ClientOnly.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ClientOnly.vue"
   },
   {
     "id": "CopyButton",
     "name": "CopyButton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/CopyButton.vue",
+    "sourcePath": "datagouv-components/src/components/CopyButton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/CopyButton.vue"
   },
   {
     "id": "DataserviceCard",
     "name": "DataserviceCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DataserviceCard.vue",
+    "sourcePath": "datagouv-components/src/components/DataserviceCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DataserviceCard.vue"
   },
   {
     "id": "DataserviceQuality",
     "name": "DataserviceQuality",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DataserviceQuality.vue",
+    "sourcePath": "datagouv-components/src/components/DataserviceQuality.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DataserviceQuality.vue"
   },
   {
     "id": "DataserviceQualityInline",
     "name": "DataserviceQualityInline",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DataserviceQualityInline.vue",
+    "sourcePath": "datagouv-components/src/components/DataserviceQualityInline.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DataserviceQualityInline.vue"
   },
   {
     "id": "DataserviceQualityTooltipContent",
     "name": "DataserviceQualityTooltipContent",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DataserviceQualityTooltipContent.vue",
+    "sourcePath": "datagouv-components/src/components/DataserviceQualityTooltipContent.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DataserviceQualityTooltipContent.vue"
   },
   {
     "id": "DatasetCard",
     "name": "DatasetCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetCard.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetCard.vue"
   },
   {
     "id": "DatasetInformation/DatasetEmbedSection",
     "name": "DatasetEmbedSection",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetInformation/DatasetEmbedSection.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetEmbedSection.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetInformation/DatasetEmbedSection.vue"
   },
   {
     "id": "DatasetInformation/DatasetInformationSection",
     "name": "DatasetInformationSection",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetInformation/DatasetInformationSection.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetInformationSection.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetInformation/DatasetInformationSection.vue"
   },
   {
     "id": "DatasetInformation/DatasetSchemaSection",
     "name": "DatasetSchemaSection",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue"
   },
   {
     "id": "DatasetInformation/DatasetSpatialSection",
     "name": "DatasetSpatialSection",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetInformation/DatasetSpatialSection.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSpatialSection.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetInformation/DatasetSpatialSection.vue"
   },
   {
     "id": "DatasetInformation/DatasetTemporalitySection",
     "name": "DatasetTemporalitySection",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetInformation/DatasetTemporalitySection.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetTemporalitySection.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetInformation/DatasetTemporalitySection.vue"
   },
   {
     "id": "DatasetLabelTag",
     "name": "DatasetLabelTag",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetLabelTag.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetLabelTag.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetLabelTag.vue"
   },
   {
     "id": "DatasetQuality",
     "name": "DatasetQuality",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetQuality.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetQuality.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetQuality.vue"
   },
   {
     "id": "DatasetQualityInline",
     "name": "DatasetQualityInline",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetQualityInline.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetQualityInline.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetQualityInline.vue"
   },
   {
     "id": "DatasetQualityTooltipContent",
     "name": "DatasetQualityTooltipContent",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DatasetQualityTooltipContent.vue",
+    "sourcePath": "datagouv-components/src/components/DatasetQualityTooltipContent.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DatasetQualityTooltipContent.vue"
   },
   {
     "id": "DateRangeDetails",
     "name": "DateRangeDetails",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DateRangeDetails.vue",
+    "sourcePath": "datagouv-components/src/components/DateRangeDetails.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DateRangeDetails.vue"
   },
   {
     "id": "DescriptionDetails",
     "name": "DescriptionDetails",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DescriptionDetails.vue",
+    "sourcePath": "datagouv-components/src/components/DescriptionDetails.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DescriptionDetails.vue"
   },
   {
     "id": "DescriptionList",
     "name": "DescriptionList",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DescriptionList.vue",
+    "sourcePath": "datagouv-components/src/components/DescriptionList.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DescriptionList.vue"
   },
   {
     "id": "DescriptionListDetails",
     "name": "DescriptionListDetails",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DescriptionListDetails.vue",
+    "sourcePath": "datagouv-components/src/components/DescriptionListDetails.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DescriptionListDetails.vue"
   },
   {
     "id": "DescriptionListTerm",
     "name": "DescriptionListTerm",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DescriptionListTerm.vue",
+    "sourcePath": "datagouv-components/src/components/DescriptionListTerm.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DescriptionListTerm.vue"
   },
   {
     "id": "DescriptionTerm",
     "name": "DescriptionTerm",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DescriptionTerm.vue",
+    "sourcePath": "datagouv-components/src/components/DescriptionTerm.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DescriptionTerm.vue"
   },
   {
     "id": "DiscussionMessageCard",
     "name": "DiscussionMessageCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/DiscussionMessageCard.vue",
+    "sourcePath": "datagouv-components/src/components/DiscussionMessageCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/DiscussionMessageCard.vue"
   },
   {
     "id": "ExtraAccordion",
     "name": "ExtraAccordion",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ExtraAccordion.vue",
+    "sourcePath": "datagouv-components/src/components/ExtraAccordion.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ExtraAccordion.vue"
   },
   {
     "id": "Form/BadgeSelect",
     "name": "BadgeSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/BadgeSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/BadgeSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/BadgeSelect.vue"
   },
   {
     "id": "Form/FormatSelect",
     "name": "FormatSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/FormatSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/FormatSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/FormatSelect.vue"
   },
   {
     "id": "Form/GeozoneSelect",
     "name": "GeozoneSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/GeozoneSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/GeozoneSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/GeozoneSelect.vue"
   },
   {
     "id": "Form/GranularitySelect",
     "name": "GranularitySelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/GranularitySelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/GranularitySelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/GranularitySelect.vue"
   },
   {
     "id": "Form/LicenseSelect",
     "name": "LicenseSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/LicenseSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/LicenseSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/LicenseSelect.vue"
   },
   {
     "id": "Form/Listbox",
     "name": "Listbox",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/Listbox.vue",
+    "sourcePath": "datagouv-components/src/components/Form/Listbox.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/Listbox.vue"
   },
   {
     "id": "Form/OrganizationSelect",
     "name": "OrganizationSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/OrganizationSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/OrganizationSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/OrganizationSelect.vue"
   },
   {
     "id": "Form/OrganizationTypeSelect",
     "name": "OrganizationTypeSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/OrganizationTypeSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/OrganizationTypeSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/OrganizationTypeSelect.vue"
   },
   {
     "id": "Form/ReuseTopicSelect",
     "name": "ReuseTopicSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/ReuseTopicSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/ReuseTopicSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/ReuseTopicSelect.vue"
   },
   {
     "id": "Form/SchemaSelect",
     "name": "SchemaSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/SchemaSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/SchemaSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/SchemaSelect.vue"
   },
   {
     "id": "Form/SearchableSelect",
     "name": "SearchableSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/SearchableSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/SearchableSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/SearchableSelect.vue"
   },
   {
     "id": "Form/SelectGroup",
     "name": "SelectGroup",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/SelectGroup.vue",
+    "sourcePath": "datagouv-components/src/components/Form/SelectGroup.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/SelectGroup.vue"
   },
   {
     "id": "Form/TagSelect",
     "name": "TagSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Form/TagSelect.vue",
+    "sourcePath": "datagouv-components/src/components/Form/TagSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Form/TagSelect.vue"
   },
   {
     "id": "FormattedDate",
     "name": "FormattedDate",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/FormattedDate.vue",
+    "sourcePath": "datagouv-components/src/components/FormattedDate.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/FormattedDate.vue"
   },
   {
     "id": "Icons/Archive",
     "name": "Archive",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Archive.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Archive.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Archive.vue"
   },
   {
     "id": "Icons/Code",
     "name": "Code",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Code.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Code.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Code.vue"
   },
   {
     "id": "Icons/Documentation",
     "name": "Documentation",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Documentation.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Documentation.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Documentation.vue"
   },
   {
     "id": "Icons/File",
     "name": "File",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/File.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/File.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/File.vue"
   },
   {
     "id": "Icons/Image",
     "name": "Image",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Image.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Image.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Image.vue"
   },
   {
     "id": "Icons/Link",
     "name": "Link",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Link.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Link.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Link.vue"
   },
   {
     "id": "Icons/Table",
     "name": "Table",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Icons/Table.vue",
+    "sourcePath": "datagouv-components/src/components/Icons/Table.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Icons/Table.vue"
   },
   {
     "id": "InfiniteLoader",
     "name": "InfiniteLoader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/InfiniteLoader.vue",
+    "sourcePath": "datagouv-components/src/components/InfiniteLoader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/InfiniteLoader.vue"
   },
   {
     "id": "LeafletMap",
     "name": "LeafletMap",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/LeafletMap.vue",
+    "sourcePath": "datagouv-components/src/components/LeafletMap.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/LeafletMap.vue"
   },
   {
     "id": "LicenseBadge",
     "name": "LicenseBadge",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/LicenseBadge.vue",
+    "sourcePath": "datagouv-components/src/components/LicenseBadge.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/LicenseBadge.vue"
   },
   {
     "id": "LoadingBlock",
     "name": "LoadingBlock",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/LoadingBlock.vue",
+    "sourcePath": "datagouv-components/src/components/LoadingBlock.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/LoadingBlock.vue"
   },
   {
     "id": "MarkdownViewer",
     "name": "MarkdownViewer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/MarkdownViewer.vue",
+    "sourcePath": "datagouv-components/src/components/MarkdownViewer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/MarkdownViewer.vue"
   },
   {
     "id": "ObjectCard",
     "name": "ObjectCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ObjectCard.vue",
+    "sourcePath": "datagouv-components/src/components/ObjectCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ObjectCard.vue"
   },
   {
     "id": "ObjectCardBadge",
     "name": "ObjectCardBadge",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ObjectCardBadge.vue",
+    "sourcePath": "datagouv-components/src/components/ObjectCardBadge.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ObjectCardBadge.vue"
   },
   {
     "id": "ObjectCardHeader",
     "name": "ObjectCardHeader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ObjectCardHeader.vue",
+    "sourcePath": "datagouv-components/src/components/ObjectCardHeader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ObjectCardHeader.vue"
   },
   {
     "id": "ObjectCardOwner",
     "name": "ObjectCardOwner",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ObjectCardOwner.vue",
+    "sourcePath": "datagouv-components/src/components/ObjectCardOwner.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ObjectCardOwner.vue"
   },
   {
     "id": "ObjectCardShortDescription",
     "name": "ObjectCardShortDescription",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ObjectCardShortDescription.vue",
+    "sourcePath": "datagouv-components/src/components/ObjectCardShortDescription.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ObjectCardShortDescription.vue"
   },
   {
     "id": "OpenApiViewer/ContentTypeSelect",
     "name": "ContentTypeSelect",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/ContentTypeSelect.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/ContentTypeSelect.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/ContentTypeSelect.vue"
   },
   {
     "id": "OpenApiViewer/EndpointRequest",
     "name": "EndpointRequest",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/EndpointRequest.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/EndpointRequest.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/EndpointRequest.vue"
   },
   {
     "id": "OpenApiViewer/EndpointResponses",
     "name": "EndpointResponses",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/EndpointResponses.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/EndpointResponses.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/EndpointResponses.vue"
   },
   {
     "id": "OpenApiViewer/OpenApiViewer",
     "name": "OpenApiViewer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/OpenApiViewer.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/OpenApiViewer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/OpenApiViewer.vue"
   },
   {
     "id": "OpenApiViewer/SchemaPanel",
     "name": "SchemaPanel",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/SchemaPanel.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/SchemaPanel.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/SchemaPanel.vue"
   },
   {
     "id": "OpenApiViewer/SchemaTree",
     "name": "SchemaTree",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OpenApiViewer/SchemaTree.vue",
+    "sourcePath": "datagouv-components/src/components/OpenApiViewer/SchemaTree.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OpenApiViewer/SchemaTree.vue"
   },
   {
     "id": "OrganizationCard",
     "name": "OrganizationCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OrganizationCard.vue",
+    "sourcePath": "datagouv-components/src/components/OrganizationCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OrganizationCard.vue"
   },
   {
     "id": "OrganizationHorizontalCard",
     "name": "OrganizationHorizontalCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OrganizationHorizontalCard.vue",
+    "sourcePath": "datagouv-components/src/components/OrganizationHorizontalCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OrganizationHorizontalCard.vue"
   },
   {
     "id": "OrganizationLogo",
     "name": "OrganizationLogo",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OrganizationLogo.vue",
+    "sourcePath": "datagouv-components/src/components/OrganizationLogo.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OrganizationLogo.vue"
   },
   {
     "id": "OrganizationNameWithCertificate",
     "name": "OrganizationNameWithCertificate",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue",
+    "sourcePath": "datagouv-components/src/components/OrganizationNameWithCertificate.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OrganizationNameWithCertificate.vue"
   },
   {
     "id": "OwnerType",
     "name": "OwnerType",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OwnerType.vue",
+    "sourcePath": "datagouv-components/src/components/OwnerType.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OwnerType.vue"
   },
   {
     "id": "OwnerTypeIcon",
     "name": "OwnerTypeIcon",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/OwnerTypeIcon.vue",
+    "sourcePath": "datagouv-components/src/components/OwnerTypeIcon.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/OwnerTypeIcon.vue"
   },
   {
     "id": "PaddedContainer",
     "name": "PaddedContainer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/PaddedContainer.vue",
+    "sourcePath": "datagouv-components/src/components/PaddedContainer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/PaddedContainer.vue"
   },
   {
     "id": "Pagination",
     "name": "Pagination",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Pagination.vue",
+    "sourcePath": "datagouv-components/src/components/Pagination.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Pagination.vue"
   },
   {
     "id": "Placeholder",
     "name": "Placeholder",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Placeholder.vue",
+    "sourcePath": "datagouv-components/src/components/Placeholder.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Placeholder.vue"
   },
   {
     "id": "PostCard",
     "name": "PostCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/PostCard.vue",
+    "sourcePath": "datagouv-components/src/components/PostCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/PostCard.vue"
   },
   {
     "id": "ProgressBar",
     "name": "ProgressBar",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ProgressBar.vue",
+    "sourcePath": "datagouv-components/src/components/ProgressBar.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ProgressBar.vue"
   },
   {
     "id": "QualityItem",
     "name": "QualityItem",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/QualityItem.vue",
+    "sourcePath": "datagouv-components/src/components/QualityItem.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/QualityItem.vue"
   },
   {
     "id": "QualityItemWarning",
     "name": "QualityItemWarning",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/QualityItemWarning.vue",
+    "sourcePath": "datagouv-components/src/components/QualityItemWarning.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/QualityItemWarning.vue"
   },
   {
     "id": "QualityScore",
     "name": "QualityScore",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/QualityScore.vue",
+    "sourcePath": "datagouv-components/src/components/QualityScore.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/QualityScore.vue"
   },
   {
     "id": "RadioGroup",
     "name": "RadioGroup",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/RadioGroup.vue",
+    "sourcePath": "datagouv-components/src/components/RadioGroup.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/RadioGroup.vue"
   },
   {
     "id": "RadioInput",
     "name": "RadioInput",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/RadioInput.vue",
+    "sourcePath": "datagouv-components/src/components/RadioInput.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/RadioInput.vue"
   },
   {
     "id": "ReadMore",
     "name": "ReadMore",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ReadMore.vue",
+    "sourcePath": "datagouv-components/src/components/ReadMore.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ReadMore.vue"
   },
   {
     "id": "ResourceAccordion/DataStructure",
     "name": "DataStructure",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/DataStructure.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/DataStructure.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/DataStructure.vue"
   },
   {
     "id": "ResourceAccordion/Datafair.client",
     "name": "Datafair.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/Datafair.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Datafair.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/Datafair.client.vue"
   },
   {
     "id": "ResourceAccordion/Downloads",
     "name": "Downloads",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/Downloads.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Downloads.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/Downloads.vue"
   },
   {
     "id": "ResourceAccordion/EditButton",
     "name": "EditButton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/EditButton.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/EditButton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/EditButton.vue"
   },
   {
     "id": "ResourceAccordion/ImagePreview.client",
     "name": "ImagePreview.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/ImagePreview.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/ImagePreview.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/ImagePreview.client.vue"
   },
   {
     "id": "ResourceAccordion/JsonPreview.client",
     "name": "JsonPreview.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/JsonPreview.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/JsonPreview.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/JsonPreview.client.vue"
   },
   {
     "id": "ResourceAccordion/MapContainer.client",
     "name": "MapContainer.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/MapContainer.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/MapContainer.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/MapContainer.client.vue"
   },
   {
     "id": "ResourceAccordion/Metadata",
     "name": "Metadata",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/Metadata.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Metadata.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/Metadata.vue"
   },
   {
     "id": "ResourceAccordion/PdfPreview.client",
     "name": "PdfPreview.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/PdfPreview.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PdfPreview.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/PdfPreview.client.vue"
   },
   {
     "id": "ResourceAccordion/PdfSkeleton",
     "name": "PdfSkeleton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue"
   },
   {
     "id": "ResourceAccordion/Pmtiles.client",
     "name": "Pmtiles.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/Pmtiles.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Pmtiles.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/Pmtiles.client.vue"
   },
   {
     "id": "ResourceAccordion/Preview",
     "name": "Preview",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/Preview.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Preview.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/Preview.vue"
   },
   {
     "id": "ResourceAccordion/PreviewLoader",
     "name": "PreviewLoader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/PreviewLoader.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewLoader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/PreviewLoader.vue"
   },
   {
     "id": "ResourceAccordion/PreviewUnavailable",
     "name": "PreviewUnavailable",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/PreviewUnavailable.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewUnavailable.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/PreviewUnavailable.vue"
   },
   {
     "id": "ResourceAccordion/PreviewWrapper",
     "name": "PreviewWrapper",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/PreviewWrapper.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewWrapper.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/PreviewWrapper.vue"
   },
   {
     "id": "ResourceAccordion/ResourceAccordion",
     "name": "ResourceAccordion",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/ResourceAccordion.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/ResourceAccordion.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/ResourceAccordion.vue"
   },
   {
     "id": "ResourceAccordion/ResourceIcon",
     "name": "ResourceIcon",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/ResourceIcon.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/ResourceIcon.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/ResourceIcon.vue"
   },
   {
     "id": "ResourceAccordion/SchemaBadge",
     "name": "SchemaBadge",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/SchemaBadge.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaBadge.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/SchemaBadge.vue"
   },
   {
     "id": "ResourceAccordion/SchemaLoader",
     "name": "SchemaLoader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/SchemaLoader.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaLoader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/SchemaLoader.vue"
   },
   {
     "id": "ResourceAccordion/XmlPreview.client",
     "name": "XmlPreview.client",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceAccordion/XmlPreview.client.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/XmlPreview.client.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceAccordion/XmlPreview.client.vue"
   },
   {
     "id": "ResourceExplorer/ResourceExplorer",
     "name": "ResourceExplorer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceExplorer.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceExplorer.vue"
   },
   {
     "id": "ResourceExplorer/ResourceExplorerHeader",
     "name": "ResourceExplorerHeader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceExplorerHeader.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorerHeader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceExplorerHeader.vue"
   },
   {
     "id": "ResourceExplorer/ResourceExplorerSidebar",
     "name": "ResourceExplorerSidebar",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceExplorerSidebar.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorerSidebar.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceExplorerSidebar.vue"
   },
   {
     "id": "ResourceExplorer/ResourceExplorerViewer",
     "name": "ResourceExplorerViewer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceExplorerViewer.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorerViewer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceExplorerViewer.vue"
   },
   {
     "id": "ResourceExplorer/ResourceMainAction",
     "name": "ResourceMainAction",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceMainAction.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceMainAction.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceMainAction.vue"
   },
   {
     "id": "ResourceExplorer/ResourceSelector",
     "name": "ResourceSelector",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceSelector.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceSelector.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceSelector.vue"
   },
   {
     "id": "ResourceExplorer/ResourceViewerHeader",
     "name": "ResourceViewerHeader",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceViewerHeader.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceViewerHeader.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceViewerHeader.vue"
   },
   {
     "id": "ResourceExplorer/ResourceViewerSkeleton",
     "name": "ResourceViewerSkeleton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceExplorer/ResourceViewerSkeleton.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceViewerSkeleton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceExplorer/ResourceViewerSkeleton.vue"
   },
   {
     "id": "ResourceIconBadge",
     "name": "ResourceIconBadge",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceIconBadge.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceIconBadge.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceIconBadge.vue"
   },
   {
     "id": "ResourceListItem",
     "name": "ResourceListItem",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ResourceListItem.vue",
+    "sourcePath": "datagouv-components/src/components/ResourceListItem.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ResourceListItem.vue"
   },
   {
     "id": "ReuseCard",
     "name": "ReuseCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ReuseCard.vue",
+    "sourcePath": "datagouv-components/src/components/ReuseCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ReuseCard.vue"
   },
   {
     "id": "ReuseDetails",
     "name": "ReuseDetails",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ReuseDetails.vue",
+    "sourcePath": "datagouv-components/src/components/ReuseDetails.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ReuseDetails.vue"
   },
   {
     "id": "ReuseHorizontalCard",
     "name": "ReuseHorizontalCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ReuseHorizontalCard.vue",
+    "sourcePath": "datagouv-components/src/components/ReuseHorizontalCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ReuseHorizontalCard.vue"
   },
   {
     "id": "SchemaCard",
     "name": "SchemaCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/SchemaCard.vue",
+    "sourcePath": "datagouv-components/src/components/SchemaCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/SchemaCard.vue"
   },
   {
     "id": "Search/BasicAndAdvancedFilters",
     "name": "BasicAndAdvancedFilters",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/BasicAndAdvancedFilters.vue",
+    "sourcePath": "datagouv-components/src/components/Search/BasicAndAdvancedFilters.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/BasicAndAdvancedFilters.vue"
   },
   {
     "id": "Search/Filter/AccessTypeFilter",
     "name": "AccessTypeFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/AccessTypeFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/AccessTypeFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/AccessTypeFilter.vue"
   },
   {
     "id": "Search/Filter/DatasetBadgeFilter",
     "name": "DatasetBadgeFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/DatasetBadgeFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/DatasetBadgeFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/DatasetBadgeFilter.vue"
   },
   {
     "id": "Search/Filter/FilterButtonGroup",
     "name": "FilterButtonGroup",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/FilterButtonGroup.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/FilterButtonGroup.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/FilterButtonGroup.vue"
   },
   {
     "id": "Search/Filter/FormatFamilyFilter",
     "name": "FormatFamilyFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/FormatFamilyFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/FormatFamilyFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/FormatFamilyFilter.vue"
   },
   {
     "id": "Search/Filter/LastUpdateRangeFilter",
     "name": "LastUpdateRangeFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/LastUpdateRangeFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/LastUpdateRangeFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/LastUpdateRangeFilter.vue"
   },
   {
     "id": "Search/Filter/ProducerTypeFilter",
     "name": "ProducerTypeFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/ProducerTypeFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/ProducerTypeFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/ProducerTypeFilter.vue"
   },
   {
     "id": "Search/Filter/ReuseTypeFilter",
     "name": "ReuseTypeFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Filter/ReuseTypeFilter.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Filter/ReuseTypeFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Filter/ReuseTypeFilter.vue"
   },
   {
     "id": "Search/GlobalSearch",
     "name": "GlobalSearch",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/GlobalSearch.vue",
+    "sourcePath": "datagouv-components/src/components/Search/GlobalSearch.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/GlobalSearch.vue"
   },
   {
     "id": "Search/SearchInput",
     "name": "SearchInput",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/SearchInput.vue",
+    "sourcePath": "datagouv-components/src/components/Search/SearchInput.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/SearchInput.vue"
   },
   {
     "id": "Search/Sidemenu",
     "name": "Sidemenu",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Search/Sidemenu.vue",
+    "sourcePath": "datagouv-components/src/components/Search/Sidemenu.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Search/Sidemenu.vue"
   },
   {
     "id": "SegmentedControl",
     "name": "SegmentedControl",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/SegmentedControl.vue",
+    "sourcePath": "datagouv-components/src/components/SegmentedControl.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/SegmentedControl.vue"
   },
   {
     "id": "SimpleBanner",
     "name": "SimpleBanner",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/SimpleBanner.vue",
+    "sourcePath": "datagouv-components/src/components/SimpleBanner.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/SimpleBanner.vue"
   },
   {
     "id": "SmallChart",
     "name": "SmallChart",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/SmallChart.vue",
+    "sourcePath": "datagouv-components/src/components/SmallChart.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/SmallChart.vue"
   },
   {
     "id": "StatBox",
     "name": "StatBox",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/StatBox.vue",
+    "sourcePath": "datagouv-components/src/components/StatBox.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/StatBox.vue"
   },
   {
     "id": "Tabs/Tab",
     "name": "Tab",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tabs/Tab.vue",
+    "sourcePath": "datagouv-components/src/components/Tabs/Tab.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tabs/Tab.vue"
   },
   {
     "id": "Tabs/TabGroup",
     "name": "TabGroup",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tabs/TabGroup.vue",
+    "sourcePath": "datagouv-components/src/components/Tabs/TabGroup.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tabs/TabGroup.vue"
   },
   {
     "id": "Tabs/TabList",
     "name": "TabList",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tabs/TabList.vue",
+    "sourcePath": "datagouv-components/src/components/Tabs/TabList.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tabs/TabList.vue"
   },
   {
     "id": "Tabs/TabPanel",
     "name": "TabPanel",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tabs/TabPanel.vue",
+    "sourcePath": "datagouv-components/src/components/Tabs/TabPanel.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tabs/TabPanel.vue"
   },
   {
     "id": "Tabs/TabPanels",
     "name": "TabPanels",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tabs/TabPanels.vue",
+    "sourcePath": "datagouv-components/src/components/Tabs/TabPanels.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tabs/TabPanels.vue"
   },
   {
     "id": "TabularExplorer/TabularActiveFilters",
     "name": "TabularActiveFilters",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularActiveFilters.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularActiveFilters.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularActiveFilters.vue"
   },
   {
     "id": "TabularExplorer/TabularCell",
     "name": "TabularCell",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularCell.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularCell.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularCell.vue"
   },
   {
     "id": "TabularExplorer/TabularCellPopover",
     "name": "TabularCellPopover",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularCellPopover.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularCellPopover.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularCellPopover.vue"
   },
   {
     "id": "TabularExplorer/TabularColumnsMenu",
     "name": "TabularColumnsMenu",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularColumnsMenu.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularColumnsMenu.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularColumnsMenu.vue"
   },
   {
     "id": "TabularExplorer/TabularDateField",
     "name": "TabularDateField",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularDateField.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularDateField.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularDateField.vue"
   },
   {
     "id": "TabularExplorer/TabularDateFilter",
     "name": "TabularDateFilter",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularDateFilter.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularDateFilter.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularDateFilter.vue"
   },
   {
     "id": "TabularExplorer/TabularExplorer",
     "name": "TabularExplorer",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularExplorer.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularExplorer.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularExplorer.vue"
   },
   {
     "id": "TabularExplorer/TabularFilterContent",
     "name": "TabularFilterContent",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularFilterContent.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularFilterContent.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularFilterContent.vue"
   },
   {
     "id": "TabularExplorer/TabularFilterPopover",
     "name": "TabularFilterPopover",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularFilterPopover.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularFilterPopover.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularFilterPopover.vue"
   },
   {
     "id": "TabularExplorer/TabularMobileFilterButton",
     "name": "TabularMobileFilterButton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularMobileFilterButton.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularMobileFilterButton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularMobileFilterButton.vue"
   },
   {
     "id": "TabularExplorer/TabularMobileFilters",
     "name": "TabularMobileFilters",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularMobileFilters.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularMobileFilters.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularMobileFilters.vue"
   },
   {
     "id": "TabularExplorer/TabularRowsInfo",
     "name": "TabularRowsInfo",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularRowsInfo.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularRowsInfo.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularRowsInfo.vue"
   },
   {
     "id": "TabularExplorer/TabularSearchInput",
     "name": "TabularSearchInput",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularSearchInput.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularSearchInput.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularSearchInput.vue"
   },
   {
     "id": "TabularExplorer/TabularSkeleton",
     "name": "TabularSkeleton",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue"
   },
   {
     "id": "TabularExplorer/TabularTable",
     "name": "TabularTable",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularTable.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularTable.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularTable.vue"
   },
   {
     "id": "TabularExplorer/TabularToolbar",
     "name": "TabularToolbar",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TabularExplorer/TabularToolbar.vue",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularToolbar.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TabularExplorer/TabularToolbar.vue"
   },
   {
     "id": "Tag",
     "name": "Tag",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tag.vue",
+    "sourcePath": "datagouv-components/src/components/Tag.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tag.vue"
   },
   {
     "id": "Toggletip",
     "name": "Toggletip",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Toggletip.vue",
+    "sourcePath": "datagouv-components/src/components/Toggletip.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Toggletip.vue"
   },
   {
     "id": "Tooltip",
     "name": "Tooltip",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/Tooltip.vue",
+    "sourcePath": "datagouv-components/src/components/Tooltip.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/Tooltip.vue"
   },
   {
     "id": "TopicCard",
     "name": "TopicCard",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TopicCard.vue",
+    "sourcePath": "datagouv-components/src/components/TopicCard.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TopicCard.vue"
   },
   {
     "id": "TranslationT",
     "name": "TranslationT",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/TranslationT.vue",
+    "sourcePath": "datagouv-components/src/components/TranslationT.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/TranslationT.vue"
   },
   {
     "id": "ValueWatcher",
     "name": "ValueWatcher",
+    "origin": "datagouv-components",
     "path": "vendor/datagouv-components/src/components/ValueWatcher.vue",
+    "sourcePath": "datagouv-components/src/components/ValueWatcher.vue",
     "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/datagouv-components/src/components/ValueWatcher.vue"
+  },
+  {
+    "id": "cdata/AccessType/AccessTypeForm",
+    "name": "AccessTypeForm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AccessType/AccessTypeForm.vue",
+    "sourcePath": "components/AccessType/AccessTypeForm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AccessType/AccessTypeForm.vue"
+  },
+  {
+    "id": "cdata/AccessTypes/AccessTypeBadge",
+    "name": "AccessTypeBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AccessTypes/AccessTypeBadge.vue",
+    "sourcePath": "components/AccessTypes/AccessTypeBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AccessTypes/AccessTypeBadge.vue"
+  },
+  {
+    "id": "cdata/AccessTypes/AccessTypePanel",
+    "name": "AccessTypePanel",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AccessTypes/AccessTypePanel.vue",
+    "sourcePath": "components/AccessTypes/AccessTypePanel.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AccessTypes/AccessTypePanel.vue"
+  },
+  {
+    "id": "cdata/Accordion/Accordion.global",
+    "name": "Accordion.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Accordion/Accordion.global.vue",
+    "sourcePath": "components/Accordion/Accordion.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Accordion/Accordion.global.vue"
+  },
+  {
+    "id": "cdata/Accordion/AccordionGroup.global",
+    "name": "AccordionGroup.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Accordion/AccordionGroup.global.vue",
+    "sourcePath": "components/Accordion/AccordionGroup.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Accordion/AccordionGroup.global.vue"
+  },
+  {
+    "id": "cdata/ActionCard/ActionCard",
+    "name": "ActionCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ActionCard/ActionCard.vue",
+    "sourcePath": "components/ActionCard/ActionCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ActionCard/ActionCard.vue"
+  },
+  {
+    "id": "cdata/Admin/AdminDeleteModal",
+    "name": "AdminDeleteModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Admin/AdminDeleteModal.vue",
+    "sourcePath": "components/Admin/AdminDeleteModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Admin/AdminDeleteModal.vue"
+  },
+  {
+    "id": "cdata/AdminBadge/AdminBadge",
+    "name": "AdminBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminBadge/AdminBadge.vue",
+    "sourcePath": "components/AdminBadge/AdminBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminBadge/AdminBadge.vue"
+  },
+  {
+    "id": "cdata/AdminBadge/DataserviceBadge",
+    "name": "DataserviceBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminBadge/DataserviceBadge.vue",
+    "sourcePath": "components/AdminBadge/DataserviceBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminBadge/DataserviceBadge.vue"
+  },
+  {
+    "id": "cdata/AdminBadge/DatasetBadge",
+    "name": "DatasetBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminBadge/DatasetBadge.vue",
+    "sourcePath": "components/AdminBadge/DatasetBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminBadge/DatasetBadge.vue"
+  },
+  {
+    "id": "cdata/AdminBadge/ReuseBadge",
+    "name": "ReuseBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminBadge/ReuseBadge.vue",
+    "sourcePath": "components/AdminBadge/ReuseBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminBadge/ReuseBadge.vue"
+  },
+  {
+    "id": "cdata/AdminContentWithTooltip/AdminContentWithTooltip",
+    "name": "AdminContentWithTooltip",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminContentWithTooltip/AdminContentWithTooltip.vue",
+    "sourcePath": "components/AdminContentWithTooltip/AdminContentWithTooltip.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminContentWithTooltip/AdminContentWithTooltip.vue"
+  },
+  {
+    "id": "cdata/AdminEmail",
+    "name": "AdminEmail",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminEmail.vue",
+    "sourcePath": "components/AdminEmail.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminEmail.vue"
+  },
+  {
+    "id": "cdata/AdminInput",
+    "name": "AdminInput",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminInput.vue",
+    "sourcePath": "components/AdminInput.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminInput.vue"
+  },
+  {
+    "id": "cdata/AdminMembershipRequest/AdminMembershipRequest",
+    "name": "AdminMembershipRequest",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminMembershipRequest/AdminMembershipRequest.vue",
+    "sourcePath": "components/AdminMembershipRequest/AdminMembershipRequest.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminMembershipRequest/AdminMembershipRequest.vue"
+  },
+  {
+    "id": "cdata/AdminOrgInvitation/AdminOrgInvitation",
+    "name": "AdminOrgInvitation",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminOrgInvitation/AdminOrgInvitation.vue",
+    "sourcePath": "components/AdminOrgInvitation/AdminOrgInvitation.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminOrgInvitation/AdminOrgInvitation.vue"
+  },
+  {
+    "id": "cdata/AdminPublishButton/AdminPublishButton",
+    "name": "AdminPublishButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminPublishButton/AdminPublishButton.vue",
+    "sourcePath": "components/AdminPublishButton/AdminPublishButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminPublishButton/AdminPublishButton.vue"
+  },
+  {
+    "id": "cdata/AdminSidebar/AdminSidebarLink/AdminSidebarLink",
+    "name": "AdminSidebarLink",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminSidebar/AdminSidebarLink/AdminSidebarLink.vue",
+    "sourcePath": "components/AdminSidebar/AdminSidebarLink/AdminSidebarLink.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminSidebar/AdminSidebarLink/AdminSidebarLink.vue"
+  },
+  {
+    "id": "cdata/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu",
+    "name": "AdminSidebarMenu",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu.vue",
+    "sourcePath": "components/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable",
+    "name": "AdminCommunityResourcesTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable.vue",
+    "sourcePath": "components/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminContactPointsTable/AdminContactPointsTable",
+    "name": "AdminContactPointsTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminContactPointsTable/AdminContactPointsTable.vue",
+    "sourcePath": "components/AdminTable/AdminContactPointsTable/AdminContactPointsTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminContactPointsTable/AdminContactPointsTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminDataservicesTable/AdminDataservicesTable",
+    "name": "AdminDataservicesTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminDataservicesTable/AdminDataservicesTable.vue",
+    "sourcePath": "components/AdminTable/AdminDataservicesTable/AdminDataservicesTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminDataservicesTable/AdminDataservicesTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminDatasetsTable/AdminDatasetsTable",
+    "name": "AdminDatasetsTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminDatasetsTable/AdminDatasetsTable.vue",
+    "sourcePath": "components/AdminTable/AdminDatasetsTable/AdminDatasetsTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminDatasetsTable/AdminDatasetsTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable",
+    "name": "AdminDiscussionsTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable.vue",
+    "sourcePath": "components/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/AdminReusesTable/AdminReusesTable",
+    "name": "AdminReusesTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/AdminReusesTable/AdminReusesTable.vue",
+    "sourcePath": "components/AdminTable/AdminReusesTable/AdminReusesTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/AdminReusesTable/AdminReusesTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/Table/AdminTable",
+    "name": "AdminTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/Table/AdminTable.vue",
+    "sourcePath": "components/AdminTable/Table/AdminTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/Table/AdminTable.vue"
+  },
+  {
+    "id": "cdata/AdminTable/Table/AdminTableTh",
+    "name": "AdminTableTh",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/AdminTable/Table/AdminTableTh.vue",
+    "sourcePath": "components/AdminTable/Table/AdminTableTh.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/AdminTable/Table/AdminTableTh.vue"
+  },
+  {
+    "id": "cdata/Alert/Alert",
+    "name": "Alert",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Alert/Alert.vue",
+    "sourcePath": "components/Alert/Alert.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Alert/Alert.vue"
+  },
+  {
+    "id": "cdata/BadgeSelect",
+    "name": "BadgeSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/BadgeSelect.vue",
+    "sourcePath": "components/BadgeSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/BadgeSelect.vue"
+  },
+  {
+    "id": "cdata/BannerNotif",
+    "name": "BannerNotif",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/BannerNotif.vue",
+    "sourcePath": "components/BannerNotif.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/BannerNotif.vue"
+  },
+  {
+    "id": "cdata/BannerReadOnly",
+    "name": "BannerReadOnly",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/BannerReadOnly.vue",
+    "sourcePath": "components/BannerReadOnly.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/BannerReadOnly.vue"
+  },
+  {
+    "id": "cdata/Brand/BrandBanner",
+    "name": "BrandBanner",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Brand/BrandBanner.vue",
+    "sourcePath": "components/Brand/BrandBanner.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Brand/BrandBanner.vue"
+  },
+  {
+    "id": "cdata/Brand/BrandCard",
+    "name": "BrandCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Brand/BrandCard.vue",
+    "sourcePath": "components/Brand/BrandCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Brand/BrandCard.vue"
+  },
+  {
+    "id": "cdata/Breadcrumb/Breadcrumb",
+    "name": "Breadcrumb",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Breadcrumb/Breadcrumb.vue",
+    "sourcePath": "components/Breadcrumb/Breadcrumb.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Breadcrumb/Breadcrumb.vue"
+  },
+  {
+    "id": "cdata/Breadcrumbs/AdminBreadcrumb",
+    "name": "AdminBreadcrumb",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Breadcrumbs/AdminBreadcrumb.vue",
+    "sourcePath": "components/Breadcrumbs/AdminBreadcrumb.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Breadcrumbs/AdminBreadcrumb.vue"
+  },
+  {
+    "id": "cdata/Breadcrumbs/BreadcrumbItem",
+    "name": "BreadcrumbItem",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Breadcrumbs/BreadcrumbItem.vue",
+    "sourcePath": "components/Breadcrumbs/BreadcrumbItem.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Breadcrumbs/BreadcrumbItem.vue"
+  },
+  {
+    "id": "cdata/Buttons/EditButton",
+    "name": "EditButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Buttons/EditButton.vue",
+    "sourcePath": "components/Buttons/EditButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Buttons/EditButton.vue"
+  },
+  {
+    "id": "cdata/Captchetat.client",
+    "name": "Captchetat.client",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Captchetat.client.vue",
+    "sourcePath": "components/Captchetat.client.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Captchetat.client.vue"
+  },
+  {
+    "id": "cdata/CdataLink",
+    "name": "CdataLink",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/CdataLink.vue",
+    "sourcePath": "components/CdataLink.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/CdataLink.vue"
+  },
+  {
+    "id": "cdata/Charts/AdminChartsPage",
+    "name": "AdminChartsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Charts/AdminChartsPage.vue",
+    "sourcePath": "components/Charts/AdminChartsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Charts/AdminChartsPage.vue"
+  },
+  {
+    "id": "cdata/Charts/ChartConfigurator",
+    "name": "ChartConfigurator",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Charts/ChartConfigurator.vue",
+    "sourcePath": "components/Charts/ChartConfigurator.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Charts/ChartConfigurator.vue"
+  },
+  {
+    "id": "cdata/Charts/ChartFilterGroup",
+    "name": "ChartFilterGroup",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Charts/ChartFilterGroup.vue",
+    "sourcePath": "components/Charts/ChartFilterGroup.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Charts/ChartFilterGroup.vue"
+  },
+  {
+    "id": "cdata/Charts/ChartFilterRow",
+    "name": "ChartFilterRow",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Charts/ChartFilterRow.vue",
+    "sourcePath": "components/Charts/ChartFilterRow.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Charts/ChartFilterRow.vue"
+  },
+  {
+    "id": "cdata/CommunityResources/AdminCommunityResourcesPage",
+    "name": "AdminCommunityResourcesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/CommunityResources/AdminCommunityResourcesPage.vue",
+    "sourcePath": "components/CommunityResources/AdminCommunityResourcesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/CommunityResources/AdminCommunityResourcesPage.vue"
+  },
+  {
+    "id": "cdata/ContactPoint",
+    "name": "ContactPoint",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ContactPoint.vue",
+    "sourcePath": "components/ContactPoint.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ContactPoint.vue"
+  },
+  {
+    "id": "cdata/ContactPointSelect",
+    "name": "ContactPointSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ContactPointSelect.vue",
+    "sourcePath": "components/ContactPointSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ContactPointSelect.vue"
+  },
+  {
+    "id": "cdata/Dataservices/AccessAudienceCondition",
+    "name": "AccessAudienceCondition",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/AccessAudienceCondition.vue",
+    "sourcePath": "components/Dataservices/AccessAudienceCondition.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/AccessAudienceCondition.vue"
+  },
+  {
+    "id": "cdata/Dataservices/AdminDataservicesPage",
+    "name": "AdminDataservicesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/AdminDataservicesPage.vue",
+    "sourcePath": "components/Dataservices/AdminDataservicesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/AdminDataservicesPage.vue"
+  },
+  {
+    "id": "cdata/Dataservices/AdminUpdateDataserviceDatasetsPage",
+    "name": "AdminUpdateDataserviceDatasetsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/AdminUpdateDataserviceDatasetsPage.vue",
+    "sourcePath": "components/Dataservices/AdminUpdateDataserviceDatasetsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/AdminUpdateDataserviceDatasetsPage.vue"
+  },
+  {
+    "id": "cdata/Dataservices/AdminUpdateDataservicePage",
+    "name": "AdminUpdateDataservicePage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/AdminUpdateDataservicePage.vue",
+    "sourcePath": "components/Dataservices/AdminUpdateDataservicePage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/AdminUpdateDataservicePage.vue"
+  },
+  {
+    "id": "cdata/Dataservices/Card/Card",
+    "name": "Card",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/Card/Card.vue",
+    "sourcePath": "components/Dataservices/Card/Card.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/Card/Card.vue"
+  },
+  {
+    "id": "cdata/Dataservices/DescribeDataservice",
+    "name": "DescribeDataservice",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/DescribeDataservice.vue",
+    "sourcePath": "components/Dataservices/DescribeDataservice.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/DescribeDataservice.vue"
+  },
+  {
+    "id": "cdata/Dataservices/New/Step2AddDatasets",
+    "name": "Step2AddDatasets",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/New/Step2AddDatasets.vue",
+    "sourcePath": "components/Dataservices/New/Step2AddDatasets.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/New/Step2AddDatasets.vue"
+  },
+  {
+    "id": "cdata/Dataservices/New/Step3CompletePublication",
+    "name": "Step3CompletePublication",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Dataservices/New/Step3CompletePublication.vue",
+    "sourcePath": "components/Dataservices/New/Step3CompletePublication.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Dataservices/New/Step3CompletePublication.vue"
+  },
+  {
+    "id": "cdata/DataservicesSelect",
+    "name": "DataservicesSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DataservicesSelect.vue",
+    "sourcePath": "components/DataservicesSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DataservicesSelect.vue"
+  },
+  {
+    "id": "cdata/DatasetAssignmentSelector",
+    "name": "DatasetAssignmentSelector",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DatasetAssignmentSelector.vue",
+    "sourcePath": "components/DatasetAssignmentSelector.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DatasetAssignmentSelector.vue"
+  },
+  {
+    "id": "cdata/DatasetAssignmentTable",
+    "name": "DatasetAssignmentTable",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DatasetAssignmentTable.vue",
+    "sourcePath": "components/DatasetAssignmentTable.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DatasetAssignmentTable.vue"
+  },
+  {
+    "id": "cdata/Datasets/AdminDatasetResourcesPage",
+    "name": "AdminDatasetResourcesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/AdminDatasetResourcesPage.vue",
+    "sourcePath": "components/Datasets/AdminDatasetResourcesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/AdminDatasetResourcesPage.vue"
+  },
+  {
+    "id": "cdata/Datasets/AdminDatasetsPage",
+    "name": "AdminDatasetsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/AdminDatasetsPage.vue",
+    "sourcePath": "components/Datasets/AdminDatasetsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/AdminDatasetsPage.vue"
+  },
+  {
+    "id": "cdata/Datasets/AdminUpdateDatasetPage",
+    "name": "AdminUpdateDatasetPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/AdminUpdateDatasetPage.vue",
+    "sourcePath": "components/Datasets/AdminUpdateDatasetPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/AdminUpdateDatasetPage.vue"
+  },
+  {
+    "id": "cdata/Datasets/CompleteResourcePublicationStep",
+    "name": "CompleteResourcePublicationStep",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/CompleteResourcePublicationStep.vue",
+    "sourcePath": "components/Datasets/CompleteResourcePublicationStep.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/CompleteResourcePublicationStep.vue"
+  },
+  {
+    "id": "cdata/Datasets/DescribeDataset",
+    "name": "DescribeDataset",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/DescribeDataset.vue",
+    "sourcePath": "components/Datasets/DescribeDataset.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/DescribeDataset.vue"
+  },
+  {
+    "id": "cdata/Datasets/DescribeResource",
+    "name": "DescribeResource",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/DescribeResource.vue",
+    "sourcePath": "components/Datasets/DescribeResource.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/DescribeResource.vue"
+  },
+  {
+    "id": "cdata/Datasets/DoiRequestModal",
+    "name": "DoiRequestModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/DoiRequestModal.vue",
+    "sourcePath": "components/Datasets/DoiRequestModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/DoiRequestModal.vue"
+  },
+  {
+    "id": "cdata/Datasets/FileEditModal",
+    "name": "FileEditModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/FileEditModal.vue",
+    "sourcePath": "components/Datasets/FileEditModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/FileEditModal.vue"
+  },
+  {
+    "id": "cdata/Datasets/FileEditModalFromQueryString.client",
+    "name": "FileEditModalFromQueryString.client",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/FileEditModalFromQueryString.client.vue",
+    "sourcePath": "components/Datasets/FileEditModalFromQueryString.client.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/FileEditModalFromQueryString.client.vue"
+  },
+  {
+    "id": "cdata/Datasets/GeopfDatastoreSelector",
+    "name": "GeopfDatastoreSelector",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/GeopfDatastoreSelector.vue",
+    "sourcePath": "components/Datasets/GeopfDatastoreSelector.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/GeopfDatastoreSelector.vue"
+  },
+  {
+    "id": "cdata/Datasets/GeopfPanel",
+    "name": "GeopfPanel",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/GeopfPanel.vue",
+    "sourcePath": "components/Datasets/GeopfPanel.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/GeopfPanel.vue"
+  },
+  {
+    "id": "cdata/Datasets/GeopfPullButton",
+    "name": "GeopfPullButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/GeopfPullButton.vue",
+    "sourcePath": "components/Datasets/GeopfPullButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/GeopfPullButton.vue"
+  },
+  {
+    "id": "cdata/Datasets/GeopfPushStatus",
+    "name": "GeopfPushStatus",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/GeopfPushStatus.vue",
+    "sourcePath": "components/Datasets/GeopfPushStatus.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/GeopfPushStatus.vue"
+  },
+  {
+    "id": "cdata/Datasets/GeopfSyncPage",
+    "name": "GeopfSyncPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/GeopfSyncPage.vue",
+    "sourcePath": "components/Datasets/GeopfSyncPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/GeopfSyncPage.vue"
+  },
+  {
+    "id": "cdata/Datasets/LegacyResourceList",
+    "name": "LegacyResourceList",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/LegacyResourceList.vue",
+    "sourcePath": "components/Datasets/LegacyResourceList.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/LegacyResourceList.vue"
+  },
+  {
+    "id": "cdata/Datasets/New/Step1PublishingType",
+    "name": "Step1PublishingType",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/New/Step1PublishingType.vue",
+    "sourcePath": "components/Datasets/New/Step1PublishingType.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/New/Step1PublishingType.vue"
+  },
+  {
+    "id": "cdata/Datasets/New/Step3AddResources",
+    "name": "Step3AddResources",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/New/Step3AddResources.vue",
+    "sourcePath": "components/Datasets/New/Step3AddResources.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/New/Step3AddResources.vue"
+  },
+  {
+    "id": "cdata/Datasets/New/Step4CompletePublication",
+    "name": "Step4CompletePublication",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/New/Step4CompletePublication.vue",
+    "sourcePath": "components/Datasets/New/Step4CompletePublication.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/New/Step4CompletePublication.vue"
+  },
+  {
+    "id": "cdata/Datasets/Structured/Step1AssociateSchema",
+    "name": "Step1AssociateSchema",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/Structured/Step1AssociateSchema.vue",
+    "sourcePath": "components/Datasets/Structured/Step1AssociateSchema.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/Structured/Step1AssociateSchema.vue"
+  },
+  {
+    "id": "cdata/Datasets/Structured/Step2LoadData",
+    "name": "Step2LoadData",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/Structured/Step2LoadData.vue",
+    "sourcePath": "components/Datasets/Structured/Step2LoadData.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/Structured/Step2LoadData.vue"
+  },
+  {
+    "id": "cdata/Datasets/Structured/Step2Sheet",
+    "name": "Step2Sheet",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/Structured/Step2Sheet.vue",
+    "sourcePath": "components/Datasets/Structured/Step2Sheet.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/Structured/Step2Sheet.vue"
+  },
+  {
+    "id": "cdata/Datasets/Structured/Step3DescribeDataset",
+    "name": "Step3DescribeDataset",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/Structured/Step3DescribeDataset.vue",
+    "sourcePath": "components/Datasets/Structured/Step3DescribeDataset.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/Structured/Step3DescribeDataset.vue"
+  },
+  {
+    "id": "cdata/Datasets/TabularEditor.client",
+    "name": "TabularEditor.client",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/TabularEditor.client.vue",
+    "sourcePath": "components/Datasets/TabularEditor.client.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/TabularEditor.client.vue"
+  },
+  {
+    "id": "cdata/Datasets/UploadResourceModal",
+    "name": "UploadResourceModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Datasets/UploadResourceModal.vue",
+    "sourcePath": "components/Datasets/UploadResourceModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Datasets/UploadResourceModal.vue"
+  },
+  {
+    "id": "cdata/DatasetsSelect",
+    "name": "DatasetsSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DatasetsSelect.vue",
+    "sourcePath": "components/DatasetsSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DatasetsSelect.vue"
+  },
+  {
+    "id": "cdata/DescriptionList/DescriptionList",
+    "name": "DescriptionList",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DescriptionList/DescriptionList.vue",
+    "sourcePath": "components/DescriptionList/DescriptionList.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DescriptionList/DescriptionList.vue"
+  },
+  {
+    "id": "cdata/DescriptionList/DescriptionListDetails",
+    "name": "DescriptionListDetails",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DescriptionList/DescriptionListDetails.vue",
+    "sourcePath": "components/DescriptionList/DescriptionListDetails.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DescriptionList/DescriptionListDetails.vue"
+  },
+  {
+    "id": "cdata/DescriptionList/DescriptionListTerm",
+    "name": "DescriptionListTerm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/DescriptionList/DescriptionListTerm.vue",
+    "sourcePath": "components/DescriptionList/DescriptionListTerm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/DescriptionList/DescriptionListTerm.vue"
+  },
+  {
+    "id": "cdata/Design/ThemeTagFilter",
+    "name": "ThemeTagFilter",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Design/ThemeTagFilter.vue",
+    "sourcePath": "components/Design/ThemeTagFilter.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Design/ThemeTagFilter.vue"
+  },
+  {
+    "id": "cdata/Discussions/CommentBlock",
+    "name": "CommentBlock",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/CommentBlock.vue",
+    "sourcePath": "components/Discussions/CommentBlock.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/CommentBlock.vue"
+  },
+  {
+    "id": "cdata/Discussions/DeleteCommentModal",
+    "name": "DeleteCommentModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DeleteCommentModal.vue",
+    "sourcePath": "components/Discussions/DeleteCommentModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DeleteCommentModal.vue"
+  },
+  {
+    "id": "cdata/Discussions/DeleteThreadModal",
+    "name": "DeleteThreadModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DeleteThreadModal.vue",
+    "sourcePath": "components/Discussions/DeleteThreadModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DeleteThreadModal.vue"
+  },
+  {
+    "id": "cdata/Discussions/DiscussionCard",
+    "name": "DiscussionCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DiscussionCard.vue",
+    "sourcePath": "components/Discussions/DiscussionCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DiscussionCard.vue"
+  },
+  {
+    "id": "cdata/Discussions/DiscussionCommentHeader",
+    "name": "DiscussionCommentHeader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DiscussionCommentHeader.vue",
+    "sourcePath": "components/Discussions/DiscussionCommentHeader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DiscussionCommentHeader.vue"
+  },
+  {
+    "id": "cdata/Discussions/DiscussionsList",
+    "name": "DiscussionsList",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DiscussionsList.vue",
+    "sourcePath": "components/Discussions/DiscussionsList.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DiscussionsList.vue"
+  },
+  {
+    "id": "cdata/Discussions/DiscussionsPage",
+    "name": "DiscussionsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/DiscussionsPage.vue",
+    "sourcePath": "components/Discussions/DiscussionsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/DiscussionsPage.vue"
+  },
+  {
+    "id": "cdata/Discussions/EditCommentModal",
+    "name": "EditCommentModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/EditCommentModal.vue",
+    "sourcePath": "components/Discussions/EditCommentModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/EditCommentModal.vue"
+  },
+  {
+    "id": "cdata/Discussions/NewDiscussionForm",
+    "name": "NewDiscussionForm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/NewDiscussionForm.vue",
+    "sourcePath": "components/Discussions/NewDiscussionForm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/NewDiscussionForm.vue"
+  },
+  {
+    "id": "cdata/Discussions/RespondForm",
+    "name": "RespondForm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/RespondForm.vue",
+    "sourcePath": "components/Discussions/RespondForm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/RespondForm.vue"
+  },
+  {
+    "id": "cdata/Discussions/ThreadHeader",
+    "name": "ThreadHeader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/ThreadHeader.vue",
+    "sourcePath": "components/Discussions/ThreadHeader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/ThreadHeader.vue"
+  },
+  {
+    "id": "cdata/Discussions/ThreadModal",
+    "name": "ThreadModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Discussions/ThreadModal.vue",
+    "sourcePath": "components/Discussions/ThreadModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Discussions/ThreadModal.vue"
+  },
+  {
+    "id": "cdata/Divider",
+    "name": "Divider",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Divider.vue",
+    "sourcePath": "components/Divider.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Divider.vue"
+  },
+  {
+    "id": "cdata/Elections/ElectionCard",
+    "name": "ElectionCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Elections/ElectionCard.vue",
+    "sourcePath": "components/Elections/ElectionCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Elections/ElectionCard.vue"
+  },
+  {
+    "id": "cdata/Embeds/DataserviceCard.global",
+    "name": "DataserviceCard.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/DataserviceCard.global.vue",
+    "sourcePath": "components/Embeds/DataserviceCard.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/DataserviceCard.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/DatasetCard.global",
+    "name": "DatasetCard.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/DatasetCard.global.vue",
+    "sourcePath": "components/Embeds/DatasetCard.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/DatasetCard.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/ListReuse.global",
+    "name": "ListReuse.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/ListReuse.global.vue",
+    "sourcePath": "components/Embeds/ListReuse.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/ListReuse.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/OrganizationCard.global",
+    "name": "OrganizationCard.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/OrganizationCard.global.vue",
+    "sourcePath": "components/Embeds/OrganizationCard.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/OrganizationCard.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/ReuseCard.global",
+    "name": "ReuseCard.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/ReuseCard.global.vue",
+    "sourcePath": "components/Embeds/ReuseCard.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/ReuseCard.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/SearchDataservice.global",
+    "name": "SearchDataservice.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/SearchDataservice.global.vue",
+    "sourcePath": "components/Embeds/SearchDataservice.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/SearchDataservice.global.vue"
+  },
+  {
+    "id": "cdata/Embeds/SearchDataset.global",
+    "name": "SearchDataset.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Embeds/SearchDataset.global.vue",
+    "sourcePath": "components/Embeds/SearchDataset.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Embeds/SearchDataset.global.vue"
+  },
+  {
+    "id": "cdata/FileCard/FileCard",
+    "name": "FileCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/FileCard/FileCard.vue",
+    "sourcePath": "components/FileCard/FileCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/FileCard/FileCard.vue"
+  },
+  {
+    "id": "cdata/FileCard/FileLoader",
+    "name": "FileLoader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/FileCard/FileLoader.vue",
+    "sourcePath": "components/FileCard/FileLoader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/FileCard/FileLoader.vue"
+  },
+  {
+    "id": "cdata/FollowButton",
+    "name": "FollowButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/FollowButton.vue",
+    "sourcePath": "components/FollowButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/FollowButton.vue"
+  },
+  {
+    "id": "cdata/Form/FieldsetElement",
+    "name": "FieldsetElement",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Form/FieldsetElement.vue",
+    "sourcePath": "components/Form/FieldsetElement.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Form/FieldsetElement.vue"
+  },
+  {
+    "id": "cdata/Form/FormFieldset",
+    "name": "FormFieldset",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Form/FormFieldset.vue",
+    "sourcePath": "components/Form/FormFieldset.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Form/FormFieldset.vue"
+  },
+  {
+    "id": "cdata/Form/FormWithAccordions",
+    "name": "FormWithAccordions",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Form/FormWithAccordions.vue",
+    "sourcePath": "components/Form/FormWithAccordions.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Form/FormWithAccordions.vue"
+  },
+  {
+    "id": "cdata/Form/HelpAccordion",
+    "name": "HelpAccordion",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Form/HelpAccordion.vue",
+    "sourcePath": "components/Form/HelpAccordion.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Form/HelpAccordion.vue"
+  },
+  {
+    "id": "cdata/Form/ToggleSwitch",
+    "name": "ToggleSwitch",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Form/ToggleSwitch.vue",
+    "sourcePath": "components/Form/ToggleSwitch.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Form/ToggleSwitch.vue"
+  },
+  {
+    "id": "cdata/FullPageTabs/FullPageTabs",
+    "name": "FullPageTabs",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/FullPageTabs/FullPageTabs.vue",
+    "sourcePath": "components/FullPageTabs/FullPageTabs.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/FullPageTabs/FullPageTabs.vue"
+  },
+  {
+    "id": "cdata/GristTableViewer/GristTableViewer",
+    "name": "GristTableViewer",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/GristTableViewer/GristTableViewer.vue",
+    "sourcePath": "components/GristTableViewer/GristTableViewer.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/GristTableViewer/GristTableViewer.vue"
+  },
+  {
+    "id": "cdata/Harvesters/AdminHarvestersPage",
+    "name": "AdminHarvestersPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/AdminHarvestersPage.vue",
+    "sourcePath": "components/Harvesters/AdminHarvestersPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/AdminHarvestersPage.vue"
+  },
+  {
+    "id": "cdata/Harvesters/CompletePublicationStep",
+    "name": "CompletePublicationStep",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/CompletePublicationStep.vue",
+    "sourcePath": "components/Harvesters/CompletePublicationStep.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/CompletePublicationStep.vue"
+  },
+  {
+    "id": "cdata/Harvesters/DescribeHarvester",
+    "name": "DescribeHarvester",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/DescribeHarvester.vue",
+    "sourcePath": "components/Harvesters/DescribeHarvester.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/DescribeHarvester.vue"
+  },
+  {
+    "id": "cdata/Harvesters/HarvesterBadge",
+    "name": "HarvesterBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/HarvesterBadge.vue",
+    "sourcePath": "components/Harvesters/HarvesterBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/HarvesterBadge.vue"
+  },
+  {
+    "id": "cdata/Harvesters/JobBadge",
+    "name": "JobBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/JobBadge.vue",
+    "sourcePath": "components/Harvesters/JobBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/JobBadge.vue"
+  },
+  {
+    "id": "cdata/Harvesters/JobPage",
+    "name": "JobPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/JobPage.vue",
+    "sourcePath": "components/Harvesters/JobPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/JobPage.vue"
+  },
+  {
+    "id": "cdata/Harvesters/PreviewLoader",
+    "name": "PreviewLoader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/PreviewLoader.vue",
+    "sourcePath": "components/Harvesters/PreviewLoader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/PreviewLoader.vue"
+  },
+  {
+    "id": "cdata/Harvesters/PreviewStep",
+    "name": "PreviewStep",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Harvesters/PreviewStep.vue",
+    "sourcePath": "components/Harvesters/PreviewStep.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Harvesters/PreviewStep.vue"
+  },
+  {
+    "id": "cdata/HeroBanner",
+    "name": "HeroBanner",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/HeroBanner.vue",
+    "sourcePath": "components/HeroBanner.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/HeroBanner.vue"
+  },
+  {
+    "id": "cdata/InputGroup/InputGroup",
+    "name": "InputGroup",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/InputGroup/InputGroup.vue",
+    "sourcePath": "components/InputGroup/InputGroup.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/InputGroup/InputGroup.vue"
+  },
+  {
+    "id": "cdata/LinkCard",
+    "name": "LinkCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LinkCard.vue",
+    "sourcePath": "components/LinkCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LinkCard.vue"
+  },
+  {
+    "id": "cdata/LinkToSubject",
+    "name": "LinkToSubject",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LinkToSubject.vue",
+    "sourcePath": "components/LinkToSubject.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LinkToSubject.vue"
+  },
+  {
+    "id": "cdata/LinkedToAccordion/LinkedToAccordion",
+    "name": "LinkedToAccordion",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LinkedToAccordion/LinkedToAccordion.vue",
+    "sourcePath": "components/LinkedToAccordion/LinkedToAccordion.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LinkedToAccordion/LinkedToAccordion.vue"
+  },
+  {
+    "id": "cdata/LogoAsText",
+    "name": "LogoAsText",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LogoAsText.vue",
+    "sourcePath": "components/LogoAsText.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LogoAsText.vue"
+  },
+  {
+    "id": "cdata/LogoImage",
+    "name": "LogoImage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LogoImage.vue",
+    "sourcePath": "components/LogoImage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LogoImage.vue"
+  },
+  {
+    "id": "cdata/LogoNumeriqueGouv",
+    "name": "LogoNumeriqueGouv",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LogoNumeriqueGouv.vue",
+    "sourcePath": "components/LogoNumeriqueGouv.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LogoNumeriqueGouv.vue"
+  },
+  {
+    "id": "cdata/LogoOnly",
+    "name": "LogoOnly",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/LogoOnly.vue",
+    "sourcePath": "components/LogoOnly.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/LogoOnly.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/EditorButton",
+    "name": "EditorButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/EditorButton.vue",
+    "sourcePath": "components/MarkdownEditor/EditorButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/EditorButton.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/ImageModal/ImageModalButton",
+    "name": "ImageModalButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/ImageModal/ImageModalButton.vue",
+    "sourcePath": "components/MarkdownEditor/ImageModal/ImageModalButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/ImageModal/ImageModalButton.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/InternalEditor",
+    "name": "InternalEditor",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/InternalEditor.vue",
+    "sourcePath": "components/MarkdownEditor/InternalEditor.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/InternalEditor.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/MarkdownEditor",
+    "name": "MarkdownEditor",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/MarkdownEditor.vue",
+    "sourcePath": "components/MarkdownEditor/MarkdownEditor.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/MarkdownEditor.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip",
+    "name": "LinkEditTooltip",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip",
+    "name": "LinkPreviewTooltip",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget",
+    "name": "TableSelectorWidget",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/TableTooltip/TableTooltip",
+    "name": "TableTooltip",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/TableTooltip/TableTooltip.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/TableTooltip/TableTooltip.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/TableTooltip/TableTooltip.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/TableTooltip/TooltipButton",
+    "name": "TooltipButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/TableTooltip/TooltipButton.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/TableTooltip/TooltipButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/TableTooltip/TooltipButton.vue"
+  },
+  {
+    "id": "cdata/MarkdownEditor/Milkdown/Tooltip/EditorTooltip",
+    "name": "EditorTooltip",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MarkdownEditor/Milkdown/Tooltip/EditorTooltip.vue",
+    "sourcePath": "components/MarkdownEditor/Milkdown/Tooltip/EditorTooltip.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MarkdownEditor/Milkdown/Tooltip/EditorTooltip.vue"
+  },
+  {
+    "id": "cdata/MenuSearch/MenuSearch",
+    "name": "MenuSearch",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/MenuSearch/MenuSearch.vue",
+    "sourcePath": "components/MenuSearch/MenuSearch.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/MenuSearch/MenuSearch.vue"
+  },
+  {
+    "id": "cdata/Metrics/AdminDataservicesPage",
+    "name": "AdminDataservicesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Metrics/AdminDataservicesPage.vue",
+    "sourcePath": "components/Metrics/AdminDataservicesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Metrics/AdminDataservicesPage.vue"
+  },
+  {
+    "id": "cdata/Metrics/AdminDatasetsPage",
+    "name": "AdminDatasetsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Metrics/AdminDatasetsPage.vue",
+    "sourcePath": "components/Metrics/AdminDatasetsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Metrics/AdminDatasetsPage.vue"
+  },
+  {
+    "id": "cdata/Metrics/AdminIndexPage",
+    "name": "AdminIndexPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Metrics/AdminIndexPage.vue",
+    "sourcePath": "components/Metrics/AdminIndexPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Metrics/AdminIndexPage.vue"
+  },
+  {
+    "id": "cdata/Metrics/AdminPage",
+    "name": "AdminPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Metrics/AdminPage.vue",
+    "sourcePath": "components/Metrics/AdminPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Metrics/AdminPage.vue"
+  },
+  {
+    "id": "cdata/Metrics/AdminReusesPage",
+    "name": "AdminReusesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Metrics/AdminReusesPage.vue",
+    "sourcePath": "components/Metrics/AdminReusesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Metrics/AdminReusesPage.vue"
+  },
+  {
+    "id": "cdata/Modal/Modal.client",
+    "name": "Modal.client",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Modal/Modal.client.vue",
+    "sourcePath": "components/Modal/Modal.client.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Modal/Modal.client.vue"
+  },
+  {
+    "id": "cdata/Modal/ModalWithButton",
+    "name": "ModalWithButton",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Modal/ModalWithButton.vue",
+    "sourcePath": "components/Modal/ModalWithButton.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Modal/ModalWithButton.vue"
+  },
+  {
+    "id": "cdata/Notifications/Discussion",
+    "name": "Discussion",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/Discussion.vue",
+    "sourcePath": "components/Notifications/Discussion.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/Discussion.vue"
+  },
+  {
+    "id": "cdata/Notifications/FollowToggle",
+    "name": "FollowToggle",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/FollowToggle.vue",
+    "sourcePath": "components/Notifications/FollowToggle.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/FollowToggle.vue"
+  },
+  {
+    "id": "cdata/Notifications/MembershipAccepted",
+    "name": "MembershipAccepted",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/MembershipAccepted.vue",
+    "sourcePath": "components/Notifications/MembershipAccepted.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/MembershipAccepted.vue"
+  },
+  {
+    "id": "cdata/Notifications/MembershipRefused",
+    "name": "MembershipRefused",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/MembershipRefused.vue",
+    "sourcePath": "components/Notifications/MembershipRefused.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/MembershipRefused.vue"
+  },
+  {
+    "id": "cdata/Notifications/MembershipRequest",
+    "name": "MembershipRequest",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/MembershipRequest.vue",
+    "sourcePath": "components/Notifications/MembershipRequest.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/MembershipRequest.vue"
+  },
+  {
+    "id": "cdata/Notifications/MuteConfirmation",
+    "name": "MuteConfirmation",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/MuteConfirmation.vue",
+    "sourcePath": "components/Notifications/MuteConfirmation.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/MuteConfirmation.vue"
+  },
+  {
+    "id": "cdata/Notifications/NewBadge",
+    "name": "NewBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NewBadge.vue",
+    "sourcePath": "components/Notifications/NewBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NewBadge.vue"
+  },
+  {
+    "id": "cdata/Notifications/NewDataservice",
+    "name": "NewDataservice",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NewDataservice.vue",
+    "sourcePath": "components/Notifications/NewDataservice.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NewDataservice.vue"
+  },
+  {
+    "id": "cdata/Notifications/NewReuse",
+    "name": "NewReuse",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NewReuse.vue",
+    "sourcePath": "components/Notifications/NewReuse.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NewReuse.vue"
+  },
+  {
+    "id": "cdata/Notifications/NotificationActions",
+    "name": "NotificationActions",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NotificationActions.vue",
+    "sourcePath": "components/Notifications/NotificationActions.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NotificationActions.vue"
+  },
+  {
+    "id": "cdata/Notifications/NotificationLayout",
+    "name": "NotificationLayout",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NotificationLayout.vue",
+    "sourcePath": "components/Notifications/NotificationLayout.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NotificationLayout.vue"
+  },
+  {
+    "id": "cdata/Notifications/NotificationsList",
+    "name": "NotificationsList",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/NotificationsList.vue",
+    "sourcePath": "components/Notifications/NotificationsList.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/NotificationsList.vue"
+  },
+  {
+    "id": "cdata/Notifications/SubjectNotifications",
+    "name": "SubjectNotifications",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/SubjectNotifications.vue",
+    "sourcePath": "components/Notifications/SubjectNotifications.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/SubjectNotifications.vue"
+  },
+  {
+    "id": "cdata/Notifications/TransferRequest",
+    "name": "TransferRequest",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/TransferRequest.vue",
+    "sourcePath": "components/Notifications/TransferRequest.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/TransferRequest.vue"
+  },
+  {
+    "id": "cdata/Notifications/ValidateHarvester",
+    "name": "ValidateHarvester",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Notifications/ValidateHarvester.vue",
+    "sourcePath": "components/Notifications/ValidateHarvester.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Notifications/ValidateHarvester.vue"
+  },
+  {
+    "id": "cdata/ObjectsSelect",
+    "name": "ObjectsSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ObjectsSelect.vue",
+    "sourcePath": "components/ObjectsSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ObjectsSelect.vue"
+  },
+  {
+    "id": "cdata/OgImage/Default.takumi",
+    "name": "Default.takumi",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OgImage/Default.takumi.vue",
+    "sourcePath": "components/OgImage/Default.takumi.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OgImage/Default.takumi.vue"
+  },
+  {
+    "id": "cdata/OgImage/MainPage.takumi",
+    "name": "MainPage.takumi",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OgImage/MainPage.takumi.vue",
+    "sourcePath": "components/OgImage/MainPage.takumi.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OgImage/MainPage.takumi.vue"
+  },
+  {
+    "id": "cdata/OgImage/ObjectPage.takumi",
+    "name": "ObjectPage.takumi",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OgImage/ObjectPage.takumi.vue",
+    "sourcePath": "components/OgImage/ObjectPage.takumi.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OgImage/ObjectPage.takumi.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingAudienceCard",
+    "name": "OnboardingAudienceCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingAudienceCard.vue",
+    "sourcePath": "components/Onboarding/OnboardingAudienceCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingAudienceCard.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingCTA",
+    "name": "OnboardingCTA",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingCTA.vue",
+    "sourcePath": "components/Onboarding/OnboardingCTA.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingCTA.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingFeatureCard",
+    "name": "OnboardingFeatureCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingFeatureCard.vue",
+    "sourcePath": "components/Onboarding/OnboardingFeatureCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingFeatureCard.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingHero",
+    "name": "OnboardingHero",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingHero.vue",
+    "sourcePath": "components/Onboarding/OnboardingHero.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingHero.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingLogoGrid",
+    "name": "OnboardingLogoGrid",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingLogoGrid.vue",
+    "sourcePath": "components/Onboarding/OnboardingLogoGrid.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingLogoGrid.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingParagraph",
+    "name": "OnboardingParagraph",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingParagraph.vue",
+    "sourcePath": "components/Onboarding/OnboardingParagraph.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingParagraph.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingSection",
+    "name": "OnboardingSection",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingSection.vue",
+    "sourcePath": "components/Onboarding/OnboardingSection.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingSection.vue"
+  },
+  {
+    "id": "cdata/Onboarding/OnboardingTitle",
+    "name": "OnboardingTitle",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/OnboardingTitle.vue",
+    "sourcePath": "components/Onboarding/OnboardingTitle.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/OnboardingTitle.vue"
+  },
+  {
+    "id": "cdata/Onboarding/SmallCapsLabel",
+    "name": "SmallCapsLabel",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Onboarding/SmallCapsLabel.vue",
+    "sourcePath": "components/Onboarding/SmallCapsLabel.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Onboarding/SmallCapsLabel.vue"
+  },
+  {
+    "id": "cdata/OpenApi/OpenApiProperties",
+    "name": "OpenApiProperties",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OpenApi/OpenApiProperties.vue",
+    "sourcePath": "components/OpenApi/OpenApiProperties.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OpenApi/OpenApiProperties.vue"
+  },
+  {
+    "id": "cdata/OpenApi/OpenApiProperty",
+    "name": "OpenApiProperty",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OpenApi/OpenApiProperty.vue",
+    "sourcePath": "components/OpenApi/OpenApiProperty.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OpenApi/OpenApiProperty.vue"
+  },
+  {
+    "id": "cdata/Organization/AdminContactPointsPage",
+    "name": "AdminContactPointsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/AdminContactPointsPage.vue",
+    "sourcePath": "components/Organization/AdminContactPointsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/AdminContactPointsPage.vue"
+  },
+  {
+    "id": "cdata/Organization/ListPage",
+    "name": "ListPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/ListPage.vue",
+    "sourcePath": "components/Organization/ListPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/ListPage.vue"
+  },
+  {
+    "id": "cdata/Organization/New/Step1CreateOrJoinOrganization",
+    "name": "Step1CreateOrJoinOrganization",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/New/Step1CreateOrJoinOrganization.vue",
+    "sourcePath": "components/Organization/New/Step1CreateOrJoinOrganization.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/New/Step1CreateOrJoinOrganization.vue"
+  },
+  {
+    "id": "cdata/Organization/New/Step2DescribeOrganization",
+    "name": "Step2DescribeOrganization",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/New/Step2DescribeOrganization.vue",
+    "sourcePath": "components/Organization/New/Step2DescribeOrganization.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/New/Step2DescribeOrganization.vue"
+  },
+  {
+    "id": "cdata/Organization/New/Step3CompleteTheOrganization",
+    "name": "Step3CompleteTheOrganization",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/New/Step3CompleteTheOrganization.vue",
+    "sourcePath": "components/Organization/New/Step3CompleteTheOrganization.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/New/Step3CompleteTheOrganization.vue"
+  },
+  {
+    "id": "cdata/Organization/Search",
+    "name": "Search",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organization/Search.vue",
+    "sourcePath": "components/Organization/Search.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organization/Search.vue"
+  },
+  {
+    "id": "cdata/OrganizationOwner",
+    "name": "OrganizationOwner",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/OrganizationOwner.vue",
+    "sourcePath": "components/OrganizationOwner.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/OrganizationOwner.vue"
+  },
+  {
+    "id": "cdata/Organizations/BannerFlyout",
+    "name": "BannerFlyout",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organizations/BannerFlyout.vue",
+    "sourcePath": "components/Organizations/BannerFlyout.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organizations/BannerFlyout.vue"
+  },
+  {
+    "id": "cdata/Organizations/OrganizationBanner",
+    "name": "OrganizationBanner",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organizations/OrganizationBanner.vue",
+    "sourcePath": "components/Organizations/OrganizationBanner.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organizations/OrganizationBanner.vue"
+  },
+  {
+    "id": "cdata/Organizations/OrganizationBannerControls",
+    "name": "OrganizationBannerControls",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organizations/OrganizationBannerControls.vue",
+    "sourcePath": "components/Organizations/OrganizationBannerControls.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organizations/OrganizationBannerControls.vue"
+  },
+  {
+    "id": "cdata/Organizations/OrganizationBannerEditor",
+    "name": "OrganizationBannerEditor",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Organizations/OrganizationBannerEditor.vue",
+    "sourcePath": "components/Organizations/OrganizationBannerEditor.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Organizations/OrganizationBannerEditor.vue"
+  },
+  {
+    "id": "cdata/Pages/AccordionBlocEditor",
+    "name": "AccordionBlocEditor",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/AccordionBlocEditor.vue",
+    "sourcePath": "components/Pages/AccordionBlocEditor.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/AccordionBlocEditor.vue"
+  },
+  {
+    "id": "cdata/Pages/AddBlocDropdown",
+    "name": "AddBlocDropdown",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/AddBlocDropdown.vue",
+    "sourcePath": "components/Pages/AddBlocDropdown.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/AddBlocDropdown.vue"
+  },
+  {
+    "id": "cdata/Pages/AddObjectCard",
+    "name": "AddObjectCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/AddObjectCard.vue",
+    "sourcePath": "components/Pages/AddObjectCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/AddObjectCard.vue"
+  },
+  {
+    "id": "cdata/Pages/BlocWithTitleAndSubtitle",
+    "name": "BlocWithTitleAndSubtitle",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/BlocWithTitleAndSubtitle.vue",
+    "sourcePath": "components/Pages/BlocWithTitleAndSubtitle.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/BlocWithTitleAndSubtitle.vue"
+  },
+  {
+    "id": "cdata/Pages/BrandedButtonEditor",
+    "name": "BrandedButtonEditor",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/BrandedButtonEditor.vue",
+    "sourcePath": "components/Pages/BrandedButtonEditor.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/BrandedButtonEditor.vue"
+  },
+  {
+    "id": "cdata/Pages/DataservicesListBloc",
+    "name": "DataservicesListBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/DataservicesListBloc.vue",
+    "sourcePath": "components/Pages/DataservicesListBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/DataservicesListBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/DatasetsListBloc",
+    "name": "DatasetsListBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/DatasetsListBloc.vue",
+    "sourcePath": "components/Pages/DatasetsListBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/DatasetsListBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/EditableText",
+    "name": "EditableText",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/EditableText.vue",
+    "sourcePath": "components/Pages/EditableText.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/EditableText.vue"
+  },
+  {
+    "id": "cdata/Pages/EditoBlocs",
+    "name": "EditoBlocs",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/EditoBlocs.vue",
+    "sourcePath": "components/Pages/EditoBlocs.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/EditoBlocs.vue"
+  },
+  {
+    "id": "cdata/Pages/EditoFooter",
+    "name": "EditoFooter",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/EditoFooter.vue",
+    "sourcePath": "components/Pages/EditoFooter.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/EditoFooter.vue"
+  },
+  {
+    "id": "cdata/Pages/EditoSearchForm",
+    "name": "EditoSearchForm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/EditoSearchForm.vue",
+    "sourcePath": "components/Pages/EditoSearchForm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/EditoSearchForm.vue"
+  },
+  {
+    "id": "cdata/Pages/HeroBloc",
+    "name": "HeroBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/HeroBloc.vue",
+    "sourcePath": "components/Pages/HeroBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/HeroBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/LinksListBloc",
+    "name": "LinksListBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/LinksListBloc.vue",
+    "sourcePath": "components/Pages/LinksListBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/LinksListBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/MarkdownBloc",
+    "name": "MarkdownBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/MarkdownBloc.vue",
+    "sourcePath": "components/Pages/MarkdownBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/MarkdownBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/ReusesListBloc",
+    "name": "ReusesListBloc",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/ReusesListBloc.vue",
+    "sourcePath": "components/Pages/ReusesListBloc.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/ReusesListBloc.vue"
+  },
+  {
+    "id": "cdata/Pages/SiteEditoPage",
+    "name": "SiteEditoPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Pages/SiteEditoPage.vue",
+    "sourcePath": "components/Pages/SiteEditoPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Pages/SiteEditoPage.vue"
+  },
+  {
+    "id": "cdata/Post/card",
+    "name": "card",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Post/card.vue",
+    "sourcePath": "components/Post/card.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Post/card.vue"
+  },
+  {
+    "id": "cdata/Posts/DescribePost",
+    "name": "DescribePost",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Posts/DescribePost.vue",
+    "sourcePath": "components/Posts/DescribePost.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Posts/DescribePost.vue"
+  },
+  {
+    "id": "cdata/Posts/PostContentForm",
+    "name": "PostContentForm",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Posts/PostContentForm.vue",
+    "sourcePath": "components/Posts/PostContentForm.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Posts/PostContentForm.vue"
+  },
+  {
+    "id": "cdata/PreviewDashboard/DeltaIndicator",
+    "name": "DeltaIndicator",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/PreviewDashboard/DeltaIndicator.vue",
+    "sourcePath": "components/PreviewDashboard/DeltaIndicator.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/PreviewDashboard/DeltaIndicator.vue"
+  },
+  {
+    "id": "cdata/PreviewDashboard/PercentageMeter",
+    "name": "PercentageMeter",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/PreviewDashboard/PercentageMeter.vue",
+    "sourcePath": "components/PreviewDashboard/PercentageMeter.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/PreviewDashboard/PercentageMeter.vue"
+  },
+  {
+    "id": "cdata/ProducerSelect",
+    "name": "ProducerSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ProducerSelect.vue",
+    "sourcePath": "components/ProducerSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ProducerSelect.vue"
+  },
+  {
+    "id": "cdata/RadioButtons",
+    "name": "RadioButtons",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/RadioButtons.vue",
+    "sourcePath": "components/RadioButtons.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/RadioButtons.vue"
+  },
+  {
+    "id": "cdata/RecommendationExternal",
+    "name": "RecommendationExternal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/RecommendationExternal.vue",
+    "sourcePath": "components/RecommendationExternal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/RecommendationExternal.vue"
+  },
+  {
+    "id": "cdata/RecommendationsDatasets",
+    "name": "RecommendationsDatasets",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/RecommendationsDatasets.vue",
+    "sourcePath": "components/RecommendationsDatasets.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/RecommendationsDatasets.vue"
+  },
+  {
+    "id": "cdata/RecommendationsReuses",
+    "name": "RecommendationsReuses",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/RecommendationsReuses.vue",
+    "sourcePath": "components/RecommendationsReuses.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/RecommendationsReuses.vue"
+  },
+  {
+    "id": "cdata/Required/Required",
+    "name": "Required",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Required/Required.vue",
+    "sourcePath": "components/Required/Required.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Required/Required.vue"
+  },
+  {
+    "id": "cdata/RequiredExplanation/RequiredExplanation",
+    "name": "RequiredExplanation",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/RequiredExplanation/RequiredExplanation.vue",
+    "sourcePath": "components/RequiredExplanation/RequiredExplanation.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/RequiredExplanation/RequiredExplanation.vue"
+  },
+  {
+    "id": "cdata/Reuses/AdminReusesPage",
+    "name": "AdminReusesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/AdminReusesPage.vue",
+    "sourcePath": "components/Reuses/AdminReusesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/AdminReusesPage.vue"
+  },
+  {
+    "id": "cdata/Reuses/AdminUpdateReuseDataservicesPage",
+    "name": "AdminUpdateReuseDataservicesPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/AdminUpdateReuseDataservicesPage.vue",
+    "sourcePath": "components/Reuses/AdminUpdateReuseDataservicesPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/AdminUpdateReuseDataservicesPage.vue"
+  },
+  {
+    "id": "cdata/Reuses/AdminUpdateReuseDatasetsPage",
+    "name": "AdminUpdateReuseDatasetsPage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/AdminUpdateReuseDatasetsPage.vue",
+    "sourcePath": "components/Reuses/AdminUpdateReuseDatasetsPage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/AdminUpdateReuseDatasetsPage.vue"
+  },
+  {
+    "id": "cdata/Reuses/AdminUpdateReusePage",
+    "name": "AdminUpdateReusePage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/AdminUpdateReusePage.vue",
+    "sourcePath": "components/Reuses/AdminUpdateReusePage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/AdminUpdateReusePage.vue"
+  },
+  {
+    "id": "cdata/Reuses/DescribeReuse",
+    "name": "DescribeReuse",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/DescribeReuse.vue",
+    "sourcePath": "components/Reuses/DescribeReuse.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/DescribeReuse.vue"
+  },
+  {
+    "id": "cdata/Reuses/New/Step2AddDatasetsAndDataservices",
+    "name": "Step2AddDatasetsAndDataservices",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/New/Step2AddDatasetsAndDataservices.vue",
+    "sourcePath": "components/Reuses/New/Step2AddDatasetsAndDataservices.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/New/Step2AddDatasetsAndDataservices.vue"
+  },
+  {
+    "id": "cdata/Reuses/New/Step3CompletePublication",
+    "name": "Step3CompletePublication",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/New/Step3CompletePublication.vue",
+    "sourcePath": "components/Reuses/New/Step3CompletePublication.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/New/Step3CompletePublication.vue"
+  },
+  {
+    "id": "cdata/Reuses/ReuseCard",
+    "name": "ReuseCard",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Reuses/ReuseCard.vue",
+    "sourcePath": "components/Reuses/ReuseCard.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Reuses/ReuseCard.vue"
+  },
+  {
+    "id": "cdata/ReusesSelect",
+    "name": "ReusesSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/ReusesSelect.vue",
+    "sourcePath": "components/ReusesSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/ReusesSelect.vue"
+  },
+  {
+    "id": "cdata/Search/NoResults",
+    "name": "NoResults",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Search/NoResults.vue",
+    "sourcePath": "components/Search/NoResults.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Search/NoResults.vue"
+  },
+  {
+    "id": "cdata/SectionCollapse",
+    "name": "SectionCollapse",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/SectionCollapse.vue",
+    "sourcePath": "components/SectionCollapse.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/SectionCollapse.vue"
+  },
+  {
+    "id": "cdata/SelectAudiencesTypes",
+    "name": "SelectAudiencesTypes",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/SelectAudiencesTypes.vue",
+    "sourcePath": "components/SelectAudiencesTypes.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/SelectAudiencesTypes.vue"
+  },
+  {
+    "id": "cdata/Sidemenu/Sidemenu.global",
+    "name": "Sidemenu.global",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Sidemenu/Sidemenu.global.vue",
+    "sourcePath": "components/Sidemenu/Sidemenu.global.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Sidemenu/Sidemenu.global.vue"
+  },
+  {
+    "id": "cdata/SiteFooter/SiteFooter",
+    "name": "SiteFooter",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/SiteFooter/SiteFooter.vue",
+    "sourcePath": "components/SiteFooter/SiteFooter.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/SiteFooter/SiteFooter.vue"
+  },
+  {
+    "id": "cdata/SiteHeader/SiteHeader",
+    "name": "SiteHeader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/SiteHeader/SiteHeader.vue",
+    "sourcePath": "components/SiteHeader/SiteHeader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/SiteHeader/SiteHeader.vue"
+  },
+  {
+    "id": "cdata/Spam/ReportModal",
+    "name": "ReportModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Spam/ReportModal.vue",
+    "sourcePath": "components/Spam/ReportModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Spam/ReportModal.vue"
+  },
+  {
+    "id": "cdata/Stepper/Stepper",
+    "name": "Stepper",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Stepper/Stepper.vue",
+    "sourcePath": "components/Stepper/Stepper.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Stepper/Stepper.vue"
+  },
+  {
+    "id": "cdata/SuiviDePublication/HvdStatutBadge",
+    "name": "HvdStatutBadge",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/SuiviDePublication/HvdStatutBadge.vue",
+    "sourcePath": "components/SuiviDePublication/HvdStatutBadge.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/SuiviDePublication/HvdStatutBadge.vue"
+  },
+  {
+    "id": "cdata/Support/Card",
+    "name": "Card",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Support/Card.vue",
+    "sourcePath": "components/Support/Card.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Support/Card.vue"
+  },
+  {
+    "id": "cdata/Support/Choice",
+    "name": "Choice",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Support/Choice.vue",
+    "sourcePath": "components/Support/Choice.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Support/Choice.vue"
+  },
+  {
+    "id": "cdata/Support/Choices",
+    "name": "Choices",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Support/Choices.vue",
+    "sourcePath": "components/Support/Choices.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Support/Choices.vue"
+  },
+  {
+    "id": "cdata/Support/Title",
+    "name": "Title",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/Support/Title.vue",
+    "sourcePath": "components/Support/Title.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/Support/Title.vue"
+  },
+  {
+    "id": "cdata/TabLinks",
+    "name": "TabLinks",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TabLinks.vue",
+    "sourcePath": "components/TabLinks.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TabLinks.vue"
+  },
+  {
+    "id": "cdata/TagsSelect",
+    "name": "TagsSelect",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TagsSelect.vue",
+    "sourcePath": "components/TagsSelect.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TagsSelect.vue"
+  },
+  {
+    "id": "cdata/TextClamp.client",
+    "name": "TextClamp.client",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TextClamp.client.vue",
+    "sourcePath": "components/TextClamp.client.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TextClamp.client.vue"
+  },
+  {
+    "id": "cdata/TransferBanner",
+    "name": "TransferBanner",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TransferBanner.vue",
+    "sourcePath": "components/TransferBanner.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TransferBanner.vue"
+  },
+  {
+    "id": "cdata/TransferRequest",
+    "name": "TransferRequest",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TransferRequest.vue",
+    "sourcePath": "components/TransferRequest.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TransferRequest.vue"
+  },
+  {
+    "id": "cdata/TransferRequestList",
+    "name": "TransferRequestList",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/TransferRequestList.vue",
+    "sourcePath": "components/TransferRequestList.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/TransferRequestList.vue"
+  },
+  {
+    "id": "cdata/UploadGroup/UploadGroup",
+    "name": "UploadGroup",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/UploadGroup/UploadGroup.vue",
+    "sourcePath": "components/UploadGroup/UploadGroup.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/UploadGroup/UploadGroup.vue"
+  },
+  {
+    "id": "cdata/User/AdminUserProfileHeader",
+    "name": "AdminUserProfileHeader",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/AdminUserProfileHeader.vue",
+    "sourcePath": "components/User/AdminUserProfileHeader.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/AdminUserProfileHeader.vue"
+  },
+  {
+    "id": "cdata/User/AdminUserProfilePage",
+    "name": "AdminUserProfilePage",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/AdminUserProfilePage.vue",
+    "sourcePath": "components/User/AdminUserProfilePage.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/AdminUserProfilePage.vue"
+  },
+  {
+    "id": "cdata/User/ApiTokensSection",
+    "name": "ApiTokensSection",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/ApiTokensSection.vue",
+    "sourcePath": "components/User/ApiTokensSection.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/ApiTokensSection.vue"
+  },
+  {
+    "id": "cdata/User/ChangeEmailModal",
+    "name": "ChangeEmailModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/ChangeEmailModal.vue",
+    "sourcePath": "components/User/ChangeEmailModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/ChangeEmailModal.vue"
+  },
+  {
+    "id": "cdata/User/ChangePasswordModal",
+    "name": "ChangePasswordModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/ChangePasswordModal.vue",
+    "sourcePath": "components/User/ChangePasswordModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/ChangePasswordModal.vue"
+  },
+  {
+    "id": "cdata/User/CreateApiTokenModal",
+    "name": "CreateApiTokenModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/CreateApiTokenModal.vue",
+    "sourcePath": "components/User/CreateApiTokenModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/CreateApiTokenModal.vue"
+  },
+  {
+    "id": "cdata/User/DeleteUserModal",
+    "name": "DeleteUserModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/DeleteUserModal.vue",
+    "sourcePath": "components/User/DeleteUserModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/DeleteUserModal.vue"
+  },
+  {
+    "id": "cdata/User/RotatePasswordModal",
+    "name": "RotatePasswordModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/RotatePasswordModal.vue",
+    "sourcePath": "components/User/RotatePasswordModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/RotatePasswordModal.vue"
+  },
+  {
+    "id": "cdata/User/TwoFactorSetupModal",
+    "name": "TwoFactorSetupModal",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/User/TwoFactorSetupModal.vue",
+    "sourcePath": "components/User/TwoFactorSetupModal.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/User/TwoFactorSetupModal.vue"
+  },
+  {
+    "id": "cdata/dataset/card-lg",
+    "name": "card-lg",
+    "origin": "cdata",
+    "path": "vendor/cdata-components/dataset/card-lg.vue",
+    "sourcePath": "components/dataset/card-lg.vue",
+    "sourceUrl": "https://github.com/datagouv/cdata/blob/c3945a840af816ec4b958375119db57233db86d8/components/dataset/card-lg.vue"
   }
 ]

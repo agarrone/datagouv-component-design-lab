@@ -2,8 +2,10 @@ import { defineAsyncComponent } from 'vue';
 import { RiDatabase2Line, RiLockLine } from '@remixicon/vue';
 import { CalendarDate } from '@internationalized/date';
 import * as f from './fixtures';
+const applicationModules=import.meta.glob(['../vendor/cdata-components/Onboarding/SmallCapsLabel.vue','../vendor/cdata-components/Onboarding/OnboardingParagraph.vue','../vendor/cdata-components/Onboarding/OnboardingTitle.vue']);
 const modules = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue');
 export const components = Object.fromEntries(Object.entries(modules).map(([path, load])=>[path.split('/components/')[1].replace(/\.vue$/,''),defineAsyncComponent(load)]));
+Object.assign(components,Object.fromEntries(Object.entries(applicationModules).map(([path,load])=>['cdata/'+path.split('/cdata-components/')[1].replace(/\.vue$/,''),defineAsyncComponent(load)])));
 export const originalPreviews = new Set(['BrandedButton','Tag','SimpleBanner','BannerAction','ProgressBar','SegmentedControl','AnimatedLoader','BouncingDots']);
 export const compactPreviews = new Set([...originalPreviews, 'Avatar','AvatarWithName','DatasetCard','DataserviceCard','OrganizationCard','OrganizationHorizontalCard','ReuseCard','ReuseHorizontalCard','ChartCard','PostCard','TopicCard','LicenseBadge','DatasetLabelTag','DatasetQualityInline','DataserviceQualityInline','QualityScore','QualityItem','OwnerType','OwnerTypeIcon','OrganizationLogo','OrganizationNameWithCertificate','ObjectCardOwner','ResourceIconBadge','ResourceAccordion/ResourceIcon','Form/SelectGroup','Tabs/Tab','Tabs/TabGroup','Tabs/TabList','Tabs/TabPanel','Tabs/TabPanels', ...Object.keys(components).filter(id=>id.startsWith('Icons/'))]);
 export const descriptions = {
@@ -16,6 +18,7 @@ export const descriptions = {
   ClientOnly:'Le contenu du slot est rendu dans le navigateur.',
 };
 export const samples = {
+ 'cdata/Onboarding/SmallCapsLabel':{},'cdata/Onboarding/OnboardingParagraph':{},'cdata/Onboarding/OnboardingTitle':{},
  AppLink:{to:'https://www.data.gouv.fr'},
  Avatar:{user:f.user,size:56,rounded:true},AvatarWithName:{user:f.user,withLink:false},
  ChartCard:{chart:f.chart},DataserviceCard:{dataservice:f.dataservice},DatasetCard:{dataset:f.dataset},
