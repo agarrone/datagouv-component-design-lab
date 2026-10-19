@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import {installChunkRecovery} from './chunkRecovery';
 import App from './App.vue';
 import {translate} from './compat/application/translation';
 import {$fetch,useRuntimeConfig} from './compat/application/runtime';
@@ -9,6 +10,9 @@ import '@fontsource/noto-sans-mono/400.css';
 import '@fontsource/noto-sans-mono/500.css';
 import '@fontsource/noto-sans-mono/700.css';
 import './style.css';
+if(import.meta.env.PROD){
+ try{installChunkRecovery(window,window.sessionStorage);}catch{/* Le chargement normal reste possible sans stockage de session. */}
+}
 const router = createRouter({history:createMemoryHistory(), routes:[{path:'/:pathMatch(.*)*',component:{render:()=>null}}]});
 const app=createApp(App);
 app.config.globalProperties.$t=translate;
