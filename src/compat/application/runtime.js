@@ -1,11 +1,13 @@
 // Adaptateurs locaux pour l’exécution des composants Nuxt dans le laboratoire.
 // Aucune action ne contacte l’application ou ne modifie un compte réel.
-import {ref,computed,toValue,defineComponent,h,inject,provide} from 'vue';
+import {ref,computed,toValue,defineComponent,h,inject,provide,getCurrentInstance} from 'vue';
 import * as fixtures from '../../fixtures';
 import {responseFor} from '../../demoApi';
+import sourceLock from '../../../upstream.lock.json';
 export {Teleport,Transition,TransitionGroup,Suspense,KeepAlive} from 'vue';
 export {useTranslation} from './translation';
-export const useRoute=()=>({path:'/datasets/demo-dataset/',fullPath:'/datasets/demo-dataset/',params:{id:'demo-dataset',oid:'demo-org',dataset:'demo-dataset',slug:'demo',rid:'demo-resource'},query:{},hash:'',name:'demo'});
+const defaultRoute=()=>({path:'/datasets/demo-dataset/',fullPath:'/datasets/demo-dataset/',params:{id:'demo-dataset',oid:'demo-org',dataset:'demo-dataset',slug:'demo',rid:'demo-resource'},query:{},hash:'',name:'demo'});
+export const useRoute=()=> (getCurrentInstance() && inject('application-preview-route',null)) || defaultRoute();
 export const useRouter=()=>({resolve:to=>({href:typeof to==='string'?to:'#',fullPath:typeof to==='string'?to:'#',path:typeof to==='string'?to.split('?')[0]:'/',query:{}}),push:async()=>{},replace:async()=>{},back:()=>{},currentRoute:ref(useRoute()),beforeEach:()=>()=>{},getRoutes:()=>[]});
 export const onBeforeRouteLeave=()=>{},onBeforeRouteUpdate=()=>{};
 const me={...fixtures.user,active:true,roles:['admin'],email:'camille@example.test',organizations:[fixtures.organization],metrics:{datasets:24,reuses:8,followers:32},permissions:{},notifications_paused:false};
@@ -15,8 +17,8 @@ export const useMe=()=>ref(me),useMaybeMe=useMe;
 export const isAdmin=()=>true,isMeAdmin=()=>true,isUserOrgAdmin=()=>true;
 export const loadMe=async()=>me;
 export const useLogout=()=>async()=>{};
-export const useRuntimeConfig=()=>({public:{apiBase:(typeof location==='undefined'?'http://localhost':location.origin)+'/demo-api',apiBaseUrl:'/demo-api',baseUrl:'https://www.data.gouv.fr',siteUrl:'https://www.data.gouv.fr',enableAuth:false,enableNotifications:false,features:{},geopf:{},sentry:{},search:{},captcheta:{style:'demo'},commonFrequencies:['annual','monthly'],licenses:{Ouvertes:[{value:'lov2',recommended:true}]},readOnly:false,baseDomain:'data.gouv.fr',apiBaseExternal:'https://www.data.gouv.fr',schemasSite:{name:'schema.data.gouv.fr',url:'https://schema.data.gouv.fr'},guidesUrl:'#',forumUrl:'#'},app:{baseURL:'/'}});
-export const useAppConfig=()=>({theme:{},features:{}});
+export const useRuntimeConfig=()=>({public:{title:'data.gouv.fr',apiBase:(typeof location==='undefined'?'http://localhost':location.origin)+'/demo-api',apiBaseUrl:'/demo-api',baseUrl:'https://www.data.gouv.fr',siteUrl:'https://www.data.gouv.fr',enableAuth:false,enableNotifications:false,features:{},geopf:{},sentry:{},search:{},captcheta:{style:'demo'},commonFrequencies:['annual','monthly'],licenses:{Ouvertes:[{value:'lov2',recommended:true}]},readOnly:false,baseDomain:'data.gouv.fr',apiBaseExternal:'https://www.data.gouv.fr',schemasSite:{name:'schema.data.gouv.fr',url:'https://schema.data.gouv.fr'},guidesUrl:'#',forumUrl:'#'},app:{baseURL:'/'}});
+export const useAppConfig=()=>({theme:{},features:{},isFrenchGovernment:true,commitId:sourceLock.commit.slice(0,7)});
 export const useInstance=()=>ref({name:'data.gouv.fr',title:'data.gouv.fr',url:'https://www.data.gouv.fr',features:{},metrics:{datasets:24,organizations:12,reuses:8}});
 const pagination=data=>({data,total:data.length,page:1,page_size:20,next_page:null,previous_page:null});
 export function demoResponse(url,options={}) {

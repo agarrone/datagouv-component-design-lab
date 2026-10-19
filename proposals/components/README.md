@@ -1,15 +1,16 @@
 # Versions proposées
 
-La référence reste dans `vendor/datagouv-components`, sans modification.
+Les références restent dans `vendor/datagouv-components` et `vendor/cdata-components`, sans modification.
 
 Pour proposer une modification, créer ici un fichier Vue reprenant l’identifiant du composant :
 - `SimpleBanner.vue` pour `SimpleBanner` ;
-- `Form/SelectGroup.vue` pour `Form/SelectGroup`.
+- `Form/SelectGroup.vue` pour `Form/SelectGroup` ;
+- `cdata/OrganizationOwner.vue` pour `cdata/OrganizationOwner`.
 
 Le rendu « Proposition » de la fiche utilise ce fichier. En son absence, seule la version actuelle est affichée dans la fiche.
 
 Les deux versions reçoivent les mêmes données et réglages. Leurs interactions restent indépendantes.
 
-Conserver les imports des dépendances pointant vers la bibliothèque d’origine avec des chemins adaptés. Un remplacement est appliqué aux composants montés par les exemples du laboratoire ; il ne réécrit pas les imports internes des composants parents. Pour proposer un assemblage complet, fournir également sa version ici.
+Conserver les imports des dépendances pointant vers la bibliothèque d’origine avec des chemins adaptés. Le remplacement s’applique aussi aux imports de composants imbriqués dans les versions de référence, sans réécrire les fichiers source. Les propriétés, événements, slots et méthodes publiques attendus par les parents doivent rester compatibles. Dans les Templates, le mode « Avec les propositions » applique les remplacements disponibles et conserve les autres composants d’origine.
 
 Décrire l’intention et le statut dans `proposals/proposals.json`.

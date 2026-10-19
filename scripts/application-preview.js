@@ -6,7 +6,7 @@ import {$fetch,useRuntimeConfig} from '../src/compat/application/runtime';
 import inventory from '../data/components.json';
 import '@gouvfr/dsfr/dist/dsfr.min.css';
 const params=new URLSearchParams(location.search);
-const all=inventory.filter(c=>c.origin==='cdata');
+const all=inventory.filter(c=>params.get('origin')==='library'?c.origin!=='cdata':c.origin==='cdata');
 const selection=params.get('ids')?.split(',');
 const components=selection ? all.filter(c=>selection.includes(c.id)) : all.slice(Number(params.get('start')||0),Number(params.get('end')||all.length));
 const results=document.querySelector('#results'),progress=document.querySelector('#progress');
