@@ -25,8 +25,13 @@ const normalize = name => name.replace(/[-_.]/g,'').toLowerCase();
 const secondary = file => /^(design-system\/|pages\/design(?:\/|\.vue)|tests(?:-unit)?\/|playwright\/)/.test(file) || /(?:^|\/)[^/]+\.(?:spec|test)\.[jt]sx?$/.test(file);
 const localComponents = new Map();
 for (const file of files.filter(f=>f.startsWith('components/')&&f.endsWith('.vue'))) {
-  const parts=file.slice(11,-4).replace(/\.(client|server)$/,'').split('/');
-  for(const name of [parts.join(''),parts.at(-1)]) {const key=normalize(name);if(!localComponents.has(key))localComponents.set(key,new Set());localComponents.get(key).add(file);}
+  const parts=file.slice(11,-4).replace(/\.(client|server|global|takumi)$/,'').split('/');
+  const names=new Set([parts.join(''),parts.at(-1)]);
+  for(let i=0;i<parts.length;i++){
+    let name='';for(const part of parts.slice(i))if(!normalize(name).endsWith(normalize(part)))name+=part;
+    names.add(name);
+  }
+  for(const name of names){const key=normalize(name);if(!localComponents.has(key))localComponents.set(key,new Set());localComponents.get(key).add(file);}
 }
 function resolveModule(from, spec) {
   let target;
@@ -44,7 +49,7 @@ for(const file of files) {
   const raw=await readFile(resolve(sourceRoot,file),'utf8');
   let blocks=[{content:raw,start:0}], template=null;
   if(file.endsWith('.vue')) {const parsed=parse(raw,{filename:file});if(parsed.errors.length)throw new Error(`SFC invalide : ${file}`);const d=parsed.descriptor;blocks=[d.script,d.scriptSetup].filter(Boolean).map(b=>({content:b.content,start:b.loc.start.offset}));template=d.template?.ast;}
-  const model={file,raw,imports:[],exports:[],stars:[],declared:new Set(),used:new Set(),tags:[],dynamic:[],issues:[]};
+  const model={file,raw,imports:[],exports:[],stars:[],declared:new Set(),used:new Set(),tags:[],dynamic:[],nuxt:[],issues:[]};
   for(const block of blocks) {
     const ast=ts.createSourceFile(file,block.content,ts.ScriptTarget.Latest,true,file.endsWith('x')?ts.ScriptKind.TSX:ts.ScriptKind.TS);
     if(ast.parseDiagnostics.length)throw new Error(`Syntaxe non analysée dans ${file} : ${ts.flattenDiagnosticMessageText(ast.parseDiagnostics[0].messageText,' ')}`);
@@ -73,6 +78,11 @@ for(const file of files) {
     const visit=node=>{
       if(ts.isImportDeclaration(node)||ts.isExportDeclaration(node)||ts.isTypeNode(node)||ts.isInterfaceDeclaration(node)||ts.isTypeAliasDeclaration(node))return;
       if(ts.isIdentifier(node))model.used.add(node.text);
+      if(ts.isCallExpression(node)&&ts.isIdentifier(node.expression)&&['defineOgImage','resolveComponent','resolveDynamicComponent'].includes(node.expression.text)){
+        const arg=node.arguments[0];
+        if(arg&&ts.isStringLiteralLike(arg))model.nuxt.push({name:arg.text.replace(/\.(client|server|global|takumi)$/,''),...evidence(node)});
+        else model.issues.push(evidence(node));
+      }
       if(ts.isCallExpression(node)&&node.expression.kind===ts.SyntaxKind.ImportKeyword) {
         const arg=node.arguments[0];
         if(arg&&ts.isStringLiteralLike(arg)) {
@@ -135,7 +145,8 @@ for(const [file,model] of models) {
     }
   }
   for(const dynamic of model.dynamic)for(const target of entrypoints.has(dynamic.target)?resolveExport(dynamic.target,dynamic.name):[dynamic.target])add(target,dynamic,'dynamic-import');
-  if(!file.startsWith(library))for(const tag of model.tags) {
+  for(const ref of model.nuxt)for(const target of localComponents.get(normalize(ref.name))||[])add(target,ref,'nuxt-runtime-component');
+  for(const tag of model.tags) {
     if(model.imports.some(imp=>imp.local&&normalize(imp.local)===normalize(tag.tag)))continue;
     const local=localComponents.get(normalize(tag.tag));
     if(local?.size)for(const target of local)add(target,{file,line:tag.line,text:`<${tag.tag}>`},'nuxt-auto-import');
@@ -148,7 +159,7 @@ function reach(roots) {
   for(let i=0;i<queue.length;i++)for(const [next,ref]of graph.get(queue[i])||[])if(!previous.has(next)){previous.set(next,{from:queue[i],ref});queue.push(next);}
   return previous;
 }
-const runtimeRoots=files.filter(file=>!file.startsWith('datagouv-components/')&&!secondary(file));
+const runtimeRoots=files.filter(file=>!file.startsWith('datagouv-components/')&&!file.startsWith('components/')&&!secondary(file));
 const secondaryRoots=files.filter(secondary);
 const runtime=reach(runtimeRoots),examples=reach(secondaryRoots);
 const asLink=ref=>({file:ref.file,line:ref.line,text:ref.text,...(ref.kind?{kind:ref.kind}:{}),...(ref.context?{context:ref.context}:{}),...(ref.uncertain?{uncertain:true}:{}),url:`${lock.repository}/blob/${commit}/${ref.file}#L${ref.line}`});
@@ -156,13 +167,13 @@ function chain(file,previous) {const refs=[];while(previous.get(file)){const ste
 const exportedNames=new Map();
 for(const entry of entrypoints)for(const item of models.get(entry).exports)for(const target of resolveExport(entry,item.name)){if(!exportedNames.has(target))exportedNames.set(target,[]);exportedNames.get(target).push({entry:entry.endsWith('chart.ts')?'@datagouv/components-next/chart':'@datagouv/components-next',name:item.name});}
 const components={};
-for(const component of inventory.filter(c=>c.origin!=='cdata')){const file=componentRoot+component.id+'.vue';if(!fileSet.has(file))throw new Error('Composant absent de la référence : '+component.id);
+for(const component of inventory){const file=component.origin==='cdata'?'components/'+component.id.slice(6)+'.vue':componentRoot+component.id+'.vue';if(!fileSet.has(file))throw new Error('Composant absent de la référence : '+component.id);
  const references=[];for(const [parent,edges]of graph){if(edges.has(file))references.push(asLink({...edges.get(file),context:parent.startsWith(library)?'library':secondary(parent)?'demo-or-test':'application'}));}
  const state=runtime.has(file)?(chain(file,runtime).some(ref=>ref.uncertain)?'possible-reference':'referenced'):examples.has(file)?'demo-only':'no-runtime-reference';
- components[component.id]={state,exports:exportedNames.get(file)||[],runtimeChain:chain(file,runtime),demoChain:chain(file,examples),referenceCount:references.length,references:references.slice(0,12),localNamesakes:[...(localComponents.get(normalize(component.name))||[])].map(file=>({file,url:`${lock.repository}/blob/${commit}/${file}#L1`}))};
+ components[component.id]={state,exports:exportedNames.get(file)||[],runtimeChain:chain(file,runtime),demoChain:chain(file,examples),referenceCount:references.length,references:references.slice(0,12),localNamesakes:[...(localComponents.get(normalize(component.name))||[])].filter(other=>other!==file).map(file=>({file,url:`${lock.repository}/blob/${commit}/${file}#L1`}))};
 }
 const summary=Object.fromEntries(['referenced','possible-reference','demo-only','no-runtime-reference'].map(state=>[state,Object.values(components).filter(c=>c.state===state).length]));
-const report={repository:lock.repository,commit,auditedAt:new Date().toISOString(),method:'static-runtime-reference-graph',scannedFiles:files.length,runtimeRoots:runtimeRoots.length,notes:['Les exports seuls ne constituent pas un usage.','Les imports de types, commentaires, tests et pages de design ne comptent pas comme usages applicatifs.','Les fichiers applicatifs sont des racines conservatrices : une référence peut se trouver dans du code mort.','Les imports dynamiques à chemin littéral et les alias sont suivis.','Les consommateurs externes, routes effectivement fréquentées et chargements générés à l’exécution ne sont pas observables ici.'],unresolvedDynamic:[...models.values()].flatMap(m=>m.issues.map(asLink)),summary,components};
+const report={repository:lock.repository,commit,auditedAt:new Date().toISOString(),method:'static-runtime-reference-graph',scannedFiles:files.length,runtimeRoots:runtimeRoots.length,notes:['Les exports seuls ne constituent pas un usage.','Les imports de types, commentaires, tests et pages de design ne comptent pas comme usages applicatifs.','Les fichiers applicatifs hors components/ sont des racines conservatrices : une référence peut se trouver dans du code mort. La présence d’un composant ne le rend pas utilisé.','Les imports dynamiques à chemin littéral, alias, auto-imports Nuxt et appels defineOgImage à nom littéral sont suivis.','Les consommateurs externes, routes effectivement fréquentées et chargements générés à l’exécution ne sont pas observables ici.'],unresolvedDynamic:[...models.values()].flatMap(m=>m.issues.map(asLink)),summary,components};
 await writeFile(resolve(root,'data/component-usage.json'),JSON.stringify(report,null,2)+'\n');
 if(process.argv.includes('--write-status')){
  const file=resolve(root,'data/audit-statuses.json');const statuses=JSON.parse(await readFile(file,'utf8'));

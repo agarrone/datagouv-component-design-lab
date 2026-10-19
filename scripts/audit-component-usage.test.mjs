@@ -5,13 +5,13 @@ import { reconcileUsageStatuses } from './lib/usage-status.mjs';
 const load = file => readFile(new URL('../'+file, import.meta.url),'utf8').then(JSON.parse);
 const [report, inventory, lock] = await Promise.all(['data/component-usage.json','data/components.json','upstream.lock.json'].map(load));
 
-test('le rapport couvre chaque composant de bibliothèque à la référence du lab', () => {
+test('le rapport couvre les deux origines à la référence du lab', () => {
   assert.equal(report.commit, lock.commit);
-  assert.deepEqual(Object.keys(report.components).sort(), inventory.filter(c=>c.origin!=='cdata').map(c=>c.id).sort());
-  assert.equal(Object.values(report.summary).reduce((a,b)=>a+b,0),inventory.filter(c=>c.origin!=='cdata').length);
+  assert.deepEqual(Object.keys(report.components).sort(), inventory.map(c=>c.id).sort());
+  assert.equal(Object.values(report.summary).reduce((a,b)=>a+b,0),inventory.length);
 });
 test('les quatre candidats ont été vérifiés séparément des homonymes locaux et des exports', () => {
-  const candidates=Object.entries(report.components).filter(([,c])=>['demo-only','no-runtime-reference'].includes(c.state));
+  const candidates=Object.entries(report.components).filter(([id,c])=>!id.startsWith('cdata/')&&['demo-only','no-runtime-reference'].includes(c.state));
   assert.deepEqual(candidates.map(([id])=>id).sort(),['DiscussionMessageCard','Form/BadgeSelect','PostCard','ResourceAccordion/SchemaLoader']);
   assert.equal(report.components.PostCard.state,'demo-only');
   assert.ok(report.components.PostCard.localNamesakes.some(ref=>ref.file==='components/Post/card.vue'));
@@ -37,4 +37,19 @@ test('les changements de statut préservent les décisions et travaux existants'
   const result=reconcileUsageStatuses(original,{unused:{state:'no-runtime-reference'},demo:{state:'demo-only'},working:{state:'no-runtime-reference'},approved:{state:'demo-only'},again:{state:'referenced'},uncertain:{state:'possible-reference'}});
   assert.deepEqual(result,{unused:'non-utilise-question',demo:'non-utilise-question',working:'en-cours',approved:'valide',again:'a-auditer',uncertain:'a-auditer'});
   assert.equal(original.unused,'a-auditer');
+});
+
+test('les composants applicatifs ne sont pas des racines d’usage par leur seule présence',()=>{
+ const candidates=Object.entries(report.components).filter(([id,c])=>id.startsWith('cdata/')&&['demo-only','no-runtime-reference'].includes(c.state));
+ assert.deepEqual(candidates.map(([id])=>id).sort(),['cdata/Design/ThemeTagFilter','cdata/LogoOnly','cdata/Search/NoResults']);
+ assert.equal(report.components['cdata/Design/ThemeTagFilter'].state,'demo-only');
+ assert.equal(report.components['cdata/LogoOnly'].state,'demo-only');
+ assert.equal(report.components['cdata/Search/NoResults'].referenceCount,0);
+ for(const [id,info] of Object.entries(report.components))if(id.startsWith('cdata/')&&info.state==='referenced')assert.ok(info.runtimeChain.length,id);
+});
+test('les conventions Nuxt sont suivies et les homonymes restent distincts',()=>{
+ assert.ok(report.components['cdata/OgImage/Default.takumi'].runtimeChain.some(r=>r.kind==='nuxt-runtime-component'));
+ assert.ok(report.components['cdata/Accordion/AccordionGroup.global'].runtimeChain.some(r=>r.kind==='nuxt-auto-import'));
+ assert.equal(report.components['cdata/Post/card'].state,'referenced');
+ assert.equal(report.components['cdata/BadgeSelect'].state,'referenced');
 });
