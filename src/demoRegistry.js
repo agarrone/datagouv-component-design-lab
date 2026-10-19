@@ -2,7 +2,7 @@ import { defineAsyncComponent } from 'vue';
 import { RiDatabase2Line, RiLockLine } from '@remixicon/vue';
 import { CalendarDate } from '@internationalized/date';
 import * as f from './fixtures';
-const applicationModules=import.meta.glob(['../vendor/cdata-components/Onboarding/SmallCapsLabel.vue','../vendor/cdata-components/Onboarding/OnboardingParagraph.vue','../vendor/cdata-components/Onboarding/OnboardingTitle.vue']);
+const applicationModules=import.meta.glob(['../vendor/cdata-components/AccessTypes/AccessTypePanel.vue','../vendor/cdata-components/AccessTypes/AccessTypeBadge.vue','../vendor/cdata-components/AdminBadge/AdminBadge.vue','../vendor/cdata-components/Dataservices/AccessAudienceCondition.vue','../vendor/cdata-components/Onboarding/SmallCapsLabel.vue','../vendor/cdata-components/Onboarding/OnboardingParagraph.vue','../vendor/cdata-components/Onboarding/OnboardingTitle.vue']);
 const modules = import.meta.glob('../vendor/datagouv-components/src/components/**/*.vue');
 export const components = Object.fromEntries(Object.entries(modules).map(([path, load])=>[path.split('/components/')[1].replace(/\.vue$/,''),defineAsyncComponent(load)]));
 Object.assign(components,Object.fromEntries(Object.entries(applicationModules).map(([path,load])=>['cdata/'+path.split('/cdata-components/')[1].replace(/\.vue$/,''),defineAsyncComponent(load)])));
@@ -18,6 +18,10 @@ export const descriptions = {
   ClientOnly:'Le contenu du slot est rendu dans le navigateur.',
 };
 export const samples = {
+ 'cdata/AccessTypes/AccessTypePanel':{object:{access_type:'restricted',access_audiences:[{role:'local_authority_and_administration',condition:'yes'},{role:'company_and_association',condition:'under_condition'},{role:'private',condition:'no'}],authorization_request_url:'https://www.data.gouv.fr'}},
+ 'cdata/AccessTypes/AccessTypeBadge':{accessType:'open'},
+ 'cdata/AdminBadge/AdminBadge':{type:'success',size:'sm'},
+ 'cdata/Dataservices/AccessAudienceCondition':{audience:'local_authority_and_administration',condition:'yes'},
  'cdata/Onboarding/SmallCapsLabel':{},'cdata/Onboarding/OnboardingParagraph':{},'cdata/Onboarding/OnboardingTitle':{},
  AppLink:{to:'https://www.data.gouv.fr'},
  Avatar:{user:f.user,size:56,rounded:true},AvatarWithName:{user:f.user,withLink:false},

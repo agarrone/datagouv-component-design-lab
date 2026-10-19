@@ -8,4 +8,6 @@ import '@fontsource/noto-sans-mono/500.css';
 import '@fontsource/noto-sans-mono/700.css';
 import './style.css';
 const router = createRouter({history:createMemoryHistory(), routes:[{path:'/:pathMatch(.*)*',component:{render:()=>null}}]});
-createApp(App).use(router).mount('#app');
+const app=createApp(App);
+app.config.globalProperties.$t=text=>text;
+app.use(router).mount('#app');

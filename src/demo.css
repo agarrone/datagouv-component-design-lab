@@ -4,3 +4,7 @@
 @source "../vendor/cdata-components/Onboarding/SmallCapsLabel.vue";
 @source "../vendor/cdata-components/Onboarding/OnboardingParagraph.vue";
 @source "../vendor/cdata-components/Onboarding/OnboardingTitle.vue";
+
+@source "../vendor/cdata-components/AccessTypes";
+@source "../vendor/cdata-components/AdminBadge";
+@source "../vendor/cdata-components/Dataservices/AccessAudienceCondition.vue";
