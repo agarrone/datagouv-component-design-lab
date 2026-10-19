@@ -329,4 +329,6 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 .component-preview-pending { font-size:12px; line-height:1.8; color:#687286; background:#f6f7fa; }
 .detail-meta { flex-wrap:wrap; }
 
+.lazy-preview { min-height:120px; width:100%; background:#f6f7fa; color:#000091; font-size:12px; }
+
 }

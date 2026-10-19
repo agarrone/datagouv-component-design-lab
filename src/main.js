@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import {translate} from './compat/application/translation';
+import {$fetch,useRuntimeConfig} from './compat/application/runtime';
 import { createRouter, createMemoryHistory } from 'vue-router';
 import '@gouvfr/dsfr/dist/dsfr.min.css';
 import '@gouvfr/dsfr/dist/utility/icons/icons.min.css';
@@ -9,5 +11,7 @@ import '@fontsource/noto-sans-mono/700.css';
 import './style.css';
 const router = createRouter({history:createMemoryHistory(), routes:[{path:'/:pathMatch(.*)*',component:{render:()=>null}}]});
 const app=createApp(App);
-app.config.globalProperties.$t=text=>text;
+app.config.globalProperties.$t=translate;
+app.config.globalProperties.$api=$fetch;
+app.config.globalProperties.$config=useRuntimeConfig();
 app.use(router).mount('#app');

@@ -8,3 +8,5 @@
 @source "../vendor/cdata-components/AccessTypes";
 @source "../vendor/cdata-components/AdminBadge";
 @source "../vendor/cdata-components/Dataservices/AccessAudienceCondition.vue";
+
+@source '../vendor/cdata-components';

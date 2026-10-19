@@ -1,0 +1,40 @@
+import type { Dataservice, Dataset, DatasetV2, Reuse, ReuseTopic, ReuseType, ReuseV2 } from '@datagouv/components-next'
+import type { DatasetSuggest, NewReuseForApi, ReuseForm } from '~/types/types'
+
+export function getReuseAdminUrl(reuse: Reuse | ReuseV2): string {
+  return `/admin/reuses/${reuse.id}`
+}
+
+export function reuseToForm(reuse: Reuse, types: Array<ReuseType>, topics: Array<ReuseTopic>): ReuseForm {
+  return {
+    owned: reuse.organization ? { organization: reuse.organization, owner: null } : { owner: reuse.owner, organization: null },
+    title: reuse.title,
+    description: reuse.description,
+    url: reuse.url,
+    type: { id: reuse.type, label: types.find(t => t.id === reuse.type)?.label || reuse.type },
+    topic: { id: reuse.topic, label: topics.find(t => t.id === reuse.topic)?.label || reuse.topic },
+    tags: reuse.tags?.map(text => ({ text })) || [],
+    image: reuse.image,
+    private: reuse.private,
+    archived: reuse.archived,
+    featured: reuse.featured,
+  }
+}
+
+export function reuseToApi(form: ReuseForm, overrides: { datasets?: Array<Dataset | DatasetV2 | DatasetSuggest>, dataservices?: Array<Dataservice>, private?: boolean, archived?: string | null, deleted?: null } = {}): NewReuseForApi {
+  return {
+    organization: form.owned?.organization?.id,
+    owner: form.owned?.owner?.id,
+    title: form.title,
+    url: form.url,
+    private: overrides.private,
+    archived: overrides.archived,
+    deleted: overrides.deleted,
+    description: form.description,
+    datasets: overrides.datasets ? overrides.datasets.map(({ id }) => id) : undefined,
+    dataservices: overrides.dataservices ? overrides.dataservices.map(({ id }) => id) : undefined,
+    type: form.type?.id || '',
+    topic: form.topic?.id || '',
+    tags: form.tags.map(t => t.text),
+  }
+}

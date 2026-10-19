@@ -3,6 +3,8 @@ import { ref, provide, computed, reactive, h, defineComponent } from 'vue';
 import { originalPreviews, compactPreviews, samples, descriptions } from './demoRegistry';
 import { mockUseFetch, mockFetch } from './demoApi';
 import ContextDemo from './ContextDemo.vue';
+import ApplicationScene from './ApplicationScene.vue';
+import {cloneApplicationSample} from './applicationSamples';
 import {usePreviewComponents} from './proposalComponents';
 const C=usePreviewComponents();
 import { useRouter } from 'vue-router';
@@ -12,10 +14,11 @@ import './demo.css';
 import { segmentedChoices } from './segmentedExamples';
 const props = defineProps({ name: String, compact: Boolean, contextual: Boolean, sampleProps: Object });
 const overrides = reactive({});
+const applicationBase=props.name.startsWith('cdata/') ? cloneApplicationSample(samples[props.name]) : null;
 const updateModel = value => { overrides.modelValue = value; };
 const updatePage = value => { if(props.name==='Pagination') overrides.page=value; };
 const genericProps = computed(() => {
-  const base = {...samples[props.name], ...props.sampleProps, ...overrides};
+  const base = {...(applicationBase || samples[props.name]), ...props.sampleProps, ...overrides};
   if (props.name==='Search/SearchInput' && !('modelValue' in base)) base.modelValue='';
   if (props.name.startsWith('Search/Filter/') && !('modelValue' in base)) base.modelValue=undefined;
   return base;
@@ -24,7 +27,7 @@ const listeners = computed(() => {
   const events = {};
   const name = props.name;
   if(name==='Pagination') events.change=updatePage;
-  if(name.startsWith('Form/') || name==='Search/SearchInput' || name.startsWith('Search/Filter/') || name==='OpenApiViewer/ContentTypeSelect' || name.startsWith('TabularExplorer/TabularDate')) events['update:modelValue']=updateModel;
+  if(name.startsWith('cdata/') || name.startsWith('Form/') || name==='Search/SearchInput' || name.startsWith('Search/Filter/') || name==='OpenApiViewer/ContentTypeSelect' || name.startsWith('TabularExplorer/TabularDate')) events['update:modelValue']=updateModel;
   if(name.startsWith('TabularExplorer/TabularDate') || name.startsWith('TabularExplorer/TabularFilter')) {
     events['update:filters']=value=>overrides.filters=value;
     events['update:sort']=value=>overrides.sort=value;
@@ -37,7 +40,7 @@ const description = computed(() => descriptions[props.name] || (props.name.start
 const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', LoadingBlock: 'Les données ont été chargées.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
 const router = useRouter();
 const DemoLink = defineComponent({props:['to','replace'], setup(linkProps,{attrs,slots}) {return ()=>h('a',{...attrs,href:typeof linkProps.to==='string'?linkProps.to:router.resolve(linkProps.to||'/').href,onClick(event){if(typeof linkProps.to==='object' || linkProps.to==='/demo'){event.preventDefault();router[linkProps.replace?'replace':'push'](linkProps.to);}}},slots.default?.());}});
-provide(configKey, { appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
+provide(configKey, { appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', metricsApiUrl:'/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
 const active = ref('all');
 const clicks = ref(0);
 </script>
@@ -62,7 +65,7 @@ const clicks = ref(0);
     <template v-else>
       <p v-if="description" class="demo-description">{{ description }}</p>
       <Suspense><template #default>
-        <div v-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/'), 'demo-card-part': ['ObjectCardHeader','ObjectCardBadge'].includes(name), 'demo-card-badge':name==='ObjectCardBadge' }">
+        <div v-if="name.startsWith('cdata/')"><ApplicationScene :name="name" :sample-props="genericProps" :listeners="listeners" /></div><div v-else-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/'), 'demo-card-part': ['ObjectCardHeader','ObjectCardBadge'].includes(name), 'demo-card-badge':name==='ObjectCardBadge' }">
           <component :is="C[name]" v-bind="genericProps" v-on="listeners">
             <template v-if="slotText" #default>{{ slotText }}</template>
             <template v-else-if="name==='ResourceAccordion/PreviewWrapper'" #default="{data}"><pre>{{ data }}</pre></template>

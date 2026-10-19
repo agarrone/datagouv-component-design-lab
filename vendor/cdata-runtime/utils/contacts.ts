@@ -1,0 +1,35 @@
+import type { ContactPoint, Organization, OrganizationReference } from '@datagouv/components-next'
+import type { ApiFetch, NewContactPoint } from '~/types/types'
+
+export const defaultContactForm = {
+  name: '',
+  email: '',
+  contact_form: '',
+  role: 'contact' as const,
+}
+
+export async function newContactPoint(api: ApiFetch, organization: Organization | OrganizationReference, contactPoint: NewContactPoint): Promise<ContactPoint> {
+  return await api<ContactPoint>('/api/1/contacts/', {
+    method: 'POST',
+    body: JSON.stringify({
+      name: contactPoint.name,
+      email: contactPoint.email,
+      contact_form: contactPoint.contact_form,
+      role: contactPoint.role,
+      organization: organization.id,
+    }),
+  })
+}
+
+export async function saveContactPoint(api: ApiFetch, organization: Organization | OrganizationReference, contactPoint: ContactPoint): Promise<ContactPoint> {
+  return await api<ContactPoint>(`/api/1/contacts/${contactPoint.id}/`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      name: contactPoint.name,
+      email: contactPoint.email,
+      contact_form: contactPoint.contact_form,
+      role: contactPoint.role,
+      organization: organization.id,
+    }),
+  })
+}

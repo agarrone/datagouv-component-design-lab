@@ -23,3 +23,11 @@ export const topic = {...dataset, name:'Comprendre les territoires', logo:organi
 export const discussion = {id:'demo-thread',title:'Quelle est la fréquence de mise à jour ?',subject:dataset,created:'2026-10-01T09:00:00',closed:null,closed_by:null,user,discussion:[{content:'Bonjour, ces données sont-elles actualisées chaque année ?',posted_on:'2026-10-01T09:00:00',posted_by:user}]};
 export const post = {...dataset,name:'De nouvelles données pour les territoires',headline:'Des données ouvertes pour mieux comprendre les territoires.',body:dataset.description,content:dataset.description,image:'/demo/territories.svg',credit_to:null,published:'2026-10-01T09:00:00',published_at:'2026-10-01T09:00:00'};
 export const geojson = {type:'FeatureCollection',features:[{type:'Feature',properties:{name:'Zone de démonstration'},geometry:{type:'Polygon',coordinates:[[[-1.8,48.0],[-1.5,48.0],[-1.5,48.2],[-1.8,48.2],[-1.8,48.0]]]}}]};
+
+// Champs applicatifs supplémentaires, partagés par les réponses API fictives.
+Object.assign(dataset,{class:'Dataset',access_audiences:[],access_type_reason:null,access_type_reason_category:null});
+Object.assign(datasetFull,{class:'Dataset',access_audiences:[],access_type_reason:null,access_type_reason_category:null});
+Object.assign(dataservice,{class:'Dataservice',access_audiences:[],access_type_reason:null,access_type_reason_category:null});
+Object.assign(reuse,{class:'Reuse'});
+Object.assign(user,{roles:['admin'],email:'camille@example.test',about:'Un compte de démonstration.',organizations:[organization],metrics:{datasets:24,reuses:8,followers:32}});
+Object.assign(resource,{push:{status:null,error:null,last_synced_at:null}});
