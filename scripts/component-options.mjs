@@ -1,6 +1,7 @@
+import {writeIfChanged} from './lib/write-if-changed.mjs';
 import ts from 'typescript';
 import { parse } from '@vue/compiler-sfc';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -85,5 +86,5 @@ for (const component of inventory) {
   }
   output[component.id] = { props: [...unique.values()], unresolved };
 }
-await writeFile(resolve(root, 'data/component-options.json'), JSON.stringify(output, null, 2) + '\n');
+await writeIfChanged(resolve(root, 'data/component-options.json'), JSON.stringify(output, null, 2) + '\n');
 console.log(`Options extraites pour ${Object.keys(output).length} composants (${Object.values(output).filter(entry => entry.unresolved).length} déclarations à consulter dans la source).`);

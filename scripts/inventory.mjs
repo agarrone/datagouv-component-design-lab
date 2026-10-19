@@ -1,4 +1,5 @@
-import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+import {writeIfChanged} from './lib/write-if-changed.mjs';
+import { readdir, readFile, mkdir } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -24,5 +25,5 @@ for (const source of [
   sourceUrl:`${lock.repository}/blob/${lock.commit}/${source.sourcePath}/${relative(source.directory,file)}`,
 });
 await mkdir(join(root, 'data'), { recursive: true });
-await writeFile(join(root, 'data/components.json'), JSON.stringify(components, null, 2) + '\n');
+await writeIfChanged(join(root, 'data/components.json'), JSON.stringify(components, null, 2) + '\n');
 console.log(`${components.length} composants Vue inventoriés.`);
