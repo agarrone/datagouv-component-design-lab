@@ -107,3 +107,7 @@ La section **Templates** commence par une page de jeu de données (`#templates/d
 Les règles du projet [Agents data.gouv.fr](https://datagouv-agent.opendatateam.fr/design), relevées le 20 octobre 2026, sont conservées dans **Fondamentaux → Référence Agents**. Les 18 décisions, valeurs et exceptions sont structurées dans `data/design-reference-agents.json` et archivées dans [un relevé daté](docs/references/agents-design-2026-10-20.md).
 
 Cette référence sert de base de discussion pour les prochaines revues. Examiner son périmètre et ses exceptions avant de proposer une adaptation : les choix de l’assistant dense ne s’appliquent pas automatiquement aux pages publiques. Les composants actuels, leurs statuts et les propositions restent indépendants de ce relevé.
+
+### Ressources pour le design des composants
+
+Les [skills de Jakub Krehel](https://jakub.kr/skills#better-interface) sont documentés dans [une référence dédiée](docs/references/jakub-interface-skills.md) : `better-interface`, ses six domaines et des outils complémentaires pour explorer les états et variantes. Ce sont des pistes adaptables aux usages de data.gouv.fr et aux fondamentaux du projet, sans application obligatoire ni activation automatique.
