@@ -295,5 +295,192 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AdminSidebar/AdminSidebarLink/AdminSidebarLink.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "cards-datasetcard-01",
+    "component": "DatasetCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-dataservicecard-01",
+    "component": "DataserviceCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DataserviceCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-reusecard-01",
+    "component": "ReuseCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ReuseCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-reusehorizontalcard-01",
+    "component": "ReuseHorizontalCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ReuseHorizontalCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-organizationcard-01",
+    "component": "OrganizationCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/OrganizationCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-organizationhorizontalcard-01",
+    "component": "OrganizationHorizontalCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/OrganizationHorizontalCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-chartcard-01",
+    "component": "ChartCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ChartCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-postcard-01",
+    "component": "PostCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/PostCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-topiccard-01",
+    "component": "TopicCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TopicCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-schemacard-01",
+    "component": "SchemaCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/SchemaCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-discussionmessagecard-01",
+    "component": "DiscussionMessageCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DiscussionMessageCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-objectcard-01",
+    "component": "ObjectCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ObjectCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-objectcardheader-01",
+    "component": "ObjectCardHeader",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ObjectCardHeader.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-objectcardshortdescription-01",
+    "component": "ObjectCardShortDescription",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ObjectCardShortDescription.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-objectcardowner-01",
+    "component": "ObjectCardOwner",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ObjectCardOwner.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-cdata-dataservices-card-card-01",
+    "component": "cdata/Dataservices/Card/Card",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Dataservices/Card/Card.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cards-cdata-reuses-reusecard-01",
+    "component": "cdata/Reuses/ReuseCard",
+    "title": "Une hiérarchie commune pour les cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
+    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Reuses/ReuseCard.vue",
+    "reviewUrl": ""
   }
 ]

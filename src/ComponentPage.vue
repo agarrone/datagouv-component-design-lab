@@ -1,4 +1,5 @@
 <script setup>
+import {cardVariants} from "./cardExamples";
 import {adminSidebarVariants} from "./adminSidebarExamples";
 import {avatarVariants} from "./avatarExamples";
 import {badgeVariants} from "./badgeExamples";
@@ -28,6 +29,7 @@ const status = computed(() => auditStatuses.find(s => s.id === audit[props.compo
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (cardVariants[props.component.id]) return cardVariants[props.component.id];
   if (adminSidebarVariants[props.component.id]) return adminSidebarVariants[props.component.id];
   if (avatarVariants[props.component.id]) return avatarVariants[props.component.id];
   if (badgeVariants[props.component.id]) return badgeVariants[props.component.id];
