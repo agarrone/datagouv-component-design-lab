@@ -1,21 +1,24 @@
 import {createApp,h,nextTick} from 'vue';
 import {createRouter,createMemoryHistory} from 'vue-router';
 import Demo from '../src/Demo.vue';
+import PreviewVersion from '../src/PreviewVersion.vue';
+import {badgeVariants} from '../src/badgeExamples.js';
 import {translate} from '../src/compat/application/translation';
 import {$fetch,useRuntimeConfig} from '../src/compat/application/runtime';
 import inventory from '../data/components.json';
 import '@gouvfr/dsfr/dist/dsfr.min.css';
 const params=new URLSearchParams(location.search);
-const all=inventory.filter(c=>params.get('origin')==='library'?c.origin!=='cdata':c.origin==='cdata');
+const all=inventory.filter(c=>params.get('origin')==='all'?true:params.get('origin')==='library'?c.origin!=='cdata':c.origin==='cdata');
 const selection=params.get('ids')?.split(',');
 const components=selection ? all.filter(c=>selection.includes(c.id)) : all.slice(Number(params.get('start')||0),Number(params.get('end')||all.length));
 const results=document.querySelector('#results'),progress=document.querySelector('#progress');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
-for(const c of components){
+const cases=components.flatMap(c=>params.get('variants')==='badges'&&badgeVariants[c.id]?badgeVariants[c.id].map(v=>({...c,case:v.label,props:v.props})):[c]);
+for(const c of cases){
  const errors=[],warnings=[];
  const root=document.querySelector('#mount');
  const router=createRouter({history:createMemoryHistory(),routes:[{path:'/:pathMatch(.*)*',component:{render:()=>null}}]});
- const app=createApp({render:()=>h(Demo,{name:c.id})});
+ const app=createApp({render:()=>h(PreviewVersion,{version:params.get('version')==='proposal'?'proposal':'current'},()=>h(Demo,{name:c.id,sampleProps:c.props}))});
  app.config.globalProperties.$t=translate;
  app.config.globalProperties.$api=$fetch;app.config.globalProperties.$config=useRuntimeConfig();
  app.config.errorHandler=(e,vm,info)=>errors.push(String(e?.stack || e)+' | '+info);
@@ -34,9 +37,9 @@ for(const c of components){
  }catch(e){errors.push(String(e.stack || e));}
  const entry=document.createElement('pre');
  entry.dataset.component=c.id;entry.dataset.errors=errors.length;entry.dataset.warnings=warnings.length;
- entry.textContent=JSON.stringify({id:c.id,errors,warnings,text:root.textContent.slice(0,180),elements:root.querySelectorAll('*').length});
+ entry.textContent=JSON.stringify({id:c.id,case:c.case,errors,warnings,text:root.textContent.slice(0,180),elements:root.querySelectorAll('*').length});
  results.append(entry);
  app.unmount();root.innerHTML='';window.removeEventListener('unhandledrejection',unhandled);
- progress.textContent=`${results.children.length} / ${components.length}`;
+ progress.textContent=`${results.children.length} / ${cases.length}`;
 }
 progress.dataset.complete='true';

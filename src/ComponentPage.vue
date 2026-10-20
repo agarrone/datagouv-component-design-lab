@@ -1,4 +1,5 @@
 <script setup>
+import {badgeVariants} from "./badgeExamples";
 import ComponentUsageExamples from "./ComponentUsageExamples.vue";
 import { computed, ref } from 'vue';
 import ComponentExample from './ComponentExample.vue';
@@ -25,6 +26,7 @@ const status = computed(() => auditStatuses.find(s => s.id === audit[props.compo
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (badgeVariants[props.component.id]) return badgeVariants[props.component.id];
   const seen = new Set();
   return Object.values(typePages).flatMap(p => p.sections.flatMap(s => s.items)).filter(item => {
     if (item.id !== props.component.id || !item.props || item.contextual) return false;

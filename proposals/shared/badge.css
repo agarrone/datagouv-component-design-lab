@@ -1,0 +1,18 @@
+/* Shared proposal geometry. Semantic mappings remain owned by each component. */
+.design-lab-badge {
+  --badge-bg:#f6f6f6; --badge-text:#555; --badge-border:#e5e5e5;
+  display:inline-flex; align-items:center; gap:4px; box-sizing:border-box;
+  min-height:24px; max-width:100%; padding:2px 8px; border:1px solid var(--badge-border);
+  border-radius:6px; background:var(--badge-bg); color:var(--badge-text);
+  font-family:inherit; font-size:12px; font-weight:500; line-height:18px;
+  vertical-align:middle; text-transform:none;
+}
+.design-lab-badge[data-tone=primary] { --badge-bg:#e8edff; --badge-text:#0063cb; --badge-border:#b8c7ff; }
+.design-lab-badge[data-tone=success] { --badge-bg:#e3fdeb; --badge-text:#18753c; --badge-border:#b8fec9; }
+.design-lab-badge[data-tone=warning] { --badge-bg:#ffe9e6; --badge-text:#b34000; --badge-border:#ffc6bd; }
+.design-lab-badge[data-tone=danger] { --badge-bg:#fef4f4; --badge-text:#ce0500; --badge-border:#ffbdbd; }
+.design-lab-badge[data-tone=secondary] { --badge-bg:#f6f6f6; --badge-text:#555; --badge-border:#e5e5e5; }
+.design-lab-badge[data-tone=pink] { --badge-bg:#ffe4f2; --badge-text:#cf006d; --badge-border:#ffe4f2; }
+.design-lab-badge[data-tone=teal] { --badge-bg:#d5f2ff; --badge-text:#005d6a; --badge-border:#d5f2ff; }
+.design-lab-badge__text { min-width:0; overflow-wrap:anywhere; }
+.design-lab-badge__icon { width:14px; height:14px; flex-shrink:0; }

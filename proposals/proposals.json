@@ -119,5 +119,126 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaLoader.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "tag-01",
+    "component": "Tag",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/Tag.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "datasetlabeltag-01",
+    "component": "DatasetLabelTag",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetLabelTag.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "objectcardbadge-01",
+    "component": "ObjectCardBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ObjectCardBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-accesstypes-accesstypebadge-01",
+    "component": "cdata/AccessTypes/AccessTypeBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AccessTypes/AccessTypeBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-adminbadge-adminbadge-01",
+    "component": "cdata/AdminBadge/AdminBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminBadge/AdminBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-adminbadge-dataservicebadge-01",
+    "component": "cdata/AdminBadge/DataserviceBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminBadge/DataserviceBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-adminbadge-datasetbadge-01",
+    "component": "cdata/AdminBadge/DatasetBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminBadge/DatasetBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-adminbadge-reusebadge-01",
+    "component": "cdata/AdminBadge/ReuseBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminBadge/ReuseBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-harvesters-harvesterbadge-01",
+    "component": "cdata/Harvesters/HarvesterBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Harvesters/HarvesterBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-harvesters-jobbadge-01",
+    "component": "cdata/Harvesters/JobBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Harvesters/JobBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "cdata-suividepublication-hvdstatutbadge-01",
+    "component": "cdata/SuiviDePublication/HvdStatutBadge",
+    "title": "Harmoniser tags et badges en conservant leur sens métier",
+    "status": "brouillon",
+    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/SuiviDePublication/HvdStatutBadge.vue",
+    "reviewUrl": ""
   }
 ]
