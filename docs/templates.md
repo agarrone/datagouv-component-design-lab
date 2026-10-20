@@ -32,3 +32,13 @@ Les données sont fictives et stables dans les deux versions. Les onglets change
 Le template d’organisation contient un élément par catégorie : le choix de tri ne produit donc pas de changement d’ordre visible. La recherche filtre le titre de l’élément du catalogue actif. Le template ne reproduit pas les parcours d’administration, d’édition de bannière, de pagination complète, les permissions particulières ou toutes les branches d’accès. L’onglet Présentation optionnel de l’organisation n’est pas activé par la fixture.
 
 Les fiches de réutilisation et d’API sont assemblées avec les composants source et le balisage de leurs pages, pas chargées directement comme pages Nuxt. Leur contenu est adapté au contexte du lab. Cela permet de comparer les propositions imbriquées en conservant les styles d’origine, sans prétendre reproduire tous les comportements du site en production.
+
+## Recherche, profil et administration
+
+Trois assemblages supplémentaires sont regroupés dans `src/AdditionalTemplateScene.vue` :
+
+- `#templates/search` : recherche multi-types adaptée de `pages/datasets/search.vue`, avec le véritable `Search/GlobalSearch`, ses filtres, tris et résultats (jeux de données, API, réutilisations, organisations).
+- `#templates/user` : profil public adapté de `pages/users/[id].vue`, avec avatar, compteurs, organisation, description, jeu de données public et réutilisation. Les boutons réservés aux administrateurs et les listes paginées ne sont pas reproduits.
+- `#templates/admin` : gestion des jeux de données adaptée de `pages/admin.vue` et `pages/admin/me/datasets.vue`. Le menu, le fil d’Ariane et `AdminDatasetsTable` sont les composants source. Trois publications fictives permettent de tester localement la recherche, le statut (public, brouillon, archivé) et le tri. Le filtre et la recherche sont des contrôles HTML du template ; les actions d’édition restent neutralisées et le menu illustre sa structure sans changer la page de gestion.
+
+Les trois pages partagent le contexte actuel/propositions et leur propre document d’aperçu. La recherche utilise les réponses de démonstration communes au lab : un objet par type, sans garantie que chaque filtre reproduise une requête réelle. Ce sont des pages de référence visuelle, pas des copies fonctionnelles complètes du service. Les données sont identiques entre les deux versions.

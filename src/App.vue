@@ -18,6 +18,7 @@ import ComponentPage from './ComponentPage.vue';
 import TemplatePage from './TemplatePage.vue';
 import DatasetTemplateScene from './DatasetTemplateScene.vue';
 import EntityTemplateScene from './EntityTemplateScene.vue';
+import AdditionalTemplateScene from './AdditionalTemplateScene.vue';
 import {templates} from './templates';
 import { previews } from './demoRegistry';
 import { issues } from './referenceData';
@@ -144,7 +145,7 @@ function downloadProposal(c) {
 </script>
 
 <template>
-  <component :is="sectionId==='dataset'?DatasetTemplateScene:EntityTemplateScene" v-if="view==='template-preview'" :key="sectionId" :kind="sectionId" :version="templateVersion" />
+  <component :is="sectionId==='dataset'?DatasetTemplateScene:['search','user','admin'].includes(sectionId)?AdditionalTemplateScene:EntityTemplateScene" v-if="view==='template-preview'" :key="sectionId" :kind="sectionId" :version="templateVersion" />
   <template v-else>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
