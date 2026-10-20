@@ -20,5 +20,104 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/BannerAction.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "animatedloader-01",
+    "component": "AnimatedLoader",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/AnimatedLoader.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "bouncingdots-01",
+    "component": "BouncingDots",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/BouncingDots.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "infiniteloader-01",
+    "component": "InfiniteLoader",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/InfiniteLoader.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "loadingblock-01",
+    "component": "LoadingBlock",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/LoadingBlock.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tabularexplorer-tabularskeleton-01",
+    "component": "TabularExplorer/TabularSkeleton",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "resourceexplorer-resourceviewerskeleton-01",
+    "component": "ResourceExplorer/ResourceViewerSkeleton",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceViewerSkeleton.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "resourceaccordion-pdfskeleton-01",
+    "component": "ResourceAccordion/PdfSkeleton",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "resourceaccordion-previewloader-01",
+    "component": "ResourceAccordion/PreviewLoader",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewLoader.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "resourceaccordion-schemaloader-01",
+    "component": "ResourceAccordion/SchemaLoader",
+    "title": "Une attente plus discrète et stable",
+    "status": "brouillon",
+    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
+    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaLoader.vue",
+    "reviewUrl": ""
   }
 ]
