@@ -1,6 +1,7 @@
 export const auditStatuses = [
   { id: 'a-auditer', label: 'À auditer' },
   { id: 'en-cours', label: 'En cours' },
+  { id: 'a-discuter', label: 'À discuter' },
   { id: 'a-corriger', label: 'À corriger' },
   { id: 'valide', label: 'Validé' },
   { id: 'non-utilise-question', label: 'Non utilisé ?' },
