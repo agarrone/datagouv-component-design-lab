@@ -27,6 +27,7 @@ function reset() { query.value=''; statusFilter.value='all'; familyFilter.value=
 <template>
   <div class="audit-page">
     <h1>Suivi des composants</h1>
+    <p><a href="#suivi/vue-ensemble">Voir les travaux en cours avec leurs aperçus</a></p>
     <p class="intro">Statut de l’audit pour chacun des {{ rows.length }} composants de datagouv-components et de cdata.</p>
     <div class="audit-summary" aria-label="Répartition des statuts"><div v-for="status in auditStatuses" :key="status.id"><strong>{{ counts[status.id] }}</strong><span class="audit-status" :data-status="status.id">{{ status.label }}</span></div></div>
     <div class="audit-progress"><label for="audit-progress">{{ counts.valide }} / {{ rows.length }} composants validés · {{ progress }} %</label><progress id="audit-progress" :value="counts.valide" :max="rows.length" /></div>

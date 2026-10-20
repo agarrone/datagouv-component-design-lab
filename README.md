@@ -117,3 +117,7 @@ Les [skills de Jakub Krehel](https://jakub.kr/skills#better-interface) sont docu
 La référence [Chiffres tabulaires — Craft](docs/references/tabular-numbers.md) conserve le principe, un exemple CSS et des pistes de revue pour les valeurs numériques des composants.
 
 Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource adaptable pour concevoir et revoir les transitions des futures propositions : menus, modales, changements d’état et cohérence des mouvements.
+
+### Vue des travaux en cours
+
+**Suivi → Travaux en cours** (`#suivi/vue-ensemble`) rassemble les composants dont le statut est `en-cours`, regroupés selon les catégories existantes. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
