@@ -9,5 +9,16 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/SimpleBanner.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "banner-action-01",
+    "component": "BannerAction",
+    "title": "Harmoniser les bannières avec action et les bannières simples",
+    "status": "brouillon",
+    "problem": "BannerAction utilise un padding de 10 px, un titre sombre et une description plus petite, avec une bordure fortement accentuée. Sa géométrie diffère de la proposition SimpleBanner.",
+    "intention": "Partager le rayon de 6 px, le padding de 16 px et les fonds, bordures et textes couleur accent de SimpleBanner. Ajouter une icône Remix Line de 16 px et distinguer le titre en gras du complément, tous deux en 14 px. Les actions passent sous le contenu quand la bannière est étroite. Conserver les trois types, les slots title/default/button et le contexte des BrandedButton. Références : Agents et Jakub Krehel ; pas d’animation ajoutée à cette surface statique.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/BannerAction.vue",
+    "reviewUrl": ""
   }
 ]
