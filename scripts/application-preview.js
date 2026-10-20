@@ -3,6 +3,7 @@ import {createRouter,createMemoryHistory} from 'vue-router';
 import Demo from '../src/Demo.vue';
 import PreviewVersion from '../src/PreviewVersion.vue';
 import {badgeVariants} from '../src/badgeExamples.js';
+import {avatarVariants} from '../src/avatarExamples.js';
 import {translate} from '../src/compat/application/translation';
 import {$fetch,useRuntimeConfig} from '../src/compat/application/runtime';
 import inventory from '../data/components.json';
@@ -13,7 +14,8 @@ const selection=params.get('ids')?.split(',');
 const components=selection ? all.filter(c=>selection.includes(c.id)) : all.slice(Number(params.get('start')||0),Number(params.get('end')||all.length));
 const results=document.querySelector('#results'),progress=document.querySelector('#progress');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
-const cases=components.flatMap(c=>params.get('variants')==='badges'&&badgeVariants[c.id]?badgeVariants[c.id].map(v=>({...c,case:v.label,props:v.props})):[c]);
+const variants=params.get('variants')==='avatars'?avatarVariants:params.get('variants')==='badges'?badgeVariants:{};
+const cases=components.flatMap(c=>variants[c.id]?variants[c.id].map(v=>({...c,case:v.label,props:v.props})):[c]);
 for(const c of cases){
  const errors=[],warnings=[];
  const root=document.querySelector('#mount');

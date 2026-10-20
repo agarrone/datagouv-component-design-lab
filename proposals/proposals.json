@@ -240,5 +240,38 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/SuiviDePublication/HvdStatutBadge.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "avatar-01",
+    "component": "Avatar",
+    "title": "Une représentation cohérente des personnes et des automates",
+    "status": "brouillon",
+    "problem": "Avatar est carré par défaut et mesure 40 px, tandis que les identités avec nom utilisent 12 px. Le compte supprimé possède un traitement différent ; le nom est tronqué sans restitution dédiée.",
+    "intention": "Forme ronde pour les personnes, 40 px seul et 24 px avec nom, tout en conservant les tailles explicites. Même bordure #E5E5E5 et fond #F6F6F6. Initiales sans photo ou en cas d’erreur, silhouette neutre pour un compte supprimé. Nom lisible avec retour à la ligne ; lien identifiable uniquement lorsqu’il existe. Les automates restent identifiés par leur icône robot. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/Avatar.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "avatarwithname-01",
+    "component": "AvatarWithName",
+    "title": "Une représentation cohérente des personnes et des automates",
+    "status": "brouillon",
+    "problem": "Avatar est carré par défaut et mesure 40 px, tandis que les identités avec nom utilisent 12 px. Le compte supprimé possède un traitement différent ; le nom est tronqué sans restitution dédiée.",
+    "intention": "Forme ronde pour les personnes, 40 px seul et 24 px avec nom, tout en conservant les tailles explicites. Même bordure #E5E5E5 et fond #F6F6F6. Initiales sans photo ou en cas d’erreur, silhouette neutre pour un compte supprimé. Nom lisible avec retour à la ligne ; lien identifiable uniquement lorsqu’il existe. Les automates restent identifiés par leur icône robot. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/AvatarWithName.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "activitylist-activityactor-01",
+    "component": "ActivityList/ActivityActor",
+    "title": "Une représentation cohérente des personnes et des automates",
+    "status": "brouillon",
+    "problem": "Avatar est carré par défaut et mesure 40 px, tandis que les identités avec nom utilisent 12 px. Le compte supprimé possède un traitement différent ; le nom est tronqué sans restitution dédiée.",
+    "intention": "Forme ronde pour les personnes, 40 px seul et 24 px avec nom, tout en conservant les tailles explicites. Même bordure #E5E5E5 et fond #F6F6F6. Initiales sans photo ou en cas d’erreur, silhouette neutre pour un compte supprimé. Nom lisible avec retour à la ligne ; lien identifiable uniquement lorsqu’il existe. Les automates restent identifiés par leur icône robot. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ActivityList/ActivityActor.vue",
+    "reviewUrl": ""
   }
 ]
