@@ -27,7 +27,7 @@
     "title": "Une attente plus discrète et stable",
     "status": "brouillon",
     "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
-    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "intention": "Séquence DNA de quatre caractères et cadence 80 ms relevées dans le module public de la référence Agents. Couleur #777, glyphe 12 px ; libellés animés par un balayage #777 vers #555, période 2 s et bande 400 %, comme la référence. Espace réservé et arrêt des animations selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/AnimatedLoader.vue",
     "reviewUrl": ""
@@ -38,7 +38,7 @@
     "title": "Une attente plus discrète et stable",
     "status": "brouillon",
     "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
-    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "intention": "Séquence DNA de quatre caractères et cadence 80 ms relevées dans le module public de la référence Agents. Couleur #777, glyphe 12 px ; libellés animés par un balayage #777 vers #555, période 2 s et bande 400 %, comme la référence. Espace réservé et arrêt des animations selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/BouncingDots.vue",
     "reviewUrl": ""
@@ -49,7 +49,7 @@
     "title": "Une attente plus discrète et stable",
     "status": "brouillon",
     "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
-    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "intention": "Séquence DNA de quatre caractères et cadence 80 ms relevées dans le module public de la référence Agents. Couleur #777, glyphe 12 px ; libellés animés par un balayage #777 vers #555, période 2 s et bande 400 %, comme la référence. Espace réservé et arrêt des animations selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/InfiniteLoader.vue",
     "reviewUrl": ""
@@ -60,7 +60,7 @@
     "title": "Une attente plus discrète et stable",
     "status": "brouillon",
     "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
-    "intention": "Indicateur Unicode compact, cadence 80 ms, espace réservé et arrêt du mouvement selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation. Le spinner Unicode est une interprétation de la référence Agents, pas une reproduction attestée de sa séquence DNA.",
+    "intention": "Séquence DNA de quatre caractères et cadence 80 ms relevées dans le module public de la référence Agents. Couleur #777, glyphe 12 px ; libellés animés par un balayage #777 vers #555, période 2 s et bande 400 %, comme la référence. Espace réservé et arrêt des animations selon prefers-reduced-motion. LoadingBlock conserve les données précédentes pendant une actualisation.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/LoadingBlock.vue",
     "reviewUrl": ""

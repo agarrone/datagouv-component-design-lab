@@ -2,12 +2,12 @@
   <div ref="sentinel">
     <slot>
       <div class="flex items-center justify-center p-4">
-        <span role="status" class="inline-flex items-center gap-2 text-sm text-gray-medium">
+        <span role="status" class="inline-flex items-center gap-3 text-[13px] text-[#777777]">
           <UnicodeLoader
-            class="size-4"
+            style="font-size:12px; min-width:40px"
             aria-hidden="true"
           />
-          {{ t('Chargement…') }}
+          <ShimmerText :text="t('Chargement…')" />
         </span>
       </div>
     </slot>
@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, useTemplateRef, watch } from 'vue'
 import UnicodeLoader from '../shared/UnicodeLoader.vue'
+import ShimmerText from '../shared/ShimmerText.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 
 const props = defineProps<{

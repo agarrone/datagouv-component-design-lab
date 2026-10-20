@@ -8,20 +8,22 @@ Rendre l’attente identifiable sans lui donner plus de poids que le contenu. Pa
 
 | Composant | Proposition |
 | --- | --- |
-| AnimatedLoader | Indicateur Unicode compact, bleu France ou blanc selon l’option existante. Taille par défaut 24 px. |
-| BouncingDots | Version en ligne de 16 px, couleur héritée, sans rebond vertical. |
-| InfiniteLoader | Même indicateur compact et texte de chargement en 14 px. Observer, propriété root, slot et événement intersect conservés. |
+| AnimatedLoader | Séquence DNA de quatre caractères en gris #777, glyphe 12 px, zone réservée de 40 px. L’option white reste disponible pour les fonds sombres. |
+| BouncingDots | Même séquence DNA en gris #777, glyphe 12 px, sans rebond vertical. |
+| InfiniteLoader | Même indicateur DNA et libellé avec balayage animé en 13 px. Observer, propriété root, slot et événement intersect conservés. |
 | LoadingBlock | Même indicateur avec libellé ; espace réservé au chargement initial ; contenu précédent conservé à sa hauteur pendant l’actualisation. États comparables dans la fiche. |
 | TabularSkeleton, ResourceViewerSkeleton, PdfSkeleton | Géométrie actuelle conservée, sans pulsation de toute la surface. Informations déjà connues conservées. |
 | ResourceAccordion/PreviewLoader et SchemaLoader | Squelettes SVG conservés, balayage désactivé. |
 
 ## Adaptation de la référence
 
-La référence Agents documente le spinner DNA pour la réflexion de l’assistant et une cadence Unicode de 80 ms. La proposition transpose le principe d’un glyphe compact et cette cadence à une séquence Braille simple. Elle ne prétend pas reproduire la séquence DNA du prototype. La généralisation aux chargements du site est un choix de cette proposition, à discuter.
+La séquence DNA a été relevée dans le module public `/_nuxt/uzoczsPR.js` de la page Agents le 20 octobre 2026 : douze étapes de quatre caractères, intervalle 80 ms. Le glyphe est gris #777, en 12 px, avec une largeur fixe de 4,5 ch dans une zone de 40 px. Les libellés reprennent le texte gris #777 et le balayage #555, une période de 2 s et une bande de 400 %, relevés dans `/_nuxt/entry.CfUa5qP1.css`. Le texte principal est en 13 px, interligne 20 px, comme le spécimen de réflexion.
+
+Le composant partagé `ShimmerText.vue` reprend le motif de [Transitions.dev](https://transitions.dev/skill.html), avec les couleurs du prototype. La duplication visuelle du texte utilise data-text et un pseudo-élément, sans répéter le libellé dans une région live.
 
 La forme du glyphe réserve une largeur fixe. Le composant partagé se trouve dans `shared/UnicodeLoader.vue` : il ne constitue pas un nouveau composant inventorié de cdata. Il ne fait pas annoncer chaque changement de caractère aux lecteurs d’écran.
 
-Avec prefers-reduced-motion, le glyphe reste fixe et le libellé de chargement demeure. Les changements de préférence sont pris en compte pendant le montage ; timer et listener sont nettoyés au démontage.
+Avec prefers-reduced-motion, le glyphe reste fixe, le balayage s’arrête et le libellé de chargement demeure. Les changements de préférence sont pris en compte pendant le montage ; timer et listener sont nettoyés au démontage.
 
 Les squelettes restent statiques pour cette piste. Les dimensions actuelles ne sont pas remplacées par une hauteur unique : un tableau, un PDF et une zone de contenu n’ont pas la même structure.
 
