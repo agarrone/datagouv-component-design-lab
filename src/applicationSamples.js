@@ -1,5 +1,6 @@
 import definitions from '../data/component-options.json';
 import inventory from '../data/components.json';
+import {notificationVariants} from './notificationExamples';
 import * as f from './fixtures';
 import {RiDatabase2Line} from '@remixicon/vue';
 import {toChartForm} from '../vendor/datagouv-components/src/functions/charts';
@@ -80,6 +81,7 @@ export function makeApplicationSamples(){return Object.fromEntries(inventory.fil
  if(c.id==='cdata/RadioButtons')props.options=[{value:'all',label:'Tous'},{value:'datasets',label:'Données'},{value:'api',label:'API'}];
  if(c.id.includes('/MarkdownEditor/')) Object.assign(props,{id:'demo-editor',value:'Des **données ouvertes** pour les territoires.'});
  if(c.id.includes('FullPageTabs')||c.id.includes('TabLinks'))props.links=[{href:'#',label:'Présentation',count:24},{href:'#',label:'Données',count:12}];
+ if(notificationVariants[c.id])Object.assign(props,cloneApplicationSample(notificationVariants[c.id][0].props));
  return [c.id,props];
 }));}
 export const applicationSamples=makeApplicationSamples();

@@ -1,11 +1,12 @@
 <script setup>
-import {computed,ref,provide,useId} from 'vue';
+import {computed,ref,provide,useId,reactive} from 'vue';
 import AdminSidebarScene from './AdminSidebarScene.vue';
 import {usePreviewComponents} from './proposalComponents';
 import definitions from '../data/component-options.json';
 import {useForm} from '../vendor/cdata-runtime/composables/useForm';
 const props=defineProps({name:String,sampleProps:Object,listeners:Object});
 const C=usePreviewComponents();
+if(props.name==='cdata/Notifications/MuteConfirmation'){const route=reactive({path:'/admin/me/notifications',fullPath:'/admin/me/notifications?event=discussion',params:{},query:{event:'discussion'}});provide('application-preview-route',route);provide('application-preview-router',{replace:async ({query})=>{route.query=query;}});}
 const modalOpen=ref(false);
 const editorId=useId();
 const modalPreview=computed(()=>definitions[props.name]?.props.some(p=>p.name==='opened'));

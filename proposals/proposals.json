@@ -790,5 +790,203 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Organization/AdminContactPointsPage.vue",
     "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5167"
+  },
+  {
+    "id": "notifications-notificationlayout-01",
+    "component": "cdata/Notifications/NotificationLayout",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NotificationLayout.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-followtoggle-01",
+    "component": "cdata/Notifications/FollowToggle",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les favoris, les abonnements et la confirmation de désabonnement utilisent des présentations distinctes ; les états de suivi et d’échec méritent une lecture plus explicite et des contrôles cohérents.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/FollowToggle.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-membershiprefused-01",
+    "component": "cdata/Notifications/MembershipRefused",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/MembershipRefused.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-subjectnotifications-01",
+    "component": "cdata/Notifications/SubjectNotifications",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les favoris, les abonnements et la confirmation de désabonnement utilisent des présentations distinctes ; les états de suivi et d’échec méritent une lecture plus explicite et des contrôles cohérents.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/SubjectNotifications.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-notificationactions-01",
+    "component": "cdata/Notifications/NotificationActions",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NotificationActions.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-discussion-01",
+    "component": "cdata/Notifications/Discussion",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/Discussion.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-membershipaccepted-01",
+    "component": "cdata/Notifications/MembershipAccepted",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/MembershipAccepted.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-membershiprequest-01",
+    "component": "cdata/Notifications/MembershipRequest",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/MembershipRequest.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-validateharvester-01",
+    "component": "cdata/Notifications/ValidateHarvester",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/ValidateHarvester.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-newdataservice-01",
+    "component": "cdata/Notifications/NewDataservice",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NewDataservice.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-newbadge-01",
+    "component": "cdata/Notifications/NewBadge",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NewBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-newreuse-01",
+    "component": "cdata/Notifications/NewReuse",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NewReuse.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-transferrequest-01",
+    "component": "cdata/Notifications/TransferRequest",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/TransferRequest.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-notificationslist-01",
+    "component": "cdata/Notifications/NotificationsList",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les messages sont souvent en petit corps et tronqués ; les actions secondaires sont cachées au survol et les états de lecture ou de traitement reposent surtout sur un point de couleur.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/NotificationsList.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-muteconfirmation-01",
+    "component": "cdata/Notifications/MuteConfirmation",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les favoris, les abonnements et la confirmation de désabonnement utilisent des présentations distinctes ; les états de suivi et d’échec méritent une lecture plus explicite et des contrôles cohérents.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Notifications/MuteConfirmation.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-followbutton-01",
+    "component": "cdata/FollowButton",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les favoris, les abonnements et la confirmation de désabonnement utilisent des présentations distinctes ; les états de suivi et d’échec méritent une lecture plus explicite et des contrôles cohérents.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/FollowButton.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-transferrequest-01",
+    "component": "cdata/TransferRequest",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les demandes de transfert et leur liste possèdent une géométrie et des espacements distincts des notifications ; leur présentation peut être harmonisée tout en conservant leurs actions métier.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/TransferRequest.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "notifications-transferrequestlist-01",
+    "component": "cdata/TransferRequestList",
+    "title": "Harmoniser les notifications et leurs actions",
+    "status": "brouillon",
+    "problem": "Les demandes de transfert et leur liste possèdent une géométrie et des espacements distincts des notifications ; leur présentation peut être harmonisée tout en conservant leurs actions métier.",
+    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/TransferRequestList.vue",
+    "reviewUrl": ""
   }
 ]
