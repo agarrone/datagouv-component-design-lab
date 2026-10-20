@@ -16,7 +16,7 @@ const hasData=computed(()=>!hasError.value&&props.data!=null)
       <slot v-if="hasData" :data="data!" />
       <slot v-else-if="hasError" name="error"><p class="proposed-loading-block__error" role="status">{{t('Une erreur est survenue lors du chargement.')}}</p></slot>
     </div>
-    <div v-if="loading" class="proposed-loading-block__indicator"><span class="proposed-loading-block__label" role="status"><UnicodeLoader class="proposed-loading-block__glyph" /><ShimmerText :text="t('Chargement…')" /></span></div>
+    <div v-if="loading" class="proposed-loading-block__indicator"><span class="proposed-loading-block__label" role="status"><UnicodeLoader class="proposed-loading-block__glyph" /><ShimmerText :text="t(hasData ? 'Actualisation…' : 'Chargement…')" /></span></div>
   </div>
 </template>
 <style scoped>

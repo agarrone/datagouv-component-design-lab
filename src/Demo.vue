@@ -37,7 +37,7 @@ const listeners = computed(() => {
   return events;
 });
 const description = computed(() => descriptions[props.name] || (props.name.startsWith('TabularExplorer/') ? descriptions.table : ''));
-const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', LoadingBlock: 'Les données ont été chargées.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
+const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
 const router = useRouter();
 const DemoLink = defineComponent({props:['to','replace'], setup(linkProps,{attrs,slots}) {return ()=>h('a',{...attrs,href:typeof linkProps.to==='string'?linkProps.to:router.resolve(linkProps.to||'/').href,onClick(event){if(typeof linkProps.to==='object' || linkProps.to==='/demo'){event.preventDefault();router[linkProps.replace?'replace':'push'](linkProps.to);}}},slots.default?.());}});
 provide(configKey, { appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', metricsApiUrl:'/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
@@ -62,6 +62,9 @@ const clicks = ref(0);
     <component :is="C.SegmentedControl" v-else-if="name === 'SegmentedControl'" v-bind="sampleProps" v-model="active" :options="segmentedChoices" />
     <component :is="C.AnimatedLoader" v-else-if="name === 'AnimatedLoader'" style="width: 32px; height: 32px" />
     <component :is="C.BouncingDots" v-else-if="name === 'BouncingDots'" />
+    <component :is="C.LoadingBlock" v-else-if="name === 'LoadingBlock'" v-bind="genericProps">
+      <template #default="{data}"><div class="demo-loading-result"><strong>Catalogue des jeux de données</strong><dl><div><dt>Jeux de données</dt><dd>{{data.count ?? 128}}</dd></div><div><dt>Organisations</dt><dd>{{data.organizations ?? 24}}</dd></div><div><dt>Dernière actualisation</dt><dd>{{data.updatedAt ?? 'Il y a quelques instants'}}</dd></div></dl></div></template>
+    </component>
     <template v-else>
       <p v-if="description" class="demo-description">{{ description }}</p>
       <Suspense><template #default>
@@ -89,6 +92,11 @@ const clicks = ref(0);
 .demo-summary small { display: block; margin-top: 12px; color: #8c93a1; font-size: 10px; }
 .demo-description { color: #727b8d; font-size: 12px; line-height: 1.8; margin: 0; }
 .demo-generic { width: 100%; min-width: 0; }
+.demo-loading-result { padding:16px; font-size:14px; line-height:1.5; width:100%; }
+.demo-loading-result dl { margin:12px 0 0; }
+.demo-loading-result dl>div { display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 16px; padding:8px 0; border-top:1px solid #e5e5e5; }
+.demo-loading-result dt { color:#555; }
+.demo-loading-result dd { margin:0; font-variant-numeric:tabular-nums; }
 .demo-card-part { position: relative; }
 .demo-card-badge { min-height: 48px; }
 .demo-icon svg { width: 48px; height: 48px; }

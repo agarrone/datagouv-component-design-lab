@@ -61,7 +61,7 @@ Object.assign(typePages, {
     { title: 'Qualité et réutilisation', items: items(['DatasetQuality','DataserviceQuality','ReuseDetails']) },
   ] },
   loading: { label: 'Chargement et attentes', description: 'Les indicateurs d’attente, les squelettes et les états de disponibilité.', sections: [
-    { title: 'Indicateurs de chargement', items: [...items(['AnimatedLoader','BouncingDots','InfiniteLoader','ProgressBar']), ...[{status:'pending',data:null,label:'Chargement initial'}, {status:'pending',data:{title:'Données précédentes'},label:'Actualisation'}, {status:'success',data:{title:'Données disponibles'},label:'Chargé'}, {status:'error',data:null,label:'Erreur'}].map(({label,...props})=>({id:'LoadingBlock',key:`loading-${label}`,label,props}))] },
+    { title: 'Indicateurs de chargement', items: [...items(['AnimatedLoader','BouncingDots','InfiniteLoader','ProgressBar']), ...[{status:'pending',data:null,label:'Chargement initial'}, {status:'pending',data:{count:128,organizations:24,updatedAt:'Il y a 5 minutes'},label:'Actualisation'}, {status:'success',data:{count:132,organizations:25,updatedAt:'À l’instant'},label:'Données disponibles'}, {status:'error',data:null,label:'Erreur'}].map(({label,...props})=>({id:'LoadingBlock',key:`loading-${label}`,label,props}))] },
     { title: 'Squelettes', items: items(['TabularExplorer/TabularSkeleton','ResourceExplorer/ResourceViewerSkeleton','ResourceAccordion/PdfSkeleton']) },
     { title: 'Attente et indisponibilité des aperçus', items: items(['ResourceAccordion/PreviewLoader','ResourceAccordion/SchemaLoader','ResourceAccordion/PreviewUnavailable','Placeholder']) },
   ] },

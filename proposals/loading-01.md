@@ -47,3 +47,7 @@ ProgressBar reste une jauge de mesure, utilisée notamment pour la qualité ; el
 - Originaux conservés dans vendor ; propositions isolées dans ce dossier.
 
 À valider en contexte : durée réelle de l’attente, lisibilité du glyphe selon les polices de repli, hauteur des visualisations, fréquence des annonces dans les pages comportant plusieurs chargements et parcours d’erreur avec récupération.
+
+## Clarification des exemples
+
+L’actualisation montre les données précédentes (128 jeux de données, 24 organisations), atténuées avec le libellé « Actualisation… ». L’état « Données disponibles » montre le résultat (132 jeux de données, 25 organisations) sans indicateur ni message de confirmation. Ces valeurs sont des fixtures du lab, identiques dans les deux versions du composant.
