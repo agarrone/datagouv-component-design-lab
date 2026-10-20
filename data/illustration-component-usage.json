@@ -1,0 +1,124 @@
+{
+  "ActivityList/ActivityList": {
+    "sourceFiles": [
+      "list.svg"
+    ],
+    "figmaNodes": [
+      "151:5098"
+    ]
+  },
+  "ResourceAccordion/PreviewUnavailable": {
+    "sourceFiles": [
+      "microscope.svg"
+    ],
+    "figmaNodes": [
+      "151:5123"
+    ]
+  },
+  "TabularExplorer/TabularTable": {
+    "sourceFiles": [
+      "_table.svg"
+    ],
+    "figmaNodes": [
+      "151:5160"
+    ]
+  },
+  "cdata/CommunityResources/AdminCommunityResourcesPage": {
+    "sourceFiles": [
+      "schema.svg"
+    ],
+    "figmaNodes": [
+      "151:5137"
+    ]
+  },
+  "cdata/Dataservices/AdminUpdateDataserviceDatasetsPage": {
+    "sourceFiles": [
+      "list.svg"
+    ],
+    "figmaNodes": [
+      "151:5098"
+    ]
+  },
+  "cdata/Datasets/AdminDatasetsPage": {
+    "sourceFiles": [
+      "dataset.svg"
+    ],
+    "figmaNodes": [
+      "151:5109"
+    ]
+  },
+  "cdata/Datasets/DescribeResource": {
+    "sourceFiles": [
+      "truck.svg"
+    ],
+    "figmaNodes": [
+      "151:5105"
+    ]
+  },
+  "cdata/Datasets/LegacyResourceList": {
+    "sourceFiles": [
+      "dataset.svg"
+    ],
+    "figmaNodes": [
+      "151:5109"
+    ]
+  },
+  "cdata/Datasets/New/Step1PublishingType": {
+    "sourceFiles": [
+      "dataset.svg",
+      "schema.svg"
+    ],
+    "figmaNodes": [
+      "151:5109",
+      "151:5137"
+    ]
+  },
+  "cdata/Datasets/Structured/Step1AssociateSchema": {
+    "sourceFiles": [
+      "schema.svg"
+    ],
+    "figmaNodes": [
+      "151:5137"
+    ]
+  },
+  "cdata/Datasets/Structured/Step3DescribeDataset": {
+    "sourceFiles": [
+      "dataset.svg"
+    ],
+    "figmaNodes": [
+      "151:5109"
+    ]
+  },
+  "cdata/Harvesters/AdminHarvestersPage": {
+    "sourceFiles": [
+      "harvester.svg"
+    ],
+    "figmaNodes": [
+      "151:5146"
+    ]
+  },
+  "cdata/Harvesters/DescribeHarvester": {
+    "sourceFiles": [
+      "harvester.svg"
+    ],
+    "figmaNodes": [
+      "151:5146"
+    ]
+  },
+  "cdata/Metrics/AdminDatasetsPage": {
+    "sourceFiles": [
+      "dataset.svg"
+    ],
+    "figmaNodes": [
+      "151:5109"
+    ]
+  },
+  "cdata/Organization/AdminContactPointsPage": {
+    "sourceFiles": [
+      "people.svg"
+    ],
+    "figmaNodes": [
+      "151:5167"
+    ]
+  }
+}

@@ -90,6 +90,8 @@ Les propositions sont affichées dans l’onglet « Propositions » du composant
 
 `/#fondamentaux` présente les couleurs extraites du thème, les familles typographiques déclarées, l’échelle Tailwind installée, les espacements et les points de rupture. `/#incoherences` contient un premier relevé de cinq constats, avec statut, pistes à valider, composants concernés et références au commit source. Les données éditoriales sont dans `src/referenceData.js`. Un constat ne crée pas automatiquement une proposition.
 
+Les [illustrations Figma retouchées en bleu](docs/references/figma-illustrations-blue-2026-10-20.md) sont comparables aux assets actuels dans `/#fondamentaux/illustrations`. Les 98 SVG sont conservés dans `public/proposals/illustrations` ; leur provenance et leurs correspondances sont dans `data/illustration-proposals.json`. Les [règles de reprise](proposals/illustrations-01.md) décrivent le basculement dans les aperçus et les composants concernés.
+
 ### Composants propres à l’application cdata
 
 Le catalogue inclut aussi les 260 fichiers Vue de `components/`, à la même référence que la bibliothèque. Ils sont conservés sans modification dans `vendor/cdata-components`. Le champ `origin` distingue `cdata` de `datagouv-components` ; le préfixe `cdata/` évite les collisions entre homonymes. Les catégories fonctionnelles réunissent les deux origines ; un tag `datagouv-components` ou `cdata` apparaît à côté de chaque titre. La recherche et le filtre d’origine permettent aussi de les retrouver. Le classement explicite des composants applicatifs est conservé dans `src/applicationCategories.json`.

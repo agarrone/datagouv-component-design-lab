@@ -1,0 +1,1285 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-4269",
+    "fileKey": "JoLabdNOOf1aL2kLyNIp9q",
+    "nodeId": "151:4269",
+    "name": "Illustration retouchée bleu",
+    "retrievedAt": "2026-10-20"
+  },
+  "assets": [
+    {
+      "name": "Peoples",
+      "nodeId": "151:5167",
+      "url": "/proposals/illustrations/peoples.svg",
+      "designWidth": 276.82879638671875,
+      "designHeight": 305.453857421875,
+      "width": "276.829",
+      "height": "305.454",
+      "sourceFiles": [
+        "people.svg"
+      ],
+      "sha256": "a00cf8070d2c28415103d29ca549f3dfeac76b3ff753fc078d1cf33dd2cf378e"
+    },
+    {
+      "name": "France population",
+      "nodeId": "151:5166",
+      "url": "/proposals/illustrations/france-population.svg",
+      "designWidth": 264.1351623535156,
+      "designHeight": 272.40545654296875,
+      "width": "264.135",
+      "height": "272.405",
+      "sourceFiles": [
+        "_france_with_magnifying_glass.svg"
+      ],
+      "sha256": "5ddc240ad611e0b33abac53a27a670702d74a2360f02bd3ccf75b7783b46b684"
+    },
+    {
+      "name": "Mobility",
+      "nodeId": "151:5165",
+      "url": "/proposals/illustrations/mobility.svg",
+      "designWidth": 441.1997375488281,
+      "designHeight": 305.3799743652344,
+      "width": "441.2",
+      "height": "305.38",
+      "sourceFiles": [
+        "_mobility.svg"
+      ],
+      "sha256": "81d523c756854ca010a6138b23d7d57620e8ff5cdac91dc01b95dd0f78badc3b"
+    },
+    {
+      "name": "Look inside",
+      "nodeId": "151:5164",
+      "url": "/proposals/illustrations/look-inside.svg",
+      "designWidth": 247.23681640625,
+      "designHeight": 404.405517578125,
+      "width": "247.237",
+      "height": "404.406",
+      "sourceFiles": [
+        "_explore.svg"
+      ],
+      "sha256": "5ebe87a3720d039df5b5fadc7a25457509727c2c4e49108999bf90d04c9f7ef1"
+    },
+    {
+      "name": "House happy",
+      "nodeId": "151:5161",
+      "url": "/proposals/illustrations/house-happy.svg",
+      "designWidth": 244.2411651611328,
+      "designHeight": 353.3335876464844,
+      "width": "244.241",
+      "height": "353.334",
+      "sourceFiles": [
+        "_home.svg"
+      ],
+      "sha256": "ada3a159bf4ae33e1e9b30633edbc4d0c9a59dd6859ccf9f3ed5910fa9c52f25"
+    },
+    {
+      "name": "Table",
+      "nodeId": "151:5160",
+      "url": "/proposals/illustrations/table.svg",
+      "designWidth": 273.987548828125,
+      "designHeight": 209.7843780517578,
+      "width": "273.988",
+      "height": "209.784",
+      "sourceFiles": [
+        "_table.svg"
+      ],
+      "sha256": "8e591d827d5d7f45aa2d670de2d97dadceca351ee6d396926aabea03cbc21161"
+    },
+    {
+      "name": "Love",
+      "nodeId": "151:5159",
+      "url": "/proposals/illustrations/love.svg",
+      "designWidth": 310.6669921875,
+      "designHeight": 239.6935577392578,
+      "width": "310.667",
+      "height": "239.694",
+      "sourceFiles": [
+        "_love.svg"
+      ],
+      "sha256": "8bbd9acd2052326fb230c54a18b630ac4d5a15cb93aa4671853e6f7f878844e2"
+    },
+    {
+      "name": "Box",
+      "nodeId": "151:5158",
+      "url": "/proposals/illustrations/box.svg",
+      "designWidth": 278.284912109375,
+      "designHeight": 355.9964599609375,
+      "width": "278.285",
+      "height": "355.996",
+      "sourceFiles": [
+        "_box.svg"
+      ],
+      "sha256": "02aefbb7ea4b8cc2ea5b913aff9b347566f6ea86ae7de8f39a2aa48efd41947d"
+    },
+    {
+      "name": "Computer",
+      "nodeId": "151:5157",
+      "url": "/proposals/illustrations/computer.svg",
+      "designWidth": 281.3663330078125,
+      "designHeight": 267.509521484375,
+      "width": "281.366",
+      "height": "267.51",
+      "sourceFiles": [
+        "_computer.svg"
+      ],
+      "sha256": "bcd75fd2923711af84cfd0e146257c4c91a55ac90c2a4e7ab40a5208cf40edff"
+    },
+    {
+      "name": "Saw",
+      "nodeId": "151:5156",
+      "url": "/proposals/illustrations/saw.svg",
+      "designWidth": 276.2200012207031,
+      "designHeight": 244.4515838623047,
+      "width": "276.22",
+      "height": "244.452",
+      "sourceFiles": [
+        "_saw.svg"
+      ],
+      "sha256": "254dcd5d4878aa1a80faedfb02c46ce5e4e0dc48de82667f65d8ab29a2c05d33"
+    },
+    {
+      "name": "Drill",
+      "nodeId": "151:5155",
+      "url": "/proposals/illustrations/drill.svg",
+      "designWidth": 368.04052734375,
+      "designHeight": 307.9368896484375,
+      "width": "368.041",
+      "height": "307.937",
+      "sourceFiles": [
+        "_drill.svg"
+      ],
+      "sha256": "67975a95f44cec5136515bd1db9956a0829cffc5cce4c63a217b87519442a16a"
+    },
+    {
+      "name": "Tools",
+      "nodeId": "151:5154",
+      "url": "/proposals/illustrations/tools.svg",
+      "designWidth": 284.5299987792969,
+      "designHeight": 216.37713623046875,
+      "width": "284.53",
+      "height": "216.377",
+      "sourceFiles": [
+        "_hammer.svg"
+      ],
+      "sha256": "a07134eafd2abcbab7779b912f3a2bf28e8ec690809fce2955865828acdaf484"
+    },
+    {
+      "name": "Keyboard",
+      "nodeId": "151:5153",
+      "url": "/proposals/illustrations/keyboard.svg",
+      "designWidth": 225.74452209472656,
+      "designHeight": 331.6053771972656,
+      "width": "225.745",
+      "height": "331.605",
+      "sourceFiles": [
+        "_keyboard.svg"
+      ],
+      "sha256": "586f2acef9b5fb32b689521f7c1bd396f49fa02ab6e9bc24d6f31dc60518fc9c"
+    },
+    {
+      "name": "Camera",
+      "nodeId": "151:5152",
+      "url": "/proposals/illustrations/camera.svg",
+      "designWidth": 334.2857666015625,
+      "designHeight": 222.30377197265625,
+      "width": "334.286",
+      "height": "222.304",
+      "sourceFiles": [
+        "_camera.svg"
+      ],
+      "sha256": "24b71555a354cce940172ae301ff2c7d75c7d688283e4dfdce958c8b0ada1b5a"
+    },
+    {
+      "name": "Safe",
+      "nodeId": "151:5151",
+      "url": "/proposals/illustrations/safe.svg",
+      "designWidth": 351.7677307128906,
+      "designHeight": 253.31411743164062,
+      "width": "351.768",
+      "height": "253.314",
+      "sourceFiles": [
+        "_safe.svg"
+      ],
+      "sha256": "cf01f5249aa6c059d1edc83103bd51240ab840d9025ab8b24a95d1bc08869bc8"
+    },
+    {
+      "name": "Cop",
+      "nodeId": "151:5149",
+      "url": "/proposals/illustrations/cop.svg",
+      "designWidth": 286.0061950683594,
+      "designHeight": 249.4054412841797,
+      "width": "286.006",
+      "height": "249.405",
+      "sourceFiles": [
+        "_police.svg"
+      ],
+      "sha256": "04c331fadc361c6e7a0baba7173b341301bb389680e2accccd8e71d2910d4df4"
+    },
+    {
+      "name": "Keys",
+      "nodeId": "151:5150",
+      "url": "/proposals/illustrations/keys.svg",
+      "designWidth": 283.1366882324219,
+      "designHeight": 235.7187957763672,
+      "width": "283.137",
+      "height": "235.719",
+      "sourceFiles": [
+        "_keys.svg"
+      ],
+      "sha256": "3e212d432f21e1f8905d9488f3c49bc9dc354f6ae0ab5dd0267e7c0a1fd96a8c"
+    },
+    {
+      "name": "Lock",
+      "nodeId": "151:5148",
+      "url": "/proposals/illustrations/lock.svg",
+      "designWidth": 213.23187255859375,
+      "designHeight": 218.4505615234375,
+      "width": "213.232",
+      "height": "218.451",
+      "sourceFiles": [
+        "_lock.svg"
+      ],
+      "sha256": "2f789cd925ed71e857730bacde36bbae1869de13c3eaadf3a9b8bc68d160d8e6"
+    },
+    {
+      "name": "Grapes",
+      "nodeId": "151:5147",
+      "url": "/proposals/illustrations/grapes.svg",
+      "designWidth": 219.83914184570312,
+      "designHeight": 250.14346313476562,
+      "width": "219.839",
+      "height": "250.143",
+      "sourceFiles": [
+        "_grapes.svg"
+      ],
+      "sha256": "bfff94896cab09a1b9435c9003bca578b031c647c21f5cc229eac70d280cc5af"
+    },
+    {
+      "name": "Tractor",
+      "nodeId": "151:5146",
+      "url": "/proposals/illustrations/tractor.svg",
+      "designWidth": 370.47119140625,
+      "designHeight": 347.3449401855469,
+      "width": "370.471",
+      "height": "347.345",
+      "sourceFiles": [
+        "harvester.svg"
+      ],
+      "sha256": "d8a677d5348aa1091e2cb751eb21ea20d75b62907e935f6cfaca5bb409c0eea0"
+    },
+    {
+      "name": "Cook",
+      "nodeId": "151:5145",
+      "url": "/proposals/illustrations/cook.svg",
+      "designWidth": 306.313720703125,
+      "designHeight": 265.1981201171875,
+      "width": "306.314",
+      "height": "265.198",
+      "sourceFiles": [
+        "_cook.svg"
+      ],
+      "sha256": "e780bc33fa4bdd033db91689e3cddb7a0983cc18a960a1df299daab47d0f6248"
+    },
+    {
+      "name": "Fruit",
+      "nodeId": "151:5144",
+      "url": "/proposals/illustrations/fruit.svg",
+      "designWidth": 265.0926208496094,
+      "designHeight": 264.32373046875,
+      "width": "265.093",
+      "height": "264.324",
+      "sourceFiles": [
+        "_fruits.svg"
+      ],
+      "sha256": "7fefa00df2e69593db74ac44265aea06b8a9a2c2262d35295e6137f8d0cd16db"
+    },
+    {
+      "name": "Cow",
+      "nodeId": "151:5143",
+      "url": "/proposals/illustrations/cow.svg",
+      "designWidth": 324.3366394042969,
+      "designHeight": 215.3394317626953,
+      "width": "324.337",
+      "height": "215.339",
+      "sourceFiles": [
+        "_cow.svg"
+      ],
+      "sha256": "67987a37dc7f95197e1b0206ee6121a4290aa5e810591b00a86b42eda4c322bc"
+    },
+    {
+      "name": "Cheese",
+      "nodeId": "151:5142",
+      "url": "/proposals/illustrations/cheese.svg",
+      "designWidth": 292.7245178222656,
+      "designHeight": 158.29652404785156,
+      "width": "292.725",
+      "height": "158.297",
+      "sourceFiles": [
+        "_cheese.svg"
+      ],
+      "sha256": "a459a46de3f994dc7f386271487ab9f335b4d58b45d0b2ae1ecb3374208669f3"
+    },
+    {
+      "name": "Illustration",
+      "nodeId": "151:5141",
+      "url": "/proposals/illustrations/illustration.svg",
+      "designWidth": 393.7665710449219,
+      "designHeight": 217.28555297851562,
+      "width": "393.767",
+      "height": "217.286",
+      "sourceFiles": [
+        "_illustration.svg"
+      ],
+      "sha256": "1eec2fedc3af1ab01982e185cb65be820e5a863e344092c1aa88d9bab6f1628c"
+    },
+    {
+      "name": "Real estate",
+      "nodeId": "151:5140",
+      "url": "/proposals/illustrations/real-estate.svg",
+      "designWidth": 376.3186340332031,
+      "designHeight": 131.5644989013672,
+      "width": "376.319",
+      "height": "131.565",
+      "sourceFiles": [
+        "_real-estate.svg"
+      ],
+      "sha256": "061ce01568a4dec1be8c9baabe46fff8d23a6f2c01dc2e8ba02ac9a613d54532"
+    },
+    {
+      "name": "House",
+      "nodeId": "151:5139",
+      "url": "/proposals/illustrations/house.svg",
+      "designWidth": 296.86083984375,
+      "designHeight": 286.8141174316406,
+      "width": "296.861",
+      "height": "286.814",
+      "sourceFiles": [
+        "house.svg"
+      ],
+      "sha256": "12d857dbb468ae6047046b0034643192bbd054132a4e6b9624d77ff76112b99a"
+    },
+    {
+      "name": "Crane",
+      "nodeId": "151:5138",
+      "url": "/proposals/illustrations/crane.svg",
+      "designWidth": 361.8091735839844,
+      "designHeight": 340.74560546875,
+      "width": "361.809",
+      "height": "340.746",
+      "sourceFiles": [
+        "_crane.svg"
+      ],
+      "sha256": "4e389b173369f9d217d3b808f9bb43964d7bea714e7dbfaf726d735b8adad99e"
+    },
+    {
+      "name": "Blueprint",
+      "nodeId": "151:5137",
+      "url": "/proposals/illustrations/blueprint.svg",
+      "designWidth": 341.70635986328125,
+      "designHeight": 328.5475769042969,
+      "width": "341.706",
+      "height": "328.548",
+      "sourceFiles": [
+        "schema.svg"
+      ],
+      "sha256": "71a231e61a3fa1e2714342be570cee8af334fa471ede3c525a04357743f8af69"
+    },
+    {
+      "name": "Pin Map",
+      "nodeId": "151:5136",
+      "url": "/proposals/illustrations/pin-map.svg",
+      "designWidth": 356.3496398925781,
+      "designHeight": 291.75469970703125,
+      "width": "356.35",
+      "height": "291.755",
+      "sourceFiles": [
+        "pin.svg"
+      ],
+      "sha256": "3a682b41c1497204ce899da0e97d5f2b1e3162bed513991b7abe7674e710a004"
+    },
+    {
+      "name": "Globe",
+      "nodeId": "151:5135",
+      "url": "/proposals/illustrations/globe.svg",
+      "designWidth": 215.31529235839844,
+      "designHeight": 220.32179260253906,
+      "width": "215.315",
+      "height": "220.322",
+      "sourceFiles": [
+        "_earth.svg"
+      ],
+      "sha256": "28b68028643dd8644b78ca47ebf42a3ac0b2c5c34d708a1a0787307d35313156"
+    },
+    {
+      "name": "Village",
+      "nodeId": "151:5134",
+      "url": "/proposals/illustrations/village.svg",
+      "designWidth": 284.8298034667969,
+      "designHeight": 227.3946990966797,
+      "width": "284.83",
+      "height": "227.395",
+      "sourceFiles": [
+        "_village.svg"
+      ],
+      "sha256": "4bd77c9787d8277d2335fa0a8c899075687ea1c0d177c310e8d529d7a7065fcd"
+    },
+    {
+      "name": "Map",
+      "nodeId": "151:5133",
+      "url": "/proposals/illustrations/map.svg",
+      "designWidth": 289.12994384765625,
+      "designHeight": 274.7757263183594,
+      "width": "289.13",
+      "height": "274.776",
+      "sourceFiles": [
+        "_map.svg"
+      ],
+      "sha256": "4adbfbb7002068f6ca54c96a7b94de162fa95d395a61bb2bf587230f96fc0201"
+    },
+    {
+      "name": "France",
+      "nodeId": "151:5132",
+      "url": "/proposals/illustrations/france.svg",
+      "designWidth": 372.7861328125,
+      "designHeight": 336.926025390625,
+      "width": "372.786",
+      "height": "336.926",
+      "sourceFiles": [
+        "_france.svg"
+      ],
+      "sha256": "9b18dec253d37f9e50fe4e9dc407b6e2d2e0b005014cfb49b0ac178d3d0dc10d"
+    },
+    {
+      "name": "Moovie",
+      "nodeId": "151:5131",
+      "url": "/proposals/illustrations/moovie.svg",
+      "designWidth": 408.1972351074219,
+      "designHeight": 229.51499938964844,
+      "width": "408.197",
+      "height": "229.515",
+      "sourceFiles": [
+        "_cinema.svg"
+      ],
+      "sha256": "4161138da6bd08318839428d4e176dcfaa6d8e7c05a541f76294d79ffb3f943a"
+    },
+    {
+      "name": "Sports",
+      "nodeId": "151:5130",
+      "url": "/proposals/illustrations/sports.svg",
+      "designWidth": 326.0213928222656,
+      "designHeight": 239.18003845214844,
+      "width": "326.021",
+      "height": "239.18",
+      "sourceFiles": [
+        "_balls.svg"
+      ],
+      "sha256": "16424a61130bafba3e9d73f76e39f4b5965f7636be00adc6e706cd38d13a7662"
+    },
+    {
+      "name": "Music Notes",
+      "nodeId": "151:5129",
+      "url": "/proposals/illustrations/music-notes.svg",
+      "designWidth": 284.57794189453125,
+      "designHeight": 245.43235778808594,
+      "width": "284.578",
+      "height": "245.432",
+      "sourceFiles": [
+        "_music.svg"
+      ],
+      "sha256": "88441750deb612cecf0a4216bf7c06c89fec3dc6c9b51b1a11874f9807684311"
+    },
+    {
+      "name": "Book 2",
+      "nodeId": "151:5128",
+      "url": "/proposals/illustrations/book-2.svg",
+      "designWidth": 295.1178894042969,
+      "designHeight": 341.32452392578125,
+      "width": "295.118",
+      "height": "341.325",
+      "sourceFiles": [
+        "book-2.svg"
+      ],
+      "sha256": "feff23bdcc426c975c6068b9f43f15ab1b179b2e4a3288edf6587b3dcce213c2"
+    },
+    {
+      "name": "Bicycle",
+      "nodeId": "151:5127",
+      "url": "/proposals/illustrations/bicycle.svg",
+      "designWidth": 407.4965515136719,
+      "designHeight": 205.32020568847656,
+      "width": "407.497",
+      "height": "205.32",
+      "sourceFiles": [
+        "_bike.svg"
+      ],
+      "sha256": "c8d2c0cd5cd371d5daca3cdb570dcc2f34f1fba70d935e5e3983ded5e7026439"
+    },
+    {
+      "name": "Backpack",
+      "nodeId": "151:5126",
+      "url": "/proposals/illustrations/backpack.svg",
+      "designWidth": 261.4833068847656,
+      "designHeight": 191.6540069580078,
+      "width": "261.483",
+      "height": "191.654",
+      "sourceFiles": [
+        "_bag.svg"
+      ],
+      "sha256": "30dfe939e06ba656427c1592a1eda666612c2a328b4cdd7eebf7601e5a8f6d9d"
+    },
+    {
+      "name": "Flask",
+      "nodeId": "151:5125",
+      "url": "/proposals/illustrations/flask.svg",
+      "designWidth": 173.52847290039062,
+      "designHeight": 372.5676574707031,
+      "width": "173.528",
+      "height": "372.568",
+      "sourceFiles": [
+        "_experiment.svg"
+      ],
+      "sha256": "2176c86c4234596ae6fac3f1181a4373200598156ea563533b02f929f7283f29"
+    },
+    {
+      "name": "Telescope",
+      "nodeId": "151:5124",
+      "url": "/proposals/illustrations/telescope.svg",
+      "designWidth": 412.4073181152344,
+      "designHeight": 311.1466369628906,
+      "width": "412.407",
+      "height": "311.147",
+      "sourceFiles": [
+        "_telescope.svg"
+      ],
+      "sha256": "eb60236ff99478fccf41381b7cc64a28fcb3984aa9993eae9990368bc8c95f20"
+    },
+    {
+      "name": "Microscope",
+      "nodeId": "151:5123",
+      "url": "/proposals/illustrations/microscope.svg",
+      "designWidth": 207.97854614257812,
+      "designHeight": 281.98187255859375,
+      "width": "207.979",
+      "height": "281.982",
+      "sourceFiles": [
+        "microscope.svg"
+      ],
+      "sha256": "51bc9b20e1818f775d691c8d3ed92540a2e154cef589dc0e759cc3ef1dea8b1e"
+    },
+    {
+      "name": "Learn",
+      "nodeId": "151:5122",
+      "url": "/proposals/illustrations/learn.svg",
+      "designWidth": 282.972900390625,
+      "designHeight": 167.37887573242188,
+      "width": "282.973",
+      "height": "167.379",
+      "sourceFiles": [
+        "_learn.svg"
+      ],
+      "sha256": "b42cfafffb2e3831c36fbf1135cc765bd8493929c70359b34e0880ec51a253b9"
+    },
+    {
+      "name": "Teach",
+      "nodeId": "151:5121",
+      "url": "/proposals/illustrations/teach.svg",
+      "designWidth": 369.75341796875,
+      "designHeight": 234.49917602539062,
+      "width": "369.753",
+      "height": "234.499",
+      "sourceFiles": [
+        "_blackboard.svg"
+      ],
+      "sha256": "cb3c37cb22c551639d2abea2099b14af78cc306dc9ebcfe88197dd7d2ca733ca"
+    },
+    {
+      "name": "Laptop Icon",
+      "nodeId": "151:5120",
+      "url": "/proposals/illustrations/laptop-icon.svg",
+      "designWidth": 329.98895263671875,
+      "designHeight": 228.351318359375,
+      "width": "329.989",
+      "height": "228.351",
+      "sourceFiles": [
+        "_laptop.svg"
+      ],
+      "sha256": "64d9bd65004f8576410d11e447c786ebc9451abb8872f3dc4b22905ae5903c10"
+    },
+    {
+      "name": "Briefcase",
+      "nodeId": "151:5119",
+      "url": "/proposals/illustrations/briefcase.svg",
+      "designWidth": 350.76123046875,
+      "designHeight": 255.1634063720703,
+      "width": "350.761",
+      "height": "255.163",
+      "sourceFiles": [
+        "briefcase.svg"
+      ],
+      "sha256": "c67656f6cbc165b22937db8fd2a18844b8ac9a76665b42e109172e39643f12e8"
+    },
+    {
+      "name": "Alarm Clock",
+      "nodeId": "151:5118",
+      "url": "/proposals/illustrations/alarm-clock.svg",
+      "designWidth": 241.66171264648438,
+      "designHeight": 224.5780487060547,
+      "width": "241.662",
+      "height": "224.578",
+      "sourceFiles": [
+        "_clock.svg"
+      ],
+      "sha256": "67af71e9652f4ee80a6621155590e37bcc2c083cc82b0b02abe370d2d7722da2"
+    },
+    {
+      "name": "Study",
+      "nodeId": "151:5117",
+      "url": "/proposals/illustrations/study.svg",
+      "designWidth": 307.93328857421875,
+      "designHeight": 282.6173095703125,
+      "width": "307.933",
+      "height": "282.617",
+      "sourceFiles": [
+        "_study.svg"
+      ],
+      "sha256": "0622a16e7961a24a17ec5c9fdf549a92e068abfd9572854bb66840dc8dc55618"
+    },
+    {
+      "name": "Wind turbine",
+      "nodeId": "151:5116",
+      "url": "/proposals/illustrations/wind-turbine.svg",
+      "designWidth": 248.15187072753906,
+      "designHeight": 244.4812774658203,
+      "width": "248.152",
+      "height": "244.481",
+      "sourceFiles": [
+        "_wind.svg"
+      ],
+      "sha256": "3d124c02d5ccd2861e10d109bc8a0321a8741af6fe804349939a9b0275431e12"
+    },
+    {
+      "name": "Fish",
+      "nodeId": "151:5115",
+      "url": "/proposals/illustrations/fish.svg",
+      "designWidth": 270.8645935058594,
+      "designHeight": 281.32025146484375,
+      "width": "270.865",
+      "height": "281.32",
+      "sourceFiles": [
+        "_fish.svg"
+      ],
+      "sha256": "f0e8825dc495b3e6f6ff4e1420c0749a0f2cd187a9c7bc2cf74d59d066bd73e7"
+    },
+    {
+      "name": "Oil",
+      "nodeId": "151:5114",
+      "url": "/proposals/illustrations/oil.svg",
+      "designWidth": 228.08729553222656,
+      "designHeight": 215.34075927734375,
+      "width": "228.087",
+      "height": "215.341",
+      "sourceFiles": [
+        "_oil.svg"
+      ],
+      "sha256": "06ec948ab1992b35610816f8304672dcee2b9ce8176313afcec03b592586a6bb"
+    },
+    {
+      "name": "Sun",
+      "nodeId": "151:5113",
+      "url": "/proposals/illustrations/sun.svg",
+      "designWidth": 424.98052978515625,
+      "designHeight": 277.09991455078125,
+      "width": "424.981",
+      "height": "277.1",
+      "sourceFiles": [
+        "_sun.svg"
+      ],
+      "sha256": "18ff642dfba261b065ed31228527f9850c9f805e9151b1dbf9289ab9a7c17fca"
+    },
+    {
+      "name": "Tree",
+      "nodeId": "151:5112",
+      "url": "/proposals/illustrations/tree.svg",
+      "designWidth": 243.92982482910156,
+      "designHeight": 322.8825378417969,
+      "width": "243.93",
+      "height": "322.883",
+      "sourceFiles": [
+        "_tree.svg"
+      ],
+      "sha256": "4c5af4d34b8e0e3d5ce865b45f357d84d8e48eef5ea387e49d2f1fe365eb1d00"
+    },
+    {
+      "name": "Robot",
+      "nodeId": "151:5111",
+      "url": "/proposals/illustrations/robot.svg",
+      "designWidth": 288.6888732910156,
+      "designHeight": 309.34051513671875,
+      "width": "288.689",
+      "height": "309.341",
+      "sourceFiles": [
+        "_robot.svg"
+      ],
+      "sha256": "0eda12a8afec3d7671d8ceffe43ed92d9a7eecc2ce8071328595d5e057a26094"
+    },
+    {
+      "name": "Lightbulb Icon",
+      "nodeId": "151:5110",
+      "url": "/proposals/illustrations/lightbulb-icon.svg",
+      "designWidth": 161.3395233154297,
+      "designHeight": 294.69427490234375,
+      "width": "161.34",
+      "height": "294.694",
+      "sourceFiles": [
+        "lightbulb.svg"
+      ],
+      "sha256": "5412df5af97b6b7d11a73808b1b3389d97876936f872a63aafd182edef1a4832"
+    },
+    {
+      "name": "Data",
+      "nodeId": "151:5109",
+      "url": "/proposals/illustrations/data.svg",
+      "designWidth": 314.2564392089844,
+      "designHeight": 242.93673706054688,
+      "width": "314.256",
+      "height": "242.937",
+      "sourceFiles": [
+        "dataset.svg"
+      ],
+      "sha256": "b19e34cb8ad8bf0c36cf8dce6814bf97ed106b7d5e55d7cc383a929e9db88796"
+    },
+    {
+      "name": "Gear",
+      "nodeId": "151:5108",
+      "url": "/proposals/illustrations/gear.svg",
+      "designWidth": 369.82916259765625,
+      "designHeight": 233.35549926757812,
+      "width": "369.829",
+      "height": "233.355",
+      "sourceFiles": [
+        "_gear.svg"
+      ],
+      "sha256": "fe5fc9364ef95dfeb09ecba4e4ab1185a841ff7f8a2a7230d4615437a2800a68"
+    },
+    {
+      "name": "Machine learning",
+      "nodeId": "151:5107",
+      "url": "/proposals/illustrations/machine-learning.svg",
+      "designWidth": 357.26568603515625,
+      "designHeight": 303.9685363769531,
+      "width": "357.266",
+      "height": "303.969",
+      "sourceFiles": [
+        "_machine-learning.svg"
+      ],
+      "sha256": "d3b41589184a09c9d5599cb8b5ac4574b607ac4c1cfe2d505ac711815ac95d46"
+    },
+    {
+      "name": "Feet",
+      "nodeId": "191:2215",
+      "url": "/proposals/illustrations/feet.svg",
+      "designWidth": 284.5646667480469,
+      "designHeight": 174.90016174316406,
+      "width": "284.565",
+      "height": "174.9",
+      "sourceFiles": [
+        "_feet.svg"
+      ],
+      "sha256": "6b554ab70be2bdf2056741909b5dc17c4366ac78e7c287e4d07d958e0f6e553c"
+    },
+    {
+      "name": "Car",
+      "nodeId": "151:5105",
+      "url": "/proposals/illustrations/car.svg",
+      "designWidth": 328.8444519042969,
+      "designHeight": 189.7162628173828,
+      "width": "328.844",
+      "height": "189.716",
+      "sourceFiles": [
+        "truck.svg"
+      ],
+      "sha256": "0aefd94c60567a0af37d2cf14a21172252b203836e1bca08021cffc87848277c"
+    },
+    {
+      "name": "Bus Icon",
+      "nodeId": "151:5104",
+      "url": "/proposals/illustrations/bus-icon.svg",
+      "designWidth": 354.748779296875,
+      "designHeight": 137.12783813476562,
+      "width": "355",
+      "height": "138",
+      "sourceFiles": [
+        "_bus.svg"
+      ],
+      "sha256": "edb2c1247c57a6600032785f04ca4c18e3373107738a9002cbf0bcbe5710c24a"
+    },
+    {
+      "name": "Bike lane",
+      "nodeId": "151:5103",
+      "url": "/proposals/illustrations/bike-lane.svg",
+      "designWidth": 384.9982604980469,
+      "designHeight": 230.1934356689453,
+      "width": "385",
+      "height": "231",
+      "sourceFiles": [
+        "bikelane.svg"
+      ],
+      "sha256": "f82718b64466394531cb3deff0a55cc40adf3112cc7307375ee97ba03d5596b7"
+    },
+    {
+      "name": "Metro",
+      "nodeId": "151:5102",
+      "url": "/proposals/illustrations/metro.svg",
+      "designWidth": 221.48361206054688,
+      "designHeight": 387.4966125488281,
+      "width": "222",
+      "height": "388",
+      "sourceFiles": [
+        "_metro.svg"
+      ],
+      "sha256": "f0391bfbd7bf19e45b9458ba4ae161e29ce43e419a32e46ee89a30173303f47d"
+    },
+    {
+      "name": "Euro Icon",
+      "nodeId": "151:5100",
+      "url": "/proposals/illustrations/euro-icon.svg",
+      "designWidth": 229.59378051757812,
+      "designHeight": 232.17047119140625,
+      "width": "230",
+      "height": "233",
+      "sourceFiles": [
+        "_euro-icon.svg"
+      ],
+      "sha256": "2e6d25f51d83948e4d4881b068f052256d5847c6e866bb5e9381ae1c31dfe3fa"
+    },
+    {
+      "name": "Math Symbols",
+      "nodeId": "151:5099",
+      "url": "/proposals/illustrations/math-symbols.svg",
+      "designWidth": 266.04583740234375,
+      "designHeight": 217.26966857910156,
+      "width": "267",
+      "height": "218",
+      "sourceFiles": [
+        "_math.svg"
+      ],
+      "sha256": "ff71deeb986c55bc02cb0e4a31f09dd78a994322e6959e821a74e830dda9cae7"
+    },
+    {
+      "name": "List",
+      "nodeId": "151:5098",
+      "url": "/proposals/illustrations/list.svg",
+      "designWidth": 378.30072021484375,
+      "designHeight": 292.1971130371094,
+      "width": "379",
+      "height": "293",
+      "sourceFiles": [
+        "list.svg"
+      ],
+      "sha256": "8b2aadbf409e00f1e1f52f3f8f887170fb6bd7f962d0f9509eed06b09111d093"
+    },
+    {
+      "name": "Treasure",
+      "nodeId": "151:5097",
+      "url": "/proposals/illustrations/treasure.svg",
+      "designWidth": 258.3616638183594,
+      "designHeight": 354.3326721191406,
+      "width": "259",
+      "height": "355",
+      "sourceFiles": [
+        "_treasure.svg"
+      ],
+      "sha256": "881440d917ae20b319e3f048d4cac626152e95fdd5dcfaad4ec1bc152bde1632"
+    },
+    {
+      "name": "Piggy bank",
+      "nodeId": "151:5096",
+      "url": "/proposals/illustrations/piggy-bank.svg",
+      "designWidth": 315.5858154296875,
+      "designHeight": 209.90110778808594,
+      "width": "316",
+      "height": "210",
+      "sourceFiles": [
+        "_piggybank.svg"
+      ],
+      "sha256": "7a05a2930bf9e3a24c79dfda3aea237353ef29a2b608f7b6ad592768aaaf9a2e"
+    },
+    {
+      "name": "Business building",
+      "nodeId": "151:5095",
+      "url": "/proposals/illustrations/business-building.svg",
+      "designWidth": 362.5155334472656,
+      "designHeight": 316.0796813964844,
+      "width": "363",
+      "height": "317",
+      "sourceFiles": [
+        "business.svg"
+      ],
+      "sha256": "4218c628755f6608d28e024a0c89542bcb9add3e9cfa0131b05effa9829e3eae"
+    },
+    {
+      "name": "Coffee",
+      "nodeId": "151:5094",
+      "url": "/proposals/illustrations/coffee.svg",
+      "designWidth": 116.90542602539062,
+      "designHeight": 267.0501708984375,
+      "width": "117",
+      "height": "268",
+      "sourceFiles": [
+        "_coffee.svg"
+      ],
+      "sha256": "0a762797986d515a57f72e20c4a3096752e71c1b87690a3166aaba4a9f770f2a"
+    },
+    {
+      "name": "Tie",
+      "nodeId": "151:5093",
+      "url": "/proposals/illustrations/tie.svg",
+      "designWidth": 163.18966674804688,
+      "designHeight": 250.82261657714844,
+      "width": "164",
+      "height": "251",
+      "sourceFiles": [
+        "_tie.svg"
+      ],
+      "sha256": "10ea0aa19b4aa48c11207e0487975407f8814ecce542357822c62231630fd4c2"
+    },
+    {
+      "name": "Chart",
+      "nodeId": "151:5092",
+      "url": "/proposals/illustrations/chart.svg",
+      "designWidth": 199.90431213378906,
+      "designHeight": 139.17459106445312,
+      "width": "200",
+      "height": "140",
+      "sourceFiles": [
+        "_chart.svg"
+      ],
+      "sha256": "7de66f4192856a996b0bb1a3efd4cf38ee429d0118e394dc427db85e82e3288a"
+    },
+    {
+      "name": "File",
+      "nodeId": "151:5091",
+      "url": "/proposals/illustrations/file.svg",
+      "designWidth": 276.1880798339844,
+      "designHeight": 231.2187042236328,
+      "width": "277",
+      "height": "232",
+      "sourceFiles": [
+        "_file.svg"
+      ],
+      "sha256": "280150539873beeac04d001ca7f35db225a8176c0a31e98b850e96fe90762107"
+    },
+    {
+      "name": "Calculus",
+      "nodeId": "151:5090",
+      "url": "/proposals/illustrations/calculus.svg",
+      "designWidth": 276.6123046875,
+      "designHeight": 251.13333129882812,
+      "width": "277",
+      "height": "252",
+      "sourceFiles": [
+        "_calculus.svg"
+      ],
+      "sha256": "803a3b334da7df1c9d5034bf4d94206cb4fd5c24af6141e9a80d551f7710f74f"
+    },
+    {
+      "name": "Balance",
+      "nodeId": "151:5089",
+      "url": "/proposals/illustrations/balance.svg",
+      "designWidth": 221.7037353515625,
+      "designHeight": 221.37008666992188,
+      "width": "222",
+      "height": "222",
+      "sourceFiles": [
+        "_justice.svg"
+      ],
+      "sha256": "a77b57bd8cb863df83f2473f77d6a47df9e31d81c2c785ac2950eac77f66d052"
+    },
+    {
+      "name": "Newspaper",
+      "nodeId": "151:5088",
+      "url": "/proposals/illustrations/newspaper.svg",
+      "designWidth": 297.86474609375,
+      "designHeight": 152.70968627929688,
+      "width": "298",
+      "height": "153",
+      "sourceFiles": [
+        "_newspaper.svg"
+      ],
+      "sha256": "412a5a84c48aff6908dece8ef7fc7aa864a48bc0b9104bcadec13f130a1e7b57"
+    },
+    {
+      "name": "Official Building",
+      "nodeId": "151:5087",
+      "url": "/proposals/illustrations/official-building.svg",
+      "designWidth": 384.8974609375,
+      "designHeight": 317.2471008300781,
+      "width": "385",
+      "height": "318",
+      "sourceFiles": [
+        "_official.svg"
+      ],
+      "sha256": "28ac00bcde2f99daa4f18fdeaa608151560010b6a6b54df0d8305bc6534256da"
+    },
+    {
+      "name": "Graduation Cap",
+      "nodeId": "151:5086",
+      "url": "/proposals/illustrations/graduation-cap.svg",
+      "designWidth": 265.2120056152344,
+      "designHeight": 158.84234619140625,
+      "width": "266",
+      "height": "159",
+      "sourceFiles": [
+        "_hat.svg"
+      ],
+      "sha256": "4c58682575310ac1fec79c4a85393df1c9687a1bf94eafba2523a2083bdaec8e"
+    },
+    {
+      "name": "Book",
+      "nodeId": "151:5085",
+      "url": "/proposals/illustrations/book.svg",
+      "designWidth": 371.7849426269531,
+      "designHeight": 126.08782958984375,
+      "width": "372",
+      "height": "127",
+      "sourceFiles": [
+        "_book.svg"
+      ],
+      "sha256": "e22e2af37b32f960b6d3905bd3b80c0beb358827391b8d0910755eafbf3585cd"
+    },
+    {
+      "name": "Judge",
+      "nodeId": "151:5084",
+      "url": "/proposals/illustrations/judge.svg",
+      "designWidth": 373.81488037109375,
+      "designHeight": 324.80755615234375,
+      "width": "374",
+      "height": "325",
+      "sourceFiles": [
+        "_judge.svg"
+      ],
+      "sha256": "089daf8cb4440fae3a1e4a6f1c65659ff3ab2189d8aaaa191e7e8a376b320af7"
+    },
+    {
+      "name": "Town Hall",
+      "nodeId": "151:5083",
+      "url": "/proposals/illustrations/town-hall.svg",
+      "designWidth": 301.5333557128906,
+      "designHeight": 408.5278625488281,
+      "width": "302",
+      "height": "409",
+      "sourceFiles": [
+        "_townhall.svg"
+      ],
+      "sha256": "c605044362e24cbd1ccc3725de76851d9628d5876f3ddd3f4ba8bdff8badb323"
+    },
+    {
+      "name": "Money",
+      "nodeId": "151:5082",
+      "url": "/proposals/illustrations/money.svg",
+      "designWidth": 269.00897216796875,
+      "designHeight": 288.3286437988281,
+      "width": "269",
+      "height": "289",
+      "sourceFiles": [
+        "_money.svg"
+      ],
+      "sha256": "d4924fe7ee098e454b7c1c2063bfbe64215cd6ede7dfd68e34f31f1a754a04cd"
+    },
+    {
+      "name": "Mic",
+      "nodeId": "151:5081",
+      "url": "/proposals/illustrations/mic.svg",
+      "designWidth": 235.3989715576172,
+      "designHeight": 266.5386047363281,
+      "width": "236",
+      "height": "267",
+      "sourceFiles": [
+        "_mic.svg"
+      ],
+      "sha256": "11c828443645818b3cb2ca96084844fd6a5024e1fb84e58b3727eb60a683943c"
+    },
+    {
+      "name": "Community",
+      "nodeId": "151:5080",
+      "url": "/proposals/illustrations/community.svg",
+      "designWidth": 312.82476806640625,
+      "designHeight": 320.37005615234375,
+      "width": "313",
+      "height": "321",
+      "sourceFiles": [
+        "_community.svg"
+      ],
+      "sha256": "e927ff2a09307816ffa69ade9025095d98e9fccf6e2dc957b51b50da8365be6a"
+    },
+    {
+      "name": "Elections",
+      "nodeId": "151:5079",
+      "url": "/proposals/illustrations/elections.svg",
+      "designWidth": 169.87611389160156,
+      "designHeight": 268.88739013671875,
+      "width": "170",
+      "height": "269",
+      "sourceFiles": [
+        "_elections.svg"
+      ],
+      "sha256": "e6dba2cdf2974cf93dc836d638bde436f8c9ba67e49cb4f0ca4c65b44ce0443e"
+    },
+    {
+      "name": "Eiffel tower",
+      "nodeId": "151:5078",
+      "url": "/proposals/illustrations/eiffel-tower.svg",
+      "designWidth": 230.54937744140625,
+      "designHeight": 316.1053771972656,
+      "width": "231",
+      "height": "317",
+      "sourceFiles": [
+        "_effeil.svg"
+      ],
+      "sha256": "57e923524a1c9dc9ffa040a634510081979edf785e405f71ec4fd6e3951f431d"
+    },
+    {
+      "name": "Elected Official",
+      "nodeId": "151:5077",
+      "url": "/proposals/illustrations/elected-official.svg",
+      "designWidth": 274.1502990722656,
+      "designHeight": 192.20350646972656,
+      "width": "275",
+      "height": "193",
+      "sourceFiles": [
+        "_elected.svg"
+      ],
+      "sha256": "0b14d3857287238bf001dd69dca075c8048e5326c43cc0db0945344efbef02f7"
+    },
+    {
+      "name": "Heart Icon",
+      "nodeId": "151:5076",
+      "url": "/proposals/illustrations/heart-icon.svg",
+      "designWidth": 287.4302673339844,
+      "designHeight": 169.55313110351562,
+      "width": "288",
+      "height": "170",
+      "sourceFiles": [
+        "heart.svg"
+      ],
+      "sha256": "8fe9638fe91be4cd2ff853cf107c96c0d4a3d63b0ae16ac4832607bb7b8d2c78"
+    },
+    {
+      "name": "Medical",
+      "nodeId": "151:5075",
+      "url": "/proposals/illustrations/medical.svg",
+      "designWidth": 256.8313903808594,
+      "designHeight": 252.36874389648438,
+      "width": "257",
+      "height": "253",
+      "sourceFiles": [
+        "_stethoscope.svg"
+      ],
+      "sha256": "b41b39ba44c9f8dc72edd933193634fb8d68728c2dac61f63acc1c5e96a3ef1e"
+    },
+    {
+      "name": "Med",
+      "nodeId": "151:5074",
+      "url": "/proposals/illustrations/med.svg",
+      "designWidth": 130.91883850097656,
+      "designHeight": 180.19871520996094,
+      "width": "131",
+      "height": "181",
+      "sourceFiles": [
+        "_pills.svg"
+      ],
+      "sha256": "8938dc17994c858a341872060b3ddef8dcc1a62d8612c32d7757ada298653f06"
+    },
+    {
+      "name": "Hospital",
+      "nodeId": "151:5073",
+      "url": "/proposals/illustrations/hospital.svg",
+      "designWidth": 282.7506103515625,
+      "designHeight": 257.6662292480469,
+      "width": "283",
+      "height": "258",
+      "sourceFiles": [
+        "_hospital.svg"
+      ],
+      "sha256": "d3f30ba6dc57d4480a6ccd262ffaa6beea92219b26b19407d56f057e2c7437bc"
+    },
+    {
+      "name": "Hospital bed",
+      "nodeId": "151:5072",
+      "url": "/proposals/illustrations/hospital-bed.svg",
+      "designWidth": 243.9848175048828,
+      "designHeight": 216.2613525390625,
+      "width": "244",
+      "height": "217",
+      "sourceFiles": [
+        "_hospitalbed.svg"
+      ],
+      "sha256": "0f0323329f989c0ba5517b5701b55e20763d2e7b1ceedbaeefdbb87bd6874c75"
+    },
+    {
+      "name": "Gel",
+      "nodeId": "151:5071",
+      "url": "/proposals/illustrations/gel.svg",
+      "designWidth": 127.84896087646484,
+      "designHeight": 196.7781524658203,
+      "width": "128",
+      "height": "197",
+      "sourceFiles": [
+        "_gel.svg"
+      ],
+      "sha256": "f284d7b4854dc02fc66d1ec98168caaddd4f4ca81de329fc13a5397663700e0c"
+    },
+    {
+      "name": "Home alone",
+      "nodeId": "151:5070",
+      "url": "/proposals/illustrations/home-alone.svg",
+      "designWidth": 185.14974975585938,
+      "designHeight": 222.56106567382812,
+      "width": "186",
+      "height": "223",
+      "sourceFiles": [
+        "_confined.svg"
+      ],
+      "sha256": "e2546623d45148d2899aeacba118f9ad5869ccb15610859d42cadaab043e6492"
+    },
+    {
+      "name": "Tissue Box",
+      "nodeId": "151:5069",
+      "url": "/proposals/illustrations/tissue-box.svg",
+      "designWidth": 172.4711456298828,
+      "designHeight": 150.6641845703125,
+      "width": "173",
+      "height": "151",
+      "sourceFiles": [
+        "_tissue.svg"
+      ],
+      "sha256": "40eb3020716b474e407f9e1ee35e00df4c791b4fc5659d05a5f20710d671e754"
+    },
+    {
+      "name": "Mask Icon",
+      "nodeId": "151:5068",
+      "url": "/proposals/illustrations/mask-icon.svg",
+      "designWidth": 234.76881408691406,
+      "designHeight": 128.37481689453125,
+      "width": "235",
+      "height": "129",
+      "sourceFiles": [
+        "_mask.svg"
+      ],
+      "sha256": "037cb4725d4d2f890115f9a890352e57e36466551269ff47793a2900829e00b5"
+    },
+    {
+      "name": "Virus",
+      "nodeId": "151:5067",
+      "url": "/proposals/illustrations/virus.svg",
+      "designWidth": 237.9832305908203,
+      "designHeight": 225.26571655273438,
+      "width": "238",
+      "height": "226",
+      "sourceFiles": [
+        "_virus.svg"
+      ],
+      "sha256": "12d94a5c4941147a1418f5f6fd4035e7586860aa093736bcbf26d1565f7729dd"
+    }
+  ]
+}

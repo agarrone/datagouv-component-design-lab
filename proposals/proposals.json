@@ -625,5 +625,170 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DataserviceQualityTooltipContent.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "illustrations-blue-activitylist-activitylist-01",
+    "component": "ActivityList/ActivityList",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : list.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ActivityList/ActivityList.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5098"
+  },
+  {
+    "id": "illustrations-blue-resourceaccordion-previewunavailable-01",
+    "component": "ResourceAccordion/PreviewUnavailable",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : microscope.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewUnavailable.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5123"
+  },
+  {
+    "id": "illustrations-blue-tabularexplorer-tabulartable-01",
+    "component": "TabularExplorer/TabularTable",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : _table.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularTable.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5160"
+  },
+  {
+    "id": "illustrations-blue-cdata-communityresources-admincommunityresourcespage-01",
+    "component": "cdata/CommunityResources/AdminCommunityResourcesPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : schema.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/CommunityResources/AdminCommunityResourcesPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5137"
+  },
+  {
+    "id": "illustrations-blue-cdata-dataservices-adminupdatedataservicedatasetspage-01",
+    "component": "cdata/Dataservices/AdminUpdateDataserviceDatasetsPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : list.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Dataservices/AdminUpdateDataserviceDatasetsPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5098"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-admindatasetspage-01",
+    "component": "cdata/Datasets/AdminDatasetsPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/AdminDatasetsPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-describeresource-01",
+    "component": "cdata/Datasets/DescribeResource",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : truck.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/DescribeResource.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5105"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-legacyresourcelist-01",
+    "component": "cdata/Datasets/LegacyResourceList",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/LegacyResourceList.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-new-step1publishingtype-01",
+    "component": "cdata/Datasets/New/Step1PublishingType",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg, schema.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/New/Step1PublishingType.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-structured-step1associateschema-01",
+    "component": "cdata/Datasets/Structured/Step1AssociateSchema",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : schema.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/Structured/Step1AssociateSchema.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5137"
+  },
+  {
+    "id": "illustrations-blue-cdata-datasets-structured-step3describedataset-01",
+    "component": "cdata/Datasets/Structured/Step3DescribeDataset",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/Structured/Step3DescribeDataset.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
+  },
+  {
+    "id": "illustrations-blue-cdata-harvesters-adminharvesterspage-01",
+    "component": "cdata/Harvesters/AdminHarvestersPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : harvester.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Harvesters/AdminHarvestersPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5146"
+  },
+  {
+    "id": "illustrations-blue-cdata-harvesters-describeharvester-01",
+    "component": "cdata/Harvesters/DescribeHarvester",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : harvester.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Harvesters/DescribeHarvester.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5146"
+  },
+  {
+    "id": "illustrations-blue-cdata-metrics-admindatasetspage-01",
+    "component": "cdata/Metrics/AdminDatasetsPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Metrics/AdminDatasetsPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
+  },
+  {
+    "id": "illustrations-blue-cdata-organization-admincontactpointspage-01",
+    "component": "cdata/Organization/AdminContactPointsPage",
+    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
+    "status": "brouillon",
+    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
+    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : people.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Organization/AdminContactPointsPage.vue",
+    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5167"
   }
 ]
