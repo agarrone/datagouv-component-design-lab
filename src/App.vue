@@ -17,6 +17,8 @@ import SegmentedControlPage from './SegmentedControlPage.vue';
 import ComponentPage from './ComponentPage.vue';
 import TemplatePage from './TemplatePage.vue';
 import DatasetTemplateScene from './DatasetTemplateScene.vue';
+import EntityTemplateScene from './EntityTemplateScene.vue';
+import {templates} from './templates';
 import { previews } from './demoRegistry';
 import { issues } from './referenceData';
 import { auditStatuses } from './auditStatus';
@@ -117,10 +119,11 @@ function route() {
   returnFamilyId.value='';
   const [page,section] = hash.split('/');
   sectionId.value=section || '';
-  if(page==='template-preview'){selected.value=null;view.value='template-preview';templateVersion.value=new URLSearchParams(params).get('version')==='proposal'?'proposal':'current';return;}
+  if(page==='template-preview'){sectionId.value=templates[section]?section:'dataset';selected.value=null;view.value='template-preview';templateVersion.value=new URLSearchParams(params).get('version')==='proposal'?'proposal':'current';return;}
   if(page==='comparateur') {navigate(); return;}
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi','templates'].includes(page)) {
+    if(page==='templates') sectionId.value=templates[section]?section:'dataset';
     selected.value=null; view.value=page;
     nextTick(()=>{if(section && section!=='reference-agents' && !['suivi','templates'].includes(page)) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
     return;
@@ -141,7 +144,7 @@ function downloadProposal(c) {
 </script>
 
 <template>
-  <DatasetTemplateScene v-if="view==='template-preview'" :version="templateVersion" />
+  <component :is="sectionId==='dataset'?DatasetTemplateScene:EntityTemplateScene" v-if="view==='template-preview'" :key="sectionId" :kind="sectionId" :version="templateVersion" />
   <template v-else>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
@@ -154,7 +157,7 @@ function downloadProposal(c) {
       <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : 'Incohérences' }}</div>
       <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
-      <nav v-else-if="view==='templates'" class="context-nav" aria-label="Templates"><a href="#templates/dataset" class="active" aria-current="page">Page de jeu de données</a></nav>
+      <nav v-else-if="view==='templates'" class="context-nav" aria-label="Templates"><a v-for="(template,id) in templates" :key="id" :href="`#templates/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'page':undefined">{{template.title}}</a></nav>
       <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi/vue-ensemble" :class="{active:sectionId==='vue-ensemble'}" :aria-current="sectionId==='vue-ensemble'?'page':undefined">Travaux en cours</a><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
       <nav v-else class="context-nav" aria-label="Constats d’incohérences"><a href="#incoherences" :class="{active:!sectionId}">Tous les constats</a><a v-for="issue in issues" :key="issue.id" :href="`#incoherences/${issue.id}`" :class="{active:sectionId===issue.id}" :aria-current="sectionId===issue.id?'location':undefined">{{ issue.title }}</a></nav>
       <details v-if="componentSection" class="file-explorer"><summary>Explorateur de fichiers</summary>
@@ -173,7 +176,7 @@ function downloadProposal(c) {
   <div class="shell">
     <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
-      <TemplatePage v-if="view==='templates'" />
+      <TemplatePage v-if="view==='templates'" :kind="sectionId" />
       <DesignReference v-else-if="view==='fondamentaux' && sectionId==='reference-agents'" />
       <Fundamentals v-else-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />
