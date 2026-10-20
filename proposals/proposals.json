@@ -482,5 +482,148 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Reuses/ReuseCard.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "quality-licensebadge-01",
+    "component": "LicenseBadge",
+    "title": "Harmoniser les badges descriptifs",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/LicenseBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-ownertype-01",
+    "component": "OwnerType",
+    "title": "Harmoniser les badges descriptifs",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/OwnerType.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-resourceiconbadge-01",
+    "component": "ResourceIconBadge",
+    "title": "Harmoniser les badges descriptifs",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceIconBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-progressbar-01",
+    "component": "ProgressBar",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ProgressBar.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-qualityscore-01",
+    "component": "QualityScore",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/QualityScore.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-qualityitem-01",
+    "component": "QualityItem",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/QualityItem.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-qualityitemwarning-01",
+    "component": "QualityItemWarning",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/QualityItemWarning.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-datasetquality-01",
+    "component": "DatasetQuality",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetQuality.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-dataservicequality-01",
+    "component": "DataserviceQuality",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DataserviceQuality.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-datasetqualityinline-01",
+    "component": "DatasetQualityInline",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetQualityInline.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-dataservicequalityinline-01",
+    "component": "DataserviceQualityInline",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DataserviceQualityInline.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-datasetqualitytooltipcontent-01",
+    "component": "DatasetQualityTooltipContent",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetQualityTooltipContent.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "quality-dataservicequalitytooltipcontent-01",
+    "component": "DataserviceQualityTooltipContent",
+    "title": "Des repères lisibles pour les métadonnées et leur qualité",
+    "status": "brouillon",
+    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DataserviceQualityTooltipContent.vue",
+    "reviewUrl": ""
   }
 ]

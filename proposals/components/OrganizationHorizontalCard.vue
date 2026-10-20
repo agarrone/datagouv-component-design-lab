@@ -68,7 +68,7 @@ import { useTranslation } from '../../vendor/datagouv-components/src/composables
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
 import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
-import OwnerType from '../../vendor/datagouv-components/src/components/OwnerType.vue'
+import OwnerType from './OwnerType.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'
 import ObjectCardShortDescription from './ObjectCardShortDescription.vue'

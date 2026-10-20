@@ -69,7 +69,7 @@ import { getOrganizationType } from '../../vendor/datagouv-components/src/functi
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
 import TextClamp from '../../vendor/cdata-components/TextClamp.client.vue'
-import OwnerType from '../../vendor/datagouv-components/src/components/OwnerType.vue'
+import OwnerType from './OwnerType.vue'
 import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
 import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'

@@ -133,7 +133,7 @@ import ObjectCardBadge from './ObjectCardBadge.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'
 import ObjectCardOwner from './ObjectCardOwner.vue'
 import ObjectCardShortDescription from './ObjectCardShortDescription.vue'
-import DataserviceQualityInline from '../../vendor/datagouv-components/src/components/DataserviceQualityInline.vue'
+import DataserviceQualityInline from './DataserviceQualityInline.vue'
 import FormattedDate from '../../vendor/datagouv-components/src/components/FormattedDate.vue'
 import TranslationT from '../../vendor/datagouv-components/src/components/TranslationT.vue'
 

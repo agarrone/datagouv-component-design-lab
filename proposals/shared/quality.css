@@ -1,0 +1,54 @@
+/* These selectors belong only to the proposed metadata/quality components. */
+.lab-license-badge { font-family:Marianne,Arial,sans-serif; white-space:normal; overflow-wrap:anywhere; }
+a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:3px; }
+a.lab-license-badge:hover { background:#e5e5e5; color:#161616; }
+a.lab-license-badge:focus-visible { outline:2px solid #000091; outline-offset:3px; }
+a.lab-license-badge::after { display:none; }
+.lab-owner-type { font-family:Marianne,Arial,sans-serif; font-weight:400; }
+.lab-owner-type-gray { --badge-text:#555; }
+.lab-owner-type-black { --badge-text:#161616; }
+.lab-owner-type[data-size=base] { font-size:16px; line-height:24px; }
+.lab-owner-type[data-size=sm] { font-size:14px; line-height:20px; }
+.lab-owner-type[data-size=xs] { font-size:12px; line-height:18px; min-height:20px; padding:0 6px; }
+.lab-owner-type-icon { width:16px; height:16px; flex-shrink:0; }
+.lab-owner-type[data-size=xs] .lab-owner-type-icon { width:14px; height:14px; }
+.lab-resource-icon-badge { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; flex-shrink:0; border-radius:6px; border:1px solid color-mix(in srgb,currentColor 18%,white); background:color-mix(in srgb,currentColor 8%,white); }
+.lab-quality-block,.lab-quality-inline,.lab-quality-details { font-family:Marianne,Arial,sans-serif; color:#161616; font-size:14px; line-height:22px; min-width:0; max-width:100%; }
+.lab-quality-block { display:flex; flex-direction:column; gap:12px; width:100%; }
+.lab-quality-trigger { display:flex; gap:8px; padding:6px 8px; min-height:36px; max-width:100%; border:1px solid transparent; border-radius:6px; color:#555; font:400 14px/20px Marianne,Arial,sans-serif; position:relative; z-index:2; text-align:left; }
+.lab-quality-trigger-inline { align-items:center; flex-wrap:wrap; }
+.lab-quality-trigger-block { flex-direction:column; align-items:stretch; width:100%; border-color:#e5e5e5; padding:12px; }
+.lab-quality-trigger:hover { background:#f6f6f6; }
+.lab-quality-trigger:focus-visible { outline:2px solid #000091; outline-offset:2px; }
+.lab-quality-trigger-label { display:inline-flex; align-items:center; gap:6px; }
+.lab-quality-trigger-label .lab-quality-info { width:16px; height:16px; flex-shrink:0; }
+.lab-quality-score { display:inline-flex; align-items:center; gap:8px; min-width:0; max-width:100%; vertical-align:middle; }
+.lab-quality-meter { display:block; position:relative; flex:1; width:64px; min-width:40px; height:6px; border-radius:6px; background:#e5e5e5; overflow:hidden; }
+.lab-quality-meter-fill { height:100%; border-radius:6px; }
+.lab-quality-fill-good { background:#18753c; }
+.lab-quality-fill-neutral { background:#777; }
+.lab-quality-score-value { font-size:13px; line-height:20px; font-weight:500; font-variant-numeric:tabular-nums; color:#555; white-space:nowrap; }
+.lab-quality-score-good { color:#18753c; }
+.lab-quality-criteria,.lab-quality-warnings { list-style:none; display:flex; flex-direction:column; gap:8px; margin:0; padding:0; }
+.lab-quality-warnings:empty { display:none; }
+.lab-quality-item,.lab-quality-warning { list-style:none; padding:0; margin:0; }
+.lab-quality-item p,.lab-quality-warning p { display:flex; gap:8px; align-items:flex-start; font:400 14px/22px Marianne,Arial,sans-serif; margin:0; overflow-wrap:anywhere; }
+.lab-quality-item-icon { width:16px; height:16px; margin-top:3px; flex-shrink:0; }
+.lab-quality-pass { color:#18753c; }
+.lab-quality-missing { color:#b34000; }
+.lab-quality-warning { border:1px solid #ffc6bd; border-radius:6px; padding:8px; color:#b34000; background:#fff5f0; }
+.lab-quality-details { display:flex; flex-direction:column; gap:12px; }
+.lab-quality-details-title { color:#161616; margin:0; font-size:14px; line-height:22px; font-weight:600; }
+.lab-quality-guide { font-size:13px; line-height:20px; }
+.lab-quality-guide a { text-decoration:underline; text-underline-offset:3px; }
+.lab-quality-guide a:focus-visible { outline:2px solid #000091; outline-offset:2px; }
+.lab-quality-popover { position:relative; min-width:0; }
+.lab-quality-panel { position:absolute; z-index:800; width:min(384px,calc(100vw - 32px)); max-height:70vh; overflow:auto; padding:16px; border:1px solid #e5e5e5; border-radius:6px; background:white; box-shadow:0 8px 24px #16161614; }
+/* The upstream Tailwind bundle marks utilities !important. Put the few
+   overrides of native utilities in the earlier base layer, restricted to
+   proposed content, so the icon sizes and format tints can adapt. */
+@layer base {
+ .lab-owner-type-icon { width:16px !important; height:16px !important; }
+ .lab-owner-type[data-size=xs] .lab-owner-type-icon { width:14px !important; height:14px !important; }
+ .lab-resource-icon-badge { background:color-mix(in srgb,currentColor 8%,white) !important; }
+}
