@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/datagouv/cdata",
   "commit": "c3945a840af816ec4b958375119db57233db86d8",
-  "auditedAt": "2026-10-19T14:06:40.925Z",
+  "auditedAt": "2026-10-20T08:56:27.492Z",
   "method": "static-runtime-reference-graph",
   "scannedFiles": 965,
   "runtimeRoots": 280,

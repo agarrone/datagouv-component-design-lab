@@ -154,14 +154,21 @@ for(const [file,model] of models) {
   }
   graph.set(file,edges);
 }
-function reach(roots) {
+function reach(roots, pageOnly=false) {
   const previous=new Map(roots.map(file=>[file,null]));const queue=[...roots];
-  for(let i=0;i<queue.length;i++)for(const [next,ref]of graph.get(queue[i])||[])if(!previous.has(next)){previous.set(next,{from:queue[i],ref});queue.push(next);}
+  for(let i=0;i<queue.length;i++)for(const [next,ref]of graph.get(queue[i])||[]){
+    // Importing a Vue file's injection key does not render that component.
+    if(pageOnly&&next.endsWith('.vue')&&ref.kind==='import'&&ref.name&&ref.name!=='default'&&ref.name!=='*'&&!entrypoints.has(resolveModule(queue[i],ref.spec)))continue;
+    if(!previous.has(next)){previous.set(next,{from:queue[i],ref});queue.push(next);}
+  }
   return previous;
 }
 const runtimeRoots=files.filter(file=>!file.startsWith('datagouv-components/')&&!file.startsWith('components/')&&!secondary(file));
 const secondaryRoots=files.filter(secondary);
 const runtime=reach(runtimeRoots),examples=reach(secondaryRoots);
+// Search from each page separately: the runtime audit's shortest chain can
+// start in a utility and omit a page that also reaches the same component.
+const pageGraphs=files.filter(file=>file.startsWith('pages/')&&file.endsWith('.vue')&&!secondary(file)).map(file=>({file,previous:reach([file],true)}));
 const asLink=ref=>({file:ref.file,line:ref.line,text:ref.text,...(ref.kind?{kind:ref.kind}:{}),...(ref.context?{context:ref.context}:{}),...(ref.uncertain?{uncertain:true}:{}),url:`${lock.repository}/blob/${commit}/${ref.file}#L${ref.line}`});
 function chain(file,previous) {const refs=[];while(previous.get(file)){const step=previous.get(file);refs.unshift(asLink(step.ref));file=step.from;}return refs;}
 const exportedNames=new Map();
@@ -173,6 +180,14 @@ for(const component of inventory){const file=component.origin==='cdata'?'compone
  components[component.id]={state,exports:exportedNames.get(file)||[],runtimeChain:chain(file,runtime),demoChain:chain(file,examples),referenceCount:references.length,references:references.slice(0,12),localNamesakes:[...(localComponents.get(normalize(component.name))||[])].filter(other=>other!==file).map(file=>({file,url:`${lock.repository}/blob/${commit}/${file}#L1`}))};
 }
 const summary=Object.fromEntries(['referenced','possible-reference','demo-only','no-runtime-reference'].map(state=>[state,Object.values(components).filter(c=>c.state===state).length]));
+const pageExamples={};
+for(const component of inventory){
+ const file=component.origin==='cdata'?'components/'+component.id.slice(6)+'.vue':componentRoot+component.id+'.vue';
+ const matches=pageGraphs.filter(page=>page.previous.has(file)).map(page=>({file:page.file,chain:chain(file,page.previous)}));
+ matches.sort((a,b)=>Number(a.file.startsWith('pages/admin'))-Number(b.file.startsWith('pages/admin'))||a.chain.length-b.chain.length||a.file.localeCompare(b.file));
+ pageExamples[component.id]={pageCount:matches.length,pages:matches.slice(0,3)};
+}
+await writeFile(resolve(root,'data/component-page-examples.json'),JSON.stringify({repository:lock.repository,commit,components:pageExamples},null,2)+'\n');
 const report={repository:lock.repository,commit,auditedAt:new Date().toISOString(),method:'static-runtime-reference-graph',scannedFiles:files.length,runtimeRoots:runtimeRoots.length,notes:['Les exports seuls ne constituent pas un usage.','Les imports de types, commentaires, tests et pages de design ne comptent pas comme usages applicatifs.','Les fichiers applicatifs hors components/ sont des racines conservatrices : une référence peut se trouver dans du code mort. La présence d’un composant ne le rend pas utilisé.','Les imports dynamiques à chemin littéral, alias, auto-imports Nuxt et appels defineOgImage à nom littéral sont suivis.','Les consommateurs externes, routes effectivement fréquentées et chargements générés à l’exécution ne sont pas observables ici.'],unresolvedDynamic:[...models.values()].flatMap(m=>m.issues.map(asLink)),summary,components};
 await writeFile(resolve(root,'data/component-usage.json'),JSON.stringify(report,null,2)+'\n');
 if(process.argv.includes('--write-status')){

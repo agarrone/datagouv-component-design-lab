@@ -100,6 +100,8 @@ Pour réimporter depuis un checkout propre de `upstream` au commit de `upstream.
 
 ### Templates
 
+Chaque fiche comporte aussi des [exemples de pages d’utilisation](docs/component-page-examples.md), avec des liens vers le site lorsqu’une adresse est disponible et vers le code cdata correspondant.
+
 La section **Templates** commence par une page de jeu de données (`#templates/dataset`). Elle rassemble les composants d’origine dans un contexte de page avec des données fictives. Le sélecteur **Version actuelle / Avec les propositions** remplace les composants disposant d’une proposition, y compris les composants imbriqués ; les autres restent à leur version actuelle. Sans proposition, les deux rendus sont identiques. Voir [les détails et les limites](docs/templates.md).
 
 ### Référence de design Agents

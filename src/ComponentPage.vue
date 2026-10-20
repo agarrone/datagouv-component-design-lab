@@ -1,4 +1,5 @@
 <script setup>
+import ComponentUsageExamples from "./ComponentUsageExamples.vue";
 import { computed, ref } from 'vue';
 import ComponentExample from './ComponentExample.vue';
 import ComponentOptions from './ComponentOptions.vue';
@@ -36,7 +37,7 @@ const sections = computed(() => [
   ...(previews.has(props.component.id) ? [{id:'overview',label:'Aperçu'}] : []),
   ...(variants.value.length ? [{id:'variants',label:'Variantes et états'}] : []),
   ...(context.value ? [{id:'context',label:'Dans son contexte'}] : []),
-  {id:'options',label:'Options'}, {id:'audit',label:'Incohérences'}, {id:'proposals',label:'Propositions'}, {id:'source',label:'Code source'}
+  {id:'usage',label:'Exemples de pages'}, {id:'options',label:'Options'}, {id:'audit',label:'Incohérences'}, {id:'proposals',label:'Propositions'}, {id:'source',label:'Code source'}
 ]);
 function scroll(id) { document.getElementById(`component-${id}`)?.scrollIntoView({block:'start'}); }
 // Le harnais existant conserve les données, slots et providers propres à chaque exemple.
@@ -61,6 +62,7 @@ const proposalStatuses = {brouillon:'Brouillon',soumise:'Soumise','en-discussion
       <section v-if="previews.has(component.id)" id="component-overview" class="document-section"><p v-if="component.id.includes('cdata/MarkdownEditor/') && !['cdata/MarkdownEditor/MarkdownEditor','cdata/MarkdownEditor/EditorButton'].includes(component.id)">Ce sous-composant est présenté dans l’éditeur complet, qui fournit son contexte technique. Certaines aides apparaissent en sélectionnant du texte, un lien ou un tableau.</p><p v-if="component.id==='cdata/Captchetat.client'">Image de démonstration locale ; aucune vérification CaptchEtat ni restitution audio réelle.</p><h2>{{ context ? 'Élément isolé' : 'Aperçu' }}</h2><ComponentExample code-label="Code de l’exemple" :name="component.id" label="Aperçu principal" :sample-props="baseline" :code="exampleCode(component.id, baseline)" /></section>
       <section v-if="variants.length" id="component-variants" class="document-section"><h2>Variantes et états</h2><p>Configurations proposées à partir des options existantes du composant.</p><section v-for="variant in variants" :key="variant.key" class="document-variant"><h3>{{ variant.label }}</h3><ComponentExample code-label="Code de l’exemple" :name="component.id" :label="variant.label" :sample-props="variant.props" :code="exampleCode(component.id, variant.props)" /></section></section>
       <section v-if="context" id="component-context" class="document-section"><h2>Dans son contexte · {{ context.label }}</h2><p v-if="context.hint">{{ context.hint }}</p><ComponentExample code-label="Code de l’exemple" :name="context.name" label="Dans son contexte" :code="exampleCode(context.name, context.props, true)"><Demo :name="context.name" :sample-props="context.props" contextual /></ComponentExample></section>
+      <section id="component-usage" class="document-section"><ComponentUsageExamples :component-id="component.id" /></section>
       <section id="component-options" class="document-section"><h2>Options</h2><p v-if="previews.has(component.id)">Les réglages modifient l’aperçu principal. Les autres exemples conservent leur configuration.</p><ComponentOptions :component="component" v-model="options" /></section>
       <section id="component-audit" class="document-section"><h2>Incohérences à examiner</h2><p v-if="!findings.length">Aucun constat documenté pour ce composant à ce stade.</p><article v-for="issue in findings" :key="issue.id" class="document-finding"><span class="status">{{ issue.status }}</span><h3>{{ issue.title }}</h3><p>{{ issue.observation }}</p><button @click="$emit('open-issue',issue.id)">Voir le constat et ses sources →</button></article></section>
       <section id="component-proposals" class="document-section"><div class="document-section-title"><h2>Propositions <span>({{ proposals.length }})</span></h2><button class="button" @click="$emit('prepare-proposal')">Préparer une proposition</button></div><p v-if="!proposals.length">Aucune proposition pour ce composant.</p><article v-for="proposal in proposals" :key="proposal.id" class="proposal"><span class="status">{{ proposalStatuses[proposal.status] || proposal.status }}</span><h3>{{ proposal.title }}</h3><p>{{ proposal.problem }}</p><p>{{ proposal.intention }}</p><a v-if="proposal.reviewUrl && /^https:\/\//.test(proposal.reviewUrl)" :href="proposal.reviewUrl" target="_blank" rel="noopener noreferrer">Consulter la revue ↗</a></article></section>
