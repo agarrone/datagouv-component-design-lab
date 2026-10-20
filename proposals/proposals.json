@@ -273,5 +273,27 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ActivityList/ActivityActor.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "admin-sidebar-menu-01",
+    "component": "cdata/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu",
+    "title": "Une navigation d’administration plus lisible",
+    "status": "brouillon",
+    "problem": "Les groupes ouverts et la page active utilisent des traitements proches ; les liens ont des espacements variables et les longs libellés sont tronqués.",
+    "intention": "Séparer contexte, groupes de destinations et page active. Liens pleine largeur de 36 px minimum, texte 14 px, icônes Line 16 px, rayon 6 px et palette neutre Agents. Conserver routes, conditions, événements et détection par fil d’Ariane. Inspirations : composition Sidebar de shadcn/ui et sobriété des surfaces Geist. Ouverture transitions-dev de 250 ms avec mouvement réduit respecté.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "admin-sidebar-link-01",
+    "component": "cdata/AdminSidebar/AdminSidebarLink/AdminSidebarLink",
+    "title": "Une navigation d’administration plus lisible",
+    "status": "brouillon",
+    "problem": "Les groupes ouverts et la page active utilisent des traitements proches ; les liens ont des espacements variables et les longs libellés sont tronqués.",
+    "intention": "Séparer contexte, groupes de destinations et page active. Liens pleine largeur de 36 px minimum, texte 14 px, icônes Line 16 px, rayon 6 px et palette neutre Agents. Conserver routes, conditions, événements et détection par fil d’Ariane. Inspirations : composition Sidebar de shadcn/ui et sobriété des surfaces Geist. Ouverture transitions-dev de 250 ms avec mouvement réduit respecté.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminSidebar/AdminSidebarLink/AdminSidebarLink.vue",
+    "reviewUrl": ""
   }
 ]

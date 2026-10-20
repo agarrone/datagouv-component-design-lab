@@ -1,5 +1,6 @@
 <script setup>
 import {computed,ref,provide,useId} from 'vue';
+import AdminSidebarScene from './AdminSidebarScene.vue';
 import {usePreviewComponents} from './proposalComponents';
 import definitions from '../data/component-options.json';
 import {useForm} from '../vendor/cdata-runtime/composables/useForm';
@@ -15,7 +16,8 @@ const editorContext=computed(()=>props.name.includes('/MarkdownEditor/') && !['c
 const content=computed(()=>props.name.includes('DescriptionList')?'Population municipale':props.name.includes('Badge')?'Données publiques':'Des données ouvertes pour comprendre les territoires.');
 </script>
 <template>
- <component :is="C[provider]">
+ <AdminSidebarScene v-if="name.startsWith('cdata/AdminSidebar/')" :name="name" :sample-props="sampleProps" />
+ <component v-else :is="C[provider]">
   <template v-if="modalPreview"><component :is="C.BrandedButton" @click="modalOpen=true">Ouvrir la modale</component><component :is="C[name]" v-bind="sampleProps" :opened="modalOpen" @close="modalOpen=false">{{ content }}</component></template>
   <component v-else-if="name==='cdata/AdminTable/Table/AdminTable'" :is="C[name]" v-bind="sampleProps"><thead><tr><th>Commune</th><th>Population</th></tr></thead><tbody><tr><td>Rennes</td><td>225 081</td></tr><tr><td>Nantes</td><td>325 070</td></tr></tbody></component>
   <component v-else-if="name==='cdata/AdminTable/Table/AdminTableTh'" :is="C['cdata/AdminTable/Table/AdminTable']"><thead><tr><component :is="C[name]" v-bind="sampleProps">Population</component></tr></thead></component>
