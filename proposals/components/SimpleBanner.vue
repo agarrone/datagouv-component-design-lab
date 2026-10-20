@@ -52,6 +52,9 @@ const icon = computed(() => icons[props.type])
   font-size: 14px;
   line-height: 1.5;
 }
+.proposed-simple-banner:is([data-type="primary"], [data-type="primary-frame"], [data-type="warning"], [data-type="success"], [data-type="danger"]) {
+  color: var(--banner-accent);
+}
 .proposed-simple-banner--text {
   display: flex;
   align-items: flex-start;

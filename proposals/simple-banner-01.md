@@ -7,9 +7,9 @@ Statut : brouillon à discuter. Implémentation : `components/SimpleBanner.vue` 
 | Sujet | Proposition | Référence et arbitrage |
 | --- | --- | --- |
 | Cadre | Rayon 6 px, bordure 1 px, padding 16 px sur les sept types. | Référence Agents pour le rayon ; épaisseur et espacement choisis pour cette proposition. |
-| Texte | Texte sombre, corps 14 px, interligne 1,5. | Lisibilité et hiérarchie : Agents et domaines typographie/layout de Jakub Krehel. Le 14 px reste à valider dans les pages publiques. |
+| Texte | Texte de la couleur d’accent pour les variantes d’état ; texte sombre pour gray et pink. Corps 14 px, interligne 1,5. | Lisibilité et hiérarchie : Agents et domaines typographie/layout de Jakub Krehel. Le 14 px reste à valider dans les pages publiques. |
 | États | Icônes Remix Line 16 px pour information, avertissement, erreur et succès. | Iconographie Agents. Les messages doivent eux-mêmes expliciter leur sens ; les icônes sont décoratives pour les lecteurs d’écran. |
-| Couleurs | Fond léger, bordure et accent sémantiques ; texte sombre commun. | Valeurs succès/erreur de la référence Agents. Information/avertissement conservent les fonds et accents du code actuel, avec des bordures proposées. |
+| Couleurs | Fond léger, bordure et texte sémantiques. | Valeurs succès/erreur de la référence Agents. Information/avertissement conservent les fonds et accents du code actuel, avec des bordures proposées. |
 | Variantes particulières | `primary-frame` reste encadrée de bleu ; `gray` et `pink` ne reçoivent pas d’icône de statut. | Ne pas inventer un sens métier au rose ou au gris. La palette rose existante est conservée. |
 | Mouvement | Aucun ajout. | Référence Transitions.dev : le contenu statique n’a pas ici de changement à expliquer par une animation. |
 
