@@ -113,3 +113,5 @@ Cette référence sert de base de discussion pour les prochaines revues. Examine
 Les [skills de Jakub Krehel](https://jakub.kr/skills#better-interface) sont documentés dans [une référence dédiée](docs/references/jakub-interface-skills.md) : `better-interface`, ses six domaines et des outils complémentaires pour explorer les états et variantes. Ce sont des pistes adaptables aux usages de data.gouv.fr et aux fondamentaux du projet, sans application obligatoire ni activation automatique.
 
 La référence [Chiffres tabulaires — Craft](docs/references/tabular-numbers.md) conserve le principe, un exemple CSS et des pistes de revue pour les valeurs numériques des composants.
+
+Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource adaptable pour concevoir et revoir les transitions des futures propositions : menus, modales, changements d’état et cohérence des mouvements.
