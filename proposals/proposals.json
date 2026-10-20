@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "simple-banner-01",
+    "component": "SimpleBanner",
+    "title": "Un cadre commun et des états plus faciles à distinguer",
+    "status": "brouillon",
+    "problem": "Les sept variantes utilisent des traitements différents de fond, de texte et de bordure (absente, 1 ou 2 px). Les états sémantiques ne possèdent pas de pictogramme dans le composant lui-même.",
+    "intention": "Proposer une géométrie commune : rayon 6 px, padding 16 px, bordure 1 px, corps 14 px et texte sombre. Des icônes Remix Line de 16 px différencient information, avertissement, erreur et succès. Les variantes gray et pink restent sans icône de statut. Les sept types et le slot existants sont conservés. Références : Agents (surfaces, couleurs sémantiques, iconographie) et Jakub Krehel (hiérarchie, lisibilité, cohérence). Les couleurs succès/erreur viennent de la référence Agents ; les bordures information/avertissement sont des pistes à valider. Pas d’animation sur ce contenu statique.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/SimpleBanner.vue",
+    "reviewUrl": ""
+  }
+]
