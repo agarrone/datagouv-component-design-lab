@@ -11,6 +11,7 @@ import Inconsistencies from './Inconsistencies.vue';
 import TypeOverview from './TypeOverview.vue';
 import AuditTracking from './AuditTracking.vue';
 import WorkOverview from './WorkOverview.vue';
+import MissingProposals from './MissingProposals.vue';
 import { typePages, visibleTypePages } from './typePages';
 import OriginTag from './OriginTag.vue';
 import SegmentedControlPage from './SegmentedControlPage.vue';
@@ -160,7 +161,7 @@ function downloadProposal(c) {
       <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#" :class="{active:!selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
       <nav v-else-if="view==='templates'" class="context-nav" aria-label="Templates"><a v-for="(template,id) in templates" :key="id" :href="`#templates/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'page':undefined">{{template.title}}</a></nav>
-      <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi/vue-ensemble" :class="{active:sectionId==='vue-ensemble'}" :aria-current="sectionId==='vue-ensemble'?'page':undefined">Travaux en cours</a><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
+      <nav v-else-if="view==='suivi'" class="context-nav" aria-label="Statuts des composants"><a href="#suivi/vue-ensemble" :class="{active:sectionId==='vue-ensemble'}" :aria-current="sectionId==='vue-ensemble'?'page':undefined">Travaux en cours</a><a href="#suivi/sans-proposition" :class="{active:sectionId==='sans-proposition'}" :aria-current="sectionId==='sans-proposition'?'page':undefined">Sans proposition</a><a href="#suivi" :class="{active:!sectionId}">Tous les composants</a><a v-for="status in auditStatuses" :key="status.id" :href="`#suivi/${status.id}`" :class="{active:sectionId===status.id}" :aria-current="sectionId===status.id?'page':undefined">{{ status.label }}</a></nav>
       <nav v-else class="context-nav" aria-label="Constats d’incohérences"><a href="#incoherences" :class="{active:!sectionId}">Tous les constats</a><a v-for="issue in issues" :key="issue.id" :href="`#incoherences/${issue.id}`" :class="{active:sectionId===issue.id}" :aria-current="sectionId===issue.id?'location':undefined">{{ issue.title }}</a></nav>
       <details v-if="componentSection" class="file-explorer"><summary>Explorateur de fichiers</summary>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
@@ -183,6 +184,7 @@ function downloadProposal(c) {
       <Fundamentals v-else-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />
       <WorkOverview v-else-if="view==='suivi' && sectionId==='vue-ensemble'" />
+      <MissingProposals v-else-if="view==='suivi' && sectionId==='sans-proposition'" />
       <AuditTracking v-else-if="view==='suivi'" :status="sectionId" @filter-status="filterStatus" @open-component="openComponent" />
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">

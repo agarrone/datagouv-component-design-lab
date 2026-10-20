@@ -123,3 +123,5 @@ Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource
 ### Vue des travaux en cours
 
 **Suivi → Travaux en cours** (`#suivi/vue-ensemble`) rassemble les composants dont le statut est `en-cours`, regroupés selon les catégories existantes. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
+
+La page **Suivi → Sans proposition** (`#suivi/sans-proposition`) liste les composants sans proposition visuelle enregistrée, indépendamment de leur statut d’audit. Elle s’appuie sur le même registre que les fiches, y compris les propositions d’illustrations. Recherche par nom ou chemin, filtres par origine et catégorie, et accès direct à chaque fiche sont disponibles.
