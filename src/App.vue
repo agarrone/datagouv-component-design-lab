@@ -6,6 +6,7 @@ import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
 import ExplorerNode from './ExplorerNode.vue';
 import Fundamentals from './Fundamentals.vue';
+import DesignReference from './DesignReference.vue';
 import Inconsistencies from './Inconsistencies.vue';
 import TypeOverview from './TypeOverview.vue';
 import AuditTracking from './AuditTracking.vue';
@@ -23,7 +24,7 @@ const view = ref('catalogue');
 const templateVersion=ref('current');
 const sectionId=ref('');
 const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
-const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique']];
+const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const globalQuery = ref('');
@@ -120,7 +121,7 @@ function route() {
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi','templates'].includes(page)) {
     selected.value=null; view.value=page;
-    nextTick(()=>{if(section && !['suivi','templates'].includes(page)) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
+    nextTick(()=>{if(section && section!=='reference-agents' && !['suivi','templates'].includes(page)) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
     return;
   }
   const c = inventory.find(c => c.id === hash);
@@ -172,6 +173,7 @@ function downloadProposal(c) {
     <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
       <TemplatePage v-if="view==='templates'" />
+      <DesignReference v-else-if="view==='fondamentaux' && sectionId==='reference-agents'" />
       <Fundamentals v-else-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />
       <AuditTracking v-else-if="view==='suivi'" :status="sectionId" @filter-status="filterStatus" @open-component="openComponent" />

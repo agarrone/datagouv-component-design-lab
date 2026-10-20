@@ -4,7 +4,7 @@ import AssetFoundations from './AssetFoundations.vue';
 import { colors, fonts, typography, spacing, breakpoints, themeSource, evidence } from './referenceData';
 const colorFilter=ref('all');
 const shownColors=computed(()=>colors.filter(c=>colorFilter.value==='all'||c.group===colorFilter.value));
-const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique']];
+const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 </script>
 <template>
  <div class="reference-page">

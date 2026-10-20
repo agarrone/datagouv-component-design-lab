@@ -101,3 +101,9 @@ Pour réimporter depuis un checkout propre de `upstream` au commit de `upstream.
 ### Templates
 
 La section **Templates** commence par une page de jeu de données (`#templates/dataset`). Elle rassemble les composants d’origine dans un contexte de page avec des données fictives. Le sélecteur **Version actuelle / Avec les propositions** remplace les composants disposant d’une proposition, y compris les composants imbriqués ; les autres restent à leur version actuelle. Sans proposition, les deux rendus sont identiques. Voir [les détails et les limites](docs/templates.md).
+
+### Référence de design Agents
+
+Les règles du projet [Agents data.gouv.fr](https://datagouv-agent.opendatateam.fr/design), relevées le 20 octobre 2026, sont conservées dans **Fondamentaux → Référence Agents**. Les 18 décisions, valeurs et exceptions sont structurées dans `data/design-reference-agents.json` et archivées dans [un relevé daté](docs/references/agents-design-2026-10-20.md).
+
+Cette référence sert de base de discussion pour les prochaines revues. Examiner son périmètre et ses exceptions avant de proposer une adaptation : les choix de l’assistant dense ne s’appliquent pas automatiquement aux pages publiques. Les composants actuels, leurs statuts et les propositions restent indépendants de ce relevé.

@@ -1,0 +1,330 @@
+{
+  "title": "Référence de design — Agents data.gouv.fr",
+  "source": "https://datagouv-agent.opendatateam.fr/design",
+  "capturedOn": "2026-10-20",
+  "status": "Référence de travail — non appliquée automatiquement à cdata",
+  "provenance": "Synthèse de la page publique consultée dans le navigateur. Les libellés sont reformulés ; les valeurs et exceptions sont conservées. Aucun commit source du prototype n’est attesté par cette capture.",
+  "rules": [
+    {
+      "id": "typography",
+      "title": "Typographie",
+      "group": "fondations",
+      "scope": "mixed",
+      "principle": "Marianne pour les textes et les visualisations ; Geist Mono pour le code, SQL et les valeurs techniques.",
+      "values": "Agent : 11, 12, 13 et 15 px. Éditorial : 14, 18, 24 et 30–48 px.",
+      "review": "Vérifier les rôles typographiques, la lisibilité et les polices de repli. Réexaminer les tailles compactes pour les pages publiques.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "editorial",
+      "title": "Pages éditoriales",
+      "group": "fondations",
+      "scope": "general",
+      "principle": "Partager un conteneur et un rythme extérieur entre accueil et documentation ; prévoir un sommaire sticky pour les pages documentaires.",
+      "values": "Largeur maximale 90 rem ; colonne de sommaire 12 rem ; paddings 16/24 px et 40/56 px.",
+      "review": "Comparer les largeurs de lecture, la grille et les espacements sur les templates.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "neutrals",
+      "title": "Couleurs neutres",
+      "group": "fondations",
+      "scope": "general",
+      "principle": "Réduire les nuances aux cinq rôles de texte principal, secondaire, discret, bordure et surface.",
+      "values": "#161616 · #555555 · #777777 · #E5E5E5 · #F6F6F6",
+      "review": "Inventorier les gris actuels, préciser leur fonction et vérifier leurs contrastes avant une migration.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "semantic",
+      "title": "Couleurs sémantiques",
+      "group": "fondations",
+      "scope": "general",
+      "principle": "Donner aux états information, succès, avertissement et erreur un traitement cohérent de fond, bordure, icône et texte.",
+      "values": "Succès : #E3FDEB / #B8FEC9 / #18753C. Erreur : #FEF4F4 / #FFBDBD / #CE0500.",
+      "review": "Comparer les alertes et indicateurs de même sens ; ne pas faire dépendre le message de la seule couleur.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "surfaces",
+      "title": "Surfaces et rayons",
+      "group": "composants",
+      "scope": "general",
+      "principle": "Unifier les surfaces ordinaires ; conserver une exception pour les zones techniques et les chips.",
+      "values": "Rayon standard 6 px ; code, éditeur et résultats SQL 2 px ; bordure #E5E5E5 ; chips inchangées.",
+      "review": "Distinguer les variations accidentelles des exceptions utiles. Le champ de recherche de l’explorateur garde son rayon spécifique de 4 px.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "icons",
+      "title": "Iconographie",
+      "group": "composants",
+      "scope": "general",
+      "principle": "Employer Remix Icon Line, avec une échelle réduite et sans fond décoratif autour des pictogrammes.",
+      "values": "14 px compact ; 16 px standard ; 20 px repère majeur. Pas de variante fill.",
+      "review": "Contrôler la famille, le style, la taille et le nom accessible. Une action iconique seule possède aussi un tooltip visible.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "conversation-space",
+      "title": "Espace conversationnel",
+      "group": "assistant",
+      "scope": "agent",
+      "principle": "Réserver le léger dégradé bleu au panneau assistant et conserver des cartes et une saisie blanches.",
+      "values": "#EBEDFF, de 30 % en haut à 1 % en bas.",
+      "review": "Référence spécifique à l’assistant ; ne pas généraliser ce dégradé aux cartes de données.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "chips",
+      "title": "Chips et contexte",
+      "group": "assistant",
+      "scope": "agent",
+      "principle": "Conserver la géométrie compacte et pill des suggestions, clarifications, ressources et modèles.",
+      "values": "Exception explicite aux rayons standards.",
+      "review": "Documenter ces exceptions si un motif comparable est repris dans cdata.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "conversation",
+      "title": "Conversation",
+      "group": "assistant",
+      "scope": "agent",
+      "principle": "Question sur une surface grise compacte ; réponse sans bulle ; copie et feedback sous la réponse ; édition et copie au survol de la question.",
+      "values": "Clarifications pertinentes sous forme de chips.",
+      "review": "Référence pour les interfaces conversationnelles, sans équivalent systématique dans les composants de contenu.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "composer",
+      "title": "Compositeur",
+      "group": "assistant",
+      "scope": "agent",
+      "principle": "Placer le contexte de ressource dans un accordéon compact au-dessus du champ, garder modèle et consommation consultables, et sortir l’avertissement de la surface de saisie.",
+      "values": "Contexte intégré ; détails par tooltip.",
+      "review": "Réutiliser la hiérarchie du contexte et des aides si un formulaire complexe le justifie.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "tools",
+      "title": "Tools et raisonnement observable",
+      "group": "assistant",
+      "scope": "agent",
+      "principle": "Séparer le résumé vérifiable des opérations et les traces techniques ; conserver un résumé même sans appel d’outil.",
+      "values": "Un seul suivi actif ; outils en cartes dépliables avec une clé à molette ; ne pas exposer de chaîne de pensée interne.",
+      "review": "Spécifique à l’assistant. Les détails techniques restent secondaires par rapport au résultat pour l’utilisateur.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "errors",
+      "title": "Erreurs et récupération",
+      "group": "assistant",
+      "scope": "mixed",
+      "principle": "Indiquer l’origine de l’erreur, un code stable et une action de récupération adaptée ; distinguer les causes métier et techniques.",
+      "values": "Détails repliés ; référence fournisseur conservée ; aucun secret affiché.",
+      "review": "Vérifier que chaque erreur de composant explique quoi faire ensuite, sans exposer d’informations sensibles.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "markdown-tables",
+      "title": "Tableaux Markdown",
+      "group": "assistant",
+      "scope": "mixed",
+      "principle": "Conserver les colonnes utiles et un défilement horizontal ; distinguer un schéma exhaustif d’un résultat dont le nombre de lignes est limité.",
+      "values": "Fond blanc ; en-tête #F6F6F6 ; résultats : 10 lignes par défaut, 20 sur demande ; pas de plafond arbitraire de colonnes.",
+      "review": "Évaluer la lisibilité et la complétude. Les limites 10/20 concernent les réponses de l’assistant, pas tous les tableaux du site.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "motion",
+      "title": "Animations",
+      "group": "mouvement",
+      "scope": "general",
+      "principle": "Utiliser des transitions fonctionnelles et courtes ; garder la taille des visualisations stable entre chargement et résultat.",
+      "values": "Respecter prefers-reduced-motion ; spinner DNA pour la réflexion de l’assistant.",
+      "review": "Évaluer les déplacements, la stabilité et le mouvement réduit ; le spinner DNA reste un choix du prototype.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "dataset-context",
+      "title": "Contexte du jeu de données",
+      "group": "donnees",
+      "scope": "mixed",
+      "principle": "Présenter titre, description repliable, producteur, licence et date de mise à jour avant l’explorateur.",
+      "values": "Le prototype exclut fil d’Ariane et indicateurs d’audience de son contexte de jeu de données.",
+      "review": "Conserver le besoin de contexte ; rediscuter la suppression du fil d’Ariane et des statistiques pour une page publique data.gouv.fr.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "explorer-frame",
+      "title": "Cadre de l’explorateur",
+      "group": "donnees",
+      "scope": "mixed",
+      "principle": "Distinguer une boîte d’exploration centrée ; renforcer le header après défilement ; supprimer les marges en plein écran.",
+      "values": "Maximum 90 rem ; marge minimale 16 px ; rayon 6 px ; plein écran inset 0.",
+      "review": "Comparer cadre, défilement, header et plein écran dans le template, en tenant compte de son intégration.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "explorer-search",
+      "title": "Recherches de l’explorateur",
+      "group": "donnees",
+      "scope": "mixed",
+      "principle": "Partager géométrie et typographie entre la recherche de ressources et celle des données.",
+      "values": "Hauteur 32 px ; corps 12 px ; rayon 4 px ; fond #F6F6F6.",
+      "review": "Évaluer la cohérence entre les deux recherches ; valider les dimensions sur mobile et les zones de clic.",
+      "sourceAnchor": "decisions"
+    },
+    {
+      "id": "visualizations",
+      "title": "Graphiques et cartes",
+      "group": "donnees",
+      "scope": "mixed",
+      "principle": "Utiliser Marianne, un cadre avec en-tête et pied, une source complète et des actions de copie ou de plein écran.",
+      "values": "Graphiques : padding 20 px. Cartes en français : Bright par défaut ; Positron pour les choroplèthes.",
+      "review": "Contrôler les légendes, sources, états de chargement et commandes. Les fonds cartographiques sont un choix à confirmer pour chaque usage.",
+      "sourceAnchor": "decisions"
+    }
+  ],
+  "colors": [
+    {
+      "role": "Texte",
+      "value": "#161616"
+    },
+    {
+      "role": "Secondaire",
+      "value": "#555555"
+    },
+    {
+      "role": "Discret",
+      "value": "#777777"
+    },
+    {
+      "role": "Stroke",
+      "value": "#E5E5E5"
+    },
+    {
+      "role": "Surface",
+      "value": "#F6F6F6"
+    },
+    {
+      "role": "Action · Bleu France",
+      "value": "#000091"
+    },
+    {
+      "role": "Fond assistant",
+      "value": "#EBEDFF"
+    },
+    {
+      "role": "Succès · fond",
+      "value": "#E3FDEB"
+    },
+    {
+      "role": "Succès · bordure",
+      "value": "#B8FEC9"
+    },
+    {
+      "role": "Succès · texte",
+      "value": "#18753C"
+    },
+    {
+      "role": "Erreur · fond",
+      "value": "#FEF4F4"
+    },
+    {
+      "role": "Erreur · bordure",
+      "value": "#FFBDBD"
+    },
+    {
+      "role": "Erreur · texte",
+      "value": "#CE0500"
+    }
+  ],
+  "typography": [
+    {
+      "size": "11 px",
+      "role": "Micro-information et métadonnées",
+      "scope": "Agent"
+    },
+    {
+      "size": "12 px",
+      "role": "Contrôles et libellés",
+      "scope": "Agent"
+    },
+    {
+      "size": "13 px",
+      "role": "Corps de réponse et titres de résultats",
+      "scope": "Agent"
+    },
+    {
+      "size": "14 px",
+      "role": "Texte secondaire de page",
+      "scope": "Éditorial"
+    },
+    {
+      "size": "15 px",
+      "role": "Introduction de composant",
+      "scope": "Agent"
+    },
+    {
+      "size": "18 px",
+      "role": "Chapô et sous-section",
+      "scope": "Éditorial"
+    },
+    {
+      "size": "24 px",
+      "role": "Titre de section",
+      "scope": "Éditorial"
+    },
+    {
+      "size": "30–48 px",
+      "role": "Titre de page responsive",
+      "scope": "Éditorial"
+    }
+  ],
+  "motion": [
+    {
+      "usage": "Pression",
+      "value": "Échelle 0,96 · 150 ms"
+    },
+    {
+      "usage": "Entrée d’un message ou panneau",
+      "value": "250 ms · smooth-out"
+    },
+    {
+      "usage": "Changement d’icône",
+      "value": "250 ms · ease-in-out"
+    },
+    {
+      "usage": "Accordéon",
+      "value": "250 ms · smooth-out"
+    },
+    {
+      "usage": "Stabilisation entre deux tools",
+      "value": "700 ms · sans flash"
+    },
+    {
+      "usage": "Réflexion Unicode",
+      "value": "80 ms · DNA"
+    }
+  ],
+  "density": [
+    {
+      "usage": "Chips de suggestion desktop",
+      "value": "28 px minimum"
+    },
+    {
+      "usage": "Actions iconiques desktop",
+      "value": "24 à 28 px"
+    }
+  ],
+  "cautions": [
+    "Deux sélecteurs de ressource gardent des géométries et densités différentes.",
+    "Les états focus, chargement, erreur, désactivation et succès ne sont pas définis partout.",
+    "La palette des visualisations reste partiellement définie directement dans les composants.",
+    "Des sprites cartographiques manquent encore aux fonds vectoriels.",
+    "Le résumé observable des opérations peut être trop générique ; des heuristiques filtrent les descriptions en anglais.",
+    "La composition mobile dédiée reste à définir : la densité documentée vise d’abord le desktop.",
+    "Les couleurs historiques des chips constituent une exception à documenter si le motif se généralise."
+  ]
+}
