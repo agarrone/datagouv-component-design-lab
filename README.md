@@ -134,7 +134,7 @@ Les [Web Interface Guidelines de Vercel](docs/references/vercel-web-interface-gu
 
 ### Vue des travaux en cours
 
-**Suivi → Travaux en cours** (`#suivi/vue-ensemble`) rassemble les composants dont le statut est `en-cours`, regroupés selon les catégories existantes. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
+**Travaux en cours**, accessible dans le header (`#travaux`), rassemble les composants dont le statut est `en-cours`, en liste pleine largeur, regroupés selon les catégories existantes. Le menu latéral filtre les familles. L’ancienne adresse `#suivi/vue-ensemble` redirige vers cette page. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
 
 La page **Suivi → Sans proposition** (`#suivi/sans-proposition`) liste les composants sans proposition visuelle enregistrée, indépendamment de leur statut d’audit. Elle s’appuie sur le même registre que les fiches, y compris les propositions d’illustrations. La liste affiche les aperçus actuels, chargés à l’approche de l’écran, avec recherche par nom ou chemin, filtres par origine et catégorie, et accès direct à chaque fiche.
 
