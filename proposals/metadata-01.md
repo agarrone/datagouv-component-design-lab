@@ -16,7 +16,7 @@ Les identifiants et contacts longs reviennent à la ligne. DescriptionDetails pe
 - Temporalité : dates en chiffres tabulaires, fréquence et couverture temporelle inchangées. Les sections optionnelles conservent leurs conditions d’affichage.
 - Couverture spatiale : mêmes libellés/valeurs, zones multiples lisibles, slot map et slot par défaut conservés. Aucun moteur cartographique n’est ajouté.
 - Schémas : bloc lisible et lien documentaire compact. L’icône de code remplace la coche, qui pouvait suggérer une validation de conformité non démontrée par la présence d’un schéma. Le lien construit à partir de schema.name comporte une séparation correcte après le domaine ; l’absence de schéma masque toujours la section.
-- Intégration : zone de code HTML de quatre lignes, police Noto Sans Mono, padding 12 px et rayon technique de 2 px ; nom accessible, sélection au clic et copie conservés. Le code généré reste celui de getDatasetOEmbedHtml.
+- Intégration : zone de code HTML de quatre lignes, police Geist Mono (jeton commun des propositions), padding 12 px et rayon technique de 2 px ; nom accessible, sélection au clic et copie conservés. Le code généré reste celui de getDatasetOEmbedHtml.
 
 CopyButton garde text, label, copiedLabel, hideLabel, iconOnly et reverse. Le libellé est visible sans survol quand il est demandé, le bouton possède un nom accessible et un titre, la réussite est annoncée par un statut et le délai de confirmation est nettoyé au démontage. La copie conserve l’API du navigateur et le toast d’erreur. Aucun mouvement décoratif.
 

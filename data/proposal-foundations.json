@@ -177,12 +177,12 @@
         },
         {
           "name": "font-mono",
-          "value": "'Noto Sans Mono', monospace",
+          "value": "'Geist Mono', monospace",
           "usage": "Code et identifiants techniques"
         },
         {
           "name": "font-glyph",
-          "value": "monospace",
+          "value": "'Geist Mono', monospace",
           "usage": "Exception : glyphes du chargeur Agents"
         },
         {

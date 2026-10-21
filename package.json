@@ -19,6 +19,7 @@
   "dependencies": {
     "@e965/xlsx": "^0.20.3",
     "@floating-ui/vue": "^2.0.1",
+    "@fontsource/geist-mono": "^5.3.0",
     "@fontsource/noto-sans-mono": "^5.3.0",
     "@gouvfr/dsfr": "1.15.3",
     "@headlessui/vue": "^1.7.23",

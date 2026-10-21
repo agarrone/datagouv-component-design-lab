@@ -24,7 +24,7 @@ Les propositions d’illustrations conservent les SVG Figma fournis : leur palet
 | Liens et focus | Bleu France #000091 pour la marque et les liens ; focus commun #0A76F6, anneau 2 px, distance 3 px. |
 | États | Information, succès, attention et erreur ont chacun texte, fond et bordure. Toujours accompagner la couleur d’un libellé ou d’un pictogramme explicite. |
 | Catégories | Rose et turquoise expriment des catégories, pas un succès ou une erreur. Les couleurs des pictogrammes de formats de fichiers restent métier. |
-| Polices | Marianne pour l’interface ; Noto Sans Mono, déjà chargée dans le lab, pour le code. Code en 12/20 ; glyphes de chargement en monospace générique. |
+| Polices | Marianne pour l’interface ; Geist Mono pour le code et les glyphes de chargement, avec repli monospace. Code en 12/20. |
 | Hiérarchie | Titre de composant 16/24, graisse 600 ; corps 14/22, graisse 400 ; contrôle 14/20 ; métadonnées 12/18 ; section 24/32. |
 | Chiffres | Chiffres tabulaires pour dates, scores et comparaisons ; pas de monospace imposée à tout texte numérique. |
 | Espacement | Échelle 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64 px. Repères : icône/libellé 8 ; éléments liés 12 ; carte/bandeau 16 ; section 24. |
