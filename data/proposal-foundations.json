@@ -440,5 +440,19 @@
         }
       ]
     }
-  ]
+  ],
+  "iconography": {
+    "family": "Remix Icon Line",
+    "rules": [
+      "14 px : badges et métriques compacts ; 16 px : taille standard des textes et actions ; 20 px : repère majeur.",
+      "Une icône conserve ses proportions et ne rétrécit pas dans un conteneur flex. Sa taille ne change pas au survol, au focus ou pendant une confirmation.",
+      "Couleur héritée du texte ou de l’état. Le survol et le focus concernent le contrôle complet, pas le SVG seul. Pas de passage automatique de Line à Fill pour une sélection.",
+      "Alignement centré dans les contrôles et badges ; alignement sur la première ligne pour un titre ou un texte multiligne.",
+      "Icône décorative masquée aux technologies d’assistance et non focalisable ; le libellé, le contrôle ou son état porte le sens.",
+      "Action sans texte : nom accessible explicite et aide au survol. Cible minimale 32 px sur desktop, 44 px avec un pointeur tactile, indépendamment de la taille du pictogramme.",
+      "Copie : le pictogramme de succès remplace celui de copie sans changer de taille ; un message textuel annonce le résultat. Suivi : aria-pressed et libellé décrivent l’état.",
+      "Les logos et formats de fichier gardent leurs pictogrammes métier ; un pictogramme de format informatif porte un nom accessible. Les avatars adaptent leur pictogramme à la taille de l’identité.",
+      "Le chevron d’accordéon conserve son mouvement existant et son mode réduit ; les autres icônes statiques ne reçoivent pas d’animation gratuite."
+    ]
+  }
 }

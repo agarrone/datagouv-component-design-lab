@@ -13,9 +13,9 @@ withDefaults(defineProps<{
 </script>
 <template>
   <span class="design-lab-badge" :data-tone="type" :data-size="size" :class="{'proposed-badge--nowrap':noWrap}">
-    <component :is="icon" v-if="icon" class="proposed-badge-icon" :class="iconSize || 'design-lab-badge__icon'" aria-hidden="true" focusable="false" />
+    <component :data-icon-size="iconSize ? 'custom' : 'compact'" :is="icon" v-if="icon" class="proposed-badge-icon lab-ds-icon" :class="iconSize || 'design-lab-badge__icon'" aria-hidden="true" focusable="false" />
     <span class="design-lab-badge__text"><slot /></span>
-    <component :is="iconRight" v-if="iconRight" class="proposed-badge-icon" :class="iconSize || 'design-lab-badge__icon'" aria-hidden="true" focusable="false" />
+    <component :data-icon-size="iconSize ? 'custom' : 'compact'" :is="iconRight" v-if="iconRight" class="proposed-badge-icon lab-ds-icon" :class="iconSize || 'design-lab-badge__icon'" aria-hidden="true" focusable="false" />
   </span>
 </template>
 <style scoped>

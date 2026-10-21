@@ -5,12 +5,12 @@
     :status="followStatus"
     :data="follower"
   >
-    <BrandedButton
+    <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
       type="button"
       color="secondary"
       :disabled="readOnlyEnabled"
-      :icon="following ? RiStarLine : RiStarLine"
-      :icon-attrs="{}"
+      :icon="RiStarLine"
+
       :loading
       size="xs"
       :aria-pressed="following"
@@ -39,7 +39,7 @@ import {watchEffect} from 'vue'
 import {computed} from 'vue'
 
 import { BrandedButton, LoadingBlock } from '@datagouv/components-next'
-import { RiStarFill, RiStarLine } from '@remixicon/vue'
+import { RiStarLine } from '@remixicon/vue'
 import { ref } from 'vue'
 import type { PaginatedArray } from '/vendor/cdata-runtime/types/types'
 

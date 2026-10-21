@@ -30,7 +30,7 @@ const icon = computed(() => icons[props.type])
 <template>
   <div class="proposed-simple-banner" :data-type="type" :class="{'proposed-simple-banner--text': isTextOnly(slots.default?.() || [])}">
     <template v-if="isTextOnly(slots.default?.() || [])">
-      <component :is="icon" v-if="icon" class="proposed-simple-banner__icon" aria-hidden="true" focusable="false" />
+      <component data-icon-align="start" data-icon-size="base" :is="icon" v-if="icon" class="proposed-simple-banner__icon lab-ds-icon" aria-hidden="true" focusable="false" />
       <div class="proposed-simple-banner__content"><slot /></div>
     </template>
     <slot v-else />

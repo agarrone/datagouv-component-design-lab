@@ -2,10 +2,13 @@
   <span
     :class="[iconColor, '[&_svg]:fill-current']"
     class="lab-resource-icon-badge"
+    role="img"
+    :aria-label="resource.format ? `Format ${resource.format.toUpperCase()}` : 'Fichier'"
+    :title="resource.format ? resource.format.toUpperCase() : 'Fichier'"
   >
-    <component
+    <component data-icon-size="base" focusable="false"
       :is="iconComponent"
-      class="size-4"
+      class=" lab-ds-icon"
       aria-hidden="true"
     />
   </span>

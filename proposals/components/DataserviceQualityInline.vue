@@ -6,7 +6,7 @@
     :button-props="{ title: t('Qualité des métadonnées') }"
   >
     <span class="lab-quality-trigger-label">
-      <RiInformationLine class="lab-quality-info" aria-hidden="true" />
+      <RiInformationLine data-icon-size="base" focusable="false" class="lab-quality-info lab-ds-icon" aria-hidden="true" />
       <span>{{ t('Métadonnées') }}</span>
     </span>
     <QualityScore :score="quality.score" />

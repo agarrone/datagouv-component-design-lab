@@ -16,7 +16,7 @@ const dimensions=computed(()=>({width:`${props.size}px`,height:`${props.size}px`
   <span class="proposed-avatar" :class="{'proposed-avatar--square':!rounded}" :style="dimensions" data-testid="user-avatar">
     <img v-if="url&&!failed" :src="url" alt="" :width="size" :height="size" loading="lazy" @error="failed=true" />
     <span v-else-if="!deleted&&initials" aria-hidden="true">{{initials}}</span>
-    <RiUserLine v-else aria-hidden="true" :size="String(Math.round(size*.6))" />
+    <RiUserLine data-icon-size="fluid" focusable="false" class="lab-ds-icon" v-else aria-hidden="true" :size="String(Math.round(size*.6))" />
   </span>
 </template>
 <style scoped>

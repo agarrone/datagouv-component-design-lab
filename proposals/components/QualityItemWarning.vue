@@ -1,6 +1,6 @@
 <template>
  <li v-if="!qualityItem" class="lab-quality-warning">
-  <p><RiAlertLine class="lab-quality-item-icon" aria-hidden="true" /><span>{{ message }}</span></p>
+  <p><RiAlertLine data-icon-align="start" data-icon-size="base" focusable="false" class="lab-quality-item-icon lab-ds-icon" aria-hidden="true" /><span>{{ message }}</span></p>
  </li>
 </template>
 <script setup lang="ts">

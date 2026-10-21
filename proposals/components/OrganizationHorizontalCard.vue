@@ -33,21 +33,21 @@
           reuses: organization.metrics.reuses,
         })"
       >
-        <RiDatabase2Line
+        <RiDatabase2Line data-icon-size="compact" focusable="false"
           aria-hidden="true"
-          class="size-3.5"
+          class=" lab-ds-icon"
         /> {{ summarize(organization.metrics.datasets) }}
-        <RiTerminalLine
+        <RiTerminalLine data-icon-size="compact" focusable="false"
           aria-hidden="true"
-          class="size-3.5 lab-ds-u-ml-1"
+          class="lab-ds-u-ml-1 lab-ds-icon"
         /> {{ summarize(organization.metrics.dataservices) }}
-        <RiLineChartLine
+        <RiLineChartLine data-icon-size="compact" focusable="false"
           aria-hidden="true"
-          class="size-3.5 lab-ds-u-ml-1"
+          class="lab-ds-u-ml-1 lab-ds-icon"
         /> {{ summarize(organization.metrics.reuses) }}
-        <RiStarLine
+        <RiStarLine data-icon-size="compact" focusable="false"
           aria-hidden="true"
-          class="size-3.5 lab-ds-u-ml-1"
+          class="lab-ds-u-ml-1 lab-ds-icon"
         /> {{ summarize(organization.metrics.followers) }}
       </div>
     </div>

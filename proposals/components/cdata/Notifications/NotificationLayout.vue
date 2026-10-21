@@ -23,7 +23,7 @@ async function handleMarkAsRead(){if(canRead.value){readError.value='';try{await
 </script>
 <template>
  <article class="proposal-notification" :data-unread="unread" :data-action="actionable">
-  <component :is="icon" class="proposal-notification-icon" aria-hidden="true" />
+  <component data-icon-align="start" data-icon-size="base" focusable="false" :is="icon" class="proposal-notification-icon lab-ds-icon" aria-hidden="true" />
   <div class="proposal-notification-content">
    <h3 class="proposal-notification-title"><CdataLink v-if="titleLink" :to="titleLink" :title="titleLinkTitle" @click="handleMarkAsRead">{{title}}</CdataLink><template v-else>{{title}}</template></h3>
    <div class="proposal-notification-description"><slot /></div>

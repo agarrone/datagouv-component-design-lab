@@ -2,9 +2,9 @@
   <header class="lab-thread-header space-y-1">
     <div class="lab-thread-heading">
       <h3 class="m-0 lab-ds-u-text-base lab-ds-u-text-gray-title flex items-start space-x-1">
-        <RiLockLine
+        <RiLockLine data-icon-align="start" data-icon-size="base" focusable="false"
           v-if="thread.closed"
-          class="size-4" aria-hidden="true"
+          class=" lab-ds-icon" aria-hidden="true"
         />
         <span class="flex-1">{{ thread.title }}</span>
         <CopyButton

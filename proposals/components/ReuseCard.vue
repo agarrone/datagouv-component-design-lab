@@ -60,13 +60,13 @@
       >
         <li v-if="reuse.private">
           <p class="fr-badge fr-badge--sm fr-badge--mention-grey lab-ds-u-text-gray-medium">
-            <RiLockLine class="size-3.5 lab-ds-u-mr-0-5" />
+            <RiLockLine data-icon-size="compact" focusable="false" aria-hidden="true" class="lab-ds-u-mr-0-5 lab-ds-icon" />
             {{ t('Brouillon') }}
           </p>
         </li>
         <li v-if="reuse.archived">
           <p class="fr-badge fr-badge--sm fr-badge--mention-grey lab-ds-u-text-gray-medium">
-            <RiLockLine class="size-3.5 lab-ds-u-mr-0-5" />
+            <RiLockLine data-icon-size="compact" focusable="false" aria-hidden="true" class="lab-ds-u-mr-0-5 lab-ds-icon" />
             {{ t('Archivé') }}
           </p>
         </li>

@@ -66,9 +66,9 @@
         class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
         :aria-label="t('{n} vues | {n} vue | {n} vues', chart.metrics.views)"
       >
-        <RiEyeLine
+        <RiEyeLine data-icon-size="compact" focusable="false"
           aria-hidden="true"
-          class="size-3.5"
+          class=" lab-ds-icon"
         />{{ summarize(chart.metrics.views) }}
       </p>
     </div>

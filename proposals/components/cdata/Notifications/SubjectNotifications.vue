@@ -4,8 +4,8 @@
       :id="titleId"
       class="m-0 lab-ds-u-mb-3 flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm font-bold"
     >
-      <RiNotification3Line
-        class="size-4"
+      <RiNotification3Line data-icon-size="base" focusable="false"
+        class=" lab-ds-icon"
         aria-hidden="true"
       />
       {{ t('Notifications') }}
@@ -28,7 +28,7 @@
         {{ sentence }}
       </p>
       <div class="flex flex-wrap items-center lab-ds-u-gap-x-4 lab-ds-u-gap-y-2">
-        <BrandedButton
+        <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
           v-if="action"
           color="secondary"
           size="xs"

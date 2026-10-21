@@ -20,7 +20,7 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
 
 <template>
   <div class="group proposed-banner-action" :data-banner-action-type="type">
-    <component :is="icon" class="proposed-banner-action__icon" aria-hidden="true" focusable="false" />
+    <component data-icon-align="start" data-icon-size="base" :is="icon" class="proposed-banner-action__icon lab-ds-icon" aria-hidden="true" focusable="false" />
     <div class="proposed-banner-action__content">
       <div class="proposed-banner-action__title"><slot name="title">{{ title }}</slot></div>
       <div v-if="$slots.default" class="proposed-banner-action__description"><slot /></div>

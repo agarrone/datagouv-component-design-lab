@@ -34,12 +34,12 @@
           </p>
         </template>
         <template v-else>
-          <RiPlanetLine class="size-6" />
+          <RiPlanetLine data-icon-size="major" focusable="false" aria-hidden="true" class=" lab-ds-icon" />
           <p class="lab-ds-u-mx-2 fr-col text-ellipsis whitespace-nowrap overflow-hidden">
             {{ $t('Site') }}
           </p>
         </template>
-        <span class="t-acc-chevron" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6.5L8 10.5L12 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span class="t-acc-chevron" aria-hidden="true"><svg class="lab-ds-icon" data-icon-size="base" focusable="false" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6.5L8 10.5L12 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
       </button>
       <div
         :id="`${id}-panel`"

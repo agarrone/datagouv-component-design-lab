@@ -1,0 +1,15 @@
+/* Only annotated proposal icons. Logo assets and native components are untouched. */
+@layer base {
+ .lab-schema-selected-icon { color:var(--lab-ds-brand); }
+ .lab-ds-icon { display:inline-block; flex-shrink:0!important; vertical-align:middle; pointer-events:none; }
+ .lab-ds-icon[data-icon-size=compact] { --proposal-icon-size:var(--lab-ds-icon-compact); }
+ .lab-ds-icon[data-icon-size=base] { --proposal-icon-size:var(--lab-ds-icon); }
+ .lab-ds-icon[data-icon-size=major] { --proposal-icon-size:var(--lab-ds-icon-major); }
+ .lab-ds-icon:is([data-icon-size=compact],[data-icon-size=base],[data-icon-size=major]) { width:var(--proposal-icon-size)!important; height:var(--proposal-icon-size)!important; }
+ .lab-ds-icon[data-icon-align=start] { align-self:flex-start; margin-top:calc((var(--lab-ds-leading-body) - var(--proposal-icon-size))/2)!important; }
+ .lab-card-title-icon.lab-ds-icon,.lab-thread-heading .lab-ds-icon { margin-top:calc((var(--lab-ds-leading-title) - var(--proposal-icon-size))/2)!important; }
+ [data-icon-action=true] { display:inline-flex; align-items:center; justify-content:center; min-width:var(--lab-ds-control-compact)!important; min-height:var(--lab-ds-control-compact)!important; flex-shrink:0; }
+ [data-icon-action=true]:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); box-shadow:none!important; }
+ [data-icon-action=true]:disabled,[data-icon-action=true][aria-disabled=true] { cursor:default; opacity:var(--lab-ds-opacity-disabled); }
+ @media(pointer:coarse){[data-icon-action=true]{min-width:var(--lab-ds-target-touch)!important;min-height:var(--lab-ds-target-touch)!important}}
+}

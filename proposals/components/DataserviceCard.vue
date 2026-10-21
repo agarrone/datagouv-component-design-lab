@@ -96,18 +96,18 @@
           class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} vues | {n} vue | {n} vues', dataservice.metrics.views)"
         >
-          <RiEyeLine
+          <RiEyeLine data-icon-size="compact" focusable="false"
             aria-hidden="true"
-            class="size-3.5"
+            class=" lab-ds-icon"
           />{{ summarize(dataservice.metrics.views) }}
         </p>
         <p
           class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} abonnés | {n} abonné | {n} abonnés', dataservice.metrics.followers)"
         >
-          <RiStarLine
+          <RiStarLine data-icon-size="compact" focusable="false"
             aria-hidden="true"
-            class="size-3.5"
+            class=" lab-ds-icon"
           />{{ summarize(dataservice.metrics.followers) }}
         </p>
       </div>

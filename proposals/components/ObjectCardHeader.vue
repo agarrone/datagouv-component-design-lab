@@ -8,10 +8,10 @@
       class="lab-card-title-link"
       :target="target"
     >
-      <component
+      <component data-icon-align="start" data-icon-size="base" focusable="false"
         :is="icon"
         aria-hidden="true"
-        class="lab-card-title-icon"
+        class="lab-card-title-icon lab-ds-icon"
       />
       <span
         class="lab-card-title-text"

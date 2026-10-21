@@ -1,12 +1,14 @@
 <template>
-  <BrandedButton
+  <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
     v-if="current !== 'failed'"
     color="secondary"
     size="xs"
     :class="{ 'animate-pulse-placeholder': current === null }"
     :icon="followed ? RiNotificationOffLine : RiNotification3Line"
     :icon-only="iconOnly"
+    :data-icon-action="iconOnly"
     :title="label"
+    :aria-label="label"
     :disabled="current === null"
     :aria-pressed="followed"
     class="proposal-follow-toggle"

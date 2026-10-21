@@ -1,7 +1,7 @@
 <template>
   <li class="lab-admin-link-item">
     <CdataLink :to="to" class="lab-admin-link" :aria-current="route.fullPath === resolve(to)?.fullPath || isLastBreadcrumb ? 'page' : undefined">
-      <component :is="icon" class="lab-admin-link-icon" aria-hidden="true" focusable="false" />
+      <component data-icon-size="base" :is="icon" class="lab-admin-link-icon lab-ds-icon" aria-hidden="true" focusable="false" />
       <span class="lab-admin-link-label">{{ label }}</span>
     </CdataLink>
   </li>

@@ -1,7 +1,7 @@
 <template>
  <li class="lab-quality-item">
   <p>
-   <component :is="passed ? RiCheckLine : RiAlertLine" class="lab-quality-item-icon" :class="passed ? 'lab-quality-pass' : 'lab-quality-missing'" aria-hidden="true" />
+   <component data-icon-align="start" data-icon-size="base" focusable="false" :is="passed ? RiCheckLine : RiAlertLine" class="lab-quality-item-icon lab-ds-icon" :class="passed ? 'lab-quality-pass' : 'lab-quality-missing'" aria-hidden="true" />
    <span>{{ passed ? messagePassed : messageFailed }}</span>
   </p>
  </li>

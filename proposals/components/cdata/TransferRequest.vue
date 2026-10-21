@@ -54,7 +54,7 @@
       </template>
 
       <template #buttons>
-        <BrandedButton
+        <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
           v-if="showActions"
           color="primary"
           size="xs"
@@ -64,7 +64,7 @@
         >
           {{ $t('Accepter') }}
         </BrandedButton>
-        <BrandedButton
+        <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
           v-if="showActions"
           color="danger"
           size="xs"
@@ -96,7 +96,7 @@
 
       <template #footer>
         <div class="w-full flex justify-end space-x-4">
-          <BrandedButton
+          <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
             color="primary"
             size="xs"
             :icon="RiCheckLine"
@@ -105,7 +105,7 @@
           >
             {{ $t('Accepter') }}
           </BrandedButton>
-          <BrandedButton
+          <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
             color="danger"
             size="xs"
             :icon="RiCloseLine"

@@ -12,7 +12,7 @@
     :aria-selected="selectable && selected"
   >
     <h3 class="lab-card-heading flex items-start lab-ds-u-gap-2 lab-ds-u-pr-8">
-      <RiNodeTree class="size-4 shrink-0 lab-ds-u-mt-1" />
+      <RiNodeTree data-icon-size="base" focusable="false" aria-hidden="true" class="shrink-0 lab-ds-u-mt-1 lab-ds-icon" />
       {{ schema.title }}
     </h3>
     <p
@@ -21,13 +21,13 @@
       class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm mb-0"
     >
       <span class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-gray-medium">
-        <RiInformationLine class="size-3" /> {{ t('Label :') }}
+        <RiInformationLine data-icon-size="base" focusable="false" aria-hidden="true" class=" lab-ds-icon" /> {{ t('Label :') }}
       </span>
       <span>{{ label }}</span>
     </p>
     <p class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm mb-0">
       <span class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-gray-medium">
-        <RiInformationLine class="size-3" /> {{ t('Standard :') }}
+        <RiInformationLine data-icon-size="base" focusable="false" aria-hidden="true" class=" lab-ds-icon" /> {{ t('Standard :') }}
       </span>
       <span>{{ schema.schema_type }}</span>
     </p>
@@ -62,9 +62,9 @@
         {{ t('Explorer les fichiers sur data.gouv.fr') }}
       </AppLink>
     </p>
-    <RiCheckLine
+    <RiCheckLine data-icon-size="major" focusable="false" aria-hidden="true"
       v-if="selected"
-      class="size-6 fill-datagouv absolute top-4 right-4"
+      class="lab-schema-selected-icon absolute top-4 right-4 lab-ds-icon"
     />
   </div>
 </template>

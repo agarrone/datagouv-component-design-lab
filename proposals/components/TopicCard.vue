@@ -63,9 +63,9 @@
         v-if="topic.nb_datasets"
         class="flex items-center lab-ds-u-gap-1"
       >
-        <RiDatabase2Line
+        <RiDatabase2Line data-icon-size="base" focusable="false"
           aria-hidden="true"
-          class="size-4"
+          class=" lab-ds-icon"
         />
         <span>{{ topic.nb_datasets }}</span>
       </div>
@@ -74,9 +74,9 @@
         v-if="topic.nb_dataservices"
         class="flex items-center lab-ds-u-gap-1"
       >
-        <RiTerminalLine
+        <RiTerminalLine data-icon-size="base" focusable="false"
           aria-hidden="true"
-          class="size-4"
+          class=" lab-ds-icon"
         />
         <span>{{ topic.nb_dataservices }}</span>
       </div>
@@ -85,9 +85,9 @@
         v-if="topic.nb_reuses"
         class="flex items-center lab-ds-u-gap-1"
       >
-        <RiLineChartLine
+        <RiLineChartLine data-icon-size="base" focusable="false"
           aria-hidden="true"
-          class="size-4"
+          class=" lab-ds-icon"
         />
         <span>{{ topic.nb_reuses }}</span>
       </div>

@@ -4,6 +4,8 @@
       ref="trigger"
       type="button"
       class="proposal-notification-options-trigger"
+      data-icon-action="true"
+      :aria-label="t('Pourquoi je reçois ça ?')"
 
       :title="t('Pourquoi je reçois ça ?')"
       aria-haspopup="dialog"
@@ -11,8 +13,8 @@
       :aria-expanded="open"
       @click="open = !open"
     >
-      <RiMoreLine
-        class="size-4"
+      <RiMoreLine data-icon-size="base" focusable="false"
+        class=" lab-ds-icon"
         aria-hidden="true"
       />
     </button>
@@ -49,8 +51,8 @@
         class="flex w-full items-center lab-ds-u-gap-2 lab-ds-u-px-3 lab-ds-u-py-2 border-t lab-ds-u-border-gray-default lab-ds-u-text-sm leading-tight lab-ds-u-text-gray-title !bg-none !no-underline hover:!lab-ds-u-bg-gray-some"
         @click="open = false"
       >
-        <RiSettings3Line
-          class="size-4 shrink-0 lab-ds-u-text-gray-medium"
+        <RiSettings3Line data-icon-size="base" focusable="false"
+          class="shrink-0 lab-ds-u-text-gray-medium lab-ds-icon"
           aria-hidden="true"
         />
         {{ t('Gérer mes notifications') }}

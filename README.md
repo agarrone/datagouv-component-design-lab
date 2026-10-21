@@ -116,6 +116,8 @@ Cette référence sert de base de discussion pour les prochaines revues. Examine
 
 La page **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`) documente la base commune des propositions : couleurs, typographie, espacements, coins, dimensions et mouvement. Les valeurs viennent de `data/proposal-foundations.json` et alimentent les styles des 98 propositions Vue. Consulter [les règles, exceptions et contrôles](docs/proposal-foundations.md) avant de concevoir une proposition. `npm run foundations:generate` régénère le CSS ; `npm run check:foundations` vérifie sa cohérence et fait partie du build.
 
+Les [règles communes d’iconographie](docs/proposal-iconography.md) précisent les tailles, l’alignement et le comportement des icônes, avec noms accessibles et cibles adaptées aux actions sans texte. Elles sont visibles dans les fondamentaux des propositions.
+
 ### Ressources pour le design des composants
 
 **Orientation du projet : conserver un look and feel assez proche du DSFR.** La [référence DSFR](docs/references/dsfr.md) est à prendre en compte dans chaque proposition, pour le composant isolé comme pour son intégration dans une page. Les inspirations Agents, Geist et autres ressources restent complémentaires ; tout écart intentionnel doit être expliqué.

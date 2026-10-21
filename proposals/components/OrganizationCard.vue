@@ -34,17 +34,17 @@
               reuses: organization.metrics.reuses,
             })"
           >
-            <RiDatabase2Line
+            <RiDatabase2Line data-icon-size="base" focusable="false"
               aria-hidden="true"
-              class="size-4 -mt-1"
+              class="-mt-1 lab-ds-icon"
             /> {{ organization.metrics.datasets }}
-            <RiTerminalLine
+            <RiTerminalLine data-icon-size="base" focusable="false"
               aria-hidden="true"
-              class="size-4 -mt-1 lab-ds-u-ml-1"
+              class="-mt-1 lab-ds-u-ml-1 lab-ds-icon"
             /> {{ organization.metrics.dataservices }}
-            <RiLineChartLine
+            <RiLineChartLine data-icon-size="base" focusable="false"
               aria-hidden="true"
-              class="size-4 -mt-1 lab-ds-u-ml-1"
+              class="-mt-1 lab-ds-u-ml-1 lab-ds-icon"
             /> {{ organization.metrics.reuses }}
           </div>
         </div>

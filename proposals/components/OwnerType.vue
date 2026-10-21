@@ -3,6 +3,7 @@
     <OwnerTypeIcon
       :type="type"
       class="lab-owner-type-icon"
+      :data-icon-size="size === 'xs' ? 'compact' : 'base'"
     />
     <div class="design-lab-badge__text">
       {{ name }}

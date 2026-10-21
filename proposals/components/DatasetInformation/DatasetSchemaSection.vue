@@ -22,7 +22,7 @@
           </Tag>
         </p>
         <div v-if="schema.url || (schema.name && config.schemasSiteUrl)">
-          <BrandedButton
+          <BrandedButton :icon-attrs="{class:'lab-ds-icon', 'data-icon-size':'base', focusable:'false'}"
             color="secondary"
             size="xs"
             :icon="RiBook2Line"

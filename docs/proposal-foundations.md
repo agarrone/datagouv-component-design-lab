@@ -42,6 +42,10 @@ Les propositions d’illustrations conservent les SVG Figma fournis : leur palet
 - Les écarts de 10 px entre éléments deviennent 12 px. L’ajustement optique de 3 px reste réservé au centrage des icônes et au cadre du logo, sans devenir un rythme de disposition.
 - Les arrondis utilitaires des propositions rejoignent les rôles standard, technique ou pilule.
 
+## Iconographie
+
+Les [règles d’iconographie](proposal-iconography.md) définissent les rôles 14/16/20 px, l’alignement, la couleur héritée, les états et les actions sans texte. Elles s’appliquent aux icônes explicites des propositions et sont contrôlées au build.
+
 ## Exceptions et limites intentionnelles
 
 Les tailles issues d’une prop (`Avatar.size`, variantes d’un nom, etc.) restent paramétrables. Les images, graphiques, hauteurs de squelettes, dimensions de conteneurs, seuils de qualité et formules de grille restent adaptés à leur contenu. Les points de rupture CSS sont conservés en valeurs littérales : les propriétés personnalisées ne remplacent pas directement une condition `@media` ou `@container`.
