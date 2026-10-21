@@ -77,3 +77,11 @@ Les décisions combinent les [fondamentaux Agents](references/agents-design-2026
 - Build de production et intégrité des copies sources vérifiés.
 
 Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des composants natifs imbriqués.
+
+### Survols et liens
+
+- Une carte ne réagit au survol que lorsque son lien principal est ciblé : fond subtil, bordure renforcée et titre souligné. Les liens secondaires restent indépendants.
+- Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.
+- La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.
+- Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.
+- Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif.

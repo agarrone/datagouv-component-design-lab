@@ -15,14 +15,14 @@
       />
       <PreviewComponentCdataLink
         v-if="comment.posted_by_organization"
-        class="link"
+        class="lab-proposal-link link"
         :href="comment.posted_by_organization.page"
       >
         {{ comment.posted_by_organization.name }}
       </PreviewComponentCdataLink>
       <PreviewComponentCdataLink
         v-else
-        class="link"
+        class="lab-proposal-link link"
         :href="comment.posted_by.page"
       >
         {{ comment.posted_by.first_name }} {{ comment.posted_by.last_name }}

@@ -29,14 +29,14 @@
           />
           <PreviewComponentCdataLink
             v-if="thread.closed_by_organization"
-            class="link"
+            class="lab-proposal-link link"
             :href="thread.closed_by_organization.page"
           >
             {{ thread.closed_by_organization.name }}
           </PreviewComponentCdataLink>
           <PreviewComponentCdataLink
             v-else-if="thread.closed_by"
-            class="link"
+            class="lab-proposal-link link"
             :href="thread.closed_by.page"
           >
             {{ thread.closed_by.first_name }} {{ thread.closed_by.last_name }}

@@ -5,7 +5,7 @@
   >
     <AppLink
       v-if="organizationUrl !== null"
-      class="link lab-ds-u-text-sm flex items-center relative z-[2]"
+      class="lab-proposal-link link lab-ds-u-text-sm flex items-center relative z-[2]"
       :to="organizationUrl || organization.page"
     >
       <OrganizationNameWithCertificate

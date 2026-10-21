@@ -23,7 +23,7 @@
       <template #title>
         <a
           :href="requester.page"
-          class="link font-bold"
+          class="lab-proposal-link link font-bold"
         >{{ requester.class === 'User' ? `${requester.first_name} ${requester.last_name}` : requester.name }}</a>
         {{ $t('a demandé un transfert') }}
       </template>
@@ -37,14 +37,14 @@
           {{ $t('vers votre organisation') }}
           <a
             :href="transfer.recipient.page"
-            class="link"
+            class="lab-proposal-link link"
           >{{ transfer.recipient.name }}</a>
         </template>
         <template v-if="transfer.recipient.class === 'User'">
           {{ $t('vers') }}
           <a
             :href="transfer.recipient.page"
-            class="link"
+            class="lab-proposal-link link"
           >{{ transfer.recipient.first_name }} {{ transfer.recipient.last_name }}</a>
         </template>
       </template>

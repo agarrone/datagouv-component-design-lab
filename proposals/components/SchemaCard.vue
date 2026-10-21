@@ -39,7 +39,7 @@
       class="lab-ds-u-mt-4 mb-0 flex flex-col lab-ds-u-gap-2 lab-ds-u-text-sm"
     >
       <AppLink
-        class="link"
+        class="lab-proposal-link link"
         target="_blank"
         :to="getDocumentation(schema.name)"
       >
@@ -48,14 +48,14 @@
       <AppLink
         v-for="example in schema.examples"
         :key="example.path"
-        class="link"
+        class="lab-proposal-link link"
         target="_blank"
         :to="example.path"
       >
         {{ example.title }}
       </AppLink>
       <AppLink
-        class="link"
+        class="lab-proposal-link link"
         target="_blank"
         :to="`${config.baseUrl}/datasets/search?schema=${schema.name}`"
       >

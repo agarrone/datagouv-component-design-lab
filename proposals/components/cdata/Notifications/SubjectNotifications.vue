@@ -40,7 +40,7 @@
         </BrandedButton>
         <CdataLink
           to="/admin/me/notifications"
-          class="link lab-ds-u-text-sm"
+          class="lab-proposal-link link lab-ds-u-text-sm"
         >
           {{ t('Gérer mes notifications') }}
         </CdataLink>
