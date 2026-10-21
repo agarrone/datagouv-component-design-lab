@@ -1,4 +1,5 @@
 <script setup>
+import {ownerAndEmptyVariants} from "./ownerAndEmptyExamples";
 import {metadataVariants} from "./metadataExamples";
 import {notificationVariants} from "./notificationExamples";
 import {qualityVariants} from "./qualityExamples";
@@ -32,6 +33,7 @@ const status = computed(() => auditStatuses.find(s => s.id === audit[props.compo
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (ownerAndEmptyVariants[props.component.id]) return ownerAndEmptyVariants[props.component.id];
   if (metadataVariants[props.component.id]) return metadataVariants[props.component.id];
   if (notificationVariants[props.component.id]) return notificationVariants[props.component.id];
   if (qualityVariants[props.component.id]) return qualityVariants[props.component.id];

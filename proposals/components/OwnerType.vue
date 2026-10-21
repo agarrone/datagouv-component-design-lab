@@ -15,7 +15,7 @@ import '../shared/badge.css'
 import '../shared/quality.css'
 import { computed } from 'vue'
 import { findOrganizationType, type OrganizationTypes, type UserType } from '../../vendor/datagouv-components/src/functions/organizations'
-import OwnerTypeIcon from '../../vendor/datagouv-components/src/components/OwnerTypeIcon.vue'
+import OwnerTypeIcon from './OwnerTypeIcon.vue'
 
 const props = withDefaults(defineProps<{
   type: OrganizationTypes | UserType

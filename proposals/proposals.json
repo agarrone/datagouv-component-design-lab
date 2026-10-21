@@ -1164,5 +1164,38 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/DescriptionList/DescriptionListTerm.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "identity-empty-cdata-search-noresults-01",
+    "component": "cdata/Search/NoResults",
+    "title": "Un état vide sobre et orienté vers les actions",
+    "status": "brouillon",
+    "problem": "Le bloc actuel utilise une grande carte accentuée et une illustration pour un état de recherche vide.",
+    "intention": "Surface blanche, bordure neutre, rayon 6 px, repère Remix Line 20 px, titre 16/24 et corps 14/22. Réinitialisation et accès au forum visibles et adaptables à la largeur. Le complément sur le forum ne s’affiche que si son URL existe. forumUrl et resetFilters conservés. Références : Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Search/NoResults.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "identity-empty-ownertypeicon-01",
+    "component": "OwnerTypeIcon",
+    "title": "Aligner les pictogrammes de types de producteurs",
+    "status": "brouillon",
+    "problem": "La taille standard de 14 px diffère de la référence Agents et des badges proposés.",
+    "intention": "Remix Line 16 px, couleur héritée, décoratif pour les technologies d’assistance. Les cinq pictogrammes métier sont conservés ; Autre reste sans icône. Le badge OwnerType proposé utilise ce composant. Références : Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/OwnerTypeIcon.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "identity-empty-cdata-organizationowner-01",
+    "component": "cdata/OrganizationOwner",
+    "title": "Une identité d’organisation lisible dans toutes les largeurs",
+    "status": "brouillon",
+    "problem": "Le conteneur et le nom sont tronqués ; le cadre du logo ajoute un espacement qui varie fortement selon les usages.",
+    "intention": "Nom intégral avec retour à la ligne, logo non déformé, cadre neutre de rayon 6 px et espacement 8 px. Tailles base/sm/xs, couleur, lien, balise de titre, certification et option sans cadre conservés. Le logo est décoratif puisque le nom est adjacent. Références : Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/OrganizationOwner.vue",
+    "reviewUrl": ""
   }
 ]

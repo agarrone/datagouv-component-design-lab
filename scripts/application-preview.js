@@ -4,6 +4,7 @@ import Demo from '../src/Demo.vue';
 import PreviewVersion from '../src/PreviewVersion.vue';
 import {badgeVariants} from '../src/badgeExamples.js';
 import {notificationVariants} from '../src/notificationExamples.js';
+import {ownerAndEmptyVariants} from '../src/ownerAndEmptyExamples.js';
 import {metadataVariants} from '../src/metadataExamples.js';
 import {qualityVariants} from '../src/qualityExamples.js';
 import {cardVariants} from '../src/cardExamples.js';
@@ -19,7 +20,7 @@ const selection=params.get('ids')?.split(',');
 const components=selection ? all.filter(c=>selection.includes(c.id)) : all.slice(Number(params.get('start')||0),Number(params.get('end')||all.length));
 const results=document.querySelector('#results'),progress=document.querySelector('#progress');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
-const variants=params.get('variants')==='metadata'?metadataVariants:params.get('variants')==='notifications'?notificationVariants:params.get('variants')==='quality'?qualityVariants:params.get('variants')==='cards'?cardVariants:params.get('variants')==='sidebar'?adminSidebarVariants:params.get('variants')==='avatars'?avatarVariants:params.get('variants')==='badges'?badgeVariants:{};
+const variants=params.get('variants')==='owner-empty'?ownerAndEmptyVariants:params.get('variants')==='metadata'?metadataVariants:params.get('variants')==='notifications'?notificationVariants:params.get('variants')==='quality'?qualityVariants:params.get('variants')==='cards'?cardVariants:params.get('variants')==='sidebar'?adminSidebarVariants:params.get('variants')==='avatars'?avatarVariants:params.get('variants')==='badges'?badgeVariants:{};
 const cases=components.flatMap(c=>variants[c.id]?variants[c.id].map(v=>({...c,case:v.label,props:v.props})):[c]);
 for(const c of cases){
  const errors=[],warnings=[];
