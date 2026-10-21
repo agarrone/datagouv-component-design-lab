@@ -32,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/metadata.css'
 
 import { useTranslation } from '/vendor/datagouv-components/src/composables/useTranslation'

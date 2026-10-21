@@ -29,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import { RiExternalLinkLine } from '@remixicon/vue'
 import CdataLink from '../../../../vendor/cdata-components/CdataLink.vue'
 import AdminBadge from '../AdminBadge/AdminBadge.vue'
@@ -47,5 +48,5 @@ defineProps<{
 <style scoped>
 .proposed-hvd-link { text-decoration:underline; text-underline-offset:3px; }
 .proposed-hvd-link::after { content:none !important; }
-.proposed-hvd-link:focus-visible { outline:2px solid #0a76f6; outline-offset:2px; }
+.proposed-hvd-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

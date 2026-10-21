@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import type {Component} from 'vue'
 import '../../../shared/badge.css'
 withDefaults(defineProps<{
@@ -19,6 +20,6 @@ withDefaults(defineProps<{
 </template>
 <style scoped>
 .proposed-badge-icon { flex-shrink:0; }
-.design-lab-badge[data-size=xs] { min-height:20px; padding:0 6px; }
+.design-lab-badge[data-size=xs] { min-height:var(--lab-ds-icon-major); padding:0 var(--lab-ds-space-6); }
 .proposed-badge--nowrap { white-space:nowrap; }
 </style>

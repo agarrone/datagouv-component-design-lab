@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import {computed,ref,watch} from 'vue'
 import type {Component} from 'vue'
 import {FormattedDate} from '@datagouv/components-next'

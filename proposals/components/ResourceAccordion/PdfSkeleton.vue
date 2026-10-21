@@ -7,24 +7,24 @@
     role="status"
     :aria-label="t('Chargement de l\'aperçu…')"
   >
-    <div class="flex justify-center p-4">
-      <div class="aspect-[210/297] w-[800px] max-w-full bg-white p-10 shadow-sm">
+    <div class="flex justify-center lab-ds-u-p-4">
+      <div class="aspect-[210/297] w-[800px] max-w-full lab-ds-u-bg-white lab-ds-u-p-10 shadow-sm">
         <div class="space-y-6">
           <div class="space-y-3">
-            <div class="h-5 w-1/2 rounded bg-gray-200" />
-            <div class="h-3 w-full rounded bg-gray-200" />
-            <div class="h-3 w-full rounded bg-gray-200" />
-            <div class="h-3 w-5/6 rounded bg-gray-200" />
+            <div class="h-5 w-1/2 lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-full lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-full lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-5/6 lab-ds-u-rounded lab-ds-u-bg-gray-200" />
           </div>
           <div class="space-y-3">
-            <div class="h-3 w-full rounded bg-gray-200" />
-            <div class="h-3 w-11/12 rounded bg-gray-200" />
-            <div class="h-3 w-full rounded bg-gray-200" />
-            <div class="h-3 w-3/4 rounded bg-gray-200" />
+            <div class="h-3 w-full lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-11/12 lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-full lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-3/4 lab-ds-u-rounded lab-ds-u-bg-gray-200" />
           </div>
           <div class="space-y-3">
-            <div class="h-3 w-full rounded bg-gray-200" />
-            <div class="h-3 w-5/6 rounded bg-gray-200" />
+            <div class="h-3 w-full lab-ds-u-rounded lab-ds-u-bg-gray-200" />
+            <div class="h-3 w-5/6 lab-ds-u-rounded lab-ds-u-bg-gray-200" />
           </div>
         </div>
       </div>
@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import { useTranslation } from '../../../vendor/datagouv-components/src/composables/useTranslation'
 
 defineProps<{

@@ -43,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import {computed} from 'vue'
 import {useTranslation} from '../../../../vendor/datagouv-components/src/composables/useTranslation'
 import AdminBadge from '../AdminBadge/AdminBadge.vue'

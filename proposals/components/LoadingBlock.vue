@@ -1,4 +1,5 @@
 <script setup lang="ts" generic="T">
+import '../shared/foundations.css'
 import {computed} from 'vue'
 import UnicodeLoader from '../shared/UnicodeLoader.vue'
 import ShimmerText from '../shared/ShimmerText.vue'
@@ -22,9 +23,9 @@ const hasData=computed(()=>!hasError.value&&props.data!=null)
 <style scoped>
 .proposed-loading-block { position:relative; }
 .proposed-loading-block.is-loading:not(.has-data) { min-height:16rem; }
-.proposed-loading-block__previous { opacity:.45; pointer-events:none; }
-.proposed-loading-block__indicator { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#777; font-size:13px; line-height:20px; }
-.proposed-loading-block__label { display:inline-flex; align-items:center; gap:12px; padding:4px 8px; border-radius:6px; background:#fff; }
-.proposed-loading-block__glyph { color:#777; font-size:12px; min-width:40px; }
-.proposed-loading-block__error { padding:24px 16px; color:#ce0500; font-size:14px; line-height:1.5; margin:0; }
+.proposed-loading-block__previous { opacity:var(--lab-ds-opacity-disabled); pointer-events:none; }
+.proposed-loading-block__indicator { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--lab-ds-text-muted); font-size:var(--lab-ds-text-loader); line-height:var(--lab-ds-leading-control); }
+.proposed-loading-block__label { display:inline-flex; align-items:center; gap:var(--lab-ds-space-12); padding:var(--lab-ds-space-4) var(--lab-ds-space-8); border-radius:var(--lab-ds-radius); background:var(--lab-ds-surface); }
+.proposed-loading-block__glyph { color:var(--lab-ds-text-muted); font-size:var(--lab-ds-text-caption); min-width:var(--lab-ds-control); }
+.proposed-loading-block__error { padding:var(--lab-ds-space-24) var(--lab-ds-space-16); color:var(--lab-ds-danger-text); font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); margin:0; }
 </style>

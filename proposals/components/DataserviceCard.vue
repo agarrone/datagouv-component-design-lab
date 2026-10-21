@@ -2,7 +2,7 @@
   <ObjectCard class="lab-content-card"
     :article-class="{
       'border-tabular-api': isTabularApi,
-      'border-gray-default': !isTabularApi,
+      'lab-ds-u-border-gray-default': !isTabularApi,
     }"
   >
     <template #badge>
@@ -59,7 +59,7 @@
     </ObjectCardHeader>
     <div
       v-if="dataservice.organization || dataservice.owner"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="dataservice.organization"
@@ -69,7 +69,7 @@
       <!-- https://github.com/datagouv/cdata/issues/653 -->
       <TranslationT
         tag="p"
-        class="text-sm whitespace-normal mb-0 text-gray-medium"
+        class="lab-ds-u-text-sm whitespace-normal mb-0 lab-ds-u-text-gray-medium"
         keypath="Mis à jour {date}"
       >
         <template #date>
@@ -91,9 +91,9 @@
       :quality="dataservice.quality"
     />
 
-      <div class="lab-card-metrics flex flex-wrap items-center gap-3 text-gray-medium">
+      <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-gap-3 lab-ds-u-text-gray-medium">
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} vues | {n} vue | {n} vues', dataservice.metrics.views)"
         >
           <RiEyeLine
@@ -102,7 +102,7 @@
           />{{ summarize(dataservice.metrics.views) }}
         </p>
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} abonnés | {n} abonné | {n} abonnés', dataservice.metrics.followers)"
         >
           <RiStarLine
@@ -116,6 +116,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { computed } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
@@ -160,6 +161,6 @@ const isTabularApi = computed(() => {
 
 <style scoped>
 .border-tabular-api {
-  border-color: #373C42 !important;
+  border-color: var(--lab-ds-text-secondary) !important;
 }
 </style>

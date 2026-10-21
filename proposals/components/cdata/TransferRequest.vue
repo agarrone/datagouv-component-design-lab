@@ -3,7 +3,7 @@
     <PreviewComponentBannerNotif
       type="warning"
       :icon="RiSendPlaneLine"
-      class="mb-4"
+      class="lab-ds-u-mb-4"
       :badge="$t('Transfert en attente')"
       :date="new Date(transfer.created)"
     >
@@ -11,7 +11,7 @@
         <Avatar
           v-if="requester.class === 'User'"
           :user="requester"
-          rounded
+          lab-ds-u-rounded
           :size="24"
         />
         <OrganizationLogo
@@ -121,6 +121,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useNuxtApp} from '/src/compat/application/runtime.js'

@@ -1,7 +1,7 @@
 <template>
   <header class="lab-thread-header space-y-1">
     <div class="lab-thread-heading">
-      <h3 class="m-0 text-base/normal text-gray-title flex items-start space-x-1">
+      <h3 class="m-0 lab-ds-u-text-base lab-ds-u-text-gray-title flex items-start space-x-1">
         <RiLockLine
           v-if="thread.closed"
           class="size-4" aria-hidden="true"
@@ -66,6 +66,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import CopyButton from '../../CopyButton.vue'
 import {useMaybeMe} from '/src/compat/application/runtime.js'

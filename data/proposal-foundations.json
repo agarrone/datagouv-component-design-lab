@@ -1,0 +1,444 @@
+{
+  "version": 1,
+  "status": "Base de travail pour les propositions — à valider",
+  "updated": "2026-10-21",
+  "prefix": "--lab-ds-",
+  "groups": [
+    {
+      "id": "colors",
+      "title": "Couleurs neutres et interaction",
+      "tokens": [
+        {
+          "name": "text",
+          "value": "#161616",
+          "usage": "Texte principal"
+        },
+        {
+          "name": "text-secondary",
+          "value": "#555555",
+          "usage": "Texte secondaire"
+        },
+        {
+          "name": "text-muted",
+          "value": "#777777",
+          "usage": "Information discrète ; éviter les petits textes sur fond coloré"
+        },
+        {
+          "name": "surface",
+          "value": "#ffffff",
+          "usage": "Surface principale"
+        },
+        {
+          "name": "surface-subtle",
+          "value": "#f6f6f6",
+          "usage": "Surface secondaire et survol neutre"
+        },
+        {
+          "name": "surface-active",
+          "value": "#f0f0f0",
+          "usage": "Sélection neutre"
+        },
+        {
+          "name": "border",
+          "value": "#e5e5e5",
+          "usage": "Séparation décorative ; ne suffit pas seule à identifier un contrôle"
+        },
+        {
+          "name": "border-strong",
+          "value": "#aaaaaa",
+          "usage": "Bordure renforcée"
+        },
+        {
+          "name": "brand",
+          "value": "#000091",
+          "usage": "Liens et identité bleu France"
+        },
+        {
+          "name": "brand-hover",
+          "value": "#1212ff",
+          "usage": "Survol d’un lien de marque"
+        },
+        {
+          "name": "focus",
+          "value": "#0a76f6",
+          "usage": "Focus clavier commun, anneau 2 px"
+        },
+        {
+          "name": "on-accent",
+          "value": "#ffffff",
+          "usage": "Texte sur fond sombre"
+        }
+      ]
+    },
+    {
+      "id": "semantic",
+      "title": "Couleurs sémantiques",
+      "tokens": [
+        {
+          "name": "info-text",
+          "value": "#0063cb",
+          "usage": "Information : texte et icône"
+        },
+        {
+          "name": "info-bg",
+          "value": "#e8edff",
+          "usage": "Information : fond"
+        },
+        {
+          "name": "info-border",
+          "value": "#b8c7ff",
+          "usage": "Information : bordure"
+        },
+        {
+          "name": "info-hover",
+          "value": "#c2d1ff",
+          "usage": "Information : survol"
+        },
+        {
+          "name": "success-text",
+          "value": "#18753c",
+          "usage": "Succès : texte et icône"
+        },
+        {
+          "name": "success-bg",
+          "value": "#e3fdeb",
+          "usage": "Succès : fond"
+        },
+        {
+          "name": "success-border",
+          "value": "#b8fec9",
+          "usage": "Succès : bordure"
+        },
+        {
+          "name": "warning-text",
+          "value": "#b34000",
+          "usage": "Attention : texte et icône"
+        },
+        {
+          "name": "warning-bg",
+          "value": "#ffe9e6",
+          "usage": "Attention : fond"
+        },
+        {
+          "name": "warning-border",
+          "value": "#ffc6bd",
+          "usage": "Attention : bordure"
+        },
+        {
+          "name": "danger-text",
+          "value": "#ce0500",
+          "usage": "Erreur : texte et icône"
+        },
+        {
+          "name": "danger-bg",
+          "value": "#fef4f4",
+          "usage": "Erreur : fond"
+        },
+        {
+          "name": "danger-border",
+          "value": "#ffbdbd",
+          "usage": "Erreur : bordure"
+        },
+        {
+          "name": "pink-bg",
+          "value": "#fff0f5",
+          "usage": "Catégorie rose, sans signification d’état"
+        },
+        {
+          "name": "pink-text",
+          "value": "#cf006d",
+          "usage": "Catégorie rose : texte"
+        },
+        {
+          "name": "pink-border",
+          "value": "#ffcae0",
+          "usage": "Catégorie rose : bordure"
+        },
+        {
+          "name": "teal-bg",
+          "value": "#d5f2ff",
+          "usage": "Catégorie turquoise, sans signification d’état"
+        },
+        {
+          "name": "teal-text",
+          "value": "#005d6a",
+          "usage": "Catégorie turquoise : texte"
+        }
+      ]
+    },
+    {
+      "id": "typography",
+      "title": "Typographie",
+      "tokens": [
+        {
+          "name": "font-sans",
+          "value": "Marianne, Arial, sans-serif",
+          "usage": "Interface et contenu"
+        },
+        {
+          "name": "font-mono",
+          "value": "'Noto Sans Mono', monospace",
+          "usage": "Code et identifiants techniques"
+        },
+        {
+          "name": "font-glyph",
+          "value": "monospace",
+          "usage": "Exception : glyphes du chargeur Agents"
+        },
+        {
+          "name": "text-caption",
+          "value": "12px",
+          "usage": "Métadonnées et badges"
+        },
+        {
+          "name": "leading-caption",
+          "value": "18px",
+          "usage": "Interligne des métadonnées"
+        },
+        {
+          "name": "text-body",
+          "value": "14px",
+          "usage": "Texte des composants"
+        },
+        {
+          "name": "leading-body",
+          "value": "22px",
+          "usage": "Interligne du texte courant"
+        },
+        {
+          "name": "leading-control",
+          "value": "20px",
+          "usage": "Interligne des libellés de contrôles"
+        },
+        {
+          "name": "text-title",
+          "value": "16px",
+          "usage": "Titre de composant et texte éditorial standard"
+        },
+        {
+          "name": "leading-title",
+          "value": "24px",
+          "usage": "Interligne du titre"
+        },
+        {
+          "name": "text-heading",
+          "value": "24px",
+          "usage": "Titre de section"
+        },
+        {
+          "name": "leading-heading",
+          "value": "32px",
+          "usage": "Interligne de section"
+        },
+        {
+          "name": "text-loader",
+          "value": "13px",
+          "usage": "Exception : libellé de chargement Agents"
+        },
+        {
+          "name": "weight-regular",
+          "value": "400",
+          "usage": "Texte courant"
+        },
+        {
+          "name": "weight-medium",
+          "value": "500",
+          "usage": "Badge et identité"
+        },
+        {
+          "name": "weight-semibold",
+          "value": "600",
+          "usage": "Titre et sélection"
+        }
+      ]
+    },
+    {
+      "id": "spacing",
+      "title": "Espacements",
+      "tokens": [
+        {
+          "name": "space-optical",
+          "value": "3px",
+          "usage": "Exception : centrage d’icône et cadre de logo ; ne pas utiliser comme rythme de disposition"
+        },
+        {
+          "name": "space-2",
+          "value": "2px",
+          "usage": "Micro-ajustement"
+        },
+        {
+          "name": "space-4",
+          "value": "4px",
+          "usage": "Éléments très proches"
+        },
+        {
+          "name": "space-6",
+          "value": "6px",
+          "usage": "Contrôle compact"
+        },
+        {
+          "name": "space-8",
+          "value": "8px",
+          "usage": "Icône et libellé"
+        },
+        {
+          "name": "space-12",
+          "value": "12px",
+          "usage": "Éléments liés"
+        },
+        {
+          "name": "space-16",
+          "value": "16px",
+          "usage": "Intérieur standard d’une carte ou d’un bandeau"
+        },
+        {
+          "name": "space-20",
+          "value": "20px",
+          "usage": "Groupes dans un fil de discussion"
+        },
+        {
+          "name": "space-24",
+          "value": "24px",
+          "usage": "Section ou carte ample"
+        },
+        {
+          "name": "space-32",
+          "value": "32px",
+          "usage": "Séparation de sections"
+        },
+        {
+          "name": "space-40",
+          "value": "40px",
+          "usage": "Espacement ample"
+        },
+        {
+          "name": "space-48",
+          "value": "48px",
+          "usage": "Section de page"
+        },
+        {
+          "name": "space-64",
+          "value": "64px",
+          "usage": "Grande séparation de page"
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "Coins, bordures et dimensions",
+      "tokens": [
+        {
+          "name": "radius",
+          "value": "6px",
+          "usage": "Cartes, champs, boutons et badges rectangulaires"
+        },
+        {
+          "name": "radius-technical",
+          "value": "2px",
+          "usage": "Code et contours techniques"
+        },
+        {
+          "name": "radius-inset",
+          "value": "5px",
+          "usage": "Image interne : rayon extérieur de 6 px moins bordure de 1 px"
+        },
+        {
+          "name": "radius-pill",
+          "value": "999px",
+          "usage": "Tags et jauges ; forme intentionnelle"
+        },
+        {
+          "name": "radius-round",
+          "value": "50%",
+          "usage": "Avatars et points d’état"
+        },
+        {
+          "name": "stroke",
+          "value": "1px",
+          "usage": "Bordure standard"
+        },
+        {
+          "name": "focus-width",
+          "value": "2px",
+          "usage": "Épaisseur du focus"
+        },
+        {
+          "name": "focus-offset",
+          "value": "3px",
+          "usage": "Distance entre contrôle et focus"
+        },
+        {
+          "name": "icon-compact",
+          "value": "14px",
+          "usage": "Icône de badge compact"
+        },
+        {
+          "name": "icon",
+          "value": "16px",
+          "usage": "Icône standard"
+        },
+        {
+          "name": "icon-major",
+          "value": "20px",
+          "usage": "Repère majeur"
+        },
+        {
+          "name": "control-compact",
+          "value": "32px",
+          "usage": "Commande compacte sur desktop"
+        },
+        {
+          "name": "control",
+          "value": "40px",
+          "usage": "Commande standard"
+        },
+        {
+          "name": "target-touch",
+          "value": "44px",
+          "usage": "Cible tactile recommandée"
+        },
+        {
+          "name": "opacity-disabled",
+          "value": "0.5",
+          "usage": "Contrôle désactivé"
+        },
+        {
+          "name": "shadow-overlay",
+          "value": "0 8px 24px #16161614",
+          "usage": "Menu ou popover uniquement"
+        },
+        {
+          "name": "control-dense",
+          "value": "36px",
+          "usage": "Commande dense, notamment navigation et qualité"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "title": "Mouvement",
+      "tokens": [
+        {
+          "name": "duration-disclosure",
+          "value": "250ms",
+          "usage": "Ouverture et fermeture de l’accordéon existant"
+        },
+        {
+          "name": "ease-disclosure",
+          "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "usage": "Courbe de l’accordéon existant"
+        },
+        {
+          "name": "duration-shimmer",
+          "value": "2000ms",
+          "usage": "Cycle du texte de chargement Agents"
+        },
+        {
+          "name": "duration-glyph",
+          "value": "80ms",
+          "usage": "Intervalle du chargeur Unicode Agents"
+        }
+      ]
+    }
+  ]
+}

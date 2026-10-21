@@ -1,4 +1,5 @@
 <script setup>
+import ProposalFoundations from "./ProposalFoundations.vue";
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { RiArrowRightUpLine, RiSearchLine, RiGridLine, RiExternalLinkLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
@@ -30,7 +31,7 @@ const view = ref('catalogue');
 const templateVersion=ref('current');
 const sectionId=ref('');
 const componentSection=computed(()=>view.value==='catalogue' || view.value.startsWith('types/'));
-const foundationSections=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
+const foundationSections=[['propositions','Fondamentaux des propositions'],['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const query = ref('');
 const globalQuery = ref('');
@@ -128,7 +129,7 @@ function route() {
   if(['fondamentaux','incoherences','suivi','templates'].includes(page)) {
     if(page==='templates') sectionId.value=templates[section]?section:'dataset';
     selected.value=null; view.value=page;
-    nextTick(()=>{if(section && section!=='reference-agents' && !['suivi','templates'].includes(page)) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
+    nextTick(()=>{if(section && !['reference-agents','propositions'].includes(section) && !['suivi','templates'].includes(page)) document.getElementById(section)?.scrollIntoView({block:'start'}); else window.scrollTo(0,0);});
     return;
   }
   const c = inventory.find(c => c.id === hash);
@@ -180,6 +181,7 @@ function downloadProposal(c) {
     <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : 'Composants' }}</span></nav></header>
     <main id="main">
       <TemplatePage v-if="view==='templates'" :kind="sectionId" />
+      <ProposalFoundations v-else-if="view==='fondamentaux' && (sectionId==='propositions' || sectionId.startsWith('propositions-'))" />
       <DesignReference v-else-if="view==='fondamentaux' && sectionId==='reference-agents'" />
       <Fundamentals v-else-if="view==='fondamentaux'" />
       <Inconsistencies v-else-if="view==='incoherences'" :issue-id="sectionId" @open-component="openComponent" />

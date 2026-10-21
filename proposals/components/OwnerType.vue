@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/badge.css'
 import '../shared/quality.css'
 import { computed } from 'vue'

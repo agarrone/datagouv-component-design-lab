@@ -25,6 +25,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/metadata.css'
 
 import { ref, computed } from 'vue'

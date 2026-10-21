@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useNotificationSettings} from '/src/compat/application/runtime.js'

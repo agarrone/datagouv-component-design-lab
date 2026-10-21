@@ -4,11 +4,11 @@ import AssetFoundations from './AssetFoundations.vue';
 import { colors, fonts, typography, spacing, breakpoints, themeSource, evidence } from './referenceData';
 const colorFilter=ref('all');
 const shownColors=computed(()=>colors.filter(c=>colorFilter.value==='all'||c.group===colorFilter.value));
-const anchors=[['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
+const anchors=[['propositions','Fondamentaux des propositions'],['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 </script>
 <template>
  <div class="reference-page">
-  <h1>Fondamentaux</h1><p class="intro">Les valeurs, styles et assets présents dans le code de datagouv-components et de cdata. Ce relevé ne remplace pas une charte de design validée.</p>
+  <h1>Fondamentaux</h1><p class="intro">Les valeurs, styles et assets présents dans le code de datagouv-components et de cdata. Ce relevé décrit l’existant. Les fondamentaux des propositions définissent séparément la base commune du futur design system.</p>
   <nav class="reference-sections" aria-label="Sections des fondamentaux"><a v-for="[id,label] in anchors" :key="id" :href="`#fondamentaux/${id}`">{{ label }}</a></nav>
   <section id="couleurs" class="reference-section"><div class="section-title"><h2>Couleurs</h2><select v-model="colorFilter" aria-label="Filtrer les couleurs"><option value="all">Tous les jetons</option><option value="new">Préfixe new-</option><option value="other">Autres jetons</option></select></div><p>Les deux ensembles coexistent dans le thème. Leur nom est conservé pour retrouver la valeur dans le code.</p>
    <div class="swatch-grid"><article v-for="color in shownColors" :key="color.name" class="swatch-card"><div class="color-swatch" :class="{'invalid-swatch':!color.valid}" :style="color.valid?{backgroundColor:color.value}:{}" aria-hidden="true"></div><div class="swatch-description"><code>{{ color.name }}</code><span>{{ color.value }}<strong v-if="!color.valid"> · Valeur invalide</strong></span></div></article></div>

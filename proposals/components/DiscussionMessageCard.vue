@@ -9,7 +9,7 @@
 
     <div
       v-if="discussion.organization || discussion.user"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="discussion.organization"
@@ -17,7 +17,7 @@
         :organization-url="organizationUrl"
       />
       <TranslationT
-        class="text-gray-medium whitespace-normal"
+        class="lab-ds-u-text-gray-medium whitespace-normal"
         keypath="Posté {date}"
       >
         <template #date>
@@ -37,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiChat3Line } from '@remixicon/vue'
 import { computed } from 'vue'

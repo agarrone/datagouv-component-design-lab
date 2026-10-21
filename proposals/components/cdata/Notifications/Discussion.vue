@@ -8,9 +8,9 @@
   >
     <p
       v-if="notification.type === 'discussion.comment' && message"
-      class="flex items-center gap-1 m-0 text-sm"
+      class="flex items-center lab-ds-u-gap-1 m-0 lab-ds-u-text-sm"
     >
-      <span class="text-gray-medium">{{ $t('de') }}</span>
+      <span class="lab-ds-u-text-gray-medium">{{ $t('de') }}</span>
       <PreviewComponentOrganizationOwner
         v-if="message?.posted_by_organization"
         :organization="message.posted_by_organization"
@@ -28,7 +28,7 @@
     </p>
     <p
       class="proposal-notification-detail"
-      :class="{ 'text-gray-medium': notification.type === 'discussion.comment' }"
+      :class="{ 'lab-ds-u-text-gray-medium': notification.type === 'discussion.comment' }"
     >
       <template v-if="notification.type === 'discussion.new'">
         {{ notification.details.discussion.title }}
@@ -47,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useTranslation} from '/src/compat/application/runtime.js'

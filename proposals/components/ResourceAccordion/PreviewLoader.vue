@@ -3,8 +3,8 @@
     :animate="false"
     viewBox="0 0 1124 300"
     :speed="2"
-    primary-color="#f3f3f3"
-    secondary-color="#ecebeb"
+    primary-color="var(--lab-ds-surface-subtle)"
+    secondary-color="var(--lab-ds-border)"
   >
     <rect
       x="16"
@@ -136,6 +136,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import { ContentLoader } from 'vue-content-loader'
 
 function getY(row: number) {

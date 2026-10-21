@@ -26,7 +26,7 @@
     <TranslationT
       v-if="post.published || post.created_at"
       tag="div"
-      class="text-sm text-gray-medium mt-1"
+      class="lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1"
       keypath="Publié {date}"
     >
       <template #date>
@@ -43,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiArticleLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'

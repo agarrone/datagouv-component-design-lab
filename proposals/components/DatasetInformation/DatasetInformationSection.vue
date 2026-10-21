@@ -6,7 +6,7 @@
     <DescriptionList>
       <div v-if="dataset.tags && dataset.tags.length">
         <DescriptionListTerm>{{ t('Mots-clés') }}</DescriptionListTerm>
-        <DescriptionListDetails class="flex flex-wrap gap-2 items-start">
+        <DescriptionListDetails class="flex flex-wrap lab-ds-u-gap-2 items-start">
           <AppLink
             v-for="tag in dataset.tags"
             :key="tag"
@@ -44,6 +44,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/metadata.css'
 
 import { useTranslation } from '/vendor/datagouv-components/src/composables/useTranslation'

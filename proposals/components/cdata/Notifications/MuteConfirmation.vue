@@ -15,7 +15,7 @@
       </BrandedButton>
       <div
         v-else
-        class="flex gap-2"
+        class="flex lab-ds-u-gap-2"
       >
         <BrandedButton
           color="tertiary"
@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 import BannerAction from '/proposals/components/BannerAction.vue'
 

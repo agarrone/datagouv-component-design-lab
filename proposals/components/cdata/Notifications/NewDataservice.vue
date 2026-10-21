@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import { RiTerminalLine } from '@remixicon/vue'

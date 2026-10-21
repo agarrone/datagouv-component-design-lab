@@ -12,22 +12,22 @@
         >
           <OrganizationNameWithCertificate
             :show-type="false"
-            color-class="text-gray-title"
+            color-class="lab-ds-u-text-gray-title"
             :organization
           />
         </AppLink>
       </div>
-      <div class="mt-2 mb-2 flex flex-wrap gap-1 items-center">
+      <div class="lab-ds-u-mt-2 lab-ds-u-mb-2 flex flex-wrap lab-ds-u-gap-1 items-center">
         <template v-if="type !== 'other'">
           <OwnerType
-            class="mb-0 text-sm"
+            class="mb-0 lab-ds-u-text-sm"
             :type
           />
         </template>
         <div>
           <div
             v-if="'metrics' in organization"
-            class="text-gray-medium flex items-center text-sm gap-0.5"
+            class="lab-ds-u-text-gray-medium flex items-center lab-ds-u-text-sm lab-ds-u-gap-0-5"
             :aria-label="t('{datasets} jeux de données, {dataservices} API et {reuses} réutilisations', {
               datasets: organization.metrics.datasets,
               dataservices: organization.metrics.dataservices,
@@ -40,11 +40,11 @@
             /> {{ organization.metrics.datasets }}
             <RiTerminalLine
               aria-hidden="true"
-              class="size-4 -mt-1 ml-1"
+              class="size-4 -mt-1 lab-ds-u-ml-1"
             /> {{ organization.metrics.dataservices }}
             <RiLineChartLine
               aria-hidden="true"
-              class="size-4 -mt-1 ml-1"
+              class="size-4 -mt-1 lab-ds-u-ml-1"
             /> {{ organization.metrics.reuses }}
           </div>
         </div>
@@ -61,6 +61,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiLineChartLine, RiDatabase2Line, RiTerminalLine } from '@remixicon/vue'
 import { computed } from 'vue'

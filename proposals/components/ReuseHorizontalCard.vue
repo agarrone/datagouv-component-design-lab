@@ -38,7 +38,7 @@
 
     <div
       v-if="reuse.organization || reuse.owner"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="reuse.organization"
@@ -48,7 +48,7 @@
     </div>
 
     <ObjectCardShortDescription :text="reuse.description" />
-    <div class="lab-card-metrics flex flex-wrap items-center text-sm text-gray-medium mt-1">
+    <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1">
       <ReuseDetails :reuse />
     </div>
 
@@ -57,6 +57,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiArchiveLine, RiLineChartLine, RiLockLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../shared/foundations.css'
 import { computed, useSlots, Text, Comment, Fragment } from 'vue'
 import type { VNode } from 'vue'
 import { RiInformationLine, RiCheckboxCircleLine, RiAlertLine, RiErrorWarningLine } from '@remixicon/vue'
@@ -38,19 +39,19 @@ const icon = computed(() => icons[props.type])
 
 <style scoped>
 .proposed-simple-banner {
-  --banner-surface: #f6f6f6;
-  --banner-border: #e5e5e5;
-  --banner-accent: #555;
+  --banner-surface: var(--lab-ds-surface-subtle);
+  --banner-border: var(--lab-ds-border);
+  --banner-accent: var(--lab-ds-text-secondary);
   box-sizing: border-box;
   width: 100%;
-  padding: 16px;
-  border: 1px solid var(--banner-border);
-  border-radius: 6px;
+  padding: var(--lab-ds-space-16);
+  border: var(--lab-ds-stroke) solid var(--banner-border);
+  border-radius: var(--lab-ds-radius);
   background: var(--banner-surface);
-  color: #161616;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
+  color: var(--lab-ds-text);
+  font-family: var(--lab-ds-font-sans);
+  font-size: var(--lab-ds-text-body);
+  line-height: var(--lab-ds-leading-body);
 }
 .proposed-simple-banner:is([data-type="primary"], [data-type="primary-frame"], [data-type="warning"], [data-type="success"], [data-type="danger"]) {
   color: var(--banner-accent);
@@ -58,42 +59,42 @@ const icon = computed(() => icons[props.type])
 .proposed-simple-banner--text {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--lab-ds-space-12);
 }
 .proposed-simple-banner[data-type="primary"] {
-  --banner-surface: var(--color-new-info-light, #e8edff);
-  --banner-border: #b8c7ff;
-  --banner-accent: var(--color-new-info, #0063cb);
+  --banner-surface: var(--lab-ds-info-bg);
+  --banner-border: var(--lab-ds-info-border);
+  --banner-accent: var(--lab-ds-info-text);
 }
 .proposed-simple-banner[data-type="primary-frame"] {
-  --banner-surface: #fff;
-  --banner-border: #000091;
-  --banner-accent: #000091;
+  --banner-surface: var(--lab-ds-surface);
+  --banner-border: var(--lab-ds-brand);
+  --banner-accent: var(--lab-ds-brand);
 }
 .proposed-simple-banner[data-type="warning"] {
-  --banner-surface: var(--color-new-warning-light, #ffe9e6);
-  --banner-border: #ffc6bd;
-  --banner-accent: var(--color-new-warning, #b34000);
+  --banner-surface: var(--lab-ds-warning-bg);
+  --banner-border: var(--lab-ds-warning-border);
+  --banner-accent: var(--lab-ds-warning-text);
 }
 .proposed-simple-banner[data-type="success"] {
-  --banner-surface: #e3fdeb;
-  --banner-border: #b8fec9;
-  --banner-accent: #18753c;
+  --banner-surface: var(--lab-ds-success-bg);
+  --banner-border: var(--lab-ds-success-border);
+  --banner-accent: var(--lab-ds-success-text);
 }
 .proposed-simple-banner[data-type="danger"] {
-  --banner-surface: #fef4f4;
-  --banner-border: #ffbdbd;
-  --banner-accent: #ce0500;
+  --banner-surface: var(--lab-ds-danger-bg);
+  --banner-border: var(--lab-ds-danger-border);
+  --banner-accent: var(--lab-ds-danger-text);
 }
 .proposed-simple-banner[data-type="pink"] {
-  --banner-surface: var(--color-pink-softest, #fff0f5);
-  --banner-border: var(--color-pink-soft, #ffcae0);
+  --banner-surface: var(--lab-ds-pink-bg);
+  --banner-border: var(--lab-ds-pink-border);
 }
 .proposed-simple-banner__icon {
   flex: 0 0 16px;
-  width: 16px;
-  height: 16px;
-  margin-top: 2.5px;
+  width: var(--lab-ds-icon);
+  height: var(--lab-ds-icon);
+  margin-top: var(--lab-ds-space-optical);
   color: var(--banner-accent);
 }
 .proposed-simple-banner__content {

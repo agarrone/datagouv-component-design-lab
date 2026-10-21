@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import './foundations.css'
 defineProps<{text:string}>()
 </script>
 <template><span><span class="shimmer-accessible-text">{{text}}</span><span class="t-shimmer" :data-text="text" aria-hidden="true">{{text}}</span></span></template>
 <style scoped>
 .shimmer-accessible-text { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .t-shimmer {
-  --shimmer-dur: 2000ms;
-  --shimmer-base: #777;
-  --shimmer-highlight: #555;
+  --shimmer-dur: var(--lab-ds-duration-shimmer);
+  --shimmer-base: var(--lab-ds-text-muted);
+  --shimmer-highlight: var(--lab-ds-text-secondary);
   --shimmer-band: 400%;
   --shimmer-ease: linear;
   position: relative;

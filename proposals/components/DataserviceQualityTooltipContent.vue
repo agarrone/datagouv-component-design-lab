@@ -69,6 +69,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/quality.css'
 import type { DataserviceQuality } from '../../vendor/datagouv-components/src/types/dataservices'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'

@@ -1,10 +1,10 @@
 <template>
   <div ref="sentinel">
     <slot>
-      <div class="flex items-center justify-center p-4">
-        <span role="status" class="inline-flex items-center gap-3 text-[13px] text-[#777777]">
+      <div class="flex items-center justify-center lab-ds-u-p-4">
+        <span role="status" class="inline-flex items-center lab-ds-u-gap-3 lab-ds-u-text-loader lab-ds-u-text-muted">
           <UnicodeLoader
-            style="font-size:12px; min-width:40px"
+            style="font-size:var(--lab-ds-text-caption); min-width:var(--lab-ds-control)"
             aria-hidden="true"
           />
           <ShimmerText :text="t('Chargement…')" />
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import { onMounted, onUnmounted, useTemplateRef, watch } from 'vue'
 import UnicodeLoader from '../shared/UnicodeLoader.vue'
 import ShimmerText from '../shared/ShimmerText.vue'

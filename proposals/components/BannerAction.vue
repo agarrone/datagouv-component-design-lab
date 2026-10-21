@@ -3,6 +3,7 @@ export { bannerActionTypeKey } from '../../vendor/datagouv-components/src/compon
 </script>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import { computed, provide } from 'vue'
 import { RiInformationLine, RiAlertLine, RiErrorWarningLine } from '@remixicon/vue'
 import { bannerActionTypeKey } from '../../vendor/datagouv-components/src/components/BannerAction.vue'
@@ -30,48 +31,48 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
 
 <style scoped>
 .proposed-banner-action {
-  --banner-surface: var(--color-new-info-light, #e8edff);
-  --banner-border: #b8c7ff;
-  --banner-accent: var(--color-new-info, #0063cb);
+  --banner-surface: var(--lab-ds-info-bg);
+  --banner-border: var(--lab-ds-info-border);
+  --banner-accent: var(--lab-ds-info-text);
   display: grid;
   grid-template-columns: 16px minmax(0, 1fr) auto;
   align-items: start;
-  gap: 12px;
+  gap: var(--lab-ds-space-12);
   box-sizing: border-box;
   width: 100%;
-  padding: 16px;
-  border: 1px solid var(--banner-border);
-  border-radius: 6px;
+  padding: var(--lab-ds-space-16);
+  border: var(--lab-ds-stroke) solid var(--banner-border);
+  border-radius: var(--lab-ds-radius);
   background: var(--banner-surface);
   color: var(--banner-accent);
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: var(--lab-ds-font-sans);
+  font-size: var(--lab-ds-text-body);
+  line-height: var(--lab-ds-leading-body);
   container-type: inline-size;
 }
 .proposed-banner-action[data-banner-action-type="warning"] {
-  --banner-surface: var(--color-new-warning-light, #ffe9e6);
-  --banner-border: #ffc6bd;
-  --banner-accent: var(--color-new-warning, #b34000);
+  --banner-surface: var(--lab-ds-warning-bg);
+  --banner-border: var(--lab-ds-warning-border);
+  --banner-accent: var(--lab-ds-warning-text);
 }
 .proposed-banner-action[data-banner-action-type="danger"] {
-  --banner-surface: #fef4f4;
-  --banner-border: #ffbdbd;
-  --banner-accent: #ce0500;
+  --banner-surface: var(--lab-ds-danger-bg);
+  --banner-border: var(--lab-ds-danger-border);
+  --banner-accent: var(--lab-ds-danger-text);
 }
 .proposed-banner-action__icon {
-  width: 16px;
-  height: 16px;
-  margin-top: 2.5px;
+  width: var(--lab-ds-icon);
+  height: var(--lab-ds-icon);
+  margin-top: var(--lab-ds-space-optical);
 }
 .proposed-banner-action__content { min-width: 0; overflow-wrap: anywhere; }
 .proposed-banner-action__title { font-weight: 700; }
-.proposed-banner-action__description { margin-top: 4px; }
+.proposed-banner-action__description { margin-top: var(--lab-ds-space-4); }
 .proposed-banner-action__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: var(--lab-ds-space-8);
   align-self: center;
   min-width: 0;
   max-width: 100%;

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {ref,onBeforeUnmount} from 'vue'
 import {RiCheckLine,RiClipboardLine,RiFileCopyLine} from '@remixicon/vue'
 import {toast} from 'vue-sonner'

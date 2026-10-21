@@ -7,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import ReuseCard from '../../ReuseCard.vue'
 import type { Reuse, ReuseV2 } from '@datagouv/components-next'
 

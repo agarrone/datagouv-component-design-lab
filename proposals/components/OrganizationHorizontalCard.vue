@@ -14,10 +14,10 @@
         :show-type="false"
         :organization
         size="sm"
-        color-class="text-gray-title"
+        color-class="lab-ds-u-text-gray-title"
       />
     </ObjectCardHeader>
-    <div class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center">
+    <div class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center">
       <template v-if="type !== 'other'">
         <OwnerType
           class="mb-0"
@@ -26,7 +26,7 @@
       </template>
       <div
         v-if="'metrics' in organization"
-        class="text-gray-medium flex items-center text-sm gap-0.5"
+        class="lab-ds-u-text-gray-medium flex items-center lab-ds-u-text-sm lab-ds-u-gap-0-5"
         :aria-label="t('{datasets} jeux de donn\u00e9es, {dataservices} API et {reuses} r\u00e9utilisations', {
           datasets: organization.metrics.datasets,
           dataservices: organization.metrics.dataservices,
@@ -39,15 +39,15 @@
         /> {{ summarize(organization.metrics.datasets) }}
         <RiTerminalLine
           aria-hidden="true"
-          class="size-3.5 ml-1"
+          class="size-3.5 lab-ds-u-ml-1"
         /> {{ summarize(organization.metrics.dataservices) }}
         <RiLineChartLine
           aria-hidden="true"
-          class="size-3.5 ml-1"
+          class="size-3.5 lab-ds-u-ml-1"
         /> {{ summarize(organization.metrics.reuses) }}
         <RiStarLine
           aria-hidden="true"
-          class="size-3.5 ml-1"
+          class="size-3.5 lab-ds-u-ml-1"
         /> {{ summarize(organization.metrics.followers) }}
       </div>
     </div>
@@ -59,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiBuilding2Line, RiDatabase2Line, RiLineChartLine, RiStarLine, RiTerminalLine } from '@remixicon/vue'
 import { computed } from 'vue'

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {computed} from 'vue'
 import Avatar from './Avatar.vue'
 import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
@@ -18,9 +19,9 @@ const linked=computed(()=>!deleted.value&&props.withLink&&Boolean(props.user.pag
   </span>
 </template>
 <style scoped>
-.proposed-avatar-with-name { display:inline-flex; align-items:center; gap:8px; max-width:100%; min-width:0; font-size:14px; line-height:1.5; color:#161616; vertical-align:middle; }
+.proposed-avatar-with-name { display:inline-flex; align-items:center; gap:var(--lab-ds-space-8); max-width:100%; min-width:0; font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); color:var(--lab-ds-text); vertical-align:middle; }
 .proposed-avatar-name { min-width:0; overflow-wrap:anywhere; }
-.proposed-avatar-name--link { color:#000091; text-decoration:underline; text-underline-offset:3px; }
-.proposed-avatar-name--link:hover { color:#1212ff; }
-.proposed-avatar-name--link:focus-visible { outline:2px solid #0a76f6; outline-offset:2px; border-radius:2px; }
+.proposed-avatar-name--link { color:var(--lab-ds-brand); text-decoration:underline; text-underline-offset:3px; }
+.proposed-avatar-name--link:hover { color:var(--lab-ds-brand-hover); }
+.proposed-avatar-name--link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); border-radius:var(--lab-ds-radius-technical); }
 </style>

@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import { computed } from 'vue'
 import { removeMarkdownSync } from '../../vendor/datagouv-components/src/functions/markdown'
 
@@ -28,5 +29,5 @@ const shortDescription = computed(() => {
 </script>
 
 <style scoped>
-.lab-card-description { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; overflow-wrap:anywhere; margin:0; color:#555; font:400 14px/22px Marianne,Arial,sans-serif; }
+.lab-card-description { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; overflow-wrap:anywhere; margin:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
 </style>

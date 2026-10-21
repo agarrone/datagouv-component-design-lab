@@ -3,14 +3,14 @@
     class="lab-comment border-l-2 pl-2.5 "
     :class="{
       'border-datagouv-dark': isProducer,
-      'border-gray-default': !isProducer,
+      'lab-ds-u-border-gray-default': !isProducer,
     }"
   >
     <div class="flex flex-col md:flex-row md:justify-between md:items-center">
       <DiscussionCommentHeader
         :comment
         :subject
-        class="mb-1"
+        class="lab-ds-u-mb-1"
       />
       <div class="lab-comment-actions">
         <BrandedButton
@@ -43,13 +43,14 @@
         />
       </div>
     </div>
-    <ReadMore class="prose whitespace-pre-line max-w-none text-sm">
+    <ReadMore class="prose whitespace-pre-line max-w-none lab-ds-u-text-sm">
       {{ comment.content }}
     </ReadMore>
   </div>
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import {computed} from 'vue'
 import {useNuxtApp} from '/src/compat/application/runtime.js'

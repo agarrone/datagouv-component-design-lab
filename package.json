@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "npm run check:preview-styles && npm run inventory && vite build",
+    "build": "npm run check:preview-styles && npm run check:foundations && npm run inventory && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "inventory": "node scripts/inventory.mjs && node scripts/component-options.mjs && node scripts/sync-audit.mjs",
     "source:check": "node scripts/check-upstream.mjs && node scripts/check-cdata-components.mjs",
@@ -12,7 +12,9 @@
     "audit:usage": "node scripts/audit-component-usage.mjs --write-status",
     "test:usage-audit": "node --test scripts/audit-component-usage.test.mjs",
     "source:import-cdata": "node scripts/import-cdata-components.mjs",
-    "test:categories": "node --test scripts/component-categories.test.mjs"
+    "test:categories": "node --test scripts/component-categories.test.mjs",
+    "foundations:generate": "node scripts/proposal-foundations.mjs",
+    "check:foundations": "node scripts/proposal-foundations.mjs --check && node scripts/check-proposal-foundations.mjs"
   },
   "dependencies": {
     "@e965/xlsx": "^0.20.3",

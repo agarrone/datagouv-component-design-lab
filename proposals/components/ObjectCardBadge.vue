@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../shared/foundations.css'
 import type {Component} from 'vue'
 import '../shared/badge.css'
 defineProps<{icon:Component}>()

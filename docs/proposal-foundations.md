@@ -1,0 +1,67 @@
+# Fondamentaux communs des propositions
+
+Base de travail du 21 octobre 2026, à valider pour le futur design system. Visible dans **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`).
+
+## Source unique
+
+Les valeurs et leurs usages sont définis dans [data/proposal-foundations.json](../data/proposal-foundations.json). La commande `npm run foundations:generate` produit [foundations.css](../proposals/shared/foundations.css). Les variables utilisent le préfixe `--lab-ds-`.
+
+Toutes les 98 propositions Vue importent cette base, y compris celles qui délèguent leur rendu à une proposition partagée. Les styles propres aux propositions et leurs utilitaires de présentation utilisent les jetons. Les utilitaires préfixés `lab-ds-u-` ne redéfinissent aucune classe du thème source.
+
+Les propositions d’illustrations conservent les SVG Figma fournis : leur palette embarquée constitue une exception d’asset, et non une palette d’interface à reproduire dans de nouveaux contrôles. Les sous-composants métier natifs non redessinés conservent leurs styles actuels. Aucun fichier vendor ni jeton de la version actuelle n’est modifié.
+
+## Décisions communes
+
+| Domaine | Règle retenue |
+| --- | --- |
+| Texte | Principal #161616 ; secondaire #555555 ; discret #777777. Le discret n’est pas le choix par défaut pour un petit texte sur fond coloré. |
+| Surfaces | Blanc ; secondaire #F6F6F6 ; sélection neutre #F0F0F0. |
+| Bordures | #E5E5E5 pour séparer ; cette couleur seule ne suffit pas à identifier un contrôle interactif. |
+| Liens et focus | Bleu France #000091 pour la marque et les liens ; focus commun #0A76F6, anneau 2 px, distance 3 px. |
+| États | Information, succès, attention et erreur ont chacun texte, fond et bordure. Toujours accompagner la couleur d’un libellé ou d’un pictogramme explicite. |
+| Catégories | Rose et turquoise expriment des catégories, pas un succès ou une erreur. Les couleurs des pictogrammes de formats de fichiers restent métier. |
+| Polices | Marianne pour l’interface ; Noto Sans Mono, déjà chargée dans le lab, pour le code. Code en 12/20 ; glyphes de chargement en monospace générique. |
+| Hiérarchie | Titre de composant 16/24, graisse 600 ; corps 14/22, graisse 400 ; contrôle 14/20 ; métadonnées 12/18 ; section 24/32. |
+| Chiffres | Chiffres tabulaires pour dates, scores et comparaisons ; pas de monospace imposée à tout texte numérique. |
+| Espacement | Échelle 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64 px. Repères : icône/libellé 8 ; éléments liés 12 ; carte/bandeau 16 ; section 24. |
+| Coins | 6 px standard ; 2 px technique ; 999 px pilule ; 50 % cercle. Rayon intérieur de 5 px pour une image dans un cadre de 6 px avec bordure de 1 px. |
+| Dimensions | Icônes 14 compact, 16 standard, 20 repère majeur ; commandes 32 compact, 36 dense, 40 standard. Viser 44 px pour une cible tactile. |
+| Élévation | Une ombre commune pour les menus et popovers ; les cartes ordinaires restent sans ombre. |
+| Mouvement | Accordéon 250 ms ; shimmer 2000 ms ; glyphes Agents 80 ms. Réduction de mouvement conservée. Aucun mouvement supplémentaire ajouté. |
+
+## Harmonisations réalisées
+
+- Les styles ne recopient plus leurs couleurs, familles de police, rayons ou espacements standard.
+- Le focus des cartes, des contrôles de qualité, des liens et de la navigation utilise le même bleu.
+- Les métriques de cartes et scores de qualité passent de 13/20 à 12/18 ; le chargement Agents conserve son exception documentée de 13/20.
+- Les bandeaux, badges et notifications utilisent les mêmes familles de couleurs sémantiques. Les roses sont rattachés à une palette de catégorie commune.
+- Les écarts de 10 px entre éléments deviennent 12 px. L’ajustement optique de 3 px reste réservé au centrage des icônes et au cadre du logo, sans devenir un rythme de disposition.
+- Les arrondis utilitaires des propositions rejoignent les rôles standard, technique ou pilule.
+
+## Exceptions et limites intentionnelles
+
+Les tailles issues d’une prop (`Avatar.size`, variantes d’un nom, etc.) restent paramétrables. Les images, graphiques, hauteurs de squelettes, dimensions de conteneurs, seuils de qualité et formules de grille restent adaptés à leur contenu. Les points de rupture CSS sont conservés en valeurs littérales : les propriétés personnalisées ne remplacent pas directement une condition `@media` ou `@container`.
+
+Un fichier de jetons ne garantit pas à lui seul l’accessibilité de chaque composition. Vérifier le contraste dans le contexte réel, l’usage du clavier, le contenu long et les surfaces interactives. La cible tactile de 44 px est un repère de conception ; les contrôles natifs imbriqués et les tailles compactes existantes demandent une revue dédiée avant de garantir une conformité générale.
+
+## Contrôle des futures propositions
+
+1. Choisir un rôle existant avant de créer un jeton. Si un nouveau rôle est nécessaire, le documenter dans le JSON, puis régénérer le CSS.
+2. Importer `foundations.css` dans la proposition ; composer avec les styles partagés existants.
+3. Éviter les valeurs isolées de couleur, police, rayon et espacement. Toute exception doit avoir une justification liée à un usage réel.
+4. Vérifier le composant isolé, ses variantes et un contexte de page pertinent ; ne pas altérer la version actuelle.
+5. Exécuter `npm run check:foundations` et le build. Le contrôle vérifie la synchronisation JSON/CSS, les imports des 98 propositions, les références aux jetons, leurs utilitaires et les valeurs de style isolées. Il s’exécute automatiquement pendant le build.
+
+## Références
+
+Les décisions combinent les [fondamentaux Agents](references/agents-design-2026-10-20.md), [Better Interface](references/jakub-interface-skills.md), [Geist Grid](references/vercel-geist-grid.md), [Vercel Guidelines](references/vercel-web-interface-guidelines.md), [Transitions.dev](references/transitions-dev.md) et les [chiffres tabulaires](references/tabular-numbers.md). Les choix de cette base sont des décisions proposées pour le lab, pas une reproduction exhaustive d’une de ces références.
+
+## Vérification de cette passe
+
+- 80 jetons synchronisés ; styles des 98 propositions Vue contrôlés.
+- 340 exemples montés en version actuelle et 340 en version proposée, sans erreur ni avertissement capturé.
+- Styles calculés vérifiés sur bandeaux, cartes, métadonnées et zones de code : rôle de texte, interligne, palette, coins et padding. Focus clavier de carte vérifié : 2 px, #0A76F6, décalage 3 px.
+- Page des fondamentaux et cartes vérifiées à 375 px sans débordement horizontal.
+- Build de production et intégrité des copies sources vérifiés.
+
+Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des composants natifs imbriqués.

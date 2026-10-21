@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../../shared/foundations.css'
 import DataserviceCard from '../../../DataserviceCard.vue'
 import type { Dataservice } from '@datagouv/components-next'
 import type { StyleValue } from 'vue'

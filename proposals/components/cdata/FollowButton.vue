@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useRuntimeConfig} from '/src/compat/application/runtime.js'

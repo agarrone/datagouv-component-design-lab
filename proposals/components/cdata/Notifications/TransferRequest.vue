@@ -6,7 +6,7 @@
     :title-link="link"
     :title-link-title="$t('Voir la demande')"
   >
-    <p class="flex items-center gap-1 m-0 text-sm">
+    <p class="flex items-center lab-ds-u-gap-1 m-0 lab-ds-u-text-sm">
       {{ $t('de') }}
       <AvatarWithName
         v-if="notification.details.transfer_owner.class == 'User'"
@@ -23,7 +23,7 @@
         :with-link="false"
       />
     </p>
-    <p class="flex items-center gap-1 m-0 text-sm">
+    <p class="flex items-center lab-ds-u-gap-1 m-0 lab-ds-u-text-sm">
       {{ $t('à') }}
       <AvatarWithName
         v-if="notification.details.transfer_recipient.class == 'User'"
@@ -44,6 +44,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useMe} from '/src/compat/application/runtime.js'

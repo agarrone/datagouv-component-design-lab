@@ -2,7 +2,7 @@
   <section class="proposal-subject-notifications" :aria-labelledby="titleId">
     <h2
       :id="titleId"
-      class="m-0 mb-3 flex items-center gap-1 text-sm font-bold"
+      class="m-0 lab-ds-u-mb-3 flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm font-bold"
     >
       <RiNotification3Line
         class="size-4"
@@ -12,7 +12,7 @@
     </h2>
     <p
       v-if="failed"
-      class="m-0 text-sm text-gray-medium"
+      class="m-0 lab-ds-u-text-sm lab-ds-u-text-gray-medium"
     >
       {{ t('Vos notifications sur {subject} n\'ont pas pu être chargées.', { subject }) }}
     </p>
@@ -20,14 +20,14 @@
       v-else-if="!resolved"
       class="animate-pulse-placeholder space-y-3"
     >
-      <div class="bg-gray-200 h-3 w-full" />
-      <div class="bg-gray-200 h-6 w-1/3" />
+      <div class="lab-ds-u-bg-gray-200 h-3 w-full" />
+      <div class="lab-ds-u-bg-gray-200 h-6 w-1/3" />
     </div>
     <template v-else>
-      <p class="m-0 mb-3 text-sm">
+      <p class="m-0 lab-ds-u-mb-3 lab-ds-u-text-sm">
         {{ sentence }}
       </p>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div class="flex flex-wrap items-center lab-ds-u-gap-x-4 lab-ds-u-gap-y-2">
         <BrandedButton
           v-if="action"
           color="secondary"
@@ -40,7 +40,7 @@
         </BrandedButton>
         <CdataLink
           to="/admin/me/notifications"
-          class="link text-sm"
+          class="link lab-ds-u-text-sm"
         >
           {{ t('Gérer mes notifications') }}
         </CdataLink>
@@ -50,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useTranslation} from '/src/compat/application/runtime.js'

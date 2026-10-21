@@ -12,13 +12,14 @@
       v-if="img"
       :src="img"
       alt=""
-      :class="{ 'bg-white rounded-full': url }"
+      :class="{ 'lab-ds-u-bg-white lab-ds-u-rounded-full': url }"
     >
     {{ badge.label }}
   </component>
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/badge.css'
 import { computedAsync } from '@vueuse/core'
 import type { RouteLocationRaw } from 'vue-router'
@@ -41,9 +42,9 @@ const img = computedAsync(async () => {
 </script>
 
 <style scoped>
-.proposed-dataset-label { border-radius:999px; gap:6px; }
-.proposed-dataset-label img { width:16px; height:16px; object-fit:contain; flex-shrink:0; }
-.proposed-dataset-label--link { color:#000091; border-color:#b8c7ff; background:#e8edff; text-decoration:underline; text-underline-offset:2px; }
-.proposed-dataset-label--link:hover { background:#c2d1ff; }
-.proposed-dataset-label--link:focus-visible { outline:2px solid #0a76f6; outline-offset:2px; }
+.proposed-dataset-label { border-radius:var(--lab-ds-radius-pill); gap:var(--lab-ds-space-6); }
+.proposed-dataset-label img { width:var(--lab-ds-icon); height:var(--lab-ds-icon); object-fit:contain; flex-shrink:0; }
+.proposed-dataset-label--link { color:var(--lab-ds-brand); border-color:var(--lab-ds-info-border); background:var(--lab-ds-info-bg); text-decoration:underline; text-underline-offset:2px; }
+.proposed-dataset-label--link:hover { background:var(--lab-ds-info-hover); }
+.proposed-dataset-label--link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

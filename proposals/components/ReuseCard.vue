@@ -1,7 +1,7 @@
 <template>
   <article class="lab-content-card lab-reuse-card fr-enlarge-link flex flex-col relative">
     <div class="lab-reuse-body flex flex-col flex-1 order-2">
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col lab-ds-u-gap-2">
         <component
           :is="titleTag"
           class="lab-card-heading"
@@ -13,8 +13,8 @@
             {{ reuse.title }}
           </AppLink>
         </component>
-        <div class="text-sm m-0 text-gray-medium flex flex-col gap-2">
-          <div class="text-sm mb-0 flex flex-wrap gap-x-1 gap-y-1 items-center">
+        <div class="lab-ds-u-text-sm m-0 lab-ds-u-text-gray-medium flex flex-col lab-ds-u-gap-2">
+          <div class="lab-ds-u-text-sm mb-0 flex flex-wrap lab-ds-u-gap-x-1 lab-ds-u-gap-y-1 items-center">
             <ObjectCardOwner
               :organization="reuse.organization"
               :owner="reuse.owner"
@@ -56,17 +56,17 @@
       </div>
       <ul
         v-if="reuse.private || reuse.archived"
-        class="list-none m-0 p-0 mt-4 px-4 -mb-2"
+        class="list-none m-0 p-0 lab-ds-u-mt-4 lab-ds-u-px-4 -mb-2"
       >
         <li v-if="reuse.private">
-          <p class="fr-badge fr-badge--sm fr-badge--mention-grey text-gray-medium">
-            <RiLockLine class="size-3.5 mr-0.5" />
+          <p class="fr-badge fr-badge--sm fr-badge--mention-grey lab-ds-u-text-gray-medium">
+            <RiLockLine class="size-3.5 lab-ds-u-mr-0-5" />
             {{ t('Brouillon') }}
           </p>
         </li>
         <li v-if="reuse.archived">
-          <p class="fr-badge fr-badge--sm fr-badge--mention-grey text-gray-medium">
-            <RiLockLine class="size-3.5 mr-0.5" />
+          <p class="fr-badge fr-badge--sm fr-badge--mention-grey lab-ds-u-text-gray-medium">
+            <RiLockLine class="size-3.5 lab-ds-u-mr-0-5" />
             {{ t('Archivé') }}
           </p>
         </li>
@@ -76,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiLockLine } from '@remixicon/vue'
 import { computed } from 'vue'

@@ -6,13 +6,14 @@
     :title-link="`/admin/harvesters/${notification.details.source.id}`"
     :title-link-title="$t('Voir le moissonneur')"
   >
-    <p class="m-0 text-sm">
+    <p class="m-0 lab-ds-u-text-sm">
       {{ notification.details.source.name }}
     </p>
   </NotificationLayout>
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import {useTranslation} from '/src/compat/application/runtime.js'

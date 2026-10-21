@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {computed,ref,watch} from 'vue'
 import {RiUserLine} from '@remixicon/vue'
 import {isDeletedUser} from '../../vendor/datagouv-components/src/functions/users'
@@ -19,7 +20,7 @@ const dimensions=computed(()=>({width:`${props.size}px`,height:`${props.size}px`
   </span>
 </template>
 <style scoped>
-.proposed-avatar { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; box-sizing:border-box; overflow:hidden; border:1px solid #e5e5e5; border-radius:50%; background:#f6f6f6; color:#555; font-family:inherit; font-weight:500; line-height:1; vertical-align:middle; }
-.proposed-avatar--square { border-radius:6px; }
+.proposed-avatar { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; box-sizing:border-box; overflow:hidden; border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius-round); background:var(--lab-ds-surface-subtle); color:var(--lab-ds-text-secondary); font-family:var(--lab-ds-font-sans); font-weight:var(--lab-ds-weight-medium); line-height:1; vertical-align:middle; }
+.proposed-avatar--square { border-radius:var(--lab-ds-radius); }
 .proposed-avatar img { width:100%; height:100%; object-fit:cover; }
 </style>

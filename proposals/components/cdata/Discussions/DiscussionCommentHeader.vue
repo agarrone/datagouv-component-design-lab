@@ -1,6 +1,6 @@
 <template>
-  <div class="lab-comment-header flex items-center space-x-2 text-xs/loose">
-    <div class="flex items-center space-x-1 text-mention-grey">
+  <div class="lab-comment-header flex items-center space-x-2 lab-ds-u-text-xs">
+    <div class="flex items-center space-x-1 lab-ds-u-text-mention-grey">
       <OrganizationLogo
         v-if="comment.posted_by_organization"
         :organization="comment.posted_by_organization"
@@ -60,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import Avatar from '../../Avatar.vue'
 import {computed} from 'vue'

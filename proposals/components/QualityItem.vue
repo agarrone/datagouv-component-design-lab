@@ -7,6 +7,7 @@
  </li>
 </template>
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {RiCheckLine,RiAlertLine} from '@remixicon/vue'
 import '../shared/quality.css'
 defineProps<{passed?:boolean|null,messagePassed:string,messageFailed:string}>()

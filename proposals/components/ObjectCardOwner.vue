@@ -5,7 +5,7 @@
   >
     <AppLink
       v-if="organizationUrl !== null"
-      class="link text-sm flex items-center relative z-[2]"
+      class="link lab-ds-u-text-sm flex items-center relative z-[2]"
       :to="organizationUrl || organization.page"
     >
       <OrganizationNameWithCertificate
@@ -15,12 +15,12 @@
     </AppLink>
     <span
       v-else
-      class="text-sm flex items-center"
+      class="lab-ds-u-text-sm flex items-center"
     >
       <OrganizationNameWithCertificate
         :organization
         size="sm"
-        color-class="text-gray-title"
+        color-class="lab-ds-u-text-gray-title"
       />
     </span>
   </div>
@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import { computed } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import { getOwnerName } from '../../vendor/datagouv-components/src/functions/owned'
@@ -55,8 +56,8 @@ const ownerName = computed(() => {
 </script>
 
 <style scoped>
-.lab-card-owner { min-width:0; color:#555; font:400 14px/20px Marianne,Arial,sans-serif; overflow-wrap:anywhere; }
+.lab-card-owner { min-width:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); overflow-wrap:anywhere; }
 .lab-card-owner :deep(.truncate) { white-space:normal; overflow:visible; text-overflow:clip; }
-.lab-card-owner :deep(a) { color:#555; background-image:none; text-decoration:underline; text-underline-offset:3px; }
-.lab-card-owner :deep(a:focus-visible) { outline:2px solid #000091; outline-offset:2px; }
+.lab-card-owner :deep(a) { color:var(--lab-ds-text-secondary); background-image:none; text-decoration:underline; text-underline-offset:3px; }
+.lab-card-owner :deep(a:focus-visible) { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

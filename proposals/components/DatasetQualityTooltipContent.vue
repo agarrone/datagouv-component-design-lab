@@ -67,6 +67,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/quality.css'
 import type { Quality } from '../../vendor/datagouv-components/src/types/datasets'
 import { useComponentsConfig } from '../../vendor/datagouv-components/src/config'

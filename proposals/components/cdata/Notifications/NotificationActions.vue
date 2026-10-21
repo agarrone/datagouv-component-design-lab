@@ -38,7 +38,7 @@
         v-for="action in actions"
         :key="action.label"
         type="button"
-        class="flex w-full items-center gap-2 px-3 py-2 text-left text-sm leading-tight text-gray-title hover:bg-gray-some disabled:opacity-50"
+        class="flex w-full items-center lab-ds-u-gap-2 lab-ds-u-px-3 lab-ds-u-py-2 text-left lab-ds-u-text-sm leading-tight lab-ds-u-text-gray-title hover:bg-gray-some disabled:opacity-50"
         :disabled="pending"
         @click="apply(action)"
       >
@@ -46,11 +46,11 @@
       </button>
       <CdataLink
         to="/admin/me/notifications"
-        class="flex w-full items-center gap-2 px-3 py-2 border-t border-gray-default text-sm leading-tight text-gray-title !bg-none !no-underline hover:!bg-gray-some"
+        class="flex w-full items-center lab-ds-u-gap-2 lab-ds-u-px-3 lab-ds-u-py-2 border-t lab-ds-u-border-gray-default lab-ds-u-text-sm leading-tight lab-ds-u-text-gray-title !bg-none !no-underline hover:!lab-ds-u-bg-gray-some"
         @click="open = false"
       >
         <RiSettings3Line
-          class="size-4 shrink-0 text-gray-medium"
+          class="size-4 shrink-0 lab-ds-u-text-gray-medium"
           aria-hidden="true"
         />
         {{ t('Gérer mes notifications') }}
@@ -60,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 import {useId} from 'vue'
 

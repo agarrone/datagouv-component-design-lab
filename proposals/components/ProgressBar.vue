@@ -5,6 +5,7 @@
  </div>
 </template>
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {computed} from 'vue'
 import '../shared/quality.css'
 const props=withDefaults(defineProps<{value:number,max?:number,barClass?:string}>(),{max:1,barClass:''})

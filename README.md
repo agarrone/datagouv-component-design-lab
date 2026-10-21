@@ -112,6 +112,10 @@ Les règles du projet [Agents data.gouv.fr](https://datagouv-agent.opendatateam.
 
 Cette référence sert de base de discussion pour les prochaines revues. Examiner son périmètre et ses exceptions avant de proposer une adaptation : les choix de l’assistant dense ne s’appliquent pas automatiquement aux pages publiques. Les composants actuels, leurs statuts et les propositions restent indépendants de ce relevé.
 
+### Fondamentaux des propositions
+
+La page **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`) documente la base commune des propositions : couleurs, typographie, espacements, coins, dimensions et mouvement. Les valeurs viennent de `data/proposal-foundations.json` et alimentent les styles des 98 propositions Vue. Consulter [les règles, exceptions et contrôles](docs/proposal-foundations.md) avant de concevoir une proposition. `npm run foundations:generate` régénère le CSS ; `npm run check:foundations` vérifie sa cohérence et fait partie du build.
+
 ### Ressources pour le design des composants
 
 Les [skills de Jakub Krehel](https://jakub.kr/skills#better-interface) sont documentés dans [une référence dédiée](docs/references/jakub-interface-skills.md) : `better-interface`, ses six domaines et des outils complémentaires pour explorer les états et variantes. Ce sont des pistes adaptables aux usages de data.gouv.fr et aux fondamentaux du projet, sans application obligatoire ni activation automatique.

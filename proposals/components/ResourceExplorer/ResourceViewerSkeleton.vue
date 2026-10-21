@@ -21,7 +21,7 @@
       aria-hidden="true"
       class="pointer-events-none"
     >
-      <div class="flex shrink-0 items-center border-b border-gray-default p-2">
+      <div class="flex shrink-0 items-center border-b lab-ds-u-border-gray-default lab-ds-u-p-2">
         <TabList class="max-w-full overflow-x-auto">
           <Tab
             v-for="tab in tabsOptions"
@@ -49,13 +49,13 @@
     <!-- Other non-tabular previews (JSON, map…) — a simple placeholder for now. -->
     <div
       v-else
-      class="p-4"
+      class="lab-ds-u-p-4"
       :class="fullscreen ? 'min-h-0 flex-1' : ''"
       role="status"
       :aria-label="t('Chargement de l\'aperçu…')"
     >
       <div
-        class="w-full rounded bg-gray-200"
+        class="w-full lab-ds-u-rounded lab-ds-u-bg-gray-200"
         :class="fullscreen ? 'h-full' : 'h-96'"
       />
     </div>
@@ -63,6 +63,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import PdfSkeleton from '../../../vendor/datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue'
 import TabularSkeleton from '../../../vendor/datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue'
 import TabGroup from '../../../vendor/datagouv-components/src/components/Tabs/TabGroup.vue'

@@ -4,7 +4,7 @@
     :title="$t('Votre adhésion a été refusée')"
     :notification="notification"
   >
-    <p class="m-0 text-sm flex items-center gap-1 break-words">
+    <p class="m-0 lab-ds-u-text-sm flex items-center lab-ds-u-gap-1 break-words">
       {{ $t('pour rejoindre') }}
       <PreviewComponentOrganizationOwner
         :organization="notification.details.organization as OrganizationReference"
@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
 import PreviewComponentOrganizationOwner from '/vendor/cdata-components/OrganizationOwner.vue'

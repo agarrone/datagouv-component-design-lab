@@ -1,5 +1,6 @@
 <template><div class="proposal-contact"><component :is="link?'a':'span'" :href="link" :rel="link?'ugc nofollow noopener':undefined" :target="link?'_blank':undefined" :title="label">{{label || t('Contact non renseigné')}}</component><span v-if="role" class="proposal-contact-role">{{role}}</span></div></template>
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/metadata.css'
 import {computed} from 'vue'
 import {useTranslation} from '/src/compat/application/runtime.js'

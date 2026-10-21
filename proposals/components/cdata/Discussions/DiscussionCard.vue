@@ -1,5 +1,5 @@
 <template>
-  <article class="lab-discussion p-4 border border-gray-default rounded space-y-3">
+  <article class="lab-discussion lab-ds-u-p-4 border lab-ds-u-border-gray-default lab-ds-u-rounded space-y-3">
     <ThreadHeader
       :thread
       :subject
@@ -14,7 +14,7 @@
       keypath="Discussion close par {author} le {date}"
     >
       <template #author>
-        <span class="inline-flex items-center space-x-1 text-mention-grey">
+        <span class="inline-flex items-center space-x-1 lab-ds-u-text-mention-grey">
           <OrganizationLogo
             v-if="thread.closed_by_organization"
             :organization="thread.closed_by_organization"
@@ -54,7 +54,7 @@
       >
         <ReadMore
           v-if="index == 0"
-          class="prose whitespace-pre-line max-w-none text-sm"
+          class="prose whitespace-pre-line max-w-none lab-ds-u-text-sm"
         >
           {{ comment.content }}
         </ReadMore>
@@ -100,6 +100,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import Avatar from '../../Avatar.vue'
 import {ref} from 'vue'

@@ -43,12 +43,12 @@
         v-if="dataset.acronym"
         #extra
       >
-        <small class="flex-1 ml-2">{{ dataset.acronym }}</small>
+        <small class="flex-1 lab-ds-u-ml-2">{{ dataset.acronym }}</small>
       </template>
     </ObjectCardHeader>
     <div
       v-if="dataset.organization || dataset.owner"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="dataset.organization"
@@ -57,7 +57,7 @@
       />
       <TranslationT
         tag="div"
-        class="w-full md:w-auto text-gray-medium whitespace-normal"
+        class="w-full md:w-auto lab-ds-u-text-gray-medium whitespace-normal"
         keypath="Mis à jour {date}"
       >
         <template #date>
@@ -75,13 +75,13 @@
         :text="getDescriptionShort(props.dataset)"
       />
     </slot>
-    <div class="lab-card-metrics flex flex-wrap items-center text-sm text-gray-medium">
-      <div class="flex text-gray-medium">
+    <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium">
+      <div class="flex lab-ds-u-text-gray-medium">
         <DatasetQualityInline :quality="dataset.quality" />
       </div>
-      <div class="lab-card-metrics flex flex-wrap items-center gap-3">
+      <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-gap-3">
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} vues | {n} vue | {n} vues', dataset.metrics.views)"
         >
           <RiEyeLine
@@ -90,7 +90,7 @@
           />{{ summarize(dataset.metrics.views) }}
         </p>
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} téléchargements des ressources | {n} téléchargement des ressources | {n} téléchargements des ressources', dataset.metrics.resources_downloads)"
         >
           <RiDownloadLine
@@ -99,7 +99,7 @@
           />{{ summarize(dataset.metrics.resources_downloads) }}
         </p>
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} réutilisations | {n} réutilisation | {n} réutilisations', dataset.metrics.reuses)"
         >
           <RiLineChartLine
@@ -108,7 +108,7 @@
           />{{ summarize(dataset.metrics.reuses) }}
         </p>
         <p
-          class="text-sm mb-0 flex items-center gap-0.5"
+          class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
           :aria-label="t('{n} abonnés | {n} abonné | {n} abonnés', dataset.metrics.followers)"
         >
           <RiStarLine
@@ -123,6 +123,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import type { RouteLocationRaw } from 'vue-router'
 import { RiArchiveLine, RiDatabase2Line, RiDownloadLine, RiEyeLine, RiLineChartLine, RiLockLine, RiStarLine } from '@remixicon/vue'

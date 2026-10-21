@@ -12,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/quality.css'
 import { computed } from 'vue'
 import File from '../../vendor/datagouv-components/src/components/Icons/File.vue'

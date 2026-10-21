@@ -17,25 +17,25 @@
             :size="24"
             :rounded="true"
           />
-          <p class="mx-2">
+          <p class="lab-ds-u-mx-2">
             <span v-if="me.id === user.id">{{ $t('Mon profil') }}</span>
             <span v-else>{{ user.first_name }} {{ user.last_name }}</span>
           </p>
         </template>
         <template v-else-if="organization">
-          <div class="border border-gray-default rounded p-0.5 bg-white">
+          <div class="border lab-ds-u-border-gray-default lab-ds-u-rounded lab-ds-u-p-0-5 lab-ds-u-bg-white">
             <OrganizationLogo
               :organization
               size-class="size-5"
             />
           </div>
-          <p class="mx-2 fr-col text-ellipsis whitespace-nowrap overflow-hidden">
+          <p class="lab-ds-u-mx-2 fr-col text-ellipsis whitespace-nowrap overflow-hidden">
             {{ organization.name }}
           </p>
         </template>
         <template v-else>
           <RiPlanetLine class="size-6" />
-          <p class="mx-2 fr-col text-ellipsis whitespace-nowrap overflow-hidden">
+          <p class="lab-ds-u-mx-2 fr-col text-ellipsis whitespace-nowrap overflow-hidden">
             {{ $t('Site') }}
           </p>
         </template>
@@ -218,6 +218,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../../../shared/foundations.css'
 import {inject,onUnmounted,useId,watchEffect} from 'vue'
 import {useMe,useRoute} from '../../../../../src/compat/application/runtime'
 import {useCurrentOwned} from '../../../../../vendor/cdata-runtime/composables/useCurrentOwned'
@@ -269,15 +270,15 @@ onUnmounted(() => unregister(id))
 </script>
 
 <style scoped>
-.lab-admin-menu { list-style:none; margin:0; padding:6px; border-bottom:1px solid #e5e5e5; color:#161616; background:white; min-width:0; }
-.lab-admin-menu-head { display:flex; align-items:center; gap:8px; width:100%; padding:8px; min-height:44px; border:1px solid transparent; border-radius:6px; text-align:left; color:#161616; font:600 14px/20px Marianne,Arial,sans-serif; }
-.lab-admin-menu-head:hover { background:#f6f6f6; }
-.lab-admin-menu-head:focus-visible { outline:2px solid #000091; outline-offset:2px; }
+.lab-admin-menu { list-style:none; margin:0; padding:var(--lab-ds-space-6); border-bottom:var(--lab-ds-stroke) solid var(--lab-ds-border); color:var(--lab-ds-text); background:var(--lab-ds-surface); min-width:0; }
+.lab-admin-menu-head { display:flex; align-items:center; gap:var(--lab-ds-space-8); width:100%; padding:var(--lab-ds-space-8); min-height:var(--lab-ds-target-touch); border:var(--lab-ds-stroke) solid transparent; border-radius:var(--lab-ds-radius); text-align:left; color:var(--lab-ds-text); font:var(--lab-ds-weight-semibold) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); }
+.lab-admin-menu-head:hover { background:var(--lab-ds-surface-subtle); }
+.lab-admin-menu-head:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-admin-menu-head p { flex:1; min-width:0; margin:0; font:inherit; overflow:hidden; text-overflow:ellipsis; white-space:normal; overflow-wrap:anywhere; }
-.lab-admin-menu-head > svg { width:20px; height:20px; flex-shrink:0; }
+.lab-admin-menu-head > svg { width:var(--lab-ds-icon-major); height:var(--lab-ds-icon-major); flex-shrink:0; }
 .lab-admin-menu-head > div { flex-shrink:0; }
 .lab-admin-menu-head::after,.lab-admin-menu-head::before { display:none; }
-.lab-admin-menu-list { list-style:none; margin:0; padding:0 2px 8px; }
-.lab-admin-group-label { list-style:none; padding:14px 8px 4px; margin:0; color:#555; font:500 12px/18px Marianne,Arial,sans-serif; }
+.lab-admin-menu-list { list-style:none; margin:0; padding:0 var(--lab-ds-space-2) var(--lab-ds-space-8); }
+.lab-admin-group-label { list-style:none; padding:14px var(--lab-ds-space-8) var(--lab-ds-space-4); margin:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
 .t-acc-chevron { margin-left:auto; flex-shrink:0; }
 </style>

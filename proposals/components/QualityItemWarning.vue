@@ -4,6 +4,7 @@
  </li>
 </template>
 <script setup lang="ts">
+import '../shared/foundations.css'
 import {RiAlertLine} from '@remixicon/vue'
 import '../shared/quality.css'
 defineProps<{qualityItem?:boolean,message:string}>()

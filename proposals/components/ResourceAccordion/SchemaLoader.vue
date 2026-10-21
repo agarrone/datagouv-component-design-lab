@@ -4,8 +4,8 @@
     :width="454"
     :height="40"
     :speed="2"
-    primary-color="#f3f3f3"
-    secondary-color="#ecebeb"
+    primary-color="var(--lab-ds-surface-subtle)"
+    secondary-color="var(--lab-ds-border)"
   >
     <rect
       x="0"
@@ -27,5 +27,6 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import { ContentLoader } from 'vue-content-loader'
 </script>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './foundations.css'
 import {nextTick,useTemplateRef,Teleport} from 'vue'
 import {Popover,PopoverButton,PopoverPanel} from '@headlessui/vue'
 import {autoPlacement,autoUpdate,offset,shift,useFloating} from '@floating-ui/vue'

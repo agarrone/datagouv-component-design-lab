@@ -1,8 +1,8 @@
 :root {
-  --acc-expand: 250ms;
-  --acc-collapse: 250ms;
-  --acc-chevron: 250ms;
-  --acc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --acc-expand: var(--lab-ds-duration-disclosure);
+  --acc-collapse: var(--lab-ds-duration-disclosure);
+  --acc-chevron: var(--lab-ds-duration-disclosure);
+  --acc-ease: var(--lab-ds-ease-disclosure);
 }
 
 /* grid-template-rows 0fr → 1fr gives a clean height animation

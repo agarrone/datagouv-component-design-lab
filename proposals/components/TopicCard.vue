@@ -30,7 +30,7 @@
 
     <div
       v-if="topic.organization || topic.owner"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="topic.organization"
@@ -40,7 +40,7 @@
       <TranslationT
         v-if="topic.last_modified"
         tag="div"
-        class="w-full md:w-auto text-gray-medium whitespace-normal"
+        class="w-full md:w-auto lab-ds-u-text-gray-medium whitespace-normal"
         keypath="Mis à jour {date}"
       >
         <template #date>
@@ -57,11 +57,11 @@
 
     <div
       v-if="showStats && (topic.nb_datasets || topic.nb_dataservices || topic.nb_reuses)"
-      class="flex items-center gap-4 mt-2 text-xs text-gray-medium"
+      class="flex items-center lab-ds-u-gap-4 lab-ds-u-mt-2 lab-ds-u-text-xs lab-ds-u-text-gray-medium"
     >
       <div
         v-if="topic.nb_datasets"
-        class="flex items-center gap-1"
+        class="flex items-center lab-ds-u-gap-1"
       >
         <RiDatabase2Line
           aria-hidden="true"
@@ -72,7 +72,7 @@
 
       <div
         v-if="topic.nb_dataservices"
-        class="flex items-center gap-1"
+        class="flex items-center lab-ds-u-gap-1"
       >
         <RiTerminalLine
           aria-hidden="true"
@@ -83,7 +83,7 @@
 
       <div
         v-if="topic.nb_reuses"
-        class="flex items-center gap-1"
+        class="flex items-center lab-ds-u-gap-1"
       >
         <RiLineChartLine
           aria-hidden="true"
@@ -98,6 +98,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiBookShelfLine, RiDatabase2Line, RiLineChartLine, RiTerminalLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'

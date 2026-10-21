@@ -12,7 +12,7 @@
         :key="index"
         class="proposal-metadata-schema"
       >
-        <p class="text-sm mb-0">
+        <p class="lab-ds-u-text-sm mb-0">
           {{ t('Les fichiers du jeu de données suivent le schéma :') }}
           <Tag
             type="secondary"
@@ -34,7 +34,7 @@
       </div>
       <p
         v-if="config.schemasSiteUrl && config.schemasSiteName"
-        class="text-sm"
+        class="lab-ds-u-text-sm"
       >
         <TranslationT keypath="Les schémas de données permettent de décrire des modèles de données, découvrez comment les schémas améliorent la qualité des données et quels sont les cas d'usages possibles sur {link}">
           <template #link>
@@ -52,6 +52,7 @@
 </template>
 
 <script setup lang="ts">
+import '../../shared/foundations.css'
 import '/proposals/shared/metadata.css'
 
 import { RiBook2Line, RiCodeBoxLine } from '@remixicon/vue'

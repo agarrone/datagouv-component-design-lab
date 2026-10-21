@@ -38,7 +38,7 @@
 
     <div
       v-if="chart.organization || chart.owner"
-      class="text-sm flex flex-wrap gap-x-2 gap-y-1 items-center"
+      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
         :organization="chart.organization"
@@ -47,7 +47,7 @@
       />
       <TranslationT
         tag="p"
-        class="text-sm whitespace-normal mb-0 text-gray-medium"
+        class="lab-ds-u-text-sm whitespace-normal mb-0 lab-ds-u-text-gray-medium"
         keypath="Mis à jour {date}"
       >
         <template #date>
@@ -61,9 +61,9 @@
     </div>
 
     <ObjectCardShortDescription :text="chart.description" />
-    <div class="lab-card-metrics flex flex-wrap items-center text-sm text-gray-medium mt-1">
+    <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1">
       <p
-        class="text-sm mb-0 flex items-center gap-0.5"
+        class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
         :aria-label="t('{n} vues | {n} vue | {n} vues', chart.metrics.views)"
       >
         <RiEyeLine
@@ -78,6 +78,7 @@
 </template>
 
 <script setup lang="ts">
+import '../shared/foundations.css'
 import '../shared/cards.css'
 import { computed } from 'vue'
 import { RiBarChartBoxLine, RiDeleteBinLine, RiEyeLine, RiLineChartLine, RiLockLine } from '@remixicon/vue'
