@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
-import {BrandedButton} from '@datagouv/components-next'
+
 import {RiSearchLine,RiLightbulbLine} from '@remixicon/vue'
 import {useTranslation} from '/src/compat/application/runtime.js'
 defineProps<{forumUrl:string}>()

@@ -100,6 +100,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import Avatar from '../../Avatar.vue'
@@ -109,7 +110,7 @@ import {useRoute} from '/src/compat/application/runtime.js'
 import {navigateTo} from '/src/compat/application/runtime.js'
 import PreviewComponentCdataLink from '/vendor/cdata-components/CdataLink.vue'
 
-import { BrandedButton, FormattedDate, OrganizationLogo, ReadMore, TranslationT } from '@datagouv/components-next'
+import { FormattedDate, OrganizationLogo, ReadMore, TranslationT } from '@datagouv/components-next'
 import ThreadHeader from './ThreadHeader.vue'
 import CommentBlock from './CommentBlock.vue'
 import RespondForm from '/vendor/cdata-components/Discussions/RespondForm.vue'

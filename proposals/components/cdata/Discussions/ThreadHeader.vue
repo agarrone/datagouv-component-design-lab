@@ -66,6 +66,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import CopyButton from '../../CopyButton.vue'
@@ -77,7 +78,7 @@ import {getDiscussionUrl} from '/vendor/cdata-runtime/utils/discussions.ts'
 import {isMeAdmin} from '/vendor/cdata-runtime/utils/auth.ts'
 
 import { RiLockLine } from '@remixicon/vue'
-import { BrandedButton } from '@datagouv/components-next'
+
 import ReportModal from '/vendor/cdata-components/Spam/ReportModal.vue'
 import DeleteThreadModal from '/vendor/cdata-components/Discussions/DeleteThreadModal.vue'
 import FollowToggle from '../Notifications/FollowToggle.vue'

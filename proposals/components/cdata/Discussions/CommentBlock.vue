@@ -50,13 +50,14 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '../../../shared/discussions.css'
 import {computed} from 'vue'
 import {useNuxtApp} from '/src/compat/application/runtime.js'
 import {isMeAdmin} from '/vendor/cdata-runtime/utils/auth.ts'
 
-import { BrandedButton, ReadMore } from '@datagouv/components-next'
+import { ReadMore } from '@datagouv/components-next'
 import ReportModal from '/vendor/cdata-components/Spam/ReportModal.vue'
 import DiscussionCommentHeader from './DiscussionCommentHeader.vue'
 import DeleteCommentModal from '/vendor/cdata-components/Discussions/DeleteCommentModal.vue'

@@ -121,6 +121,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../BrandedButton.vue'
 import '../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
@@ -133,7 +134,7 @@ import PreviewComponentLinkToSubject from '/vendor/cdata-components/LinkToSubjec
 import PreviewComponentTransferRequest from './TransferRequest.vue'
 import PreviewComponentInputGroup from '/vendor/cdata-components/InputGroup/InputGroup.vue'
 
-import { BrandedButton, OrganizationLogo } from '@datagouv/components-next'
+import { OrganizationLogo } from '@datagouv/components-next'
 import Avatar from '/proposals/components/Avatar.vue'
 import { RiCheckLine, RiCloseLine, RiSendPlaneLine } from '@remixicon/vue'
 import ModalClient from '/vendor/cdata-components/Modal/Modal.client.vue'

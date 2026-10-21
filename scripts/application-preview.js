@@ -1,3 +1,4 @@
+import {buttonVariants} from '../src/buttonExamples.js';
 import {proposalComponentIds} from '../src/proposalRegistry.js';
 import {discussionVariants} from '../src/discussionExamples.js';
 import {createApp,h,nextTick} from 'vue';
@@ -22,7 +23,7 @@ const selection=params.get('ids')?.split(',');
 const components=selection ? all.filter(c=>selection.includes(c.id)) : all.slice(Number(params.get('start')||0),Number(params.get('end')||all.length));
 const results=document.querySelector('#results'),progress=document.querySelector('#progress');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
-const variants=params.get('variants')==='foundations'?{...badgeVariants,...avatarVariants,...adminSidebarVariants,...cardVariants,...qualityVariants,...notificationVariants,...metadataVariants,...ownerAndEmptyVariants,...discussionVariants}:params.get('variants')==='discussions'?discussionVariants:params.get('variants')==='owner-empty'?ownerAndEmptyVariants:params.get('variants')==='metadata'?metadataVariants:params.get('variants')==='notifications'?notificationVariants:params.get('variants')==='quality'?qualityVariants:params.get('variants')==='cards'?cardVariants:params.get('variants')==='sidebar'?adminSidebarVariants:params.get('variants')==='avatars'?avatarVariants:params.get('variants')==='badges'?badgeVariants:{};
+const variants=params.get('variants')==='foundations'?{...buttonVariants,...badgeVariants,...avatarVariants,...adminSidebarVariants,...cardVariants,...qualityVariants,...notificationVariants,...metadataVariants,...ownerAndEmptyVariants,...discussionVariants}:params.get('variants')==='buttons'?buttonVariants:params.get('variants')==='discussions'?discussionVariants:params.get('variants')==='owner-empty'?ownerAndEmptyVariants:params.get('variants')==='metadata'?metadataVariants:params.get('variants')==='notifications'?notificationVariants:params.get('variants')==='quality'?qualityVariants:params.get('variants')==='cards'?cardVariants:params.get('variants')==='sidebar'?adminSidebarVariants:params.get('variants')==='avatars'?avatarVariants:params.get('variants')==='badges'?badgeVariants:{};
 const cases=components.flatMap(c=>variants[c.id]?variants[c.id].map(v=>({...c,case:v.label,props:v.props})):[c]);
 for(const c of cases){
  const errors=[],warnings=[];

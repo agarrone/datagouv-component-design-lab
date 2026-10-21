@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../BrandedButton.vue'
 import '../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
@@ -38,7 +39,7 @@ import {useAPI} from '/src/compat/application/runtime.js'
 import {watchEffect} from 'vue'
 import {computed} from 'vue'
 
-import { BrandedButton, LoadingBlock } from '@datagouv/components-next'
+import { LoadingBlock } from '@datagouv/components-next'
 import { RiStarLine } from '@remixicon/vue'
 import { ref } from 'vue'
 import type { PaginatedArray } from '/vendor/cdata-runtime/types/types'

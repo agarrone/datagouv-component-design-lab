@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 import BannerAction from '/proposals/components/BannerAction.vue'
@@ -52,7 +53,7 @@ import {ref} from 'vue'
 import {onMounted} from 'vue'
 import {watch} from 'vue'
 
-import { BrandedButton, toast } from '@datagouv/components-next'
+import { toast } from '@datagouv/components-next'
 import type { NotificationResolved, NotificationRuleKey, NotificationScope } from '/vendor/cdata-runtime/types/notifications'
 
 // The ways out a mail offers land here rather than acting on their own: a mail scanner

@@ -50,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
@@ -63,7 +64,7 @@ import {onMounted} from 'vue'
 import {humanJoin} from '/vendor/cdata-runtime/utils/helpers.ts'
 import {h} from 'vue'
 
-import { BrandedButton, throwOnNever, toast } from '@datagouv/components-next'
+import { throwOnNever, toast } from '@datagouv/components-next'
 import { RiNotification3Line, RiNotificationOffLine } from '@remixicon/vue'
 import type { Component } from 'vue'
 import CdataLink from '/vendor/cdata-components/CdataLink.vue'

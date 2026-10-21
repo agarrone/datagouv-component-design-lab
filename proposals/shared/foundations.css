@@ -51,6 +51,7 @@
   --lab-ds-weight-regular: 400;
   --lab-ds-weight-medium: 500;
   --lab-ds-weight-semibold: 600;
+  --lab-ds-text-action-large: 18px;
   --lab-ds-space-optical: 3px;
   --lab-ds-space-2: 2px;
   --lab-ds-space-4: 4px;
@@ -81,8 +82,10 @@
   --lab-ds-opacity-disabled: 0.5;
   --lab-ds-shadow-overlay: 0 8px 24px #16161614;
   --lab-ds-control-dense: 36px;
+  --lab-ds-control-mini: 28px;
   --lab-ds-duration-disclosure: 250ms;
   --lab-ds-ease-disclosure: cubic-bezier(0.22, 1, 0.36, 1);
   --lab-ds-duration-shimmer: 2000ms;
   --lab-ds-duration-glyph: 80ms;
+  --lab-ds-duration-spin: 1000ms;
 }

@@ -1241,5 +1241,16 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Discussions/ThreadHeader.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "buttons-01",
+    "component": "BrandedButton",
+    "title": "Une hiérarchie commune pour les actions",
+    "status": "brouillon",
+    "problem": "Le texte et les icônes changent fortement de taille suivant la variante ; les actions tertiaires déplacent leur conteneur par des marges négatives. Les actions iconiques ont besoin d’un libellé accessible conservé.",
+    "intention": "Primaire bleu France, secondaire encadré, tertiaire discret, géométrie et focus communs. Taille compacte 32 px, standard 40 px, icône 16 px ; libellé conservé pendant le chargement et interactions désactivées explicitement. API et héritage des bandeaux préservés ; détails dans proposals/buttons-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/BrandedButton.vue",
+    "reviewUrl": ""
   }
 ]

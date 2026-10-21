@@ -10,7 +10,7 @@ Le futur design system de data.gouv.fr doit conserver une apparence et des inter
 
 Les valeurs et leurs usages sont définis dans [data/proposal-foundations.json](../data/proposal-foundations.json). La commande `npm run foundations:generate` produit [foundations.css](../proposals/shared/foundations.css). Les variables utilisent le préfixe `--lab-ds-`.
 
-Toutes les 98 propositions Vue importent cette base, y compris celles qui délèguent leur rendu à une proposition partagée. Les styles propres aux propositions et leurs utilitaires de présentation utilisent les jetons. Les utilitaires préfixés `lab-ds-u-` ne redéfinissent aucune classe du thème source.
+Toutes les 99 propositions Vue importent cette base, y compris celles qui délèguent leur rendu à une proposition partagée. Les styles propres aux propositions et leurs utilitaires de présentation utilisent les jetons. Les utilitaires préfixés `lab-ds-u-` ne redéfinissent aucune classe du thème source.
 
 Les propositions d’illustrations conservent les SVG Figma fournis : leur palette embarquée constitue une exception d’asset, et non une palette d’interface à reproduire dans de nouveaux contrôles. Les sous-composants métier natifs non redessinés conservent leurs styles actuels. Aucun fichier vendor ni jeton de la version actuelle n’est modifié.
 
@@ -31,7 +31,7 @@ Les propositions d’illustrations conservent les SVG Figma fournis : leur palet
 | Coins | 6 px standard ; 2 px technique ; 999 px pilule ; 50 % cercle. Rayon intérieur de 5 px pour une image dans un cadre de 6 px avec bordure de 1 px. |
 | Dimensions | Icônes 14 compact, 16 standard, 20 repère majeur ; commandes 32 compact, 36 dense, 40 standard. Viser 44 px pour une cible tactile. |
 | Élévation | Une ombre commune pour les menus et popovers ; les cartes ordinaires restent sans ombre. |
-| Mouvement | Accordéon 250 ms ; shimmer 2000 ms ; glyphes Agents 80 ms. Réduction de mouvement conservée. Aucun mouvement supplémentaire ajouté. |
+| Mouvement | Accordéon 250 ms ; shimmer 2000 ms ; glyphes Agents 80 ms ; témoin de bouton 1000 ms. Réduction de mouvement conservée. |
 
 ## Harmonisations réalisées
 
@@ -41,6 +41,10 @@ Les propositions d’illustrations conservent les SVG Figma fournis : leur palet
 - Les bandeaux, badges et notifications utilisent les mêmes familles de couleurs sémantiques. Les roses sont rattachés à une palette de catégorie commune.
 - Les écarts de 10 px entre éléments deviennent 12 px. L’ajustement optique de 3 px reste réservé au centrage des icônes et au cadre du logo, sans devenir un rythme de disposition.
 - Les arrondis utilitaires des propositions rejoignent les rôles standard, technique ou pilule.
+
+## Boutons
+
+La [proposition de boutons](../proposals/buttons-01.md) précise la hiérarchie bleu France, les tailles et les états. Les règles sont visibles dans **Fondamentaux des propositions → Boutons**. La proposition partagée de BrandedButton s’applique aux boutons imbriqués en mode proposition.
 
 ## Iconographie
 
@@ -58,15 +62,15 @@ Un fichier de jetons ne garantit pas à lui seul l’accessibilité de chaque co
 2. Importer `foundations.css` dans la proposition ; composer avec les styles partagés existants.
 3. Éviter les valeurs isolées de couleur, police, rayon et espacement. Toute exception doit avoir une justification liée à un usage réel.
 4. Vérifier le composant isolé, ses variantes et un contexte de page pertinent ; ne pas altérer la version actuelle.
-5. Exécuter `npm run check:foundations` et le build. Le contrôle vérifie la synchronisation JSON/CSS, les imports des 98 propositions, les références aux jetons, leurs utilitaires et les valeurs de style isolées. Il s’exécute automatiquement pendant le build.
+5. Exécuter `npm run check:foundations` et le build. Le contrôle vérifie la synchronisation JSON/CSS, les imports des 99 propositions, les références aux jetons, leurs utilitaires et les valeurs de style isolées. Il s’exécute automatiquement pendant le build.
 
 ## Références
 
 Les décisions combinent les [fondamentaux Agents](references/agents-design-2026-10-20.md), [Better Interface](references/jakub-interface-skills.md), [Geist Grid](references/vercel-geist-grid.md), [Vercel Guidelines](references/vercel-web-interface-guidelines.md), [Transitions.dev](references/transitions-dev.md) et les [chiffres tabulaires](references/tabular-numbers.md). Les choix de cette base sont des décisions proposées pour le lab, pas une reproduction exhaustive d’une de ces références.
 
-## Vérification de cette passe
+## Vérification de la passe initiale de centralisation
 
-- 80 jetons synchronisés ; styles des 98 propositions Vue contrôlés.
+- 80 jetons synchronisés ; styles des 99 propositions Vue contrôlés.
 - 340 exemples montés en version actuelle et 340 en version proposée, sans erreur ni avertissement capturé.
 - Styles calculés vérifiés sur bandeaux, cartes, métadonnées et zones de code : rôle de texte, interligne, palette, coins et padding. Focus clavier de carte vérifié : 2 px, #0A76F6, décalage 3 px.
 - Page des fondamentaux et cartes vérifiées à 375 px sans débordement horizontal.

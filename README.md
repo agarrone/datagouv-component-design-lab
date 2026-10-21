@@ -114,7 +114,7 @@ Cette référence sert de base de discussion pour les prochaines revues. Examine
 
 ### Fondamentaux des propositions
 
-La page **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`) documente la base commune des propositions : couleurs, typographie, espacements, coins, dimensions et mouvement. Les valeurs viennent de `data/proposal-foundations.json` et alimentent les styles des 98 propositions Vue. Consulter [les règles, exceptions et contrôles](docs/proposal-foundations.md) avant de concevoir une proposition. `npm run foundations:generate` régénère le CSS ; `npm run check:foundations` vérifie sa cohérence et fait partie du build.
+La page **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`) documente la base commune des propositions : couleurs, typographie, espacements, coins, dimensions et mouvement. Les valeurs viennent de `data/proposal-foundations.json` et alimentent les styles des 99 propositions Vue. Consulter [les règles, exceptions et contrôles](docs/proposal-foundations.md) avant de concevoir une proposition. `npm run foundations:generate` régénère le CSS ; `npm run check:foundations` vérifie sa cohérence et fait partie du build.
 
 Les [règles communes d’iconographie](docs/proposal-iconography.md) précisent les tailles, l’alignement et le comportement des icônes, avec noms accessibles et cibles adaptées aux actions sans texte. Elles sont visibles dans les fondamentaux des propositions.
 
@@ -147,3 +147,5 @@ Les cartes des catégories et de la vue Travaux en cours proposent un toggle **P
 Les [propositions NoResults, OwnerTypeIcon et OrganizationOwner](proposals/identity-empty-01.md) couvrent l’état de recherche vide et l’identité des producteurs, avec des variantes accessibles depuis leurs fiches.
 
 - [Propositions pour les discussions](proposals/discussions-01.md)
+
+- [Boutons : hiérarchie, états et géométrie commune](proposals/buttons-01.md)

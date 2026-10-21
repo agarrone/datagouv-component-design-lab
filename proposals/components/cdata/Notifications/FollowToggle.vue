@@ -21,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandedButton from '../../BrandedButton.vue'
 import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
@@ -29,7 +30,7 @@ import {ref} from 'vue'
 import {watch} from 'vue'
 import {computed} from 'vue'
 
-import { BrandedButton, toast } from '@datagouv/components-next'
+import { toast } from '@datagouv/components-next'
 import { RiNotification3Line, RiNotificationOffLine } from '@remixicon/vue'
 import type { FollowState, NotificationEvent, NotificationScope } from '/vendor/cdata-runtime/types/notifications'
 

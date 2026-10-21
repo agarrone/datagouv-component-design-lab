@@ -249,6 +249,11 @@
           "name": "weight-semibold",
           "value": "600",
           "usage": "Titre et sélection"
+        },
+        {
+          "name": "text-action-large",
+          "value": "18px",
+          "usage": "Libellé de très grande action"
         }
       ]
     },
@@ -411,6 +416,11 @@
           "name": "control-dense",
           "value": "36px",
           "usage": "Commande dense, notamment navigation et qualité"
+        },
+        {
+          "name": "control-mini",
+          "value": "28px",
+          "usage": "Action très compacte, avec cible tactile étendue"
         }
       ]
     },
@@ -437,6 +447,11 @@
           "name": "duration-glyph",
           "value": "80ms",
           "usage": "Intervalle du chargeur Unicode Agents"
+        },
+        {
+          "name": "duration-spin",
+          "value": "1000ms",
+          "usage": "Rotation du témoin de chargement de bouton, désactivée en mouvement réduit"
         }
       ]
     }
@@ -453,6 +468,19 @@
       "Copie : le pictogramme de succès remplace celui de copie sans changer de taille ; un message textuel annonce le résultat. Suivi : aria-pressed et libellé décrivent l’état.",
       "Les logos et formats de fichier gardent leurs pictogrammes métier ; un pictogramme de format informatif porte un nom accessible. Les avatars adaptent leur pictogramme à la taille de l’identité.",
       "Le chevron d’accordéon conserve son mouvement existant et son mode réduit ; les autres icônes statiques ne reçoivent pas d’animation gratuite."
+    ]
+  },
+  "buttons": {
+    "rules": [
+      "Une action principale par groupe ; secondaire encadrée pour l’alternative, tertiaire pour une action de moindre importance. Bleu France pour la hiérarchie principale.",
+      "Taille standard 40 px et texte 14/20 ; compacte 32 px avec le même texte. Les variantes 28, 48 et 64 px restent disponibles pour les usages spécifiques.",
+      "Rayon 6 px, bordure 1 px et espacement icône/libellé 8 px. Pas de marge négative pour les boutons tertiaires. Les libellés longs peuvent revenir à la ligne.",
+      "Icône 16 px, ou 20 px pour les grands boutons. Le bouton iconique conserve un nom accessible même si le libellé visuel est masqué.",
+      "Focus commun visible ; survol et pression ne déplacent pas le contrôle. Le chargement conserve le libellé, expose aria-busy et bloque les activations supplémentaires.",
+      "Un lien navigue, un bouton déclenche une action. Les liens désactivés ne naviguent pas. Un seul repère de nouvel onglet est affiché ; ne pas multiplier les flèches externes.",
+      "Les boutons de danger et d’avertissement restent explicitement nommés. Le rouge ne sert pas à distinguer une simple action secondaire.",
+      "Cibles tactiles de 44 px avec un pointeur tactile. Les contrôles de navigation, menus et copies gardent leur rôle propre, avec le même focus et les mêmes principes d’accessibilité.",
+      "Les couleurs d’illustration sont des variantes héritées à réserver aux usages existants ; les nouvelles actions utilisent la hiérarchie principale."
     ]
   }
 }
