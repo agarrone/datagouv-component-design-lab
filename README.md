@@ -129,3 +129,5 @@ La page **Suivi → Sans proposition** (`#suivi/sans-proposition`) liste les com
 Les [propositions de notifications et d’abonnements](proposals/notifications-01.md) concernent 18 composants cdata, avec leurs variantes de lecture, de traitement et de suivi dans les fiches. Les flux d’activité restent dans leur version actuelle.
 
 Les [propositions de métadonnées](proposals/metadata-01.md) harmonisent les cinq sections du jeu de données, les listes de descriptions bibliothèque/cdata, les contacts, la copie et les plages de dates. Le header du laboratoire utilise le SVG fourni dans `public/design-lab-logo.svg`.
+
+Les cartes des catégories et de la vue Travaux en cours proposent un toggle **Proposition** lorsqu’une proposition existe. Chaque aperçu peut basculer indépendamment ; les boutons de version globaux des travaux en cours réinitialisent les choix individuels.

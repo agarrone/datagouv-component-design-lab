@@ -3,6 +3,9 @@ import { computed, ref } from 'vue';
 import Demo from './Demo.vue';
 import OriginTag from './OriginTag.vue';
 import LazyDemo from './LazyDemo.vue';
+import PreviewVersion from './PreviewVersion.vue';
+import PreviewVersionToggle from './PreviewVersionToggle.vue';
+import {proposalComponentIds} from './proposalRegistry';
 import inventory from '../data/components.json';
 import {previews} from './demoRegistry';
 const origins=Object.fromEntries(inventory.map(c=>[c.id,c.origin]));
@@ -10,6 +13,7 @@ import DemoBoundary from './DemoBoundary.vue';
 const props = defineProps({ page: { type: Object, required: true } });
 defineEmits(['open-component']);
 const layout = ref(props.page.layout || 'grid');
+const proposed = ref({});
 const count = computed(() => new Set(props.page.sections.flatMap(section => section.items.map(item => item.id))).size);
 </script>
 
@@ -22,10 +26,12 @@ const count = computed(() => new Set(props.page.sections.flatMap(section => sect
       <h2>{{ section.title }}</h2>
       <div class="type-examples" :class="{ 'type-examples-list': layout==='list' }">
         <article v-for="item in section.items" :key="item.key" class="type-example">
-          <header class="type-example-heading"><div class="type-example-title"><h3>{{ item.id.split('/').pop() }}<span v-if="item.label"> · {{ item.label }}</span></h3><OriginTag :origin="origins[item.id]" /></div><button @click="$emit('open-component', item.id)" :aria-label="`Ouvrir la fiche ${item.id}${item.label ? ' · '+item.label : ''}`">Voir la fiche →</button></header>
-          <div v-if="previews.has(item.id)" class="type-example-render"><LazyDemo v-if="item.id.startsWith('cdata/')" :name="item.id" :sample-props="item.props" :contextual="item.contextual" /><DemoBoundary v-else :name="item.id"><Demo :name="item.id" :sample-props="item.props" :contextual="item.contextual" /></DemoBoundary></div><p v-else class="component-preview-pending">Code source et options disponibles. Aperçu à configurer.</p>
+          <header class="type-example-heading"><div class="type-example-title"><h3>{{ item.id.split('/').pop() }}<span v-if="item.label"> · {{ item.label }}</span></h3><OriginTag :origin="origins[item.id]" /></div><div class="type-example-controls"><PreviewVersionToggle v-if="proposalComponentIds.has(item.id)" v-model="proposed[item.key]" :name="item.id+(item.label?' · '+item.label:'')" /><button @click="$emit('open-component', item.id)" :aria-label="`Ouvrir la fiche ${item.id}${item.label ? ' · '+item.label : ''}`">Voir la fiche →</button></div></header>
+          <div v-if="previews.has(item.id)" class="type-example-render"><PreviewVersion :key="proposed[item.key]?'proposal':'current'" :version="proposed[item.key]?'proposal':'current'"><LazyDemo v-if="item.id.startsWith('cdata/')" :name="item.id" :sample-props="item.props" :contextual="item.contextual" /><DemoBoundary v-else :name="item.id"><Demo :name="item.id" :sample-props="item.props" :contextual="item.contextual" /></DemoBoundary></PreviewVersion></div><p v-else class="component-preview-pending">Code source et options disponibles. Aperçu à configurer.</p>
         </article>
       </div>
     </section>
   </div>
 </template>
+
+<style scoped>.type-example-controls{display:flex;align-items:center;justify-content:flex-end;gap:16px;flex-wrap:wrap}.type-example-heading{gap:12px}</style>

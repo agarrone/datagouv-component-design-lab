@@ -7,8 +7,12 @@ import {visibleTypePages} from './typePages';
 import {proposalComponentIds} from './proposalRegistry';
 import OriginTag from './OriginTag.vue';
 import PreviewVersion from './PreviewVersion.vue';
+import PreviewVersionToggle from './PreviewVersionToggle.vue';
 import LazyDemo from './LazyDemo.vue';
 const query=ref(''),version=ref('proposal');
+const versionOverrides=ref({});
+function setVersion(next){version.value=next;versionOverrides.value={};}
+const versionFor=id=>versionOverrides.value[id]||version.value;
 const components=computed(()=>inventory.filter(c=>statuses[c.id]==='en-cours'));
 const shown=computed(()=>components.value.filter(c=>c.id.toLowerCase().includes(query.value.trim().toLowerCase())));
 const groups=computed(()=>{
@@ -27,10 +31,10 @@ const sampleFor=id=>id==='LoadingBlock'?{status:'pending',data:null}:undefined;
 <template>
   <article class="work-overview">
     <header><h1>Travaux en cours</h1><p class="intro">{{components.length}} composants en cours, regroupés par famille. Ouvrir une fiche pour examiner ses variantes et ses propositions.</p><a href="#suivi/en-cours">Voir le suivi en liste</a></header>
-    <div class="work-overview-toolbar"><label>Rechercher un composant<input v-model="query" type="search" placeholder="Nom du composant…" /></label><div role="group" aria-label="Version des aperçus"><button :aria-pressed="version==='proposal'" @click="version='proposal'">Propositions</button><button :aria-pressed="version==='current'" @click="version='current'">Versions actuelles</button></div></div>
+    <div class="work-overview-toolbar"><label>Rechercher un composant<input v-model="query" type="search" placeholder="Nom du composant…" /></label><div role="group" aria-label="Version des aperçus"><button :aria-pressed="version==='proposal'" @click="setVersion('proposal')">Propositions</button><button :aria-pressed="version==='current'" @click="setVersion('current')">Versions actuelles</button></div></div>
     <p v-if="query">{{shown.length}} / {{components.length}} composants</p>
     <nav v-if="groups.length" class="work-overview-families" aria-label="Familles en cours"><a v-for="group in groups" :key="group.key" :href="`#suivi/vue-ensemble`" @click.prevent="($refs['group-'+group.key]?.[0])?.scrollIntoView({block:'start'})">{{group.label}} · {{group.components.length}}</a></nav>
-    <section v-for="group in groups" :key="group.key" :ref="'group-'+group.key" class="work-overview-family"><h2>{{group.label}} <span>({{group.components.length}})</span></h2><div class="work-overview-grid"><article v-for="c in group.components" :key="c.id" class="work-overview-card"><header><h3><a :href="`#${encodeURIComponent(c.id)}?from=${group.key}`">{{c.name}}</a></h3><OriginTag :origin="c.origin" /></header><p class="work-overview-version">{{version==='proposal'&&proposalComponentIds.has(c.id)?'Proposition':'Version actuelle'}}<span v-if="!proposalComponentIds.has(c.id)"> · sans proposition visuelle</span></p><div class="work-overview-preview"><PreviewVersion :version="version"><LazyDemo :name="c.id" :sample-props="sampleFor(c.id)" /></PreviewVersion></div><footer><p v-if="proposalFor(c.id)">{{proposalFor(c.id).title}}</p><a :href="`#${encodeURIComponent(c.id)}?from=${group.key}`">Ouvrir la fiche</a></footer></article></div></section>
+    <section v-for="group in groups" :key="group.key" :ref="'group-'+group.key" class="work-overview-family"><h2>{{group.label}} <span>({{group.components.length}})</span></h2><div class="work-overview-grid"><article v-for="c in group.components" :key="c.id" class="work-overview-card"><header><h3><a :href="`#${encodeURIComponent(c.id)}?from=${group.key}`">{{c.name}}</a></h3><OriginTag :origin="c.origin" /><PreviewVersionToggle v-if="proposalComponentIds.has(c.id)" :model-value="versionFor(c.id)==='proposal'" :name="c.id" @update:model-value="versionOverrides[c.id]=$event?'proposal':'current'" /></header><p class="work-overview-version">{{versionFor(c.id)==='proposal'&&proposalComponentIds.has(c.id)?'Proposition':'Version actuelle'}}<span v-if="!proposalComponentIds.has(c.id)"> · sans proposition visuelle</span></p><div class="work-overview-preview"><PreviewVersion :key="versionFor(c.id)" :version="versionFor(c.id)"><LazyDemo :name="c.id" :sample-props="sampleFor(c.id)" /></PreviewVersion></div><footer><p v-if="proposalFor(c.id)">{{proposalFor(c.id).title}}</p><a :href="`#${encodeURIComponent(c.id)}?from=${group.key}`">Ouvrir la fiche</a></footer></article></div></section>
     <p v-if="!shown.length">{{query?'Aucun composant ne correspond à cette recherche.':'Aucun composant en cours pour le moment.'}}</p>
   </article>
 </template>
