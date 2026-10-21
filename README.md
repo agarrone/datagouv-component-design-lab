@@ -120,6 +120,8 @@ La référence [Chiffres tabulaires — Craft](docs/references/tabular-numbers.m
 
 Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource adaptable pour concevoir et revoir les transitions des futures propositions : menus, modales, changements d’état et cohérence des mouvements.
 
+La référence [Vercel Geist — Grid](docs/references/vercel-geist-grid.md) complète ces ressources pour la composition, les alignements, les séparateurs et le comportement responsive des propositions et des templates. Elle sert d’inspiration adaptable, sans imposer un quadrillage décoratif ni les autres choix de Geist.
+
 ### Vue des travaux en cours
 
 **Suivi → Travaux en cours** (`#suivi/vue-ensemble`) rassemble les composants dont le statut est `en-cours`, regroupés selon les catégories existantes. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
