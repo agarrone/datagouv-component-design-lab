@@ -122,6 +122,8 @@ Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource
 
 La référence [Vercel Geist — Grid](docs/references/vercel-geist-grid.md) complète ces ressources pour la composition, les alignements, les séparateurs et le comportement responsive des propositions et des templates. Elle sert d’inspiration adaptable, sans imposer un quadrillage décoratif ni les autres choix de Geist.
 
+Les [Web Interface Guidelines de Vercel](docs/references/vercel-web-interface-guidelines.md) complètent les repères de revue : interactions, accessibilité, formulaires, états, contenu, disposition, mouvement et performance. Elles sont à adapter aux composants et au contexte du projet.
+
 ### Vue des travaux en cours
 
 **Suivi → Travaux en cours** (`#suivi/vue-ensemble`) rassemble les composants dont le statut est `en-cours`, regroupés selon les catégories existantes. La page montre les propositions par défaut, permet de consulter les versions actuelles, de rechercher un composant et d’ouvrir sa fiche. Les aperçus se chargent à l’approche de la zone visible ; les composants sans proposition restent affichés dans leur version actuelle.
