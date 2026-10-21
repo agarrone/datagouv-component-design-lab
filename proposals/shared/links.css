@@ -7,3 +7,12 @@
  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):active { color:var(--lab-ds-brand); }
  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 }
+
+/* DSFR draws an underline with two background gradients. Use only the native
+   text decoration on proposed text links, including hover/focus states. */
+@layer base {
+ :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href],a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title,a.lab-license-badge) {
+  --underline-img:none!important;
+  background-image:none!important;
+ }
+}
