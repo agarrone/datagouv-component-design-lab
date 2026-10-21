@@ -53,7 +53,7 @@ import '/proposals/shared/notifications.css'
 import {useTranslation} from '/src/compat/application/runtime.js'
 import {computed} from 'vue'
 import {getSubjectTitle} from '/vendor/cdata-runtime/utils/discussions.ts'
-import PreviewComponentOrganizationOwner from '/vendor/cdata-components/OrganizationOwner.vue'
+import PreviewComponentOrganizationOwner from '/proposals/components/cdata/OrganizationOwner.vue'
 
 import AvatarWithName from '/proposals/components/AvatarWithName.vue'
 import { RiQuestionAnswerLine, RiChatCheckLine, RiChat4Line } from '@remixicon/vue'

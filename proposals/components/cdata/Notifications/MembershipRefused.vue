@@ -22,7 +22,7 @@
 import '../../../shared/foundations.css'
 import '/proposals/shared/notifications.css'
 
-import PreviewComponentOrganizationOwner from '/vendor/cdata-components/OrganizationOwner.vue'
+import PreviewComponentOrganizationOwner from '/proposals/components/cdata/OrganizationOwner.vue'
 
 import { RiCloseCircleLine } from '@remixicon/vue'
 import type { OrganizationReference } from '@datagouv/components-next'

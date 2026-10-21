@@ -21,7 +21,7 @@ import '/proposals/shared/notifications.css'
 
 import {useTranslation} from '/src/compat/application/runtime.js'
 import {computed} from 'vue'
-import PreviewComponentOrganizationOwner from '/vendor/cdata-components/OrganizationOwner.vue'
+import PreviewComponentOrganizationOwner from '/proposals/components/cdata/OrganizationOwner.vue'
 
 import { RiCheckboxCircleLine } from '@remixicon/vue'
 import { throwOnNever } from '@datagouv/components-next'
