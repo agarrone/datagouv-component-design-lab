@@ -18,3 +18,7 @@ Décrire l’intention et le statut dans `proposals/proposals.json`.
 ## Fondamentaux communs
 
 Toute proposition importe `proposals/shared/foundations.css` et utilise les jetons `--lab-ds-*`. Lire [les règles et exceptions](../../docs/proposal-foundations.md). Modifier les valeurs dans `data/proposal-foundations.json`, puis exécuter `npm run foundations:generate`. Le build contrôle les couleurs, familles, tailles de texte, rayons et espacements standard.
+
+## Orientation DSFR
+
+Le futur design system doit garder un look and feel assez proche du DSFR. Pour chaque proposition, consulter [la référence DSFR](../../docs/references/dsfr.md), comparer au composant équivalent quand il existe et expliquer les écarts intentionnels. Les inspirations Agents, Geist et les skills complètent cette orientation.

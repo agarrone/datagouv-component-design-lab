@@ -118,6 +118,8 @@ La page **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propo
 
 ### Ressources pour le design des composants
 
+**Orientation du projet : conserver un look and feel assez proche du DSFR.** La [référence DSFR](docs/references/dsfr.md) est à prendre en compte dans chaque proposition, pour le composant isolé comme pour son intégration dans une page. Les inspirations Agents, Geist et autres ressources restent complémentaires ; tout écart intentionnel doit être expliqué.
+
 Les [skills de Jakub Krehel](https://jakub.kr/skills#better-interface) sont documentés dans [une référence dédiée](docs/references/jakub-interface-skills.md) : `better-interface`, ses six domaines et des outils complémentaires pour explorer les états et variantes. Ce sont des pistes adaptables aux usages de data.gouv.fr et aux fondamentaux du projet, sans application obligatoire ni activation automatique.
 
 La référence [Chiffres tabulaires — Craft](docs/references/tabular-numbers.md) conserve le principe, un exemple CSS et des pistes de revue pour les valeurs numériques des composants.

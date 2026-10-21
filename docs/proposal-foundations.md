@@ -2,6 +2,10 @@
 
 Base de travail du 21 octobre 2026, à valider pour le futur design system. Visible dans **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`).
 
+## Orientation : rester proche du DSFR
+
+Le futur design system de data.gouv.fr doit conserver une apparence et des interactions assez proches du DSFR. Lire [la référence et les points de revue](references/dsfr.md) avant chaque proposition. Les jetons ci-dessous sont des choix de travail du lab, à confronter à cette orientation ; ils ne sont pas des valeurs certifiées DSFR. Les autres inspirations complètent ce cadre.
+
 ## Source unique
 
 Les valeurs et leurs usages sont définis dans [data/proposal-foundations.json](../data/proposal-foundations.json). La commande `npm run foundations:generate` produit [foundations.css](../proposals/shared/foundations.css). Les variables utilisent le préfixe `--lab-ds-`.
@@ -46,7 +50,7 @@ Un fichier de jetons ne garantit pas à lui seul l’accessibilité de chaque co
 
 ## Contrôle des futures propositions
 
-1. Choisir un rôle existant avant de créer un jeton. Si un nouveau rôle est nécessaire, le documenter dans le JSON, puis régénérer le CSS.
+1. Comparer au DSFR lorsque le composant équivalent existe et expliquer les éventuels écarts intentionnels. Choisir un rôle existant avant de créer un jeton. Si un nouveau rôle est nécessaire, le documenter dans le JSON, puis régénérer le CSS.
 2. Importer `foundations.css` dans la proposition ; composer avec les styles partagés existants.
 3. Éviter les valeurs isolées de couleur, police, rayon et espacement. Toute exception doit avoir une justification liée à un usage réel.
 4. Vérifier le composant isolé, ses variantes et un contexte de page pertinent ; ne pas altérer la version actuelle.
