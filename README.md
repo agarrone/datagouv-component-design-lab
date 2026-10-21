@@ -127,3 +127,5 @@ Le [skill Transitions.dev](docs/references/transitions-dev.md) sert de ressource
 La page **Suivi → Sans proposition** (`#suivi/sans-proposition`) liste les composants sans proposition visuelle enregistrée, indépendamment de leur statut d’audit. Elle s’appuie sur le même registre que les fiches, y compris les propositions d’illustrations. La liste affiche les aperçus actuels, chargés à l’approche de l’écran, avec recherche par nom ou chemin, filtres par origine et catégorie, et accès direct à chaque fiche.
 
 Les [propositions de notifications et d’abonnements](proposals/notifications-01.md) concernent 18 composants cdata, avec leurs variantes de lecture, de traitement et de suivi dans les fiches. Les flux d’activité restent dans leur version actuelle.
+
+Les [propositions de métadonnées](proposals/metadata-01.md) harmonisent les cinq sections du jeu de données, les listes de descriptions bibliothèque/cdata, les contacts, la copie et les plages de dates. Le header du laboratoire utilise le SVG fourni dans `public/design-lab-logo.svg`.

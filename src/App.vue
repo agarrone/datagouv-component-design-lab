@@ -151,7 +151,7 @@ function downloadProposal(c) {
   <template v-else>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
-    <a href="#" class="brand" @click.prevent="navigate()"><span>data.gouv.fr Component design lab</span></a>
+    <a href="#" class="brand" @click.prevent="navigate()"><img class="header-brand-image" src="/design-lab-logo.svg" alt="data.gouv.fr Component design lab" width="358" height="180" /></a>
     <nav class="header-nav" aria-label="Navigation principale"><a href="#fondamentaux" :aria-current="view==='fondamentaux'?'page':undefined">Fondamentaux</a><a href="#" :aria-current="componentSection?'page':undefined">Composants</a><a href="#templates/dataset" :aria-current="view==='templates'?'page':undefined">Templates</a><a href="#suivi" :aria-current="view==='suivi'?'page':undefined">Suivi</a><a href="#incoherences" :aria-current="view==='incoherences'?'page':undefined">Incohérences</a></nav>
     <form class="global-search" role="search" @submit.prevent="searchAll"><label class="explorer-search"><RiSearchLine /><input v-model="globalQuery" type="search" aria-label="Rechercher un composant" placeholder="Rechercher un composant…" @keydown.esc="globalQuery=''" /></label><div v-if="globalQuery.trim()" class="global-search-results"><a v-for="c in globalResults" :key="c.id" :href="`#${encodeURIComponent(c.id)}`" @click.prevent="searchSelect(c)">{{ c.id }}<small class="origin-label">{{ c.origin==='cdata' ? 'Application cdata' : 'Bibliothèque datagouv-components' }}</small></a><p v-if="!globalResults.length">Aucun composant trouvé.</p><button type="submit">Voir tous les résultats →</button></div></form>
   </header>

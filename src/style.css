@@ -341,4 +341,7 @@ h2.panel-label { margin: 0; font-size: 11px; line-height: 1.5; }
 
 .reference-provenance{display:flex;flex-wrap:wrap;gap:12px 24px;margin:22px 0;font-size:12px;color:#687286}.reference-provenance a{color:#000091}.reference-scope-note{padding:16px 20px;border-left:3px solid #000091;background:#f0f0ff;font-size:12px;line-height:1.8}.reference-rule-list{display:grid;gap:16px}.reference-rule-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.reference-rule-heading h3{margin:0}.reference-rule-scope{font-size:10px;padding:4px 8px;border-radius:4px;background:#eef3f8;color:#3e5671}.reference-rule-scope[data-scope=agent]{background:#f3f0f6;color:#705281}.reference-rule-scope[data-scope=mixed]{background:#fff4e4;color:#775423}.reference-rule-list summary{color:#000091;font-size:12px;cursor:pointer;margin-top:16px}.reference-table-scroll{overflow-x:auto}.reference-rules-table{width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;background:white}.reference-rules-table th,.reference-rules-table td{text-align:left;padding:12px 16px;border-bottom:1px solid #e5e5e5}.reference-rules-table th{background:#f6f6f6}.reference-cautions{font-size:13px;line-height:1.8;padding-left:20px}.reference-cautions li{margin-bottom:12px}
 
+
+.site-header .brand .header-brand-image { display:block; width:128px; height:64px; object-fit:contain; flex:none; }
+@media(max-width:900px) { .site-header .brand .header-brand-image { width:104px; height:52px; } }
 }

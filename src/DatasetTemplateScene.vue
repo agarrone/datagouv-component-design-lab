@@ -38,7 +38,7 @@ function preventNavigation(event){const a=event.target.closest('a');if(a&&!a.has
    <div v-else-if="active==='reuses'" class="space-y-5"><component :is="C.ReuseCard" :reuse="f.reuse" :organization-url="null" /><component :is="C.DataserviceCard" :dataservice="f.dataservice" /></div>
    <component v-else-if="active==='discussions'" :is="C['cdata/Discussions/DiscussionsList']" :subject="data" type="Dataset" />
    <div v-else-if="active==='community'" class="space-y-5"><h2 class="text-xl font-bold">Ressources communautaires</h2><p>Aucune ressource communautaire pour ce jeu de données.</p></div>
-   <div v-else><component :is="C['DatasetInformation/DatasetInformationSection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetTemporalitySection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetSpatialSection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetSchemaSection']" :dataset="data" /></div>
+   <div v-else><component :is="C['DatasetInformation/DatasetInformationSection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetTemporalitySection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetSpatialSection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetSchemaSection']" :dataset="data" /><component :is="C['DatasetInformation/DatasetEmbedSection']" :dataset="data" /></div>
   </div></div></div>
   <component :is="C['cdata/SiteFooter/SiteFooter']" />
  </div></template><template #fallback><p class="container py-8">Chargement de la page…</p></template></Suspense></DemoBoundary></div>

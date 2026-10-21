@@ -21,6 +21,7 @@ export function responseFor(url, query = {}) {
  }
  if(path.includes('/transfer/')) return [{id:'demo-transfer',user:f.user,owner:{...f.user,class:'User'},recipient:f.organization,subject:{...f.dataset,class:'Dataset'},comment:'Transférer ces données à l’organisation.',created:'2026-10-01',status:'pending'}];
  if(path.includes('/activity/')) return page([{actor:f.user,organization:f.organization,related_to:f.dataset.title,related_to_id:f.dataset.id,related_to_kind:'Dataset',related_to_url:f.dataset.page,created_at:'2026-10-01T09:00:00',label:f.dataset.title,key:'dataset:created',icon:'fr-icon-database-line',extras:{},changes:[]}]);
+ if(path.includes('/datasets/')&&path.includes('/schemas/')){if(path.includes('metadata-no-schema'))return [];if(path.includes('metadata-many-schemas'))return [f.schema,{...f.schema,name:'etalab/schema-des-indicateurs-territoriaux-des-communes-et-intercommunalites',url:null,version:'2.0.0'}];}
  if(path.includes('/schemas/')) return path.includes('/api/2/')?[{name:f.schema.name,title:f.schema.title,url:f.schema.url,version:'1.0.0'}]:[f.schema];
  if(path.includes('/licenses/')) return [f.license,{...f.license,id:'cc-by',title:'Creative Commons Attribution'}];
  if(path.includes('/badges/')) return {hvd:'Données de forte valeur','public-service':'Service public'};

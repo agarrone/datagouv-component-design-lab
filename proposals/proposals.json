@@ -988,5 +988,181 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/TransferRequestList.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "metadata-datasetinformation-datasetembedsection-01",
+    "component": "DatasetInformation/DatasetEmbedSection",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetEmbedSection.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-datasetinformation-datasetspatialsection-01",
+    "component": "DatasetInformation/DatasetSpatialSection",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSpatialSection.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-datasetinformation-datasettemporalitysection-01",
+    "component": "DatasetInformation/DatasetTemporalitySection",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetTemporalitySection.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-datasetinformation-datasetschemasection-01",
+    "component": "DatasetInformation/DatasetSchemaSection",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-datasetinformation-datasetinformationsection-01",
+    "component": "DatasetInformation/DatasetInformationSection",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetInformationSection.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-descriptionlist-01",
+    "component": "DescriptionList",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DescriptionList.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-descriptionlistterm-01",
+    "component": "DescriptionListTerm",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DescriptionListTerm.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-descriptionlistdetails-01",
+    "component": "DescriptionListDetails",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DescriptionListDetails.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-descriptionterm-01",
+    "component": "DescriptionTerm",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DescriptionTerm.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-descriptiondetails-01",
+    "component": "DescriptionDetails",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DescriptionDetails.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-daterangedetails-01",
+    "component": "DateRangeDetails",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les plages de dates gagnent à utiliser des chiffres tabulaires dans les blocs de métadonnées ; une valeur invalide ne doit pas provoquer une erreur de rendu.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/DateRangeDetails.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-copybutton-01",
+    "component": "CopyButton",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Le libellé de copie n’apparaît qu’au survol et son état de confirmation change la géométrie du contrôle. L’accessibilité et la visibilité de cette action peuvent être harmonisées.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/CopyButton.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-cdata-contactpoint-01",
+    "component": "cdata/ContactPoint",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les coordonnées longues sont tronquées et le rôle est présenté en italique entre parenthèses ; les informations de contact pourraient partager la hiérarchie des autres métadonnées.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/ContactPoint.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-cdata-descriptionlist-descriptionlistdetails-01",
+    "component": "cdata/DescriptionList/DescriptionListDetails",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/DescriptionList/DescriptionListDetails.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-cdata-descriptionlist-descriptionlist-01",
+    "component": "cdata/DescriptionList/DescriptionList",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/DescriptionList/DescriptionList.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "metadata-cdata-descriptionlist-descriptionlistterm-01",
+    "component": "cdata/DescriptionList/DescriptionListTerm",
+    "title": "Unifier la lecture des métadonnées",
+    "status": "brouillon",
+    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
+    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/DescriptionList/DescriptionListTerm.vue",
+    "reviewUrl": ""
   }
 ]
