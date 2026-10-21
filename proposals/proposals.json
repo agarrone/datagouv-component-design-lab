@@ -1197,5 +1197,49 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/OrganizationOwner.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "discussions-commentblock-01",
+    "component": "cdata/Discussions/CommentBlock",
+    "title": "Clarifier les réponses et leurs actions",
+    "status": "brouillon",
+    "problem": "Les espacements, les métadonnées et les commandes du fil manquent de hiérarchie commune, notamment sur petit écran.",
+    "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Discussions/CommentBlock.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "discussions-discussioncard-01",
+    "component": "cdata/Discussions/DiscussionCard",
+    "title": "Structurer le fil de discussion",
+    "status": "brouillon",
+    "problem": "Les espacements, les métadonnées et les commandes du fil manquent de hiérarchie commune, notamment sur petit écran.",
+    "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Discussions/DiscussionCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "discussions-discussioncommentheader-01",
+    "component": "cdata/Discussions/DiscussionCommentHeader",
+    "title": "Unifier auteur, date et rôle",
+    "status": "brouillon",
+    "problem": "Les espacements, les métadonnées et les commandes du fil manquent de hiérarchie commune, notamment sur petit écran.",
+    "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Discussions/DiscussionCommentHeader.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "discussions-threadheader-01",
+    "component": "cdata/Discussions/ThreadHeader",
+    "title": "Hiérarchiser le titre du fil et ses actions",
+    "status": "brouillon",
+    "problem": "Les espacements, les métadonnées et les commandes du fil manquent de hiérarchie commune, notamment sur petit écran.",
+    "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Discussions/ThreadHeader.vue",
+    "reviewUrl": ""
   }
 ]

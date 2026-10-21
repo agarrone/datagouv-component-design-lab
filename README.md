@@ -133,3 +133,5 @@ Les [propositions de métadonnées](proposals/metadata-01.md) harmonisent les ci
 Les cartes des catégories et de la vue Travaux en cours proposent un toggle **Proposition** lorsqu’une proposition existe. Chaque aperçu peut basculer indépendamment ; les boutons de version globaux des travaux en cours réinitialisent les choix individuels.
 
 Les [propositions NoResults, OwnerTypeIcon et OrganizationOwner](proposals/identity-empty-01.md) couvrent l’état de recherche vide et l’identité des producteurs, avec des variantes accessibles depuis leurs fiches.
+
+- [Propositions pour les discussions](proposals/discussions-01.md)
