@@ -500,5 +500,15 @@
       "Survol discret sans déplacement ; focus commun bleu 2 px avec décalage 3 px. Les états désactivé et lecture seule utilisent une surface subtile.",
       "Les zones multiligne restent redimensionnables verticalement ; les sélecteurs simples conservent le comportement natif du navigateur."
     ]
+  },
+  "tables": {
+    "rules": [
+      "Fond blanc et en-tête gris subtil (#F6F6F6), bordures neutres fines. Pas de grille épaisse ou de zébrage concurrent.",
+      "Exploration dense : 12/18 et padding horizontal 12 px, en-tête au moins 40 px. Administration : corps 14/22 et padding 12 px.",
+      "Nombres et dates techniques en Geist Mono, avec chiffres tabulaires ; nombres alignés à droite dans l’explorateur. Valeurs manquantes explicitement distinguées de zéro et de faux.",
+      "Survol de ligne discret, focus clavier visible sur les commandes. Le tri indique la direction avec une flèche, un libellé et aria-sort.",
+      "Conserver toutes les colonnes utiles et un défilement horizontal local. Pas de limite arbitraire de lignes inspirée des réponses de l’assistant.",
+      "Conserver les adaptations mobiles, le chargement, les filtres et le redimensionnement existants. Le rayon de recherche reste 6 px dans le lab pour suivre les fondamentaux ; Agents utilise une exception 4 px."
+    ]
   }
 }

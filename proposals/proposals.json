@@ -1296,5 +1296,126 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/Form/SelectGroup.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-cdata-AdminTable-Table-AdminTable",
+    "component": "cdata/AdminTable/Table/AdminTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/Table/AdminTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-cdata-AdminTable-Table-AdminTableTh",
+    "component": "cdata/AdminTable/Table/AdminTableTh",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/Table/AdminTableTh.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-TabularExplorer-TabularTable",
+    "component": "TabularExplorer/TabularTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-TabularExplorer-TabularCell",
+    "component": "TabularExplorer/TabularCell",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularCell.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-TabularExplorer-TabularSearchInput",
+    "component": "TabularExplorer/TabularSearchInput",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularSearchInput.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminDatasetsTable",
+    "component": "cdata/AdminTable/AdminDatasetsTable/AdminDatasetsTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminDatasetsTable/AdminDatasetsTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminDataservicesTable",
+    "component": "cdata/AdminTable/AdminDataservicesTable/AdminDataservicesTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminDataservicesTable/AdminDataservicesTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminReusesTable",
+    "component": "cdata/AdminTable/AdminReusesTable/AdminReusesTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminReusesTable/AdminReusesTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminContactPointsTable",
+    "component": "cdata/AdminTable/AdminContactPointsTable/AdminContactPointsTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminContactPointsTable/AdminContactPointsTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminCommunityResourcesTable",
+    "component": "cdata/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "tables-01-AdminDiscussionsTable",
+    "component": "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable",
+    "title": "Une lecture commune des tableaux, inspirée d’Explore Agents",
+    "status": "brouillon",
+    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
+    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Exploration compacte en 12/18 ; administration en 14/22. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable.vue",
+    "reviewUrl": ""
   }
 ]

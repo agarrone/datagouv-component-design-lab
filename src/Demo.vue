@@ -27,6 +27,8 @@ const listeners = computed(() => {
   const events = {};
   const name = props.name;
   if(name==='Pagination') events.change=updatePage;
+  if(name==='cdata/AdminTable/Table/AdminTableTh') events.sort=direction=>overrides.sorted=direction;
+  else if(name.startsWith('cdata/AdminTable/')) events.sort=(column,direction)=>{overrides.sortedBy=column;overrides.sortDirection=direction;};
   if(name.startsWith('cdata/') || name.startsWith('Form/') || name==='Search/SearchInput' || name.startsWith('Search/Filter/') || name==='OpenApiViewer/ContentTypeSelect' || name.startsWith('TabularExplorer/TabularDate')) events['update:modelValue']=updateModel;
   if(name.startsWith('TabularExplorer/TabularDate') || name.startsWith('TabularExplorer/TabularFilter')) {
     events['update:filters']=value=>overrides.filters=value;

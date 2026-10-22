@@ -1,4 +1,5 @@
 <script setup>
+import {tableVariants} from "./tableExamples";
 import {inputVariants} from "./inputExamples";
 import {buttonVariants} from "./buttonExamples";
 import {discussionVariants} from "./discussionExamples";
@@ -30,12 +31,13 @@ import lock from '../upstream.lock.json';
 const props = defineProps({ component: Object, code: String, error: String, proposals: Array });
 defineEmits(['open-issue', 'prepare-proposal']);
 const options = ref({});
-const baseline = computed(() => ({...({SimpleBanner:{type:'primary'},BrandedButton:{color:'primary'}}[props.component.id] || {}), ...options.value}));
+const baseline = computed(() => ({...({SimpleBanner:{type:'primary'},BrandedButton:{color:'primary'}}[props.component.id] || {}), ...(tableVariants[props.component.id]?.[0]?.props || {}), ...options.value}));
 const context = computed(() => previewContexts[props.component.id]);
 const status = computed(() => auditStatuses.find(s => s.id === audit[props.component.id])?.label || 'À auditer');
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (tableVariants[props.component.id]) return tableVariants[props.component.id];
   if (inputVariants[props.component.id]) return inputVariants[props.component.id];
   if (buttonVariants[props.component.id]) return buttonVariants[props.component.id];
   if (discussionVariants[props.component.id]) return discussionVariants[props.component.id];

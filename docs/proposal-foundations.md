@@ -89,3 +89,14 @@ Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des comp
 ### Champs de saisie
 
 Les propositions InputGroup, AdminInput, SearchInput et SelectGroup utilisent une bordure stable de 1 px, un rayon de 6 px, Marianne 14/20 et une hauteur minimale de 40 px (48 px pour la barre de recherche). Le label reste au-dessus du champ, y compris pour l’ancienne option `showLabelInside`, afin d’éviter les collisions avec la valeur. Le placeholder ne remplace pas le label. Les aides et messages sont associés au champ ; l’erreur est prioritaire sur la validation. Le focus conserve le contour commun ; les états désactivé et lecture seule utilisent une surface subtile. Les sélecteurs complexes, choix radio et dates nécessitent encore une passe dédiée.
+
+### Tableaux
+
+- Fond blanc et en-tête gris subtil (#F6F6F6), bordures neutres fines. Pas de grille épaisse ou de zébrage concurrent.
+- Exploration dense : 12/18 et padding horizontal 12 px, en-tête au moins 40 px. Administration : corps 14/22 et padding 12 px.
+- Nombres et dates techniques en Geist Mono, avec chiffres tabulaires ; nombres alignés à droite dans l’explorateur. Valeurs manquantes explicitement distinguées de zéro et de faux.
+- Survol de ligne discret, focus clavier visible sur les commandes. Le tri indique la direction avec une flèche, un libellé et aria-sort.
+- Conserver toutes les colonnes utiles et un défilement horizontal local. Pas de limite arbitraire de lignes inspirée des réponses de l’assistant.
+- Conserver les adaptations mobiles, le chargement, les filtres et le redimensionnement existants. Le rayon de recherche reste 6 px dans le lab pour suivre les fondamentaux ; Agents utilise une exception 4 px.
+
+Référence : [Explore Agents](https://datagouv-agent.opendatateam.fr/design#explorateur), consultée le 22 octobre 2026. Les sections Markdown et Explore sont distinguées : la limite de 10/20 lignes ne s’applique pas aux tableaux de données. Les composants TabularTable et TabularSearchInput conservent leur logique source dans une enveloppe de présentation ; les cellules et les primitives de tableau administratif disposent de propositions propres.
