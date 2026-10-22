@@ -83,7 +83,7 @@
 .lab-object-card-badges:empty{display:none}
 .lab-object-card-badges:has(>*){display:flex;flex-wrap:wrap;gap:var(--lab-ds-space-4);margin-bottom:var(--lab-ds-space-12)}
 .lab-dataset-details{display:flex;flex-direction:column;align-items:flex-start;gap:var(--lab-ds-space-4);min-width:0}
-.lab-dataset-updated{font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans);color:var(--lab-ds-text-secondary);font-variant-numeric:tabular-nums}
+.lab-dataset-updated{font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans);color:var(--lab-ds-text-secondary);font-variant-numeric:tabular-nums}
 
 /* Dataset names retain a single readable row; the full text remains in the DOM. */
 .lab-dataset-card .lab-card-title-text { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -92,9 +92,11 @@
 .lab-dataset-card .lab-card-owner .truncate { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .lab-dataset-card .lab-card-owner:not(:has(>a,>span)) { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-/* DatasetCard keeps a neutral title and frame, including on hover. */
+/* DatasetCard highlights its destination while keeping the frame stable. */
 @layer base {
- .lab-dataset-card .lab-card-title-link[href]:hover { color:var(--lab-ds-text)!important; text-decoration:none!important; }
+ @media (hover:hover) {
+  .lab-dataset-card:hover .lab-card-title-link[href] { color:var(--lab-ds-brand)!important; text-decoration:none!important; }
+ }
 }
 .lab-dataset-card:has(.lab-card-title-link[href]:hover) { border-color:var(--lab-ds-border); }
 @layer base {
