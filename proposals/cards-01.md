@@ -84,3 +84,5 @@ Les badges Brouillon et Archivé sont placés dans la ligne de métadonnées apr
 Placement retenu pour les badges : à côté de la date de mise à jour, dans une ligne commune repliable. La ligne métadonnées et statistiques reste indépendante.
 
 Le rythme vertical de DatasetCard est de 8 px entre titre, producteur, mise à jour, ligne de métadonnées et description. Les quatre premières lignes utilisent une boîte de ligne de 24 px. Le bouton de métadonnées n’ajoute plus de padding vertical ni de hauteur minimale de 32 px ; sa cible est étendue dans l’espace disponible sans modifier la disposition. Les lignes repliées et les badges gardent leur hauteur propre.
+
+Rythme vertical affiné après revue : 4 px entre les lignes de DatasetCard (au lieu de 8 px), en conservant les boîtes de ligne de 24 px et le padding extérieur de 16 px. La cible du bouton de métadonnées est ajustée pour ne pas empiéter sur les lignes voisines.

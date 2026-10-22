@@ -112,13 +112,14 @@
 .lab-dataset-update-row { display:flex; align-items:center; flex-wrap:wrap; gap:var(--lab-ds-space-8); }
 
 /* One vertical rhythm for the DatasetCard information stack. */
-.lab-dataset-details { gap:var(--lab-ds-space-8); }
+.lab-dataset-card .lab-object-card-body,
+.lab-dataset-details { gap:var(--lab-ds-space-4); }
 .lab-dataset-card .lab-card-owner,
 .lab-dataset-card .lab-card-owner .truncate,
 .lab-dataset-updated { line-height:var(--lab-ds-leading-title); }
 .lab-dataset-card .lab-quality-trigger-link { min-height:var(--lab-ds-leading-title); padding:0; line-height:var(--lab-ds-leading-title); }
 /* Extend the pointer target into the existing gap without changing layout. */
-.lab-dataset-card .lab-quality-trigger-link::before { content:""; position:absolute; inset:calc(-1 * var(--lab-ds-space-4)); }
+.lab-dataset-card .lab-quality-trigger-link::before { content:""; position:absolute; inset:calc(-1 * var(--lab-ds-space-2)); }
 @layer base {
  .lab-dataset-card .lab-card-owner :is(a,.truncate) { line-height:var(--lab-ds-leading-title)!important; }
 }
