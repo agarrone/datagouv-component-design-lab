@@ -30,7 +30,7 @@ const label = computed(() => {
 const type = computed(() => {
   return {
     open: 'success' as AdminBadgeType,
-    open_with_account: 'warning' as AdminBadgeType,
+    open_with_account: 'primary' as AdminBadgeType,
     restricted: 'warning' as AdminBadgeType,
   }[props.accessType]
 })

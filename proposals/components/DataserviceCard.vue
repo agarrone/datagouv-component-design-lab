@@ -25,6 +25,7 @@
       />
     </template>
 
+    <div class="lab-card-heading-row">
     <ObjectCardHeader
       :icon="isTabularApi ? RiSparklingLine : RiTerminalLine"
       :url="dataserviceUrl || dataservice.self_web_url"
@@ -32,12 +33,7 @@
     >
       {{ dataservice.title }}
     </ObjectCardHeader>
-    <div class="lab-card-details">
-      <ObjectCardOwner show-details :organization="dataservice.organization" :owner="dataservice.owner" :organization-url="organizationUrl" />
-      <div class="lab-card-update-row">
-        <TranslationT tag="div" class="lab-card-updated" keypath="Mis à jour {date}">
-          <template #date><FormattedDate :date="dataservice.metadata_modified_at" format="relative" :options="{dateStyle:'medium'}" /></template>
-        </TranslationT>
+
 
       <ObjectCardBadge
         v-if="dataservice.private"
@@ -45,24 +41,36 @@
       >
         {{ t('Brouillon') }}
       </ObjectCardBadge>
+
       <ObjectCardBadge
         v-else-if="dataservice.archived_at"
         :icon="RiArchiveLine"
       >
         {{ t('Archivé') }}
       </ObjectCardBadge>
+
       <ObjectCardBadge
         v-else-if="dataservice.access_type === 'restricted'"
+        tone="warning"
         :icon="RiLockLine"
       >
         {{ t('Accès restreint') }}
       </ObjectCardBadge>
+
       <ObjectCardBadge
         v-else-if="dataservice.access_type === 'open_with_account'"
+        tone="primary"
         :icon="RiPassValidLine"
       >
         {{ t('Ouvert avec un compte') }}
       </ObjectCardBadge>
+    </div>
+    <div class="lab-card-details">
+      <ObjectCardOwner show-details :organization="dataservice.organization" :owner="dataservice.owner" :organization-url="organizationUrl" />
+      <div class="lab-card-update-row">
+        <TranslationT tag="div" class="lab-card-updated" keypath="Mis à jour {date}">
+          <template #date><FormattedDate :date="dataservice.metadata_modified_at" format="relative" :options="{dateStyle:'medium'}" /></template>
+        </TranslationT>
       </div>
     </div>
     <div class="lab-card-metadata-row" :class="{'lab-card-has-quality':dataservice.quality}">

@@ -2,6 +2,7 @@
   <article class="lab-content-card lab-catalog-card lab-reuse-card fr-enlarge-link flex flex-col relative">
     <div class="lab-reuse-body flex flex-col flex-1 order-2">
       <div class="lab-card-details">
+        <div class="lab-card-heading-row">
         <component
           :is="titleTag"
           class="lab-card-heading"
@@ -13,11 +14,14 @@
             {{ reuse.title }}
           </AppLink>
         </component>
+
+          <ObjectCardBadge v-if="reuse.private" :icon="RiLockLine">{{ t('Brouillon') }}</ObjectCardBadge>
+
+          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine">{{ t('Archivé') }}</ObjectCardBadge>
+        </div>
         <ObjectCardOwner show-details :organization="reuse.organization" :owner="reuse.owner" :organization-url="organizationUrl" />
         <div class="lab-card-update-row">
           <TranslationT tag="div" class="lab-card-updated" keypath="Publié {date}"><template #date><FormattedDate :date="reuse.created_at" format="relative" :options="{dateStyle:'medium'}" /></template></TranslationT>
-          <ObjectCardBadge v-if="reuse.private" :icon="RiLockLine">{{ t('Brouillon') }}</ObjectCardBadge>
-          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine">{{ t('Archivé') }}</ObjectCardBadge>
         </div>
         <ReuseDetails :reuse />
         <ObjectCardShortDescription :text="reuse.description" />

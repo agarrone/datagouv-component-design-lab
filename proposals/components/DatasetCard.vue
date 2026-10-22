@@ -19,6 +19,7 @@
         class="size-12"
       />
     </template>
+    <div class="lab-card-heading-row">
     <ObjectCardHeader
       :icon="RiDatabase2Line"
       :url="datasetUrl || dataset.page"
@@ -33,6 +34,21 @@
         <small class="flex-1 lab-ds-u-ml-2">{{ dataset.acronym }}</small>
       </template>
     </ObjectCardHeader>
+
+      <ObjectCardBadge
+        v-if="dataset.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+
+      <ObjectCardBadge
+        v-else-if="dataset.archived"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
+    </div>
     <div class="lab-dataset-details">
       <ObjectCardOwner
         show-details
@@ -45,20 +61,6 @@
       <TranslationT tag="div" class="lab-dataset-updated" keypath="Mis à jour {date}">
         <template #date><FormattedDate :date="dataset.last_update" format="relative" :options="{dateStyle:'medium'}" /></template>
       </TranslationT>
-        <span v-if="dataset.private || dataset.archived" class="lab-dataset-status">
-      <ObjectCardBadge
-        v-if="dataset.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataset.archived"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
-        </span>
       </div>
       <div class="lab-dataset-metadata-row">
         <DatasetQualityInline :quality="dataset.quality" />

@@ -6,12 +6,29 @@
       <CardMedia :src="chart.image" :alt="chart.title" kind="chart" />
     </template>
 
+    <div class="lab-card-heading-row">
     <ObjectCardHeader
       :icon="chartIcon"
       :url="chartUrl || chart.page"
     >
       {{ chart.title }}
     </ObjectCardHeader>
+
+
+      <ObjectCardBadge
+        v-if="chart.deleted_at"
+        :icon="RiDeleteBinLine"
+      >
+        {{ t('Supprimé') }}
+      </ObjectCardBadge>
+
+      <ObjectCardBadge
+        v-else-if="chart.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+    </div>
 
     <div
       v-if="chart.organization || chart.owner"
@@ -38,19 +55,6 @@
           />
         </template>
       </TranslationT>
-
-      <ObjectCardBadge
-        v-if="chart.deleted_at"
-        :icon="RiDeleteBinLine"
-      >
-        {{ t('Supprimé') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="chart.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
     </div>
 
     <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1">

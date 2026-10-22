@@ -144,10 +144,21 @@ DatasetCard, DataserviceCard, ReuseCard, ReuseHorizontalCard, OrganizationCard, 
 
 Les producteurs utilisent ObjectCardOwner et son panneau OrganizationCard. DataserviceQualityInline reprend le texte gris et la barre sans pourcentage de DatasetQualityInline, avec les états communs des déclencheurs. ReuseDetails partage un type descriptif et des statistiques iconiques séparés par un trait neutre.
 
-Les statuts suivent la date. Les réutilisations et articles gardent une date de publication ; API et graphiques gardent une date de mise à jour. Les organisations conservent leurs compteurs métier sans date ou qualité artificielle. Les états d’accès des API et l’identité de l’API tabulaire sont conservés. organizationUrl=null reste du texte simple.
+Les statuts accompagnent le titre. Les réutilisations et articles gardent une date de publication ; API et graphiques gardent une date de mise à jour. Les organisations conservent leurs compteurs métier sans date ou qualité artificielle. Les états d’accès des API et l’identité de l’API tabulaire sont conservés. organizationUrl=null reste du texte simple.
 
 Les médias et les dispositions responsive existantes sont conservés. Les cartes applicatives composant ces enfants héritent des propositions via le pont. Les cartes d’action, de navigation et de sélection gardent leur rôle propre.
 
 OrganizationMetrics est un assemblage partagé par les deux cartes d’organisation : chaque icône et son compteur sont groupés avec un écart de 2 px, les groupes séparés de 12 px. Les mêmes métriques sont ainsi reprises dans le panneau producteur sans recopier leur présentation.
 
 Le badge OwnerType utilise désormais la géométrie commune : texte 12/18, graisse 500, icône 14 px, hauteur minimale 24 px et padding 2 × 8 px. Les tailles publiques base et sm partagent ce standard ; xs conserve sa géométrie compacte. Les titres de cartes restent à 16/24 en attendant un arbitrage séparé.
+
+### Statuts et accès dans les cartes
+
+Le badge est informatif et non cliquable. Il accompagne le titre de l’entité au premier niveau de lecture, dans la carte ; il ne qualifie pas la date de mise à jour. Il suit le repli naturel du groupe quand l’espace manque, sans chevauchement ou position flottante.
+
+- Brouillon, archivé et autres statuts éditoriaux : gris neutre.
+- Accès restreint : rôle avertissement, orange.
+- Ouvert avec un compte : rôle information, bleu.
+- Les libellés et pictogrammes métier restent explicites ; la couleur n’est pas le seul repère.
+
+Ce mapping est un choix du lab à partir des rôles sémantiques Agents et DSFR, pas une prescription du DSFR pour les droits d’accès. Source : [Badge DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge). Cette règle remplace le placement antérieur des statuts sur la ligne de date. AccessTypeBadge et ObjectCardBadge partagent ce mapping.

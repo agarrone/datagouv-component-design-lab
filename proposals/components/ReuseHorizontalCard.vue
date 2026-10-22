@@ -6,12 +6,29 @@
       <CardMedia :src="reuse.image" :alt="reuse.title" kind="reuse" />
     </template>
 
+    <div class="lab-card-heading-row">
     <ObjectCardHeader
       :icon="RiLineChartLine"
       :url="reuseUrl || reuse.page"
     >
       {{ reuse.title }}
     </ObjectCardHeader>
+
+
+      <ObjectCardBadge
+        v-if="reuse.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+
+      <ObjectCardBadge
+        v-else-if="reuse.archived"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
+    </div>
 
     <div
       v-if="reuse.organization || reuse.owner"
@@ -27,19 +44,6 @@
 
     <div class="lab-card-update-row">
       <TranslationT tag="div" class="lab-card-updated" keypath="Publié {date}"><template #date><FormattedDate :date="reuse.created_at" format="relative" :options="{dateStyle:'medium'}" /></template></TranslationT>
-
-      <ObjectCardBadge
-        v-if="reuse.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="reuse.archived"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
     </div>
     <ReuseDetails :reuse />
     <ObjectCardShortDescription :text="reuse.description" />

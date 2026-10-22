@@ -108,3 +108,7 @@ Les statuts suivent la date. Les réutilisations et articles gardent une date de
 Les médias et les dispositions responsive existantes sont conservés. Les cartes applicatives composant ces enfants héritent des propositions via le pont. Les cartes d’action, de navigation et de sélection gardent leur rôle propre.
 
 OrganizationMetrics est un assemblage partagé par les deux cartes d’organisation : chaque icône et son compteur sont groupés avec un écart de 2 px, les groupes séparés de 12 px. Les mêmes métriques sont ainsi reprises dans le panneau producteur sans recopier leur présentation.
+
+## Statuts proches du titre
+
+Après revue, les badges accompagnent le titre, dans le flux de la carte. Brouillon et archivé restent gris. L’accès restreint utilise l’orange d’avertissement, l’accès avec compte le bleu d’information. ObjectCardBadge expose le rôle sémantique ; AccessTypeBadge distingue lui aussi les deux accès. Ce placement remplace la ligne de date retenue précédemment. Référence : [DSFR — badge](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge), qui recommande une indication informative proche de l’élément qualifié et au premier niveau de lecture. Les couleurs d’accès sont un arbitrage du lab.
