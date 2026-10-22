@@ -72,3 +72,5 @@ Le titre et le nom du producteur restent sur une ligne avec troncature, conform�
 Les changements du titre et de l’emplacement des badges sont partagés par les cartes utilisant ces enfants. La hiérarchie propre à DatasetCard reste locale pour permettre une revue des autres cartes avant de généraliser.
 
 Interaction de DatasetCard : le producteur est noir et souligné ; le titre reste noir sans soulignement au survol. La bordure conserve sa couleur au survol. Le contour de focus clavier est conservé.
+
+Le déclencheur compact des métadonnées est un simple texte gris, sans icône ni jauge. Son soulignement au survol et son focus clavier signalent l’interaction ; le détail de qualité reste accessible au clic.

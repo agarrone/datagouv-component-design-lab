@@ -53,7 +53,7 @@ a.lab-license-badge::after { display:none; }
  .lab-resource-icon-badge { background:color-mix(in srgb,currentColor 8%,var(--lab-ds-surface)) !important; }
 }
 
-.lab-quality-trigger-link{padding:var(--lab-ds-space-4) 0;border:0;min-height:var(--lab-ds-control-compact);gap:var(--lab-ds-space-8);color:var(--lab-ds-brand);cursor:pointer}
+.lab-quality-trigger-link{padding:var(--lab-ds-space-4) 0;border:0;min-height:var(--lab-ds-control-compact);gap:var(--lab-ds-space-8);color:var(--lab-ds-text-secondary);cursor:pointer}
 .lab-quality-trigger-link .lab-quality-trigger-label{gap:var(--lab-ds-space-4)}
-.lab-quality-trigger-link .lab-quality-trigger-label>span{text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical)}
-.lab-quality-trigger-link[aria-expanded=true]>.lab-ds-icon:last-child{transform:rotate(180deg)}
+.lab-quality-trigger-link .lab-quality-trigger-label>span{text-decoration:none}
+.lab-quality-trigger-link:hover .lab-quality-trigger-label>span{text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical)}
