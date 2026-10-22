@@ -135,3 +135,13 @@
 @layer base {
  .lab-organization-details a { text-decoration:underline!important; text-underline-offset:var(--lab-ds-space-optical); }
 }
+
+.lab-organization-details-identity { display:flex; align-items:center; gap:var(--lab-ds-space-12); min-width:0; }
+.lab-organization-details-identity>img { flex:none; }
+.lab-organization-details-name { display:flex; flex-direction:column; gap:var(--lab-ds-space-4); min-width:0; }
+.lab-organization-details-name .truncate { white-space:normal; overflow:visible; overflow-wrap:anywhere; }
+.lab-organization-details-description { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.lab-organization-details-metrics { display:flex; flex-wrap:wrap; gap:var(--lab-ds-space-12); margin:0; }
+.lab-organization-details-metrics>div { display:flex; flex-direction:column-reverse; gap:var(--lab-ds-space-2); }
+.lab-organization-details-metrics dt { font-size:var(--lab-ds-text-caption); color:var(--lab-ds-text-secondary); font-weight:var(--lab-ds-weight-regular); }
+.lab-organization-details-metrics dd { margin:0; font-weight:var(--lab-ds-weight-semibold); font-variant-numeric:tabular-nums; }

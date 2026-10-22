@@ -88,3 +88,5 @@ Le rythme vertical de DatasetCard est de 8 px entre titre, producteur, mise à j
 Rythme vertical affiné après revue : 4 px entre les lignes de DatasetCard (au lieu de 8 px), en conservant les boîtes de ligne de 24 px et le padding extérieur de 16 px. La cible du bouton de métadonnées est ajustée pour ne pas empiéter sur les lignes voisines.
 
 Le nom du producteur ouvre désormais un panneau au clic dans DatasetCard : nom complet, description si fournie et lien vers la page de l’organisation. Le panneau reprend le mécanisme des métadonnées (fermeture extérieure, Échap et focus clavier). ObjectCardOwner expose cette option sans changer par défaut les autres cartes ; organizationUrl=null conserve le texte simple.
+
+Le panneau producteur reprend les informations principales de OrganizationCard : logo, nom et certification, type de producteur, description sans Markdown sur trois lignes et compteurs jeux de données/API/réutilisations. Les informations absentes de la référence d’organisation ne sont pas inventées ; aucun compteur nul artificiel. Le lien vers la page complète est conservé.

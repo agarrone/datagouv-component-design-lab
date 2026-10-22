@@ -11,8 +11,17 @@
       <OrganizationNameWithCertificate :organization size="sm" />
       <template #toggletip>
         <section class="lab-organization-details">
-          <p class="lab-quality-details-title">{{ organization.name }}</p>
-          <p v-if="organizationDescription">{{ organizationDescription }}</p>
+          <div class="lab-organization-details-identity">
+            <OrganizationLogo :organization size-class="size-12" />
+            <div class="lab-organization-details-name">
+              <OrganizationNameWithCertificate :organization :show-type="false" color-class="lab-ds-u-text-gray-title" />
+              <OwnerType v-if="organizationType !== 'other'" :type="organizationType" />
+            </div>
+          </div>
+          <p v-if="organizationDescription" class="lab-organization-details-description">{{ organizationDescription }}</p>
+          <dl v-if="organizationMetrics" class="lab-organization-details-metrics">
+            <div v-for="metric in organizationMetrics" :key="metric.label"><dt>{{ metric.label }}</dt><dd>{{ metric.value }}</dd></div>
+          </dl>
           <AppLink :to="organizationUrl || organization.page" class="lab-proposal-link">{{ t("Voir la page de l’organisation") }}</AppLink>
         </section>
       </template>
@@ -52,8 +61,12 @@ import { computed } from 'vue'
 import DetailsPopover from '../shared/QualityDetailsPopover.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import type { RouteLocationRaw } from 'vue-router'
+import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
+import OwnerType from './OwnerType.vue'
+import { getOrganizationType } from '../../vendor/datagouv-components/src/functions/organizations'
+import { removeMarkdownSync } from '../../vendor/datagouv-components/src/functions/markdown'
 import { getOwnerName } from '../../vendor/datagouv-components/src/functions/owned'
-import type { OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
+import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import type { UserReference } from '../../vendor/datagouv-components/src/types/users'
 import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
 import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
@@ -67,7 +80,20 @@ const props = defineProps<{
 }>()
 
 const { t } = useTranslation()
-const organizationDescription = computed(() => (props.organization as (OrganizationReference & {description?: string}) | null)?.description)
+const organizationType = computed(() => props.organization ? getOrganizationType(props.organization) : 'other')
+const organizationDescription = computed(() => {
+  const description = (props.organization as (OrganizationReference & Partial<Organization>) | null)?.description
+  return description ? removeMarkdownSync(description) : ''
+})
+const organizationMetrics = computed(() => {
+  const metrics = (props.organization as (OrganizationReference & Partial<Organization>) | null)?.metrics
+  if (!metrics) return null
+  return [
+    {label:t('Jeux de données'), value:metrics.datasets},
+    {label:t('API'), value:metrics.dataservices},
+    {label:t('Réutilisations'), value:metrics.reuses},
+  ].filter(metric => typeof metric.value === 'number')
+})
 
 const ownerName = computed(() => {
   if (!props.owner) return ''
