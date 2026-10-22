@@ -16,7 +16,7 @@ const items=computed(()=>[
 </script>
 <template>
  <div class="lab-card-metrics lab-organization-counts">
-  <span v-for="item in items" :key="item.key" class="lab-organization-count" :aria-label="`${item.value} ${item.label}`">
+  <span v-for="item in items" :key="item.key" class="lab-card-metric" :aria-label="`${item.value} ${item.label}`">
    <component :is="item.icon" class="lab-ds-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />{{summarize(item.value)}}
   </span>
  </div>

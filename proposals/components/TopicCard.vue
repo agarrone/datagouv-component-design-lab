@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card">
+  <ObjectCard class="lab-content-card lab-catalog-card">
     <template
       v-if="showLogo"
       #media
@@ -28,70 +28,16 @@
       {{ topic.name }}
     </ObjectCardHeader>
 
-    <div
-      v-if="topic.organization || topic.owner"
-      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
-    >
-      <ObjectCardOwner
-        :organization="topic.organization"
-        :owner="topic.owner"
-        :organization-url="organizationUrl"
-      />
-      <TranslationT
-        v-if="topic.last_modified"
-        tag="div"
-        class="w-full md:w-auto lab-ds-u-text-gray-medium whitespace-normal"
-        keypath="Mis à jour {date}"
-      >
-        <template #date>
-          <FormattedDate
-            :date="topic.last_modified"
-            format="relative"
-            :options="{ dateStyle: 'long' }"
-          />
-        </template>
-      </TranslationT>
+    <ObjectCardOwner v-if="topic.organization || topic.owner" show-details :organization="topic.organization" :owner="topic.owner" :organization-url="organizationUrl" />
+    <TranslationT v-if="topic.last_modified" tag="div" class="lab-card-updated" keypath="Mis à jour {date}">
+      <template #date><FormattedDate :date="topic.last_modified" format="relative" :options="{dateStyle:'medium'}" /></template>
+    </TranslationT>
+    <div v-if="showStats && metrics.length" class="lab-card-metrics lab-topic-metrics">
+      <span v-for="metric in metrics" :key="metric.label" class="lab-card-metric" :aria-label="`${metric.value} ${metric.label}`">
+        <component :is="metric.icon" class="lab-ds-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />{{summarize(metric.value)}}
+      </span>
     </div>
-
     <ObjectCardShortDescription :text="topic.description" />
-
-    <div
-      v-if="showStats && (topic.nb_datasets || topic.nb_dataservices || topic.nb_reuses)"
-      class="flex items-center lab-ds-u-gap-4 lab-ds-u-mt-2 lab-ds-u-text-xs lab-ds-u-text-gray-medium"
-    >
-      <div
-        v-if="topic.nb_datasets"
-        class="flex items-center lab-ds-u-gap-1"
-      >
-        <RiDatabase2Line data-icon-size="base" focusable="false"
-          aria-hidden="true"
-          class=" lab-ds-icon"
-        />
-        <span>{{ topic.nb_datasets }}</span>
-      </div>
-
-      <div
-        v-if="topic.nb_dataservices"
-        class="flex items-center lab-ds-u-gap-1"
-      >
-        <RiTerminalLine data-icon-size="base" focusable="false"
-          aria-hidden="true"
-          class=" lab-ds-icon"
-        />
-        <span>{{ topic.nb_dataservices }}</span>
-      </div>
-
-      <div
-        v-if="topic.nb_reuses"
-        class="flex items-center lab-ds-u-gap-1"
-      >
-        <RiLineChartLine data-icon-size="base" focusable="false"
-          aria-hidden="true"
-          class=" lab-ds-icon"
-        />
-        <span>{{ topic.nb_reuses }}</span>
-      </div>
-    </div>
 
     <slot />
   </ObjectCard>
@@ -100,6 +46,9 @@
 <script setup lang="ts">
 import '../shared/foundations.css'
 import '../shared/cards.css'
+import {computed} from 'vue'
+import {summarize} from '../../vendor/datagouv-components/src/functions/helpers'
+import {useTranslation} from '../../vendor/datagouv-components/src/composables/useTranslation'
 import { RiBookShelfLine, RiDatabase2Line, RiLineChartLine, RiTerminalLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { TopicV2 } from '../../vendor/datagouv-components/src/types/topics'
@@ -119,7 +68,7 @@ type TopicWithStats = TopicV2 & {
   nb_reuses?: number
 }
 
-withDefaults(defineProps<{
+const props=withDefaults(defineProps<{
   topic: TopicWithStats
   topicUrl?: RouteLocationRaw
   organizationUrl?: RouteLocationRaw | null
@@ -129,4 +78,13 @@ withDefaults(defineProps<{
   showLogo: true,
   showStats: true,
 })
+const {t}=useTranslation()
+const metrics=computed(()=>[
+ {label:t('Jeux de données'),icon:RiDatabase2Line,value:props.topic.nb_datasets},
+ {label:t('API'),icon:RiTerminalLine,value:props.topic.nb_dataservices},
+ {label:t('Réutilisations'),icon:RiLineChartLine,value:props.topic.nb_reuses},
+].filter((metric): metric is typeof metric & {value:number}=>typeof metric.value==='number' && Number.isFinite(metric.value)))
 </script>
+<style scoped>
+.lab-topic-metrics{display:flex;flex-wrap:wrap;align-items:center}
+</style>

@@ -179,3 +179,9 @@ Les couleurs des badges et tags sont désormais liées aux variables de rôle du
 Ces choix utilisent les couleurs DSFR tout en conservant les dimensions et la casse du lab : il ne s’agit pas d’une reproduction exacte du composant DSFR.
 
 Sources : [Badge DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge), [Tag DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/tag) et CSS de @gouvfr/dsfr 1.15.3.
+
+## Indicateurs statistiques et TopicCard
+
+StatBox distingue le label de l’indicateur (14/20), la valeur principale (24/32, ou 16/24 en compact) et les informations de période (12/18). Marianne et chiffres tabulaires restent la base ; les nombres compacts suivent la langue et leur valeur complète est accessible. Le mini-historique utilise le bleu France et une description textuelle des points. Il ne présente pas le dernier total mensuel comme une hausse : sans comparaison calculée, ni + ni badge vert. Chargement, absence d’historique et zéro sont distincts. Aucune animation nouvelle.
+
+TopicCard rejoint les cartes de catalogue : titre 16/24 sur une ligne, producteur avec panneau, date sur une ligne dédiée, compteurs 12/18 avec icônes de 14 px puis description sur deux lignes. Espacement vertical 4 px et survol limité à la destination principale. showLogo et showStats sont conservés ; les compteurs explicitement fournis à zéro restent visibles.

@@ -641,5 +641,14 @@
       "Brouillon, archivé et supprimé éditorial : gris. Accès restreint : avertissement orange. Accès avec compte : information bleue. Les erreurs de traitement restent rouges.",
       "Tout état comporte un libellé explicite. Les liens, filtres sélectionnables et suppressions gardent leur sémantique native, leur nom accessible et le focus commun."
     ]
+  },
+  "statistics": {
+    "rules": [
+      "StatBox : titre indicateur 14/20, valeur Marianne 24/32 en chiffres tabulaires ; variante compacte 16/24.",
+      "Période et dernier total mensuel en 12/18 ; formatage numérique selon la langue, valeur complète accessible.",
+      "Un total mensuel n’est pas une variation : aucun signe + ni badge de succès sans comparaison calculée.",
+      "Zéro est une valeur ; absence d’historique et chargement sont des états distincts. Les valeurs négatives ne deviennent pas automatiquement des erreurs.",
+      "Historique trié par date, courbe ou barres en bleu France, résumé textuel disponible aux technologies d’assistance ; aucune animation ajoutée."
+    ]
   }
 }

@@ -200,7 +200,7 @@
 @layer base {
  .lab-organization-card.lab-catalog-card .lab-organization-body > .flex { margin-top:0!important; margin-bottom:0!important; }
 }
-.lab-organization-count { display:inline-flex; align-items:center; gap:var(--lab-ds-space-2); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
+.lab-organization-count,.lab-card-metric { display:inline-flex; align-items:center; gap:var(--lab-ds-space-2); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
 
 /* Status belongs to the entity title, not to its update date. */
 .lab-card-heading-row { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-4) var(--lab-ds-space-8); min-width:0; }

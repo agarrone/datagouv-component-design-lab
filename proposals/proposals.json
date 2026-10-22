@@ -390,7 +390,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Aligner TopicCard sur DatasetCard : rythme 4 px, titre 16/24, bordure stable, survol bleu limité à sa destination, panneau producteur, date dédiée, compteurs compacts avant la description sur deux lignes. Préserver showLogo/showStats et afficher les zéros connus.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/TopicCard.vue",
     "reviewUrl": ""
@@ -1982,10 +1982,10 @@
   {
     "id": "badges-consumer-statbox",
     "component": "StatBox",
-    "title": "Harmoniser les badges et tags du composant",
+    "title": "Un indicateur compact avec période et historique explicites",
     "status": "brouillon",
-    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
-    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
+    "problem": "Le dernier total mensuel est présenté comme une hausse, les zéros sont masqués et les deux tailles divergent. Le wrapper précédent ne traitait que le badge.",
+    "intention": "Hiérarchie 14/20, valeur 24/32 ou 16/24 en compact, chiffres tabulaires et formatage localisé. Période explicite, mini-historique bleu France et résumé accessible. Distinguer zéro, absence et chargement ; dernier total mensuel sans faux signe de hausse ni badge vert. Voir proposals/stat-box-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/StatBox.vue",
     "reviewUrl": ""

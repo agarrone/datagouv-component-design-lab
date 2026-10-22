@@ -66,3 +66,10 @@ function snapshot(value,parents=new Set()) {
 }
 for(const variants of Object.values(cardVariants))for(const variant of variants)variant.props=snapshot(variant.props);
 for(const id of ['PostCard','ReuseCard','ReuseHorizontalCard','cdata/Reuses/ReuseCard'])cardVariants[id][0].label='Avec image';
+
+cardVariants.TopicCard.push(...examples('TopicCard-options',[
+ ['Sans logo',{topic:f.topic,showLogo:false}],
+ ['Sans statistiques',{topic:f.topic,showStats:false}],
+ ['Compteurs à zéro',{topic:{...f.topic,nb_datasets:0,nb_dataservices:0,nb_reuses:0}}],
+ ['Sans producteur',{topic:{...f.topic,organization:null,owner:null}}],
+]));
