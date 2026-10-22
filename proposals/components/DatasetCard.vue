@@ -40,9 +40,25 @@
         :owner="dataset.owner"
         :organization-url="organizationUrl"
       />
+      <div class="lab-dataset-update-row">
       <TranslationT tag="div" class="lab-dataset-updated" keypath="Mis à jour {date}">
         <template #date><FormattedDate :date="dataset.last_update" format="relative" :options="{dateStyle:'medium'}" /></template>
       </TranslationT>
+        <span v-if="dataset.private || dataset.archived" class="lab-dataset-status">
+      <ObjectCardBadge
+        v-if="dataset.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="dataset.archived"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
+        </span>
+      </div>
       <div class="lab-dataset-metadata-row">
         <DatasetQualityInline :quality="dataset.quality" />
     <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium">
@@ -85,20 +101,7 @@
         </p>
       </div>
     </div>
-        <span v-if="dataset.private || dataset.archived" class="lab-dataset-status">
-      <ObjectCardBadge
-        v-if="dataset.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataset.archived"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
-        </span>
+
       </div>
     </div>
     <slot>

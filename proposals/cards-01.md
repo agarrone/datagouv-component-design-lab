@@ -80,3 +80,5 @@ Dernier ajustement : la mise à jour conserve une ligne dédiée. La ligne suiva
 La date utilise désormais le corps courant 14/22. Au survol de la carte avec un pointeur compatible, le titre et son icône héritée passent en bleu France, sans soulignement ; la bordure reste stable et le producteur reste noir souligné.
 
 Les badges Brouillon et Archivé sont placés dans la ligne de métadonnées après les statistiques, plutôt que dans une rangée au-dessus du contenu. Leur présence ne décale plus le logo et le titre ; ils suivent le repli de la ligne dans les conteneurs étroits.
+
+Placement retenu pour les badges : à côté de la date de mise à jour, dans une ligne commune repliable. La ligne métadonnées et statistiques reste indépendante.
