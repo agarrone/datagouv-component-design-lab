@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "Base de travail pour les propositions — à valider",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "prefix": "--lab-ds-",
   "groups": [
     {
@@ -485,7 +485,7 @@
   },
   "interactions": {
     "rules": [
-      "Une carte ne réagit que lorsque sa destination principale est ciblée ; les contrôles secondaires restent indépendants. DatasetCard : titre et icône bleus, sans soulignement au survol, bordure stable. Les autres cartes conservent leur traitement actuel en attendant leur harmonisation.",
+      "Cartes de contenu harmonisées (dataset, API, réutilisation, organisation, graphique et article) : seule la destination principale ciblée fait passer le titre et son icône en bleu, sans soulignement au survol ni changement de couleur de bordure. Les contrôles secondaires restent indépendants.",
       "Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.",
       "La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.",
       "Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.",
@@ -518,8 +518,8 @@
   },
   "links": {
     "rules": [
-      "Titre de carte : sans soulignement au repos, focus visible sur le cadre. DatasetCard : bleu au survol de sa destination uniquement, sans soulignement ; les autres cartes restent à harmoniser.",
-      "Un lien de navigation dans le contenu reste souligné au repos. Organisation et métadonnées de DatasetCard sont des boutons ouvrant un panneau : traitement commun de survol et d’état ouvert, sans navigation au premier clic.",
+      "Titre des cartes de contenu harmonisées : sans soulignement au repos, bleu au survol de la destination uniquement, sans soulignement ; focus visible sur le cadre. Les autres familles conservent leur comportement documenté.",
+      "Un lien de navigation dans le contenu reste souligné au repos. Les noms d’organisation des cartes de contenu et les métadonnées sont des boutons ouvrant un panneau : traitement commun de survol et d’état ouvert, sans navigation au premier clic.",
       "Les boutons d’action utilisent leur cadre, leur couleur et leur focus. Les déclencheurs textuels de panneaux utilisent le traitement dédié, avec aria-expanded.",
       "Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.",
       "Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés."

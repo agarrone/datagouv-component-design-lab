@@ -1,36 +1,11 @@
 <template>
-  <ObjectCard class="lab-content-card"
+  <ObjectCard class="lab-content-card lab-catalog-card"
     :article-class="{
       'border-tabular-api': isTabularApi,
       'lab-ds-u-border-gray-default': !isTabularApi,
     }"
   >
-    <template #badge>
-      <ObjectCardBadge
-        v-if="dataservice.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataservice.archived_at"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataservice.access_type === 'restricted'"
-        :icon="RiLockLine"
-      >
-        {{ t('Accès restreint') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataservice.access_type === 'open_with_account'"
-        :icon="RiPassValidLine"
-      >
-        {{ t('Ouvert avec un compte') }}
-      </ObjectCardBadge>
-    </template>
+
 
     <template #media>
       <OrganizationLogo
@@ -57,35 +32,40 @@
     >
       {{ dataservice.title }}
     </ObjectCardHeader>
-    <div
-      v-if="dataservice.organization || dataservice.owner"
-      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
-    >
-      <ObjectCardOwner
-        :organization="dataservice.organization"
-        :owner="dataservice.owner"
-        :organization-url="organizationUrl"
-      />
-      <!-- https://github.com/datagouv/cdata/issues/653 -->
-      <TranslationT
-        tag="p"
-        class="lab-ds-u-text-sm whitespace-normal mb-0 lab-ds-u-text-gray-medium"
-        keypath="Mis à jour {date}"
-      >
-        <template #date>
-          <FormattedDate
-            :date="dataservice.metadata_modified_at"
-            format="relative"
-            :options="{ dateStyle: 'medium' }"
-          />
-        </template>
-      </TranslationT>
+    <div class="lab-card-details">
+      <ObjectCardOwner show-details :organization="dataservice.organization" :owner="dataservice.owner" :organization-url="organizationUrl" />
+      <div class="lab-card-update-row">
+        <TranslationT tag="div" class="lab-card-updated" keypath="Mis à jour {date}">
+          <template #date><FormattedDate :date="dataservice.metadata_modified_at" format="relative" :options="{dateStyle:'medium'}" /></template>
+        </TranslationT>
 
+      <ObjectCardBadge
+        v-if="dataservice.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="dataservice.archived_at"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="dataservice.access_type === 'restricted'"
+        :icon="RiLockLine"
+      >
+        {{ t('Accès restreint') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="dataservice.access_type === 'open_with_account'"
+        :icon="RiPassValidLine"
+      >
+        {{ t('Ouvert avec un compte') }}
+      </ObjectCardBadge>
+      </div>
     </div>
-    <ObjectCardShortDescription
-      v-if="showDescription"
-      :text="dataservice.description"
-    />
+    <div class="lab-card-metadata-row" :class="{'lab-card-has-quality':dataservice.quality}">
     <DataserviceQualityInline
       v-if="dataservice.quality"
       :quality="dataservice.quality"
@@ -111,6 +91,11 @@
           />{{ summarize(dataservice.metrics.followers) }}
         </p>
       </div>
+    </div>
+    <ObjectCardShortDescription
+      v-if="showDescription"
+      :text="dataservice.description"
+    />
     <slot />
   </ObjectCard>
 </template>

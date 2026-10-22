@@ -313,7 +313,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DataserviceCard.vue",
     "reviewUrl": ""
@@ -324,7 +324,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ReuseCard.vue",
     "reviewUrl": ""
@@ -335,7 +335,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ReuseHorizontalCard.vue",
     "reviewUrl": ""
@@ -346,7 +346,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/OrganizationCard.vue",
     "reviewUrl": ""
@@ -357,7 +357,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/OrganizationHorizontalCard.vue",
     "reviewUrl": ""
@@ -368,7 +368,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ChartCard.vue",
     "reviewUrl": ""
@@ -379,7 +379,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/PostCard.vue",
     "reviewUrl": ""
@@ -599,7 +599,7 @@
     "title": "Des repères lisibles pour les métadonnées et leur qualité",
     "status": "brouillon",
     "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près de la date, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DataserviceQualityInline.vue",
     "reviewUrl": ""
@@ -1966,6 +1966,17 @@
     "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/dataset/card-lg.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "reuse-details-01",
+    "component": "ReuseDetails",
+    "title": "Séparer le type de réutilisation des indicateurs d’usage",
+    "status": "brouillon",
+    "problem": "Les styles du détail natif divergent de la carte de référence.",
+    "intention": "Partager le type descriptif, un trait neutre et les statistiques compactes entre cartes de réutilisation. Icônes 14 px, compteurs tabulaires et libellés accessibles conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ReuseDetails.vue",
     "reviewUrl": ""
   }
 ]

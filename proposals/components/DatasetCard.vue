@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card lab-dataset-card">
+  <ObjectCard class="lab-content-card lab-catalog-card lab-dataset-card">
 
 
     <template #media>

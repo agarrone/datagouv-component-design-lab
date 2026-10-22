@@ -153,3 +153,51 @@
 
 /* Quality describes documentation; the separate group measures usage. */
 .lab-dataset-metadata-row > .lab-card-metrics { border-inline-start:var(--lab-ds-stroke) solid var(--lab-ds-border); padding-inline-start:var(--lab-ds-space-12); }
+
+/* Catalogue cards share the DatasetCard reference without changing media layout. */
+.lab-catalog-card .lab-object-card-body,.lab-card-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-4); min-width:0; }
+.lab-card-update-row { display:flex; align-items:center; flex-wrap:wrap; gap:var(--lab-ds-space-8); }
+.lab-card-updated { margin:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-title) var(--lab-ds-font-sans); }
+.lab-card-metadata-row { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-4) var(--lab-ds-space-12); }
+.lab-card-metadata-row.lab-card-has-quality>.lab-card-metrics,.lab-card-usage { border-inline-start:var(--lab-ds-stroke) solid var(--lab-ds-border); padding-inline-start:var(--lab-ds-space-12); }
+.lab-card-usage,.lab-card-usage p,.lab-organization-counts { display:flex; align-items:center; flex-wrap:wrap; }
+.lab-card-usage p { margin:0; gap:var(--lab-ds-space-2); }
+.lab-card-type { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-title) var(--lab-ds-font-sans); color:var(--lab-ds-text-secondary); }
+.lab-catalog-card .lab-card-title-text,.lab-catalog-card .lab-reuse-title { display:block; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.lab-catalog-card .lab-card-owner { max-width:100%; line-height:var(--lab-ds-leading-title); }
+.lab-catalog-card .lab-card-owner > :is(a,span) { max-width:100%; min-width:0; }
+.lab-catalog-card .lab-card-owner .truncate { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.lab-catalog-card .lab-organization-trigger { display:flex; align-items:center; max-width:100%; padding:0; border:0; position:relative; z-index:2; background:none; color:var(--lab-ds-text); font:inherit; text-align:left; cursor:pointer; text-decoration:none; }
+.lab-catalog-card .lab-organization-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+.lab-catalog-card .lab-quality-trigger-link { min-height:var(--lab-ds-leading-title); padding:0; line-height:var(--lab-ds-leading-title); }
+.lab-catalog-card .lab-organization-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+@media(hover:hover) {
+ .lab-catalog-card:has(:is(.lab-card-title-link,.lab-reuse-title,.lab-organization-title)[href]:hover) { border-color:var(--lab-ds-border); }
+ .lab-catalog-card .lab-organization-trigger:hover { background:var(--lab-ds-surface-subtle); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+ .lab-catalog-card .lab-organization-trigger[aria-expanded=true]:hover { background:var(--lab-ds-surface-active); }
+}
+@layer base {
+ .lab-catalog-card :is(.lab-card-title-link,.lab-reuse-title,.lab-organization-title)[href]:hover { color:var(--lab-ds-brand)!important; text-decoration:none!important; }
+ .lab-catalog-card .lab-card-owner :is(a,.truncate) { line-height:var(--lab-ds-leading-title)!important; color:var(--lab-ds-text)!important; }
+ .lab-catalog-card .lab-card-title-text .truncate { white-space:nowrap!important; overflow:hidden!important; text-overflow:ellipsis!important; }
+ .lab-catalog-card .lab-organization-trigger .truncate { line-height:var(--lab-ds-leading-title)!important; color:var(--lab-ds-text)!important; }
+ .lab-organization-card.lab-catalog-card .lab-card-heading .truncate { white-space:nowrap!important; overflow:hidden!important; text-overflow:ellipsis!important; }
+ .lab-catalog-card .lab-organization-counts svg { width:var(--lab-ds-icon-compact)!important; height:var(--lab-ds-icon-compact)!important; }
+}
+@layer base {
+ .lab-catalog-card .lab-card-title-text .truncate { font-size:inherit!important; line-height:inherit!important; font-weight:inherit!important; }
+ @media(hover:hover) {
+  .lab-catalog-card :is(.lab-card-title-link,.lab-organization-title)[href]:hover .truncate { color:var(--lab-ds-brand)!important; }
+ }
+}
+@layer base {
+ .lab-organization-details .lab-organization-card.lab-catalog-card .lab-card-heading .truncate { white-space:normal!important; overflow:visible!important; text-overflow:clip!important; }
+}
+.lab-card-usage p { font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
+
+.lab-card-usage-only { border-inline-start:0; padding-inline-start:0; }
+.lab-organization-card.lab-catalog-card .lab-organization-body { display:flex; flex-direction:column; gap:var(--lab-ds-space-4); }
+@layer base {
+ .lab-organization-card.lab-catalog-card .lab-organization-body > .flex { margin-top:0!important; margin-bottom:0!important; }
+}
+.lab-organization-count { display:inline-flex; align-items:center; gap:var(--lab-ds-space-2); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }

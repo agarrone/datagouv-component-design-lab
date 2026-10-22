@@ -137,3 +137,15 @@ Les cartes d’article et de jeu de données cdata utilisent les propositions co
 - Organisation et métadonnées partagent le même retour de panneau : soulignement et fond subtil au survol ; soulignement et fond actif persistants lorsque `aria-expanded=true`. Le focus clavier reste visible. Les couleurs de texte restent adaptées à leur hiérarchie (organisation noire, métadonnées grises).
 - Une bordure verticale neutre sépare la qualité documentaire des statistiques d’usage, sans ajouter une action ou un état.
 - Ces arbitrages remplacent pour DatasetCard les anciennes règles générales de titre souligné et bordure renforcée. Les autres cartes restent à harmoniser. Aucun changement responsive n’est introduit dans cette passe.
+
+## Harmonisation des cartes de contenu — 22 octobre 2026
+
+DatasetCard, DataserviceCard, ReuseCard, ReuseHorizontalCard, OrganizationCard, OrganizationHorizontalCard, ChartCard et PostCard partagent le rythme vertical de 4 px, les titres 16/24 noirs devenant bleus uniquement sur leur destination et la bordure stable. Les noms restent sur une ligne et les descriptions communes sur deux lignes 14/22. Ces règles remplacent pour ces cartes la mention antérieure « autres cartes à harmoniser ».
+
+Les producteurs utilisent ObjectCardOwner et son panneau OrganizationCard. DataserviceQualityInline reprend le texte gris et la barre sans pourcentage de DatasetQualityInline, avec les états communs des déclencheurs. ReuseDetails partage un type descriptif et des statistiques iconiques séparés par un trait neutre.
+
+Les statuts suivent la date. Les réutilisations et articles gardent une date de publication ; API et graphiques gardent une date de mise à jour. Les organisations conservent leurs compteurs métier sans date ou qualité artificielle. Les états d’accès des API et l’identité de l’API tabulaire sont conservés. organizationUrl=null reste du texte simple.
+
+Les médias et les dispositions responsive existantes sont conservés. Les cartes applicatives composant ces enfants héritent des propositions via le pont. Les cartes d’action, de navigation et de sélection gardent leur rôle propre.
+
+OrganizationMetrics est un assemblage partagé par les deux cartes d’organisation : chaque icône et son compteur sont groupés avec un écart de 2 px, les groupes séparés de 12 px. Les mêmes métriques sont ainsi reprises dans le panneau producteur sans recopier leur présentation.

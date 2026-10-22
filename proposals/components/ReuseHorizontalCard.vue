@@ -1,19 +1,6 @@
 <template>
-  <ObjectCard class="lab-content-card" media-size="lg">
-    <template #badge>
-      <ObjectCardBadge
-        v-if="reuse.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="reuse.archived"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
-    </template>
+  <ObjectCard class="lab-content-card lab-catalog-card" media-size="lg">
+
 
     <template #media>
       <CardMedia :src="reuse.image" :alt="reuse.title" kind="reuse" />
@@ -31,16 +18,31 @@
       class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
+        show-details
         :organization="reuse.organization"
         :owner="reuse.owner"
         :organization-url="organizationUrl"
       />
     </div>
 
-    <ObjectCardShortDescription :text="reuse.description" />
-    <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1">
-      <ReuseDetails :reuse />
+    <div class="lab-card-update-row">
+      <TranslationT tag="div" class="lab-card-updated" keypath="Publié {date}"><template #date><FormattedDate :date="reuse.created_at" format="relative" :options="{dateStyle:'medium'}" /></template></TranslationT>
+
+      <ObjectCardBadge
+        v-if="reuse.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="reuse.archived"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
     </div>
+    <ReuseDetails :reuse />
+    <ObjectCardShortDescription :text="reuse.description" />
 
     <slot />
   </ObjectCard>
@@ -53,7 +55,9 @@ import { RiArchiveLine, RiLineChartLine, RiLockLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { Reuse, ReuseV2 } from '../../vendor/datagouv-components/src/types/reuses'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
-import ReuseDetails from '../../vendor/datagouv-components/src/components/ReuseDetails.vue'
+import ReuseDetails from './ReuseDetails.vue'
+import TranslationT from '../../vendor/datagouv-components/src/components/TranslationT.vue'
+import FormattedDate from '../../vendor/datagouv-components/src/components/FormattedDate.vue'
 import CardMedia from '../shared/CardMedia.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'

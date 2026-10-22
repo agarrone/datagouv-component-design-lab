@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card">
+  <ObjectCard class="lab-content-card lab-catalog-card">
     <template #media>
       <OrganizationLogo
         :organization="organization"
@@ -24,32 +24,7 @@
           :type
         />
       </template>
-      <div
-        v-if="'metrics' in organization"
-        class="lab-ds-u-text-gray-medium flex items-center lab-ds-u-text-sm lab-ds-u-gap-0-5"
-        :aria-label="t('{datasets} jeux de donn\u00e9es, {dataservices} API et {reuses} r\u00e9utilisations', {
-          datasets: organization.metrics.datasets,
-          dataservices: organization.metrics.dataservices,
-          reuses: organization.metrics.reuses,
-        })"
-      >
-        <RiDatabase2Line data-icon-size="compact" focusable="false"
-          aria-hidden="true"
-          class=" lab-ds-icon"
-        /> {{ summarize(organization.metrics.datasets) }}
-        <RiTerminalLine data-icon-size="compact" focusable="false"
-          aria-hidden="true"
-          class="lab-ds-u-ml-1 lab-ds-icon"
-        /> {{ summarize(organization.metrics.dataservices) }}
-        <RiLineChartLine data-icon-size="compact" focusable="false"
-          aria-hidden="true"
-          class="lab-ds-u-ml-1 lab-ds-icon"
-        /> {{ summarize(organization.metrics.reuses) }}
-        <RiStarLine data-icon-size="compact" focusable="false"
-          aria-hidden="true"
-          class="lab-ds-u-ml-1 lab-ds-icon"
-        /> {{ summarize(organization.metrics.followers) }}
-      </div>
+      <OrganizationMetrics v-if="'metrics' in organization" :metrics="organization.metrics" show-followers />
     </div>
     <ObjectCardShortDescription
       v-if="'description' in organization"
@@ -61,11 +36,10 @@
 <script setup lang="ts">
 import '../shared/foundations.css'
 import '../shared/cards.css'
-import { RiBuilding2Line, RiDatabase2Line, RiLineChartLine, RiStarLine, RiTerminalLine } from '@remixicon/vue'
+import OrganizationMetrics from '../shared/OrganizationMetrics.vue'
+import { RiBuilding2Line } from '@remixicon/vue'
 import { computed } from 'vue'
 import { getOrganizationType } from '../../vendor/datagouv-components/src/functions/organizations'
-import { summarize } from '../../vendor/datagouv-components/src/functions/helpers'
-import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
 import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
@@ -77,8 +51,6 @@ import ObjectCardShortDescription from './ObjectCardShortDescription.vue'
 const props = defineProps<{
   organization: Organization | OrganizationReference
 }>()
-
-const { t } = useTranslation()
 
 const type = computed(() => getOrganizationType(props.organization))
 </script>

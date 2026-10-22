@@ -1,5 +1,5 @@
 <template>
-  <div class="lab-content-card lab-organization-card relative fr-enlarge-link">
+  <div class="lab-content-card lab-catalog-card lab-organization-card relative fr-enlarge-link">
     <div class="lab-organization-banner" />
     <div class="lab-organization-body">
       <div class="lab-organization-logo">
@@ -25,36 +25,11 @@
           />
         </template>
         <div>
-          <div
-            v-if="'metrics' in organization"
-            class="lab-ds-u-text-gray-medium flex items-center lab-ds-u-text-sm lab-ds-u-gap-0-5"
-            :aria-label="t('{datasets} jeux de données, {dataservices} API et {reuses} réutilisations', {
-              datasets: organization.metrics.datasets,
-              dataservices: organization.metrics.dataservices,
-              reuses: organization.metrics.reuses,
-            })"
-          >
-            <RiDatabase2Line data-icon-size="base" focusable="false"
-              aria-hidden="true"
-              class="-mt-1 lab-ds-icon"
-            /> {{ organization.metrics.datasets }}
-            <RiTerminalLine data-icon-size="base" focusable="false"
-              aria-hidden="true"
-              class="-mt-1 lab-ds-u-ml-1 lab-ds-icon"
-            /> {{ organization.metrics.dataservices }}
-            <RiLineChartLine data-icon-size="base" focusable="false"
-              aria-hidden="true"
-              class="-mt-1 lab-ds-u-ml-1 lab-ds-icon"
-            /> {{ organization.metrics.reuses }}
-          </div>
+      <OrganizationMetrics v-if="'metrics' in organization" :metrics="organization.metrics" />
         </div>
       </div>
       <div class="lab-organization-description">
-        <TextClamp
-          v-if="'description' in organization"
-          :text="removeMarkdownSync(organization.description)"
-          :max-lines="3"
-        />
+        <ObjectCardShortDescription v-if="'description' in organization" :text="organization.description" />
       </div>
     </div>
   </div>
@@ -63,23 +38,19 @@
 <script setup lang="ts">
 import '../shared/foundations.css'
 import '../shared/cards.css'
-import { RiLineChartLine, RiDatabase2Line, RiTerminalLine } from '@remixicon/vue'
+import OrganizationMetrics from '../shared/OrganizationMetrics.vue'
 import { computed } from 'vue'
-import { removeMarkdownSync } from '../../vendor/datagouv-components/src/functions/markdown'
 import { getOrganizationType } from '../../vendor/datagouv-components/src/functions/organizations'
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
-import TextClamp from '../../vendor/cdata-components/TextClamp.client.vue'
+import ObjectCardShortDescription from './ObjectCardShortDescription.vue'
 import OwnerType from './OwnerType.vue'
 import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
 import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
-import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 
 const props = defineProps<{
   organization: Organization | OrganizationReference
 }>()
-
-const { t } = useTranslation()
 
 const type = computed(() => getOrganizationType(props.organization))
 </script>

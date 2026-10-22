@@ -1,19 +1,6 @@
 <template>
-  <ObjectCard class="lab-content-card" media-size="xl">
-    <template #badge>
-      <ObjectCardBadge
-        v-if="chart.deleted_at"
-        :icon="RiDeleteBinLine"
-      >
-        {{ t('Supprimé') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="chart.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-    </template>
+  <ObjectCard class="lab-content-card lab-catalog-card" media-size="xl">
+
 
     <template #media>
       <CardMedia :src="chart.image" :alt="chart.title" kind="chart" />
@@ -31,13 +18,16 @@
       class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
     >
       <ObjectCardOwner
+        show-details
         :organization="chart.organization"
         :owner="chart.owner"
         :organization-url="organizationUrl"
       />
+    </div>
+    <div class="lab-card-update-row">
       <TranslationT
         tag="p"
-        class="lab-ds-u-text-sm whitespace-normal mb-0 lab-ds-u-text-gray-medium"
+        class="lab-card-updated"
         keypath="Mis à jour {date}"
       >
         <template #date>
@@ -48,9 +38,21 @@
           />
         </template>
       </TranslationT>
+
+      <ObjectCardBadge
+        v-if="chart.deleted_at"
+        :icon="RiDeleteBinLine"
+      >
+        {{ t('Supprimé') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="chart.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
     </div>
 
-    <ObjectCardShortDescription :text="chart.description" />
     <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1">
       <p
         class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
@@ -63,6 +65,7 @@
       </p>
     </div>
 
+    <ObjectCardShortDescription :text="chart.description" />
     <slot />
   </ObjectCard>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card" media-size="lg">
+  <ObjectCard class="lab-content-card lab-catalog-card" media-size="lg">
     <template #media>
       <CardMedia :src="post.image" :alt="post.name" kind="post" />
     </template>
@@ -11,12 +11,12 @@
       {{ post.name }}
     </ObjectCardHeader>
 
-    <ObjectCardShortDescription :text="post.headline || post.content" />
+
 
     <TranslationT
       v-if="post.published || post.created_at"
       tag="div"
-      class="lab-ds-u-text-sm lab-ds-u-text-gray-medium lab-ds-u-mt-1"
+      class="lab-card-updated"
       keypath="Publié {date}"
     >
       <template #date>
@@ -28,6 +28,7 @@
       </template>
     </TranslationT>
 
+    <ObjectCardShortDescription :text="post.headline || post.content" />
     <slot />
   </ObjectCard>
 </template>
