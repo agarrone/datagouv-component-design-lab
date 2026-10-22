@@ -102,3 +102,5 @@
  .lab-dataset-card .lab-card-owner a :is(.truncate,.text-new-primary) { color:var(--lab-ds-text)!important; }
 }
 .lab-dataset-card .lab-card-owner a { text-decoration:underline; }
+
+.lab-dataset-metadata-row { display:flex; align-items:center; flex-wrap:wrap; gap:var(--lab-ds-space-4) var(--lab-ds-space-12); max-width:100%; }

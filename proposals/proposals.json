@@ -302,7 +302,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Carte de référence : titre et producteur sur une ligne avec troncature, icônes espacées de 4 px du texte. Producteur, date de mise à jour, métadonnées cliquables sans pourcentage, description sur deux lignes puis compteurs. Badges brouillon et archivé à l’intérieur du cadre. Réutiliser les propositions des composants enfants ; voir proposals/cards-01.md.",
+    "intention": "Carte de référence : titre et producteur sur une ligne avec troncature, icônes espacées de 4 px du texte. Producteur, date de mise à jour, ligne de métadonnées cliquables avec barre sans pourcentage et compteurs, puis description sur deux lignes. Badges brouillon et archivé à l’intérieur du cadre. Réutiliser les propositions des composants enfants ; voir proposals/cards-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetCard.vue",
     "reviewUrl": ""

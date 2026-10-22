@@ -8,6 +8,7 @@
     <span class="lab-quality-trigger-label">
       <span>{{ t('Métadonnées') }}</span>
     </span>
+    <QualityScore :score="quality.score" :show-value="false" />
     <template #toggletip>
         <DatasetQualityTooltipContent :quality />
       </template>
@@ -19,6 +20,7 @@
 import '../shared/foundations.css'
 import '../shared/quality.css'
 import type { Quality } from '../../vendor/datagouv-components/src/types/datasets'
+import QualityScore from './QualityScore.vue'
 import DatasetQualityTooltipContent from './DatasetQualityTooltipContent.vue'
 import Toggletip from '../shared/QualityDetailsPopover.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'

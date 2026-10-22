@@ -56,14 +56,8 @@
       <TranslationT tag="div" class="lab-dataset-updated" keypath="Mis à jour {date}">
         <template #date><FormattedDate :date="dataset.last_update" format="relative" :options="{dateStyle:'medium'}" /></template>
       </TranslationT>
-      <DatasetQualityInline :quality="dataset.quality" />
-    </div>
-    <slot>
-      <ObjectCardShortDescription
-        v-if="showDescriptionShort"
-        :text="getDescriptionShort(props.dataset)"
-      />
-    </slot>
+      <div class="lab-dataset-metadata-row">
+        <DatasetQualityInline :quality="dataset.quality" />
     <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium">
       <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-gap-3">
         <p
@@ -104,6 +98,15 @@
         </p>
       </div>
     </div>
+      </div>
+    </div>
+    <slot>
+      <ObjectCardShortDescription
+        v-if="showDescriptionShort"
+        :text="getDescriptionShort(props.dataset)"
+      />
+    </slot>
+
 
   </ObjectCard>
 </template>
