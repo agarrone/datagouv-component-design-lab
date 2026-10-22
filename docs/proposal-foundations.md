@@ -162,3 +162,5 @@ Le badge est informatif et non cliquable. Il accompagne le titre de l’entité 
 - Les libellés et pictogrammes métier restent explicites ; la couleur n’est pas le seul repère.
 
 Ce mapping est un choix du lab à partir des rôles sémantiques Agents et DSFR, pas une prescription du DSFR pour les droits d’accès. Source : [Badge DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge). Cette règle remplace le placement antérieur des statuts sur la ligne de date. AccessTypeBadge et ObjectCardBadge partagent ce mapping.
+
+Les logos des cartes de catalogue sont affichés sans tuile blanche ni padding ajouté. Le visuel garde ses proportions ; les exemples utilisent le SVG fourni avec un viewBox resserré sur le dessin, sans modifier ses tracés.
