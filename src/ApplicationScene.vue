@@ -11,7 +11,7 @@ const modalOpen=ref(false);
 const editorId=useId();
 const modalPreview=computed(()=>definitions[props.name]?.props.some(p=>p.name==='opened'));
 const form=useForm(ref({title:'Données des territoires',description:'Des données ouvertes pour tous.'}));
-provide('formInfo',form);provide('formKey','title');provide('accordionsId','application-demo-accordions');
+provide('formInfo',form);provide('formKey',props.name==='cdata/InputGroup/InputGroup'?null:'title');provide('accordionsId','application-demo-accordions');
 const provider='cdata/Accordion/AccordionGroup.global';
 const editorContext=computed(()=>props.name.includes('/MarkdownEditor/') && !['cdata/MarkdownEditor/MarkdownEditor','cdata/MarkdownEditor/EditorButton'].includes(props.name));
 const content=computed(()=>props.name.includes('DescriptionList')?'Population municipale':props.name.includes('Badge')?'Données publiques':'Des données ouvertes pour comprendre les territoires.');

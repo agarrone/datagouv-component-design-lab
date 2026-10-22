@@ -1,0 +1,8 @@
+import {RiSearchLine} from '@remixicon/vue';
+const fields=[['Vide',{hintText:'Un titre précis permet de retrouver le jeu de données.'}],['Prérempli',{modelValue:'Population des communes'}],['Erreur',{hasError:true,errorText:'Renseignez un titre avant de continuer.'}],['Avertissement',{hasWarning:true,warningText:'Ce titre est déjà utilisé.'}],['Validé',{isValid:true,validText:'Le titre est disponible.'}],['Désactivé',{disabled:true,modelValue:'Population des communes'}],['Multiligne',{type:'textarea',rows:4,modelValue:'Décrivez les données, leur périmètre et leur méthode de production.'}],['Label masqué',{hideLabel:true,placeholder:'Titre du jeu de données'}]];
+export const inputVariants={
+ 'cdata/InputGroup/InputGroup':fields.map(([label,props],i)=>({key:`input-${i}`,label,props:{label:'Titre du jeu de données',required:true,...props}})),
+ 'cdata/AdminInput':[['Recherche',{}],['Désactivé',{disabled:true}],['Lecture seule',{readonly:true,modelValue:'Population'}]].map(([label,props],i)=>({key:`admin-input-${i}`,label,props:{icon:RiSearchLine,'aria-label':'Rechercher un jeu de données',placeholder:'Rechercher',...props}})),
+ 'Search/SearchInput':[['Vide',{}],['Recherche saisie',{modelValue:'Population'}],['Sans placeholder',{placeholder:null}]].map(([label,props],i)=>({key:`search-input-${i}`,label,props:{autoFocus:false,modelValue:'',...props}})),
+ 'Form/SelectGroup':[['Standard',{}],['Erreur',{hasError:true,errorText:'Choisissez une fréquence.'}],['Désactivé',{disabled:true}]].map(([label,props],i)=>({key:`select-input-${i}`,label,props:{label:'Fréquence de mise à jour',hintText:'Choisissez la fréquence de publication.',options:[{label:'Mensuelle',value:'monthly'},{label:'Annuelle',value:'yearly'}],modelValue:'monthly',...props}})),
+};

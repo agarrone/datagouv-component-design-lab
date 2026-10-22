@@ -1,4 +1,5 @@
 <script setup>
+import {inputVariants} from "./inputExamples";
 import {buttonVariants} from "./buttonExamples";
 import {discussionVariants} from "./discussionExamples";
 import {ownerAndEmptyVariants} from "./ownerAndEmptyExamples";
@@ -35,6 +36,7 @@ const status = computed(() => auditStatuses.find(s => s.id === audit[props.compo
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (inputVariants[props.component.id]) return inputVariants[props.component.id];
   if (buttonVariants[props.component.id]) return buttonVariants[props.component.id];
   if (discussionVariants[props.component.id]) return discussionVariants[props.component.id];
   if (ownerAndEmptyVariants[props.component.id]) return ownerAndEmptyVariants[props.component.id];

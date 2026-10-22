@@ -85,3 +85,7 @@ Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des comp
 - La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.
 - Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.
 - Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif.
+
+### Champs de saisie
+
+Les propositions InputGroup, AdminInput, SearchInput et SelectGroup utilisent une bordure stable de 1 px, un rayon de 6 px, Marianne 14/20 et une hauteur minimale de 40 px (48 px pour la barre de recherche). Le label reste au-dessus du champ, y compris pour l’ancienne option `showLabelInside`, afin d’éviter les collisions avec la valeur. Le placeholder ne remplace pas le label. Les aides et messages sont associés au champ ; l’erreur est prioritaire sur la validation. Le focus conserve le contour commun ; les états désactivé et lecture seule utilisent une surface subtile. Les sélecteurs complexes, choix radio et dates nécessitent encore une passe dédiée.

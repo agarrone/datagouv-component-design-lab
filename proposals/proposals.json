@@ -1252,5 +1252,49 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/BrandedButton.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "inputs-01-cdata-AdminInput",
+    "component": "cdata/AdminInput",
+    "title": "Des champs cohérents et des états explicites",
+    "status": "brouillon",
+    "problem": "Géométries hétérogènes et associations incomplètes entre champs, aides et erreurs.",
+    "intention": "Champ 40 px, Marianne 14/20, rayon 6 px, bordure stable et focus commun. Erreurs prioritaires et aides reliées au champ. Modèles, événements et intégration aux formulaires conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/AdminInput.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "inputs-01-cdata-InputGroup-InputGroup",
+    "component": "cdata/InputGroup/InputGroup",
+    "title": "Des champs cohérents et des états explicites",
+    "status": "brouillon",
+    "problem": "Géométries hétérogènes et associations incomplètes entre champs, aides et erreurs.",
+    "intention": "Champ 40 px, Marianne 14/20, rayon 6 px, bordure stable et focus commun. Erreurs prioritaires et aides reliées au champ. Modèles, événements et intégration aux formulaires conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/InputGroup/InputGroup.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "inputs-01-Search-SearchInput",
+    "component": "Search/SearchInput",
+    "title": "Des champs cohérents et des états explicites",
+    "status": "brouillon",
+    "problem": "Géométries hétérogènes et associations incomplètes entre champs, aides et erreurs.",
+    "intention": "Champ 40 px, Marianne 14/20, rayon 6 px, bordure stable et focus commun. Erreurs prioritaires et aides reliées au champ. Modèles, événements et intégration aux formulaires conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/Search/SearchInput.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "inputs-01-Form-SelectGroup",
+    "component": "Form/SelectGroup",
+    "title": "Des champs cohérents et des états explicites",
+    "status": "brouillon",
+    "problem": "Géométries hétérogènes et associations incomplètes entre champs, aides et erreurs.",
+    "intention": "Champ 40 px, Marianne 14/20, rayon 6 px, bordure stable et focus commun. Erreurs prioritaires et aides reliées au champ. Modèles, événements et intégration aux formulaires conservés.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/Form/SelectGroup.vue",
+    "reviewUrl": ""
   }
 ]

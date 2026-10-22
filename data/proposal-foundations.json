@@ -491,5 +491,14 @@
       "Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.",
       "Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif."
     ]
+  },
+  "inputs": {
+    "rules": [
+      "Champ standard : minimum 40 px, texte Marianne 14/20, rayon 6 px et bordure stable de 1 px. Recherche principale : 48 px.",
+      "Label au-dessus du champ ; le placeholder est un exemple et ne remplace pas le nom accessible.",
+      "Aides et messages associés par aria-describedby. Erreur prioritaire sur validation, indiquée par un message et aria-invalid.",
+      "Survol discret sans déplacement ; focus commun bleu 2 px avec décalage 3 px. Les états désactivé et lecture seule utilisent une surface subtile.",
+      "Les zones multiligne restent redimensionnables verticalement ; les sélecteurs simples conservent le comportement natif du navigateur."
+    ]
   }
 }
