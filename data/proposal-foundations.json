@@ -454,6 +454,112 @@
           "usage": "Rotation du témoin de chargement de bouton, désactivée en mouvement réduit"
         }
       ]
+    },
+    {
+      "id": "badge-colors",
+      "title": "Badges et tags — couleurs DSFR",
+      "tokens": [
+        {
+          "name": "badge-neutral-bg",
+          "value": "var(--background-contrast-grey)",
+          "usage": "Badge neutral : fond DSFR"
+        },
+        {
+          "name": "badge-neutral-text",
+          "value": "var(--text-default-grey)",
+          "usage": "Badge neutral : texte DSFR"
+        },
+        {
+          "name": "badge-info-bg",
+          "value": "var(--background-contrast-info)",
+          "usage": "Badge info : fond DSFR"
+        },
+        {
+          "name": "badge-info-text",
+          "value": "var(--text-default-info)",
+          "usage": "Badge info : texte DSFR"
+        },
+        {
+          "name": "badge-success-bg",
+          "value": "var(--background-contrast-success)",
+          "usage": "Badge success : fond DSFR"
+        },
+        {
+          "name": "badge-success-text",
+          "value": "var(--text-default-success)",
+          "usage": "Badge success : texte DSFR"
+        },
+        {
+          "name": "badge-warning-bg",
+          "value": "var(--background-contrast-warning)",
+          "usage": "Badge warning : fond DSFR"
+        },
+        {
+          "name": "badge-warning-text",
+          "value": "var(--text-default-warning)",
+          "usage": "Badge warning : texte DSFR"
+        },
+        {
+          "name": "badge-error-bg",
+          "value": "var(--background-contrast-error)",
+          "usage": "Badge error : fond DSFR"
+        },
+        {
+          "name": "badge-error-text",
+          "value": "var(--text-default-error)",
+          "usage": "Badge error : texte DSFR"
+        },
+        {
+          "name": "badge-pink-bg",
+          "value": "var(--background-contrast-pink-macaron)",
+          "usage": "Badge pink : fond DSFR"
+        },
+        {
+          "name": "badge-pink-text",
+          "value": "var(--text-label-pink-macaron)",
+          "usage": "Badge pink : texte DSFR"
+        },
+        {
+          "name": "badge-teal-bg",
+          "value": "var(--background-contrast-green-archipel)",
+          "usage": "Badge teal : fond DSFR"
+        },
+        {
+          "name": "badge-teal-text",
+          "value": "var(--text-label-green-archipel)",
+          "usage": "Badge teal : texte DSFR"
+        },
+        {
+          "name": "tag-text",
+          "value": "var(--text-label-grey)",
+          "usage": "Tag non interactif"
+        },
+        {
+          "name": "tag-bg",
+          "value": "var(--background-contrast-grey)",
+          "usage": "Fond du tag"
+        },
+        {
+          "name": "tag-link-text",
+          "value": "var(--text-action-high-blue-france)",
+          "usage": "Tag interactif"
+        },
+        {
+          "name": "tag-link-bg",
+          "value": "var(--background-action-low-blue-france)",
+          "usage": "Fond du tag interactif"
+        },
+        {
+          "name": "tag-hover-bg",
+          "value": "var(--background-action-low-blue-france-hover)",
+          "usage": "Survol du tag interactif"
+        },
+        {
+          "name": "tag-active-bg",
+          "value": "var(--background-action-low-blue-france-active)",
+          "usage": "Pression du tag interactif"
+        }
+      ]
     }
   ],
   "iconography": {
@@ -524,6 +630,16 @@
       "Les boutons d’action utilisent leur cadre, leur couleur et leur focus. Les déclencheurs textuels de panneaux utilisent le traitement dédié, avec aria-expanded.",
       "Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.",
       "Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés."
+    ]
+  },
+  "badgesTags": {
+    "rules": [
+      "Badge : état ou statut, informatif et non cliquable, rayon commun 6 px.",
+      "Tag : catégorisation, lien associé ou filtre, forme pilule ; un tag statique ne reçoit aucun survol interactif.",
+      "Socle compact commun : texte Marianne 12/18, icône 14 px, espacement 4 px, hauteur minimale 24 px.",
+      "Couleurs DSFR via leurs variables de rôle : information, succès, avertissement, erreur, gris et accents non sémantiques.",
+      "Brouillon, archivé et supprimé éditorial : gris. Accès restreint : avertissement orange. Accès avec compte : information bleue. Les erreurs de traitement restent rouges.",
+      "Tout état comporte un libellé explicite. Les liens, filtres sélectionnables et suppressions gardent leur sémantique native, leur nom accessible et le focus commun."
     ]
   }
 }

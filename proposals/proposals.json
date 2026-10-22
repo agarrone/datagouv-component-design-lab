@@ -126,7 +126,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/Tag.vue",
     "reviewUrl": ""
@@ -137,7 +137,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetLabelTag.vue",
     "reviewUrl": ""
@@ -148,7 +148,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ObjectCardBadge.vue",
     "reviewUrl": ""
@@ -159,7 +159,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AccessTypes/AccessTypeBadge.vue",
     "reviewUrl": ""
@@ -170,7 +170,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AdminBadge/AdminBadge.vue",
     "reviewUrl": ""
@@ -181,7 +181,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AdminBadge/DataserviceBadge.vue",
     "reviewUrl": ""
@@ -192,7 +192,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AdminBadge/DatasetBadge.vue",
     "reviewUrl": ""
@@ -203,7 +203,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/AdminBadge/ReuseBadge.vue",
     "reviewUrl": ""
@@ -236,7 +236,7 @@
     "title": "Harmoniser tags et badges en conservant leur sens métier",
     "status": "brouillon",
     "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
+    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/SuiviDePublication/HvdStatutBadge.vue",
     "reviewUrl": ""
@@ -489,7 +489,7 @@
     "title": "Harmoniser les badges descriptifs",
     "status": "brouillon",
     "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/LicenseBadge.vue",
     "reviewUrl": ""
@@ -500,7 +500,7 @@
     "title": "Harmoniser les badges descriptifs",
     "status": "brouillon",
     "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/OwnerType.vue",
     "reviewUrl": ""
@@ -511,7 +511,7 @@
     "title": "Harmoniser les badges descriptifs",
     "status": "brouillon",
     "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
+    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Afficher la valeur du score, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ResourceIconBadge.vue",
     "reviewUrl": ""
@@ -1754,7 +1754,7 @@
     "title": "Une famille cohérente de champs et de choix",
     "status": "brouillon",
     "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
+    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/TagsSelect.vue",
     "reviewUrl": ""
@@ -1977,6 +1977,50 @@
     "intention": "Partager le type descriptif, un trait neutre et les statistiques compactes entre cartes de réutilisation. Icônes 14 px, compteurs tabulaires et libellés accessibles conservés.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ReuseDetails.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "badges-consumer-statbox",
+    "component": "StatBox",
+    "title": "Harmoniser les badges et tags du composant",
+    "status": "brouillon",
+    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
+    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/StatBox.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "badges-consumer-resourceaccordion-schemabadge",
+    "component": "ResourceAccordion/SchemaBadge",
+    "title": "Harmoniser les badges et tags du composant",
+    "status": "brouillon",
+    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
+    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaBadge.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "badges-consumer-tabularexplorer-tabularactivefilters",
+    "component": "TabularExplorer/TabularActiveFilters",
+    "title": "Harmoniser les badges et tags du composant",
+    "status": "brouillon",
+    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
+    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularActiveFilters.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "badges-consumer-cdata-datasets-describedataset",
+    "component": "cdata/Datasets/DescribeDataset",
+    "title": "Harmoniser les badges et tags du composant",
+    "status": "brouillon",
+    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
+    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Datasets/DescribeDataset.vue",
     "reviewUrl": ""
   }
 ]

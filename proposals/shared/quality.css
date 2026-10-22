@@ -1,12 +1,12 @@
 /* These selectors belong only to the proposed metadata/quality components. */
 .lab-license-badge { font-family:var(--lab-ds-font-sans); white-space:normal; overflow-wrap:anywhere; }
-a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
-a.lab-license-badge:hover { background:var(--lab-ds-border); color:var(--lab-ds-text); }
+a.lab-license-badge { background-image:none; text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+a.lab-license-badge:hover { background:var(--lab-ds-tag-hover-bg); color:var(--lab-ds-tag-link-text); }
 a.lab-license-badge:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 a.lab-license-badge::after { display:none; }
 .lab-owner-type { font-family:var(--lab-ds-font-sans); }
-.lab-owner-type-gray { --badge-text:var(--lab-ds-text-secondary); }
-.lab-owner-type-black { --badge-text:var(--lab-ds-text); }
+.lab-owner-type-gray { --badge-text:var(--lab-ds-badge-neutral-text); }
+.lab-owner-type-black { --badge-text:var(--lab-ds-tag-text); }
 .lab-owner-type[data-size=xs] { font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); min-height:var(--lab-ds-icon-major); padding:0 var(--lab-ds-space-6); }
 .lab-owner-type-icon { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); flex-shrink:0; }
 .lab-owner-type[data-size=xs] .lab-owner-type-icon { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); }
@@ -69,4 +69,12 @@ a.lab-license-badge::after { display:none; }
 .lab-dataset-card .lab-details-trigger[aria-expanded=true]:hover { background:var(--lab-ds-surface-active); }
 @layer base {
  .lab-owner-type[data-size=base],.lab-owner-type[data-size=sm] { font-size:var(--lab-ds-text-caption)!important; line-height:var(--lab-ds-leading-caption)!important; }
+}
+
+@layer base {
+ .lab-resource-icon-badge { color:var(--lab-ds-badge-neutral-text); background:var(--lab-ds-badge-neutral-bg)!important; border-color:var(--lab-ds-badge-neutral-bg); }
+ .lab-resource-icon-badge[data-tone=teal] { color:var(--lab-ds-badge-teal-text); background:var(--lab-ds-badge-teal-bg)!important; border-color:var(--lab-ds-badge-teal-bg); }
+ .lab-resource-icon-badge[data-tone=danger] { color:var(--lab-ds-badge-error-text); background:var(--lab-ds-badge-error-bg)!important; border-color:var(--lab-ds-badge-error-bg); }
+ .lab-resource-icon-badge[data-tone=primary] { color:var(--lab-ds-badge-info-text); background:var(--lab-ds-badge-info-bg)!important; border-color:var(--lab-ds-badge-info-bg); }
+ .lab-resource-icon-badge[data-tone=pink] { color:var(--lab-ds-badge-pink-text); background:var(--lab-ds-badge-pink-bg)!important; border-color:var(--lab-ds-badge-pink-bg); }
 }

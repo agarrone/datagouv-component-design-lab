@@ -1,6 +1,6 @@
 <template>
   <span
-    :class="[iconColor, '[&_svg]:fill-current']"
+    :data-tone="formatTone"
     class="lab-resource-icon-badge"
     role="img"
     :aria-label="resource.format ? `Format ${resource.format.toUpperCase()}` : 'Fichier'"
@@ -19,7 +19,7 @@ import '../shared/foundations.css'
 import '../shared/quality.css'
 import { computed } from 'vue'
 import File from '../../vendor/datagouv-components/src/components/Icons/File.vue'
-import { getResourceFormatIcon, getResourceIconColor } from '../../vendor/datagouv-components/src/functions/resources'
+import { getResourceFormatIcon } from '../../vendor/datagouv-components/src/functions/resources'
 import type { Resource } from '../../vendor/datagouv-components/src/types/resources'
 
 const props = defineProps<{
@@ -29,5 +29,12 @@ const props = defineProps<{
 // Render the icon directly (not via ResourceIcon which forces a gray color) so the
 // colored badge can tint it through currentColor + [&_svg]:fill-current.
 const iconComponent = computed(() => (props.resource.format ? getResourceFormatIcon(props.resource.format) : null) ?? File)
-const iconColor = computed(() => getResourceIconColor(props.resource.format))
+const formatTone = computed(() => {
+  const format = props.resource.format?.toLowerCase() || ''
+  if (['csv','xls','xlsx','ods'].includes(format)) return 'teal'
+  if (format === 'pdf') return 'danger'
+  if (['json','geojson','xml','rdf','jsonl','parquet'].includes(format)) return 'primary'
+  if (['zip','gz','7z','tar'].includes(format)) return 'pink'
+  return 'secondary'
+})
 </script>

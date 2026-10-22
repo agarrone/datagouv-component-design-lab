@@ -2,13 +2,13 @@
   <AppLink
     v-if="license && license.url"
     :to="license.url"
-    class="design-lab-badge lab-license-badge"
+    class="design-lab-tag lab-license-badge"
   >
     {{ license.title }}
   </AppLink>
   <span
     v-else-if="license"
-    class="design-lab-badge lab-license-badge"
+    class="design-lab-tag lab-license-badge"
   >
     {{ license.title }}
   </span>

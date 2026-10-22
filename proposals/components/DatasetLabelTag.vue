@@ -2,11 +2,8 @@
   <component
     :is="url ? AppLink : 'span'"
     :to="url"
-    class="design-lab-badge proposed-dataset-label"
-    :class="{
-      'proposed-dataset-label--link': url,
-      'proposed-dataset-label--static': !url,
-    }"
+    :class="[url ? 'design-lab-tag' : 'design-lab-badge', {'proposed-dataset-label--link':url}]"
+    class="proposed-dataset-label"
   >
     <img
       v-if="img"
@@ -42,9 +39,9 @@ const img = computedAsync(async () => {
 </script>
 
 <style scoped>
-.proposed-dataset-label { border-radius:var(--lab-ds-radius-pill); gap:var(--lab-ds-space-6); }
-.proposed-dataset-label img { width:var(--lab-ds-icon); height:var(--lab-ds-icon); object-fit:contain; flex-shrink:0; }
-.proposed-dataset-label--link { color:var(--lab-ds-brand); border-color:var(--lab-ds-info-border); background:var(--lab-ds-info-bg); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
-.proposed-dataset-label--link:hover { background:var(--lab-ds-info-hover); }
+.proposed-dataset-label { gap:var(--lab-ds-space-4); }
+.proposed-dataset-label img { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); object-fit:contain; flex-shrink:0; }
+.proposed-dataset-label--link { color:var(--lab-ds-tag-link-text); background:var(--lab-ds-tag-link-bg); text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+.proposed-dataset-label--link:hover { background:var(--lab-ds-tag-hover-bg); }
 .proposed-dataset-label--link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

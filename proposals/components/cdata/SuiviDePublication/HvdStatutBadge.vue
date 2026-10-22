@@ -1,23 +1,12 @@
 <template>
   <span v-if="!statut">-</span>
-  <CdataLink
-    v-else-if="linksToData && url"
-    :to="url"
-    external
-    target="_blank"
-    rel="noopener"
-    class="proposed-hvd-link fr-raw-link"
-  >
-    <AdminBadge
-      :type="type"
-      :icon-right="RiExternalLinkLine"
-      size="sm"
-      :no-wrap="false"
-      icon-size="size-3.5"
-    >
-      {{ statut }}
-    </AdminBadge>
-  </CdataLink>
+  <div v-else-if="linksToData && url" class="lab-hvd-status">
+    <AdminBadge :type="type" size="sm" :no-wrap="false">{{ statut }}</AdminBadge>
+    <CdataLink :to="url" external target="_blank" rel="noopener noreferrer" class="proposed-hvd-link fr-raw-link">
+      {{ t('Voir les données') }}
+      <RiExternalLinkLine class="lab-ds-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />
+    </CdataLink>
+  </div>
   <AdminBadge
     v-else
     :type="type"
@@ -31,9 +20,12 @@
 <script setup lang="ts">
 import '../../../shared/foundations.css'
 import { RiExternalLinkLine } from '@remixicon/vue'
+import {useTranslation} from '../../../../vendor/datagouv-components/src/composables/useTranslation'
 import CdataLink from '../../../../vendor/cdata-components/CdataLink.vue'
 import AdminBadge from '../AdminBadge/AdminBadge.vue'
 type AdminBadgeType = 'primary'|'secondary'|'success'|'warning'|'danger'|'default'|'pink'|'teal'
+
+const {t}=useTranslation()
 
 // Presentation only: the status → colour / links-to-data mapping is owned by the
 // hosting page (single source of truth in its STATUTS list) and passed in.
@@ -46,7 +38,8 @@ defineProps<{
 </script>
 
 <style scoped>
-.proposed-hvd-link { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+.lab-hvd-status { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-8); }
+.proposed-hvd-link { display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); min-height:var(--lab-ds-control-compact); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .proposed-hvd-link::after { content:none !important; }
 .proposed-hvd-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

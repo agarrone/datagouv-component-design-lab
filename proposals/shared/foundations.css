@@ -89,4 +89,24 @@
   --lab-ds-duration-shimmer: 2000ms;
   --lab-ds-duration-glyph: 80ms;
   --lab-ds-duration-spin: 1000ms;
+  --lab-ds-badge-neutral-bg: var(--background-contrast-grey);
+  --lab-ds-badge-neutral-text: var(--text-default-grey);
+  --lab-ds-badge-info-bg: var(--background-contrast-info);
+  --lab-ds-badge-info-text: var(--text-default-info);
+  --lab-ds-badge-success-bg: var(--background-contrast-success);
+  --lab-ds-badge-success-text: var(--text-default-success);
+  --lab-ds-badge-warning-bg: var(--background-contrast-warning);
+  --lab-ds-badge-warning-text: var(--text-default-warning);
+  --lab-ds-badge-error-bg: var(--background-contrast-error);
+  --lab-ds-badge-error-text: var(--text-default-error);
+  --lab-ds-badge-pink-bg: var(--background-contrast-pink-macaron);
+  --lab-ds-badge-pink-text: var(--text-label-pink-macaron);
+  --lab-ds-badge-teal-bg: var(--background-contrast-green-archipel);
+  --lab-ds-badge-teal-text: var(--text-label-green-archipel);
+  --lab-ds-tag-text: var(--text-label-grey);
+  --lab-ds-tag-bg: var(--background-contrast-grey);
+  --lab-ds-tag-link-text: var(--text-action-high-blue-france);
+  --lab-ds-tag-link-bg: var(--background-action-low-blue-france);
+  --lab-ds-tag-hover-bg: var(--background-action-low-blue-france-hover);
+  --lab-ds-tag-active-bg: var(--background-action-low-blue-france-active);
 }
