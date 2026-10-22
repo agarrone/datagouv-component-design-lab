@@ -5,4 +5,4 @@ import '../shared/badge.css'
 defineProps<{icon:Component}>()
 </script>
 <template><div class="proposed-object-card-badge"><span class="design-lab-badge" data-tone="secondary"><component data-icon-size="compact" :is="icon" class="design-lab-badge__icon lab-ds-icon" aria-hidden="true" focusable="false" /><span class="design-lab-badge__text"><slot /></span></span></div></template>
-<style scoped>.proposed-object-card-badge { position:absolute; top:0; left:16px; transform:translateY(-50%); max-width:calc(100% - 32px); }</style>
+<style scoped>.proposed-object-card-badge { display:inline-flex; max-width:100%; position:static; transform:none; }</style>

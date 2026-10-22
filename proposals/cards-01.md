@@ -29,7 +29,7 @@ Hypothèse à discuter : un rythme commun et des titres lisibles en entier facil
 
 | Composant | Changement principal |
 | --- | --- |
-| DatasetCard | Description avant qualité et compteurs ; espacement des compteurs augmenté, qualité consultable sur petit écran. |
+| DatasetCard | Producteur, mise à jour, qualité cliquable sans pourcentage, description sur deux lignes puis compteurs. Titre et producteur sur une ligne avec troncature. Badges dans le cadre. |
 | DataserviceCard | Description avant qualité, compteurs séparés du producteur et de la date. Le traitement particulier de l’API tabulaire reste conservé. |
 | ReuseHorizontalCard / ChartCard | Description avant les compteurs ; média placé au-dessus lorsque la carte est étroite. |
 | PostCard | Même titre, description et cadre ; date et slots conservés. |
@@ -62,3 +62,11 @@ Les propositions sont dans `proposals/components`. Leur CSS partagé utilise uni
 - À 375 px : absence de débordement interne des cartes DatasetCard, DataserviceCard, OrganizationCard, ReuseCard et SchemaCard, y compris leurs variantes longues ; descriptions du socle visibles.
 - Bouton de qualité de DatasetCard toujours activable et panneau ouvert dans la proposition.
 - Contrôle dans le template d’organisation avec les propositions : onglets jeux de données, API et réutilisations, puis retour à la version actuelle. Les permissions et les données d’une vraie page de production ne sont pas couvertes par ces fixtures.
+
+## DatasetCard comme référence — 22 octobre 2026
+
+La carte assemble ObjectCard (cadre et emplacement des badges), ObjectCardHeader (titre et icône), ObjectCardOwner (producteur), DatasetQualityInline (bouton ouvrant le détail), ObjectCardShortDescription et les compteurs. Ces propositions sont importées explicitement pour éviter qu’une carte proposée compose accidentellement un ancien enfant.
+
+Le titre et le nom du producteur restent sur une ligne avec troncature, conformément à l’arbitrage retenu. Cette règle remplace pour DatasetCard le retour à la ligne décrit dans la première hypothèse ; le texte complet reste dans le DOM. L’écart icône/texte du titre est de 4 px comme celui du producteur. Date, métadonnées et description partagent le même bord gauche. La description vient après les métadonnées et conserve sa limite de deux lignes. Aucun pourcentage n’est affiché dans le bouton de qualité ; le détail reste accessible au clic et au clavier. Les badges sont dans le flux du cadre et ne créent pas d’espace quand ils sont absents.
+
+Les changements du titre et de l’emplacement des badges sont partagés par les cartes utilisant ces enfants. La hiérarchie propre à DatasetCard reste locale pour permettre une revue des autres cartes avant de généraliser.

@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card">
+  <ObjectCard class="lab-content-card lab-dataset-card">
     <template #badge>
       <ObjectCardBadge
         v-if="dataset.private"
@@ -46,28 +46,17 @@
         <small class="flex-1 lab-ds-u-ml-2">{{ dataset.acronym }}</small>
       </template>
     </ObjectCardHeader>
-    <div
-      v-if="dataset.organization || dataset.owner"
-      class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center"
-    >
+    <div class="lab-dataset-details">
       <ObjectCardOwner
+        v-if="dataset.organization || dataset.owner"
         :organization="dataset.organization"
         :owner="dataset.owner"
         :organization-url="organizationUrl"
       />
-      <TranslationT
-        tag="div"
-        class="w-full md:w-auto lab-ds-u-text-gray-medium whitespace-normal"
-        keypath="Mis à jour {date}"
-      >
-        <template #date>
-          <FormattedDate
-            :date="dataset.last_update"
-            format="relative"
-            :options="{ dateStyle: 'medium' }"
-          />
-        </template>
+      <TranslationT tag="div" class="lab-dataset-updated" keypath="Mis à jour {date}">
+        <template #date><FormattedDate :date="dataset.last_update" format="relative" :options="{dateStyle:'medium'}" /></template>
       </TranslationT>
+      <DatasetQualityInline :quality="dataset.quality" />
     </div>
     <slot>
       <ObjectCardShortDescription
@@ -76,9 +65,6 @@
       />
     </slot>
     <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-text-sm lab-ds-u-text-gray-medium">
-      <div class="flex lab-ds-u-text-gray-medium">
-        <DatasetQualityInline :quality="dataset.quality" />
-      </div>
       <div class="lab-card-metrics flex flex-wrap items-center lab-ds-u-gap-3">
         <p
           class="lab-ds-u-text-sm mb-0 flex items-center lab-ds-u-gap-0-5"
