@@ -51,6 +51,10 @@ cardVariants['cdata/FileCard/FileCard']=examples('cdata/FileCard/FileCard',[
  ['Fichier distant',{modelValue:{...f.resource,title:'Population des communes',filetype:'remote',url:'https://example.org/population.csv',resource:f.resource,file:null,schema:{name:'etalab/population'}},extensions:['csv']}],
  ['Sans nom ni actions',{modelValue:{...f.resource,title:'',filetype:'remote',url:'https://example.org/population.csv',resource:f.resource,file:null},extensions:['csv'],hideActions:true}],
 ]);
+cardVariants.ObjectCardOwner=examples('ObjectCardOwner',[
+ ['Producteur cliquable',{organization:f.organization}],
+ ['Producteur en texte simple',{organization:f.organization,organizationUrl:null}],
+]);
 // Some legacy demo fixtures contain back references. Keep each example independent
 // and serializable for the code panel, without changing those shared fixtures.
 function snapshot(value,parents=new Set()) {

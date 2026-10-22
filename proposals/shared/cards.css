@@ -66,3 +66,16 @@
 
 .lab-card-media-slot { position:relative; aspect-ratio:16/9; width:100%; }
 .lab-card-media-slot > .lab-card-media { position:absolute; inset:0; }
+
+/* Card destinations share one rule regardless of local/scoped source styles. */
+@layer base {
+ :is(a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title) {
+  --underline-img:none!important;
+  background-image:none!important;
+  text-decoration:none!important;
+  text-underline-offset:var(--lab-ds-space-optical);
+  text-decoration-thickness:var(--lab-ds-stroke);
+ }
+ :is(a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title):focus-visible { text-decoration:underline!important; }
+ @media(hover:hover){:is(a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title):hover{text-decoration:underline!important}}
+}

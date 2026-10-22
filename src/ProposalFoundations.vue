@@ -10,7 +10,7 @@ const groups=reference.groups;
  <div class="reference-page proposal-foundations">
   <h1>Fondamentaux des propositions</h1>
   <p class="intro">La base commune pour concevoir les composants du futur design system : mêmes rôles de couleur, même hiérarchie de texte et mêmes règles de géométrie.</p>
-  <p><strong>{{ reference.status }}</strong> · Mise à jour le 21 octobre 2026.</p>
+  <p><strong>{{ reference.status }}</strong> · Mise à jour le 22 octobre 2026.</p>
   <p>Ces jetons sont appliqués aux styles des propositions. Le <a href="#fondamentaux/couleurs">relevé des composants actuels</a> reste disponible séparément.</p>
   <nav class="reference-sections" aria-label="Fondamentaux des propositions"><a href="#fondamentaux/propositions-icons">Iconographie</a><a href="#fondamentaux/propositions-buttons">Boutons</a><a v-for="group in groups" :key="group.id" :href="`#fondamentaux/propositions-${group.id}`">{{ group.title }}</a></nav>
   <section v-for="group in groups" :id="`propositions-${group.id}`" :key="group.id" class="reference-section">
@@ -19,6 +19,7 @@ const groups=reference.groups;
    <div v-else class="proposal-token-table"><table><caption class="sr-only">Jetons — {{ group.title }}</caption><thead><tr><th scope="col">Jeton CSS</th><th scope="col">Valeur</th><th scope="col">Usage</th></tr></thead><tbody><tr v-for="token in group.tokens" :key="token.name"><th scope="row"><code>--lab-ds-{{ token.name }}</code></th><td>{{ token.value }}</td><td>{{ token.usage }}<span v-if="group.id==='spacing'" class="proposal-space-specimen" :style="{width:token.value}" aria-hidden="true"></span><span v-if="token.name.startsWith('radius')" class="proposal-radius-specimen" :style="{borderRadius:token.value}" aria-hidden="true"></span></td></tr></tbody></table></div>
    <div v-if="group.id==='typography'" class="proposal-type-specimens"><p class="proposal-type-title">Un titre de composant · 16 / 24 · 600</p><p class="proposal-type-body">Un texte de composant lisible et capable de revenir à la ligne. · 14 / 22 · 400</p><p class="proposal-type-caption">Une date ou une métadonnée · 12 / 18 · 400 · 12 345</p><code class="proposal-type-code">identifiant_technique · Geist Mono</code></div>
   </section>
+  <section id="propositions-links" class="reference-section"><h2>Liens et soulignements</h2><ul><li v-for="rule in reference.links.rules" :key="rule">{{ rule }}</li></ul></section>
   <section id="propositions-tables" class="reference-section"><h2>Tableaux</h2><ul><li v-for="rule in reference.tables.rules" :key="rule">{{ rule }}</li></ul></section>
   <section id="propositions-inputs" class="reference-section"><h2>Champs de saisie</h2><ul><li v-for="rule in reference.inputs.rules" :key="rule">{{ rule }}</li></ul></section>
   <section id="propositions-interactions" class="reference-section"><h2>Survol, pression et focus</h2><ul><li v-for="rule in reference.interactions.rules" :key="rule">{{ rule }}</li></ul></section>

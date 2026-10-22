@@ -52,3 +52,12 @@
  .lab-brand-card:not(:has(img)) h2.sr-only { position:static!important; width:auto!important; height:auto!important; margin:0!important; padding:0!important; overflow:visible!important; clip:auto!important; white-space:normal!important; }
  @media(hover:hover){.lab-brand-card .product-link:hover{color:var(--lab-ds-brand-hover)!important}}
 }
+@layer base {
+ .lab-link-card :is(h1,h2,h3,h4,h5,h6) { text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+ .lab-link-card:focus-visible :is(h1,h2,h3,h4,h5,h6) { text-decoration:underline!important; }
+ .lab-link-card:not(:has(h1,h2,h3,h4,h5,h6)):focus-visible { text-decoration:underline!important; text-underline-offset:var(--lab-ds-space-optical); }
+ @media(hover:hover){
+  .lab-link-card:hover :is(h1,h2,h3,h4,h5,h6) { text-decoration:underline!important; }
+  .lab-link-card:not(:has(h1,h2,h3,h4,h5,h6)):hover { text-decoration:underline!important; text-underline-offset:var(--lab-ds-space-optical); }
+ }
+}

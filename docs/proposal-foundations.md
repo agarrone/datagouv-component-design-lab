@@ -120,3 +120,11 @@ Les menus recherchables et Listbox sont rendus dans la couche de superposition `
 Les cartes d’action, d’accueil, de support, de fichiers et de liens partagent le cadre 6 px / 1 px, l’espacement 16 px, les titres 16/24 et le contenu 14/22. Les cartes statiques ne reçoivent pas de faux survol cliquable ; LinkCard porte le focus et le survol pour la surface entièrement navigable. Les actions restent des contrôles indépendants. La carte de marque conserve sa composition média/texte et un titre 24/32 dans sa variante large. Les illustrations restent proportionnées et ne sont pas recadrées dans la carte de support.
 
 Les cartes d’article et de jeu de données cdata utilisent les propositions communes et le média de remplacement partagé. Les composants d’intégration et de recommandation conservent leur chargement, leurs conditions d’affichage et leurs sources ; leurs cartes enfants bénéficient des propositions. La recommandation externe conserve le suivi et la localisation, avec un seul indicateur de nouvel onglet.
+
+### Liens et soulignements
+
+- Titre ou destination principale de carte : sans soulignement au repos ; souligné au survol et au focus clavier. Le contour de focus entoure la carte entière.
+- Lien dans un contenu, producteur cliquable ou action textuelle : souligné dès le repos. Le survol renforce le trait ; le focus ajoute le contour commun.
+- Bouton, même lorsqu’il navigue : pas de soulignement ; son cadre, sa couleur et son focus portent l’interaction.
+- Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.
+- Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés.
