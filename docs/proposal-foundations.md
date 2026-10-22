@@ -149,3 +149,5 @@ Les statuts suivent la date. Les réutilisations et articles gardent une date de
 Les médias et les dispositions responsive existantes sont conservés. Les cartes applicatives composant ces enfants héritent des propositions via le pont. Les cartes d’action, de navigation et de sélection gardent leur rôle propre.
 
 OrganizationMetrics est un assemblage partagé par les deux cartes d’organisation : chaque icône et son compteur sont groupés avec un écart de 2 px, les groupes séparés de 12 px. Les mêmes métriques sont ainsi reprises dans le panneau producteur sans recopier leur présentation.
+
+Le badge OwnerType utilise désormais la géométrie commune : texte 12/18, graisse 500, icône 14 px, hauteur minimale 24 px et padding 2 × 8 px. Les tailles publiques base et sm partagent ce standard ; xs conserve sa géométrie compacte. Les titres de cartes restent à 16/24 en attendant un arbitrage séparé.

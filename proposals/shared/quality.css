@@ -4,13 +4,11 @@ a.lab-license-badge { background-image:none; text-decoration:underline; text-und
 a.lab-license-badge:hover { background:var(--lab-ds-border); color:var(--lab-ds-text); }
 a.lab-license-badge:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 a.lab-license-badge::after { display:none; }
-.lab-owner-type { font-family:var(--lab-ds-font-sans); font-weight:var(--lab-ds-weight-regular); }
+.lab-owner-type { font-family:var(--lab-ds-font-sans); }
 .lab-owner-type-gray { --badge-text:var(--lab-ds-text-secondary); }
 .lab-owner-type-black { --badge-text:var(--lab-ds-text); }
-.lab-owner-type[data-size=base] { font-size:var(--lab-ds-text-title); line-height:var(--lab-ds-leading-title); }
-.lab-owner-type[data-size=sm] { font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-control); }
 .lab-owner-type[data-size=xs] { font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); min-height:var(--lab-ds-icon-major); padding:0 var(--lab-ds-space-6); }
-.lab-owner-type-icon { width:var(--lab-ds-icon); height:var(--lab-ds-icon); flex-shrink:0; }
+.lab-owner-type-icon { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); flex-shrink:0; }
 .lab-owner-type[data-size=xs] .lab-owner-type-icon { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); }
 .lab-resource-icon-badge { display:inline-flex; align-items:center; justify-content:center; width:var(--lab-ds-space-24); height:var(--lab-ds-space-24); flex-shrink:0; border-radius:var(--lab-ds-radius); border:var(--lab-ds-stroke) solid color-mix(in srgb,currentColor 18%,var(--lab-ds-surface)); background:color-mix(in srgb,currentColor 8%,var(--lab-ds-surface)); }
 .lab-quality-block,.lab-quality-inline,.lab-quality-details { font-family:var(--lab-ds-font-sans); color:var(--lab-ds-text); font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); min-width:0; max-width:100%; }
@@ -48,7 +46,7 @@ a.lab-license-badge::after { display:none; }
    overrides of native utilities in the earlier base layer, restricted to
    proposed content, so the icon sizes and format tints can adapt. */
 @layer base {
- .lab-owner-type-icon { width:var(--lab-ds-icon) !important; height:var(--lab-ds-icon) !important; }
+ .lab-owner-type-icon { width:var(--lab-ds-icon-compact) !important; height:var(--lab-ds-icon-compact) !important; }
  .lab-owner-type[data-size=xs] .lab-owner-type-icon { width:var(--lab-ds-icon-compact) !important; height:var(--lab-ds-icon-compact) !important; }
  .lab-resource-icon-badge { background:color-mix(in srgb,currentColor 8%,var(--lab-ds-surface)) !important; }
 }
@@ -69,3 +67,6 @@ a.lab-license-badge::after { display:none; }
 .lab-dataset-card .lab-details-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; }
 @media (hover:hover) { .lab-dataset-card .lab-details-trigger:hover { background:var(--lab-ds-surface-subtle); } }
 .lab-dataset-card .lab-details-trigger[aria-expanded=true]:hover { background:var(--lab-ds-surface-active); }
+@layer base {
+ .lab-owner-type[data-size=base],.lab-owner-type[data-size=sm] { font-size:var(--lab-ds-text-caption)!important; line-height:var(--lab-ds-leading-caption)!important; }
+}
