@@ -498,7 +498,11 @@
       "Label au-dessus du champ ; le placeholder est un exemple et ne remplace pas le nom accessible.",
       "Aides et messages associés par aria-describedby. Erreur prioritaire sur validation, indiquée par un message et aria-invalid.",
       "Survol discret sans déplacement ; focus commun bleu 2 px avec décalage 3 px. Les états désactivé et lecture seule utilisent une surface subtile.",
-      "Les zones multiligne restent redimensionnables verticalement ; les sélecteurs simples conservent le comportement natif du navigateur."
+      "Les zones multiligne restent redimensionnables verticalement ; les sélecteurs simples conservent le comportement natif du navigateur.",
+      "Sélecteurs recherchables : menu blanc bordé, options d’au moins 40 px, sélection teintée et état actif indiqué par le focus ; aucune option indisponible ne peut être choisie.",
+      "Radios : cercle natif visible, libellé cliquable, compteur secondaire ; focus porté par le choix complet. Le choix mis en avant utilise aussi un libellé renforcé.",
+      "Contrôle segmenté : état sélectionné explicite, un seul point d’entrée dans le tab order, navigation par flèches, Home et End avec déplacement du focus.",
+      "Dates : conserver les segments, la locale et la saisie native ; champ compact 32 px et focus commun."
     ]
   },
   "tables": {

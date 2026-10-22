@@ -88,7 +88,7 @@ Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des comp
 
 ### Champs de saisie
 
-Les propositions InputGroup, AdminInput, SearchInput et SelectGroup utilisent une bordure stable de 1 px, un rayon de 6 px, Marianne 14/20 et une hauteur minimale de 40 px (48 px pour la barre de recherche). Le label reste au-dessus du champ, y compris pour l’ancienne option `showLabelInside`, afin d’éviter les collisions avec la valeur. Le placeholder ne remplace pas le label. Les aides et messages sont associés au champ ; l’erreur est prioritaire sur la validation. Le focus conserve le contour commun ; les états désactivé et lecture seule utilisent une surface subtile. Les sélecteurs complexes, choix radio et dates nécessitent encore une passe dédiée.
+Les propositions InputGroup, AdminInput, SearchInput et SelectGroup utilisent une bordure stable de 1 px, un rayon de 6 px, Marianne 14/20 et une hauteur minimale de 40 px (48 px pour la barre de recherche). Le label reste au-dessus du champ, y compris pour l’ancienne option `showLabelInside`, afin d’éviter les collisions avec la valeur. Le placeholder ne remplace pas le label. Les aides et messages sont associés au champ ; l’erreur est prioritaire sur la validation. Le focus conserve le contour commun ; les états désactivé et lecture seule utilisent une surface subtile. Les sélecteurs complexes, choix radio et dates utilisent désormais la même famille de styles ; les dates gardent leur densité compacte.
 
 ### Tableaux
 
@@ -104,3 +104,13 @@ Référence : [Explore Agents](https://datagouv-agent.opendatateam.fr/design#exp
 ### Média absent dans les cartes
 
 PostCard, ReuseCard, ReuseHorizontalCard et ChartCard partagent une surface subtile, un pictogramme métier centré de 48 px et les dimensions réservées à l’image. Le pictogramme est décoratif : le titre conserve le nom accessible de la carte. L’absence d’URL et l’échec de chargement utilisent le même rendu. Ce pictogramme de remplacement de média est une exception explicite à l’échelle 14/16/20 des icônes de contrôle. Aucune illustration de remplacement n’est présentée comme une image réelle du contenu.
+
+### Recherche et sélection
+
+SearchableSelect et Listbox partagent les champs standards, le menu bordé et le focus des propositions. Les sélecteurs spécialisés conservent leurs suggestions et synchronisations source, mais composent ces primitives proposées. Les messages d’aide, d’erreur, d’avertissement et de validation sont reliés au champ ; la liste vide affiche un message explicite. Les options indisponibles du Listbox ne sont pas sélectionnables.
+
+Les radios conservent un cercle natif visible et leur sélection au clavier. Le contrôle segmenté déplace le focus avec les flèches, Home et End. Les dates gardent les segments et la locale fournis par Reka UI. Les modèles, événements et slots restent disponibles.
+
+Les sélecteurs applicatifs cdata, le dépôt de fichiers et les choix du support partagent une enveloppe visuelle commune. Les radios applicatives utilisent un nom de groupe unique pour conserver la navigation native par flèches. Les permissions, sources de suggestions et événements de sélection restent ceux de la source.
+
+Les menus recherchables et Listbox sont rendus dans la couche de superposition `#tooltips` et positionnés par rapport au champ. Ils restent utilisables dans les aperçus défilants sans être coupés par la carte.
