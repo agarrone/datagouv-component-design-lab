@@ -91,3 +91,14 @@
 .lab-dataset-card .lab-card-owner > :is(a,span) { max-width:100%; min-width:0; }
 .lab-dataset-card .lab-card-owner .truncate { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .lab-dataset-card .lab-card-owner:not(:has(>a,>span)) { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* DatasetCard keeps a neutral title and frame, including on hover. */
+@layer base {
+ .lab-dataset-card .lab-card-title-link[href]:hover { color:var(--lab-ds-text)!important; text-decoration:none!important; }
+}
+.lab-dataset-card:has(.lab-card-title-link[href]:hover) { border-color:var(--lab-ds-border); }
+@layer base {
+ .lab-dataset-card .lab-card-owner a,
+ .lab-dataset-card .lab-card-owner a :is(.truncate,.text-new-primary) { color:var(--lab-ds-text)!important; }
+}
+.lab-dataset-card .lab-card-owner a { text-decoration:underline; }

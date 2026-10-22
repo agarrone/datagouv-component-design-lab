@@ -70,3 +70,5 @@ La carte assemble ObjectCard (cadre et emplacement des badges), ObjectCardHeader
 Le titre et le nom du producteur restent sur une ligne avec troncature, conformément à l’arbitrage retenu. Cette règle remplace pour DatasetCard le retour à la ligne décrit dans la première hypothèse ; le texte complet reste dans le DOM. L’écart icône/texte du titre est de 4 px comme celui du producteur. Date, métadonnées et description partagent le même bord gauche. La description vient après les métadonnées et conserve sa limite de deux lignes. Aucun pourcentage n’est affiché dans le bouton de qualité ; le détail reste accessible au clic et au clavier. Les badges sont dans le flux du cadre et ne créent pas d’espace quand ils sont absents.
 
 Les changements du titre et de l’emplacement des badges sont partagés par les cartes utilisant ces enfants. La hiérarchie propre à DatasetCard reste locale pour permettre une revue des autres cartes avant de généraliser.
+
+Interaction de DatasetCard : le producteur est noir et souligné ; le titre reste noir sans soulignement au survol. La bordure conserve sa couleur au survol. Le contour de focus clavier est conservé.
