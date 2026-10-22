@@ -1,4 +1,5 @@
 <script setup>
+import { datasetQualityGuideUrl } from './previewConfig';
 import { ref, provide, computed, reactive, h, defineComponent } from 'vue';
 import { originalPreviews, compactPreviews, samples, descriptions } from './demoRegistry';
 import { mockUseFetch, mockFetch } from './demoApi';
@@ -42,7 +43,7 @@ const description = computed(() => descriptions[props.name] || (props.name.start
 const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
 const router = useRouter();
 const DemoLink = defineComponent({props:['to','replace'], setup(linkProps,{attrs,slots}) {return ()=>h('a',{...attrs,href:typeof linkProps.to==='string'?linkProps.to:router.resolve(linkProps.to||'/').href,onClick(event){if(typeof linkProps.to==='object' || linkProps.to==='/demo'){event.preventDefault();router[linkProps.replace?'replace':'push'](linkProps.to);}}},slots.default?.());}});
-provide(configKey, { appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', metricsApiUrl:'/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
+provide(configKey, { datasetQualityGuideUrl, appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', metricsApiUrl:'/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
 const active = ref('all');
 const clicks = ref(0);
 </script>
