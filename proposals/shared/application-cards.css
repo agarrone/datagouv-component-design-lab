@@ -1,0 +1,54 @@
+@layer base {
+ .lab-aux-card,.lab-link-card { min-width:0; max-width:100%; box-sizing:border-box; border:var(--lab-ds-stroke) solid var(--lab-ds-border)!important; border-radius:var(--lab-ds-radius)!important; background:var(--lab-ds-surface)!important; color:var(--lab-ds-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+ .lab-aux-card { padding:var(--lab-ds-space-16); }
+ .lab-aux-heading { margin:0!important; color:var(--lab-ds-text)!important; font:var(--lab-ds-weight-semibold) var(--lab-ds-text-title)/var(--lab-ds-leading-title) var(--lab-ds-font-sans)!important; overflow-wrap:anywhere; }
+ .lab-aux-description { margin:var(--lab-ds-space-8) 0 0!important; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans)!important; overflow-wrap:anywhere; }
+ .lab-aux-actions { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-8); margin-top:var(--lab-ds-space-16); }
+ .lab-aux-actions[data-align=center] { justify-content:center; }
+ .lab-aux-actions[data-align=end] { justify-content:flex-end; }
+ .lab-action-card { display:flex; align-items:flex-start; gap:var(--lab-ds-space-16); }
+ .lab-action-card[data-primary=true] { background:var(--lab-ds-info-bg)!important; border-color:var(--lab-ds-info-border)!important; }
+ .lab-action-illustration { width:var(--lab-ds-space-64); height:var(--lab-ds-space-64); object-fit:contain; flex:none; }
+ .lab-action-body { flex:1; min-width:0; }
+ .lab-link-card { display:block; text-decoration:none!important; background-image:none!important; }
+ .lab-link-card::after { display:none!important; }
+ .lab-link-card:focus-visible,.lab-aux-card :is(a,button):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset); }
+ @media(hover:hover){.lab-link-card:hover { background:var(--lab-ds-surface-subtle)!important; border-color:var(--lab-ds-border-strong)!important; }.lab-link-card:hover .lab-aux-heading { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }}
+ .lab-link-card:active { background:var(--lab-ds-surface-active)!important; }
+ .lab-election-card { display:flex; flex-wrap:wrap; align-items:flex-start; gap:var(--lab-ds-space-16)!important; padding:var(--lab-ds-space-16)!important; }
+ .lab-election-card>div:last-child { flex:1 1 240px; min-width:0; }
+ .lab-election-media { flex:0 1 192px; width:192px; height:120px; border-radius:var(--lab-ds-radius); overflow:hidden; }
+ .lab-audience-card { display:flex; flex-direction:column; gap:var(--lab-ds-space-8); }
+ .lab-audience-card .lab-aux-description { margin:0!important; }
+ .lab-feature-card,.lab-support-card { padding:0; overflow:hidden; }
+ .lab-feature-media { display:flex; align-items:center; justify-content:center; padding:var(--lab-ds-space-24); background:var(--color-new-blue-illustration-light,var(--lab-ds-info-bg)); border-bottom:var(--lab-ds-stroke) solid var(--lab-ds-border); }
+ .lab-feature-card[data-color=green] .lab-feature-media { background:var(--color-new-green-illustration-light,var(--lab-ds-success-bg)); }
+ .lab-feature-media img { max-width:100%; max-height:200px; object-fit:contain; }
+ .lab-feature-card[data-size=large] .lab-feature-media { padding:var(--lab-ds-space-40); }
+ .lab-feature-card[data-size=large] .lab-feature-media img { max-height:320px; }
+ .lab-feature-body,.lab-support-body { padding:var(--lab-ds-space-16); }
+ .lab-support-media { height:160px; border-bottom:var(--lab-ds-stroke) solid var(--lab-ds-border); }
+ .lab-card-adapter { min-width:0; max-width:100%; font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+ .lab-card-adapter>* { max-width:100%; }
+ .lab-file-card>div { border:var(--lab-ds-stroke) solid var(--lab-ds-border)!important; border-radius:var(--lab-ds-radius); padding:var(--lab-ds-space-16)!important; background:var(--lab-ds-surface); }
+ .lab-file-card .fr-grid-row { flex-wrap:wrap!important; gap:var(--lab-ds-space-12); }
+ .lab-file-card h4 { font:var(--lab-ds-weight-semibold) var(--lab-ds-text-title)/var(--lab-ds-leading-title) var(--lab-ds-font-sans)!important; }
+ .lab-file-card .truncate { white-space:normal!important; overflow-wrap:anywhere; }
+ .lab-brand-card>div { border-radius:var(--lab-ds-radius); border-color:var(--lab-ds-border)!important; }
+ .lab-brand-card :is(.text-xl,.text-base,.text-4xl) { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans)!important; }
+ .lab-brand-card :is(h1,h2) { font:var(--lab-ds-weight-semibold) var(--lab-ds-text-title)/var(--lab-ds-leading-title) var(--lab-ds-font-sans)!important; }
+ .lab-recommendation-card>div { border:var(--lab-ds-stroke) solid var(--lab-ds-info-border); border-radius:var(--lab-ds-radius); padding:var(--lab-ds-space-16)!important; background:var(--lab-ds-info-bg); }
+ .lab-recommendation-card .container { border:0!important; padding:0; gap:var(--lab-ds-space-16); }
+ .lab-recommendation-card p { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans)!important; }
+ @media(max-width:600px){.lab-action-card{flex-wrap:wrap}.lab-election-media{flex-basis:100%;width:100%;height:auto;aspect-ratio:16/9}.lab-brand-card [class*=p-16]{padding:var(--lab-ds-space-16)!important}}
+}
+@layer base{.lab-brand-card h1{font-size:var(--lab-ds-text-heading)!important;line-height:var(--lab-ds-leading-heading)!important}.lab-card-adapter :is(a,button):focus-visible{outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important;outline-offset:var(--lab-ds-focus-offset)}}
+@layer base {
+ .lab-brand-card .product-link { color:var(--lab-ds-brand)!important; background-image:none!important; text-decoration:underline!important; text-underline-offset:var(--lab-ds-space-optical); font:var(--lab-ds-weight-medium) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans)!important; }
+ .lab-brand-card .product-link::after { display:none!important; }
+ .lab-brand-card .theme-card { color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
+ .lab-brand-card>div:not(:has(img))>div:first-child { display:none; }
+ .lab-brand-card>div:not(:has(img))>div:last-child { width:100%!important; padding:var(--lab-ds-space-16)!important; }
+ .lab-brand-card:not(:has(img)) h2.sr-only { position:static!important; width:auto!important; height:auto!important; margin:0!important; padding:0!important; overflow:visible!important; clip:auto!important; white-space:normal!important; }
+ @media(hover:hover){.lab-brand-card .product-link:hover{color:var(--lab-ds-brand-hover)!important}}
+}

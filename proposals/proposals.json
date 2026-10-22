@@ -1769,5 +1769,203 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/UploadGroup/UploadGroup.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-ActionCard-ActionCard",
+    "component": "cdata/ActionCard/ActionCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/ActionCard/ActionCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Brand-BrandCard",
+    "component": "cdata/Brand/BrandCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Brand/BrandCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Elections-ElectionCard",
+    "component": "cdata/Elections/ElectionCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Elections/ElectionCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Embeds-DataserviceCard.global",
+    "component": "cdata/Embeds/DataserviceCard.global",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Embeds/DataserviceCard.global.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Embeds-DatasetCard.global",
+    "component": "cdata/Embeds/DatasetCard.global",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Embeds/DatasetCard.global.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Embeds-ListReuse.global",
+    "component": "cdata/Embeds/ListReuse.global",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Embeds/ListReuse.global.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Embeds-OrganizationCard.global",
+    "component": "cdata/Embeds/OrganizationCard.global",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Embeds/OrganizationCard.global.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Embeds-ReuseCard.global",
+    "component": "cdata/Embeds/ReuseCard.global",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Embeds/ReuseCard.global.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-FileCard-FileCard",
+    "component": "cdata/FileCard/FileCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/FileCard/FileCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-LinkCard",
+    "component": "cdata/LinkCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/LinkCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Onboarding-OnboardingAudienceCard",
+    "component": "cdata/Onboarding/OnboardingAudienceCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Onboarding/OnboardingAudienceCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Onboarding-OnboardingFeatureCard",
+    "component": "cdata/Onboarding/OnboardingFeatureCard",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Onboarding/OnboardingFeatureCard.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Post-card",
+    "component": "cdata/Post/card",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Post/card.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-RecommendationExternal",
+    "component": "cdata/RecommendationExternal",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/RecommendationExternal.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-RecommendationsDatasets",
+    "component": "cdata/RecommendationsDatasets",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/RecommendationsDatasets.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-RecommendationsReuses",
+    "component": "cdata/RecommendationsReuses",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/RecommendationsReuses.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-Support-Card",
+    "component": "cdata/Support/Card",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/Support/Card.vue",
+    "reviewUrl": ""
+  },
+  {
+    "id": "application-cards-01-cdata-dataset-card-lg",
+    "component": "cdata/dataset/card-lg",
+    "title": "Partager les repères visuels des cartes de contenu",
+    "status": "brouillon",
+    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
+    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
+    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
+    "sourcePath": "components/dataset/card-lg.vue",
+    "reviewUrl": ""
   }
 ]

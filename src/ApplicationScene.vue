@@ -33,6 +33,8 @@ const content=computed(()=>props.name.includes('DescriptionList')?'Population mu
    <template #button="scope"><component :is="C.BrandedButton" v-bind="scope?.attrs || {}" v-on="scope?.listeners || {}">Ouvrir</component></template>
    <template #title>Population et territoires</template>
    <template #body>Des données fictives pour observer ce composant.</template>
+   <template v-if="name==='cdata/ActionCard/ActionCard'" #actions><component :is="C.BrandedButton" size="xs">Continuer</component><component :is="C.BrandedButton" size="xs" color="secondary">En savoir plus</component></template>
+   <template v-if="name==='cdata/Support/Card'" #link><component :is="C.BrandedButton" size="xs" color="secondary">Consulter la documentation</component></template>
    <template #buttons><component :is="C.BrandedButton" size="xs">Consulter</component></template>
   </component>
  </component>

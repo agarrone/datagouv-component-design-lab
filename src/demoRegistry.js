@@ -20,6 +20,7 @@ export const descriptions = {
 };
 export const samples = {
  ...applicationSamples,
+ 'cdata/Post/card':{post:{...f.post,image:null}},
  'cdata/Reuses/ReuseCard':{reuse:{...f.reuse,image:null}},
  'cdata/AccessTypes/AccessTypePanel':{object:{access_type:'restricted',access_audiences:[{role:'local_authority_and_administration',condition:'yes'},{role:'company_and_association',condition:'under_condition'},{role:'private',condition:'no'}],authorization_request_url:'https://www.data.gouv.fr'}},
  'cdata/AccessTypes/AccessTypeBadge':{accessType:'open'},

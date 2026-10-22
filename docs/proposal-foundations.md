@@ -114,3 +114,9 @@ Les radios conservent un cercle natif visible et leur sélection au clavier. Le 
 Les sélecteurs applicatifs cdata, le dépôt de fichiers et les choix du support partagent une enveloppe visuelle commune. Les radios applicatives utilisent un nom de groupe unique pour conserver la navigation native par flèches. Les permissions, sources de suggestions et événements de sélection restent ceux de la source.
 
 Les menus recherchables et Listbox sont rendus dans la couche de superposition `#tooltips` et positionnés par rapport au champ. Ils restent utilisables dans les aperçus défilants sans être coupés par la carte.
+
+### Cartes applicatives
+
+Les cartes d’action, d’accueil, de support, de fichiers et de liens partagent le cadre 6 px / 1 px, l’espacement 16 px, les titres 16/24 et le contenu 14/22. Les cartes statiques ne reçoivent pas de faux survol cliquable ; LinkCard porte le focus et le survol pour la surface entièrement navigable. Les actions restent des contrôles indépendants. La carte de marque conserve sa composition média/texte et un titre 24/32 dans sa variante large. Les illustrations restent proportionnées et ne sont pas recadrées dans la carte de support.
+
+Les cartes d’article et de jeu de données cdata utilisent les propositions communes et le média de remplacement partagé. Les composants d’intégration et de recommandation conservent leur chargement, leurs conditions d’affichage et leurs sources ; leurs cartes enfants bénéficient des propositions. La recommandation externe conserve le suivi et la localisation, avec un seul indicateur de nouvel onglet.

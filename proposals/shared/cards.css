@@ -10,7 +10,7 @@
 :is(.lab-object-card,.lab-content-card):has(:is(.lab-card-title-link,.lab-reuse-title,.lab-organization-title)[href]:active) { background:var(--lab-ds-surface-active); }
 /* A full-card hit area, beneath independent owner links. */
 :is(.lab-reuse-title,.lab-organization-title)[href]::before { content:""; position:absolute; inset:0; border-radius:inherit; }
-.lab-object-card:has(.lab-card-title-link:focus-visible),.lab-content-card:has(.lab-reuse-title:focus-visible,.lab-organization-title:focus-visible) { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+.lab-object-card:has(.lab-card-title-link:focus-visible),.lab-content-card:has(.lab-card-title-link:focus-visible,.lab-reuse-title:focus-visible,.lab-organization-title:focus-visible) { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-object-card-layout { display:flex; flex-wrap:nowrap; gap:var(--lab-ds-space-16); align-items:flex-start; min-width:0; }
 .lab-object-card-body { display:flex; flex-direction:column; gap:var(--lab-ds-space-8); flex:1; min-width:0; }
 .lab-object-card-body > * { min-width:0; margin-top:0; margin-bottom:0; }

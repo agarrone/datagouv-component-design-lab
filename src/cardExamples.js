@@ -33,6 +33,24 @@ for(const [id,prop,value] of [['PostCard','post',f.post],['ChartCard','chart',f.
  ['Image indisponible',{[prop]:{...value,image:'/demo/card-image-unavailable.png'}}],
 ]));
 for(const [wrapper,source] of [['cdata/Dataservices/Card/Card','DataserviceCard'],['cdata/Reuses/ReuseCard','ReuseCard']])cardVariants[wrapper]=cardVariants[source].map(v=>({...v,id:wrapper,key:wrapper+'-'+v.key}));
+const appCardExamples={
+ 'cdata/ActionCard/ActionCard':[['Standard',{title:'Publier des données',content:'Préparez les fichiers et leurs métadonnées avant la publication.',icon:'/proposals/illustrations/data.svg',actionsAlignment:'start'}],['Mise en avant',{title:'Compléter la description',content:'Une description précise facilite la réutilisation.',icon:'/proposals/illustrations/book.svg',actionsAlignment:'end',type:'primary'}]],
+ 'cdata/Elections/ElectionCard':[['Avec image',{title:'Les données des élections',description:'Résultats et informations publiques sur les scrutins.',to:'#',image:'/demo/territories.svg'}],['Sans image',{title:'Les données des élections',description:'Résultats et informations publiques sur les scrutins.',to:'#',image:''}]],
+ 'cdata/Onboarding/OnboardingAudienceCard':[['Standard',{title:'Pour les producteurs',description:'Publiez et documentez vos données.'}],['Texte long',{title:longTitle,description:longTitle}]],
+ 'cdata/Onboarding/OnboardingFeatureCard':[['Petite',{title:'Explorez les données',description:'Consultez les ressources et préparez leur réutilisation.',image:'/proposals/illustrations/chart.svg',size:'small'}],['Grande',{title:'Explorez les données',description:'Consultez les ressources et préparez leur réutilisation.',image:'/proposals/illustrations/chart.svg',size:'large',color:'green'}],['Sans illustration',{title:'Explorez les données',description:'Les contenus restent lisibles sans illustration.'}]],
+ 'cdata/Support/Card':[['Avec illustration',{title:'Documentation',description:'Trouvez les réponses à vos questions.',image:'/proposals/illustrations/book.svg'}],['Sans illustration',{title:'Documentation',description:'Trouvez les réponses à vos questions.',image:''}]],
+ 'cdata/Brand/BrandCard':[['Carte',{title:'Un service de données publiques',description:'Un point d’accès aux données et aux outils.',size:'medium',border:true}],['Grande',{title:'Un service de données publiques',description:'Un point d’accès aux données et aux outils.',size:'large',border:true}]],
+ 'cdata/Post/card':[['Sans image',{post:{...f.post,image:null}}],['Avec image',{post:f.post}]],
+ 'cdata/dataset/card-lg':[['Standard',{dataset:f.dataset}],['Sans description',{dataset:f.dataset,showDescription:false}]],
+ 'cdata/RecommendationExternal':[['Recommandation',{dataset:{...f.dataset,extras:{'recommendations-externals':[{id:'https://example.org',source:'edito',score:1,reason:'edito',type:'external',messages:{fr:{title:'Découvrez un service associé',message:'Un outil pour réutiliser ces données.',button:'Découvrir le service'}}}]}}}],['Aucune recommandation',{dataset:f.dataset}]],
+ 'cdata/RecommendationsDatasets':[['Recommandations',{dataset:{...f.dataset,extras:{recommendations:[{id:f.dataset.id,source:'edito',score:1,reason:'edito',type:'dataset'}]}}}],['Aucune recommandation',{dataset:f.dataset}]],
+ 'cdata/RecommendationsReuses':[['Recommandations',{dataset:{...f.dataset,extras:{'recommendations-reuses':[{id:f.reuse.id}]}}}],['Aucune recommandation',{dataset:f.dataset}]],
+};
+for(const [id,values] of Object.entries(appCardExamples))cardVariants[id]=examples(id,values);
+cardVariants['cdata/FileCard/FileCard']=examples('cdata/FileCard/FileCard',[
+ ['Fichier distant',{modelValue:{...f.resource,title:'Population des communes',filetype:'remote',url:'https://example.org/population.csv',resource:f.resource,file:null,schema:{name:'etalab/population'}},extensions:['csv']}],
+ ['Sans nom ni actions',{modelValue:{...f.resource,title:'',filetype:'remote',url:'https://example.org/population.csv',resource:f.resource,file:null},extensions:['csv'],hideActions:true}],
+]);
 // Some legacy demo fixtures contain back references. Keep each example independent
 // and serializable for the code panel, without changing those shared fixtures.
 function snapshot(value,parents=new Set()) {
