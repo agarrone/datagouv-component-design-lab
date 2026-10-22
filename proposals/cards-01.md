@@ -78,3 +78,5 @@ Le déclencheur compact des métadonnées est un simple texte gris, sans icône 
 Dernier ajustement : la mise à jour conserve une ligne dédiée. La ligne suivante regroupe le texte gris Métadonnées, sa barre de progression sans pourcentage, puis les statistiques. Elle peut se replier dans un conteneur étroit. La description vient ensuite. Le chevron et l’icône d’information restent absents.
 
 La date utilise désormais le corps courant 14/22. Au survol de la carte avec un pointeur compatible, le titre et son icône héritée passent en bleu France, sans soulignement ; la bordure reste stable et le producteur reste noir souligné.
+
+Les badges Brouillon et Archivé sont placés dans la ligne de métadonnées après les statistiques, plutôt que dans une rangée au-dessus du contenu. Leur présence ne décale plus le logo et le titre ; ils suivent le repli de la ligne dans les conteneurs étroits.

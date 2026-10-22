@@ -1,19 +1,6 @@
 <template>
   <ObjectCard class="lab-content-card lab-dataset-card">
-    <template #badge>
-      <ObjectCardBadge
-        v-if="dataset.private"
-        :icon="RiLockLine"
-      >
-        {{ t('Brouillon') }}
-      </ObjectCardBadge>
-      <ObjectCardBadge
-        v-else-if="dataset.archived"
-        :icon="RiArchiveLine"
-      >
-        {{ t('Archivé') }}
-      </ObjectCardBadge>
-    </template>
+
 
     <template #media>
       <OrganizationLogo
@@ -98,6 +85,20 @@
         </p>
       </div>
     </div>
+        <span v-if="dataset.private || dataset.archived" class="lab-dataset-status">
+      <ObjectCardBadge
+        v-if="dataset.private"
+        :icon="RiLockLine"
+      >
+        {{ t('Brouillon') }}
+      </ObjectCardBadge>
+      <ObjectCardBadge
+        v-else-if="dataset.archived"
+        :icon="RiArchiveLine"
+      >
+        {{ t('Archivé') }}
+      </ObjectCardBadge>
+        </span>
       </div>
     </div>
     <slot>

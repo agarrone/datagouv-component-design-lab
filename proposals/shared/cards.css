@@ -106,3 +106,5 @@
 .lab-dataset-card .lab-card-owner a { text-decoration:underline; }
 
 .lab-dataset-metadata-row { display:flex; align-items:center; flex-wrap:wrap; gap:var(--lab-ds-space-4) var(--lab-ds-space-12); max-width:100%; }
+
+.lab-dataset-status { display:inline-flex; flex:none; }
