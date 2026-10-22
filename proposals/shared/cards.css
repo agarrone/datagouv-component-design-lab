@@ -124,7 +124,7 @@
  .lab-dataset-card .lab-card-owner :is(a,.truncate) { line-height:var(--lab-ds-leading-title)!important; }
 }
 
-.lab-dataset-card .lab-organization-trigger { display:flex; align-items:center; max-width:100%; padding:0; border:0; position:relative; z-index:2; background:none; color:var(--lab-ds-text); font:inherit; text-align:left; cursor:pointer; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+.lab-dataset-card .lab-organization-trigger { display:flex; align-items:center; max-width:100%; padding:0; border:0; position:relative; z-index:2; background:none; color:var(--lab-ds-text); font:inherit; text-align:left; cursor:pointer; text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
 .lab-dataset-card .lab-organization-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-organization-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); }
 .lab-organization-details p { margin:0; }
@@ -145,4 +145,8 @@
 @layer base {
  .lab-organization-details .lab-card-heading .truncate { font-size:var(--lab-ds-text-title)!important; line-height:var(--lab-ds-leading-title)!important; font-weight:var(--lab-ds-weight-semibold)!important; }
  .lab-organization-details .lab-organization-description { font-size:var(--lab-ds-text-body)!important; line-height:var(--lab-ds-leading-body)!important; }
+}
+
+@media (hover:hover) {
+ .lab-dataset-card .lab-organization-trigger:hover { text-decoration:underline; }
 }

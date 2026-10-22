@@ -92,3 +92,5 @@ Le nom du producteur ouvre désormais un panneau au clic dans DatasetCard : nom 
 Le panneau producteur reprend les informations principales de OrganizationCard : logo, nom et certification, type de producteur, description sans Markdown sur trois lignes et compteurs jeux de données/API/réutilisations. Les informations absentes de la référence d’organisation ne sont pas inventées ; aucun compteur nul artificiel. Le lien vers la page complète est conservé.
 
 Correction de cohérence : le panneau compose directement la proposition OrganizationCard au lieu de recréer son identité et ses compteurs. Seul le cadre imbriqué est retiré ; le titre, le badge, les métriques iconiques et la description sont ceux de la carte. Les prochains ajustements de OrganizationCard seront donc repris automatiquement dans le panneau.
+
+Dans DatasetCard, le nom d’organisation reste noir et sans soulignement au repos ; le soulignement apparaît au survol, comme pour Métadonnées. Le focus clavier conserve son contour et le clic ouvre le panneau.
