@@ -149,3 +149,5 @@ Les [propositions NoResults, OwnerTypeIcon et OrganizationOwner](proposals/ident
 - [Propositions pour les discussions](proposals/discussions-01.md)
 
 - [Boutons : hiérarchie, états et géométrie commune](proposals/buttons-01.md)
+
+[Hugging Face et Kaggle](docs/references/hugging-face-kaggle.md) complètent les inspirations pour les catalogues de données, cartes, filtres, métadonnées et aperçus de fichiers. À utiliser comme points de comparaison, en conservant l’orientation DSFR et les fondamentaux du lab.

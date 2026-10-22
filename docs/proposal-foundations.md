@@ -128,3 +128,5 @@ Les cartes d’article et de jeu de données cdata utilisent les propositions co
 - Bouton, même lorsqu’il navigue : pas de soulignement ; son cadre, sa couleur et son focus portent l’interaction.
 - Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.
 - Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés.
+
+[Hugging Face et Kaggle](references/hugging-face-kaggle.md) apportent également des pistes pour la découverte de données, la hiérarchie des cartes et la présentation des métadonnées. Ces inspirations restent facultatives et adaptées au contexte de data.gouv.fr.
