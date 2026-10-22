@@ -28,6 +28,10 @@ cardVariants.SchemaCard=examples('SchemaCard',[
  ['Option active au clavier',{schema:f.schema,selectable:true,active:true}],
  ['Titre et description longs',{schema:{...f.schema,title:longTitle,description:longTitle.repeat(2)},showLinks:true}],
 ]);
+for(const [id,prop,value] of [['PostCard','post',f.post],['ChartCard','chart',f.chart],['ReuseCard','reuse',f.reuse],['ReuseHorizontalCard','reuse',f.reuse]])cardVariants[id].push(...examples(id+'-media',[
+ ['Sans image',{[prop]:{...value,image:null}}],
+ ['Image indisponible',{[prop]:{...value,image:'/demo/card-image-unavailable.png'}}],
+]));
 for(const [wrapper,source] of [['cdata/Dataservices/Card/Card','DataserviceCard'],['cdata/Reuses/ReuseCard','ReuseCard']])cardVariants[wrapper]=cardVariants[source].map(v=>({...v,id:wrapper,key:wrapper+'-'+v.key}));
 // Some legacy demo fixtures contain back references. Keep each example independent
 // and serializable for the code panel, without changing those shared fixtures.

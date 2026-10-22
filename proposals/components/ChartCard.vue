@@ -16,17 +16,7 @@
     </template>
 
     <template #media>
-      <img
-        v-if="chart.image"
-        :src="chart.image"
-        class="w-full h-full object-cover"
-        :alt="chart.title"
-      >
-      <Placeholder
-        v-else
-        type="Chart"
-        class="w-full h-full"
-      />
+      <CardMedia :src="chart.image" :alt="chart.title" kind="chart" />
     </template>
 
     <ObjectCardHeader
@@ -86,7 +76,7 @@ import type { RouteLocationRaw } from 'vue-router'
 import type { Chart } from '../../vendor/datagouv-components/src/types/visualizations'
 import { summarize } from '../../vendor/datagouv-components/src/functions/helpers'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
-import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
+import CardMedia from '../shared/CardMedia.vue'
 import FormattedDate from '../../vendor/datagouv-components/src/components/FormattedDate.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardBadge from './ObjectCardBadge.vue'

@@ -63,3 +63,6 @@
 .lab-content-card .lab-card-title-text .truncate { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
 
 .lab-content-card .lab-card-title-link:focus-visible,.lab-content-card .lab-reuse-title:focus-visible,.lab-content-card .lab-organization-title:focus-visible { outline:none!important; }
+
+.lab-card-media-slot { position:relative; aspect-ratio:16/9; width:100%; }
+.lab-card-media-slot > .lab-card-media { position:absolute; inset:0; }

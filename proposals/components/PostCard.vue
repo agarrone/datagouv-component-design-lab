@@ -1,17 +1,7 @@
 <template>
   <ObjectCard class="lab-content-card" media-size="lg">
     <template #media>
-      <img
-        v-if="post.image"
-        :src="post.image"
-        class="w-full h-full object-cover"
-        :alt="post.name"
-      >
-      <Placeholder
-        v-else
-        type="Dataset"
-        class="w-full h-full"
-      />
+      <CardMedia :src="post.image" :alt="post.name" kind="post" />
     </template>
 
     <ObjectCardHeader
@@ -48,7 +38,7 @@ import '../shared/cards.css'
 import { RiArticleLine } from '@remixicon/vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { Post } from '../../vendor/datagouv-components/src/types/posts'
-import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
+import CardMedia from '../shared/CardMedia.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'
 import ObjectCardShortDescription from './ObjectCardShortDescription.vue'

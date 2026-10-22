@@ -39,19 +39,8 @@
     </div>
     <div class="order-1 relative flex-auto">
       <div class="lab-reuse-media">
-        <div class="object-cover block w-full h-auto aspect-video">
-          <img
-            v-if="reuse.image"
-            :src="reuse.image"
-            alt=""
-            loading="lazy"
-            class="size-full object-cover"
-          >
-          <Placeholder
-            v-else
-            type="Reuse"
-            class="w-full"
-          />
+        <div class="lab-card-media-slot">
+          <CardMedia :src="reuse.image" :alt="reuse.title" kind="reuse" />
         </div>
       </div>
       <ul
@@ -87,7 +76,7 @@ import { useTranslation } from '../../vendor/datagouv-components/src/composables
 import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
 import ObjectCardOwner from './ObjectCardOwner.vue'
 import ReuseDetails from '../../vendor/datagouv-components/src/components/ReuseDetails.vue'
-import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
+import CardMedia from '../shared/CardMedia.vue'
 import FormattedDate from '../../vendor/datagouv-components/src/components/FormattedDate.vue'
 import TranslationT from '../../vendor/datagouv-components/src/components/TranslationT.vue'
 

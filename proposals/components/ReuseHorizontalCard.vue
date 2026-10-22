@@ -16,17 +16,7 @@
     </template>
 
     <template #media>
-      <img
-        v-if="reuse.image"
-        :src="reuse.image"
-        class="w-full h-full object-cover"
-        :alt="reuse.title"
-      >
-      <Placeholder
-        v-else
-        type="Reuse"
-        class="w-full h-full"
-      />
+      <CardMedia :src="reuse.image" :alt="reuse.title" kind="reuse" />
     </template>
 
     <ObjectCardHeader
@@ -64,7 +54,7 @@ import type { RouteLocationRaw } from 'vue-router'
 import type { Reuse, ReuseV2 } from '../../vendor/datagouv-components/src/types/reuses'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import ReuseDetails from '../../vendor/datagouv-components/src/components/ReuseDetails.vue'
-import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
+import CardMedia from '../shared/CardMedia.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'
 import ObjectCardOwner from './ObjectCardOwner.vue'

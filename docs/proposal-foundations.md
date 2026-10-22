@@ -100,3 +100,7 @@ Les propositions InputGroup, AdminInput, SearchInput et SelectGroup utilisent un
 - Conserver les adaptations mobiles, le chargement, les filtres et le redimensionnement existants. Le rayon de recherche reste 6 px dans le lab pour suivre les fondamentaux ; Agents utilise une exception 4 px.
 
 Référence : [Explore Agents](https://datagouv-agent.opendatateam.fr/design#explorateur), consultée le 22 octobre 2026. Les sections Markdown et Explore sont distinguées : la limite de 10/20 lignes ne s’applique pas aux tableaux de données. Les composants TabularTable et TabularSearchInput conservent leur logique source dans une enveloppe de présentation ; les cellules et les primitives de tableau administratif disposent de propositions propres.
+
+### Média absent dans les cartes
+
+PostCard, ReuseCard, ReuseHorizontalCard et ChartCard partagent une surface subtile, un pictogramme métier centré de 48 px et les dimensions réservées à l’image. Le pictogramme est décoratif : le titre conserve le nom accessible de la carte. L’absence d’URL et l’échec de chargement utilisent le même rendu. Ce pictogramme de remplacement de média est une exception explicite à l’échelle 14/16/20 des icônes de contrôle. Aucune illustration de remplacement n’est présentée comme une image réelle du contenu.
