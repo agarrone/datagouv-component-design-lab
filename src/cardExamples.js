@@ -43,3 +43,4 @@ function snapshot(value,parents=new Set()) {
  parents.delete(value);return result;
 }
 for(const variants of Object.values(cardVariants))for(const variant of variants)variant.props=snapshot(variant.props);
+for(const id of ['PostCard','ReuseCard','ReuseHorizontalCard','cdata/Reuses/ReuseCard'])cardVariants[id][0].label='Avec image';
