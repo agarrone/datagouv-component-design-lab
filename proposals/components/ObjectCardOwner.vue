@@ -58,6 +58,6 @@ const ownerName = computed(() => {
 <style scoped>
 .lab-card-owner { min-width:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); overflow-wrap:anywhere; }
 .lab-card-owner :deep(.truncate) { white-space:normal; overflow:visible; text-overflow:clip; }
-.lab-card-owner :deep(a) { color:var(--lab-ds-text-secondary); background-image:none; text-decoration:underline; text-underline-offset:3px; }
+.lab-card-owner :deep(a) { color:var(--lab-ds-text-secondary); background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .lab-card-owner :deep(a:focus-visible) { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

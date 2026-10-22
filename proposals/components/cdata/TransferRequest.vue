@@ -132,7 +132,7 @@ import {ref} from 'vue'
 import PreviewComponentBannerNotif from '/vendor/cdata-components/BannerNotif.vue'
 import PreviewComponentLinkToSubject from '/vendor/cdata-components/LinkToSubject.vue'
 import PreviewComponentTransferRequest from './TransferRequest.vue'
-import PreviewComponentInputGroup from '/vendor/cdata-components/InputGroup/InputGroup.vue'
+import PreviewComponentInputGroup from '/proposals/components/cdata/InputGroup/InputGroup.vue'
 
 import { OrganizationLogo } from '@datagouv/components-next'
 import Avatar from '/proposals/components/Avatar.vue'

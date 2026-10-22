@@ -62,7 +62,7 @@ import { useFetch } from '/vendor/datagouv-components/src/functions/api'
 import type { Dataset, DatasetV2, DatasetV2WithFullObject } from '/vendor/datagouv-components/src/types/datasets'
 import type { Schema } from '/vendor/datagouv-components/src/types/schemas'
 import Tag from '/proposals/components/Tag.vue'
-import BrandedButton from '/vendor/datagouv-components/src/components/BrandedButton.vue'
+import BrandedButton from '/proposals/components/BrandedButton.vue'
 import TranslationT from '/vendor/datagouv-components/src/components/TranslationT.vue'
 import AppLink from '/vendor/datagouv-components/src/components/AppLink.vue'
 

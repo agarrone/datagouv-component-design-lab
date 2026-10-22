@@ -1,6 +1,6 @@
 /* These selectors belong only to the proposed metadata/quality components. */
 .lab-license-badge { font-family:var(--lab-ds-font-sans); white-space:normal; overflow-wrap:anywhere; }
-a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:3px; }
+a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 a.lab-license-badge:hover { background:var(--lab-ds-border); color:var(--lab-ds-text); }
 a.lab-license-badge:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 a.lab-license-badge::after { display:none; }
@@ -40,7 +40,7 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); }
 .lab-quality-details-title { color:var(--lab-ds-text); margin:0; font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); font-weight:var(--lab-ds-weight-semibold); }
 .lab-quality-guide { font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
-.lab-quality-guide a { text-decoration:underline; text-underline-offset:3px; }
+.lab-quality-guide a { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .lab-quality-guide a:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-quality-popover { position:relative; min-width:0; }
 .lab-quality-panel { position:absolute; z-index:800; width:min(384px,calc(100vw - 32px)); max-height:70vh; overflow:auto; padding:var(--lab-ds-space-16); border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius); background:var(--lab-ds-surface); box-shadow:var(--lab-ds-shadow-overlay); }

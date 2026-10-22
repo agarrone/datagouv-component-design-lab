@@ -44,7 +44,7 @@ const img = computedAsync(async () => {
 <style scoped>
 .proposed-dataset-label { border-radius:var(--lab-ds-radius-pill); gap:var(--lab-ds-space-6); }
 .proposed-dataset-label img { width:var(--lab-ds-icon); height:var(--lab-ds-icon); object-fit:contain; flex-shrink:0; }
-.proposed-dataset-label--link { color:var(--lab-ds-brand); border-color:var(--lab-ds-info-border); background:var(--lab-ds-info-bg); text-decoration:underline; text-underline-offset:2px; }
+.proposed-dataset-label--link { color:var(--lab-ds-brand); border-color:var(--lab-ds-info-border); background:var(--lab-ds-info-bg); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .proposed-dataset-label--link:hover { background:var(--lab-ds-info-hover); }
 .proposed-dataset-label--link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

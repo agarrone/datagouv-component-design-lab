@@ -11,7 +11,7 @@
 /* DSFR draws an underline with two background gradients. Use only the native
    text decoration on proposed text links, including hover/focus states. */
 @layer base {
- :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href],a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title,a.lab-license-badge) {
+ :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href],a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title,a.lab-license-badge,a.proposed-dataset-label--link,a.proposed-hvd-link,.proposal-notification-title a[href]) {
   --underline-img:none!important;
   background-image:none!important;
  }

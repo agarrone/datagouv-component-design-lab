@@ -64,8 +64,8 @@
 
 <script setup lang="ts">
 import '../../shared/foundations.css'
-import PdfSkeleton from '../../../vendor/datagouv-components/src/components/ResourceAccordion/PdfSkeleton.vue'
-import TabularSkeleton from '../../../vendor/datagouv-components/src/components/TabularExplorer/TabularSkeleton.vue'
+import PdfSkeleton from '../ResourceAccordion/PdfSkeleton.vue'
+import TabularSkeleton from '../TabularExplorer/TabularSkeleton.vue'
 import TabGroup from '../../../vendor/datagouv-components/src/components/Tabs/TabGroup.vue'
 import TabList from '../../../vendor/datagouv-components/src/components/Tabs/TabList.vue'
 import Tab from '../../../vendor/datagouv-components/src/components/Tabs/Tab.vue'

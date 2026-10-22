@@ -12,6 +12,7 @@ const utilitySource=readFileSync(new URL('../proposals/shared/foundation-utiliti
 for(const file of files){
  const text=readFileSync(file,'utf8');
  for(const [,name] of text.matchAll(/var\(--lab-ds-([\w-]+)/g))assert.ok(name in foundationTokens,`${file}: jeton inconnu ${name}`);
+ assert.doesNotMatch(text,/(?:hover|focus|focus-visible|active|disabled|sm|md|lg):!?lab-ds-u-/,`${file}: variante utilitaire inexistante ; utiliser un sélecteur de proposition explicite`);
  assert.doesNotMatch(text,/[:!]lab-ds-u-rounded/,`${file}: un nom de prop a été remplacé par un utilitaire`);
  let styles=[text];
  if(file.endsWith('.vue')){

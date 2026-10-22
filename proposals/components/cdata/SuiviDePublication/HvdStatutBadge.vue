@@ -46,7 +46,7 @@ defineProps<{
 </script>
 
 <style scoped>
-.proposed-hvd-link { text-decoration:underline; text-underline-offset:3px; }
+.proposed-hvd-link { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .proposed-hvd-link::after { content:none !important; }
 .proposed-hvd-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

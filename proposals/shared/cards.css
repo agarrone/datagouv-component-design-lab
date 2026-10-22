@@ -62,4 +62,4 @@
 .lab-organization-card .lab-organization-body > .flex .text-gray-medium { flex-wrap:wrap; gap:var(--lab-ds-space-4) var(--lab-ds-space-8); }
 .lab-content-card .lab-card-title-text .truncate { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
 
-.lab-content-card .lab-card-title-link:focus-visible,.lab-content-card .lab-reuse-title:focus-visible,.lab-content-card .lab-organization-title:focus-visible { outline:none; }
+.lab-content-card .lab-card-title-link:focus-visible,.lab-content-card .lab-reuse-title:focus-visible,.lab-content-card .lab-organization-title:focus-visible { outline:none!important; }
