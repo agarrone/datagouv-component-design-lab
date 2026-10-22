@@ -35,6 +35,7 @@
     </ObjectCardHeader>
     <div class="lab-dataset-details">
       <ObjectCardOwner
+        show-details
         v-if="dataset.organization || dataset.owner"
         :organization="dataset.organization"
         :owner="dataset.owner"

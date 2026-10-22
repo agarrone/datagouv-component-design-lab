@@ -86,3 +86,5 @@ Placement retenu pour les badges : à côté de la date de mise à jour, dans un
 Le rythme vertical de DatasetCard est de 8 px entre titre, producteur, mise à jour, ligne de métadonnées et description. Les quatre premières lignes utilisent une boîte de ligne de 24 px. Le bouton de métadonnées n’ajoute plus de padding vertical ni de hauteur minimale de 32 px ; sa cible est étendue dans l’espace disponible sans modifier la disposition. Les lignes repliées et les badges gardent leur hauteur propre.
 
 Rythme vertical affiné après revue : 4 px entre les lignes de DatasetCard (au lieu de 8 px), en conservant les boîtes de ligne de 24 px et le padding extérieur de 16 px. La cible du bouton de métadonnées est ajustée pour ne pas empiéter sur les lignes voisines.
+
+Le nom du producteur ouvre désormais un panneau au clic dans DatasetCard : nom complet, description si fournie et lien vers la page de l’organisation. Le panneau reprend le mécanisme des métadonnées (fermeture extérieure, Échap et focus clavier). ObjectCardOwner expose cette option sans changer par défaut les autres cartes ; organizationUrl=null conserve le texte simple.

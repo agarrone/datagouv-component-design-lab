@@ -123,3 +123,15 @@
 @layer base {
  .lab-dataset-card .lab-card-owner :is(a,.truncate) { line-height:var(--lab-ds-leading-title)!important; }
 }
+
+.lab-dataset-card .lab-organization-trigger { display:flex; align-items:center; max-width:100%; padding:0; border:0; position:relative; z-index:2; background:none; color:var(--lab-ds-text); font:inherit; text-align:left; cursor:pointer; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+.lab-dataset-card .lab-organization-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+.lab-organization-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); }
+.lab-organization-details p { margin:0; }
+@layer base {
+ .lab-dataset-card .lab-organization-trigger .truncate { color:var(--lab-ds-text)!important; line-height:var(--lab-ds-leading-title)!important; }
+}
+.lab-organization-details { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); color:var(--lab-ds-text); }
+@layer base {
+ .lab-organization-details a { text-decoration:underline!important; text-underline-offset:var(--lab-ds-space-optical); }
+}
