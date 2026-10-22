@@ -206,6 +206,6 @@
 .lab-card-heading-row { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-4) var(--lab-ds-space-8); min-width:0; }
 .lab-card-heading-row > :is(.lab-card-title,.lab-card-heading) { flex:1 1 auto; min-width:0; max-width:100%; }
 .lab-card-heading-row > .proposed-object-card-badge { flex:none; }
-/* Logos retain their own artwork without a padded white tile. */
-.lab-catalog-card .lab-object-card-media-sm { padding:0; border:0; background:transparent; }
-.lab-organization-card.lab-catalog-card .lab-organization-logo { padding:0; border:0; background:transparent; }
+/* Preserve supplied logo artwork and the frame, without added padding. */
+.lab-catalog-card .lab-object-card-media-sm { padding:0; }
+.lab-organization-card.lab-catalog-card .lab-organization-logo { padding:0; }
