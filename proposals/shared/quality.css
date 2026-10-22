@@ -57,3 +57,15 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-trigger-link .lab-quality-trigger-label{gap:var(--lab-ds-space-4)}
 .lab-quality-trigger-link .lab-quality-trigger-label>span{text-decoration:none}
 .lab-quality-trigger-link:hover .lab-quality-trigger-label>span{text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical)}
+
+/* Shared disclosure feedback for organization and metadata details. */
+.lab-details-trigger { border-radius:var(--lab-ds-radius-technical); }
+@media (hover:hover) {
+ .lab-details-trigger:hover { background:var(--lab-ds-surface-subtle); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+}
+.lab-details-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+.lab-details-trigger[aria-expanded=true] .lab-quality-trigger-label>span { text-decoration:underline; }
+/* Match the scoped organization trigger without changing its text color. */
+.lab-dataset-card .lab-details-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; }
+@media (hover:hover) { .lab-dataset-card .lab-details-trigger:hover { background:var(--lab-ds-surface-subtle); } }
+.lab-dataset-card .lab-details-trigger[aria-expanded=true]:hover { background:var(--lab-ds-surface-active); }

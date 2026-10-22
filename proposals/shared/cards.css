@@ -95,7 +95,7 @@
 /* DatasetCard highlights its destination while keeping the frame stable. */
 @layer base {
  @media (hover:hover) {
-  .lab-dataset-card:hover .lab-card-title-link[href] { color:var(--lab-ds-brand)!important; text-decoration:none!important; }
+  .lab-dataset-card .lab-card-title-link[href]:hover { color:var(--lab-ds-brand)!important; text-decoration:none!important; }
  }
 }
 .lab-dataset-card:has(.lab-card-title-link[href]:hover) { border-color:var(--lab-ds-border); }
@@ -150,3 +150,6 @@
 @media (hover:hover) {
  .lab-dataset-card .lab-organization-trigger:hover { text-decoration:underline; }
 }
+
+/* Quality describes documentation; the separate group measures usage. */
+.lab-dataset-metadata-row > .lab-card-metrics { border-inline-start:var(--lab-ds-stroke) solid var(--lab-ds-border); padding-inline-start:var(--lab-ds-space-12); }

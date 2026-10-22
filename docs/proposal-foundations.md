@@ -80,7 +80,7 @@ Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des comp
 
 ### Survols et liens
 
-- Une carte ne réagit au survol que lorsque son lien principal est ciblé : fond subtil, bordure renforcée et titre souligné. Les liens secondaires restent indépendants.
+- Une carte ne réagit que lorsque sa destination principale est ciblée. Les contrôles secondaires restent indépendants. Voir les arbitrages DatasetCard ci-dessous.
 - Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.
 - La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.
 - Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.
@@ -123,10 +123,17 @@ Les cartes d’article et de jeu de données cdata utilisent les propositions co
 
 ### Liens et soulignements
 
-- Titre ou destination principale de carte : sans soulignement au repos ; souligné au survol et au focus clavier. Le contour de focus entoure la carte entière.
+- Titre de carte : sans soulignement au repos, focus visible sur le cadre. Pour DatasetCard, titre bleu sans soulignement au survol de sa destination. Les autres cartes restent à harmoniser.
 - Lien dans un contenu, producteur cliquable ou action textuelle : souligné dès le repos. Le survol renforce le trait ; le focus ajoute le contour commun.
 - Bouton, même lorsqu’il navigue : pas de soulignement ; son cadre, sa couleur et son focus portent l’interaction.
 - Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.
 - Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés.
 
 [Hugging Face et Kaggle](references/hugging-face-kaggle.md) apportent également des pistes pour la découverte de données, la hiérarchie des cartes et la présentation des métadonnées. Ces inspirations restent facultatives et adaptées au contexte de data.gouv.fr.
+
+### Arbitrages DatasetCard et panneaux de détails
+
+- Le titre et son icône deviennent bleus uniquement lorsque la destination dataset est ciblée. Aucun soulignement au survol ni changement de couleur de bordure. Les boutons secondaires ne déclenchent pas ce retour visuel.
+- Organisation et métadonnées partagent le même retour de panneau : soulignement et fond subtil au survol ; soulignement et fond actif persistants lorsque `aria-expanded=true`. Le focus clavier reste visible. Les couleurs de texte restent adaptées à leur hiérarchie (organisation noire, métadonnées grises).
+- Une bordure verticale neutre sépare la qualité documentaire des statistiques d’usage, sans ajouter une action ou un état.
+- Ces arbitrages remplacent pour DatasetCard les anciennes règles générales de titre souligné et bordure renforcée. Les autres cartes restent à harmoniser. Aucun changement responsive n’est introduit dans cette passe.

@@ -5,7 +5,7 @@
   >
     <DetailsPopover
       v-if="showDetails && organizationUrl !== null"
-      button-class="lab-organization-trigger"
+      button-class="lab-details-trigger lab-organization-trigger"
       :button-props="{ title: t('À propos de cette organisation') }"
     >
       <OrganizationNameWithCertificate :organization size="sm" />

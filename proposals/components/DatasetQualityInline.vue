@@ -2,7 +2,7 @@
   <div class="lab-quality-inline">
   <Toggletip
     :styled-button="false"
-    button-class="lab-quality-trigger lab-quality-trigger-inline lab-quality-trigger-link"
+    button-class="lab-details-trigger lab-quality-trigger lab-quality-trigger-inline lab-quality-trigger-link"
     :button-props="{ title: t('Qualité des métadonnées') }"
   >
     <span class="lab-quality-trigger-label">

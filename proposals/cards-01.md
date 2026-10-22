@@ -94,3 +94,5 @@ Le panneau producteur reprend les informations principales de OrganizationCard :
 Correction de cohérence : le panneau compose directement la proposition OrganizationCard au lieu de recréer son identité et ses compteurs. Seul le cadre imbriqué est retiré ; le titre, le badge, les métriques iconiques et la description sont ceux de la carte. Les prochains ajustements de OrganizationCard seront donc repris automatiquement dans le panneau.
 
 Dans DatasetCard, le nom d’organisation reste noir et sans soulignement au repos ; le soulignement apparaît au survol, comme pour Métadonnées. Le focus clavier conserve son contour et le clic ouvre le panneau.
+
+Les interactions secondaires sont indépendantes du survol de la destination dataset. Organisation et métadonnées partagent la classe de déclencheur `lab-details-trigger` : état ouvert souligné et fond actif persistant, focus clavier conservé. Les statistiques d’usage sont séparées de la qualité par une bordure neutre. Les règles sont documentées dans les fondamentaux ; la disposition responsive reste inchangée.

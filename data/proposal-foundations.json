@@ -485,11 +485,12 @@
   },
   "interactions": {
     "rules": [
-      "Une carte ne réagit au survol que lorsque son lien principal est ciblé : fond subtil, bordure renforcée et titre souligné. Les liens secondaires restent indépendants.",
+      "Une carte ne réagit que lorsque sa destination principale est ciblée ; les contrôles secondaires restent indépendants. DatasetCard : titre et icône bleus, sans soulignement au survol, bordure stable. Les autres cartes conservent leur traitement actuel en attendant leur harmonisation.",
       "Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.",
       "La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.",
       "Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.",
-      "Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif."
+      "Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif.",
+      "Déclencheurs de panneaux organisation et métadonnées : soulignement et fond subtil au survol ; fond actif et soulignement persistants tant que aria-expanded=true. Focus commun conservé, sans modifier la géométrie."
     ]
   },
   "inputs": {
@@ -517,9 +518,9 @@
   },
   "links": {
     "rules": [
-      "Titre ou destination principale de carte : sans soulignement au repos ; souligné au survol et au focus clavier. Le contour de focus entoure la carte entière.",
-      "Lien dans un contenu, producteur cliquable ou action textuelle : souligné dès le repos. Le survol renforce le trait ; le focus ajoute le contour commun.",
-      "Bouton, même lorsqu’il navigue : pas de soulignement ; son cadre, sa couleur et son focus portent l’interaction.",
+      "Titre de carte : sans soulignement au repos, focus visible sur le cadre. DatasetCard : bleu au survol de sa destination uniquement, sans soulignement ; les autres cartes restent à harmoniser.",
+      "Un lien de navigation dans le contenu reste souligné au repos. Organisation et métadonnées de DatasetCard sont des boutons ouvrant un panneau : traitement commun de survol et d’état ouvert, sans navigation au premier clic.",
+      "Les boutons d’action utilisent leur cadre, leur couleur et leur focus. Les déclencheurs textuels de panneaux utilisent le traitement dédié, avec aria-expanded.",
       "Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.",
       "Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés."
     ]
