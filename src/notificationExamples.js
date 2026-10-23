@@ -8,7 +8,15 @@ const detailClasses={Discussion:'DiscussionNotificationDetails',MembershipReques
 const types={Discussion:'discussion.new',MembershipRequest:'organization.membership.request',MembershipAccepted:'organization.membership.accepted',MembershipRefused:'organization.membership.refused',NewBadge:'organization.badge.certified',NewReuse:'reuse.created',NewDataservice:'dataservice.created',TransferRequest:'transfer.request',ValidateHarvester:'harvest.source.accepted'};
 export function notificationFor(name,overrides={}){return {id:`notification-${name}`,type:types[name]||'discussion.new',created_at:'2026-10-01T09:00:00',handled_at:null,requires_action:['MembershipRequest','TransferRequest'].includes(name),reasons:['explicit_subscriber'],details:{class:detailClasses[name]||'DiscussionNotificationDetails',organization:f.organization,request_user:f.user,request_organization:f.organization,dataset:f.dataset,reuse:f.reuse,dataservice:{...f.dataservice,self_web_url:'#'},discussion:{...f.discussion,self_web_url:'#',subject:{class:'Dataset',id:f.dataset.id},discussion:[{...f.discussion.discussion[0],id:'comment-example'}]},transfer_owner:f.user,transfer_recipient:f.organization,transfer_subject:{...f.dataset,class:'Dataset'},source:{id:'demo-harvest',name:'Catalogue de démonstration'}},...overrides};}
 const examples=(id,values)=>values.map(([label,props],i)=>({id,key:`notifications-${id}-${i}`,label,props}));
-export const notificationVariants={};
+export const notificationVariants={
+ 'cdata/BannerNotif':examples('cdata/BannerNotif',[
+ ['Information',{type:'primary',icon:RiNotification3Line,badge:'Information',date:new Date('2026-10-01T09:00:00')}],
+ ['Action requise',{type:'warning',icon:RiNotification3Line,badge:'Action requise',date:new Date('2026-10-01T09:00:00')}],
+ ]),
+ 'cdata/TransferBanner':examples('cdata/TransferBanner',[
+ ...[['Dataset','jeu de données',f.datasetFull||f.dataset],['Dataservice','service API',f.dataservice],['Reuse','réutilisation',f.reuse]].map(([type,label,subject])=>[label,{type,subject,label:`Transférer ${label==='réutilisation'?'la':'le'} ${label}`}]),
+ ]),
+};
 for(const name of Object.keys(detailClasses)){
  const id=prefix+name;
  notificationVariants[id]=examples(id,[['Non lue',{notification:notificationFor(name),...(name==='Discussion'?{subject:f.dataset}:{})}],['Lue',{notification:notificationFor(name,{handled_at:'2026-10-02T09:00:00'}),...(name==='Discussion'?{subject:f.dataset}:{})}]]);
@@ -42,3 +50,18 @@ notificationVariants['cdata/TransferRequest']=examples('cdata/TransferRequest',[
 notificationVariants['cdata/TransferRequestList']=examples('cdata/TransferRequestList',[['Demandes de l’organisation',{type:'Dataset',recipient:f.organization}]]);
 notificationVariants['cdata/FollowButton']=examples('cdata/FollowButton',[['Favoris',{url:'/api/1/datasets/demo-dataset/followers/'}]]);
 notificationVariants[prefix+'MuteConfirmation']=examples(prefix+'MuteConfirmation',[['Confirmation de désabonnement',{}]]);
+
+const membershipUser={...f.user,email:'camille.martin@example.org'};
+const membershipRequest={id:'demo-membership',kind:'request',user:membershipUser,role:'editor',created:'2026-10-01T09:00:00',comment:'Je souhaite contribuer à la publication et à la documentation des données.'};
+notificationVariants['cdata/AdminMembershipRequest/AdminMembershipRequest']=examples('cdata/AdminMembershipRequest/AdminMembershipRequest',[
+ ['Demande reçue',{oid:f.organization.id,request:membershipRequest,showActions:true}],
+ ['Sans actions',{oid:f.organization.id,request:membershipRequest,showActions:false}],
+ ['Invitation envoyée',{oid:f.organization.id,request:{...membershipRequest,kind:'invitation'},showActions:true}],
+ ['Invitation par email',{oid:f.organization.id,request:{...membershipRequest,kind:'invitation',user:null,email:'contact@example.org'},showActions:true}],
+ ['Sans commentaire',{oid:f.organization.id,request:{...membershipRequest,comment:''},showActions:true}],
+]);
+notificationVariants['cdata/AdminOrgInvitation/AdminOrgInvitation']=examples('cdata/AdminOrgInvitation/AdminOrgInvitation',[
+ ['Invitation reçue',{invitation:{id:'demo-invitation',organization:f.organization,role:'editor',comment:'Rejoignez notre équipe pour publier les données du territoire.',created:'2026-10-01T09:00:00'}}],
+ ['Rôle administrateur',{invitation:{id:'demo-invitation',organization:f.organization,role:'admin',comment:'',created:'2026-10-01T09:00:00'}}],
+ ['Organisation sans logo',{invitation:{id:'demo-invitation',organization:{...f.organization,logo:null,logo_thumbnail:null},role:'editor',comment:'',created:'2026-10-01T09:00:00'}}],
+]);

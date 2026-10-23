@@ -54,19 +54,20 @@
     />
   </ul>
   <div v-if="config.datasetQualityGuideUrl" class="lab-quality-guide">
-    <a
+    <ProposalTextLink
       :href="config.datasetQualityGuideUrl"
       target="_blank"
       rel="noopener"
       :title="t('En savoir plus sur cet indicateur - ouvre une nouvelle fenêtre')"
     >
       {{ t("En savoir plus sur cet indicateur") }}
-    </a>
+    </ProposalTextLink>
   </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import ProposalTextLink from '/proposals/components/AppLink.vue'
 import '../shared/foundations.css'
 import '../shared/quality.css'
 import type { Quality } from '../../vendor/datagouv-components/src/types/datasets'

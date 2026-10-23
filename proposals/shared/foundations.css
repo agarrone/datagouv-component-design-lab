@@ -99,8 +99,8 @@
   --lab-ds-badge-warning-text: var(--text-default-warning);
   --lab-ds-badge-error-bg: var(--background-contrast-error);
   --lab-ds-badge-error-text: var(--text-default-error);
-  --lab-ds-badge-pink-bg: var(--background-contrast-pink-macaron);
-  --lab-ds-badge-pink-text: var(--text-label-pink-macaron);
+  --lab-ds-badge-pink-bg: var(--background-contrast-purple-glycine);
+  --lab-ds-badge-pink-text: var(--text-label-purple-glycine);
   --lab-ds-badge-teal-bg: var(--background-contrast-green-archipel);
   --lab-ds-badge-teal-text: var(--text-label-green-archipel);
   --lab-ds-tag-text: var(--text-label-grey);
@@ -109,4 +109,13 @@
   --lab-ds-tag-link-bg: var(--background-action-low-blue-france);
   --lab-ds-tag-hover-bg: var(--background-action-low-blue-france-hover);
   --lab-ds-tag-active-bg: var(--background-action-low-blue-france-active);
+  --lab-ds-badge-outline: color-mix(in srgb, currentColor 20%, transparent);
+  --lab-ds-format-code-bg: var(--background-contrast-yellow-tournesol);
+  --lab-ds-format-code-text: var(--text-label-yellow-tournesol);
+  --lab-ds-format-document-bg: var(--background-contrast-purple-glycine);
+  --lab-ds-format-document-text: var(--text-label-purple-glycine);
+  --lab-ds-badge-yellow-bg: var(--background-contrast-yellow-tournesol);
+  --lab-ds-badge-yellow-text: var(--text-label-yellow-tournesol);
+  --lab-ds-field-bg: var(--background-contrast-grey);
+  --lab-ds-field-line: var(--text-default-grey);
 }

@@ -22,9 +22,8 @@
       <div>
         <DescriptionListTerm>{{ t('Identifiant') }}</DescriptionListTerm>
         <DescriptionListDetails class="proposal-metadata-identifier">
-          {{ dataset.id }}
+          <span class="proposal-dataset-identifier-value">{{ dataset.id }}</span>
           <CopyButton
-            
             :label="t(`Copier l'identifiant`)"
             :copied-label="t('Identifiant copié !')"
             :text="dataset.id"
@@ -53,7 +52,7 @@ import type { DatasetV2WithFullObject } from '/vendor/datagouv-components/src/ty
 import DescriptionList from '/proposals/components/DescriptionList.vue'
 import DescriptionListTerm from '/proposals/components/DescriptionListTerm.vue'
 import DescriptionListDetails from '/proposals/components/DescriptionListDetails.vue'
-import AppLink from '/vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 import CopyButton from '/proposals/components/CopyButton.vue'
 import LicenseBadge from '/proposals/components/LicenseBadge.vue'
 import Tag from '/proposals/components/Tag.vue'
@@ -74,3 +73,11 @@ function getTagUrl(tag: string): string {
   return `${base}/datasets/search?tag=${tag}`
 }
 </script>
+
+<style scoped>
+.proposal-dataset-identifier-value {
+  min-width:0;
+  font-family:var(--lab-ds-font-mono);
+  overflow-wrap:anywhere;
+}
+</style>

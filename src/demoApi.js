@@ -3,6 +3,7 @@ import * as f from './fixtures.js';
 const page = data => ({data,total:data.length,page:1,page_size:20,next_page:null,previous_page:null});
 export function responseFor(url, query = {}) {
  const path=String(url);
+ if(path.includes('/profile/') && path.includes('demo-profile-empty')) return {...f.profile,profile:{...f.profile.profile,columns:{}}};
  if(path.includes('/profile/')) return f.profile;
  if(path.includes('/data/')) {
   let data = f.rows.map((r,i)=>({...r,__id:i+1}));
@@ -44,7 +45,11 @@ export function responseFor(url, query = {}) {
 function unwrap(obj) {return Object.fromEntries(Object.entries(toValue(obj)||{}).map(([key,v])=>[key,toValue(v)]));}
 export function mockUseFetch(url, options={}) {
  const data=ref(null),status=ref('success'),error=ref(null);
- const update=()=>{ data.value=responseFor(toValue(url),unwrap(options.params||options.query)); };
+ const update=()=>{
+  const path=String(toValue(url));
+  if(path.includes('/profile/') && /demo-profile-(error|pending)/.test(path)) { data.value=null; status.value=path.includes('demo-profile-error')?'error':'pending'; error.value=status.value==='error'?new Error('Erreur fictive du profil'):null; return; }
+  status.value='success';error.value=null;data.value=responseFor(toValue(url),unwrap(options.params||options.query));
+ };
  watchEffect(update);
  return Promise.resolve({data,status,error,refresh:async()=>update(),execute:async()=>update(),clear:()=>{data.value=null;}});
 }

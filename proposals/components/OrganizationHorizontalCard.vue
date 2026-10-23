@@ -17,15 +17,10 @@
         color-class="lab-ds-u-text-gray-title"
       />
     </ObjectCardHeader>
-    <div class="lab-ds-u-text-sm flex flex-wrap lab-ds-u-gap-x-2 lab-ds-u-gap-y-1 items-center">
-      <template v-if="type !== 'other'">
-        <OwnerType
-          class="mb-0"
-          :type
-        />
-      </template>
-      <OrganizationMetrics v-if="'metrics' in organization" :metrics="organization.metrics" show-followers />
+    <div v-if="type !== 'other'" class="lab-card-organization-type">
+      <OwnerType :type />
     </div>
+    <OrganizationMetrics v-if="'metrics' in organization" :metrics="organization.metrics" show-followers />
     <ObjectCardShortDescription
       v-if="'description' in organization"
       :text="organization.description"

@@ -1,7 +1,7 @@
 /* Shared proposal geometry. Semantic mappings remain owned by each component. */
 .design-lab-badge {
-  --badge-bg:var(--lab-ds-badge-neutral-bg); --badge-text:var(--lab-ds-badge-neutral-text); --badge-border:var(--badge-bg);
-  display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); box-sizing:border-box;
+  --badge-bg:var(--lab-ds-badge-neutral-bg); --badge-text:var(--lab-ds-badge-neutral-text); --badge-border:var(--lab-ds-badge-outline);
+  width:fit-content; flex:none; align-self:flex-start; justify-self:start; display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); box-sizing:border-box;
   min-height:var(--lab-ds-space-24); max-width:100%; padding:var(--lab-ds-space-2) var(--lab-ds-space-8); border:var(--lab-ds-stroke) solid var(--badge-border);
   border-radius:var(--lab-ds-radius); background:var(--badge-bg); color:var(--badge-text);
   font-family:var(--lab-ds-font-sans); font-size:var(--lab-ds-text-caption); font-weight:var(--lab-ds-weight-medium); line-height:var(--lab-ds-leading-caption);
@@ -18,7 +18,7 @@
 .design-lab-badge__icon { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); flex-shrink:0; }
 
 /* Tags share compact typography, but communicate categorization or an action. */
-.design-lab-tag { display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); box-sizing:border-box; max-width:100%; min-height:var(--lab-ds-space-24); padding:var(--lab-ds-space-2) var(--lab-ds-space-8); border:var(--lab-ds-stroke) solid transparent; border-radius:var(--lab-ds-radius-pill); background:var(--lab-ds-tag-bg); color:var(--lab-ds-tag-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
+.design-lab-tag { width:fit-content; flex:none; align-self:flex-start; justify-self:start; display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); box-sizing:border-box; max-width:100%; min-height:var(--lab-ds-space-24); padding:var(--lab-ds-space-2) var(--lab-ds-space-8); border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline); border-radius:var(--lab-ds-radius-pill); background:var(--lab-ds-tag-bg); color:var(--lab-ds-tag-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
 :is(a,button).design-lab-tag,.design-lab-tag:has(button) { background:var(--lab-ds-tag-link-bg); color:var(--lab-ds-tag-link-text); }
 :is(a,button).design-lab-tag { cursor:pointer; text-decoration:none; background-image:none; }
 @media(hover:hover) { :is(a,button).design-lab-tag:hover { background:var(--lab-ds-tag-hover-bg); } }
@@ -29,8 +29,8 @@
 @media(hover:hover) { .lab-filter-tag-close:hover { background:var(--lab-ds-tag-hover-bg); } }
 /* Legacy markup inside proposed consumers follows the same geometry only. */
 @layer base {
- .lab-badge-consumer .fr-badge { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid transparent!important; border-radius:var(--lab-ds-radius)!important; font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; text-transform:none!important; }
- .lab-badge-consumer .fr-tag { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid transparent!important; border-radius:var(--lab-ds-radius-pill)!important; font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; background:var(--lab-ds-tag-bg)!important; color:var(--lab-ds-tag-text)!important; }
+ .lab-badge-consumer .fr-badge { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline)!important; border-radius:var(--lab-ds-radius)!important; font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; text-transform:none!important; }
+ .lab-badge-consumer .fr-tag { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline)!important; border-radius:var(--lab-ds-radius-pill)!important; font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; background:var(--lab-ds-tag-bg)!important; color:var(--lab-ds-tag-text)!important; }
  .lab-badge-consumer :is(a,button).fr-tag { background:var(--lab-ds-tag-link-bg)!important; color:var(--lab-ds-tag-link-text)!important; }
  .lab-badge-consumer :is(a,button).fr-tag:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
  @media(hover:hover) { .lab-badge-consumer :is(a,button).fr-tag:hover { background:var(--lab-ds-tag-hover-bg)!important; } }
@@ -38,3 +38,10 @@
 button.design-lab-tag { min-height:var(--lab-ds-control-compact); }
 
 .lab-selected-tags { display:flex; flex-wrap:wrap; gap:var(--lab-ds-space-8); margin-top:var(--lab-ds-space-8); }
+
+@media(hover:hover) { .design-lab-tag[aria-pressed=true]:not(:disabled):hover { background:var(--lab-ds-brand-hover); } }
+.design-lab-tag[aria-pressed=true]:not(:disabled):active { background:var(--background-action-high-blue-france-active); }
+.design-lab-tag:disabled,.design-lab-tag[aria-pressed]:disabled { cursor:not-allowed; background:var(--background-disabled-grey); color:var(--text-disabled-grey); }
+@media(hover:hover) { .design-lab-tag:disabled:hover { background:var(--background-disabled-grey); } }
+
+.design-lab-badge[data-tone=yellow] { --badge-bg:var(--lab-ds-badge-yellow-bg); --badge-text:var(--lab-ds-badge-yellow-text); }

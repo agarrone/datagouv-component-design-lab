@@ -1,6 +1,6 @@
 # Fondamentaux communs des propositions
 
-Base de travail du 21 octobre 2026, à valider pour le futur design system. Visible dans **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`).
+Base de travail mise à jour le 22 octobre 2026, à valider pour le futur design system. Visible dans **Fondamentaux → Fondamentaux des propositions** (`#fondamentaux/propositions`).
 
 ## Orientation : rester proche du DSFR
 
@@ -10,9 +10,13 @@ Le futur design system de data.gouv.fr doit conserver une apparence et des inter
 
 Les valeurs et leurs usages sont définis dans [data/proposal-foundations.json](../data/proposal-foundations.json). La commande `npm run foundations:generate` produit [foundations.css](../proposals/shared/foundations.css). Les variables utilisent le préfixe `--lab-ds-`.
 
-Toutes les 99 propositions Vue importent cette base, y compris celles qui délèguent leur rendu à une proposition partagée. Les styles propres aux propositions et leurs utilitaires de présentation utilisent les jetons. Les utilitaires préfixés `lab-ds-u-` ne redéfinissent aucune classe du thème source.
+Toutes les propositions Vue importent cette base, y compris celles qui délèguent leur rendu à une proposition partagée. Les styles propres aux propositions et leurs utilitaires de présentation utilisent les jetons. Les utilitaires préfixés `lab-ds-u-` ne redéfinissent aucune classe du thème source.
 
 Les propositions d’illustrations conservent les SVG Figma fournis : leur palette embarquée constitue une exception d’asset, et non une palette d’interface à reproduire dans de nouveaux contrôles. Les sous-composants métier natifs non redessinés conservent leurs styles actuels. Aucun fichier vendor ni jeton de la version actuelle n’est modifié.
+
+## Comportements par famille
+
+Le [guide des comportements](component-behaviors.md) documente treize familles : cartes, liens, boutons et copie, champs, badges et tags, infobulles et panneaux, bandeaux et notifications, chargement/vide/erreur, tableaux, accordéons, identité, indicateurs et modales. Pour chacune : états, clavier, composition, dépendances et cas limites. La même source [component-behaviors.json](../data/component-behaviors.json) alimente la page du laboratoire. Ces règles sont une cible de conception ; elles ne constituent pas une certification des composants existants. La navigation est hors de cette passe.
 
 ## Décisions communes
 
@@ -81,7 +85,7 @@ Ces contrôles ne constituent pas un audit d’accessibilité exhaustif des comp
 ### Survols et liens
 
 - Une carte ne réagit que lorsque sa destination principale est ciblée. Les contrôles secondaires restent indépendants. Voir les arbitrages DatasetCard ci-dessous.
-- Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.
+- Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu reste identique. Ne pas dépendre uniquement de la couleur.
 - La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.
 - Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.
 - Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif.
@@ -123,7 +127,7 @@ Les cartes d’article et de jeu de données cdata utilisent les propositions co
 
 ### Liens et soulignements
 
-- Titre de carte : sans soulignement au repos, focus visible sur le cadre. Pour DatasetCard, titre bleu sans soulignement au survol de sa destination. Les autres cartes restent à harmoniser.
+- Titre de carte : sans soulignement au repos, focus visible sur le cadre. Pour les cartes de catalogue harmonisées, titre bleu sans soulignement au survol de sa destination uniquement.
 - Lien dans un contenu, producteur cliquable ou action textuelle : souligné dès le repos. Le survol renforce le trait ; le focus ajoute le contour commun.
 - Bouton, même lorsqu’il navigue : pas de soulignement ; son cadre, sa couleur et son focus portent l’interaction.
 - Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.
@@ -158,7 +162,7 @@ Le badge est informatif et non cliquable. Il accompagne le titre de l’entité 
 
 - Brouillon, archivé et autres statuts éditoriaux : gris neutre.
 - Accès restreint : rôle avertissement, orange.
-- Ouvert avec un compte : rôle information, bleu.
+- Ouvert avec un compte : jaune DSFR yellow-tournesol.
 - Les libellés et pictogrammes métier restent explicites ; la couleur n’est pas le seul repère.
 
 Ce mapping est un choix du lab à partir des rôles sémantiques Agents et DSFR, pas une prescription du DSFR pour les droits d’accès. Source : [Badge DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge). Cette règle remplace le placement antérieur des statuts sur la ligne de date. AccessTypeBadge et ObjectCardBadge partagent ce mapping.
@@ -171,8 +175,8 @@ Les couleurs des badges et tags sont désormais liées aux variables de rôle du
 
 - Badge de statut : non cliquable, rayon 6 px, texte 12/18, graisse 500, icône 14 px, écart 4 px, hauteur compacte 24 px. Les variantes xs gardent leur géométrie dense.
 - Tag de catégorie : pilule, même typographie compacte en graisse 400, sans faux survol lorsqu’il est statique. Un lien ou filtre interactif prend le bleu France et ses fonds action-low ; focus visible et état sélectionné explicite.
-- Brouillon, archivé et supprimé éditorial restent gris. Une erreur de traitement reste rouge, un traitement terminé vert, l’accès restreint orange et l’accès avec compte bleu. Les accents rose et turquoise viennent de pink-macaron et green-archipel ; ils ne sont pas des états.
-- Les composants historiques LicenseBadge et DatasetLabelTag conservent leur API. Une licence ou un label navigable adopte le style de tag ; un label officiel statique conserve le badge. HvdStatutBadge sépare son badge informatif du lien « Voir les données ».
+- Brouillon et archivé restent gris. Dans ReuseBadge, « Supprimé » utilise le rouge sémantique DSFR. Une erreur de traitement reste rouge, un traitement terminé vert, l’accès restreint orange et l’accès avec compte jaune. Les accents rose et turquoise viennent de purple-glycine et green-archipel ; ils ne sont pas des états.
+- Les composants historiques LicenseBadge et DatasetLabelTag conservent leur API. Une licence est un lien souligné en Geist Mono, sans pastille ; un label navigable adopte le style de tag et un label officiel statique conserve le badge. HvdStatutBadge sépare son badge informatif du lien « Voir les données ».
 - ResourceIconBadge garde ses pictogrammes métier, mais utilise les teintes DSFR. Leur rôle est de distinguer les formats, pas d’indiquer leur validité.
 - Les tags supprimables et filtres du tableau gardent leurs modèles et événements. Les suppressions ont un nom accessible explicite.
 
@@ -185,3 +189,53 @@ Sources : [Badge DSFR](https://www.systeme-de-design.gouv.fr/version-courante/fr
 StatBox distingue le label de l’indicateur (14/20), la valeur principale (24/32, ou 16/24 en compact) et les informations de période (12/18). Marianne et chiffres tabulaires restent la base ; les nombres compacts suivent la langue et leur valeur complète est accessible. Le mini-historique utilise le bleu France et une description textuelle des points. Il ne présente pas le dernier total mensuel comme une hausse : sans comparaison calculée, ni + ni badge vert. Chargement, absence d’historique et zéro sont distincts. Aucune animation nouvelle.
 
 TopicCard rejoint les cartes de catalogue : titre 16/24 sur une ligne, producteur avec panneau, date sur une ligne dédiée, compteurs 12/18 avec icônes de 14 px puis description sur deux lignes. Espacement vertical 4 px et survol limité à la destination principale. showLogo et showStats sont conservés ; les compteurs explicitement fournis à zéro restent visibles.
+
+Badges et tags : bordure fine de 1 px rétablie, y compris dans les consommateurs intégrés. Sa teinte est dérivée à 20 % de la couleur de texte DSFR via le jeton badge-outline ; les couleurs de fond et les dimensions restent inchangées.
+
+Les barres de progression restent visibles à zéro, aux valeurs intermédiaires et au maximum, quelle que soit leur échelle. Aucun pourcentage n’est affiché par défaut ; la valeur reste accessible aux technologies d’assistance. Les formats reprennent les familles initiales : tableaux verts, géographie bleue, code jaune, documentation rose et autres formats gris, avec des teintes DSFR et un contour fin.
+
+Les tags épousent leur contenu (`width: fit-content`) même dans un parent flex ou grid. Ils existent en version informative, cliquable (lien ou bouton), sélectionnable (`aria-pressed`, coche à l’état sélectionné) et supprimable (croix seule, nom accessible « Retirer… »). Les actions prévoient repos, survol, pression, focus clavier et désactivation. Un tag informatif n’imite pas une action. Référence : https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/tag/code-du-tag .
+
+Copie : utiliser CopyButton pour les liens, identifiants, valeurs et codes. Icône de copie commune au repos ; libellé contextuel révélé au survol et au focus clavier. Après succès du presse-papier uniquement : coche, confirmation (« Lien copié », « Identifiant copié »…) visible pendant deux secondes et annonce accessible. Le libellé n’entraîne aucun déplacement de contenu. Échec : message d’erreur, sans fausse confirmation.
+
+QualityItemWarning est un avertissement en ligne, sans fond, bordure ni padding de bannière. Son texte secondaire et son icône sémantique s’alignent sur les autres critères de qualité.
+
+Les conditions d’accès par public (AccessAudienceCondition) affichent explicitement leur libellé métier à côté du public. Une icône 16 px en couleur sémantique DSFR complète le texte : coche pour Oui, croix pour Non, avertissement pour Sous condition. Aucun fond ni encadrement, et aucune information portée uniquement par la couleur ou le survol.
+
+Accès : utiliser le passe validé pour « Ouvert avec compte » (jaune DSFR yellow-tournesol), le cadenas fermé pour « Restreint » (orange) et le cadenas ouvert pour « Ouvert » (vert). Les badges pink utilisent le rose purple-glycine DSFR.
+
+Cartes d’organisation : titre, badge de type sur sa ligne, puis métriques sur une ligne dédiée, puis description. Cette hiérarchie est commune aux cartes verticale et horizontale et au panneau producteur qui réutilise la carte.
+
+Champs et sélecteurs : fond gris DSFR (`background-contrast-grey`), ligne inférieure de 2 px et angles supérieurs 6 px, sans cadre périphérique. Le même traitement concerne la saisie simple, multiligne, recherche, sélection native, sélection recherchable et dates. Le focus conserve son contour bleu ; erreur, avertissement et validation colorent la ligne inférieure, sans changement de géométrie. Les menus déroulants restent blancs et encadrés. Cette règle remplace le champ blanc à bordure complète.
+
+Toutes les icônes des propositions utilisent un dessin outline (Remix Line ou tracé de contour équivalent), y compris les états sélectionnés et les composants sources imbriqués. Un état se distingue par sa couleur, son fond, son libellé ou une coche, pas par le passage à une icône pleine. Les pictogrammes de formats utilisent les primitives Icons proposées. Les logos et illustrations restent des assets de marque, sans altération de leurs tracés.
+
+Détails de ressource : libellés et texte en Marianne 14/22 ; URL, identifiants, sommes de contrôle, formats et tailles en Geist Mono 12/18. Les listes gardent les liens soulignés et le bouton de copie partagé. Une structure tabulaire utilise un tableau sémantique à en-tête gris ; les messages d’absence ou d’erreur simples restent en ligne. Une taille nulle et une taille inconnue sont distinctes.
+
+## Navigation et informations contextuelles
+
+| Fonction | Repos | Survol | Clic / pression |
+| --- | --- | --- | --- |
+| Aller à une page | Lien souligné | Soulignement renforcé, contraste accru | Navigation native, fond actif pendant la pression |
+| Aller à un site externe | Même lien, une icône outline externe | Même retour | Navigation ; nouvel onglet seulement si demandé et annoncé |
+| Ouvrir une information | Bouton neutre, texte sans soulignement | Soulignement continu, fond subtil | Panneau ouvert, fond actif et soulignement persistants |
+
+Focus commun de 2 px sur les trois familles. Les panneaux se ferment par second clic, Échap ou clic extérieur. Pas de navigation implicite sur un bouton d’information ; le panneau peut contenir le lien vers la page complète. Un seul soulignement et un seul pictogramme externe. Les noms d’organisation sont neutres au repos et passent en bleu au survol ; les titres de cartes gardent le survol limité à leur destination. Un attribut title ne doit pas créer une seconde infobulle sur un déclencheur de panneau. Exemples interactifs dans Fondamentaux des propositions → Liens et soulignements.
+
+Référence : [GitHub / Primer](references/github-primer-links.md), complétée par DSFR et les guidelines Vercel. La proximité DSFR reste prioritaire.
+
+## Composants compacts
+
+Les aides de formulaire, séparateurs, indications et petits filtres utilisent les mêmes jetons que les cartes : Marianne 14/22, indications secondaires 12/18, valeurs techniques et deltas en Geist Mono 12/18. Une valeur de meter est exposée aux technologies d’assistance sans pourcentage visible. Les variations conservent une valeur signée et une indication de direction, en plus de la couleur.
+
+Une infobulle de survol contient une aide brève : focus clavier équivalent au survol, association au déclencheur par `aria-describedby`, fermeture par Échap, largeur maximale bornée au viewport, texte 14/22. Elle n’est pas masquée à l’accessibilité. Les contenus comportant des actions utilisent le panneau au clic déjà défini, pas une infobulle de survol.
+
+Les logos ne reçoivent aucune marge ajoutée ; leur cadre appartient au composant contenant. Le même placeholder outline couvre les logos absents et les erreurs de chargement. Les accordéons de détails utilisent une bordure neutre et des titres en casse normale. Leur état ouvert et les événements de leurs composants sources sont conservés.
+
+Périmètre, dépendances et variantes : [passe des composants compacts](../proposals/small-components-01.md).
+
+## Ajustements du 23 octobre 2026
+
+La destination principale couvre toute la carte, hormis ses commandes secondaires : au survol, titre et icône passent en bleu sans soulignement ni surlignage. Un lien ou déclencheur non souligné au repos reçoit un soulignement simple de 1 px au survol, sans changer de graisse. Les liens déjà soulignés peuvent conserver leur trait renforcé de 2 px. Dans les formulaires, l’étoile obligatoire est rouge DSFR et l’icône de message d’erreur est outline, sans pseudo-icône pleine concurrente.
+
+Panneau producteur : utiliser OrganizationCard en variante compacte, avec logo 48 px, nom complet, type, métriques libellées et description. Le panneau partagé fournit la surface et le cadre ; pas de bandeau décoratif ni de carte encadrée imbriquée. Séparer le lien vers l’organisation en pied de panneau.

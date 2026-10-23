@@ -1,0 +1,7 @@
+/* Shared informational states for access conditions and quality criteria. */
+.lab-status-line { display:flex; align-items:flex-start; gap:var(--lab-ds-space-8); min-width:0; max-width:100%; margin:0; color:var(--lab-ds-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+.lab-status-line > span { min-width:0; overflow-wrap:anywhere; }
+.lab-status-line[data-status=success] { --status-icon-color:var(--lab-ds-badge-success-text); }
+.lab-status-line[data-status=warning] { --status-icon-color:var(--lab-ds-badge-warning-text); }
+.lab-status-line[data-status=danger] { --status-icon-color:var(--lab-ds-badge-error-text); }
+.lab-status-line > .lab-ds-icon { color:var(--status-icon-color); }

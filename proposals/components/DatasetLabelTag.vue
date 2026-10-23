@@ -20,7 +20,7 @@ import '../shared/foundations.css'
 import '../shared/badge.css'
 import { computedAsync } from '@vueuse/core'
 import type { RouteLocationRaw } from 'vue-router'
-import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 import type { TranslatedBadge } from '../../vendor/datagouv-components/src/types/badges'
 
 const props = defineProps<{
@@ -39,7 +39,7 @@ const img = computedAsync(async () => {
 </script>
 
 <style scoped>
-.proposed-dataset-label { gap:var(--lab-ds-space-4); }
+.proposed-dataset-label { gap:var(--lab-ds-space-4); border-radius:var(--lab-ds-radius-pill); }
 .proposed-dataset-label img { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); object-fit:contain; flex-shrink:0; }
 .proposed-dataset-label--link { color:var(--lab-ds-tag-link-text); background:var(--lab-ds-tag-link-bg); text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
 .proposed-dataset-label--link:hover { background:var(--lab-ds-tag-hover-bg); }

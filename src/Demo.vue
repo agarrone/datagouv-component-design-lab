@@ -57,6 +57,7 @@ const clicks = ref(0);
       <div v-if="!compact" class="demo-row"><component :is="C.BrandedButton" color="tertiary">En savoir plus</component><component :is="C.BrandedButton" disabled>Indisponible</component><component :is="C.BrandedButton" loading>Chargement</component></div>
       <div v-if="!compact" class="demo-row"><component :is="C.BrandedButton" size="xs">Petit</component><component :is="C.BrandedButton" size="sm">Standard</component><component :is="C.BrandedButton" size="lg">Grand</component><component :is="C.BrandedButton" color="danger">Supprimer</component></div>
     </template>
+    <component v-else-if="name==='Toggletip'" :is="C.Toggletip" v-bind="sampleProps || {}" :styled-button="false">Voir les informations<template #toggletip><p>Ce panneau explique l’indicateur et reste ouvert après le clic.</p></template></component>
     <component :is="C.Tag" v-else-if="name === 'Tag' && sampleProps" v-bind="sampleProps">Données ouvertes</component>
     <template v-else-if="name === 'Tag'"><div class="demo-row"><component :is="C.Tag" type="secondary">Mobilité</component><component :is="C.Tag" type="secondary">Données ouvertes</component><component :is="C.Tag" type="secondary">Environnement</component></div></template>
     <component :is="C.SimpleBanner" v-else-if="name === 'SimpleBanner' && sampleProps?.type" :type="sampleProps.type">Une nouvelle version de ces données est disponible.</component>

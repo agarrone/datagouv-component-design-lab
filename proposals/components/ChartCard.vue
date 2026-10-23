@@ -18,6 +18,7 @@
       <ObjectCardBadge
         v-if="chart.deleted_at"
         :icon="RiDeleteBinLine"
+        tone="danger"
       >
         {{ t('Supprimé') }}
       </ObjectCardBadge>

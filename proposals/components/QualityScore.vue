@@ -10,7 +10,7 @@ import {computed} from 'vue'
 import {useTranslation} from '../../vendor/datagouv-components/src/composables/useTranslation'
 import ProgressBar from './ProgressBar.vue'
 import '../shared/quality.css'
-const props=withDefaults(defineProps<{score:number,class?:string;showValue?:boolean}>(),{class:'',showValue:true})
+const props=withDefaults(defineProps<{score:number,class?:string;showValue?:boolean}>(),{class:'',showValue:false})
 const high=2/3
 const {t,locale}=useTranslation()
 const valid=computed(()=>Number.isFinite(props.score) && props.score>=0 && props.score<=1)

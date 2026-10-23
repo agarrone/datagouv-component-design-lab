@@ -14,7 +14,7 @@
       <!-- $props needed: in generic components, vue-tsc resolves `required` to the Nuxt auto-imported function instead of the prop -->
       <span
         v-if="$props.required"
-        class="text-new-primary"
+        class="lab-required-marker"
       >*</span>
       <span
         v-if="explanation"
@@ -153,7 +153,7 @@
       :id="errorTextId"
       class="fr-error-text"
     >
-      {{ errorText }}
+      <RiErrorWarningLine class="lab-ds-icon" data-icon-size="base" aria-hidden="true" focusable="false" /><span>{{ errorText }}</span>
     </p>
     <p v-else-if="warningText" :id="`${id}-warning`" class="lab-selection-warning">{{warningText}}</p>
     <p v-else-if="validText" :id="`${id}-valid`" class="fr-valid-text">{{validText}}</p>
@@ -162,6 +162,7 @@
 
 <script setup lang="ts" generic="T extends string | number | object, Multiple extends true | false">
 import '../../shared/foundations.css'
+import {RiErrorWarningLine} from '@remixicon/vue'
 import '../../shared/selection.css'
 import '../../shared/inputs.css'
 

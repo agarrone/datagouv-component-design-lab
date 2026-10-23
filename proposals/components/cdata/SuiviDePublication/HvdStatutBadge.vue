@@ -4,7 +4,6 @@
     <AdminBadge :type="type" size="sm" :no-wrap="false">{{ statut }}</AdminBadge>
     <CdataLink :to="url" external target="_blank" rel="noopener noreferrer" class="proposed-hvd-link fr-raw-link">
       {{ t('Voir les données') }}
-      <RiExternalLinkLine class="lab-ds-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />
     </CdataLink>
   </div>
   <AdminBadge
@@ -19,9 +18,8 @@
 
 <script setup lang="ts">
 import '../../../shared/foundations.css'
-import { RiExternalLinkLine } from '@remixicon/vue'
 import {useTranslation} from '../../../../vendor/datagouv-components/src/composables/useTranslation'
-import CdataLink from '../../../../vendor/cdata-components/CdataLink.vue'
+import CdataLink from '/proposals/components/AppLink.vue'
 import AdminBadge from '../AdminBadge/AdminBadge.vue'
 type AdminBadgeType = 'primary'|'secondary'|'success'|'warning'|'danger'|'default'|'pink'|'teal'
 

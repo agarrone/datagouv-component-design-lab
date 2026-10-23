@@ -11,7 +11,7 @@ import '../../../../shared/foundations.css'
 import {computed,onMounted,onUnmounted,useId} from 'vue'
 import {useRoute,useRouter} from '../../../../../src/compat/application/runtime'
 import {useBreadcrumbs,useSidebarLinks} from '../../../../../vendor/cdata-runtime/utils/navigation'
-import CdataLink from '../../../../../vendor/cdata-components/CdataLink.vue'
+import CdataLink from '/proposals/components/AppLink.vue'
 
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'

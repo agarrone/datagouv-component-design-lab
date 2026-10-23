@@ -73,7 +73,7 @@
 import '../shared/foundations.css'
 import '../shared/cards.css'
 import { RiCheckLine, RiInformationLine, RiNodeTree } from '@remixicon/vue'
-import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import { useGetSchemaDocumentation } from '../../vendor/datagouv-components/src/functions/schemas'
 import type { RegisteredSchema } from '../../vendor/datagouv-components/src/types/schemas'

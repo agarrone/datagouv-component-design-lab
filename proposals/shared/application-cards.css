@@ -50,7 +50,7 @@
  .lab-brand-card>div:not(:has(img))>div:first-child { display:none; }
  .lab-brand-card>div:not(:has(img))>div:last-child { width:100%!important; padding:var(--lab-ds-space-16)!important; }
  .lab-brand-card:not(:has(img)) h2.sr-only { position:static!important; width:auto!important; height:auto!important; margin:0!important; padding:0!important; overflow:visible!important; clip:auto!important; white-space:normal!important; }
- @media(hover:hover){.lab-brand-card .product-link:hover{color:var(--lab-ds-brand-hover)!important}}
+ @media(hover:hover){.lab-brand-card .product-link:hover{color:var(--lab-ds-brand)!important}}
 }
 @layer base {
  .lab-link-card :is(h1,h2,h3,h4,h5,h6) { text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }

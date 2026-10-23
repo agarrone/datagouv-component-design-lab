@@ -11,8 +11,8 @@
       <OrganizationNameWithCertificate :organization size="sm" />
       <template #toggletip>
         <section class="lab-organization-details">
-          <OrganizationCard :organization="organization" />
-          <AppLink :to="organizationUrl || organization.page" class="lab-proposal-link">{{ t("Voir la page de l’organisation") }}</AppLink>
+          <OrganizationCard :organization="organization" compact />
+          <AppLink :to="organizationUrl || organization.page" class="lab-proposal-link lab-organization-details-footer">{{ t("Voir la page de l’organisation") }}</AppLink>
         </section>
       </template>
     </DetailsPopover>
@@ -55,8 +55,8 @@ import OrganizationCard from './OrganizationCard.vue'
 import { getOwnerName } from '../../vendor/datagouv-components/src/functions/owned'
 import type { OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
 import type { UserReference } from '../../vendor/datagouv-components/src/types/users'
-import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
-import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
+import AppLink from '/proposals/components/AppLink.vue'
+import OrganizationNameWithCertificate from './OrganizationNameWithCertificate.vue'
 
 const props = defineProps<{
   showDetails?: boolean
@@ -78,4 +78,9 @@ const ownerName = computed(() => {
 .lab-card-owner :deep(.truncate) { white-space:normal; overflow:visible; text-overflow:clip; }
 .lab-card-owner :deep(a) { color:var(--lab-ds-text-secondary); background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .lab-card-owner :deep(a:focus-visible) { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+</style>
+
+<style scoped>
+.lab-organization-details{display:flex;flex-direction:column;gap:var(--lab-ds-space-16)}
+.lab-organization-details-footer{display:block;border-top:1px solid var(--lab-ds-border);padding-top:var(--lab-ds-space-12);font:var(--lab-ds-weight-medium) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans)}
 </style>

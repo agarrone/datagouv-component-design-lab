@@ -1,0 +1,6 @@
+.lab-membership-sentence { font-weight:var(--lab-ds-weight-regular); }
+.lab-membership-subtitle { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-8); }
+.lab-membership-role { display:inline-flex; align-items:center; flex-wrap:wrap; gap:var(--lab-ds-space-4); font-weight:var(--lab-ds-weight-regular); }
+.lab-membership-mail { display:inline-flex; align-items:center; justify-content:center; width:var(--lab-ds-control-compact); height:var(--lab-ds-control-compact); border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius-round); background:var(--lab-ds-surface-subtle); color:var(--lab-ds-text-secondary); flex:none; }
+.lab-membership-recap { margin-bottom:var(--lab-ds-space-16); }
+.lab-membership-modal-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:var(--lab-ds-space-8); }

@@ -11,7 +11,7 @@
       {{ label }}
       <span
         v-if="required"
-        class="text-new-primary"
+        class="lab-required-marker"
       >*</span>
       <span
         v-if="hintText"
@@ -59,13 +59,14 @@
       :id="errorTextId"
       class="fr-error-text"
     >
-      {{ errorText }}
+      <RiErrorWarningLine class="lab-ds-icon" data-icon-size="base" aria-hidden="true" focusable="false" /><span>{{ errorText }}</span>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
 import '../../shared/foundations.css'
+import {RiErrorWarningLine} from '@remixicon/vue'
 import '../../shared/inputs.css'
 
 import { computed, useId } from 'vue'

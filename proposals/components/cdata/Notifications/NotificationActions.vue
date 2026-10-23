@@ -77,7 +77,7 @@ import { throwOnNever, toast } from '@datagouv/components-next'
 import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue'
 import { RiMoreLine, RiSettings3Line } from '@remixicon/vue'
 import { onClickOutside, useEventListener } from '@vueuse/core'
-import CdataLink from '/vendor/cdata-components/CdataLink.vue'
+import CdataLink from '/proposals/components/AppLink.vue'
 import type { NotificationRuleKey, NotificationScope, UserNotification } from '/vendor/cdata-runtime/types/notifications'
 import { getSubjectDemonstrative } from '/vendor/cdata-runtime/utils/discussions'
 
