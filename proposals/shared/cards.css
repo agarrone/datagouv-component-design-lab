@@ -209,3 +209,12 @@
 /* Preserve supplied logo artwork and the frame, without added padding. */
 .lab-catalog-card .lab-object-card-media-sm { padding:0; }
 .lab-organization-card.lab-catalog-card .lab-organization-logo { padding:0; }
+
+/* The main destination covers the card; secondary controls remain above it. */
+:is(.lab-object-card,.lab-content-card) :is(a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title)[href]{text-decoration:none!important;background-image:none!important}
+:is(.lab-object-card,.lab-content-card) a.lab-card-title-link[href]>span.absolute.inset-0{position:absolute;inset:0;z-index:1}
+@layer base {
+ @media(hover:hover){
+  :is(.lab-object-card,.lab-content-card):has(:is(a.lab-card-title-link,a.lab-reuse-title,a.lab-organization-title)[href]:hover) :is(.lab-card-title-link,.lab-card-title-link .truncate,.lab-reuse-title,.lab-organization-title,.lab-organization-title .truncate){color:var(--lab-ds-brand)!important;text-decoration:none!important}
+ }
+}

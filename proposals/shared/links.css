@@ -2,7 +2,7 @@
 @layer base {
  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]) { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); background-image:none; }
  @media (hover:hover) {
-  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):hover { color:var(--lab-ds-brand-hover); text-decoration:underline; text-decoration-thickness:var(--lab-ds-focus-width); }
+  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):hover { color:var(--lab-ds-brand); text-decoration:underline; text-decoration-thickness:var(--lab-ds-focus-width); }
  }
  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):active { color:var(--lab-ds-brand); }
  :is(a.lab-proposal-link,.lab-card-owner a[href],a.proposed-avatar-name--link,a.proposed-organization-owner-link,.proposal-contact a[href],.lab-quality-guide a[href]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
@@ -16,3 +16,47 @@
   background-image:none!important;
  }
 }
+
+/* Common navigation states; component classes can retain their contextual tone. */
+a.lab-text-link { color:var(--lab-ds-brand); text-decoration:underline; text-decoration-style:solid; text-decoration-thickness:var(--lab-ds-stroke); text-underline-offset:var(--lab-ds-space-optical); --underline-img:none!important; background-image:none!important; border-radius:var(--lab-ds-radius-technical); }
+a[data-link-kind]::after { display:none!important; }
+.lab-link-external-icon { display:inline-block; margin-inline-start:var(--lab-ds-space-4); vertical-align:middle; flex:none; }
+@media(hover:hover) { a.lab-text-link:hover { color:var(--lab-ds-brand); text-decoration:underline; text-decoration-thickness:var(--lab-ds-focus-width); } }
+a.lab-text-link:active { color:var(--lab-ds-brand); background-color:var(--lab-ds-surface-active); }
+a.lab-text-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+button.lab-details-trigger { cursor:pointer; border-radius:var(--lab-ds-radius-technical); text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+@media(hover:hover) { button.lab-details-trigger:hover { text-decoration:underline solid; background:var(--lab-ds-surface-subtle); } }
+button.lab-details-trigger:active,button.lab-details-trigger[aria-expanded=true] { text-decoration:underline solid; background:var(--lab-ds-surface-active); }
+button.lab-details-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+
+.lab-catalog-card button.lab-details-trigger { text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+@media(hover:hover) { .lab-catalog-card button.lab-details-trigger:hover { text-decoration:underline solid; background:var(--lab-ds-surface-subtle); } }
+.lab-catalog-card button.lab-details-trigger[aria-expanded=true] { text-decoration:underline solid; background:var(--lab-ds-surface-active); }
+.lab-icon-details-trigger { display:inline-flex; align-items:center; justify-content:center; min-width:var(--lab-ds-control-compact); min-height:var(--lab-ds-control-compact); border-radius:var(--lab-ds-radius); color:var(--lab-ds-text-secondary); }
+.lab-icon-details-trigger[aria-expanded=true] { color:var(--lab-ds-text); background:var(--lab-ds-surface-active); }
+@media(hover:hover) { .lab-icon-details-trigger:hover { background:var(--lab-ds-surface-subtle); color:var(--lab-ds-text); } }
+.lab-icon-details-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+/* DSFR hover uses tint variables with a high-specificity selector. Keep the
+   open-state tint even while the pointer remains over the trigger. */
+a.lab-text-link { --hover-tint:transparent; --active-tint:var(--lab-ds-surface-active); }
+button.lab-details-trigger,.lab-icon-details-trigger { --hover-tint:var(--lab-ds-surface-subtle); --active-tint:var(--lab-ds-surface-active); }
+button.lab-details-trigger[aria-expanded=true],.lab-icon-details-trigger[aria-expanded=true] { --hover-tint:var(--lab-ds-surface-active); }
+/* Text inside flex identity/quality labels needs its own decoration; icons and
+   progress meters remain undecorated. */
+button.lab-details-trigger :is(.lab-quality-trigger-label>span,.truncate) { text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
+@media(hover:hover) { button.lab-details-trigger:hover :is(.lab-quality-trigger-label>span,.truncate) { text-decoration:underline solid; } }
+button.lab-details-trigger[aria-expanded=true] :is(.lab-quality-trigger-label>span,.truncate) { text-decoration:underline solid; }
+
+@media(hover:hover) {
+ button.lab-details-trigger:hover,.lab-catalog-card button.lab-details-trigger:hover { color:var(--lab-ds-brand); text-decoration:underline; text-decoration-thickness:var(--lab-ds-stroke); }
+ button.lab-details-trigger:hover :is(.lab-quality-trigger-label>span,.truncate) { text-decoration:underline; text-decoration-thickness:var(--lab-ds-stroke); }
+}
+@layer base {
+ @media(hover:hover) {
+  a.lab-text-link:hover { color:var(--lab-ds-brand)!important; text-decoration-thickness:var(--lab-ds-focus-width)!important; }
+  .lab-catalog-card .lab-card-owner button.lab-details-trigger:hover .truncate { color:var(--lab-ds-brand)!important; }
+ }
+}
+
+/* An undecorated textual trigger gains a regular underline, never bold text. */
+button.lab-details-trigger,button.lab-details-trigger :is(.lab-quality-trigger-label>span,.truncate){text-decoration-thickness:var(--lab-ds-stroke)}

@@ -20,6 +20,13 @@ export const descriptions = {
 };
 export const samples = {
  ...applicationSamples,
+ AppLink:{to:'/datasets'},
+ 'cdata/AdminMembershipRequest/AdminMembershipRequest':{oid:f.organization.id,showActions:true,request:{id:'demo-membership',kind:'request',user:{...f.user,email:'camille.martin@example.org'},role:'editor',created:'2026-10-01T09:00:00',comment:'Je souhaite contribuer à la publication des données.'}},
+ 'cdata/AdminOrgInvitation/AdminOrgInvitation':{invitation:{id:'demo-invitation',organization:f.organization,role:'editor',created:'2026-10-01T09:00:00',comment:'Rejoignez notre équipe pour publier les données du territoire.'}},
+ 'cdata/AdminEmail':{user:{...f.user,email:'camille.martin@example.org'}},
+ 'cdata/BannerNotif':{type:'primary',icon:RiDatabase2Line,badge:'Information',date:new Date('2026-10-01T09:00:00')},
+ 'cdata/TransferBanner':{type:'Dataset',subject:f.datasetFull,label:'Transférer le jeu de données'},
+ 'cdata/ActionCard/ActionCard':{...applicationSamples['cdata/ActionCard/ActionCard'],icon:'/demo/territories.svg'},
  'cdata/Post/card':{post:{...f.post,image:null}},
  'cdata/Reuses/ReuseCard':{reuse:{...f.reuse,image:null}},
  'cdata/AccessTypes/AccessTypePanel':{object:{access_type:'restricted',access_audiences:[{role:'local_authority_and_administration',condition:'yes'},{role:'company_and_association',condition:'under_condition'},{role:'private',condition:'no'}],authorization_request_url:'https://www.data.gouv.fr'}},

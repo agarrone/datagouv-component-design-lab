@@ -11,7 +11,7 @@ const icon=computed(()=>({post:RiArticleLine,reuse:RiLineChartLine,chart:RiBarCh
 <template>
  <div class="lab-card-media" :data-empty="!hasImage" :data-fit="fit">
   <img v-if="hasImage" :src="src!" :alt="alt || ''" loading="lazy" @error="failed=true" />
-  <component v-else :is="icon" class="lab-card-empty-symbol" data-icon-size="fluid" aria-hidden="true" focusable="false" />
+  <component v-else :is="icon" class="lab-card-empty-symbol lab-ds-icon" data-icon-size="fluid" aria-hidden="true" focusable="false" />
  </div>
 </template>
 <style scoped>

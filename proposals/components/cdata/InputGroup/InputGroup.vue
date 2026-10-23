@@ -79,7 +79,7 @@
       :id="errorTextId"
       class="fr-error-text"
     >
-      {{ errorText }}
+      <RiErrorWarningLine class="lab-ds-icon" data-icon-size="base" aria-hidden="true" focusable="false" /><span>{{ errorText }}</span>
     </p>
     <p
       v-else-if="hasWarning && warningText"
@@ -99,7 +99,7 @@ import '../../../shared/inputs.css'
 import { RiErrorWarningLine } from '@remixicon/vue'
 import { computed, inject, useId, type InputTypeHTMLAttribute } from 'vue'
 import MarkdownEditor from '~/components/MarkdownEditor/MarkdownEditor.vue'
-import Required from '~/components/Required/Required.vue'
+import Required from '../Required/Required.vue'
 
 export type InputValue = string | undefined | null
 

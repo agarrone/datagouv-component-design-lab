@@ -32,6 +32,10 @@ for(const [id,prop,value] of [['PostCard','post',f.post],['ChartCard','chart',f.
  ['Sans image',{[prop]:{...value,image:null}}],
  ['Image indisponible',{[prop]:{...value,image:'/demo/card-image-unavailable.png'}}],
 ]));
+cardVariants.ChartCard.push(...examples('ChartCard-states',[
+ ['Supprimé',{chart:{...f.chart,deleted_at:'2026-10-01'}}],
+ ['Brouillon',{chart:{...f.chart,private:true}}],
+]));
 for(const [wrapper,source] of [['cdata/Dataservices/Card/Card','DataserviceCard'],['cdata/Reuses/ReuseCard','ReuseCard']])cardVariants[wrapper]=cardVariants[source].map(v=>({...v,id:wrapper,key:wrapper+'-'+v.key}));
 const appCardExamples={
  'cdata/ActionCard/ActionCard':[['Standard',{title:'Publier des données',content:'Préparez les fichiers et leurs métadonnées avant la publication.',icon:'/proposals/illustrations/data.svg',actionsAlignment:'start'}],['Mise en avant',{title:'Compléter la description',content:'Une description précise facilite la réutilisation.',icon:'/proposals/illustrations/book.svg',actionsAlignment:'end',type:'primary'}]],

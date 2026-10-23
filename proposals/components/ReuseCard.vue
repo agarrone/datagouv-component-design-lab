@@ -17,7 +17,7 @@
 
           <ObjectCardBadge v-if="reuse.private" :icon="RiLockLine">{{ t('Brouillon') }}</ObjectCardBadge>
 
-          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine">{{ t('Archivé') }}</ObjectCardBadge>
+          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine" tone="warning">{{ t('Archivé') }}</ObjectCardBadge>
         </div>
         <ObjectCardOwner show-details :organization="reuse.organization" :owner="reuse.owner" :organization-url="organizationUrl" />
         <div class="lab-card-update-row">
@@ -47,7 +47,7 @@ import type { RouteLocationRaw } from 'vue-router'
 import type { Reuse, ReuseV2 } from '../../vendor/datagouv-components/src/types/reuses'
 import type { TitleTag } from '../../vendor/datagouv-components/src/types/ui'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
-import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 import ObjectCardOwner from './ObjectCardOwner.vue'
 import ReuseDetails from './ReuseDetails.vue'
 import ObjectCardBadge from './ObjectCardBadge.vue'

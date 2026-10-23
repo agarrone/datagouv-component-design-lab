@@ -35,9 +35,22 @@ export const metadataVariants={
   ['Année',{range:{start:'2025-01-01',end:'2025-12-31'}}],['Plusieurs années',{range:{start:'2022-01-01',end:'2025-12-31'}}],['Mois',{range:{start:'2025-03-01',end:'2025-03-31'}}],['Période précise',{range:{start:'2025-03-12',end:'2025-07-23'}}],['Période en cours',{range:{start:'2025-01-01',end:null}}],
  ]),
  CopyButton:examples('CopyButton',[
+  ['Copie désactivée',{text:'demo-dataset',label:'Copier l’identifiant',copiedLabel:'Identifiant copié !',hideLabel:true,disabled:true}],
   ['Libellé visible',{text:'demo-dataset',label:'Copier l’identifiant',copiedLabel:'Identifiant copié !'}],['Icône encadrée',{text:'demo-dataset',label:'Copier l’identifiant',copiedLabel:'Identifiant copié !',hideLabel:true}],['Icône seule',{text:'demo-dataset',label:'Copier l’identifiant',copiedLabel:'Identifiant copié !',iconOnly:true}],['Icône à droite',{text:'demo-dataset',label:'Copier l’identifiant',copiedLabel:'Identifiant copié !',reverse:true}],
  ]),
  'cdata/ContactPoint':examples('cdata/ContactPoint',[
   ['Contact par e-mail',{contact:{name:'Équipe des données territoriales',email:'contact@example.org',role:'contact'}}],['Formulaire de contact',{contact:{name:'Service des statistiques territoriales et de l’observation des politiques publiques',contact_form:'https://example.org/contact',role:'publisher'}}],['Sans lien',{contact:{name:'Observatoire des territoires',role:'creator'}}],
  ]),
 };
+
+metadataVariants['ResourceAccordion/Metadata']=examples('ResourceAccordion/Metadata',[
+ ['Standard',{resource:f.resource}],['URL longue',{resource:{...f.resource,url:'https://example.org/donnees/observatoire-des-territoires/ressources/indicateurs-de-population/version-annuelle/communes.csv'}}],
+ ['Somme de contrôle',{resource:{...f.resource,checksum:{type:'sha256',value:'a1b2c3d4'.repeat(8)}}}],['Sans extras',{resource:{...f.resource,extras:{}}}],['Fichier vide',{resource:{...f.resource,filesize:0}}],
+]);
+metadataVariants['ResourceAccordion/DataStructure']=examples('ResourceAccordion/DataStructure',[['Colonnes du fichier',{resource:f.resource}],...['empty','error','pending'].map(state=>[({empty:'Sans colonnes',error:'Erreur de chargement',pending:'Chargement'})[state],{resource:{...f.resource,id:`demo-profile-${state}`}}])]);
+metadataVariants['ResourceAccordion/Downloads']=examples('ResourceAccordion/Downloads',[
+ ['Fichier original',{resource:f.resource,dataset:f.dataset}],
+ ['Formats générés',{resource:{...f.resource,extras:{...f.resource.extras,'analysis:parsing:parquet_url':'https://example.org/population.parquet','analysis:parsing:parquet_size':24000,'analysis:parsing:finished_at':'2026-10-01T09:00:00'}},dataset:f.dataset}],
+ ['Exports WFS',{resource:{...f.resource,url:'https://example.org/wfs',format:'wfs',extras:{'analysis:parsing:ogc_metadata':{format:'wfs',version:'2.0.0',output_formats:['csv','application/json'],detected_layer:{name:'population',default_crs:'EPSG:4326'}}}},dataset:f.dataset}],['Lien externe',{resource:{...f.resource,format:'url'},dataset:f.dataset}],
+ ['Taille inconnue',{resource:{...f.resource,filesize:null,extras:{}},dataset:f.dataset}],
+]);

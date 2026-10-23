@@ -11,6 +11,8 @@ let components=0,icons=0;
 const utilitySource=readFileSync(new URL('../proposals/shared/foundation-utilities.css',import.meta.url),'utf8');
 for(const file of files){
  const text=readFileSync(file,'utf8');
+ assert.doesNotMatch(text,/\bRi[A-Z]\w*Fill\b/,`${file}: utiliser la variante outline Line de l’icône`);
+ assert.doesNotMatch(text,/\b(?:text|bg|rounded)-\[/,`${file}: utilitaire arbitraire hors des fondamentaux ; utiliser un jeton partagé`);
  for(const [,name] of text.matchAll(/var\(--lab-ds-([\w-]+)/g))assert.ok(name in foundationTokens,`${file}: jeton inconnu ${name}`);
  assert.doesNotMatch(text,/(?:hover|focus|focus-visible|active|disabled|sm|md|lg):!?lab-ds-u-/,`${file}: variante utilitaire inexistante ; utiliser un sélecteur de proposition explicite`);
  assert.doesNotMatch(text,/[:!]lab-ds-u-rounded/,`${file}: un nom de prop a été remplacé par un utilitaire`);
@@ -20,9 +22,11 @@ for(const file of files){
   function checkIcons(node){
    if(node.type===1){
     const boundIs=node.props.find(p=>p.type===7&&p.name==='bind'&&p.arg?.content==='is')?.exp?.content||'';
-    const icon=/^Ri[A-Z]/.test(node.tag)||(node.tag==='component'&&(/\bicon(?:Right|Component)?\b/.test(boundIs)||/Ri[A-Z]/.test(boundIs)))||node.tag==='svg';
+    const icon=/^Ri[A-Z]/.test(node.tag)||(node.tag==='component'&&(/icon/i.test(boundIs)||/Ri[A-Z]/.test(boundIs)))||node.tag==='svg';
     if(icon){
      icons++;
+     // Custom SVG charts retain their own layout; interface icons use the shared class.
+     if(!(node.tag==='svg'&&node.props.some(p=>p.type===6&&p.name==='data-icon-size'&&p.value?.content==='custom')))assert.ok(node.props.some(p=>p.type===6&&p.name==='class'&&p.value?.content.split(/\s+/).includes('lab-ds-icon')),`${file}: icône sans la classe commune lab-ds-icon`);
      for(const name of ['data-icon-size','aria-hidden','focusable'])assert.ok(node.props.some(p=>(p.type===6?p.name:p.arg?.content)===name),`${file}: icône sans ${name}`);
      assert.ok(!/Fill$/.test(node.tag),`${file}: préférer une icône Line ou documenter une exception`);
     }

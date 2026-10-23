@@ -21,7 +21,13 @@ const content=computed(()=>props.name.includes('DescriptionList')?'Population mu
  <table v-else-if="name==='cdata/AdminTable/Table/AdminTableTh'"><thead><tr><component :is="C[name]" v-bind="sampleProps" v-on="listeners || {}">Dernière mise à jour</component></tr></thead></table>
  <AdminSidebarScene v-else-if="name.startsWith('cdata/AdminSidebar/')" :name="name" :sample-props="sampleProps" />
  <component v-else :is="C[provider]">
-  <template v-if="modalPreview"><component :is="C.BrandedButton" @click="modalOpen=true">Ouvrir la modale</component><component :is="C[name]" v-bind="sampleProps" :opened="modalOpen" @close="modalOpen=false">{{ content }}</component></template>
+  <component v-if="name==='cdata/BannerNotif'" :is="C[name]" v-bind="sampleProps">
+   <template #title>Une demande concerne votre organisation</template>
+   <template #subtitle>Observatoire des territoires</template>
+   <template #body>Camille Martin souhaite rejoindre votre organisation pour contribuer à ses publications.</template>
+   <template #buttons><component :is="C.BrandedButton" size="xs">Examiner la demande</component></template>
+  </component>
+  <template v-else-if="modalPreview"><component :is="C.BrandedButton" @click="modalOpen=true">Ouvrir la modale</component><component :is="C[name]" v-bind="sampleProps" :opened="modalOpen" @close="modalOpen=false">{{ content }}</component></template>
   <component v-else-if="name==='cdata/AdminTable/Table/AdminTable'" :is="C[name]" v-bind="sampleProps"><thead><tr><th>Commune</th><th>Population</th></tr></thead><tbody><tr><td>Rennes</td><td>225 081</td></tr><tr><td>Nantes</td><td>325 070</td></tr></tbody></component>
   <component v-else-if="name==='cdata/AdminTable/Table/AdminTableTh'" :is="C['cdata/AdminTable/Table/AdminTable']"><thead><tr><component :is="C[name]" v-bind="sampleProps">Population</component></tr></thead></component>
   <dl v-else-if="name==='cdata/DescriptionList/DescriptionListTerm'||name==='cdata/DescriptionList/DescriptionListDetails'"><component :is="C[name]" v-bind="sampleProps">{{ name.endsWith('Term')?'Population': '225 081 habitants' }}</component></dl>

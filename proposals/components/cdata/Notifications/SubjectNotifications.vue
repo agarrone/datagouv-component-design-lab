@@ -67,7 +67,7 @@ import {h} from 'vue'
 import { throwOnNever, toast } from '@datagouv/components-next'
 import { RiNotification3Line, RiNotificationOffLine } from '@remixicon/vue'
 import type { Component } from 'vue'
-import CdataLink from '/vendor/cdata-components/CdataLink.vue'
+import CdataLink from '/proposals/components/AppLink.vue'
 import type { NotificationResolved, NotificationScope } from '/vendor/cdata-runtime/types/notifications'
 import { getSubjectDemonstrative } from '/vendor/cdata-runtime/utils/discussions'
 

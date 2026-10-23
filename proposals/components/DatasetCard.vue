@@ -45,6 +45,7 @@
       <ObjectCardBadge
         v-else-if="dataset.archived"
         :icon="RiArchiveLine"
+        tone="warning"
       >
         {{ t('Archivé') }}
       </ObjectCardBadge>

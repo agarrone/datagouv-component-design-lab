@@ -1,4 +1,5 @@
 <script setup>
+import {smallComponentVariants} from "./smallComponentExamples";
 import {statVariants} from "./statExamples";
 import {tableVariants} from "./tableExamples";
 import {inputVariants} from "./inputExamples";
@@ -38,6 +39,7 @@ const status = computed(() => auditStatuses.find(s => s.id === audit[props.compo
 const findings = computed(() => issues.filter(i => i.components.includes(props.component.id)));
 const families = computed(() => Object.entries(visibleTypePages).filter(([,p]) => p.sections.some(s => s.items.some(i => i.id === props.component.id))));
 const variants = computed(() => {
+  if (smallComponentVariants[props.component.id]) return smallComponentVariants[props.component.id];
   if (statVariants[props.component.id]) return statVariants[props.component.id];
   if (tableVariants[props.component.id]) return tableVariants[props.component.id];
   if (inputVariants[props.component.id]) return inputVariants[props.component.id];

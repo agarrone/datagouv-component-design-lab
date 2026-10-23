@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import '../../shared/foundations.css'
 import {OrganizationLogo,OrganizationNameWithCertificate,type Organization,type OrganizationReference} from '@datagouv/components-next'
-import CdataLink from '/vendor/cdata-components/CdataLink.vue'
+import CdataLink from '/proposals/components/AppLink.vue'
 withDefaults(defineProps<{organization:Organization|OrganizationReference,logoSizeClass?:string,nameSize?:'base'|'sm'|'xs',nameColor?:string,logoNoBorder?:boolean,as?:string,withLink?:boolean}>(),{logoSizeClass:'size-8',logoNoBorder:false,withLink:true,nameColor:'text-new-primary',nameSize:'base'})
 </script>
 <template><div class="proposed-organization-owner"><div class="proposed-organization-owner-logo" :class="{'is-framed':!logoNoBorder}" aria-hidden="true"><OrganizationLogo :organization="organization" :size-class="logoSizeClass" /></div><component :is="withLink?CdataLink:'span'" :to="withLink?organization.page:undefined" class="proposed-organization-owner-name" :class="{'proposed-organization-owner-link':withLink}"><OrganizationNameWithCertificate :show-type="false" :as="as" :color-class="nameColor" :organization="organization" :size="nameSize" /></component></div></template>

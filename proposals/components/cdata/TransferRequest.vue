@@ -21,10 +21,10 @@
         />
       </template>
       <template #title>
-        <a
+        <ProposalTextLink
           :href="requester.page"
           class="lab-proposal-link link font-bold"
-        >{{ requester.class === 'User' ? `${requester.first_name} ${requester.last_name}` : requester.name }}</a>
+        >{{ requester.class === 'User' ? `${requester.first_name} ${requester.last_name}` : requester.name }}</ProposalTextLink>
         {{ $t('a demandé un transfert') }}
       </template>
       <template #subtitle>
@@ -35,17 +35,17 @@
         &nbsp;
         <template v-if="transfer.recipient.class === 'Organization'">
           {{ $t('vers votre organisation') }}
-          <a
+          <ProposalTextLink
             :href="transfer.recipient.page"
             class="lab-proposal-link link"
-          >{{ transfer.recipient.name }}</a>
+          >{{ transfer.recipient.name }}</ProposalTextLink>
         </template>
         <template v-if="transfer.recipient.class === 'User'">
           {{ $t('vers') }}
-          <a
+          <ProposalTextLink
             :href="transfer.recipient.page"
             class="lab-proposal-link link"
-          >{{ transfer.recipient.first_name }} {{ transfer.recipient.last_name }}</a>
+          >{{ transfer.recipient.first_name }} {{ transfer.recipient.last_name }}</ProposalTextLink>
         </template>
       </template>
 
@@ -121,6 +121,7 @@
 </template>
 
 <script setup lang="ts">
+import ProposalTextLink from '/proposals/components/AppLink.vue'
 import BrandedButton from '../BrandedButton.vue'
 import '../../shared/foundations.css'
 import '/proposals/shared/notifications.css'

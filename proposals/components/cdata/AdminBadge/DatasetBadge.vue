@@ -16,13 +16,13 @@ const status = computed<{ label: string, type: AdminBadgeType }>(() => {
   if (props.dataset.deleted) {
     return {
       label: t('Supprimé'),
-      type: 'secondary',
+      type: 'danger',
     }
   }
   else if (props.dataset.archived) {
     return {
       label: t('Archivé'),
-      type: 'secondary',
+      type: 'warning',
     }
   }
   else if (props.dataset.private) {

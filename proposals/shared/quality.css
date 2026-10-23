@@ -1,7 +1,8 @@
 /* These selectors belong only to the proposed metadata/quality components. */
-.lab-license-badge { font-family:var(--lab-ds-font-sans); white-space:normal; overflow-wrap:anywhere; }
-a.lab-license-badge { background-image:none; text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
-a.lab-license-badge:hover { background:var(--lab-ds-tag-hover-bg); color:var(--lab-ds-tag-link-text); }
+.lab-license-badge { font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); white-space:normal; overflow-wrap:anywhere; }
+.lab-license-badge,a.lab-license-badge.lab-text-link { color:var(--lab-ds-text); }
+a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+a.lab-license-badge:hover { color:var(--lab-ds-brand); }
 a.lab-license-badge:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 a.lab-license-badge::after { display:none; }
 .lab-owner-type { font-family:var(--lab-ds-font-sans); }
@@ -21,7 +22,8 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-trigger-label { display:inline-flex; align-items:center; gap:var(--lab-ds-space-6); }
 .lab-quality-trigger-label .lab-quality-info { width:var(--lab-ds-icon); height:var(--lab-ds-icon); flex-shrink:0; }
 .lab-quality-score { display:inline-flex; align-items:center; gap:var(--lab-ds-space-8); min-width:0; max-width:100%; vertical-align:middle; }
-.lab-quality-meter { display:block; position:relative; flex:1; width:var(--lab-ds-space-64); min-width:var(--lab-ds-control); height:var(--lab-ds-space-6); border-radius:var(--lab-ds-radius); background:var(--lab-ds-border); overflow:hidden; }
+.lab-quality-meter { display:block; position:relative; flex:none; width:100%; min-width:var(--lab-ds-control); height:var(--lab-ds-space-6); border-radius:var(--lab-ds-radius); background:var(--lab-ds-border); overflow:hidden; }
+.lab-quality-score .lab-quality-meter { width:var(--lab-ds-space-64); }
 .lab-quality-meter-fill { height:100%; border-radius:var(--lab-ds-radius); }
 .lab-quality-fill-good { background:var(--lab-ds-success-text); }
 .lab-quality-fill-neutral { background:var(--lab-ds-text-muted); }
@@ -30,11 +32,6 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-criteria,.lab-quality-warnings { list-style:none; display:flex; flex-direction:column; gap:var(--lab-ds-space-8); margin:0; padding:0; }
 .lab-quality-warnings:empty { display:none; }
 .lab-quality-item,.lab-quality-warning { list-style:none; padding:0; margin:0; }
-.lab-quality-item p,.lab-quality-warning p { display:flex; gap:var(--lab-ds-space-8); align-items:flex-start; font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); margin:0; overflow-wrap:anywhere; }
-.lab-quality-item-icon { width:var(--lab-ds-icon); height:var(--lab-ds-icon); margin-top:var(--lab-ds-space-optical); flex-shrink:0; }
-.lab-quality-pass { color:var(--lab-ds-success-text); }
-.lab-quality-missing { color:var(--lab-ds-warning-text); }
-.lab-quality-warning { border:var(--lab-ds-stroke) solid var(--lab-ds-warning-border); border-radius:var(--lab-ds-radius); padding:var(--lab-ds-space-8); color:var(--lab-ds-warning-text); background:var(--lab-ds-warning-bg); }
 .lab-quality-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); }
 .lab-quality-details-title { color:var(--lab-ds-text); margin:0; font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); font-weight:var(--lab-ds-weight-semibold); }
 .lab-quality-guide { font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
@@ -54,27 +51,19 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-trigger-link{padding:var(--lab-ds-space-4) 0;border:0;min-height:var(--lab-ds-control-compact);gap:var(--lab-ds-space-8);color:var(--lab-ds-text-secondary);cursor:pointer}
 .lab-quality-trigger-link .lab-quality-trigger-label{gap:var(--lab-ds-space-4)}
 .lab-quality-trigger-link .lab-quality-trigger-label>span{text-decoration:none}
-.lab-quality-trigger-link:hover .lab-quality-trigger-label>span{text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical)}
 
-/* Shared disclosure feedback for organization and metadata details. */
-.lab-details-trigger { border-radius:var(--lab-ds-radius-technical); }
-@media (hover:hover) {
- .lab-details-trigger:hover { background:var(--lab-ds-surface-subtle); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
-}
-.lab-details-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
-.lab-details-trigger[aria-expanded=true] .lab-quality-trigger-label>span { text-decoration:underline; }
-/* Match the scoped organization trigger without changing its text color. */
-.lab-dataset-card .lab-details-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active); text-decoration:underline; }
-@media (hover:hover) { .lab-dataset-card .lab-details-trigger:hover { background:var(--lab-ds-surface-subtle); } }
-.lab-dataset-card .lab-details-trigger[aria-expanded=true]:hover { background:var(--lab-ds-surface-active); }
+
 @layer base {
  .lab-owner-type[data-size=base],.lab-owner-type[data-size=sm] { font-size:var(--lab-ds-text-caption)!important; line-height:var(--lab-ds-leading-caption)!important; }
 }
 
 @layer base {
- .lab-resource-icon-badge { color:var(--lab-ds-badge-neutral-text); background:var(--lab-ds-badge-neutral-bg)!important; border-color:var(--lab-ds-badge-neutral-bg); }
- .lab-resource-icon-badge[data-tone=teal] { color:var(--lab-ds-badge-teal-text); background:var(--lab-ds-badge-teal-bg)!important; border-color:var(--lab-ds-badge-teal-bg); }
- .lab-resource-icon-badge[data-tone=danger] { color:var(--lab-ds-badge-error-text); background:var(--lab-ds-badge-error-bg)!important; border-color:var(--lab-ds-badge-error-bg); }
- .lab-resource-icon-badge[data-tone=primary] { color:var(--lab-ds-badge-info-text); background:var(--lab-ds-badge-info-bg)!important; border-color:var(--lab-ds-badge-info-bg); }
- .lab-resource-icon-badge[data-tone=pink] { color:var(--lab-ds-badge-pink-text); background:var(--lab-ds-badge-pink-bg)!important; border-color:var(--lab-ds-badge-pink-bg); }
+ .lab-resource-icon-badge { color:var(--lab-ds-badge-neutral-text); background:var(--lab-ds-badge-neutral-bg)!important; border-color:var(--lab-ds-badge-outline); }
+ .lab-resource-icon-badge[data-tone=green] { color:var(--lab-ds-badge-success-text); background:var(--lab-ds-badge-success-bg)!important; border-color:var(--lab-ds-badge-outline); }
+ .lab-resource-icon-badge[data-tone=yellow] { color:var(--lab-ds-format-code-text); background:var(--lab-ds-format-code-bg)!important; border-color:var(--lab-ds-badge-outline); }
+ .lab-resource-icon-badge[data-tone=primary] { color:var(--lab-ds-badge-info-text); background:var(--lab-ds-badge-info-bg)!important; border-color:var(--lab-ds-badge-outline); }
+ .lab-resource-icon-badge[data-tone=pink] { color:var(--lab-ds-format-document-text); background:var(--lab-ds-format-document-bg)!important; border-color:var(--lab-ds-badge-outline); }
 }
+/* Standalone details panels use the same text scale as their component context. */
+.lab-quality-panel { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); color:var(--lab-ds-text); }
+.lab-quality-panel>p { font:inherit; margin:0 0 var(--lab-ds-space-12); }

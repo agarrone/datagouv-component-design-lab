@@ -64,7 +64,7 @@ import type { Schema } from '/vendor/datagouv-components/src/types/schemas'
 import Tag from '/proposals/components/Tag.vue'
 import BrandedButton from '/proposals/components/BrandedButton.vue'
 import TranslationT from '/vendor/datagouv-components/src/components/TranslationT.vue'
-import AppLink from '/vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 
 const props = defineProps<{
   dataset: Dataset | DatasetV2 | DatasetV2WithFullObject

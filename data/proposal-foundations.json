@@ -56,7 +56,7 @@
         {
           "name": "brand-hover",
           "value": "#1212ff",
-          "usage": "Survol d’un lien de marque"
+          "usage": "Fond de survol des boutons et tags de marque ; les liens textuels gardent brand"
         },
         {
           "name": "focus",
@@ -511,12 +511,12 @@
         },
         {
           "name": "badge-pink-bg",
-          "value": "var(--background-contrast-pink-macaron)",
+          "value": "var(--background-contrast-purple-glycine)",
           "usage": "Badge pink : fond DSFR"
         },
         {
           "name": "badge-pink-text",
-          "value": "var(--text-label-pink-macaron)",
+          "value": "var(--text-label-purple-glycine)",
           "usage": "Badge pink : texte DSFR"
         },
         {
@@ -558,6 +558,57 @@
           "name": "tag-active-bg",
           "value": "var(--background-action-low-blue-france-active)",
           "usage": "Pression du tag interactif"
+        },
+        {
+          "name": "badge-outline",
+          "value": "color-mix(in srgb, currentColor 20%, transparent)",
+          "usage": "Bordure discrète de badge ou tag, dérivée de sa couleur de texte DSFR"
+        },
+        {
+          "name": "format-code-bg",
+          "value": "var(--background-contrast-yellow-tournesol)",
+          "usage": "Formats code : famille de couleur initiale, palette DSFR."
+        },
+        {
+          "name": "format-code-text",
+          "value": "var(--text-label-yellow-tournesol)",
+          "usage": "Formats code : famille de couleur initiale, palette DSFR."
+        },
+        {
+          "name": "format-document-bg",
+          "value": "var(--background-contrast-purple-glycine)",
+          "usage": "Formats document : famille de couleur initiale, palette DSFR."
+        },
+        {
+          "name": "format-document-text",
+          "value": "var(--text-label-purple-glycine)",
+          "usage": "Formats document : famille de couleur initiale, palette DSFR."
+        },
+        {
+          "name": "badge-yellow-bg",
+          "value": "var(--background-contrast-yellow-tournesol)",
+          "usage": "Accès avec compte : fond jaune DSFR"
+        },
+        {
+          "name": "badge-yellow-text",
+          "value": "var(--text-label-yellow-tournesol)",
+          "usage": "Accès avec compte : texte jaune DSFR"
+        }
+      ]
+    },
+    {
+      "id": "fields",
+      "title": "Champs de saisie",
+      "tokens": [
+        {
+          "name": "field-bg",
+          "value": "var(--background-contrast-grey)",
+          "usage": "Fond gris DSFR des champs et sélecteurs"
+        },
+        {
+          "name": "field-line",
+          "value": "var(--text-default-grey)",
+          "usage": "Ligne inférieure des champs et sélecteurs"
         }
       ]
     }
@@ -573,7 +624,8 @@
       "Action sans texte : nom accessible explicite et aide au survol. Cible minimale 32 px sur desktop, 44 px avec un pointeur tactile, indépendamment de la taille du pictogramme.",
       "Copie : le pictogramme de succès remplace celui de copie sans changer de taille ; un message textuel annonce le résultat. Suivi : aria-pressed et libellé décrivent l’état.",
       "Les logos et formats de fichier gardent leurs pictogrammes métier ; un pictogramme de format informatif porte un nom accessible. Les avatars adaptent leur pictogramme à la taille de l’identité.",
-      "Le chevron d’accordéon conserve son mouvement existant et son mode réduit ; les autres icônes statiques ne reçoivent pas d’animation gratuite."
+      "Le chevron d’accordéon conserve son mouvement existant et son mode réduit ; les autres icônes statiques ne reçoivent pas d’animation gratuite.",
+      "Toutes les propositions utilisent des icônes outline, y compris les états sélectionnés et les icônes héritées des composants imbriqués. Les logos et illustrations conservent leurs tracés de marque."
     ]
   },
   "buttons": {
@@ -591,18 +643,18 @@
   },
   "interactions": {
     "rules": [
-      "Cartes de contenu harmonisées (dataset, API, réutilisation, organisation, graphique et article) : seule la destination principale ciblée fait passer le titre et son icône en bleu, sans soulignement au survol ni changement de couleur de bordure. Les contrôles secondaires restent indépendants.",
-      "Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu devient plus vif. Ne pas dépendre uniquement de la couleur.",
+      "Cartes de contenu : la destination principale couvre toute la carte, hors commandes secondaires. Le survol de cette surface colore le titre et son icône en bleu France, sans soulignement ni surlignage. La bordure reste stable ; les commandes secondaires restent indépendantes.",
+      "Un lien textuel est souligné ; au survol, le soulignement est renforcé et le bleu reste identique. Ne pas dépendre uniquement de la couleur.",
       "La pression utilise le fond actif. Aucun déplacement, agrandissement ou changement de bordure ne modifie la géométrie.",
       "Le focus clavier reste visible avec un contour bleu de 2 px, décalé de 3 px ; il entoure la carte pour son lien principal et le lien pour une destination secondaire.",
       "Les effets de survol sont réservés aux pointeurs qui les supportent. Une carte sans lien ne reçoit pas de faux état interactif.",
       "Déclencheurs de panneaux organisation et métadonnées : soulignement et fond subtil au survol ; fond actif et soulignement persistants tant que aria-expanded=true. Focus commun conservé, sans modifier la géométrie.",
-      "Statuts des cartes : badges informatifs à proximité du titre dans le flux. Statuts éditoriaux gris ; accès restreint orange (avertissement), accès avec compte bleu (information). Libellé et icône restent explicites, sans dépendre de la seule couleur."
+      "Statuts des cartes : badges informatifs à proximité du titre dans le flux. Statuts éditoriaux gris ; accès restreint orange (avertissement), accès avec compte jaune (yellow-tournesol). Libellé et icône restent explicites, sans dépendre de la seule couleur."
     ]
   },
   "inputs": {
     "rules": [
-      "Champ standard : minimum 40 px, texte Marianne 14/20, rayon 6 px et bordure stable de 1 px. Recherche principale : 48 px.",
+      "Champ standard : minimum 40 px, Marianne 14/20, fond gris DSFR, ligne inférieure 2 px et angles supérieurs 6 px. Pas de cadre périphérique. Recherche principale : 48 px.",
       "Label au-dessus du champ ; le placeholder est un exemple et ne remplace pas le nom accessible.",
       "Aides et messages associés par aria-describedby. Erreur prioritaire sur validation, indiquée par un message et aria-invalid.",
       "Survol discret sans déplacement ; focus commun bleu 2 px avec décalage 3 px. Les états désactivé et lecture seule utilisent une surface subtile.",
@@ -610,7 +662,8 @@
       "Sélecteurs recherchables : menu blanc bordé, options d’au moins 40 px, sélection teintée et état actif indiqué par le focus ; aucune option indisponible ne peut être choisie.",
       "Radios : cercle natif visible, libellé cliquable, compteur secondaire ; focus porté par le choix complet. Le choix mis en avant utilise aussi un libellé renforcé.",
       "Contrôle segmenté : état sélectionné explicite, un seul point d’entrée dans le tab order, navigation par flèches, Home et End avec déplacement du focus.",
-      "Dates : conserver les segments, la locale et la saisie native ; champ compact 32 px et focus commun."
+      "Dates : conserver les segments, la locale et la saisie native ; champ compact 32 px et focus commun.",
+      "L’étoile des champs obligatoires et celle de leur explication sont rouges DSFR. Les messages d’erreur emploient une icône outline unique, sans icône pleine ajoutée par un pseudo-élément."
     ]
   },
   "tables": {
@@ -629,7 +682,14 @@
       "Un lien de navigation dans le contenu reste souligné au repos. Les noms d’organisation des cartes de contenu et les métadonnées sont des boutons ouvrant un panneau : traitement commun de survol et d’état ouvert, sans navigation au premier clic.",
       "Les boutons d’action utilisent leur cadre, leur couleur et leur focus. Les déclencheurs textuels de panneaux utilisent le traitement dédié, avec aria-expanded.",
       "Texte non cliquable : pas de soulignement. Un producteur rendu avec organizationUrl=null reste volontairement du texte simple ; cette variante est explicitement nommée dans les exemples.",
-      "Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés."
+      "Un seul mécanisme de soulignement, via text-decoration, avec un décalage de 3 px. Les fonds de soulignement DSFR sont neutralisés sur les liens proposés.",
+      "Copie : libellé révélé au survol et au focus ; coche et confirmation pendant deux secondes après succès uniquement. Utiliser le bouton partagé pour liens, valeurs, identifiants et code.",
+      "Navigation : vraie ancre, texte souligné au repos, soulignement renforcé au survol, fond actif à la pression et focus bleu visible. Les titres de carte gardent leur interaction dédiée.",
+      "Lien externe : même comportement de navigation, avec un seul pictogramme outline. Un lien externe n’ouvre pas automatiquement un nouvel onglet ; si target=_blank est demandé, l’annoncer dans le nom accessible.",
+      "Panneau d’information : vrai bouton ; texte neutre sans soulignement au repos, texte bleu et soulignement simple de 1 px au survol, sans changement de graisse, fond actif persistant tant que aria-expanded=true. Le clic ouvre/ferme, Échap ou clic extérieur ferme, le focus revient au déclencheur.",
+      "Un aperçu d’information au clic n’est pas une navigation : le lien vers la page complète est placé dans le panneau. Pas de tooltip natif title concurrent ni de double pictogramme externe.",
+      "Au survol, un lien déjà bleu garde le même bleu France ; son soulignement passe à 2 px. Un lien ou déclencheur neutre passe du noir/gris au bleu France. Aucun pointillé. Les titres de cartes gardent leur exception sans soulignement.",
+      "Un lien non souligné au repos reçoit un trait simple de 1 px au survol, sans changement de graisse ; un lien déjà souligné peut renforcer son trait à 2 px. Les titres de cartes restent sans soulignement."
     ]
   },
   "badgesTags": {
@@ -638,8 +698,11 @@
       "Tag : catégorisation, lien associé ou filtre, forme pilule ; un tag statique ne reçoit aucun survol interactif.",
       "Socle compact commun : texte Marianne 12/18, icône 14 px, espacement 4 px, hauteur minimale 24 px.",
       "Couleurs DSFR via leurs variables de rôle : information, succès, avertissement, erreur, gris et accents non sémantiques.",
-      "Brouillon, archivé et supprimé éditorial : gris. Accès restreint : avertissement orange. Accès avec compte : information bleue. Les erreurs de traitement restent rouges.",
-      "Tout état comporte un libellé explicite. Les liens, filtres sélectionnables et suppressions gardent leur sémantique native, leur nom accessible et le focus commun."
+      "Brouillon et archivé : gris ; supprimé reste neutre par défaut, sauf ReuseBadge où il est rouge. Accès restreint : avertissement orange. Accès avec compte : jaune (yellow-tournesol). Les erreurs de traitement restent rouges.",
+      "Tout état comporte un libellé explicite. Les liens, filtres sélectionnables et suppressions gardent leur sémantique native, leur nom accessible et le focus commun.",
+      "Badges et tags gardent une bordure de 1 px, teintée à 20 % de leur couleur de texte ; son épaisseur ne change pas au survol.",
+      "Les tags épousent leur contenu sans étirement. Prévoir les variantes informative, cliquable, sélectionnable avec coche et aria-pressed, supprimable avec croix seule ; repos, survol, pression, focus visible et désactivation.",
+      "ReuseBadge : le statut « Supprimé » utilise la couleur danger DSFR ; brouillon et archivé restent neutres."
     ]
   },
   "statistics": {

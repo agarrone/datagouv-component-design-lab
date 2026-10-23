@@ -24,10 +24,10 @@
  .lab-segmented[data-underline=true] button { border-bottom:var(--lab-ds-focus-width) solid transparent; }
  .lab-segmented[data-underline=true] button[aria-pressed=true] { border-bottom-color:var(--lab-ds-brand)!important; }
  .lab-segmented button:focus-visible,.lab-date-field:focus-within { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset); }
- .lab-date-field { display:flex; align-items:center; gap:var(--lab-ds-space-2); min-height:var(--lab-ds-control-compact); min-width:0; padding:var(--lab-ds-space-4) var(--lab-ds-space-8); border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius); background:var(--lab-ds-surface-subtle); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); font-variant-numeric:tabular-nums; }
+ .lab-date-field { display:flex; align-items:center; gap:var(--lab-ds-space-2); min-height:var(--lab-ds-control-compact); min-width:0; padding:var(--lab-ds-space-4) var(--lab-ds-space-8); border:0; border-bottom:var(--lab-ds-focus-width) solid var(--lab-ds-field-line); border-radius:var(--lab-ds-radius) var(--lab-ds-radius) 0 0; background:var(--lab-ds-field-bg); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); font-variant-numeric:tabular-nums; }
  .lab-date-segment { padding:0 var(--lab-ds-space-2); border-radius:var(--lab-ds-radius-technical); }
  .lab-date-segment:focus-visible { background:var(--lab-ds-brand); color:var(--lab-ds-on-accent); outline:none; }
- @media(hover:hover){.lab-radio:hover{background:var(--lab-ds-surface-subtle)}.lab-segmented button:hover{color:var(--lab-ds-brand)!important}}
+ @media(hover:hover){.lab-radio:not(:has(input:disabled)):not([data-selected=true]):hover{background:var(--lab-ds-surface-subtle)}.lab-segmented button:hover{color:var(--lab-ds-brand)!important}}
  @media(pointer:coarse){.lab-radio,.lab-segmented button,:is(.lab-selection [role=option],.lab-selection-menu [role=option]){min-height:var(--lab-ds-target-touch)}}
 }
 

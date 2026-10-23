@@ -45,6 +45,7 @@
       <ObjectCardBadge
         v-else-if="dataservice.archived_at"
         :icon="RiArchiveLine"
+        tone="warning"
       >
         {{ t('Archivé') }}
       </ObjectCardBadge>
@@ -59,7 +60,7 @@
 
       <ObjectCardBadge
         v-else-if="dataservice.access_type === 'open_with_account'"
-        tone="primary"
+        tone="yellow"
         :icon="RiPassValidLine"
       >
         {{ t('Ouvert avec un compte') }}

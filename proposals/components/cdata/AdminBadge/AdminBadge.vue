@@ -3,7 +3,7 @@ import '../../../shared/foundations.css'
 import type {Component} from 'vue'
 import '../../../shared/badge.css'
 withDefaults(defineProps<{
-  type:'primary'|'secondary'|'success'|'warning'|'danger'|'default'|'pink'|'teal'
+  type:'primary'|'secondary'|'success'|'warning'|'danger'|'default'|'pink'|'teal'|'yellow'
   size:'xs'|'sm'
   icon?:Component
   iconRight?:Component

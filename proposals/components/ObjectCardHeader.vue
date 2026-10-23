@@ -30,7 +30,7 @@ import '../shared/foundations.css'
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { TitleTag } from '../../vendor/datagouv-components/src/types/ui'
-import AppLink from '../../vendor/datagouv-components/src/components/AppLink.vue'
+import AppLink from '/proposals/components/AppLink.vue'
 
 withDefaults(defineProps<{
   icon: Component

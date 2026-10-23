@@ -7,7 +7,12 @@ const publication=key=>[
  ['Supprimé',{[key]:{private:true,...(key==='dataservice'?{deleted_at:'2026-10-20',archived_at:'2026-10-20'}:{deleted:true,archived:true})}}],
 ];
 export const badgeVariants={
- 'Tag':examples('Tag',[['Tag de catégorie',{type:'secondary'}],['Avec icône',{type:'secondary',icon:RiInformationLine}]]),
+ 'Tag':examples('Tag',[['Tag de catégorie',{type:'secondary'}],['Avec icône',{type:'secondary',icon:RiInformationLine}],
+ ['Cliquable · lien',{href:'#Tag'}],['Cliquable · bouton',{clickable:true}],
+ ['Sélectionnable · non sélectionné',{selectable:true}],['Sélectionnable · sélectionné',{selectable:true,selected:true}],
+ ['Supprimable',{dismissible:true,label:'Données ouvertes'}],
+ ['Cliquable · désactivé',{clickable:true,disabled:true}],['Sélectionnable · désactivé',{selectable:true,selected:true,disabled:true}],
+ ['Supprimable · désactivé',{dismissible:true,label:'Données ouvertes',disabled:true}]]),
  'DatasetLabelTag':examples('DatasetLabelTag',[
  ['Label',{badge:{kind:'hvd',label:'Données de forte valeur'}}],
  ['Label avec lien',{badge:{kind:'hvd',label:'Données de forte valeur'},url:'https://www.data.gouv.fr/datasets/base-adresse-nationale'}],
