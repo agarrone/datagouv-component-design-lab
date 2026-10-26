@@ -1,0 +1,9 @@
+/* The native Dialog owns focus trapping, Escape, outside click and scroll locking. */
+@layer base {
+ .lab-remaining-dialog { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+ .lab-remaining-dialog .pointer-events-auto { background:var(--lab-ds-surface)!important; color:var(--lab-ds-text); }
+ .lab-remaining-dialog .pointer-events-auto:not(.h-full) { border-radius:var(--lab-ds-radius)!important; box-shadow:var(--lab-ds-shadow-overlay); }
+ .lab-remaining-dialog [id^=modal-title] { font:var(--lab-ds-weight-semibold) var(--lab-ds-text-heading)/var(--lab-ds-leading-heading) var(--lab-ds-font-sans)!important; gap:var(--lab-ds-space-8); margin-bottom:var(--lab-ds-space-16)!important; }
+ .lab-remaining-dialog :is(input,select,textarea,button,a[href]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset)!important; }
+ .lab-remaining-dialog .fr-input-group { margin-bottom:var(--lab-ds-space-16); }
+}

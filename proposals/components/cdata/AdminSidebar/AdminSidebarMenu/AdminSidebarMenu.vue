@@ -49,7 +49,6 @@
       >
         <div class="t-acc-panel-inner"><ul class="lab-admin-menu-list">
           <template v-if="user">
-            <li class="lab-admin-group-label">Publications</li>
             <AdminSidebarLink
               :icon="RiDatabase2Line"
               :label="$t('Jeux de données')"
@@ -70,7 +69,6 @@
               :label="$t('Ressources communautaires')"
               :to="me.id === user.id ? `/admin/me/community-resources` : `/admin/users/${user.id}/community-resources`"
             />
-            <li class="lab-admin-group-label">Gestion</li>
             <AdminSidebarLink
               :icon="RiUserLine"
               :label="$t('Profil')"
@@ -90,7 +88,6 @@
             />
           </template>
           <template v-else-if="organization">
-            <li class="lab-admin-group-label">Publications</li>
             <AdminSidebarLink
               :icon="RiDatabase2Line"
               :label="$t('Jeux de données')"
@@ -115,7 +112,6 @@
               :to="`/admin/organizations/${organization.id}/community-resources`"
               @click="$emit('click')"
             />
-            <li class="lab-admin-group-label">Gestion</li>
             <AdminSidebarLink
               :icon="RiChat3Line"
               :label="$t('Discussions')"
@@ -148,7 +144,6 @@
             />
           </template>
           <template v-else>
-            <li class="lab-admin-group-label">Catalogue</li>
             <AdminSidebarLink
               :icon="RiDatabase2Line"
               :label="$t('Jeux de données')"
@@ -169,7 +164,6 @@
               :label="$t('Graphiques')"
               to="/admin/site/charts"
             />
-            <li class="lab-admin-group-label">Administration</li>
             <AdminSidebarLink
               :icon="RiBuilding2Line"
               :label="$t('Organisations')"
@@ -195,7 +189,6 @@
               :label="$t('Modération')"
               to="/admin/site/moderation"
             />
-            <li class="lab-admin-group-label">Éditorial</li>
             <AdminSidebarLink
               :icon="RiBookShelfLine"
               :label="$t('Thématiques')"
@@ -279,6 +272,5 @@ onUnmounted(() => unregister(id))
 .lab-admin-menu-head > div { flex-shrink:0; }
 .lab-admin-menu-head::after,.lab-admin-menu-head::before { display:none; }
 .lab-admin-menu-list { list-style:none; margin:0; padding:0 var(--lab-ds-space-2) var(--lab-ds-space-8); }
-.lab-admin-group-label { list-style:none; padding:14px var(--lab-ds-space-8) var(--lab-ds-space-4); margin:0; color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
 .t-acc-chevron { margin-left:auto; flex-shrink:0; }
 </style>

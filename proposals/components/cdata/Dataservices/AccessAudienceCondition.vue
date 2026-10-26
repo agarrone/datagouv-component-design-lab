@@ -13,10 +13,9 @@ const conditionIcon=computed(()=>({yes:RiCheckLine,no:RiCloseLine,under_conditio
 </script>
 <template>
  <li class="lab-access-audience" :data-condition="condition">
-  <span class="lab-access-audience-name">{{ audienceLabel }}</span><span class="sr-only"> : </span>
   <span class="lab-access-audience-condition lab-status-line" :data-status="({yes:'success',no:'danger',under_condition:'warning'})[condition]">
    <component :is="conditionIcon" class="lab-ds-icon" data-icon-size="base" data-icon-align="start" aria-hidden="true" focusable="false" />
-   <span>{{ conditionLabel }}</span>
+   <span><span class="lab-access-audience-name">{{ audienceLabel }}</span> : {{ conditionLabel }}</span>
   </span>
  </li>
 </template>

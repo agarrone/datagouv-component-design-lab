@@ -63,11 +63,6 @@ const { locale } = useTranslation()
 
 const isSelected = computed(() => group?.modelValue.value === props.value)
 
-const selectedClass = computed(() => {
-  if (!isSelected.value) return 'hover:bg-gray-100'
-  if (props.highlighted) return 'bg-blue-800 text-white'
-  return 'bg-gray-200'
-})
 
 const formattedCount = computed(() => {
   if (props.count === undefined) return ''

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProposalTextLink from '/proposals/components/AppLink.vue'
+import BrandedButton from '/proposals/components/BrandedButton.vue'
 import '../../shared/foundations.css'
 import '../../shared/resource-details.css'
 
@@ -48,10 +48,9 @@ const downloadGroups=computed(()=>[
   <dd v-if="group.key==='generated' && conversionsFinishedAt" class="lab-resource-hint">{{t('Dernière mise à jour')}} <FormattedDate :date="conversionsFinishedAt" format="relative" /></dd>
   <dd v-if="group.key==='wfs'" class="lab-resource-hint"><span v-if="defaultWfsProjection">{{t('Projection {crs}',{crs:defaultWfsProjection})}}. </span>{{t('Le lien interroge directement le flux WFS distant. Le nombre de résultats téléchargés peut être limité.')}}</dd>
   <dd v-for="item in group.items" :key="item.url + item.format" class="lab-resource-download-row">
-   <ProposalTextLink class="lab-proposal-link lab-resource-download-link" :external-icon="false" :href="item.url" :target="group.external?'_blank':undefined" rel="ugc nofollow noopener" @click="trackEvent('Jeux de données','Télécharger un fichier',`Bouton : format ${item.format}`)">
-    <component :is="group.external?RiExternalLinkLine:RiDownloadLine" class="lab-ds-icon" data-icon-size="base" aria-hidden="true" focusable="false" />
+   <BrandedButton color="tertiary" size="xs" class="lab-resource-download-action" :icon="group.external?RiExternalLinkLine:RiDownloadLine" :href="item.url" :target="group.external?'_blank':undefined" rel="ugc nofollow noopener" @click="trackEvent('Jeux de données','Télécharger un fichier',`Bouton : format ${item.format}`)">
     <span>{{group.external?resource.url:t('Format {format}',{format:item.format})}}</span><span v-if="group.external" class="sr-only">{{t('Nouvel onglet')}}</span>
-   </ProposalTextLink>
+   </BrandedButton>
    <span v-if="item.size !== null && item.size !== undefined" class="lab-resource-download-size lab-resource-code">{{filesize(item.size)}}</span>
    <CopyButton icon-only :text="item.url" :label="t('Copier le lien')" :copied-label="t('Lien copié')" />
   </dd>

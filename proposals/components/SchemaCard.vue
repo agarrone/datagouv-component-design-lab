@@ -15,22 +15,10 @@
       <RiNodeTree data-icon-size="base" focusable="false" aria-hidden="true" class="shrink-0 lab-ds-u-mt-1 lab-ds-icon" />
       {{ schema.title }}
     </h3>
-    <p
-      v-for="label in schema.labels"
-      :key="label"
-      class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm mb-0"
-    >
-      <span class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-gray-medium">
-        <RiInformationLine data-icon-size="base" focusable="false" aria-hidden="true" class=" lab-ds-icon" /> {{ t('Label :') }}
-      </span>
-      <span>{{ label }}</span>
-    </p>
-    <p class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-sm mb-0">
-      <span class="flex items-center lab-ds-u-gap-1 lab-ds-u-text-gray-medium">
-        <RiInformationLine data-icon-size="base" focusable="false" aria-hidden="true" class=" lab-ds-icon" /> {{ t('Standard :') }}
-      </span>
-      <span>{{ schema.schema_type }}</span>
-    </p>
+    <div class="lab-schema-tags">
+      <Tag v-for="label in schema.labels" :key="label">{{ t('Label :') }} {{ label }}</Tag>
+      <Tag v-if="schema.schema_type">{{ t('Standard :') }} {{ schema.schema_type }}</Tag>
+    </div>
     <p class="lab-ds-u-text-sm lab-ds-u-mt-2 mb-0 lab-ds-u-text-gray-medium">
       {{ schema.description }}
     </p>
@@ -72,7 +60,8 @@
 <script setup lang="ts">
 import '../shared/foundations.css'
 import '../shared/cards.css'
-import { RiCheckLine, RiInformationLine, RiNodeTree } from '@remixicon/vue'
+import Tag from './Tag.vue'
+import { RiCheckLine, RiNodeTree } from '@remixicon/vue'
 import AppLink from '/proposals/components/AppLink.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import { useGetSchemaDocumentation } from '../../vendor/datagouv-components/src/functions/schemas'

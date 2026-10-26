@@ -1,5 +1,6 @@
 <template>
   <ObjectCard class="lab-content-card lab-catalog-card">
+    <template v-if="$slots.cover" #cover><slot name="cover" /></template>
     <template #media>
       <OrganizationLogo
         :organization="organization"
@@ -36,8 +37,8 @@ import { RiBuilding2Line } from '@remixicon/vue'
 import { computed } from 'vue'
 import { getOrganizationType } from '../../vendor/datagouv-components/src/functions/organizations'
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'
-import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
-import OrganizationNameWithCertificate from '../../vendor/datagouv-components/src/components/OrganizationNameWithCertificate.vue'
+import OrganizationLogo from './OrganizationLogo.vue'
+import OrganizationNameWithCertificate from './OrganizationNameWithCertificate.vue'
 import OwnerType from './OwnerType.vue'
 import ObjectCard from './ObjectCard.vue'
 import ObjectCardHeader from './ObjectCardHeader.vue'

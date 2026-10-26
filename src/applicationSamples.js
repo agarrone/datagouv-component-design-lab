@@ -78,9 +78,10 @@ export function makeApplicationSamples(){return Object.fromEntries(inventory.fil
  if(c.id==='cdata/Brand/BrandBanner')Object.assign(props,{backgroundImage:'/demo/territories.svg',title:'Les données des territoires',subtitle:'Explorer les données publiques',ctaLabel:'Découvrir',ctaUrl:'#'});
  if(c.id==='cdata/Required/Required')props.required=true;
  if(c.id==='cdata/CdataLink')props.to='#';
+ if(c.id==='cdata/DatasetAssignmentTable')Object.assign(props,{datasets:[f.dataset],modelValue:new Set([f.dataset.id])});
  if(c.id==='cdata/RadioButtons')props.options=[{value:'all',label:'Tous'},{value:'datasets',label:'Données'},{value:'api',label:'API'}];
  if(c.id.includes('/MarkdownEditor/')) Object.assign(props,{id:'demo-editor',value:'Des **données ouvertes** pour les territoires.'});
- if(c.id.includes('FullPageTabs')||c.id.includes('TabLinks'))props.links=[{href:'#',label:'Présentation',count:24},{href:'#',label:'Données',count:12}];
+ if(c.id.includes('FullPageTabs')||c.id.includes('TabLinks'))props.links=[{href:'/datasets/demo-dataset/',label:'Présentation',count:24},{href:'/datasets/demo-dataset/resources/',label:'Données',count:12}];
  if(notificationVariants[c.id])Object.assign(props,cloneApplicationSample(notificationVariants[c.id][0].props));
  return [c.id,props];
 }));}

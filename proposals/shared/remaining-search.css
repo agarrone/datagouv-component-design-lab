@@ -1,0 +1,8 @@
+@layer base {
+ .lab-remaining-search { min-width:0; font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+ .lab-remaining-search [role=listbox] { padding:var(--lab-ds-space-4)!important; border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius)!important; background:var(--lab-ds-surface); box-shadow:var(--lab-ds-shadow-overlay); }
+ .lab-remaining-search [role=option] { min-height:var(--lab-ds-control); padding:var(--lab-ds-space-8) var(--lab-ds-space-12)!important; font-size:var(--lab-ds-text-body)!important; border-radius:var(--lab-ds-radius-technical); }
+ .lab-remaining-search [role=option][aria-selected=true] { color:var(--lab-ds-brand)!important; background:var(--lab-ds-info-bg)!important; }
+ .lab-remaining-search [role=option][aria-disabled=true] { color:var(--lab-ds-text-muted)!important; background:var(--lab-ds-surface-subtle)!important; }
+ .lab-remaining-search :is(input,button,a[href]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset)!important; }
+}

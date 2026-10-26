@@ -18,7 +18,7 @@
   <!-- Table — mirrors TabularTable: tall header cells (name + type line) then rows.
        Desktop only, like the real one. -->
   <div
-    class="hidden overflow-hidden md:block"
+    class="hidden overflow-hidden md:block lab-table-skeleton"
     :class="fill ? 'min-h-0 flex-1' : 'max-h-[70vh]'"
     role="status"
     :aria-label="t('Chargement de l\'aperçu…')"
@@ -86,6 +86,7 @@
 
 <script setup lang="ts">
 import '../../shared/foundations.css'
+import '../../shared/tables.css'
 import { useTranslation } from '../../../vendor/datagouv-components/src/composables/useTranslation'
 
 withDefaults(defineProps<{

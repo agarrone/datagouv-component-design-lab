@@ -15,3 +15,22 @@
 @media(pointer:coarse){.proposal-notification-read{min-height:var(--lab-ds-target-touch)}}
 
 @media(hover:hover){.proposal-notification-menu :is(button:not(:disabled),a[href]):hover{background:var(--lab-ds-surface-subtle)!important;color:var(--lab-ds-text)!important}.proposal-notification-read:not(:disabled):hover{color:var(--lab-ds-brand-hover);text-decoration-thickness:var(--lab-ds-focus-width)}}
+
+/* Keep content readable beside the icon and options, including narrow previews. */
+.proposal-notification { display:grid; grid-template-columns:var(--lab-ds-icon) minmax(0,1fr) auto; column-gap:var(--lab-ds-space-12); }
+.proposal-notification-content { display:flex; flex-direction:column; gap:var(--lab-ds-space-8); }
+.proposal-notification .proposal-notification-title { margin:0; }
+.proposal-notification-footer { margin-top:0; justify-content:space-between; gap:var(--lab-ds-space-4) var(--lab-ds-space-12); }
+.proposal-notification-meta { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-4) var(--lab-ds-space-12); }
+.proposal-notification-state[data-state=read] { color:var(--lab-ds-text-secondary); }
+.proposal-notification-error { margin:0; color:var(--lab-ds-danger-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); overflow-wrap:anywhere; }
+.proposal-notification-description > .flex { flex-wrap:wrap; min-width:0; }
+.proposal-notification-description :is(.lab-organization-name,.proposed-avatar-name) { max-width:100%; min-width:0; }
+@layer base {
+ .proposal-notification-title a.lab-text-link,.proposal-notification-title a.lab-text-link:hover { color:var(--lab-ds-text)!important; }
+ .proposal-notification-options-trigger { border-color:transparent!important; background:transparent!important; }
+ .proposal-notification .proposal-notification-read-action { padding-inline:var(--lab-ds-space-4)!important; }
+}
+@media(pointer:coarse) { .proposal-notification-options-trigger { width:var(--lab-ds-target-touch); height:var(--lab-ds-target-touch); } }
+
+@layer base { .proposal-notification-options-trigger:not(:disabled):hover,.proposal-notification-options-trigger[aria-expanded=true] { background:var(--lab-ds-surface-active)!important; } }

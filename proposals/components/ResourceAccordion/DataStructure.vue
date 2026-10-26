@@ -1,4 +1,5 @@
 <script setup lang="ts">import '../../shared/foundations.css'
+import '../../shared/tables.css'
 import '../../shared/resource-details.css'
 
 import { computed } from 'vue'

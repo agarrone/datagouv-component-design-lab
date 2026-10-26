@@ -22,7 +22,7 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
   <div class="group proposed-banner-action" :data-banner-action-type="type">
     <component data-icon-align="start" data-icon-size="base" :is="icon" class="proposed-banner-action__icon lab-ds-icon" aria-hidden="true" focusable="false" />
     <div class="proposed-banner-action__content">
-      <div class="proposed-banner-action__title"><slot name="title">{{ title }}</slot></div>
+      <div v-if="title || $slots.title" class="proposed-banner-action__title"><slot name="title">{{ title }}</slot></div>
       <div v-if="$slots.default" class="proposed-banner-action__description"><slot /></div>
     </div>
     <div v-if="$slots.button" class="proposed-banner-action__actions"><slot name="button" /></div>
@@ -35,7 +35,7 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
   --banner-border: var(--lab-ds-info-border);
   --banner-accent: var(--lab-ds-info-text);
   display: grid;
-  grid-template-columns: 16px minmax(0, 1fr) auto;
+  grid-template-columns: var(--lab-ds-icon) minmax(0, 1fr);
   align-items: start;
   gap: var(--lab-ds-space-12);
   box-sizing: border-box;
@@ -48,7 +48,7 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
   font-family: var(--lab-ds-font-sans);
   font-size: var(--lab-ds-text-body);
   line-height: var(--lab-ds-leading-body);
-  container-type: inline-size;
+
 }
 .proposed-banner-action[data-banner-action-type="warning"] {
   --banner-surface: var(--lab-ds-warning-bg);
@@ -69,15 +69,16 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
 .proposed-banner-action__title { font-weight: 700; }
 .proposed-banner-action__description { margin-top: var(--lab-ds-space-4); }
 .proposed-banner-action__actions {
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--lab-ds-space-8);
-  align-self: center;
+  align-self: start;
   min-width: 0;
   max-width: 100%;
 }
-@container (max-width: 480px) {
+@media (max-width: 480px) {
   .proposed-banner-action__content { grid-column: 2 / -1; }
   .proposed-banner-action__actions { grid-column: 2 / -1; }
 }

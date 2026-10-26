@@ -16,7 +16,7 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-block { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); width:100%; }
 .lab-quality-trigger { display:flex; gap:var(--lab-ds-space-8); padding:var(--lab-ds-space-6) var(--lab-ds-space-8); min-height:var(--lab-ds-control-dense); max-width:100%; border:var(--lab-ds-stroke) solid transparent; border-radius:var(--lab-ds-radius); color:var(--lab-ds-text-secondary); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans); position:relative; z-index:2; text-align:left; }
 .lab-quality-trigger-inline { align-items:center; flex-wrap:wrap; }
-.lab-quality-trigger-block { flex-direction:column; align-items:stretch; width:100%; border-color:var(--lab-ds-border); padding:var(--lab-ds-space-12); }
+.lab-quality-trigger-block { flex-direction:column; align-items:stretch; width:100%; border:0; padding:0; }
 .lab-quality-trigger:hover { background:var(--lab-ds-surface-subtle); }
 .lab-quality-trigger:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-quality-trigger-label { display:inline-flex; align-items:center; gap:var(--lab-ds-space-6); }
