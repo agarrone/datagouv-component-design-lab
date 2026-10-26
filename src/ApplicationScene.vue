@@ -32,6 +32,7 @@ const content=computed(()=>props.name.includes('DescriptionList')?'Population mu
   <component v-else-if="name==='cdata/AdminTable/Table/AdminTableTh'" :is="C['cdata/AdminTable/Table/AdminTable']"><thead><tr><component :is="C[name]" v-bind="sampleProps">Population</component></tr></thead></component>
   <dl v-else-if="name==='cdata/DescriptionList/DescriptionListTerm'||name==='cdata/DescriptionList/DescriptionListDetails'"><component :is="C[name]" v-bind="sampleProps">{{ name.endsWith('Term')?'Population': '225 081 habitants' }}</component></dl>
   <component v-else-if="name==='cdata/DescriptionList/DescriptionList'" :is="C[name]" v-bind="sampleProps"><component :is="C['cdata/DescriptionList/DescriptionListTerm']">Commune</component><component :is="C['cdata/DescriptionList/DescriptionListDetails']">Rennes</component></component>
+  <component v-else-if="name==='cdata/FullPageTabs/FullPageTabs' || name==='cdata/TabLinks'" :is="C[name]" v-bind="sampleProps" />
   <component v-else-if="editorContext" :is="C['cdata/MarkdownEditor/MarkdownEditor']" :id="editorId" value="Les données publiques permettent de **comprendre les territoires**." />
   <component v-else-if="name==='cdata/Design/ThemeTagFilter'" :is="C['Search/GlobalSearch']"><template #custom-filters-top><component :is="C[name]" /></template></component>
   <component v-else :is="C[name]" v-bind="name==='cdata/Form/FormWithAccordions' ? {...sampleProps,formInfo:form} : sampleProps" v-on="listeners || {}">

@@ -34,3 +34,9 @@
  .lab-field .fr-error-text::before{display:none!important;content:none!important}
  .lab-field .fr-error-text>.lab-ds-icon{flex:none;margin-top:var(--lab-ds-space-optical)}
 }
+
+@layer base {
+ .lab-search-field { gap:0; }
+ .lab-search-field .lab-input { min-height:var(--lab-ds-control); border-top-right-radius:0!important; border-bottom-right-radius:0!important; }
+ .lab-search-field .lab-search-submit { border-radius:0 var(--lab-ds-radius) 0 0!important; min-height:var(--lab-ds-control)!important; min-width:var(--lab-ds-control)!important; }
+}

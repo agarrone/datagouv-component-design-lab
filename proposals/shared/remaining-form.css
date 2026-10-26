@@ -1,0 +1,11 @@
+/* Form/page composition: keep validation, permissions and native control contracts. */
+@layer base {
+ .lab-remaining-form { min-width:0; font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); color:var(--lab-ds-text); }
+ .lab-remaining-form > h1 { font:var(--lab-ds-weight-semibold) var(--lab-ds-text-heading)/var(--lab-ds-leading-heading) var(--lab-ds-font-sans)!important; margin-bottom:var(--lab-ds-space-24)!important; }
+ .lab-remaining-form > h2,.lab-remaining-form legend.fr-fieldset__legend { font:var(--lab-ds-weight-semibold) var(--lab-ds-text-title)/var(--lab-ds-leading-title) var(--lab-ds-font-sans)!important; text-transform:none!important; }
+ .lab-remaining-form :is(.text-xs,.fr-hint-text) { font-size:var(--lab-ds-text-caption)!important; line-height:var(--lab-ds-leading-caption); }
+ .lab-remaining-form :is(fieldset,.fr-fieldset) { min-width:0; }
+ .lab-remaining-form :is(button,a[href],input,textarea,select):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset)!important; }
+ .lab-remaining-form :is(.rounded-lg,.rounded-xl) { border-radius:var(--lab-ds-radius)!important; }
+ .lab-remaining-form > .fr-p-3w { padding:var(--lab-ds-space-24)!important; }
+}

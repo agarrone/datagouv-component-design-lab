@@ -65,12 +65,17 @@
       
     />
   </ul>
+  <div v-if="config.datasetQualityGuideUrl" class="lab-quality-guide">
+    <AppLink :href="config.datasetQualityGuideUrl" target="_blank" rel="noopener">{{ t('En savoir plus sur cet indicateur') }}</AppLink>
+  </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import '../shared/foundations.css'
 import '../shared/quality.css'
+import AppLink from './AppLink.vue'
+import {useComponentsConfig} from '../../vendor/datagouv-components/src/config'
 import type { DataserviceQuality } from '../../vendor/datagouv-components/src/types/dataservices'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 import QualityItem from './QualityItem.vue'
@@ -80,4 +85,5 @@ defineProps<{
 }>()
 
 const { t } = useTranslation()
+const config = useComponentsConfig()
 </script>

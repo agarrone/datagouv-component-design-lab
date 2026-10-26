@@ -3,6 +3,7 @@
     class="lab-object-card fr-enlarge-link"
     :class="articleClass"
   >
+    <slot name="cover" />
     <div v-if="$slots.badge" class="lab-object-card-badges"><slot name="badge" /></div>
     <div class="lab-object-card-layout">
       <div

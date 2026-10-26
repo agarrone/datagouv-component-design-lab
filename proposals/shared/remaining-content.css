@@ -1,0 +1,8 @@
+/* Neutral reading surfaces. Brand assets and renderless adapters keep their DOM. */
+@layer base {
+ .lab-remaining-content { min-width:0; font-family:var(--lab-ds-font-sans); font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); }
+ .lab-remaining-content :is(pre,code) { font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-caption); }
+ .lab-remaining-content pre { padding:var(--lab-ds-space-16); border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius-technical); overflow:auto; }
+ .lab-remaining-content :is(h1,h2,h3,h4) { font-family:var(--lab-ds-font-sans); line-height:var(--lab-ds-leading-heading); }
+ .lab-remaining-content a[href]:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+}

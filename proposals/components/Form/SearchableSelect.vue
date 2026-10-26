@@ -3,10 +3,10 @@
     class="lab-selection lab-field fr-input-group"
     :class="{ 'fr-input-group--error': errorText, 'fr-input-group--warning': !errorText && warningText, 'fr-input-group--valid': validText }"
   >
+    <div class="lab-field-label-row">
     <label
       :for="id"
       :id="`${id}-label`"
-      :title="explanation"
       class="fr-label"
       :class="{ 'sr-only': hideLabel }"
     >
@@ -17,15 +17,12 @@
         class="lab-required-marker"
       >*</span>
       <span
-        v-if="explanation"
-        class="fr-icon-information-line"
-        aria-hidden="true"
-      />
-      <span
         v-if="hintText"
         class="fr-hint-text" :id="`${id}-hint`"
       >{{ hintText }}</span>
     </label>
+    <FieldHelp v-if="explanation" :label="label" :text="explanation" />
+    </div>
     <Combobox
       v-slot="{ open, activeOption }"
       v-model="model"
@@ -75,7 +72,7 @@
               :title="t('Effacer')"
               @click.prevent="model = null"
             >
-              <RiDeleteBinLine data-icon-size="base" aria-hidden="true" focusable="false" class="lab-ds-icon size-4 text-gray-800" />
+              <RiCloseLine data-icon-size="base" aria-hidden="true" focusable="false" class="lab-ds-icon size-4 text-gray-800" />
             </button>
             <ComboboxButton class="p-2" :aria-label="t('Ouvrir la sélection {label}', {label})">
               <RiArrowDownSLine data-icon-size="base" aria-hidden="true" focusable="false" class="lab-ds-icon size-4 text-gray-800" />
@@ -162,6 +159,7 @@
 
 <script setup lang="ts" generic="T extends string | number | object, Multiple extends true | false">
 import '../../shared/foundations.css'
+import FieldHelp from '../../shared/FieldHelp.vue'
 import {RiErrorWarningLine} from '@remixicon/vue'
 import '../../shared/selection.css'
 import '../../shared/inputs.css'
@@ -177,7 +175,7 @@ import {
   ComboboxOption,
   TransitionRoot,
 } from '@headlessui/vue'
-import { RiArrowDownSLine, RiCheckLine, RiDeleteBinLine } from '@remixicon/vue'
+import { RiArrowDownSLine, RiCheckLine, RiCloseLine } from '@remixicon/vue'
 import { useTranslation } from '../../../vendor/datagouv-components/src/composables/useTranslation'
 import AnimatedLoader from '../AnimatedLoader.vue'
 

@@ -1,0 +1,10 @@
+/* Public page rhythm; supplied backgrounds, illustrations and brand marks survive. */
+@layer base {
+ .lab-remaining-page { min-width:0; font-family:var(--lab-ds-font-sans); }
+ .lab-remaining-page:is(section) { padding-block:var(--lab-ds-space-48)!important; }
+ .lab-remaining-page h2 { font-weight:var(--lab-ds-weight-semibold)!important; }
+ .lab-remaining-page :is(a[href],button):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset)!important; }
+ .lab-remaining-page[data-testid=banner-flyout] { padding:var(--lab-ds-space-16); border:var(--lab-ds-stroke) solid var(--lab-ds-border)!important; border-radius:var(--lab-ds-radius)!important; background:var(--lab-ds-surface)!important; box-shadow:var(--lab-ds-shadow-overlay)!important; }
+ .lab-logo-grid { padding-block:var(--lab-ds-space-32)!important; }
+ .lab-logo-grid > div { gap:var(--lab-ds-space-24); align-items:center; }
+}

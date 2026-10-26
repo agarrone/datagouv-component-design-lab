@@ -1,0 +1,19 @@
+/* Explorer chrome only: keep data, rendering engines, resize and fullscreen logic. */
+@layer base {
+ .lab-remaining-resource { min-width:0; font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+ .lab-remaining-resource:is(header),.lab-remaining-resource > header { border-color:var(--lab-ds-border)!important; gap:var(--lab-ds-space-8); }
+ .lab-remaining-resource:is(.border),.lab-remaining-resource .border-gray-default { border-color:var(--lab-ds-border)!important; }
+ .lab-remaining-resource:is(.rounded),.lab-remaining-resource .rounded { border-radius:var(--lab-ds-radius)!important; }
+ .lab-remaining-resource .text-xs { font-size:var(--lab-ds-text-caption)!important; line-height:var(--lab-ds-leading-caption); }
+ .lab-remaining-resource .text-sm { font-size:var(--lab-ds-text-body)!important; line-height:var(--lab-ds-leading-body); }
+ .lab-remaining-resource :is(.text-gray-medium,.text-gray-500) { color:var(--lab-ds-text-secondary)!important; }
+ .lab-remaining-resource :is(pre,code,.jv-code,.xml-viewer) { font-family:var(--lab-ds-font-mono)!important; font-size:var(--lab-ds-text-caption)!important; }
+ .lab-remaining-resource :is(button,a[href],input,select,[tabindex]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:var(--lab-ds-focus-offset)!important; }
+ .lab-remaining-resource :is([role=menu],[role=listbox]) { border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius)!important; background:var(--lab-ds-surface); box-shadow:var(--lab-ds-shadow-overlay); }
+ .lab-remaining-resource [role=option][aria-selected=true] { background:var(--lab-ds-info-bg)!important; color:var(--lab-ds-brand)!important; }
+}
+@layer base {
+ .lab-resource-list-item { min-height:var(--lab-ds-control-compact); border-radius:var(--lab-ds-radius)!important; font-family:var(--lab-ds-font-sans); }
+ .lab-resource-list-item:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus)!important; outline-offset:calc(-1 * var(--lab-ds-focus-width)); }
+ .lab-resource-list-item :is(.lab-ds-u-text-xs,.lab-ds-u-text-sm) { line-height:var(--lab-ds-leading-caption); }
+}

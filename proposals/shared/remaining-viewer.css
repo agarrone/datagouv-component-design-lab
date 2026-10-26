@@ -1,0 +1,6 @@
+/* Do not restyle chart series, maps, canvas or document contents. */
+@layer base {
+ .lab-remaining-viewer { min-width:0; max-width:100%; font-family:var(--lab-ds-font-sans); }
+ .lab-remaining-viewer .fr-alert { border-radius:var(--lab-ds-radius); font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); }
+ .lab-remaining-viewer :is(button,a[href]):focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+}

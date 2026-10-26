@@ -10,3 +10,5 @@
 .proposal-copy-label[data-floating=true] { position:absolute; z-index:10; top:100%; right:0; width:max-content; padding:var(--lab-ds-space-4) var(--lab-ds-space-8); background:var(--lab-ds-surface); border:var(--lab-ds-stroke) solid var(--lab-ds-border); border-radius:var(--lab-ds-radius); color:var(--lab-ds-text); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
 
 .proposal-copy-button:disabled { cursor:default; color:var(--lab-ds-text-muted); opacity:var(--lab-ds-opacity-disabled); --hover-tint:transparent; --active-tint:transparent; }
+
+.proposal-metadata-code.proposal-embed-code { min-height:0; height:auto; padding:var(--lab-ds-space-8); }

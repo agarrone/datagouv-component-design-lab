@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card">
+  <ObjectCard class="lab-content-card lab-discussion-message-card">
     <ObjectCardHeader
       :icon="RiChat3Line"
       :url="discussionUrl || discussion.self_web_url || '#'"

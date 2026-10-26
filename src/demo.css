@@ -10,3 +10,13 @@
 @source "../vendor/cdata-components/Dataservices/AccessAudienceCondition.vue";
 
 @source '../vendor/cdata-components';
+
+/* Social icon links explicitly opt out of underlines upstream. DSFR also draws
+   them with background gradients, which text-decoration alone does not remove. */
+@layer base {
+ footer[role="contentinfo"] a.link:has(> svg[aria-hidden="true"]) {
+  --underline-img:none!important;
+  background-image:none!important;
+  text-decoration:none!important;
+ }
+}

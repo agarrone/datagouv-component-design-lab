@@ -18,10 +18,11 @@
     >
     <BrandedButton
       class="lab-search-submit"
-      size="lg"
+      :title="t('Rechercher')"
+      size="sm"
       color="primary"
       :icon="RiSearchLine"
-      icon-only-on-mobile
+      icon-only
       type="submit"
     >
       {{ t('Recherche') }}

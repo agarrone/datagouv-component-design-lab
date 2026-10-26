@@ -17,7 +17,8 @@
   >
     {{ label }}
   </BrandedButton>
-  <p v-else role="alert" class="proposal-notification-muted">Impossible de charger votre abonnement.</p>
+  <p v-else role="alert" class="proposal-notification-error">Impossible de charger votre abonnement.</p>
+  <p v-if="error" role="alert" class="proposal-notification-error">{{ error }}</p>
 </template>
 
 <script setup lang="ts">
@@ -63,12 +64,20 @@ const followed = computed(() => current.value !== null && current.value !== 'fai
 const label = computed(() => followed.value ? props.unfollowLabel : props.followLabel)
 
 const loading = ref(false)
+const error = ref('')
 
 async function toggle() {
+  if (loading.value || current.value === null || current.value === 'failed') return
+  error.value = ''
   loading.value = true
   try {
-    current.value = await follow(props.scope, props.event, !followed.value)
+    const updated = await follow(props.scope, props.event, !followed.value)
+    if (updated === null || updated === 'failed') throw new Error('Follow state unavailable')
+    current.value = updated
     toast.success(followed.value ? props.followedMessage : props.unfollowedMessage)
+  }
+  catch {
+    error.value = 'Impossible de modifier votre abonnement. Réessayez.'
   }
   finally {
     loading.value = false

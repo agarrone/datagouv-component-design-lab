@@ -14,9 +14,9 @@
     <textarea
       ref="textAreaRef"
       :aria-label="t('Code HTML pour intégrer le jeu de données')"
-      rows="4"
+      rows="2"
       spellcheck="false"
-      class="proposal-metadata-code"
+      class="proposal-metadata-code proposal-embed-code"
       :value="embedHtml"
       readonly="true"
       @click="selectContent"
