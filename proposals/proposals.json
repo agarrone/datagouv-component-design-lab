@@ -302,7 +302,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Carte de référence : titre et producteur sur une ligne avec troncature, icônes espacées de 4 px du texte. Producteur, date de mise à jour, ligne de métadonnées cliquables avec barre sans pourcentage et compteurs, puis description sur deux lignes. Badges brouillon et archivé à l’intérieur du cadre. Réutiliser les propositions des composants enfants ; voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage orange et suppression rouge, accès restreint orange et accès avec compte jaune.",
+    "intention": "Carte de référence : titre et producteur sur une ligne avec troncature, icônes espacées de 4 px du texte. Producteur, date de mise à jour, ligne de métadonnées cliquables avec barre sans pourcentage et compteurs, puis description sur deux lignes. Badges brouillon et archivé à l’intérieur du cadre. Réutiliser les propositions des composants enfants ; voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetCard.vue",
     "reviewUrl": ""
@@ -313,7 +313,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage orange et suppression rouge, accès restreint orange et accès avec compte jaune.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DataserviceCard.vue",
     "reviewUrl": ""
@@ -324,7 +324,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage orange et suppression rouge, accès restreint orange et accès avec compte jaune.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ReuseCard.vue",
     "reviewUrl": ""
@@ -335,7 +335,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage orange et suppression rouge, accès restreint orange et accès avec compte jaune.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ReuseHorizontalCard.vue",
     "reviewUrl": ""
@@ -368,7 +368,7 @@
     "title": "Une hiérarchie commune pour les cartes de contenu",
     "status": "brouillon",
     "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage orange et suppression rouge, accès restreint orange et accès avec compte jaune.",
+    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ChartCard.vue",
     "reviewUrl": ""

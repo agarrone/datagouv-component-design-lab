@@ -66,9 +66,9 @@
   --lab-ds-space-40: 40px;
   --lab-ds-space-48: 48px;
   --lab-ds-space-64: 64px;
-  --lab-ds-radius: 6px;
+  --lab-ds-radius: 4px;
   --lab-ds-radius-technical: 2px;
-  --lab-ds-radius-inset: 5px;
+  --lab-ds-radius-inset: max(0px, calc(var(--lab-ds-radius) - var(--lab-ds-stroke)));
   --lab-ds-radius-pill: 999px;
   --lab-ds-radius-round: 50%;
   --lab-ds-stroke: 1px;
@@ -84,6 +84,7 @@
   --lab-ds-shadow-overlay: 0 8px 24px #16161614;
   --lab-ds-control-dense: 36px;
   --lab-ds-control-mini: 28px;
+  --lab-ds-radius-control-inset: max(0px, calc(var(--lab-ds-radius) - var(--lab-ds-space-4) - var(--lab-ds-stroke)));
   --lab-ds-duration-disclosure: 250ms;
   --lab-ds-ease-disclosure: cubic-bezier(0.22, 1, 0.36, 1);
   --lab-ds-duration-shimmer: 2000ms;

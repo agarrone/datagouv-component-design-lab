@@ -8,7 +8,7 @@
       class="lab-card-title-link"
       :target="target"
     >
-      <component data-icon-align="start" data-icon-size="base" focusable="false"
+      <component v-if="icon" data-icon-align="start" data-icon-size="base" focusable="false"
         :is="icon"
         aria-hidden="true"
         class="lab-card-title-icon lab-ds-icon"
@@ -33,7 +33,7 @@ import type { TitleTag } from '../../vendor/datagouv-components/src/types/ui'
 import AppLink from '/proposals/components/AppLink.vue'
 
 withDefaults(defineProps<{
-  icon: Component
+  icon?: Component
   url: RouteLocationRaw
   target?: string
   titleTag?: TitleTag

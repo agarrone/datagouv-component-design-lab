@@ -232,3 +232,25 @@
 .lab-organization-with-banner .lab-organization-card-banner { height:var(--lab-ds-space-64); margin:calc(-1 * var(--lab-ds-space-16)) calc(-1 * var(--lab-ds-space-16)) 0; background:var(--lab-ds-surface-subtle); border-radius:var(--lab-ds-radius-inset) var(--lab-ds-radius-inset) 0 0; overflow:hidden; }
 .lab-organization-card-banner img { width:100%; height:100%; object-fit:cover; }
 .lab-organization-with-banner .lab-object-card-media { margin-top:calc(-1 * var(--lab-ds-space-24)); position:relative; }
+
+/* Keep organization title text on the same line box as its leading icon. */
+.lab-card-title-text > .lab-organization-name { font:inherit!important; }
+/* Optical correction for the organization-type glyph beside producer names. */
+.lab-card-owner .lab-organization-name > .proposed-owner-type-icon { position:relative; top:calc(-1 * var(--lab-ds-stroke)); }
+
+/* Card titles retain up to two lines at every viewport width. */
+.lab-catalog-card .lab-card-title-text,.lab-catalog-card .lab-reuse-title {
+ display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2;
+ white-space:normal; overflow:hidden; text-overflow:ellipsis;
+}
+.lab-catalog-card .lab-card-title-text .truncate { white-space:normal!important; }
+/* Progressive disclosure keeps identity and dates visible on small screens. */
+@media (max-width:767px) {
+ .lab-catalog-card.lab-content-card .lab-card-description { display:none; }
+}
+@media (max-width:479px) {
+ .lab-catalog-card :is(.lab-dataset-metadata-row,.lab-card-metadata-row,.lab-organization-counts,.lab-card-organization-type,.lab-card-metrics) { display:none; }
+}
+
+/* Separate the organization classification from its usage metrics. */
+.lab-organization-content-card .lab-card-organization-type + .lab-organization-counts { margin-top:var(--lab-ds-space-12); }

@@ -28,7 +28,7 @@
       {{ topic.name }}
     </ObjectCardHeader>
 
-    <ObjectCardOwner v-if="topic.organization || topic.owner" show-details :organization="topic.organization" :owner="topic.owner" :organization-url="organizationUrl" />
+    <ObjectCardOwner :show-logo="!showLogo" v-if="topic.organization || topic.owner" show-details :organization="topic.organization" :owner="topic.owner" :organization-url="organizationUrl" />
     <TranslationT v-if="topic.last_modified" tag="div" class="lab-card-updated" keypath="Mis à jour {date}">
       <template #date><FormattedDate :date="topic.last_modified" format="relative" :options="{dateStyle:'medium'}" /></template>
     </TranslationT>
@@ -55,7 +55,7 @@ import type { TopicV2 } from '../../vendor/datagouv-components/src/types/topics'
 import ObjectCardHeader from './ObjectCardHeader.vue'
 import ObjectCardOwner from './ObjectCardOwner.vue'
 import ObjectCardShortDescription from './ObjectCardShortDescription.vue'
-import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
+import OrganizationLogo from './OrganizationLogo.vue'
 import Avatar from './Avatar.vue'
 import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
 import ObjectCard from './ObjectCard.vue'

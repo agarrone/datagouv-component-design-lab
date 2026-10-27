@@ -114,7 +114,7 @@ Distinguer un état informatif d’une catégorie ou d’un filtre interactif.
 | Tag statique / cliquable | Pilule ajustée au contenu, sans étirement. Statique : pas de hover interactif. Cliquable : lien ou bouton selon l’action, avec survol, pression et focus. |
 | Tag sélectionné | La sélection est visible avec une coche et exposée par aria-pressed pour un bouton de filtre. Le survol ne se confond pas avec la sélection persistante. |
 | Tag supprimable | La croix est une commande nommée « Retirer… ». Sa cible est indépendante d’une éventuelle navigation ; pas de boutons imbriqués. |
-| Sémantique | Brouillon gris ; archivé orange (avertissement) et supprimé rouge (erreur) pour DatasetBadge, DataserviceBadge et ReuseBadge ; accès ouvert vert, avec compte jaune, restreint orange. Les accents pink restent roses DSFR ; ils ne signifient pas une erreur. |
+| Sémantique | Brouillon gris ; archivé gris (neutre) et supprimé rouge (erreur) pour DatasetBadge, DataserviceBadge et ReuseBadge ; accès ouvert vert, avec compte jaune, restreint orange. Les accents pink restent roses DSFR ; ils ne signifient pas une erreur. |
 
 **Clavier et accessibilité.** Un badge ou tag informatif n’entre pas dans l’ordre de tabulation. Les tags interactifs suivent les conventions lien/bouton. Après retrait d’un filtre, le focus va au contrôle voisin ou au groupe, sans se perdre.
 

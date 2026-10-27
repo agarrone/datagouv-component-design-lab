@@ -32,7 +32,7 @@ Le [guide des comportements](component-behaviors.md) documente treize familles :
 | Hiérarchie | Titre de composant 16/24, graisse 600 ; corps 14/22, graisse 400 ; contrôle 14/20 ; métadonnées 12/18 ; section 24/32. |
 | Chiffres | Chiffres tabulaires pour dates, scores et comparaisons ; pas de monospace imposée à tout texte numérique. |
 | Espacement | Échelle 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64 px. Repères : icône/libellé 8 ; éléments liés 12 ; carte/bandeau 16 ; section 24. |
-| Coins | 6 px standard ; 2 px technique ; 999 px pilule ; 50 % cercle. Rayon intérieur de 5 px pour une image dans un cadre de 6 px avec bordure de 1 px. |
+| Coins | 4 px standard ; 2 px technique ; 999 px pilule ; 50 % cercle. Rayon intérieur de 3 px pour une image dans un cadre de 4 px avec bordure de 1 px. |
 | Dimensions | Icônes 14 compact, 16 standard, 20 repère majeur ; commandes 32 compact, 36 dense, 40 standard. Viser 44 px pour une cible tactile. |
 | Élévation | Une ombre commune pour les menus et popovers ; les cartes ordinaires restent sans ombre. |
 | Mouvement | Accordéon 250 ms ; shimmer 2000 ms ; glyphes Agents 80 ms ; témoin de bouton 1000 ms. Réduction de mouvement conservée. |
@@ -239,3 +239,11 @@ Périmètre, dépendances et variantes : [passe des composants compacts](../prop
 La destination principale couvre toute la carte, hormis ses commandes secondaires : au survol, titre et icône passent en bleu sans soulignement ni surlignage. Un lien ou déclencheur non souligné au repos reçoit un soulignement simple de 1 px au survol, sans changer de graisse. Les liens déjà soulignés peuvent conserver leur trait renforcé de 2 px. Dans les formulaires, l’étoile obligatoire est rouge DSFR et l’icône de message d’erreur est outline, sans pseudo-icône pleine concurrente.
 
 Panneau producteur : utiliser OrganizationCard en variante compacte, avec logo 48 px, nom complet, type, métriques libellées et description. Le panneau partagé fournit la surface et le cadre ; pas de bandeau décoratif ni de carte encadrée imbriquée. Séparer le lien vers l’organisation en pied de panneau.
+
+### Rayons concentriques — 26 octobre 2026
+
+Boutons, cartes et champs : rayon commun réduit de 6 à 4 px. Selon [better-ui](https://github.com/jakubkrehel/skills/blob/main/skills/better-ui/SKILL.md) et [Concentric border radius](https://jakub.kr/writing/details-that-make-interfaces-feel-better#concentric-border-radius), le rayon intérieur est calculé par `max(0, extérieur − padding − bordure)`. Médias à fleur de carte : 3 px ; segments et options avec 4 px de padding et 1 px de bordure : 0 px. Au-delà de 24 px de padding ou pour un retrait asymétrique, les surfaces restent indépendantes. Tags et avatars conservent leurs formes spécifiques.
+
+### Cartes : adaptation aux petits écrans
+
+Les titres occupent au maximum deux lignes. Sous 768 px de largeur d’écran, la description est masquée ; sous 480 px, les métadonnées et statistiques le sont également. Le titre, le producteur et la date restent visibles lorsqu’ils sont fournis. La certification d’une organisation apparaît après son nom avec l’icône Remix `RiCheckboxCircleLine`, uniquement si elle est certifiée.

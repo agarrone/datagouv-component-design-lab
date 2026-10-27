@@ -25,7 +25,7 @@
       <ObjectCardBadge
         v-else-if="reuse.archived"
         :icon="RiArchiveLine"
-        tone="warning"
+        tone="secondary"
       >
         {{ t('Archivé') }}
       </ObjectCardBadge>
