@@ -22,7 +22,7 @@ const status = computed<{ label: string, type: AdminBadgeType }>(() => {
   else if (props.dataset.archived) {
     return {
       label: t('Archivé'),
-      type: 'warning',
+      type: 'secondary',
     }
   }
   else if (props.dataset.private) {

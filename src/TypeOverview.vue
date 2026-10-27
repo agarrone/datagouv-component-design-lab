@@ -20,7 +20,7 @@ const count = computed(() => new Set(props.page.sections.flatMap(section => sect
 <template>
   <div class="type-overview">
     <h1>{{ page.label }}</h1>
-    <p class="intro">{{ page.description }}</p>
+    <p class="intro">{{ page.description }}</p><p v-if="page.label==='Cartes de contenu'"><a href="#demo-cartes">Ouvrir la démo avant/après des cartes →</a></p>
     <div class="type-overview-toolbar"><span>{{ count }} composants</span><div role="group" aria-label="Disposition des aperçus"><button :aria-pressed="layout==='grid'" @click="layout='grid'">Grille</button><button :aria-pressed="layout==='list'" @click="layout='list'">Liste</button></div></div>
     <section v-for="section in page.sections" :key="section.title" class="type-section">
       <h2>{{ section.title }}</h2>

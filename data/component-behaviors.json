@@ -213,7 +213,7 @@
         },
         {
           "state": "Sémantique",
-          "behavior": "Brouillon gris ; archivé orange (avertissement) et supprimé rouge (erreur) pour DatasetBadge, DataserviceBadge et ReuseBadge ; accès ouvert vert, avec compte jaune, restreint orange. Les accents pink restent roses DSFR ; ils ne signifient pas une erreur."
+          "behavior": "Brouillon gris ; archivé gris (neutre) et supprimé rouge (erreur) pour DatasetBadge, DataserviceBadge et ReuseBadge ; accès ouvert vert, avec compte jaune, restreint orange. Les accents pink restent roses DSFR ; ils ne signifient pas une erreur."
         }
       ],
       "keyboard": "Un badge ou tag informatif n’entre pas dans l’ordre de tabulation. Les tags interactifs suivent les conventions lien/bouton. Après retrait d’un filtre, le focus va au contrôle voisin ou au groupe, sans se perdre.",

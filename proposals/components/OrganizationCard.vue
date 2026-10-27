@@ -46,7 +46,7 @@ const type = computed(() => getOrganizationType(props.organization))
 .lab-organization-summary{display:flex;flex-direction:column;gap:var(--lab-ds-space-12);min-width:0;color:var(--lab-ds-text);font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans)}
 .lab-organization-summary-heading{display:flex;align-items:flex-start;gap:var(--lab-ds-space-12)}
 .lab-organization-summary-logo{width:var(--lab-ds-space-48);height:var(--lab-ds-space-48);flex:none;border:1px solid var(--lab-ds-border);border-radius:var(--lab-ds-radius);overflow:hidden}
-.lab-organization-summary-heading :deep(.lab-organization-name){flex:1;align-items:flex-start;font-weight:var(--lab-ds-weight-semibold)}
+.lab-organization-summary-heading :deep(.lab-organization-name){flex:1;align-items:center;font-weight:var(--lab-ds-weight-semibold)}
 .lab-organization-summary-heading :deep(.lab-organization-name-label){white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
 .lab-organization-summary :deep(.lab-card-metric){gap:var(--lab-ds-space-4)}
 .lab-organization-summary :deep(.lab-organization-counts){display:flex;flex-wrap:wrap;gap:var(--lab-ds-space-8) var(--lab-ds-space-16)}

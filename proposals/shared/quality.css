@@ -34,7 +34,7 @@ a.lab-license-badge::after { display:none; }
 .lab-quality-item,.lab-quality-warning { list-style:none; padding:0; margin:0; }
 .lab-quality-details { display:flex; flex-direction:column; gap:var(--lab-ds-space-12); }
 .lab-quality-details-title { color:var(--lab-ds-text); margin:0; font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); font-weight:var(--lab-ds-weight-semibold); }
-.lab-quality-guide { font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
+.lab-quality-guide { font-size:var(--lab-ds-text-body); line-height:var(--lab-ds-leading-body); }
 .lab-quality-guide a { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 .lab-quality-guide a:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .lab-quality-popover { position:relative; min-width:0; }
@@ -67,3 +67,12 @@ a.lab-license-badge::after { display:none; }
 /* Standalone details panels use the same text scale as their component context. */
 .lab-quality-panel { font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); color:var(--lab-ds-text); }
 .lab-quality-panel>p { font:inherit; margin:0 0 var(--lab-ds-space-12); }
+
+/* Panel footer links share a readable, neutral text treatment. */
+:is(.lab-organization-details-footer,.lab-quality-guide a[href]) {
+ font:var(--lab-ds-weight-medium) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans);
+}
+@layer base {
+ :is(a.lab-organization-details-footer,.lab-quality-guide a[href]),
+ :is(a.lab-organization-details-footer,.lab-quality-guide a[href]):is(:visited,:hover,:active,:focus-visible) { color:var(--lab-ds-text)!important; }
+}

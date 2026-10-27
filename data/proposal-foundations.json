@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "Base de travail pour les propositions — à valider",
-  "updated": "2026-10-22",
+  "updated": "2026-10-26",
   "prefix": "--lab-ds-",
   "groups": [
     {
@@ -334,7 +334,7 @@
       "tokens": [
         {
           "name": "radius",
-          "value": "6px",
+          "value": "4px",
           "usage": "Cartes, champs, boutons et badges rectangulaires"
         },
         {
@@ -344,8 +344,8 @@
         },
         {
           "name": "radius-inset",
-          "value": "5px",
-          "usage": "Image interne : rayon extérieur de 6 px moins bordure de 1 px"
+          "value": "max(0px, calc(var(--lab-ds-radius) - var(--lab-ds-stroke)))",
+          "usage": "Média à fleur de carte : rayon extérieur moins la bordure (4 − 1 = 3 px)"
         },
         {
           "name": "radius-pill",
@@ -421,6 +421,11 @@
           "name": "control-mini",
           "value": "28px",
           "usage": "Action très compacte, avec cible tactile étendue"
+        },
+        {
+          "name": "radius-control-inset",
+          "value": "max(0px, calc(var(--lab-ds-radius) - var(--lab-ds-space-4) - var(--lab-ds-stroke)))",
+          "usage": "Segment ou option : rayon extérieur moins 4 px de padding et 1 px de bordure, borné à zéro"
         }
       ]
     },
@@ -632,7 +637,7 @@
     "rules": [
       "Une action principale par groupe ; secondaire encadrée pour l’alternative, tertiaire pour une action de moindre importance. Bleu France pour la hiérarchie principale.",
       "Taille standard 40 px et texte 14/20 ; compacte 32 px avec le même texte. Les variantes 28, 48 et 64 px restent disponibles pour les usages spécifiques.",
-      "Rayon 6 px, bordure 1 px et espacement icône/libellé 8 px. Pas de marge négative pour les boutons tertiaires. Les libellés longs peuvent revenir à la ligne.",
+      "Rayon 4 px, bordure 1 px et espacement icône/libellé 8 px. Pas de marge négative pour les boutons tertiaires. Les libellés longs peuvent revenir à la ligne.",
       "Icône 16 px, ou 20 px pour les grands boutons. Le bouton iconique conserve un nom accessible même si le libellé visuel est masqué.",
       "Focus commun visible ; survol et pression ne déplacent pas le contrôle. Le chargement conserve le libellé, expose aria-busy et bloque les activations supplémentaires.",
       "Un lien navigue, un bouton déclenche une action. Les liens désactivés ne naviguent pas. Un seul repère de nouvel onglet est affiché ; ne pas multiplier les flèches externes.",
@@ -694,7 +699,7 @@
   },
   "badgesTags": {
     "rules": [
-      "Badge : état ou statut, informatif et non cliquable, rayon commun 6 px.",
+      "Badge : état ou statut, informatif et non cliquable, rayon commun 4 px.",
       "Tag : catégorisation, lien associé ou filtre, forme pilule ; un tag statique ne reçoit aucun survol interactif.",
       "Socle compact commun : texte Marianne 12/18, icône 14 px, espacement 4 px, hauteur minimale 24 px.",
       "Couleurs DSFR via leurs variables de rôle : information, succès, avertissement, erreur, gris et accents non sémantiques.",

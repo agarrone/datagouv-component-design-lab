@@ -1,5 +1,5 @@
 <template>
-  <ObjectCard class="lab-content-card lab-catalog-card">
+  <ObjectCard class="lab-content-card lab-catalog-card lab-organization-content-card">
     <template v-if="$slots.cover" #cover><slot name="cover" /></template>
     <template #media>
       <OrganizationLogo
@@ -8,13 +8,12 @@
       />
     </template>
     <ObjectCardHeader
-      :icon="RiBuilding2Line"
       :url="organization.page"
     >
       <OrganizationNameWithCertificate
         :show-type="false"
         :organization
-        size="sm"
+        size="base"
         color-class="lab-ds-u-text-gray-title"
       />
     </ObjectCardHeader>
@@ -33,7 +32,6 @@
 import '../shared/foundations.css'
 import '../shared/cards.css'
 import OrganizationMetrics from '../shared/OrganizationMetrics.vue'
-import { RiBuilding2Line } from '@remixicon/vue'
 import { computed } from 'vue'
 import { getOrganizationType } from '../../vendor/datagouv-components/src/functions/organizations'
 import type { Organization, OrganizationReference } from '../../vendor/datagouv-components/src/types/organizations'

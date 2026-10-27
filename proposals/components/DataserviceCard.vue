@@ -45,7 +45,7 @@
       <ObjectCardBadge
         v-else-if="dataservice.archived_at"
         :icon="RiArchiveLine"
-        tone="warning"
+        tone="secondary"
       >
         {{ t('Archivé') }}
       </ObjectCardBadge>
@@ -120,7 +120,7 @@ import { summarize } from '../../vendor/datagouv-components/src/functions/helper
 import type { Dataservice } from '../../vendor/datagouv-components/src/types/dataservices'
 import type { TitleTag } from '../../vendor/datagouv-components/src/types/ui'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
-import OrganizationLogo from '../../vendor/datagouv-components/src/components/OrganizationLogo.vue'
+import OrganizationLogo from './OrganizationLogo.vue'
 import Avatar from './Avatar.vue'
 import Placeholder from '../../vendor/datagouv-components/src/components/Placeholder.vue'
 import ObjectCard from './ObjectCard.vue'

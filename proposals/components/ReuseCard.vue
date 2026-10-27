@@ -17,7 +17,7 @@
 
           <ObjectCardBadge v-if="reuse.private" :icon="RiLockLine">{{ t('Brouillon') }}</ObjectCardBadge>
 
-          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine" tone="warning">{{ t('Archivé') }}</ObjectCardBadge>
+          <ObjectCardBadge v-else-if="reuse.archived" :icon="RiArchiveLine" tone="secondary">{{ t('Archivé') }}</ObjectCardBadge>
         </div>
         <ObjectCardOwner show-details :organization="reuse.organization" :owner="reuse.owner" :organization-url="organizationUrl" />
         <div class="lab-card-update-row">
