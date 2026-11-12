@@ -1,17 +1,29 @@
 <template>
   <div
     class="w-full rounded p-3"
-    :class="classes"
+    :class="[classes, { 'flex items-start gap-3': icon }]"
   >
-    <slot />
+    <component
+      :is="icon"
+      v-if="icon"
+      class="mt-[3px] size-4 shrink-0"
+      aria-hidden="true"
+      focusable="false"
+    />
+    <div v-if="icon" class="min-w-0 flex-1">
+      <slot />
+    </div>
+    <slot v-else />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { Component } from 'vue'
 
 const props = defineProps<{
   type: 'primary' | 'primary-frame' | 'warning' | 'gray' | 'danger' | 'success' | 'pink'
+  icon?: Component
 }>()
 
 const classes = computed(() => {

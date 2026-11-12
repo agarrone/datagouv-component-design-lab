@@ -1,10 +1,11 @@
 import inventory from '../data/components.json';
+import catalog from '../data/component-catalog.json';
 import applicationCategories from './applicationCategories.json';
 const items = ids => ids.map(id => ({ id, key: id }));
 export const typePages = {
   cards: { label: 'Cartes de contenu', description: 'Les cartes complètes, réunies pour comparer leur structure et leur densité.', sections: [
     { title: 'Jeux de données et API', items: items(['DatasetCard', 'DataserviceCard']) },
-    { title: 'Organisations et réutilisations', items: items(['OrganizationCard', 'OrganizationHorizontalCard', 'ReuseCard', 'ReuseHorizontalCard']) },
+    { title: 'Organisations et réutilisations', items: items(['OrganizationCard', 'ReuseCard']) },
     { title: 'Autres contenus', items: items(['ChartCard', 'PostCard', 'TopicCard', 'SchemaCard', 'DiscussionMessageCard']) },
   ] },
   inputs: { label: 'Champs et sélection', description: 'Les champs et contrôles de sélection, avec leurs exemples interactifs.', sections: [
@@ -17,6 +18,7 @@ export const typePages = {
     { title: 'SimpleBanner', items: ['primary', 'warning', 'danger', 'success', 'gray', 'primary-frame', 'pink'].map(type => ({ id: 'SimpleBanner', key: `simple-${type}`, label: type, props: { type } })) },
     { title: 'BannerAction', items: ['primary', 'warning', 'danger'].map(type => ({ id: 'BannerAction', key: `action-${type}`, label: type, props: { type } })) },
   ] },
+  heroes: { label: 'Hero et en-têtes visuels', description: 'Les grandes surfaces de marque, de contexte ou d’identité placées en tête de page.', sections: [] },
 };
 
 Object.assign(typePages, {
@@ -51,7 +53,7 @@ Object.assign(typePages, {
   ] },
   identity: { label: 'Identité et médias', description: 'Les représentations des personnes et des organisations, leurs logos et leurs signes d’identification.', sections: [
     { title: 'Personnes', items: items(['Avatar','AvatarWithName','ActivityList/ActivityActor']) },
-    { title: 'Organisations', items: items(['OrganizationLogo','OrganizationNameWithCertificate','ObjectCardOwner']) },
+    { title: 'Organisations', items: items(['OrganizationLogo','OrganizationNameInline','OrganizationNameWithCertificate','OrganizationTypeBadge','ObjectCardOwner']) },
     { title: 'Type de producteur', items: items(['OwnerType','OwnerTypeIcon']) },
   ] },
   metadata: { label: 'Informations et métadonnées', layout: 'list', description: 'Les libellés, valeurs et sections qui décrivent un contenu.', sections: [
@@ -63,7 +65,7 @@ Object.assign(typePages, {
   loading: { label: 'Chargement et attentes', description: 'Les indicateurs d’attente, les squelettes et les états de disponibilité.', sections: [
     { title: 'Indicateurs de chargement', items: [...items(['AnimatedLoader','BouncingDots','InfiniteLoader','ProgressBar']), ...[{status:'pending',data:null,label:'Chargement initial'}, {status:'pending',data:{count:128,organizations:24,updatedAt:'Il y a 5 minutes'},label:'Actualisation'}, {status:'success',data:{count:132,organizations:25,updatedAt:'À l’instant'},label:'Données disponibles'}, {status:'error',data:null,label:'Erreur'}].map(({label,...props})=>({id:'LoadingBlock',key:`loading-${label}`,label,props}))] },
     { title: 'Squelettes', items: items(['TabularExplorer/TabularSkeleton','ResourceExplorer/ResourceViewerSkeleton','ResourceAccordion/PdfSkeleton']) },
-    { title: 'Attente et indisponibilité des aperçus', items: items(['ResourceAccordion/PreviewLoader','ResourceAccordion/SchemaLoader','ResourceAccordion/PreviewUnavailable','Placeholder']) },
+    { title: 'Attente et indisponibilité des aperçus', items: items(['ResourceAccordion/PreviewLoader','ResourceAccordion/SchemaLoader','ResourceAccordion/PreviewError','Placeholder']) },
   ] },
   details: { label: 'Aides et détails', description: 'Les informations complémentaires qui se révèlent à la demande.', sections: [
     { title: 'Aides ponctuelles', items: items(['Tooltip','Toggletip']) },
@@ -92,7 +94,7 @@ const additions = {
  administration: {label:'Administration',description:'Les pages de gestion des contenus, des organisations et des comptes.',layout:'list'},
 };
 for(const [id,page] of Object.entries(additions))typePages[id]={...page,sections:[]};
-const sectionLabels={cards:'Cartes et listes de contenus',inputs:'Champs et sélecteurs applicatifs',banners:'Bandeaux applicatifs',actions:'Actions applicatives',navigation:'Liens, menus et structure de page',badges:'Statuts et badges applicatifs',tables:'Tableaux de gestion et éditeurs',search:'Recherche et filtres applicatifs',identity:'Logos, producteurs et images de partage',metadata:'Descriptions et coordonnées',loading:'Chargement des fichiers et des moissons',details:'Accordéons et contenus dépliables',visualization:'Configuration et suivi des statistiques',resources:'Ressources et documentation applicatives'};
+const sectionLabels={cards:'Cartes et listes de contenus',inputs:'Champs et sélecteurs applicatifs',banners:'Bandeaux applicatifs',heroes:'Hero et en-têtes applicatifs',actions:'Actions applicatives',navigation:'Liens, menus et structure de page',badges:'Statuts et badges applicatifs',tables:'Tableaux de gestion et éditeurs',search:'Recherche et filtres applicatifs',identity:'Logos, producteurs et images de partage',metadata:'Descriptions et coordonnées',loading:'Chargement des fichiers et des moissons',details:'Accordéons et contenus dépliables',visualization:'Configuration et suivi des statistiques',resources:'Ressources et documentation applicatives'};
 for(const [category,ids] of Object.entries(applicationCategories)){
  const page=typePages[category];
  if(!page)throw new Error(`Catégorie inconnue : ${category}`);
@@ -107,7 +109,7 @@ for(const [category,ids] of Object.entries(applicationCategories)){
 const librarySections={
  notifications:['Activité',['ActivityList/ActivityList','ActivityList/UserActivityList']],
  navigation:['Éléments de navigation',['AppLink','Tabs/Tab','Tabs/TabList','Tabs/TabPanel','Tabs/TabPanels']],
- cards:['Structure des cartes',['ObjectCard','ObjectCardHeader','ObjectCardShortDescription']],
+    cards:['Structure des cartes',['ObjectCard','CardMedia','ObjectCardMeta','ObjectCardMetric','ObjectCardMetrics','ObjectCardQuality','ObjectCardShortDescription']],
  badges:['Indicateurs de carte et de ressource',['ObjectCardBadge','ResourceAccordion/ResourceIcon']],
  editorial:['Lecture et mise en page',['MarkdownViewer','PaddedContainer']],
  resources:['Structure de l’explorateur',['ResourceAccordion/PreviewWrapper','ResourceExplorer/ResourceExplorerHeader','ResourceExplorer/ResourceExplorerSidebar','ResourceExplorer/ResourceExplorerViewer']],
@@ -115,7 +117,11 @@ const librarySections={
 for(const [category,[title,ids]] of Object.entries(librarySections))typePages[category].sections.push({title,items:items(ids)});
 typePages.icons={label:'Icônes',description:'Les icônes fournies par la bibliothèque.',sections:[{title:'Icônes',items:items(inventory.filter(c=>c.id.startsWith('Icons/')).map(c=>c.id))}]};
 typePages.utilities={label:'Utilitaires de rendu',description:'Les composants techniques de rendu, de traduction et d’observation des valeurs.',sections:[{title:'Rendu et réactivité',items:items(['ClientOnly','TranslationT','ValueWatcher'])}]};
-export const visibleTypePages={...typePages};
+const isReviewable = id => catalog.components[id]?.status === 'reviewable';
+export const visibleTypePages=Object.fromEntries(Object.entries(typePages).flatMap(([id,page])=>{
+ const sections=page.sections.map(section=>({...section,items:section.items.filter(item=>isReviewable(item.id))})).filter(section=>section.items.length);
+ return sections.length ? [[id,{...page,sections}]] : [];
+}));
 
 // Ancien lien conservé pour les favoris ; les composants sont désormais classés par fonction.
 const applicationComponents=inventory.filter(c=>c.origin==='cdata');

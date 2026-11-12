@@ -53,7 +53,7 @@ provideTabularContext({tableData:computed(()=>({data:filteredRows.value,meta:{to
  <template v-else-if="name.startsWith('TabularExplorer/')">
   <component :is="name==='TabularExplorer/TabularExplorer' ? C['TabularExplorer/TabularExplorer'] : 'div'" class="table-demo" :resource-id="f.resource.id"><component :is="C['TabularExplorer/TabularToolbar']" class="shrink-0 border-b border-gray-default p-2"/><div class="hidden shrink-0 md:block"><component :is="C['TabularExplorer/TabularActiveFilters']" with-clear class="border-b border-gray-default p-2"/></div><component :is="C['TabularExplorer/TabularTable']"/><component :is="C['TabularExplorer/TabularMobileFilters']"/><component v-if="name==='TabularExplorer/TabularMobileFilterButton'||name==='TabularExplorer/TabularMobileFilters'" :is="C.BrandedButton" @click="mobileFilterOpen=true">Ouvrir les filtres mobiles</component><p v-if="name==='TabularExplorer/TabularCellPopover'" class="demo-caption">Clique sur une cellule pour afficher sa valeur brute et ses actions.</p></component>
  </template>
- <component v-else :is="C[name]"><p v-if="name==='ResourceAccordion/PreviewUnavailable'">Cette ressource ne dispose pas d’un aperçu. Téléchargez le fichier pour le consulter.</p></component>
+ <component v-else :is="C[name]" />
 </template>
 <style scoped>
 .context-tabs{width:100%}.tab-panel-content{padding:24px 0}.table-demo{width:100%;min-width:0}.demo-caption{font-size:12px;color:#6b7486;margin:16px 0 0}

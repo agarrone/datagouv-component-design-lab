@@ -138,7 +138,7 @@ import PreviewComponentInputGroup from '/proposals/components/cdata/InputGroup/I
 import { OrganizationLogo } from '@datagouv/components-next'
 import Avatar from '/proposals/components/Avatar.vue'
 import { RiCheckLine, RiCloseLine, RiSendPlaneLine } from '@remixicon/vue'
-import ModalClient from '/vendor/cdata-components/Modal/Modal.client.vue'
+import ModalClient from '/vendor/cdata-components/Modal/Modal.vue'
 import type { TransferParty, TransferRequest } from '/vendor/cdata-runtime/types/types'
 
 const props = withDefaults(defineProps<{

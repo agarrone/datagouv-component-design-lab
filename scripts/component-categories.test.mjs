@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import inventory from '../data/components.json' with {type:'json'};
+import catalog from '../data/component-catalog.json' with {type:'json'};
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import ts from 'typescript';
@@ -12,10 +13,11 @@ new Function('require','exports',source)(createRequire(file),exported);
 const {visibleTypePages}=exported;
 import applicationCategories from '../src/applicationCategories.json' with {type:'json'};
 
-test('chaque composant appartient à une catégorie visible et chaque lien existe',()=>{
+test('chaque composant designable appartient à une catégorie visible et chaque lien existe',()=>{
  const ids=Object.values(visibleTypePages).flatMap(p=>p.sections.flatMap(s=>s.items.map(i=>i.id)));
  const known=new Set(inventory.map(c=>c.id));
- assert.deepEqual(inventory.filter(c=>!ids.includes(c.id)).map(c=>c.id),[]);
+ assert.deepEqual(inventory.filter(c=>catalog.components[c.id]?.status==='reviewable'&&!ids.includes(c.id)).map(c=>c.id),[]);
+ assert.ok(ids.every(id=>catalog.components[id]?.status==='reviewable'));
  assert.deepEqual([...new Set(ids.filter(id=>!known.has(id)))],[]);
  for(const page of Object.values(visibleTypePages))for(const section of page.sections){
   assert.ok(section.items.length,`Section vide : ${section.title}`);

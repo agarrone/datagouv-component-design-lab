@@ -7,7 +7,12 @@ import {createRenderer,nextTick} from 'vue';
 const filename=new URL('../proposals/shared/UnicodeLoader.vue',import.meta.url);
 const {descriptor}=parse(await readFile(filename,'utf8'));
 const compiled=compileScript(descriptor,{id:'loader-test',inlineTemplate:true});
-const code=ts.transpileModule(compiled.content,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText.replaceAll('from "vue"',`from ${JSON.stringify(import.meta.resolve('vue'))}`).replaceAll("from 'vue'",`from ${JSON.stringify(import.meta.resolve('vue'))}`);
+const foundations=JSON.parse(await readFile(new URL('../data/proposal-foundations.json',import.meta.url),'utf8'));
+const code=ts.transpileModule(compiled.content,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText
+ .replaceAll('from "vue"',`from ${JSON.stringify(import.meta.resolve('vue'))}`)
+ .replaceAll("from 'vue'",`from ${JSON.stringify(import.meta.resolve('vue'))}`)
+ .replace(/import ['"]\.\/foundations\.css['"];?/, '')
+ .replace(/import foundations from ['"]\.\.\/\.\.\/data\/proposal-foundations\.json['"];?/,`const foundations=${JSON.stringify(foundations)};`);
 const {default:Loader}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
 const renderer=createRenderer({createElement:tag=>({tag,children:[]}),insert:(node,parent)=>parent.children.push(node),remove:()=>{},setElementText:(node,text)=>node.text=text,patchProp:()=>{},createText:text=>({text}),createComment:text=>({text}),setText:(node,text)=>node.text=text,parentNode:()=>null,nextSibling:()=>null});
 test('Unicode loader stops for reduced motion, resumes on preference changes and cleans up',async()=>{

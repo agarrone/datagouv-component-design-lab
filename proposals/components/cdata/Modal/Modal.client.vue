@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import '../../../shared/foundations.css'
 import '../../../shared/remaining-dialog.css'
-import Native from '/vendor/cdata-components/Modal/Modal.client.vue'
+import Native from '/vendor/cdata-components/Modal/Modal.vue'
 import { ref } from 'vue'
 import { forwardProposalRef } from '../../../shared/forwardProposalRef'
 defineOptions({ inheritAttrs: false })

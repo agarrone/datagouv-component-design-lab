@@ -5,20 +5,22 @@ import statuses from '../data/audit-statuses.json';
 import {proposalComponentIds} from './proposalRegistry';
 import {visibleTypePages} from './typePages';
 import {auditStatuses,defaultAuditStatus} from './auditStatus';
+import catalog from '../data/component-catalog.json';
 import OriginTag from './OriginTag.vue';
 import LazyDemo from './LazyDemo.vue';
 import PreviewVersion from './PreviewVersion.vue';
 const query=ref(''),origin=ref('all'),category=ref('all');
 const labels=Object.fromEntries(auditStatuses.map(s=>[s.id,s.label]));
 const categories=Object.entries(visibleTypePages).map(([id,page])=>({id,label:page.label,ids:new Set(page.sections.flatMap(s=>s.items.map(i=>i.id)))}));
-const remaining=inventory.filter(c=>!proposalComponentIds.has(c.id)).sort((a,b)=>a.id.localeCompare(b.id,'fr'));
+const designable=inventory.filter(c=>catalog.components[c.id]?.status==='reviewable');
+const remaining=designable.filter(c=>!proposalComponentIds.has(c.id)).sort((a,b)=>a.id.localeCompare(b.id,'fr'));
 const shown=computed(()=>remaining.filter(c=>(origin.value==='all'||c.origin===origin.value)&&(category.value==='all'||categories.find(g=>g.id===category.value)?.ids.has(c.id))&&c.id.toLocaleLowerCase('fr').includes(query.value.trim().toLocaleLowerCase('fr'))));
 function reset(){query.value='';origin.value='all';category.value='all';}
 </script>
 <template>
  <article class="missing-proposals audit-page">
   <h1>Sans proposition</h1>
-  <p class="intro">{{remaining.length}} composants n’ont pas encore de proposition, sur {{inventory.length}} composants. Cette liste se met à jour à l’ajout d’une proposition, quel que soit le statut d’audit.</p>
+  <p class="intro">{{remaining.length}} composants n’ont pas encore de proposition, sur {{designable.length}} composants designables. Les wrappers et fichiers techniques restent accessibles depuis les sources associées.</p>
   <div class="audit-filters"><label class="search"><span class="sr-only">Rechercher un composant sans proposition</span><input v-model="query" type="search" placeholder="Rechercher un composant…" /></label><select v-model="origin" aria-label="Filtrer par origine"><option value="all">Toutes les origines</option><option value="datagouv-components">datagouv-components</option><option value="cdata">cdata</option></select><select v-model="category" aria-label="Filtrer par catégorie"><option value="all">Toutes les catégories</option><option v-for="group in categories" :key="group.id" :value="group.id">{{group.label}}</option></select></div>
   <p class="audit-results" aria-live="polite">{{shown.length}} composant{{shown.length>1?'s':''}} sur {{remaining.length}} sans proposition</p>
   <div v-if="shown.length" class="preview-list"><article v-for="component in shown" :key="component.id" class="preview-row"><header><div><h2><a :href="`#${encodeURIComponent(component.id)}`">{{component.name}} <span aria-hidden="true">→</span></a></h2><p>{{component.id}}</p></div><div class="preview-meta"><OriginTag :origin="component.origin" /><span class="audit-status" :data-status="statuses[component.id]||defaultAuditStatus">{{labels[statuses[component.id]||defaultAuditStatus]}}</span></div></header><div class="component-preview" :aria-label="`Aperçu actuel de ${component.name}`"><PreviewVersion version="current"><LazyDemo :name="component.id" /></PreviewVersion></div></article></div>

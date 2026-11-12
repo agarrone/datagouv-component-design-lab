@@ -1,0 +1,1932 @@
+{
+  "version": 1,
+  "summary": {
+    "reviewable": 260,
+    "related": 134,
+    "technical": 53
+  },
+  "components": {
+    "ActivityList/ActivityActor": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ActivityList/ActivityList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ActivityList/UserActivityList": {
+      "status": "related",
+      "primary": "ActivityList/ActivityList",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "AnimatedLoader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "AppLink": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Avatar": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "AvatarWithName": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "BannerAction": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "BouncingDots": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "BrandedButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "CardMedia": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Chart/ChartViewer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Chart/ChartViewerWrapper": {
+      "status": "related",
+      "primary": "Chart/ChartViewer",
+      "reason": "Adaptateur de chargement du graphique."
+    },
+    "ChartCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ClientOnly": {
+      "status": "technical",
+      "reason": "Utilitaire de rendu sans surface de design autonome."
+    },
+    "CopyButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DataserviceCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DataserviceQuality": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DataserviceQualityInline": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DataserviceQualityTooltipContent": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetInformation/DatasetEmbedSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetInformation/DatasetInformationSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetInformation/DatasetSchemaSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetInformation/DatasetSpatialSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetInformation/DatasetTemporalitySection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetLabelTag": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetQuality": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetQualityInline": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetQualityTooltipContent": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DateRangeDetails": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DescriptionDetails": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DescriptionList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DescriptionListDetails": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DescriptionListTerm": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DescriptionTerm": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DiscussionMessageCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ExtraAccordion": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Form/BadgeSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/FormatSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/GeozoneSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/GranularitySelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/LicenseSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/Listbox": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Form/OrganizationSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/OrganizationTypeSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/ReuseTopicSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/SchemaSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "Form/SearchableSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Form/SelectGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Form/TagSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sélecteur spécialisé fondé sur SearchableSelect."
+    },
+    "FormattedDate": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Icons/Archive": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/Code": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/Documentation": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/File": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/Image": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/Link": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "Icons/Table": {
+      "status": "technical",
+      "reason": "Icône source, conservée dans le registre mais hors catalogue de composants à revoir."
+    },
+    "InfiniteLoader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "LeafletMap": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "LicenseBadge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "LoadingBlock": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "MarkdownViewer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardBadge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardMeta": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardMetric": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardMetrics": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardOwner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardQuality": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectCardShortDescription": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OpenApiViewer/ContentTypeSelect": {
+      "status": "related",
+      "primary": "OpenApiViewer/OpenApiViewer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OpenApiViewer/EndpointRequest": {
+      "status": "related",
+      "primary": "OpenApiViewer/OpenApiViewer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OpenApiViewer/EndpointResponses": {
+      "status": "related",
+      "primary": "OpenApiViewer/OpenApiViewer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OpenApiViewer/OpenApiViewer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OpenApiViewer/SchemaPanel": {
+      "status": "related",
+      "primary": "OpenApiViewer/OpenApiViewer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OpenApiViewer/SchemaTree": {
+      "status": "related",
+      "primary": "OpenApiViewer/OpenApiViewer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OrganizationCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OrganizationLogo": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OrganizationNameInline": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OrganizationNameWithCertificate": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OrganizationTypeBadge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OwnerType": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "OwnerTypeIcon": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "PaddedContainer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Pagination": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Placeholder": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "PostCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ProgressBar": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "QualityItem": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "QualityItemWarning": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "QualityScore": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "RadioGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "RadioInput": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ReadMore": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ResourceAccordion/DataStructure": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/Datafair.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/Downloads": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/EditButton": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/ImagePreview.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/JsonPreview.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/MapContainer.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/Metadata": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/PdfPreview.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/PdfSkeleton": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/Pmtiles.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/Preview": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/PreviewError": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/PreviewLoader": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/PreviewWrapper": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/ResourceAccordion": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ResourceAccordion/ResourceIcon": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/SchemaBadge": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/SchemaLoader": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/UrlPreview": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceAccordion/XmlPreview.client": {
+      "status": "related",
+      "primary": "ResourceAccordion/ResourceAccordion",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceExplorer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ResourceExplorer/ResourceExplorerHeader": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceExplorerSidebar": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceExplorerViewer": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceMainAction": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceSelector": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceViewerHeader": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceExplorer/ResourceViewerSkeleton": {
+      "status": "related",
+      "primary": "ResourceExplorer/ResourceExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "ResourceIconBadge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ResourceListItem": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ReuseCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ReuseDetails": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "SchemaCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Search/BasicAndAdvancedFilters": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Search/Filter/AccessTypeFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/Filter/DatasetBadgeFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/Filter/FilterButtonGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Search/Filter/FormatFamilyFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/Filter/LastUpdateRangeFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/Filter/ProducerTypeFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/Filter/ReuseTypeFilter": {
+      "status": "related",
+      "primary": "Search/Filter/FilterButtonGroup",
+      "reason": "Configuration spécialisée du groupe de filtres."
+    },
+    "Search/GlobalSearch": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Search/SearchInput": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Search/Sidemenu": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "SegmentedControl": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "SimpleBanner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "SmallChart": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "StatBox": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Tabs/Tab": {
+      "status": "related",
+      "primary": "Tabs/TabGroup",
+      "reason": "Élément constitutif du groupe d’onglets."
+    },
+    "Tabs/TabGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Tabs/TabList": {
+      "status": "related",
+      "primary": "Tabs/TabGroup",
+      "reason": "Élément constitutif du groupe d’onglets."
+    },
+    "Tabs/TabPanel": {
+      "status": "related",
+      "primary": "Tabs/TabGroup",
+      "reason": "Élément constitutif du groupe d’onglets."
+    },
+    "Tabs/TabPanels": {
+      "status": "related",
+      "primary": "Tabs/TabGroup",
+      "reason": "Élément constitutif du groupe d’onglets."
+    },
+    "TabularExplorer/TabularActiveFilters": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularCell": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularCellPopover": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularColumnsMenu": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularDateField": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularDateFilter": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularExplorer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "TabularExplorer/TabularFilterContent": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularFilterPopover": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularMobileFilterButton": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularMobileFilters": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularRowsInfo": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularSearchInput": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularSkeleton": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularTable": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "TabularExplorer/TabularToolbar": {
+      "status": "related",
+      "primary": "TabularExplorer/TabularExplorer",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "Tag": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Toggletip": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "Tooltip": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "TopicCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "TranslationT": {
+      "status": "technical",
+      "reason": "Utilitaire de rendu sans surface de design autonome."
+    },
+    "ValueWatcher": {
+      "status": "technical",
+      "reason": "Utilitaire de rendu sans surface de design autonome."
+    },
+    "cdata/AccessType/AccessTypeForm": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AccessTypes/AccessTypeBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/AccessTypes/AccessTypePanel": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Accordion/Accordion.global": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Accordion/AccordionGroup.global": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/ActionCard/ActionCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Admin/AdminDeleteModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminBadge/AdminBadge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminBadge/DataserviceBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/AdminBadge/DatasetBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/AdminBadge/ReuseBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/AdminContentWithTooltip/AdminContentWithTooltip": {
+      "status": "related",
+      "primary": "Tooltip",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/AdminEmail": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminInput": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminMembershipRequest/AdminMembershipRequest": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminOrgInvitation/AdminOrgInvitation": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminPublishButton/AdminPublishButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminSidebar/AdminSidebarLink/AdminSidebarLink": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/AdminContactPointsTable/AdminContactPointsTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/AdminDataservicesTable/AdminDataservicesTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/AdminDatasetsTable/AdminDatasetsTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/AdminReusesTable/AdminReusesTable": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/AdminTable/Table/AdminTable": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/AdminTable/Table/AdminTableTh": {
+      "status": "related",
+      "primary": "cdata/AdminTable/Table/AdminTable",
+      "reason": "Table métier présentée comme une variante de la table d’administration."
+    },
+    "cdata/Alert/Alert": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/BadgeSelect": {
+      "status": "related",
+      "primary": "Form/SearchableSelect",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/BannerNotif": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/BannerReadOnly": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Brand/BrandBanner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Brand/BrandCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Breadcrumb/Breadcrumb": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Breadcrumbs/AdminBreadcrumb": {
+      "status": "related",
+      "primary": "cdata/Breadcrumb/Breadcrumb",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Breadcrumbs/BreadcrumbItem": {
+      "status": "related",
+      "primary": "cdata/Breadcrumb/Breadcrumb",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Buttons/EditButton": {
+      "status": "related",
+      "primary": "BrandedButton",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Captchetat.client": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/CdataLink": {
+      "status": "technical",
+      "reason": "Utilitaire de rendu sans surface de design autonome."
+    },
+    "cdata/Charts/AdminChartsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Charts/ChartConfigurator": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Charts/ChartFilterGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Charts/ChartFilterRow": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/CommunityResources/AdminCommunityResourcesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/ContactPoint": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/ContactPointSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Dataservices/AccessAudienceCondition": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Dataservices/AdminDataservicesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Dataservices/AdminUpdateDataserviceDatasetsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Dataservices/AdminUpdateDataservicePage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Dataservices/Card/Card": {
+      "status": "related",
+      "primary": "DataserviceCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Dataservices/DescribeDataservice": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Dataservices/New/Step2AddDatasets": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Dataservices/New/Step3CompletePublication": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/DataservicesSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/DatasetAssignmentSelector": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/DatasetAssignmentTable": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/AdminDatasetResourcesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Datasets/AdminDatasetsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Datasets/AdminUpdateDatasetPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Datasets/CompleteResourcePublicationStep": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/DescribeDataset": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/DescribeResource": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/DoiRequestModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/FileEditModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/FileEditModalFromQueryString": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/GeopfDatastoreSelector": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/GeopfPanel": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/GeopfPullButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/GeopfPushStatus": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/GeopfSyncPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Datasets/LegacyResourceList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/New/Step1PublishingType": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/New/Step3AddResources": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/New/Step4CompletePublication": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/Structured/Step1AssociateSchema": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/Structured/Step2LoadData": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/Structured/Step2Sheet": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/Structured/Step3DescribeDataset": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Datasets/TabularEditor.client": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Datasets/UploadResourceModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/DatasetsSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/DescriptionList/DescriptionList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/DescriptionList/DescriptionListDetails": {
+      "status": "related",
+      "primary": "cdata/DescriptionList/DescriptionList",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/DescriptionList/DescriptionListTerm": {
+      "status": "related",
+      "primary": "cdata/DescriptionList/DescriptionList",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Design/CardExamples": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Design/ThemeTagFilter": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Discussions/CommentBlock": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DeleteCommentModal": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DeleteThreadModal": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DiscussionCard": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DiscussionCommentHeader": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DiscussionsList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Discussions/DiscussionsPage": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Discussions/EditCommentModal": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/NewDiscussionForm": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/RespondForm": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/ThreadHeader": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/ThreadModal": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Divider": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Elections/ElectionCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Embeds/DataserviceCard.global": {
+      "status": "related",
+      "primary": "DataserviceCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/DatasetCard.global": {
+      "status": "related",
+      "primary": "DatasetCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/ListReuse.global": {
+      "status": "related",
+      "primary": "ReuseCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/OrganizationCard.global": {
+      "status": "related",
+      "primary": "OrganizationCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/ReuseCard.global": {
+      "status": "related",
+      "primary": "ReuseCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/SearchDataservice.global": {
+      "status": "related",
+      "primary": "Search/GlobalSearch",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Embeds/SearchDataset.global": {
+      "status": "related",
+      "primary": "Search/GlobalSearch",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/FileCard/FileCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/FileCard/FileLoader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/FollowButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Form/FieldsetElement": {
+      "status": "related",
+      "primary": "cdata/Form/FormFieldset",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Form/FormFieldset": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Form/FormWithAccordions": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Form/HelpAccordion": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Form/ToggleSwitch": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/FullPageTabs/FullPageTabs": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/GristTableViewer/GristTableViewer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Harvesters/AdminHarvestersPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Harvesters/CompletePublicationStep": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Harvesters/DescribeHarvester": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Harvesters/HarvesterBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/Harvesters/JobBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/Harvesters/JobPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Harvesters/PreviewLoader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Harvesters/PreviewStep": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/HeroBanner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/InputGroup/InputGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LinkCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LinkToSubject": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LinkedToAccordion/LinkedToAccordion": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LogoAsText": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LogoImage": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LogoNumeriqueGouv": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/LogoOnly": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/MarkdownEditor/EditorButton": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/ImageModal/ImageModalButton": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/InternalEditor": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/MarkdownEditor": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/MarkdownEditor/Milkdown/LinkEdit/LinkEditTooltip": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/Milkdown/TableTooltip/TableTooltip": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/Milkdown/TableTooltip/TooltipButton": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MarkdownEditor/Milkdown/Tooltip/EditorTooltip": {
+      "status": "related",
+      "primary": "cdata/MarkdownEditor/MarkdownEditor",
+      "reason": "Sous-composant interne de l’éditeur Markdown."
+    },
+    "cdata/MenuSearch/MenuSearch": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Metrics/AdminDataservicesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Metrics/AdminDatasetsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Metrics/AdminIndexPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Metrics/AdminPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Metrics/AdminReusesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Modal/Modal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Modal/ModalWithButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Notifications/Discussion": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/FollowToggle": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/MembershipAccepted": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/MembershipRefused": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/MembershipRequest": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/MuteConfirmation": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/NewBadge": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/NewDataservice": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/NewReuse": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/NotificationActions": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/NotificationLayout": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Notifications/NotificationsList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Notifications/SubjectNotifications": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Notifications/TransferRequest": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/Notifications/ValidateHarvester": {
+      "status": "related",
+      "primary": "cdata/Notifications/NotificationLayout",
+      "reason": "Type ou action de notification présenté avec la structure principale."
+    },
+    "cdata/ObjectsSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/OgImage/Default.takumi": {
+      "status": "technical",
+      "reason": "Gabarit de génération d’image, hors catalogue des composants interactifs."
+    },
+    "cdata/OgImage/MainPage.takumi": {
+      "status": "technical",
+      "reason": "Gabarit de génération d’image, hors catalogue des composants interactifs."
+    },
+    "cdata/OgImage/ObjectPage.takumi": {
+      "status": "technical",
+      "reason": "Gabarit de génération d’image, hors catalogue des composants interactifs."
+    },
+    "cdata/Onboarding/OnboardingAudienceCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingCTA": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingFeatureCard": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingHero": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingLogoGrid": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingParagraph": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/OnboardingTitle": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Onboarding/SmallCapsLabel": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/OpenApi/OpenApiProperties": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/OpenApi/OpenApiProperty": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Organization/AdminContactPointsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Organization/ListPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Organization/New/Step1CreateOrJoinOrganization": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Organization/New/Step2DescribeOrganization": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Organization/New/Step3CompleteTheOrganization": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Organization/Search": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/OrganizationOwner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Organizations/BannerFlyout": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Organizations/OrganizationBanner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Organizations/OrganizationBannerControls": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Organizations/OrganizationBannerEditor": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/AccordionBlocEditor": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/AddBlocDropdown": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/BlocImageInput": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/BlocInserter": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/BlocUrlInput": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/BlocsDragLayer": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/BlocsList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/ButtonBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/CardBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/ColumnBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/DataserviceBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/DatasetBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/EditItem": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/EditableText": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/EditoBlocs": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/EditoFooter": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/EditoSearchForm": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/ImageBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/LinksListBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/MarkdownBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/ObjectsSelectorModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/ReuseBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/RoundAddButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Pages/SiteEditoPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Pages/TitleBloc": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Post/card": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Posts/DescribePost": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Posts/PostContentForm": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Posts/PostView": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/PreviewDashboard/DeltaIndicator": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/PreviewDashboard/PercentageMeter": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/ProConnectButton": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/ProducerSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/RadioButtons": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/RecommendationExternal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/RecommendationsDatasets": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/RecommendationsReuses": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Required/Required": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/RequiredExplanation/RequiredExplanation": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Reuses/AdminReusesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Reuses/AdminUpdateReuseDataservicesPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Reuses/AdminUpdateReuseDatasetsPage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Reuses/AdminUpdateReusePage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/Reuses/DescribeReuse": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Reuses/New/Step2AddDatasetsAndDataservices": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Reuses/New/Step3CompletePublication": {
+      "status": "technical",
+      "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
+    },
+    "cdata/Reuses/ReuseCard": {
+      "status": "related",
+      "primary": "ReuseCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/ReusesSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Search/NoResults": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/SectionCollapse": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/SelectAudiencesTypes": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Sidemenu/HeadingsSidemenu": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Sidemenu/HeadingsSidemenuList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Sidemenu/Sidemenu.global": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/SiteFooter/SiteFooter": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/SiteHeader/SiteHeader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Spam/ReportModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Stepper/Stepper": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/SuiviDePublication/HvdStatutBadge": {
+      "status": "related",
+      "primary": "cdata/AdminBadge/AdminBadge",
+      "reason": "Variante métier du badge administratif."
+    },
+    "cdata/Support/Card": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Support/Choice": {
+      "status": "related",
+      "primary": "cdata/Support/Choices",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/Support/Choices": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/Support/Title": {
+      "status": "related",
+      "primary": "cdata/Support/Choices",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "cdata/TabLinks": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/TagsSelect": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/TextClamp.client": {
+      "status": "technical",
+      "reason": "Utilitaire de rendu sans surface de design autonome."
+    },
+    "cdata/TransferBanner": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/TransferRequest": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/TransferRequestList": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/UploadGroup/UploadGroup": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/AdminUserProfileHeader": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/AdminUserProfilePage": {
+      "status": "technical",
+      "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
+    },
+    "cdata/User/ApiTokensSection": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/ChangeEmailModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/ChangePasswordModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/CreateApiTokenModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/DeleteUserModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/ProConnectOnlyModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/RotatePasswordModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/User/TwoFactorSetupModal": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
+    "cdata/dataset/card-lg": {
+      "status": "related",
+      "primary": "DatasetCard",
+      "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    }
+  }
+}
