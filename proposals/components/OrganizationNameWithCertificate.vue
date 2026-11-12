@@ -5,8 +5,8 @@ import {getOrganizationType,isOrganizationCertified} from '../../vendor/datagouv
 import type {Organization,OrganizationReference} from '../../vendor/datagouv-components/src/types/organizations'
 import {useComponentsConfig} from '../../vendor/datagouv-components/src/config'
 import {useTranslation} from '../../vendor/datagouv-components/src/composables/useTranslation'
-import OwnerTypeIcon from './OwnerTypeIcon.vue'
-import Tooltip from './Tooltip.vue'
+import OwnerTypeIcon from '../../vendor/datagouv-components/src/components/OwnerTypeIcon.vue'
+import Tooltip from '../../vendor/datagouv-components/src/components/Tooltip.vue'
 const config=useComponentsConfig(),{t}=useTranslation()
 withDefaults(defineProps<{organization:Organization|OrganizationReference;showCertificate?:boolean;showAcronym?:boolean;showType?:boolean;size?:'xl'|'base'|'sm'|'xs';colorClass?:string;as?:string}>(),{showCertificate:true,showAcronym:false,showType:true,size:'base',colorClass:'',as:'div'})
 </script>

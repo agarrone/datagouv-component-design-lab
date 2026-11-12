@@ -7,14 +7,6 @@
       "151:5098"
     ]
   },
-  "ResourceAccordion/PreviewUnavailable": {
-    "sourceFiles": [
-      "microscope.svg"
-    ],
-    "figmaNodes": [
-      "151:5123"
-    ]
-  },
   "TabularExplorer/TabularTable": {
     "sourceFiles": [
       "_table.svg"
@@ -103,14 +95,6 @@
     ],
     "figmaNodes": [
       "151:5146"
-    ]
-  },
-  "cdata/Metrics/AdminDatasetsPage": {
-    "sourceFiles": [
-      "dataset.svg"
-    ],
-    "figmaNodes": [
-      "151:5109"
     ]
   },
   "cdata/Organization/AdminContactPointsPage": {

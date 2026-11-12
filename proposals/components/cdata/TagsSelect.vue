@@ -41,7 +41,7 @@ import '../../shared/foundations.css'
 import '../../shared/badge.css'
 import {RiCloseLine} from '@remixicon/vue'
 import {useTranslation,useNuxtApp} from '../../../src/compat/application/runtime'
-import SearchableSelect from '../Form/SearchableSelect.vue'
+import SearchableSelect from '../../../vendor/datagouv-components/src/components/Form/SearchableSelect.vue'
 import type { Tag } from '../../../vendor/cdata-runtime/types/types'
 
 defineProps<{

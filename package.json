@@ -9,6 +9,7 @@
     "inventory": "node scripts/inventory.mjs && node scripts/component-catalog.mjs && node scripts/component-options.mjs && node scripts/sync-audit.mjs",
     "source:check": "node scripts/check-upstream.mjs && node scripts/check-cdata-components.mjs",
     "source:update-lock": "node scripts/update-upstream-lock.mjs",
+    "proposals:retire-upstream": "node scripts/retire-upstream-proposals.mjs",
     "check:preview-styles": "node scripts/check-preview-styles.mjs",
     "audit:usage": "node scripts/audit-component-usage.mjs --write-status",
     "test:usage-audit": "node --test scripts/audit-component-usage.test.mjs",
