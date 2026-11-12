@@ -59,9 +59,9 @@ import '../shared/quality.css'
 import { RiInformationLine } from '@remixicon/vue'
 import type { Quality } from '../../vendor/datagouv-components/src/types/datasets'
 import QualityItemWarning from './QualityItemWarning.vue'
-import QualityScore from './QualityScore.vue'
+import QualityScore from '../../vendor/datagouv-components/src/components/QualityScore.vue'
 import Toggletip from '../shared/QualityDetailsPopover.vue'
-import DatasetQualityTooltipContent from './DatasetQualityTooltipContent.vue'
+import DatasetQualityTooltipContent from '../../vendor/datagouv-components/src/components/DatasetQualityTooltipContent.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 
 withDefaults(defineProps<{

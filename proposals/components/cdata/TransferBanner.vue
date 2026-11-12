@@ -105,7 +105,7 @@ import TranslationT from '../../../vendor/datagouv-components/src/components/Tra
 import {toast} from 'vue-sonner'
 import ModalWithButton from '../../../vendor/cdata-components/Modal/ModalWithButton.vue'
 import LinkToSubject from '../../../vendor/cdata-components/LinkToSubject.vue'
-import ProducerSelect from './ProducerSelect.vue'
+import ProducerSelect from '../../../vendor/cdata-components/ProducerSelect.vue'
 import InputGroup from './InputGroup/InputGroup.vue'
 import {useNuxtApp} from '../../../src/compat/application/runtime'
 import {useTranslation} from '../../../src/compat/application/translation'

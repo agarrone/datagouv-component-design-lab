@@ -19,7 +19,7 @@ import '/proposals/shared/notifications.css'
 import {useNotifications} from '/src/compat/application/runtime.js'
 import {computed} from 'vue'
 import {useAPI} from '/src/compat/application/runtime.js'
-import PreviewComponentTransferRequest from './TransferRequest.vue'
+import PreviewComponentTransferRequest from '../../../vendor/cdata-components/TransferRequest.vue'
 
 import type { Organization, User } from '@datagouv/components-next'
 import type { TransferRequest } from '/vendor/cdata-runtime/types/types'

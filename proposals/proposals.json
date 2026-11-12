@@ -77,17 +77,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "resourceexplorer-resourceviewerskeleton-01",
-    "component": "ResourceExplorer/ResourceViewerSkeleton",
-    "title": "Une attente plus discrète et stable",
-    "status": "brouillon",
-    "problem": "Les indicateurs de chargement utilisent des formes et des tailles différentes ; plusieurs squelettes animent leur surface entière ou utilisent un balayage continu.",
-    "intention": "Conserver la géométrie du squelette et les informations déjà disponibles, avec un placeholder statique pour éviter de faire pulser ou balayer toute la zone. Référence Agents : stabilité du contenu et mouvement fonctionnel.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceViewerSkeleton.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "resourceaccordion-pdfskeleton-01",
     "component": "ResourceAccordion/PdfSkeleton",
     "title": "Une attente plus discrète et stable",
@@ -140,17 +129,6 @@
     "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetLabelTag.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "objectcardbadge-01",
-    "component": "ObjectCardBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ObjectCardBadge.vue",
     "reviewUrl": ""
   },
   {
@@ -264,17 +242,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "activitylist-activityactor-01",
-    "component": "ActivityList/ActivityActor",
-    "title": "Une représentation cohérente des personnes et des automates",
-    "status": "brouillon",
-    "problem": "Avatar est carré par défaut et mesure 40 px, tandis que les identités avec nom utilisent 12 px. Le compte supprimé possède un traitement différent ; le nom est tronqué sans restitution dédiée.",
-    "intention": "Forme ronde pour les personnes, 40 px seul et 24 px avec nom, tout en conservant les tailles explicites. Même bordure #E5E5E5 et fond #F6F6F6. Initiales sans photo ou en cas d’erreur, silhouette neutre pour un compte supprimé. Nom lisible avec retour à la ligne ; lien identifiable uniquement lorsqu’il existe. Les automates restent identifiés par leur icône robot. Références Agents et Jakub Krehel.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ActivityList/ActivityActor.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "admin-sidebar-menu-01",
     "component": "cdata/AdminSidebar/AdminSidebarMenu/AdminSidebarMenu",
     "title": "Une navigation d’administration plus lisible",
@@ -297,193 +264,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "cards-datasetcard-01",
-    "component": "DatasetCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Carte de référence : titre et producteur sur une ligne avec troncature, icônes espacées de 4 px du texte. Producteur, date de mise à jour, ligne de métadonnées cliquables avec barre sans pourcentage et compteurs, puis description sur deux lignes. Badges brouillon et archivé à l’intérieur du cadre. Réutiliser les propositions des composants enfants ; voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-dataservicecard-01",
-    "component": "DataserviceCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DataserviceCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-reusecard-01",
-    "component": "ReuseCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ReuseCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-reusehorizontalcard-01",
-    "component": "ReuseHorizontalCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ReuseHorizontalCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-organizationcard-01",
-    "component": "OrganizationCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Réutiliser la composition de OrganizationHorizontalCard : logo, nom certifié, type, métriques et description identiques, en disposition verticale. Résumé compact conservé. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/OrganizationCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-organizationhorizontalcard-01",
-    "component": "OrganizationHorizontalCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Composition de référence partagée avec OrganizationCard ; mêmes primitives de logo et de nom certifié. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/OrganizationHorizontalCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-chartcard-01",
-    "component": "ChartCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md. Les badges accompagnent le titre : brouillon gris, archivage gris et suppression rouge, accès restreint orange et accès avec compte jaune.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ChartCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-postcard-01",
-    "component": "PostCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/PostCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-topiccard-01",
-    "component": "TopicCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Aligner TopicCard sur DatasetCard : rythme 4 px, titre 16/24, bordure stable, survol bleu limité à sa destination, panneau producteur, date dédiée, compteurs compacts avant la description sur deux lignes. Préserver showLogo/showStats et afficher les zéros connus.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/TopicCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-schemacard-01",
-    "component": "SchemaCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Présenter Label et Standard en tags, avec des liens noirs et les états sélectionné et actif conservés. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/SchemaCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-discussionmessagecard-01",
-    "component": "DiscussionMessageCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Rythme de 12 px entre titre, auteur/date et message, sans marges parasites. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DiscussionMessageCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-objectcard-01",
-    "component": "ObjectCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ObjectCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-objectcardheader-01",
-    "component": "ObjectCardHeader",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ObjectCardHeader.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-objectcardshortdescription-01",
-    "component": "ObjectCardShortDescription",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ObjectCardShortDescription.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-objectcardowner-01",
-    "component": "ObjectCardOwner",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ObjectCardOwner.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-cdata-dataservices-card-card-01",
-    "component": "cdata/Dataservices/Card/Card",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Dataservices/Card/Card.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cards-cdata-reuses-reusecard-01",
-    "component": "cdata/Reuses/ReuseCard",
-    "title": "Une hiérarchie commune pour les cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes diffèrent par leurs marges, la troncature des titres, la visibilité de la description sur mobile et la densité des métadonnées. Les cartes verticales et horizontales ont des cadres différents.",
-    "intention": "Conserver les contenus, routes, slots et états métier. Partager une surface blanche, une bordure #E5E5E5, un rayon 6 px, un padding 16 px, des titres Marianne 16/24 et des descriptions 14/22. Laisser les titres et les métadonnées revenir à la ligne, rendre les descriptions visibles sur mobile, adapter les médias à la largeur réelle de la carte, et distinguer focus clavier et survol. Références : Agents, domaines layout/typography/accessibility de Jakub Krehel et chiffres tabulaires pour les compteurs. Voir proposals/cards-01.md pour les arbitrages par composant.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Reuses/ReuseCard.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "quality-licensebadge-01",
     "component": "LicenseBadge",
     "title": "Harmoniser les badges descriptifs",
@@ -495,17 +275,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "quality-ownertype-01",
-    "component": "OwnerType",
-    "title": "Harmoniser les badges descriptifs",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/OwnerType.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "quality-resourceiconbadge-01",
     "component": "ResourceIconBadge",
     "title": "Harmoniser les badges descriptifs",
@@ -514,39 +283,6 @@
     "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ResourceIconBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-progressbar-01",
-    "component": "ProgressBar",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ProgressBar.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-qualityscore-01",
-    "component": "QualityScore",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/QualityScore.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-qualityitem-01",
-    "component": "QualityItem",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/QualityItem.vue",
     "reviewUrl": ""
   },
   {
@@ -583,50 +319,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "quality-datasetqualityinline-01",
-    "component": "DatasetQualityInline",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetQualityInline.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-dataservicequalityinline-01",
-    "component": "DataserviceQualityInline",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Harmoniser avec DatasetCard : rythme 4 px, titre 16/24 bleu uniquement sur sa destination, bordure stable et descriptions sur deux lignes. Producteur et métadonnées utilisent les déclencheurs communs avec état ouvert visible ; statuts près du titre, informations descriptives séparées de l’usage. Contenus métier et responsive conservés. Voir proposals/cards-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DataserviceQualityInline.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-datasetqualitytooltipcontent-01",
-    "component": "DatasetQualityTooltipContent",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetQualityTooltipContent.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-dataservicequalitytooltipcontent-01",
-    "component": "DataserviceQualityTooltipContent",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DataserviceQualityTooltipContent.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "illustrations-blue-activitylist-activitylist-01",
     "component": "ActivityList/ActivityList",
     "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
@@ -636,17 +328,6 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ActivityList/ActivityList.vue",
     "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5098"
-  },
-  {
-    "id": "illustrations-blue-resourceaccordion-previewunavailable-01",
-    "component": "ResourceAccordion/PreviewUnavailable",
-    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
-    "status": "brouillon",
-    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
-    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : microscope.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewUnavailable.vue",
-    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5123"
   },
   {
     "id": "illustrations-blue-tabularexplorer-tabulartable-01",
@@ -768,17 +449,6 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Harvesters/DescribeHarvester.vue",
     "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5146"
-  },
-  {
-    "id": "illustrations-blue-cdata-metrics-admindatasetspage-01",
-    "component": "cdata/Metrics/AdminDatasetsPage",
-    "title": "Reprendre les illustrations retouchées en bleu du fichier Figma",
-    "status": "brouillon",
-    "problem": "La collection Figma fournie doit devenir la référence explicite des illustrations proposées. Certains visuels actuels peuvent déjà être proches ou identiques à cette référence.",
-    "intention": "Réutiliser les SVG exportés de la section « Illustration retouchée bleu », sans modifier leurs tracés, couleurs ou proportions. Correspondances : dataset.svg. Le contenu, les conditions d’affichage et les interactions du composant restent ceux de la source. Le changement est porté par les assets, via le basculement de version du laboratoire. Voir proposals/illustrations-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Metrics/AdminDatasetsPage.vue",
-    "reviewUrl": "https://www.figma.com/design/JoLabdNOOf1aL2kLyNIp9q/?node-id=151-5109"
   },
   {
     "id": "illustrations-blue-cdata-organization-admincontactpointspage-01",
@@ -968,17 +638,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "notifications-transferrequest-01",
-    "component": "cdata/TransferRequest",
-    "title": "Harmoniser les notifications et leurs actions",
-    "status": "brouillon",
-    "problem": "Les demandes de transfert et leur liste possèdent une géométrie et des espacements distincts des notifications ; leur présentation peut être harmonisée tout en conservant leurs actions métier.",
-    "intention": "Partager une structure lisible en 14 px, des icônes Line de 16 px, des surfaces neutres et un rayon de 6 px. Distinguer explicitement Non lue et À traiter, rendre les actions accessibles au clavier et conserver les types, propriétés, liens et règles métier. Harmoniser abonnements, confirmations et demandes. Références Agents et Jakub Krehel ; aucune animation décorative ajoutée. Les interactions du laboratoire restent locales.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/TransferRequest.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "notifications-transferrequestlist-01",
     "component": "cdata/TransferRequestList",
     "title": "Harmoniser les notifications et leurs actions",
@@ -1031,17 +690,6 @@
     "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "metadata-datasetinformation-datasetinformationsection-01",
-    "component": "DatasetInformation/DatasetInformationSection",
-    "title": "Unifier la lecture des métadonnées",
-    "status": "brouillon",
-    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetInformationSection.vue",
     "reviewUrl": ""
   },
   {
@@ -1174,17 +822,6 @@
     "intention": "Surface blanche, bordure neutre, rayon 6 px, repère Remix Line 20 px, titre 16/24 et corps 14/22. Réinitialisation et accès au forum visibles et adaptables à la largeur. Le complément sur le forum ne s’affiche que si son URL existe. forumUrl et resetFilters conservés. Références : Agents et Jakub Krehel.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Search/NoResults.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "identity-empty-ownertypeicon-01",
-    "component": "OwnerTypeIcon",
-    "title": "Aligner les pictogrammes de types de producteurs",
-    "status": "brouillon",
-    "problem": "La taille standard de 14 px diffère de la référence Agents et des badges proposés.",
-    "intention": "Remix Line 16 px, couleur héritée, décoratif pour les technologies d’assistance. Les cinq pictogrammes métier sont conservés ; Autre reste sans icône. Le badge OwnerType proposé utilise ce composant. Références : Agents et Jakub Krehel.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/OwnerTypeIcon.vue",
     "reviewUrl": ""
   },
   {
@@ -1397,17 +1034,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "tables-01-AdminCommunityResourcesTable",
-    "component": "cdata/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminCommunityResourcesTable/AdminCommunityResourcesTable.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "tables-01-AdminDiscussionsTable",
     "component": "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable",
     "title": "Des tableaux cohérents avec l’explorateur de données",
@@ -1526,17 +1152,6 @@
     "intention": "Réutiliser les fondamentaux des champs et du DSFR : surfaces neutres, rayon 6 px, focus bleu commun, sélection explicite et navigation clavier. Conserver les options, suggestions, modèles, slots et synchronisations existants.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/Form/TagSelect.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "selection-01-Form-SearchableSelect",
-    "component": "Form/SearchableSelect",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs, radios, segments et dates utilisent des cadres, focus et densités différents.",
-    "intention": "Réutiliser les fondamentaux des champs et du DSFR : surfaces neutres, rayon 6 px, focus bleu commun, sélection explicite et navigation clavier. Conserver les options, suggestions, modèles, slots et synchronisations existants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Form/SearchableSelect.vue",
     "reviewUrl": ""
   },
   {
@@ -1672,28 +1287,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "selection-01-cdata-ObjectsSelect",
-    "component": "cdata/ObjectsSelect",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/ObjectsSelect.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "selection-01-cdata-ProducerSelect",
-    "component": "cdata/ProducerSelect",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/ProducerSelect.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "selection-01-cdata-RadioButtons",
     "component": "cdata/RadioButtons",
     "title": "Une famille cohérente de champs et de choix",
@@ -1738,17 +1331,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "selection-01-cdata-Support-Choices",
-    "component": "cdata/Support/Choices",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Support/Choices.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "selection-01-cdata-TagsSelect",
     "component": "cdata/TagsSelect",
     "title": "Une famille cohérente de champs et de choix",
@@ -1782,17 +1364,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "application-cards-01-cdata-Brand-BrandCard",
-    "component": "cdata/Brand/BrandCard",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Brand/BrandCard.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "application-cards-01-cdata-Elections-ElectionCard",
     "component": "cdata/Elections/ElectionCard",
     "title": "Partager les repères visuels des cartes de contenu",
@@ -1804,28 +1375,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "application-cards-01-cdata-Embeds-DataserviceCard.global",
-    "component": "cdata/Embeds/DataserviceCard.global",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Embeds/DataserviceCard.global.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "application-cards-01-cdata-Embeds-DatasetCard.global",
-    "component": "cdata/Embeds/DatasetCard.global",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Embeds/DatasetCard.global.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "application-cards-01-cdata-Embeds-ListReuse.global",
     "component": "cdata/Embeds/ListReuse.global",
     "title": "Partager les repères visuels des cartes de contenu",
@@ -1834,28 +1383,6 @@
     "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Embeds/ListReuse.global.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "application-cards-01-cdata-Embeds-OrganizationCard.global",
-    "component": "cdata/Embeds/OrganizationCard.global",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Embeds/OrganizationCard.global.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "application-cards-01-cdata-Embeds-ReuseCard.global",
-    "component": "cdata/Embeds/ReuseCard.global",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Embeds/ReuseCard.global.vue",
     "reviewUrl": ""
   },
   {
@@ -1903,17 +1430,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "application-cards-01-cdata-Post-card",
-    "component": "cdata/Post/card",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Post/card.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "application-cards-01-cdata-RecommendationExternal",
     "component": "cdata/RecommendationExternal",
     "title": "Partager les repères visuels des cartes de contenu",
@@ -1955,28 +1471,6 @@
     "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Support/Card.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "application-cards-01-cdata-dataset-card-lg",
-    "component": "cdata/dataset/card-lg",
-    "title": "Partager les repères visuels des cartes de contenu",
-    "status": "brouillon",
-    "problem": "Les cartes applicatives diffèrent par leurs cadres, densités, niveaux de titre et retours interactifs.",
-    "intention": "Cadre neutre, rayon 6 px, contenu 14/22, titres 16/24, espacements 16 px et focus commun. Conserver les compositions, actions, suggestions et permissions utiles à chaque carte. Les cartes intégrées réutilisent les propositions de leurs composants enfants.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/dataset/card-lg.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "reuse-details-01",
-    "component": "ReuseDetails",
-    "title": "Séparer le type de réutilisation des indicateurs d’usage",
-    "status": "brouillon",
-    "problem": "Les styles du détail natif divergent de la carte de référence.",
-    "intention": "Espacements réguliers entre type, indicateurs, icônes et chiffres. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ReuseDetails.vue",
     "reviewUrl": ""
   },
   {
@@ -2189,28 +1683,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "adminmembershiprequest-01",
-    "component": "cdata/AdminMembershipRequest/AdminMembershipRequest",
-    "title": "Harmoniser les demandes et invitations d’organisation",
-    "status": "brouillon",
-    "problem": "Badges flottants, ombre, identités et commentaires présentent des traitements distincts des notifications proposées.",
-    "intention": "Composer BannerNotif avec badge dans le flux, identité partagée, rôle explicite, commentaire sans italique et date secondaire. Réutiliser Avatar, AdminEmail, AdminBadge et BrandedButton proposés. Conserver les actions, requêtes et événement refresh ; confirmation du refus de rattachement dans la modale existante.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminMembershipRequest/AdminMembershipRequest.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "adminorginvitation-01",
-    "component": "cdata/AdminOrgInvitation/AdminOrgInvitation",
-    "title": "Harmoniser les demandes et invitations d’organisation",
-    "status": "brouillon",
-    "problem": "Badges flottants, ombre, identités et commentaires présentent des traitements distincts des notifications proposées.",
-    "intention": "Composer BannerNotif avec badge dans le flux, identité partagée, rôle explicite, commentaire sans italique et date secondaire. Réutiliser Avatar, AdminEmail, AdminBadge et BrandedButton proposés. Conserver les actions, requêtes et événement refresh ; confirmation du refus de rattachement dans la modale existante.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminOrgInvitation/AdminOrgInvitation.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "applink-links-01",
     "component": "AppLink",
     "title": "Distinguer les navigations et les destinations externes",
@@ -2219,17 +1691,6 @@
     "intention": "Partager les états repos, survol, pression et focus ; pictogramme externe unique ; états ouverts explicites et fermeture par Échap. Préserver la navigation native et les interactions propres aux titres de cartes. Références Primer et fondamentaux DSFR du laboratoire.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/AppLink.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "toggletip-links-01",
-    "component": "Toggletip",
-    "title": "Un comportement commun pour les panneaux d’information",
-    "status": "brouillon",
-    "problem": "Les liens et déclencheurs présentent des états et des indications de destination hétérogènes.",
-    "intention": "Partager les états repos, survol, pression et focus ; pictogramme externe unique ; états ouverts explicites et fermeture par Échap. Préserver la navigation native et les interactions propres aux titres de cartes. Références Primer et fondamentaux DSFR du laboratoire.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Toggletip.vue",
     "reviewUrl": ""
   },
   {
@@ -2475,17 +1936,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "small-components-tabularexplorer-tabularrowsinfo",
-    "component": "TabularExplorer/TabularRowsInfo",
-    "title": "Harmonisation des composants compacts",
-    "status": "brouillon",
-    "problem": "Écarts de typographie, d’espacement, de surface et de traitement des états entre les petits composants.",
-    "intention": "Rattacher ce composant aux fondamentaux communs et aux propositions de ses dépendances. Conserver les propriétés, slots et événements métier. Détails et limites dans proposals/small-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularRowsInfo.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "small-components-cdata-onboarding-smallcapslabel",
     "component": "cdata/Onboarding/SmallCapsLabel",
     "title": "Harmonisation des composants compacts",
@@ -2615,28 +2065,6 @@
     "intention": "Rattacher ce composant aux fondamentaux communs et aux propositions de ses dépendances. Conserver les propriétés, slots et événements métier. Détails et limites dans proposals/small-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/OrganizationLogo.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "small-components-cdata-form-formfieldset",
-    "component": "cdata/Form/FormFieldset",
-    "title": "Harmonisation des composants compacts",
-    "status": "brouillon",
-    "problem": "Écarts de typographie, d’espacement, de surface et de traitement des états entre les petits composants.",
-    "intention": "Rattacher ce composant aux fondamentaux communs et aux propositions de ses dépendances. Conserver les propriétés, slots et événements métier. Détails et limites dans proposals/small-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Form/FormFieldset.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "small-components-tooltip",
-    "component": "Tooltip",
-    "title": "Harmonisation des composants compacts",
-    "status": "brouillon",
-    "problem": "Écarts de typographie, d’espacement, de surface et de traitement des états entre les petits composants.",
-    "intention": "Rattacher ce composant aux fondamentaux communs et aux propositions de ses dépendances. Conserver les propriétés, slots et événements métier. Détails et limites dans proposals/small-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Tooltip.vue",
     "reviewUrl": ""
   },
   {
@@ -2794,17 +2222,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-markdownviewer-01",
-    "component": "MarkdownViewer",
-    "title": "Partager les conventions de lecture",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Typographie de lecture et code cohérente ; préserver formatage métier, niveaux de titres et contenu. Les dates gardent leur sémantique time et utilisent les chiffres tabulaires. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/MarkdownViewer.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-openapiviewer-endpointrequest-01",
     "component": "OpenApiViewer/EndpointRequest",
     "title": "Unifier l’exploration et les aperçus de ressources",
@@ -2860,127 +2277,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-resourceaccordion-datafair-client-01",
-    "component": "ResourceAccordion/Datafair.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Datafair.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-imagepreview-client-01",
-    "component": "ResourceAccordion/ImagePreview.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/ImagePreview.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-jsonpreview-client-01",
-    "component": "ResourceAccordion/JsonPreview.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/JsonPreview.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-mapcontainer-client-01",
-    "component": "ResourceAccordion/MapContainer.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/MapContainer.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-pdfpreview-client-01",
-    "component": "ResourceAccordion/PdfPreview.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PdfPreview.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-pmtiles-client-01",
-    "component": "ResourceAccordion/Pmtiles.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Pmtiles.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-preview-01",
-    "component": "ResourceAccordion/Preview",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/Preview.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-previewwrapper-01",
-    "component": "ResourceAccordion/PreviewWrapper",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/PreviewWrapper.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-resourceaccordion-01",
-    "component": "ResourceAccordion/ResourceAccordion",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/ResourceAccordion.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceaccordion-xmlpreview-client-01",
-    "component": "ResourceAccordion/XmlPreview.client",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/XmlPreview.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceexplorer-resourceexplorer-01",
-    "component": "ResourceExplorer/ResourceExplorer",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorer.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-resourceexplorer-resourceexplorerheader-01",
     "component": "ResourceExplorer/ResourceExplorerHeader",
     "title": "Unifier l’exploration et les aperçus de ressources",
@@ -3003,17 +2299,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-resourceexplorer-resourceexplorerviewer-01",
-    "component": "ResourceExplorer/ResourceExplorerViewer",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceExplorerViewer.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-resourceexplorer-resourceselector-01",
     "component": "ResourceExplorer/ResourceSelector",
     "title": "Unifier l’exploration et les aperçus de ressources",
@@ -3022,17 +2307,6 @@
     "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceSelector.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-resourceexplorer-resourceviewerheader-01",
-    "component": "ResourceExplorer/ResourceViewerHeader",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceExplorer/ResourceViewerHeader.vue",
     "reviewUrl": ""
   },
   {
@@ -3055,17 +2329,6 @@
     "intention": "Suggestions, sélection, désactivation et focus communs ; réutiliser les champs et filtres proposés. Conserver requêtes, modèles, navigation et événements. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/Search/BasicAndAdvancedFilters.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-search-globalsearch-01",
-    "component": "Search/GlobalSearch",
-    "title": "Harmoniser recherche et suggestions",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Suggestions, sélection, désactivation et focus communs ; réutiliser les champs et filtres proposés. Conserver requêtes, modèles, navigation et événements. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Search/GlobalSearch.vue",
     "reviewUrl": ""
   },
   {
@@ -3146,17 +2409,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-tabularexplorer-tabularcolumnsmenu-01",
-    "component": "TabularExplorer/TabularColumnsMenu",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularColumnsMenu.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-tabularexplorer-tabulardatefilter-01",
     "component": "TabularExplorer/TabularDateFilter",
     "title": "Unifier l’exploration et les aperçus de ressources",
@@ -3165,17 +2417,6 @@
     "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularDateFilter.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-tabularexplorer-tabularexplorer-01",
-    "component": "TabularExplorer/TabularExplorer",
-    "title": "Unifier l’exploration et les aperçus de ressources",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Habillage compact, textes techniques en mono, menus et focus communs. Conserver données, chargement, filtres, tri, redimensionnement et plein écran. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularExplorer.vue",
     "reviewUrl": ""
   },
   {
@@ -3410,17 +2651,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-dataservices-describedataservice-01",
-    "component": "cdata/Dataservices/DescribeDataservice",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Dataservices/DescribeDataservice.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-dataservices-new-step2adddatasets-01",
     "component": "cdata/Dataservices/New/Step2AddDatasets",
     "title": "Harmoniser les formulaires et pages métier",
@@ -3454,17 +2684,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-datasets-admindatasetresourcespage-01",
-    "component": "cdata/Datasets/AdminDatasetResourcesPage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/AdminDatasetResourcesPage.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-datasets-adminupdatedatasetpage-01",
     "component": "cdata/Datasets/AdminUpdateDatasetPage",
     "title": "Harmoniser les formulaires et pages métier",
@@ -3495,17 +2714,6 @@
     "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Datasets/DoiRequestModal.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-datasets-fileeditmodal-01",
-    "component": "cdata/Datasets/FileEditModal",
-    "title": "Unifier les surfaces de modales",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/FileEditModal.vue",
     "reviewUrl": ""
   },
   {
@@ -3605,17 +2813,6 @@
     "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Datasets/Structured/Step2Sheet.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-datasets-tabulareditor-client-01",
-    "component": "cdata/Datasets/TabularEditor.client",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/TabularEditor.client.vue",
     "reviewUrl": ""
   },
   {
@@ -3916,17 +3113,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-markdowneditor-milkdown-linkpreview-linkpreviewtooltip-01",
-    "component": "cdata/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/MarkdownEditor/Milkdown/LinkPreview/LinkPreviewTooltip.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-markdowneditor-milkdown-tableselector-tableselectorwidget-01",
     "component": "cdata/MarkdownEditor/Milkdown/TableSelector/TableSelectorWidget",
     "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
@@ -3982,17 +3168,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-metrics-adminindexpage-01",
-    "component": "cdata/Metrics/AdminIndexPage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Metrics/AdminIndexPage.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-metrics-adminpage-01",
     "component": "cdata/Metrics/AdminPage",
     "title": "Harmoniser les formulaires et pages métier",
@@ -4023,17 +3198,6 @@
     "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Modal/Modal.client.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-modal-modalwithbutton-01",
-    "component": "cdata/Modal/ModalWithButton",
-    "title": "Unifier les surfaces de modales",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Modal/ModalWithButton.vue",
     "reviewUrl": ""
   },
   {
@@ -4158,17 +3322,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-organization-new-step2describeorganization-01",
-    "component": "cdata/Organization/New/Step2DescribeOrganization",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Organization/New/Step2DescribeOrganization.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-organization-new-step3completetheorganization-01",
     "component": "cdata/Organization/New/Step3CompleteTheOrganization",
     "title": "Harmoniser les formulaires et pages métier",
@@ -4235,83 +3388,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-pages-accordionbloceditor-01",
-    "component": "cdata/Pages/AccordionBlocEditor",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/AccordionBlocEditor.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-addblocdropdown-01",
-    "component": "cdata/Pages/AddBlocDropdown",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/AddBlocDropdown.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-addobjectcard-01",
-    "component": "cdata/Pages/AddObjectCard",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/AddObjectCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-blocwithtitleandsubtitle-01",
-    "component": "cdata/Pages/BlocWithTitleAndSubtitle",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/BlocWithTitleAndSubtitle.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-brandedbuttoneditor-01",
-    "component": "cdata/Pages/BrandedButtonEditor",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/BrandedButtonEditor.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-dataserviceslistbloc-01",
-    "component": "cdata/Pages/DataservicesListBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/DataservicesListBloc.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-datasetslistbloc-01",
-    "component": "cdata/Pages/DatasetsListBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/DatasetsListBloc.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-pages-editabletext-01",
     "component": "cdata/Pages/EditableText",
     "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
@@ -4320,17 +3396,6 @@
     "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Pages/EditableText.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-editoblocs-01",
-    "component": "cdata/Pages/EditoBlocs",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/EditoBlocs.vue",
     "reviewUrl": ""
   },
   {
@@ -4356,72 +3421,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-pages-herobloc-01",
-    "component": "cdata/Pages/HeroBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/HeroBloc.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-linkslistbloc-01",
-    "component": "cdata/Pages/LinksListBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/LinksListBloc.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-markdownbloc-01",
-    "component": "cdata/Pages/MarkdownBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/MarkdownBloc.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-reuseslistbloc-01",
-    "component": "cdata/Pages/ReusesListBloc",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/ReusesListBloc.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-pages-siteeditopage-01",
-    "component": "cdata/Pages/SiteEditoPage",
-    "title": "Harmoniser les outils d’édition et les blocs éditoriaux",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Cadre d’édition, barre d’outils, menus et focus cohérents. Conserver le contenu saisi, les providers, les opérations et les niveaux de titres du document. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Pages/SiteEditoPage.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-posts-describepost-01",
-    "component": "cdata/Posts/DescribePost",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Posts/DescribePost.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-posts-postcontentform-01",
     "component": "cdata/Posts/PostContentForm",
     "title": "Harmoniser les formulaires et pages métier",
@@ -4444,17 +3443,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-reuses-adminupdatereusedataservicespage-01",
-    "component": "cdata/Reuses/AdminUpdateReuseDataservicesPage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Reuses/AdminUpdateReuseDataservicesPage.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-reuses-adminupdatereusedatasetspage-01",
     "component": "cdata/Reuses/AdminUpdateReuseDatasetsPage",
     "title": "Harmoniser les formulaires et pages métier",
@@ -4474,17 +3462,6 @@
     "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Reuses/AdminUpdateReusePage.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-reuses-describereuse-01",
-    "component": "cdata/Reuses/DescribeReuse",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Reuses/DescribeReuse.vue",
     "reviewUrl": ""
   },
   {
@@ -4518,28 +3495,6 @@
     "intention": "Marianne, états sélectionnés explicites, focus commun et cibles compactes. Conserver routage, aria-current, clavier et comportement responsive natifs. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Sidemenu/Sidemenu.global.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-sitefooter-sitefooter-01",
-    "component": "cdata/SiteFooter/SiteFooter",
-    "title": "Harmoniser la navigation et ses états",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Marianne, états sélectionnés explicites, focus commun et cibles compactes. Conserver routage, aria-current, clavier et comportement responsive natifs. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/SiteFooter/SiteFooter.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-siteheader-siteheader-01",
-    "component": "cdata/SiteHeader/SiteHeader",
-    "title": "Harmoniser la navigation et ses états",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Marianne, états sélectionnés explicites, focus commun et cibles compactes. Conserver routage, aria-current, clavier et comportement responsive natifs. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/SiteHeader/SiteHeader.vue",
     "reviewUrl": ""
   },
   {
@@ -4598,28 +3553,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-user-adminuserprofilepage-01",
-    "component": "cdata/User/AdminUserProfilePage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/User/AdminUserProfilePage.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-user-apitokenssection-01",
-    "component": "cdata/User/ApiTokensSection",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/User/ApiTokensSection.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-user-changeemailmodal-01",
     "component": "cdata/User/ChangeEmailModal",
     "title": "Unifier les surfaces de modales",
@@ -4672,17 +3605,6 @@
     "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/User/RotatePasswordModal.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-user-twofactorsetupmodal-01",
-    "component": "cdata/User/TwoFactorSetupModal",
-    "title": "Unifier les surfaces de modales",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/User/TwoFactorSetupModal.vue",
     "reviewUrl": ""
   }
 ]

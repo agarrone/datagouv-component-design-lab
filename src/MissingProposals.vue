@@ -13,18 +13,18 @@ const query=ref(''),origin=ref('all'),category=ref('all');
 const labels=Object.fromEntries(auditStatuses.map(s=>[s.id,s.label]));
 const categories=Object.entries(visibleTypePages).map(([id,page])=>({id,label:page.label,ids:new Set(page.sections.flatMap(s=>s.items.map(i=>i.id)))}));
 const designable=inventory.filter(c=>catalog.components[c.id]?.status==='reviewable');
-const remaining=designable.filter(c=>!proposalComponentIds.has(c.id)).sort((a,b)=>a.id.localeCompare(b.id,'fr'));
+const remaining=designable.filter(c=>statuses[c.id]!=='valide'&&!proposalComponentIds.has(c.id)).sort((a,b)=>a.id.localeCompare(b.id,'fr'));
 const shown=computed(()=>remaining.filter(c=>(origin.value==='all'||c.origin===origin.value)&&(category.value==='all'||categories.find(g=>g.id===category.value)?.ids.has(c.id))&&c.id.toLocaleLowerCase('fr').includes(query.value.trim().toLocaleLowerCase('fr'))));
 function reset(){query.value='';origin.value='all';category.value='all';}
 </script>
 <template>
  <article class="missing-proposals audit-page">
   <h1>Sans proposition</h1>
-  <p class="intro">{{remaining.length}} composants n’ont pas encore de proposition, sur {{designable.length}} composants designables. Les wrappers et fichiers techniques restent accessibles depuis les sources associées.</p>
+  <p class="intro">{{remaining.length}} composants encore à traiter n’ont pas de proposition, sur {{designable.length}} composants designables. Les composants validés, dont la version amont fait foi, sont exclus de cette liste.</p>
   <div class="audit-filters"><label class="search"><span class="sr-only">Rechercher un composant sans proposition</span><input v-model="query" type="search" placeholder="Rechercher un composant…" /></label><select v-model="origin" aria-label="Filtrer par origine"><option value="all">Toutes les origines</option><option value="datagouv-components">datagouv-components</option><option value="cdata">cdata</option></select><select v-model="category" aria-label="Filtrer par catégorie"><option value="all">Toutes les catégories</option><option v-for="group in categories" :key="group.id" :value="group.id">{{group.label}}</option></select></div>
   <p class="audit-results" aria-live="polite">{{shown.length}} composant{{shown.length>1?'s':''}} sur {{remaining.length}} sans proposition</p>
   <div v-if="shown.length" class="preview-list"><article v-for="component in shown" :key="component.id" class="preview-row"><header><div><h2><a :href="`#${encodeURIComponent(component.id)}`">{{component.name}} <span aria-hidden="true">→</span></a></h2><p>{{component.id}}</p></div><div class="preview-meta"><OriginTag :origin="component.origin" /><span class="audit-status" :data-status="statuses[component.id]||defaultAuditStatus">{{labels[statuses[component.id]||defaultAuditStatus]}}</span></div></header><div class="component-preview" :aria-label="`Aperçu actuel de ${component.name}`"><PreviewVersion version="current"><LazyDemo :name="component.id" /></PreviewVersion></div></article></div>
-  <div v-else class="empty"><h2>{{remaining.length?'Aucun composant trouvé':'Tous les composants ont une proposition'}}</h2><button v-if="remaining.length" class="button" @click="reset">Réinitialiser les filtres</button></div>
+  <div v-else class="empty"><h2>{{remaining.length?'Aucun composant trouvé':'Tous les composants restants ont une proposition'}}</h2><button v-if="remaining.length" class="button" @click="reset">Réinitialiser les filtres</button></div>
  </article>
 </template>
 <style scoped>.missing-proposals .search{display:block;flex:1}.missing-proposals input{width:100%;padding:10px 12px;background:white;border:1px solid #e0e3ea;border-radius:4px}.missing-proposals th a{color:#000091;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
