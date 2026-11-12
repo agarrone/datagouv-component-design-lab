@@ -2,7 +2,7 @@ import * as f from './fixtures';
 const longTitle='Données territoriales détaillées : population, équipements et services publics des communes françaises — millésime 2026';
 const longOrganization={...f.organization,name:'Observatoire national des territoires et des politiques publiques locales'};
 const examples=(id,values)=>values.map(([label,props],i)=>({id,key:`card-${id}-${i}`,label,props}));
-const definitions={DatasetCard:['dataset',f.dataset],DataserviceCard:['dataservice',f.dataservice],ReuseCard:['reuse',f.reuse],ReuseHorizontalCard:['reuse',f.reuse],OrganizationCard:['organization',f.organization],OrganizationHorizontalCard:['organization',f.organization],ChartCard:['chart',f.chart],PostCard:['post',f.post],TopicCard:['topic',f.topic],DiscussionMessageCard:['discussion',f.discussion]};
+const definitions={DatasetCard:['dataset',f.dataset],DataserviceCard:['dataservice',f.dataservice],ReuseCard:['reuse',f.reuse],OrganizationCard:['organization',f.organization],ChartCard:['chart',f.chart],PostCard:['post',f.post],TopicCard:['topic',f.topic],DiscussionMessageCard:['discussion',f.discussion]};
 export const cardVariants=Object.fromEntries(Object.entries(definitions).map(([id,[prop,value]])=>[id,examples(id,[
  ['Standard',{[prop]:value}],
  ['Titre et producteur longs',{[prop]:{...value,title:longTitle,name:longTitle,organization:longOrganization}}],
@@ -19,7 +19,7 @@ cardVariants.DataserviceCard.push(...examples('DataserviceCard-states',[
  ['Archivé',{dataservice:{...f.dataservice,archived_at:'2026-10-01'}}],
  ['Sans description affichée',{dataservice:f.dataservice,showDescription:false}],
 ]));
-for(const id of ['ReuseCard','ReuseHorizontalCard'])cardVariants[id].push(...examples(id+'-states',[
+cardVariants.ReuseCard.push(...examples('ReuseCard-states',[
  ['Brouillon',{reuse:{...f.reuse,private:true}}],['Archivé',{reuse:{...f.reuse,archived:true}}],
 ]));
 cardVariants.SchemaCard=examples('SchemaCard',[
@@ -28,7 +28,7 @@ cardVariants.SchemaCard=examples('SchemaCard',[
  ['Option active au clavier',{schema:f.schema,selectable:true,active:true}],
  ['Titre et description longs',{schema:{...f.schema,title:longTitle,description:longTitle.repeat(2)},showLinks:true}],
 ]);
-for(const [id,prop,value] of [['PostCard','post',f.post],['ChartCard','chart',f.chart],['ReuseCard','reuse',f.reuse],['ReuseHorizontalCard','reuse',f.reuse]])cardVariants[id].push(...examples(id+'-media',[
+for(const [id,prop,value] of [['PostCard','post',f.post],['ChartCard','chart',f.chart],['ReuseCard','reuse',f.reuse]])cardVariants[id].push(...examples(id+'-media',[
  ['Sans image',{[prop]:{...value,image:null}}],
  ['Image indisponible',{[prop]:{...value,image:'/demo/card-image-unavailable.png'}}],
 ]));
@@ -69,7 +69,7 @@ function snapshot(value,parents=new Set()) {
  parents.delete(value);return result;
 }
 for(const variants of Object.values(cardVariants))for(const variant of variants)variant.props=snapshot(variant.props);
-for(const id of ['PostCard','ReuseCard','ReuseHorizontalCard','cdata/Reuses/ReuseCard'])cardVariants[id][0].label='Avec image';
+for(const id of ['PostCard','ReuseCard','cdata/Reuses/ReuseCard'])cardVariants[id][0].label='Avec image';
 
 cardVariants.TopicCard.push(...examples('TopicCard-options',[
  ['Sans logo',{topic:f.topic,showLogo:false}],

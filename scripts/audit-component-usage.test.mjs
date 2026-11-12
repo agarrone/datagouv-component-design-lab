@@ -41,7 +41,8 @@ test('les changements de statut préservent les décisions et travaux existants'
 
 test('les composants applicatifs ne sont pas des racines d’usage par leur seule présence',()=>{
  const candidates=Object.entries(report.components).filter(([id,c])=>id.startsWith('cdata/')&&['demo-only','no-runtime-reference'].includes(c.state));
- assert.deepEqual(candidates.map(([id])=>id).sort(),['cdata/Design/ThemeTagFilter','cdata/LogoOnly','cdata/Search/NoResults']);
+ assert.deepEqual(candidates.map(([id])=>id).sort(),['cdata/Design/CardExamples','cdata/Design/ThemeTagFilter','cdata/LogoOnly','cdata/Search/NoResults']);
+ assert.equal(report.components['cdata/Design/CardExamples'].state,'demo-only');
  assert.equal(report.components['cdata/Design/ThemeTagFilter'].state,'demo-only');
  assert.equal(report.components['cdata/LogoOnly'].state,'demo-only');
  assert.equal(report.components['cdata/Search/NoResults'].referenceCount,0);

@@ -10,13 +10,11 @@ import '../proposals/shared/foundations.css';
 import DatasetCardSkeleton from '../proposals/skeletons/DatasetCardSkeleton.vue';
 import DataserviceCardSkeleton from '../proposals/skeletons/DataserviceCardSkeleton.vue';
 import OrganizationCardSkeleton from '../proposals/skeletons/OrganizationCardSkeleton.vue';
-import OrganizationHorizontalCardSkeleton from '../proposals/skeletons/OrganizationHorizontalCardSkeleton.vue';
 import ReuseCardSkeleton from '../proposals/skeletons/ReuseCardSkeleton.vue';
-import ReuseHorizontalCardSkeleton from '../proposals/skeletons/ReuseHorizontalCardSkeleton.vue';
 import ChartCardSkeleton from '../proposals/skeletons/ChartCardSkeleton.vue';
 import PostCardSkeleton from '../proposals/skeletons/PostCardSkeleton.vue';
 import TopicCardSkeleton from '../proposals/skeletons/TopicCardSkeleton.vue';
-const skeletons={DatasetCard:DatasetCardSkeleton,DataserviceCard:DataserviceCardSkeleton,OrganizationCard:OrganizationCardSkeleton,OrganizationHorizontalCard:OrganizationHorizontalCardSkeleton,ReuseCard:ReuseCardSkeleton,ReuseHorizontalCard:ReuseHorizontalCardSkeleton,ChartCard:ChartCardSkeleton,PostCard:PostCardSkeleton,TopicCard:TopicCardSkeleton};
+const skeletons={DatasetCard:DatasetCardSkeleton,DataserviceCard:DataserviceCardSkeleton,OrganizationCard:OrganizationCardSkeleton,ReuseCard:ReuseCardSkeleton,ChartCard:ChartCardSkeleton,PostCard:PostCardSkeleton,TopicCard:TopicCardSkeleton};
 const loading=reactive({});
 const allLoading=computed({get:()=>items.every(({id})=>loading[id]),set:value=>items.forEach(({id})=>loading[id]=value)});
 const certified=ref(true);
@@ -25,7 +23,7 @@ function demoProps(id) {
  const decorate=organization=>({...organization,badges:[...(organization.badges || []).filter(b=>b.kind!=='certified'),...(certified.value?[{kind:'certified'}]:[])]});
  return Object.fromEntries(Object.entries(sample).map(([key,value])=>[key,key==='organization' && value ? decorate(value) : value?.organization ? {...value,organization:decorate(value.organization)} : value]));
 }
-const core=['DatasetCard','DataserviceCard','OrganizationCard','OrganizationHorizontalCard','ReuseCard','ReuseHorizontalCard','ChartCard','PostCard','TopicCard'].map(id=>({id}));
+const core=['DatasetCard','DataserviceCard','OrganizationCard','ReuseCard','ChartCard','PostCard','TopicCard'].map(id=>({id}));
 const adapters=[
  {id:'cdata/Dataservices/Card/Card',target:'DataserviceCard',note:'Cet adaptateur transmet les données, les URL et l’option de description au composant partagé. Peut-on utiliser directement DataserviceCard aux points d’appel, ou conserver cet adaptateur pour centraliser ces valeurs ?'},
  ...[['Dataservice','DataserviceCard'],['Dataset','DatasetCard'],['Organization','OrganizationCard'],['Reuse','ReuseCard']].map(([name,target])=>({id:`cdata/Embeds/${name}Card.global`,target,note:`Ce composant charge les données depuis un slug et gère leur état de chargement avant d’afficher ${target}. Peut-on conserver uniquement cette responsabilité dans un adaptateur léger, avec ${target} pour le rendu ? Un remplacement direct doit préserver ce chargement.`})),

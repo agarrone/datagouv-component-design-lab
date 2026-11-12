@@ -7,7 +7,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 31
+        "line": 61
       },
       {
         "name": "size",
@@ -16,7 +16,7 @@
         "default": "12",
         "defaultValue": 12,
         "comment": "",
-        "line": 32
+        "line": 62
       },
       {
         "name": "withLink",
@@ -25,7 +25,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 33
+        "line": 63
       }
     ],
     "unresolved": false
@@ -333,6 +333,40 @@
     ],
     "unresolved": false
   },
+  "CardMedia": {
+    "props": [
+      {
+        "name": "src",
+        "type": "string | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 30
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 31
+      },
+      {
+        "name": "kind",
+        "type": "'post' | 'reuse' | 'chart'",
+        "required": true,
+        "default": null,
+        "choices": [
+          "post",
+          "reuse",
+          "chart"
+        ],
+        "comment": "",
+        "line": 32
+      }
+    ],
+    "unresolved": false
+  },
   "Chart/ChartViewer": {
     "props": [
       {
@@ -375,7 +409,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 102
+        "line": 96
       },
       {
         "name": "chartUrl",
@@ -383,7 +417,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 103
+        "line": 97
       },
       {
         "name": "organizationUrl",
@@ -391,7 +425,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 104
+        "line": 98
       }
     ],
     "unresolved": false
@@ -464,7 +498,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 148
+        "line": 138
       },
       {
         "name": "dataserviceUrl",
@@ -472,7 +506,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 149
+        "line": 139
       },
       {
         "name": "organizationUrl",
@@ -480,7 +514,7 @@
         "required": false,
         "default": null,
         "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
-        "line": 151
+        "line": 141
       },
       {
         "name": "showDescription",
@@ -489,7 +523,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 152
+        "line": 142
       },
       {
         "name": "titleTag",
@@ -497,7 +531,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 153
+        "line": 143
       }
     ],
     "unresolved": false
@@ -532,7 +566,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 27
+        "line": 13
       }
     ],
     "unresolved": false
@@ -545,7 +579,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 75
+        "line": 67
       }
     ],
     "unresolved": false
@@ -558,7 +592,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 150
+        "line": 137
       },
       {
         "name": "datasetUrl",
@@ -566,7 +600,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 151
+        "line": 138
       },
       {
         "name": "datasetUrlInNewTab",
@@ -575,7 +609,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 152
+        "line": 139
       },
       {
         "name": "organizationUrl",
@@ -583,7 +617,7 @@
         "required": false,
         "default": null,
         "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
-        "line": 154
+        "line": 141
       },
       {
         "name": "showDescriptionShort",
@@ -592,7 +626,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 155
+        "line": 142
       },
       {
         "name": "titleTag",
@@ -600,7 +634,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 156
+        "line": 143
       }
     ],
     "unresolved": false
@@ -626,15 +660,15 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 59
+        "line": 60
       },
       {
         "name": "tagUrl",
-        "type": "(tag: string) => string",
+        "type": "(tag: string) => string | RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "",
-        "line": 60
+        "line": 61
       }
     ],
     "unresolved": false
@@ -729,7 +763,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 27
+        "line": 13
       }
     ],
     "unresolved": false
@@ -742,7 +776,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 74
+        "line": 72
       }
     ],
     "unresolved": false
@@ -798,7 +832,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 56
+        "line": 53
       },
       {
         "name": "discussionUrl",
@@ -806,7 +840,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 57
+        "line": 54
       },
       {
         "name": "organizationUrl",
@@ -814,7 +848,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 58
+        "line": 55
       }
     ],
     "unresolved": false
@@ -1562,6 +1596,15 @@
         ],
         "comment": "",
         "line": 16
+      },
+      {
+        "name": "followLinks",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Only for content written by the team, see formatMarkdown.",
+        "line": 18
       }
     ],
     "unresolved": false
@@ -1569,12 +1612,37 @@
   "ObjectCard": {
     "props": [
       {
-        "name": "articleClass",
-        "type": "string | string[] | Record<string, boolean>",
+        "name": "url",
+        "type": "RouteLocationRaw",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 76
+      },
+      {
+        "name": "target",
+        "type": "string",
         "required": false,
         "default": null,
         "comment": "",
-        "line": 30
+        "line": 77
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 78
+      },
+      {
+        "name": "titleTag",
+        "type": "TitleTag",
+        "required": false,
+        "default": "'h3'",
+        "defaultValue": "h3",
+        "comment": "",
+        "line": 79
       },
       {
         "name": "mediaSize",
@@ -1587,8 +1655,26 @@
           "lg",
           "xl"
         ],
+        "comment": "`sm` is a logo or an avatar, `lg` and `xl` an illustration.",
+        "line": 81
+      },
+      {
+        "name": "stacked",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Puts the media above the content instead of beside it. Over a cover, the media overlaps it.",
+        "line": 83
+      },
+      {
+        "name": "highlighted",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
         "comment": "",
-        "line": 31
+        "line": 84
       }
     ],
     "unresolved": false
@@ -1597,16 +1683,36 @@
     "props": [
       {
         "name": "icon",
-        "type": "Component",
-        "required": true,
+        "type": "Component | null",
+        "required": false,
         "default": null,
         "comment": "",
         "line": 20
+      },
+      {
+        "name": "tone",
+        "type": "'neutral' | 'info' | 'warning' | 'yellow' | 'danger'",
+        "required": false,
+        "default": "'neutral'",
+        "defaultValue": "neutral",
+        "choices": [
+          "neutral",
+          "info",
+          "warning",
+          "yellow",
+          "danger"
+        ],
+        "comment": "",
+        "line": 21
       }
     ],
     "unresolved": false
   },
-  "ObjectCardHeader": {
+  "ObjectCardMeta": {
+    "props": [],
+    "unresolved": false
+  },
+  "ObjectCardMetric": {
     "props": [
       {
         "name": "icon",
@@ -1614,45 +1720,58 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 35
+        "line": 18
       },
       {
-        "name": "url",
-        "type": "RouteLocationRaw",
+        "name": "value",
+        "type": "number",
         "required": true,
         "default": null,
         "comment": "",
-        "line": 36
+        "line": 19
       },
       {
-        "name": "target",
+        "name": "label",
         "type": "string",
-        "required": false,
+        "required": true,
         "default": null,
-        "comment": "",
-        "line": 37
-      },
-      {
-        "name": "titleTag",
-        "type": "TitleTag",
-        "required": false,
-        "default": "'h3'",
-        "defaultValue": "h3",
-        "comment": "",
-        "line": 38
+        "comment": "Full sentence read by screen readers instead of the abbreviated value, e.g. \"1 234 vues\"",
+        "line": 21
       }
     ],
     "unresolved": false
   },
+  "ObjectCardMetrics": {
+    "props": [],
+    "unresolved": false
+  },
   "ObjectCardOwner": {
     "props": [
+      {
+        "name": "showDetails",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 155
+      },
+      {
+        "name": "showLogo",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 156
+      },
       {
         "name": "organization",
         "type": "OrganizationReference | null",
         "required": false,
         "default": null,
         "comment": "",
-        "line": 45
+        "line": 157
       },
       {
         "name": "owner",
@@ -1660,7 +1779,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 46
+        "line": 158
       },
       {
         "name": "organizationUrl",
@@ -1668,7 +1787,20 @@
         "required": false,
         "default": null,
         "comment": "undefined falls back to organization.page; pass null to render plain, non-linked text",
-        "line": 48
+        "line": 160
+      }
+    ],
+    "unresolved": false
+  },
+  "ObjectCardQuality": {
+    "props": [
+      {
+        "name": "score",
+        "type": "number",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
       }
     ],
     "unresolved": false
@@ -1813,20 +1945,16 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 84
-      }
-    ],
-    "unresolved": false
-  },
-  "OrganizationHorizontalCard": {
-    "props": [
+        "line": 101
+      },
       {
-        "name": "organization",
-        "type": "Organization | OrganizationReference",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 81
+        "name": "horizontal",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Puts the logo beside the content, without the banner, for full-width lists.\nThe card falls back to the vertical layout when it gets too narrow.",
+        "line": 106
       }
     ],
     "unresolved": false
@@ -1848,6 +1976,28 @@
         "default": null,
         "comment": "",
         "line": 24
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationNameInline": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization | OrganizationReference",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 40
+      },
+      {
+        "name": "showType",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "defaultValue": true,
+        "comment": "",
+        "line": 41
       }
     ],
     "unresolved": false
@@ -1916,6 +2066,19 @@
     ],
     "unresolved": false
   },
+  "OrganizationTypeBadge": {
+    "props": [
+      {
+        "name": "type",
+        "type": "OrganizationTypes",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 17
+      }
+    ],
+    "unresolved": false
+  },
   "OwnerType": {
     "props": [
       {
@@ -1964,7 +2127,16 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 15
+        "line": 16
+      },
+      {
+        "name": "sizeClass",
+        "type": "string",
+        "required": false,
+        "default": "'size-3.5'",
+        "defaultValue": "size-3.5",
+        "comment": "",
+        "line": 17
       }
     ],
     "unresolved": false
@@ -2047,7 +2219,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 57
+        "line": 53
       },
       {
         "name": "postUrl",
@@ -2055,7 +2227,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 58
+        "line": 54
       }
     ],
     "unresolved": false
@@ -2068,7 +2240,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 22
+        "line": 23
       },
       {
         "name": "max",
@@ -2077,7 +2249,7 @@
         "default": "1",
         "defaultValue": 1,
         "comment": "",
-        "line": 23
+        "line": 24
       },
       {
         "name": "barClass",
@@ -2086,7 +2258,16 @@
         "default": "''",
         "defaultValue": "",
         "comment": "",
-        "line": 24
+        "line": 25
+      },
+      {
+        "name": "compact",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Thin variant used inline in a line of text",
+        "line": 27
       }
     ],
     "unresolved": false
@@ -2099,7 +2280,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 28
+        "line": 19
       },
       {
         "name": "messagePassed",
@@ -2107,7 +2288,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 29
+        "line": 20
       },
       {
         "name": "messageFailed",
@@ -2115,7 +2296,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 30
+        "line": 21
       }
     ],
     "unresolved": false
@@ -2150,7 +2331,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 23
+        "line": 24
       },
       {
         "name": "class",
@@ -2159,7 +2340,16 @@
         "default": "''",
         "defaultValue": "",
         "comment": "",
-        "line": 24
+        "line": 25
+      },
+      {
+        "name": "compact",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 26
       }
     ],
     "unresolved": false
@@ -2284,7 +2474,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 26
+        "line": 28
       },
       {
         "name": "dataset",
@@ -2292,7 +2482,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 27
+        "line": 29
       }
     ],
     "unresolved": false
@@ -2364,6 +2554,15 @@
         "required": true,
         "default": null,
         "comment": "",
+        "line": 30
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
         "line": 31
       }
     ],
@@ -2377,7 +2576,16 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 35
+        "line": 36
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 37
       }
     ],
     "unresolved": false
@@ -2390,7 +2598,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 27
+        "line": 30
       }
     ],
     "unresolved": false
@@ -2416,7 +2624,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 58
+        "line": 70
       },
       {
         "name": "fill",
@@ -2425,7 +2633,16 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "Fill the available height (fullscreen) instead of the default capped height.",
-        "line": 60
+        "line": 72
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 73
       }
     ],
     "unresolved": false
@@ -2452,7 +2669,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 72
+        "line": 75
       },
       {
         "name": "dataset",
@@ -2460,7 +2677,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 72
+        "line": 75
       }
     ],
     "unresolved": false
@@ -2473,16 +2690,67 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 121
+        "line": 125
+      },
+      {
+        "name": "showProducerCta",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 125
+      }
+    ],
+    "unresolved": false
+  },
+  "ResourceAccordion/PreviewError": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": false,
+        "default": null,
+        "comment": "Optional: some callers (e.g. the tabular explorer) only know the resource id, so they get no diagnostics or download button.",
+        "line": 92
+      },
+      {
+        "name": "showProducerCta",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 93
+      },
+      {
+        "name": "errorType",
+        "type": "PreviewErrorType",
+        "required": false,
+        "default": null,
+        "comment": "Explicit error type: callers use it when they know the cause better than the resource metadata does (a runtime failure in the wrapper, a failed map build…). Without it, the error type (and thus the message and CTAs) is diagnosed from the metadata alone.",
+        "line": 98
+      },
+      {
+        "name": "fileType",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "File type shown in some error types' texts (e.g. \"Ce fichier CSV est trop volumineux…\").",
+        "line": 100
+      },
+      {
+        "name": "detail",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "Raw, error-specific output shown under the diagnosis (a parsing error, a failed map generation) when the caller knows more than a message.",
+        "line": 103
       }
     ],
     "unresolved": false
   },
   "ResourceAccordion/PreviewLoader": {
-    "props": [],
-    "unresolved": false
-  },
-  "ResourceAccordion/PreviewUnavailable": {
     "props": [],
     "unresolved": false
   },
@@ -2494,7 +2762,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 44
+        "line": 50
       },
       {
         "name": "resource",
@@ -2502,7 +2770,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 45
+        "line": 51
       },
       {
         "name": "maxSize",
@@ -2510,7 +2778,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 46
+        "line": 52
       },
       {
         "name": "load",
@@ -2518,7 +2786,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 47
+        "line": 53
       },
       {
         "name": "fill",
@@ -2527,7 +2795,16 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "Fill the available height (fullscreen) instead of sizing to content.",
-        "line": 49
+        "line": 55
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 56
       }
     ],
     "unresolved": false
@@ -2540,7 +2817,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 348
+        "line": 369
       },
       {
         "name": "expandedOnMount",
@@ -2549,7 +2826,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 349
+        "line": 370
       },
       {
         "name": "isCommunityResource",
@@ -2558,7 +2835,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 350
+        "line": 371
       },
       {
         "name": "resource",
@@ -2566,7 +2843,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 351
+        "line": 372
       },
       {
         "name": "canEdit",
@@ -2575,7 +2852,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 352
+        "line": 373
       },
       {
         "name": "resourceExternalUrl",
@@ -2583,7 +2860,7 @@
         "required": false,
         "default": null,
         "comment": "Overrides the \"Copier le lien\" target.",
-        "line": 354
+        "line": 375
       }
     ],
     "unresolved": false
@@ -2618,6 +2895,19 @@
     "props": [],
     "unresolved": false
   },
+  "ResourceAccordion/UrlPreview": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
   "ResourceAccordion/XmlPreview.client": {
     "props": [
       {
@@ -2626,7 +2916,16 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 25
+        "line": 26
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 27
       }
     ],
     "unresolved": false
@@ -2639,7 +2938,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 124
+        "line": 125
       },
       {
         "name": "noResultsImage",
@@ -2648,7 +2947,7 @@
         "default": "''",
         "defaultValue": "",
         "comment": "",
-        "line": 125
+        "line": 126
       },
       {
         "name": "fullscreen",
@@ -2657,7 +2956,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "Fullscreen mode: dataset context bar (org / title / date + download + exit), the viewer fills the height and hides its inline actions (shown in the context bar).",
-        "line": 128
+        "line": 129
       },
       {
         "name": "exitTo",
@@ -2665,15 +2964,15 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 129
+        "line": 130
       },
       {
         "name": "exploreTo",
-        "type": "(resource: Resource) => string",
+        "type": "(resource: Resource) => string | RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "Inline mode only: link builder for the \"Explorer\" button in the viewer header that opens the fullscreen explorer on the current resource.",
-        "line": 132
+        "line": 133
       },
       {
         "name": "resourceExternalUrl",
@@ -2681,7 +2980,16 @@
         "required": false,
         "default": null,
         "comment": "Overrides the \"Copier le lien\" target.",
-        "line": 134
+        "line": 135
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 136
       }
     ],
     "unresolved": false
@@ -2801,7 +3109,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 227
+        "line": 228
       },
       {
         "name": "resource",
@@ -2809,7 +3117,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 228
+        "line": 229
       },
       {
         "name": "resources",
@@ -2817,7 +3125,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 229
+        "line": 230
       },
       {
         "name": "resourceTo",
@@ -2825,15 +3133,15 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 230
+        "line": 231
       },
       {
         "name": "exploreTo",
-        "type": "(resource: Resource) => string",
+        "type": "(resource: Resource) => string | RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "When provided (inline mode), shows an \"Explorer\" button next to the download action that opens the fullscreen explorer on the current resource.",
-        "line": 233
+        "line": 234
       },
       {
         "name": "resourceExternalUrl",
@@ -2841,7 +3149,7 @@
         "required": false,
         "default": null,
         "comment": "Overrides the \"Copier le lien\" target.",
-        "line": 235
+        "line": 236
       },
       {
         "name": "replace",
@@ -2850,7 +3158,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 236
+        "line": 237
       },
       {
         "name": "fullscreen",
@@ -2859,7 +3167,16 @@
         "default": "false",
         "defaultValue": false,
         "comment": "Fullscreen mode: make the viewer a flex column so the table fills down to the bottom, and hide the inline download/visit/copy actions — they're shown in the dataset context bar above. Inline mode (dataset page) shows them in the header.",
-        "line": 240
+        "line": 241
+      },
+      {
+        "name": "canEdit",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 242
       }
     ],
     "unresolved": false
@@ -2967,7 +3284,7 @@
       },
       {
         "name": "exploreTo",
-        "type": "(resource: Resource) => string",
+        "type": "(resource: Resource) => string | RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "",
@@ -3038,7 +3355,7 @@
       },
       {
         "name": "exploreTo",
-        "type": "(resource: Resource) => string",
+        "type": "(resource: Resource) => string | RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "",
@@ -3150,7 +3467,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 92
+        "line": 105
       },
       {
         "name": "reuseUrl",
@@ -3158,7 +3475,7 @@
         "required": false,
         "default": null,
         "comment": "The reuseUrl is a route location object to allow Vue Router to navigate to the details of a reuse.\nIt is used as a separate prop to allow other sites using the package to define their own reuse pages.",
-        "line": 98
+        "line": 111
       },
       {
         "name": "organizationUrl",
@@ -3166,7 +3483,7 @@
         "required": false,
         "default": null,
         "comment": "The organizationUrl is an optional route location object to allow Vue Router to navigate to the details of the organization linked to tha reuse.\nIt is used as a separate prop to allow other sites using the package to define their own organization pages.\nPass null instead of a route to render the organization name as plain, non-linked text.",
-        "line": 105
+        "line": 118
       },
       {
         "name": "titleTag",
@@ -3175,7 +3492,16 @@
         "default": "'h3'",
         "defaultValue": "h3",
         "comment": "",
-        "line": 107
+        "line": 120
+      },
+      {
+        "name": "horizontal",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Puts the illustration beside the content instead of above it, for full-width lists.\nThe card falls back to the vertical layout when it gets too narrow.",
+        "line": 126
       }
     ],
     "unresolved": false
@@ -3188,36 +3514,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 39
-      }
-    ],
-    "unresolved": false
-  },
-  "ReuseHorizontalCard": {
-    "props": [
-      {
-        "name": "reuse",
-        "type": "Reuse | ReuseV2",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 74
-      },
-      {
-        "name": "reuseUrl",
-        "type": "RouteLocationRaw",
-        "required": false,
-        "default": null,
-        "comment": "",
-        "line": 75
-      },
-      {
-        "name": "organizationUrl",
-        "type": "RouteLocationRaw | null",
-        "required": false,
-        "default": null,
-        "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
-        "line": 77
+        "line": 29
       }
     ],
     "unresolved": false
@@ -3230,7 +3527,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 81
+        "line": 84
       },
       {
         "name": "id",
@@ -3238,7 +3535,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 82
+        "line": 85
       },
       {
         "name": "selectable",
@@ -3247,7 +3544,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 83
+        "line": 86
       },
       {
         "name": "active",
@@ -3256,7 +3553,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "Highlighted by the keyboard inside the listbox, which is not the same as chosen",
-        "line": 85
+        "line": 88
       },
       {
         "name": "selected",
@@ -3265,7 +3562,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 86
+        "line": 89
       },
       {
         "name": "showLinks",
@@ -3274,7 +3571,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 87
+        "line": 90
       }
     ],
     "unresolved": false
@@ -3568,7 +3865,7 @@
         "required": false,
         "default": "getDefaultGlobalSearchConfig",
         "comment": "",
-        "line": 408
+        "line": 411
       },
       {
         "name": "placeholder",
@@ -3576,7 +3873,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 409
+        "line": 412
       },
       {
         "name": "hideSearchInput",
@@ -3585,7 +3882,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 410
+        "line": 413
       },
       {
         "name": "autoFocus",
@@ -3594,7 +3891,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 411
+        "line": 414
       },
       {
         "name": "type",
@@ -3602,7 +3899,7 @@
         "required": false,
         "default": null,
         "model": true,
-        "line": 423
+        "line": 426
       }
     ],
     "unresolved": false
@@ -3706,7 +4003,15 @@
           "pink"
         ],
         "comment": "",
-        "line": 14
+        "line": 25
+      },
+      {
+        "name": "icon",
+        "type": "Component",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 26
       }
     ],
     "unresolved": false
@@ -4321,7 +4626,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 61
+        "line": 59
       },
       {
         "name": "buttonClass",
@@ -4329,7 +4634,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 62
+        "line": 60
       },
       {
         "name": "noMargin",
@@ -4338,7 +4643,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 63
+        "line": 61
       },
       {
         "name": "styledButton",
@@ -4347,7 +4652,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 64
+        "line": 62
       }
     ],
     "unresolved": false
@@ -4360,7 +4665,16 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 39
+        "line": 47
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "defaultValue": "div",
+        "comment": "",
+        "line": 48
       }
     ],
     "unresolved": false
@@ -4373,7 +4687,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 126
+        "line": 112
       },
       {
         "name": "topicUrl",
@@ -4381,7 +4695,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 127
+        "line": 113
       },
       {
         "name": "organizationUrl",
@@ -4389,7 +4703,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 128
+        "line": 114
       },
       {
         "name": "showLogo",
@@ -4398,7 +4712,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 129
+        "line": 115
       },
       {
         "name": "showStats",
@@ -4407,7 +4721,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 130
+        "line": 116
       }
     ],
     "unresolved": false
@@ -5845,7 +6159,7 @@
           "update"
         ],
         "comment": "",
-        "line": 595
+        "line": 654
       },
       {
         "name": "canEdit",
@@ -5854,7 +6168,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 596
+        "line": 655
       },
       {
         "name": "modelValue",
@@ -5862,7 +6176,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 600
+        "line": 659
       }
     ],
     "unresolved": false
@@ -6163,7 +6477,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 214
+        "line": 233
       },
       {
         "name": "loading",
@@ -6172,7 +6486,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 215
+        "line": 234
       },
       {
         "name": "dataset",
@@ -6180,7 +6494,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 216
+        "line": 235
       },
       {
         "name": "resource",
@@ -6188,7 +6502,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 217
+        "line": 236
       },
       {
         "name": "buttonColor",
@@ -6197,7 +6511,7 @@
         "default": "'tertiary'",
         "defaultValue": "tertiary",
         "comment": "",
-        "line": 218
+        "line": 237
       },
       {
         "name": "buttonSize",
@@ -6206,12 +6520,12 @@
         "default": "'xs'",
         "defaultValue": "xs",
         "comment": "",
-        "line": 219
+        "line": 238
       }
     ],
     "unresolved": false
   },
-  "cdata/Datasets/FileEditModalFromQueryString.client": {
+  "cdata/Datasets/FileEditModalFromQueryString": {
     "props": [
       {
         "name": "dataset",
@@ -6704,6 +7018,10 @@
     "unresolved": false
   },
   "cdata/DescriptionList/DescriptionListTerm": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Design/CardExamples": {
     "props": [],
     "unresolved": false
   },
@@ -7269,10 +7587,10 @@
       {
         "name": "legend",
         "type": "string",
-        "required": true,
+        "required": false,
         "default": null,
         "comment": "",
-        "line": 33
+        "line": 37
       },
       {
         "name": "noMarginsAndPadding",
@@ -7281,7 +7599,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 34
+        "line": 38
       }
     ],
     "unresolved": false
@@ -8009,7 +8327,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 113
+        "line": 111
       },
       {
         "name": "user",
@@ -8017,7 +8335,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 114
+        "line": 112
       }
     ],
     "unresolved": false
@@ -8064,7 +8382,7 @@
     ],
     "unresolved": false
   },
-  "cdata/Modal/Modal.client": {
+  "cdata/Modal/Modal": {
     "props": [
       {
         "name": "id",
@@ -9017,7 +9335,7 @@
           "update"
         ],
         "comment": "",
-        "line": 269
+        "line": 270
       },
       {
         "name": "errors",
@@ -9025,7 +9343,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 270
+        "line": 271
       },
       {
         "name": "submitLabel",
@@ -9033,7 +9351,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 271
+        "line": 272
       },
       {
         "name": "loading",
@@ -9042,7 +9360,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 272
+        "line": 273
       },
       {
         "name": "showLegend",
@@ -9051,7 +9369,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 273
+        "line": 274
       },
       {
         "name": "showWell",
@@ -9060,7 +9378,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 274
+        "line": 275
       },
       {
         "name": "modelValue",
@@ -9068,7 +9386,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 281
+        "line": 282
       }
     ],
     "unresolved": false
@@ -9262,7 +9580,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 172
+        "line": 86
       },
       {
         "name": "modelValue",
@@ -9270,7 +9588,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 175
+        "line": 89
       }
     ],
     "unresolved": false
@@ -9278,27 +9596,51 @@
   "cdata/Pages/AddBlocDropdown": {
     "props": [
       {
-        "name": "contentOnly",
-        "type": "boolean",
-        "required": false,
-        "default": "false (Vue)",
-        "defaultValue": false,
+        "name": "level",
+        "type": "BlocsLevel",
+        "required": true,
+        "default": null,
         "comment": "",
-        "line": 99
-      },
-      {
-        "name": "forOrganization",
-        "type": "boolean",
-        "required": false,
-        "default": "false (Vue)",
-        "defaultValue": false,
-        "comment": "Organization presentation pages use a trimmed set: no Hero bloc, and the Markdown bloc lives in the layout group instead of its own \"Texte\" group.",
-        "line": 102
+        "line": 82
       }
     ],
     "unresolved": false
   },
-  "cdata/Pages/AddObjectCard": {
+  "cdata/Pages/BlocImageInput": {
+    "props": [
+      {
+        "name": "replacing",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "The bloc has an image already.",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/BlocInserter": {
+    "props": [
+      {
+        "name": "level",
+        "type": "BlocsLevel",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 26
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 27
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/BlocUrlInput": {
     "props": [
       {
         "name": "label",
@@ -9306,33 +9648,24 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 16
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/Pages/BlocWithTitleAndSubtitle": {
-    "props": [
-      {
-        "name": "edit",
-        "type": "boolean",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 52
+        "line": 15
       },
       {
         "name": "modelValue",
-        "type": "BlocWithSecondaryText",
+        "type": "string",
         "required": true,
         "default": null,
         "model": true,
-        "line": 57
+        "line": 18
       }
     ],
     "unresolved": false
   },
-  "cdata/Pages/BrandedButtonEditor": {
+  "cdata/Pages/BlocsDragLayer": {
+    "props": [],
+    "unresolved": false
+  },
+  "cdata/Pages/BlocsList": {
     "props": [
       {
         "name": "edit",
@@ -9340,83 +9673,184 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 55
+        "line": 192
+      },
+      {
+        "name": "level",
+        "type": "BlocsLevel",
+        "required": true,
+        "default": null,
+        "comment": "Restricts the blocs offered in the \"add\" menu, see `AddBlocDropdown`.",
+        "line": 194
       },
       {
         "name": "color",
-        "type": "ComponentProps<typeof BrandedButton>['color']",
+        "type": "SectionColor | null",
         "required": false,
-        "default": "'primary'",
-        "defaultValue": "primary",
-        "comment": "",
-        "line": 56
+        "default": null,
+        "comment": "The background of the section, for the blocs it holds, down to its accordions.",
+        "line": 196
       },
       {
-        "name": "class",
+        "name": "modelValue",
+        "type": "Array<T>",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 199
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/ButtonBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "modelValue",
+        "type": "ButtonBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 47
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/CardBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 95
+      },
+      {
+        "name": "modelValue",
+        "type": "CardBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 98
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/ColumnBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
+      },
+      {
+        "name": "modelValue",
+        "type": "ColumnBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 23
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/DataserviceBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 15
+      },
+      {
+        "name": "modelValue",
+        "type": "DataserviceBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 18
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/DatasetBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "modelValue",
+        "type": "DatasetBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 17
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/EditItem": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "Without it, only the content is rendered: the page as visitors see it.",
+        "line": 77
+      },
+      {
+        "name": "label",
         "type": "string",
-        "required": false,
-        "default": "''",
-        "defaultValue": "",
+        "required": true,
+        "default": null,
         "comment": "",
-        "line": 57
+        "line": 78
       },
       {
-        "name": "title",
-        "type": "string | null",
-        "required": false,
-        "default": null,
-        "model": true,
-        "line": 63
-      },
-      {
-        "name": "href",
-        "type": "string | null",
-        "required": false,
-        "default": null,
-        "model": true,
-        "line": 64
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/Pages/DataservicesListBloc": {
-    "props": [
-      {
-        "name": "edit",
+        "name": "draggable",
         "type": "boolean",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 63
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Shows the drag handle, which starts a drag (see `startBlocsDrag`).",
+        "line": 80
       },
       {
-        "name": "modelValue",
-        "type": "DataservicesListBloc",
-        "required": true,
-        "default": null,
-        "model": true,
-        "line": 66
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/Pages/DatasetsListBloc": {
-    "props": [
-      {
-        "name": "edit",
+        "name": "band",
         "type": "boolean",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 65
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "A full width band of the page (a section), framed from the inside.",
+        "line": 82
       },
       {
-        "name": "modelValue",
-        "type": "DatasetsListBloc",
-        "required": true,
-        "default": null,
-        "model": true,
-        "line": 68
+        "name": "container",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "An item holding other items (an accordion).",
+        "line": 84
       }
     ],
     "unresolved": false
@@ -9464,7 +9898,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 189
+        "line": 265
       },
       {
         "name": "edit",
@@ -9473,7 +9907,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 190
+        "line": 266
       },
       {
         "name": "editable",
@@ -9482,7 +9916,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 191
+        "line": 267
       },
       {
         "name": "striped",
@@ -9491,7 +9925,16 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 192
+        "line": 268
+      },
+      {
+        "name": "sidemenu",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 269
       },
       {
         "name": "hideEditButton",
@@ -9500,7 +9943,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 193
+        "line": 270
       },
       {
         "name": "forOrganization",
@@ -9508,17 +9951,35 @@
         "required": false,
         "default": "false",
         "defaultValue": false,
-        "comment": "Trims the \"add bloc\" menu for organization presentation pages (no Hero, Markdown moved into the layout group). See AddBlocDropdown.",
-        "line": 196
+        "comment": "Organization presentation pages have no colored section (udata's `check_no_colored_sections`).",
+        "line": 273
+      },
+      {
+        "name": "untitled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "The page shows no title of its own: the first title bloc is the title of the page (`h1`).",
+        "line": 275
+      },
+      {
+        "name": "followLinks",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Only for blocs written by the team, see `FOLLOW_LINKS`.",
+        "line": 277
       },
       {
         "name": "mainColor",
-        "type": "ComponentProps<typeof BrandedButton>['color']",
+        "type": "BlocsMainColor",
         "required": false,
         "default": "'primary'",
         "defaultValue": "primary",
         "comment": "",
-        "line": 197
+        "line": 278
       },
       {
         "name": "emptyCtaLabel",
@@ -9526,7 +9987,7 @@
         "required": false,
         "default": "undefined",
         "comment": "When set, the empty state is also shown in view mode (not just while editing) with this label on a CTA that enters edit mode. Hosts that pass it are responsible for only making the page editable (`editable`) for allowed users.",
-        "line": 201
+        "line": 282
       },
       {
         "name": "onSave",
@@ -9534,7 +9995,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 202
+        "line": 283
       }
     ],
     "unresolved": false
@@ -9639,7 +10100,7 @@
     ],
     "unresolved": false
   },
-  "cdata/Pages/HeroBloc": {
+  "cdata/Pages/ImageBloc": {
     "props": [
       {
         "name": "edit",
@@ -9647,15 +10108,15 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 75
+        "line": 40
       },
       {
         "name": "modelValue",
-        "type": "HeroBloc",
+        "type": "ImageBloc",
         "required": true,
         "default": null,
         "model": true,
-        "line": 78
+        "line": 43
       }
     ],
     "unresolved": false
@@ -9668,16 +10129,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 161
-      },
-      {
-        "name": "mainColor",
-        "type": "ComponentProps<typeof BrandedButton>['color']",
-        "required": false,
-        "default": "'primary'",
-        "defaultValue": "primary",
-        "comment": "",
-        "line": 162
+        "line": 90
       },
       {
         "name": "modelValue",
@@ -9685,7 +10137,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 167
+        "line": 93
       }
     ],
     "unresolved": false
@@ -9698,7 +10150,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 39
+        "line": 36
       },
       {
         "name": "modelValue",
@@ -9706,12 +10158,33 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 42
+        "line": 39
       }
     ],
     "unresolved": false
   },
-  "cdata/Pages/ReusesListBloc": {
+  "cdata/Pages/ObjectsSelectorModal": {
+    "props": [
+      {
+        "name": "type",
+        "type": "ObjectBloc['class']",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "modelValue",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 45
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/ReuseBloc": {
     "props": [
       {
         "name": "edit",
@@ -9719,15 +10192,28 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 63
+        "line": 15
       },
       {
         "name": "modelValue",
-        "type": "ReusesListBloc",
+        "type": "ReuseBloc",
         "required": true,
         "default": null,
         "model": true,
-        "line": 66
+        "line": 18
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/RoundAddButton": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
       }
     ],
     "unresolved": false
@@ -9740,7 +10226,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 57
+        "line": 58
       },
       {
         "name": "publicPage",
@@ -9748,7 +10234,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 58
+        "line": 59
       },
       {
         "name": "siteKey",
@@ -9761,7 +10247,28 @@
           "dataservices_blocs"
         ],
         "comment": "",
-        "line": 59
+        "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Pages/TitleBloc": {
+    "props": [
+      {
+        "name": "edit",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 60
+      },
+      {
+        "name": "modelValue",
+        "type": "TitleBloc",
+        "required": true,
+        "default": null,
+        "model": true,
+        "line": 63
       }
     ],
     "unresolved": false
@@ -9787,7 +10294,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 136
+        "line": 161
       },
       {
         "name": "type",
@@ -9799,7 +10306,7 @@
           "update"
         ],
         "comment": "",
-        "line": 137
+        "line": 162
       },
       {
         "name": "loading",
@@ -9808,7 +10315,15 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 138
+        "line": 163
+      },
+      {
+        "name": "postId",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 164
       },
       {
         "name": "modelValue",
@@ -9816,7 +10331,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 140
+        "line": 166
       }
     ],
     "unresolved": false
@@ -9863,6 +10378,27 @@
     ],
     "unresolved": false
   },
+  "cdata/Posts/PostView": {
+    "props": [
+      {
+        "name": "post",
+        "type": "Post",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 174
+      },
+      {
+        "name": "onRefresh",
+        "type": "() => Promise<unknown>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 175
+      }
+    ],
+    "unresolved": false
+  },
   "cdata/PreviewDashboard/DeltaIndicator": {
     "props": [
       {
@@ -9898,6 +10434,27 @@
     ],
     "unresolved": false
   },
+  "cdata/ProConnectButton": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 28
+      },
+      {
+        "name": "action",
+        "type": "keyof typeof ACTION_PATHS",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 29
+      }
+    ],
+    "unresolved": false
+  },
   "cdata/ProducerSelect": {
     "props": [
       {
@@ -9906,7 +10463,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 64
+        "line": 65
       },
       {
         "name": "errorText",
@@ -9914,7 +10471,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 65
+        "line": 66
       },
       {
         "name": "warningText",
@@ -9922,7 +10479,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 66
+        "line": 67
       },
       {
         "name": "all",
@@ -9931,7 +10488,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 67
+        "line": 68
       },
       {
         "name": "required",
@@ -9940,7 +10497,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 68
+        "line": 69
       },
       {
         "name": "organizationsOnly",
@@ -9949,7 +10506,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 69
+        "line": 70
       },
       {
         "name": "organizationPermissionNeed",
@@ -9957,7 +10514,7 @@
         "required": false,
         "default": "null",
         "comment": "",
-        "line": 70
+        "line": 71
       },
       {
         "name": "modelValue",
@@ -9965,7 +10522,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 77
+        "line": 78
       }
     ],
     "unresolved": false
@@ -10280,6 +10837,32 @@
     ],
     "unresolved": false
   },
+  "cdata/Sidemenu/HeadingsSidemenu": {
+    "props": [
+      {
+        "name": "headings",
+        "type": "Array<Heading>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 19
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Sidemenu/HeadingsSidemenuList": {
+    "props": [
+      {
+        "name": "headings",
+        "type": "Array<SidemenuHeading>",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 33
+      }
+    ],
+    "unresolved": false
+  },
   "cdata/Sidemenu/Sidemenu.global": {
     "props": [
       {
@@ -10342,7 +10925,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 549
+        "line": 548
       }
     ],
     "unresolved": false
@@ -10484,7 +11067,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 110
+        "line": 111
       },
       {
         "name": "selected",
@@ -10492,7 +11075,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 111
+        "line": 112
       }
     ],
     "unresolved": false
@@ -10836,7 +11419,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 235
+        "line": 262
       }
     ],
     "unresolved": false
@@ -10866,6 +11449,19 @@
         "default": null,
         "comment": "",
         "line": 104
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/User/ProConnectOnlyModal": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": true,
+        "default": null,
+        "comment": "udata refuses the switch from a session that didn't present the second factor of the account's trusted ProConnect identity.",
+        "line": 69
       }
     ],
     "unresolved": false

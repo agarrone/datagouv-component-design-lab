@@ -13,6 +13,7 @@ import * as fixtures from './fixtures';
 import { configKey } from '../vendor/datagouv-components/src/config';
 import './demo.css';
 import { segmentedChoices } from './segmentedExamples';
+import { RiExternalLinkLine } from '@remixicon/vue';
 const props = defineProps({ name: String, compact: Boolean, contextual: Boolean, sampleProps: Object });
 const overrides = reactive({});
 const applicationBase=props.name.startsWith('cdata/') ? cloneApplicationSample(samples[props.name]) : null;
@@ -40,12 +41,35 @@ const listeners = computed(() => {
   return events;
 });
 const description = computed(() => descriptions[props.name] || (props.name.startsWith('TabularExplorer/') ? descriptions.table : ''));
-const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardHeader: fixtures.dataset.title, PaddedContainer: 'Un contenu dans son conteneur.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
+const slotText = computed(() => ({ 'cdata/AdminBadge/AdminBadge':'Accès ouvert', 'cdata/Onboarding/SmallCapsLabel':'Des données ouvertes pour tous', 'cdata/Onboarding/OnboardingParagraph':'Découvrez les données publiques et leurs usages.', 'cdata/Onboarding/OnboardingTitle':'Explorez les données de nos territoires', AppLink: 'Consulter data.gouv.fr ↗', ObjectCard: 'Une carte pour présenter les données du territoire.', ObjectCardBadge: 'Brouillon', ObjectCardMeta: 'Mis à jour il y a 2 jours', ObjectCardMetric: 'vues', ObjectCardMetrics: '1 240 vues', PaddedContainer: 'Un contenu dans son conteneur.', ReadMore: fixtures.dataset.description.repeat(12), 'Search/Sidemenu': 'Filtres de recherche' }[props.name] || ''));
 const router = useRouter();
 const DemoLink = defineComponent({props:['to','replace'], setup(linkProps,{attrs,slots}) {return ()=>h('a',{...attrs,href:typeof linkProps.to==='string'?linkProps.to:router.resolve(linkProps.to||'/').href,onClick(event){if(typeof linkProps.to==='object' || linkProps.to==='/demo'){event.preventDefault();router[linkProps.replace?'replace':'push'](linkProps.to);}}},slots.default?.());}});
 provide(configKey, { datasetQualityGuideUrl, appLink: DemoLink, name: 'Design Lab', baseUrl: 'https://www.data.gouv.fr', apiBase: '/demo-api', metricsApiUrl:'/demo-api', customUseFetch: mockUseFetch, $fetch: mockFetch, tabularApiUrl: '/demo-api', schemaDocumentationUrl: 'https://schema.data.gouv.fr', schemasSiteUrl: 'https://schema.data.gouv.fr', schemasSiteName: 'schema.data.gouv.fr', maxJsonPreviewCharSize: 1000000, maxXmlPreviewCharSize: 1000000, maxImagePreviewByteSize: 1000000, maxPdfPreviewByteSize: 1000000, searchDebounce: 100 });
 const active = ref('all');
 const clicks = ref(0);
+const BannerDemoLink = defineComponent({
+  props: { href: { type: String, required: true } },
+  setup(linkProps, { slots }) {
+    const isExternal = computed(() => {
+      if (linkProps.href.startsWith('#') || linkProps.href.startsWith('/')) return false;
+      try {
+        return new URL(linkProps.href, 'https://www.data.gouv.fr').origin !== 'https://www.data.gouv.fr';
+      } catch {
+        return false;
+      }
+    });
+    return () => h('a', {
+      class: 'demo-banner-link',
+      href: linkProps.href,
+      target: isExternal.value ? '_blank' : undefined,
+      rel: isExternal.value ? 'noopener noreferrer' : undefined,
+    }, [
+      slots.default?.(),
+      isExternal.value ? h(RiExternalLinkLine, { class: 'demo-banner-link__icon', 'aria-hidden': 'true' }) : null,
+      isExternal.value ? h('span', { class: 'sr-only' }, ' (nouvel onglet)') : null,
+    ]);
+  },
+});
 </script>
 
 <template>
@@ -60,8 +84,14 @@ const clicks = ref(0);
     <component v-else-if="name==='Toggletip'" :is="C.Toggletip" v-bind="sampleProps || {}" :styled-button="false">Voir les informations<template #toggletip><p>Ce panneau explique l’indicateur et reste ouvert après le clic.</p></template></component>
     <component :is="C.Tag" v-else-if="name === 'Tag' && sampleProps" v-bind="sampleProps">Données ouvertes</component>
     <template v-else-if="name === 'Tag'"><div class="demo-row"><component :is="C.Tag" type="secondary">Mobilité</component><component :is="C.Tag" type="secondary">Données ouvertes</component><component :is="C.Tag" type="secondary">Environnement</component></div></template>
-    <component :is="C.SimpleBanner" v-else-if="name === 'SimpleBanner' && sampleProps?.type" :type="sampleProps.type">Une nouvelle version de ces données est disponible.</component>
-    <template v-else-if="name === 'SimpleBanner'"><component :is="C.SimpleBanner" type="primary">Une nouvelle version de ces données est disponible.</component><template v-if="!compact"><component :is="C.SimpleBanner" type="success">Vos modifications ont été enregistrées.</component><component :is="C.SimpleBanner" type="warning">Vérifiez les informations avant publication.</component><component :is="C.SimpleBanner" type="danger">La publication a échoué.</component></template></template>
+    <component :is="C.SimpleBanner" v-else-if="name === 'SimpleBanner' && sampleProps?.illustrated" :type="sampleProps.type || 'primary'">
+      <div class="demo-illustrated-banner">
+        <img :src="sampleProps.illustration" loading="lazy" alt="" />
+        <div><p class="demo-illustrated-banner__title">{{ sampleProps.title }}</p><p>{{ sampleProps.description }}</p></div>
+      </div>
+    </component>
+    <component :is="C.SimpleBanner" v-else-if="name === 'SimpleBanner' && sampleProps?.type" :type="sampleProps.type" :icon="sampleProps.icon">Une nouvelle version de ces données est disponible. <BannerDemoLink href="#demo-bandeaux">Voir la nouvelle version</BannerDemoLink></component>
+    <template v-else-if="name === 'SimpleBanner'"><component :is="C.SimpleBanner" type="primary">Une nouvelle version de ces données est disponible. <BannerDemoLink href="#demo-bandeaux">Voir la nouvelle version</BannerDemoLink></component><template v-if="!compact"><component :is="C.SimpleBanner" type="success">Vos modifications ont été enregistrées. <BannerDemoLink href="#demo-bandeaux">Voir les modifications</BannerDemoLink></component><component :is="C.SimpleBanner" type="warning">Vérifiez les informations avant publication. <BannerDemoLink href="#demo-bandeaux">Voir les informations</BannerDemoLink></component><component :is="C.SimpleBanner" type="danger">La publication a échoué. <BannerDemoLink href="#demo-bandeaux">Voir les erreurs</BannerDemoLink></component></template></template>
     <component :is="C.BannerAction" v-else-if="name === 'BannerAction'" :type="sampleProps?.type || 'primary'" title="Complétez la description des données">Une description précise facilite la réutilisation.<template #button><component :is="C.BrandedButton">Compléter</component></template></component>
     <component v-else-if="name==='ProgressBar' && sampleProps && 'value' in sampleProps" :is="C.ProgressBar" v-bind="genericProps" aria-label="Complétude" />
     <ul v-else-if="name==='QualityItem' || name==='QualityItemWarning'" style="list-style:none;margin:0;padding:0"><component :is="C[name]" v-bind="genericProps" /></ul>
@@ -75,7 +105,7 @@ const clicks = ref(0);
     <template v-else>
       <p v-if="description" class="demo-description">{{ description }}</p>
       <Suspense><template #default>
-        <div v-if="name.startsWith('cdata/')"><ApplicationScene :name="name" :sample-props="genericProps" :listeners="listeners" /></div><div v-else-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/'), 'demo-card-part': ['ObjectCardHeader','ObjectCardBadge'].includes(name), 'demo-card-badge':name==='ObjectCardBadge' }">
+        <div v-if="name.startsWith('cdata/')"><ApplicationScene :name="name" :sample-props="genericProps" :listeners="listeners" /></div><div v-else-if="samples[name] || name.startsWith('Icons/')" class="demo-generic" :class="{ 'demo-icon':name.startsWith('Icons/'), 'demo-card-part': ['ObjectCardBadge'].includes(name), 'demo-card-badge':name==='ObjectCardBadge' }">
           <component :is="C[name]" v-bind="genericProps" v-on="listeners">
             <template v-if="slotText" #default>{{ slotText }}</template>
             <template v-else-if="name==='ResourceAccordion/PreviewWrapper'" #default="{data}"><pre>{{ data }}</pre></template>
@@ -107,4 +137,12 @@ const clicks = ref(0);
 .demo-card-part { position: relative; }
 .demo-card-badge { min-height: 48px; }
 .demo-icon svg { width: 48px; height: 48px; }
+.demo-illustrated-banner { display:flex; align-items:center; gap:20px; width:100%; }
+.demo-illustrated-banner img { width:56px; height:56px; flex:0 0 56px; object-fit:contain; }
+.demo-illustrated-banner p { margin:0; font-size:12px; line-height:20px; }
+.demo-illustrated-banner__title { margin-bottom:4px !important; font-size:14px !important; line-height:22px !important; font-weight:700; }
+.demo-banner-link { --underline-img:none !important; display:inline-flex; align-items:center; gap:4px; color:inherit; font-weight:600; background-image:none !important; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px; }
+.demo-banner-link::after { content:none !important; display:none !important; }
+.demo-banner-link__icon { width:1em; height:1em; flex:none; }
+@media(max-width:480px){.demo-illustrated-banner{align-items:flex-start;gap:12px}.demo-illustrated-banner img{width:48px;height:48px;flex-basis:48px}}
 </style>

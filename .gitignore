@@ -1,5 +1,6 @@
 upstream/
 node_modules/
+.pnpm-store/
 dist/
 .vercel/
 .DS_Store

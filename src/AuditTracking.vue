@@ -4,6 +4,7 @@ import { RiSearchLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
 import statuses from '../data/audit-statuses.json';
 import usageReport from '../data/component-usage.json';
+import catalog from '../data/component-catalog.json';
 import { auditStatuses, defaultAuditStatus } from './auditStatus';
 const emit=defineEmits(['open-component','filter-status']);
 const props=defineProps({status:String});
@@ -13,8 +14,9 @@ const statusFilter = ref('all');
 watch(()=>props.status, value=>{statusFilter.value=auditStatuses.some(s=>s.id===value)?value:'all';}, {immediate:true});
 const familyFilter = ref('all');
 const family = component => component.id.includes('/') ? component.id.split('/').slice(0,-1).join('/') : 'Essentiels';
-const families = [...new Set(inventory.map(family))].sort((a,b) => a.localeCompare(b));
-const rows = inventory.map(component => ({ ...component, family: family(component), status: statuses[component.id] || defaultAuditStatus })).sort((a,b) => a.id.localeCompare(b.id));
+const reviewable=inventory.filter(component=>catalog.components[component.id]?.status==='reviewable');
+const families = [...new Set(reviewable.map(family))].sort((a,b) => a.localeCompare(b));
+const rows = reviewable.map(component => ({ ...component, family: family(component), status: statuses[component.id] || defaultAuditStatus })).sort((a,b) => a.id.localeCompare(b.id));
 const counts = computed(() => Object.fromEntries(auditStatuses.map(status => [status.id, rows.filter(row => (originFilter.value==='all'||row.origin===originFilter.value) && row.status === status.id).length])));
 const shown = computed(() => rows.filter(row => (originFilter.value==='all'||row.origin===originFilter.value) && row.id.toLowerCase().includes(query.value.trim().toLowerCase()) && (statusFilter.value === 'all' || row.status === statusFilter.value) && (familyFilter.value === 'all' || row.family === familyFilter.value)));
 const labels = Object.fromEntries(auditStatuses.map(status => [status.id, status.label]));
@@ -28,7 +30,7 @@ function reset() { query.value=''; statusFilter.value='all'; familyFilter.value=
   <div class="audit-page">
     <h1>Suivi des composants</h1>
     <p><a href="#travaux">Voir les travaux en cours avec leurs aperçus</a></p>
-    <p class="intro">Statut de l’audit pour chacun des {{ rows.length }} composants de datagouv-components et de cdata.</p>
+    <p class="intro">Statut de l’audit pour les {{ rows.length }} composants designables. Les {{ inventory.length }} fichiers restent conservés dans le registre source.</p>
     <div class="audit-summary" aria-label="Répartition des statuts"><div v-for="status in auditStatuses" :key="status.id"><strong>{{ counts[status.id] }}</strong><span class="audit-status" :data-status="status.id">{{ status.label }}</span></div></div>
     <div class="audit-progress"><label for="audit-progress">{{ counts.valide }} / {{ rows.length }} composants validés · {{ progress }} %</label><progress id="audit-progress" :value="counts.valide" :max="rows.length" /></div>
     <p class="audit-usage-note">Usages recherchés dans <a :href="`${usageReport.repository}/tree/${usageReport.commit}`" target="_blank" rel="noopener noreferrer">cdata · {{ usageReport.commit.slice(0,7) }}</a>. « Non utilisé ? » signifie qu’aucun usage applicatif n’a été retrouvé par l’analyse statique ; les usages externes restent à vérifier.</p>

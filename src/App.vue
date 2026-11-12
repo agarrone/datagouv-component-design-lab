@@ -1,9 +1,11 @@
 <script setup>
 import CardsDemo from './CardsDemo.vue';
+import BannersDemo from './BannersDemo.vue';
 import ProposalFoundations from "./ProposalFoundations.vue";
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { RiArrowRightUpLine, RiSearchLine, RiGridLine, RiExternalLinkLine } from '@remixicon/vue';
 import inventory from '../data/components.json';
+import catalog from '../data/component-catalog.json';
 import proposals from '../proposals/proposals.json';
 import lock from '../upstream.lock.json';
 import ExplorerNode from './ExplorerNode.vue';
@@ -32,15 +34,24 @@ const raw = import.meta.glob(['../vendor/datagouv-components/src/components/**/*
 const view = ref('catalogue');
 const templateVersion=ref('current');
 const sectionId=ref('');
-const componentSection=computed(()=>view.value==='catalogue' || view.value==='demo-cartes' || view.value.startsWith('types/'));
+const componentSection=computed(()=>view.value==='catalogue' || ['demo-cartes','demo-bandeaux'].includes(view.value) || view.value.startsWith('types/'));
 const foundationSections=[['propositions','Fondamentaux des propositions'],['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
+const activeTemplate = computed(() => templates[sectionId.value] || templates.dataset);
+const templateScene = computed(() => {
+  if (activeTemplate.value.scene === 'dataset' || sectionId.value === 'dataset') return DatasetTemplateScene;
+  if (activeTemplate.value.scene === 'dataservice') return EntityTemplateScene;
+  if (['publish','edit','dashboard'].includes(sectionId.value)) return WorkflowTemplateScene;
+  if (['search','user','admin'].includes(sectionId.value)) return AdditionalTemplateScene;
+  return EntityTemplateScene;
+});
 const query = ref('');
 const globalQuery = ref('');
 const libraryOpen = ref(false);
 const returnFamilyId = ref('');
 const returnFamily = computed(() => typePages[returnFamilyId.value] ? {id:returnFamilyId.value,...typePages[returnFamilyId.value]} : null);
-const globalResults = computed(() => globalQuery.value.trim() ? inventory.filter(c => c.id.toLowerCase().includes(globalQuery.value.trim().toLowerCase())).slice(0,8) : []);
+const reviewableInventory=inventory.filter(c=>catalog.components[c.id]?.status==='reviewable');
+const globalResults = computed(() => globalQuery.value.trim() ? reviewableInventory.filter(c => c.id.toLowerCase().includes(globalQuery.value.trim().toLowerCase())).slice(0,8) : []);
 function searchAll() { query.value=globalQuery.value.trim(); filter.value='all'; libraryOpen.value=true; globalQuery.value=''; navigate(); nextTick(()=>document.getElementById('library-heading')?.scrollIntoView({block:'start'})); }
 function searchSelect(c) { globalQuery.value=''; returnFamilyId.value=''; view.value='catalogue'; select(c); }
 
@@ -101,8 +112,8 @@ function revealComponent(component) {
   nextTick(()=>explorerNav.value?.querySelector('[aria-current="page"]')?.scrollIntoView({block:'nearest'}));
 }
 const category = c => c.id.includes('/') ? c.id.split('/')[0] : 'Essentiels';
-const categories = [...new Set(inventory.map(category))].sort();
-const ordered = [...inventory].sort((a,b) => Number(previews.has(b.id)) - Number(previews.has(a.id)) || a.id.localeCompare(b.id));
+const categories = [...new Set(reviewableInventory.map(category))].sort();
+const ordered = [...reviewableInventory].sort((a,b) => Number(previews.has(b.id)) - Number(previews.has(a.id)) || a.id.localeCompare(b.id));
 const visible = computed(() => ordered.filter(c => (originFilter.value==='all'||c.origin===originFilter.value) && `${c.name} ${c.id}`.toLowerCase().includes(query.value.toLowerCase()) && (filter.value === 'all' || filter.value === 'preview' && previews.has(c.id) || category(c) === filter.value)));
 const componentProposals = computed(() => selected.value ? proposals.filter(p => p.component === selected.value.id) : []);
 async function select(c, update = true) {
@@ -128,6 +139,7 @@ function route() {
   sectionId.value=section || '';
   if(page==='template-preview'){sectionId.value=templates[section]?section:'dataset';selected.value=null;view.value='template-preview';templateVersion.value=new URLSearchParams(params).get('version')==='proposal'?'proposal':'current';return;}
   if(page==='demo-cartes'){selected.value=null;view.value='demo-cartes';window.scrollTo(0,0);return;}
+  if(page==='demo-bandeaux'){selected.value=null;view.value='demo-bandeaux';window.scrollTo(0,0);return;}
   if(page==='comparateur') {navigate(); return;}
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi','templates','travaux'].includes(page)) {
@@ -152,7 +164,7 @@ function downloadProposal(c) {
 </script>
 
 <template>
-  <component :is="['publish','edit','dashboard'].includes(sectionId)?WorkflowTemplateScene:sectionId==='dataset'?DatasetTemplateScene:['search','user','admin'].includes(sectionId)?AdditionalTemplateScene:EntityTemplateScene" v-if="view==='template-preview'" :key="sectionId" :kind="sectionId" :version="templateVersion" />
+  <component :is="templateScene" v-if="view==='template-preview'" :key="sectionId" :kind="activeTemplate.kind || sectionId" :variant="activeTemplate.variant" :version="templateVersion" />
   <template v-else>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
@@ -163,7 +175,7 @@ function downloadProposal(c) {
   <aside class="sidebar">
     <div class="sidebar-browse">
       <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Incohérences' }}</div>
-      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#demo-cartes" :class="{active:view==='demo-cartes'}" :aria-current="view==='demo-cartes'?'page':undefined">Démo des cartes</a><a href="#" :class="{active:view==='catalogue' && !selected && !typePage}">Vue d’ensemble <span>{{ inventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
+      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#demo-cartes" :class="{active:view==='demo-cartes'}" :aria-current="view==='demo-cartes'?'page':undefined">Démo des cartes</a><a href="#demo-bandeaux" :class="{active:view==='demo-bandeaux'}" :aria-current="view==='demo-bandeaux'?'page':undefined">Démo des bandeaux</a><a href="#" :class="{active:view==='catalogue' && !selected && !typePage}">Vue d’ensemble <span>{{ reviewableInventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
       <nav v-else-if="view==='templates'" class="context-nav" aria-label="Templates"><a v-for="(template,id) in templates" :key="id" :href="`#templates/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'page':undefined">{{template.title}}</a></nav>
       <nav v-else-if="view==='travaux'" class="context-nav" aria-label="Familles des travaux en cours"><a href="#travaux" :class="{active:!sectionId}" :aria-current="!sectionId?'page':undefined">Tous les travaux <span>{{ workGroups.reduce((n,g)=>n+g.components.length,0) }}</span></a><a v-for="group in workGroups" :key="group.key" :href="`#travaux/${group.key}`" :class="{active:sectionId===group.key}" :aria-current="sectionId===group.key?'page':undefined">{{group.label}} <span>{{group.components.length}}</span></a></nav>
@@ -172,7 +184,7 @@ function downloadProposal(c) {
       <details v-if="componentSection" class="file-explorer"><summary>Explorateur de fichiers</summary>
     <label class="explorer-search"><RiSearchLine /><input v-model="explorerQuery" type="search" aria-label="Rechercher dans l’explorateur" placeholder="Rechercher un fichier…" /></label>
     <nav ref="explorerNav" class="explorer-nav" aria-label="Explorateur des composants">
-      <button class="explorer-overview" :class="{ active: view==='catalogue' && !selected }" @click="navigate()"><RiGridLine />Tous les composants <span class="explorer-count">{{ inventory.length }}</span></button>
+      <button class="explorer-overview" :class="{ active: view==='catalogue' && !selected }" @click="navigate()"><RiGridLine />Registre source <span class="explorer-count">{{ inventory.length }}</span></button>
       <ul class="explorer-root">
         <ExplorerNode v-for="node in explorerTree" :key="node.id" :node="node" :expanded="expandedFolders" :selected-id="selected?.id" :searching="!!explorerQuery.trim()" @toggle="toggleFolder" @select="select($event)" />
       </ul>
@@ -183,9 +195,10 @@ function downloadProposal(c) {
     <div class="sidebar-source"><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">GitHub <RiArrowRightUpLine /></a><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">Source · {{ lock.commit.slice(0,7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='demo-cartes' ? 'Démo des cartes' : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Composants' }}</span></nav></header>
+    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='demo-cartes' ? 'Démo des cartes' : view==='demo-bandeaux' ? 'Démo des bandeaux' : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Composants' }}</span></nav></header>
     <main id="main">
       <CardsDemo v-if="view==='demo-cartes'" />
+      <BannersDemo v-else-if="view==='demo-bandeaux'" />
       <TemplatePage v-else-if="view==='templates'" :kind="sectionId" />
       <ProposalFoundations v-else-if="view==='fondamentaux' && (sectionId==='propositions' || sectionId.startsWith('propositions-'))" />
       <DesignReference v-else-if="view==='fondamentaux' && sectionId==='reference-agents'" />
@@ -196,10 +209,10 @@ function downloadProposal(c) {
       <AuditTracking v-else-if="view==='suivi'" :status="sectionId" @filter-status="filterStatus" @open-component="openComponent" />
       <TypeOverview v-else-if="typePage" :key="view" :page="typePage" @open-component="openComponent" />
       <template v-else-if="!selected">
-        <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer la bibliothèque par famille, puis examiner les composants et leurs variantes.</p></div></div>
+        <div class="page-heading"><div><h1>Composants</h1><p class="intro">Explorer les surfaces de design par famille. Les wrappers, sous-composants et fichiers techniques restent reliés à leurs sources pour préparer les futures PR.</p></div></div>
         <nav class="family-overview" aria-label="Familles de composants"><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" @click.prevent="navigate(`types/${id}`)"><strong>{{ page.label }}</strong><p>{{ page.description }}</p><span>{{ new Set(page.sections.flatMap(section=>section.items.map(item=>item.id))).size }} composants →</span></a></nav>
-        <div class="stats"><div><strong>{{ inventory.length }}</strong><span>composants inventoriés</span></div><div><strong>{{ previews.size.toString().padStart(2, '0') }}</strong><span>aperçus disponibles</span></div><div><strong>{{ proposals.length.toString().padStart(2, '0') }}</strong><span>propositions de design</span></div></div>
-        <details class="all-components" :open="libraryOpen" @toggle="libraryOpen=$event.target.open"><summary>Tous les composants · {{ inventory.length }}</summary><section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Bibliothèque</h2></div>
+        <div class="stats"><div><strong>{{ reviewableInventory.length }}</strong><span>composants designables</span></div><div><strong>{{ catalog.summary.related }}</strong><span>sources rattachées</span></div><div><strong>{{ inventory.length }}</strong><span>fichiers sources conservés</span></div></div>
+        <details class="all-components" :open="libraryOpen" @toggle="libraryOpen=$event.target.open"><summary>Composants designables · {{ reviewableInventory.length }}</summary><section aria-labelledby="library-heading"><div class="section-title"><h2 id="library-heading">Catalogue de design</h2></div>
           <div class="toolbar"><label class="search"><RiSearchLine /><input v-model="query" type="search" placeholder="Rechercher un composant…" aria-label="Rechercher un composant"></label><select v-model="originFilter" aria-label="Filtrer par origine"><option value="all">Toutes les origines</option><option value="datagouv-components">Bibliothèque datagouv-components</option><option value="cdata">Application cdata</option></select><select v-model="filter" aria-label="Filtrer par dossier"><option value="all">Tous les dossiers</option><option value="preview">Avec aperçu</option><option v-for="cat in categories" :key="cat" :value="cat">{{ cat }}</option></select></div>
           <div class="results-line" aria-live="polite">{{ visible.length }} composant{{ visible.length > 1 ? 's' : '' }}</div>
           <div v-if="visible.length" class="component-grid"><article v-for="c in visible" :key="c.id" class="component-card" :data-component-id="c.id" @click="select(c)"><div class="card-info"><div><div class="catalogue-title"><h3><button class="card-title-button" @click.stop="select(c)">{{ c.name }}</button></h3><OriginTag :origin="c.origin" /></div><p>{{ category(c) }}</p></div><span class="card-arrow">↗</span></div></article></div>
