@@ -19,11 +19,10 @@
 
 /* Tags share compact typography, but communicate categorization or an action. */
 .design-lab-tag { width:fit-content; flex:none; align-self:flex-start; justify-self:start; display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); box-sizing:border-box; max-width:100%; min-height:var(--lab-ds-space-24); padding:var(--lab-ds-space-2) var(--lab-ds-space-8); border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline); border-radius:var(--lab-ds-radius-pill); background:var(--lab-ds-tag-bg); color:var(--lab-ds-tag-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); }
-:is(a,button).design-lab-tag,.design-lab-tag:has(button) { background:var(--lab-ds-tag-link-bg); color:var(--lab-ds-tag-link-text); }
 :is(a,button).design-lab-tag { cursor:pointer; text-decoration:none; background-image:none; }
-@media(hover:hover) { :is(a,button).design-lab-tag:hover { background:var(--lab-ds-tag-hover-bg); } }
-:is(a,button).design-lab-tag:active { background:var(--lab-ds-tag-active-bg); }
-:is(a,button).design-lab-tag:focus-visible,.design-lab-tag button:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+@media(hover:hover) { :is(a,button).design-lab-tag:hover,.design-lab-tag:has(button:hover) { background:var(--lab-ds-tag-link-bg); color:var(--lab-ds-tag-link-text); } }
+:is(a,button).design-lab-tag:active,.design-lab-tag:has(button:active) { background:var(--lab-ds-tag-active-bg); color:var(--lab-ds-tag-link-text); }
+:is(a,button).design-lab-tag:focus-visible,.design-lab-tag:has(button:focus-visible) { background:var(--lab-ds-tag-link-bg); color:var(--lab-ds-tag-link-text); outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 .design-lab-tag[aria-pressed=true] { color:var(--lab-ds-on-accent); background:var(--lab-ds-brand); }
 .lab-filter-tag-close { display:inline-flex; align-items:center; justify-content:center; flex:none; min-width:var(--lab-ds-space-24); min-height:var(--lab-ds-space-24); padding:0; border-radius:var(--lab-ds-radius-pill); color:inherit; }
 @media(hover:hover) { .lab-filter-tag-close:hover { background:var(--lab-ds-tag-hover-bg); } }
@@ -31,15 +30,13 @@
 @layer base {
  .lab-badge-consumer .fr-badge { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline)!important; border-radius:var(--lab-ds-radius)!important; font:var(--lab-ds-weight-medium) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; text-transform:none!important; }
  .lab-badge-consumer .fr-tag { min-height:var(--lab-ds-space-24)!important; padding:var(--lab-ds-space-2) var(--lab-ds-space-8)!important; border:var(--lab-ds-stroke) solid var(--lab-ds-badge-outline)!important; border-radius:var(--lab-ds-radius-pill)!important; font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans)!important; background:var(--lab-ds-tag-bg)!important; color:var(--lab-ds-tag-text)!important; }
- .lab-badge-consumer :is(a,button).fr-tag { background:var(--lab-ds-tag-link-bg)!important; color:var(--lab-ds-tag-link-text)!important; }
- .lab-badge-consumer :is(a,button).fr-tag:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
- @media(hover:hover) { .lab-badge-consumer :is(a,button).fr-tag:hover { background:var(--lab-ds-tag-hover-bg)!important; } }
+ .lab-badge-consumer :is(a,button).fr-tag:focus-visible { background:var(--lab-ds-tag-link-bg)!important; color:var(--lab-ds-tag-link-text)!important; outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+ @media(hover:hover) { .lab-badge-consumer :is(a,button).fr-tag:hover { background:var(--lab-ds-tag-link-bg)!important; color:var(--lab-ds-tag-link-text)!important; } }
+ .lab-badge-consumer :is(a,button).fr-tag:active { background:var(--lab-ds-tag-active-bg)!important; color:var(--lab-ds-tag-link-text)!important; }
 }
-button.design-lab-tag { min-height:var(--lab-ds-control-compact); }
-
 .lab-selected-tags { display:flex; flex-wrap:wrap; gap:var(--lab-ds-space-8); margin-top:var(--lab-ds-space-8); }
 
-@media(hover:hover) { .design-lab-tag[aria-pressed=true]:not(:disabled):hover { background:var(--lab-ds-brand-hover); } }
+@media(hover:hover) { .design-lab-tag[aria-pressed=true]:not(:disabled):hover { background:var(--lab-ds-brand); color:var(--lab-ds-on-accent); } }
 .design-lab-tag[aria-pressed=true]:not(:disabled):active { background:var(--background-action-high-blue-france-active); }
 .design-lab-tag:disabled,.design-lab-tag[aria-pressed]:disabled { cursor:not-allowed; background:var(--background-disabled-grey); color:var(--text-disabled-grey); }
 @media(hover:hover) { .design-lab-tag:disabled:hover { background:var(--background-disabled-grey); } }

@@ -74,7 +74,8 @@ const icon = computed(() => ({ primary: RiInformationLine, warning: RiAlertLine,
   display: block;
   width: var(--lab-ds-icon);
   height: var(--lab-ds-icon);
-  margin-top: var(--lab-ds-space-2);
+  /* Centre the 16px icon on the first 22px line of copy. */
+  margin-top: var(--lab-ds-space-optical);
 }
 .proposed-banner-action__content {
   grid-area: content;
