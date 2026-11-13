@@ -1,6 +1,6 @@
 <template>
   <BannerAction
-    type="warning"
+    type="primary"
     :title="label"
   >
     {{ $t("Attention, cette action ne peut pas être annulée.") }}
@@ -13,7 +13,6 @@
       >
         <template #button="{ attrs, listeners }">
           <BrandedButton
-            color="warning"
             :icon="RiSendPlaneLine"
             v-bind="attrs"
             v-on="listeners"

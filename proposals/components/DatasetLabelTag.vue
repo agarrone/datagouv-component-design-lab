@@ -9,7 +9,6 @@
       v-if="img"
       :src="img"
       alt=""
-      :class="{ 'lab-ds-u-bg-white lab-ds-u-rounded-full': url }"
     >
     {{ badge.label }}
   </component>
@@ -41,7 +40,6 @@ const img = computedAsync(async () => {
 <style scoped>
 .proposed-dataset-label { gap:var(--lab-ds-space-4); border-radius:var(--lab-ds-radius-pill); }
 .proposed-dataset-label img { width:var(--lab-ds-icon-compact); height:var(--lab-ds-icon-compact); object-fit:contain; flex-shrink:0; }
-.proposed-dataset-label--link { color:var(--lab-ds-tag-link-text); background:var(--lab-ds-tag-link-bg); text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
-.proposed-dataset-label--link:hover { background:var(--lab-ds-tag-hover-bg); }
+.proposed-dataset-label--link { text-decoration:none; text-underline-offset:var(--lab-ds-space-optical); }
 .proposed-dataset-label--link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>

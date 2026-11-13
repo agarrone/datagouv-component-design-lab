@@ -1,11 +1,24 @@
 <template>
   <span v-if="!statut">-</span>
-  <div v-else-if="linksToData && url" class="lab-hvd-status">
-    <AdminBadge :type="type" size="sm" :no-wrap="false">{{ statut }}</AdminBadge>
-    <CdataLink :to="url" external target="_blank" rel="noopener noreferrer" class="proposed-hvd-link fr-raw-link">
-      {{ t('Voir les données') }}
-    </CdataLink>
-  </div>
+  <CdataLink
+    v-else-if="linksToData && url"
+    :to="url"
+    external
+    :external-icon="false"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="proposed-hvd-badge-link fr-raw-link"
+    :aria-label="`${statut} — ${t('Voir les données')} (nouvelle fenêtre)`"
+  >
+    <AdminBadge
+      :type="type"
+      size="sm"
+      :no-wrap="false"
+      :icon-right="RiExternalLinkLine"
+    >
+      {{ statut }}
+    </AdminBadge>
+  </CdataLink>
   <AdminBadge
     v-else
     :type="type"
@@ -18,6 +31,7 @@
 
 <script setup lang="ts">
 import '../../../shared/foundations.css'
+import {RiExternalLinkLine} from '@remixicon/vue'
 import {useTranslation} from '../../../../vendor/datagouv-components/src/composables/useTranslation'
 import CdataLink from '/proposals/components/AppLink.vue'
 import AdminBadge from '../AdminBadge/AdminBadge.vue'
@@ -36,8 +50,9 @@ defineProps<{
 </script>
 
 <style scoped>
-.lab-hvd-status { display:flex; flex-wrap:wrap; align-items:center; gap:var(--lab-ds-space-8); }
-.proposed-hvd-link { display:inline-flex; align-items:center; gap:var(--lab-ds-space-4); min-height:var(--lab-ds-control-compact); font:var(--lab-ds-weight-regular) var(--lab-ds-text-caption)/var(--lab-ds-leading-caption) var(--lab-ds-font-sans); text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
-.proposed-hvd-link::after { content:none !important; }
-.proposed-hvd-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
+.proposed-hvd-badge-link { --hover-tint:transparent; --active-tint:transparent; display:inline-flex; width:fit-content; max-width:100%; color:inherit; text-decoration:none; background-color:transparent; background-image:none; }
+.proposed-hvd-badge-link::after { content:none !important; }
+.proposed-hvd-badge-link:hover { color:inherit; background-color:transparent!important; }
+.proposed-hvd-badge-link:hover :deep(.design-lab-badge__text) { text-decoration:underline; text-decoration-thickness:var(--lab-ds-stroke); text-underline-offset:var(--lab-ds-space-optical); }
+.proposed-hvd-badge-link:focus-visible { outline:var(--lab-ds-focus-width) solid var(--lab-ds-focus); outline-offset:var(--lab-ds-focus-offset); }
 </style>
