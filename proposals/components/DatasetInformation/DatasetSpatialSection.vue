@@ -1,28 +1,27 @@
 <template>
-  <div
-    v-if="dataset.spatial"
-    class="proposal-metadata-section"
-  >
+  <div class="proposal-metadata-section">
     <h3 class="proposal-metadata-heading">
       {{ t('Couverture spatiale') }}
     </h3>
     <DescriptionList>
-      <div v-if="dataset.spatial.zones && dataset.spatial.zones.length">
+      <div>
         <DescriptionListTerm>{{ t('Zones') }}</DescriptionListTerm>
-        <DescriptionListDetails>{{ zonesDisplay }}</DescriptionListDetails>
+        <DescriptionListDetails>{{ zonesDisplay || '—' }}</DescriptionListDetails>
       </div>
-      <div v-if="dataset.spatial.geom">
+      <div>
         <DescriptionListTerm>{{ t('Couverture géographique') }}</DescriptionListTerm>
         <DescriptionListDetails>
           <slot
+            v-if="dataset.spatial?.geom"
             name="map"
             :geojson="dataset.spatial.geom"
-          />
+          ><span>{{ t('Géométrie disponible') }}</span></slot>
+          <span v-else>—</span>
         </DescriptionListDetails>
       </div>
-      <div v-if="dataset.spatial.granularity">
+      <div>
         <DescriptionListTerm>{{ t('Granularité de la couverture territoriale') }}</DescriptionListTerm>
-        <DescriptionListDetails>{{ dataset.spatial.granularity.name }}</DescriptionListDetails>
+        <DescriptionListDetails>{{ dataset.spatial?.granularity?.name || '—' }}</DescriptionListDetails>
       </div>
       <slot />
     </DescriptionList>

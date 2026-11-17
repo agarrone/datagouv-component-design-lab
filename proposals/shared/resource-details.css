@@ -1,14 +1,13 @@
-.lab-resource-metadata,.lab-resource-structure,.lab-resource-downloads { min-width:0; color:var(--lab-ds-text); font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
-.lab-resource-metadata { display:flex; flex-wrap:wrap; align-items:flex-start; gap:var(--lab-ds-space-24); }
-.lab-resource-metadata-main { flex:2; min-width:min(100%,18rem); }
-.lab-resource-metadata-secondary { flex:1; min-width:min(100%,18rem); }
-.lab-resource-metadata dl { display:flex; flex-direction:column; gap:var(--lab-ds-space-16); margin:0; padding:0; }
+.lab-resource-metadata,.lab-resource-structure,.lab-resource-downloads { min-width:0; color:var(--lab-ds-text); font:var(--lab-ds-weight-regular) var(--lab-metadata-value-size,var(--lab-ds-text-body))/var(--lab-ds-leading-body) var(--lab-ds-font-sans); }
+.lab-resource-metadata { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; gap:var(--lab-metadata-row-gap,var(--lab-ds-space-20)) var(--lab-metadata-column-gap,var(--lab-ds-space-24)); }
+.lab-resource-metadata-main,.lab-resource-metadata-secondary { min-width:0; }
+.lab-resource-metadata dl { display:flex; flex-direction:column; gap:var(--lab-metadata-row-gap,var(--lab-ds-space-20)); margin:0; padding:0; }
 .lab-resource-detail { min-width:0; }
-.lab-resource-detail dt { display:flex; align-items:center; gap:var(--lab-ds-space-4); margin:0 0 var(--lab-ds-space-4); font-weight:var(--lab-ds-weight-medium); }
-.lab-resource-detail dd { margin:0; padding:0; overflow-wrap:anywhere; }
-.lab-resource-code { font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+.lab-resource-detail dt { display:flex; align-items:center; gap:var(--lab-ds-space-4); margin:0 0 var(--lab-ds-space-6); padding:0!important; color:var(--lab-ds-text-secondary); font-size:var(--lab-metadata-label-size,var(--lab-ds-text-body)); font-weight:var(--lab-ds-weight-regular); }
+.lab-resource-detail dd { min-width:0; max-width:100%; margin:0; padding:0; color:var(--lab-ds-text); font-weight:var(--lab-ds-weight-medium); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lab-resource-code { font-family:var(--lab-ds-font-mono); font-size:var(--lab-metadata-technical-size,var(--lab-ds-text-caption)); line-height:var(--lab-ds-leading-caption); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
 .lab-resource-hint { margin:var(--lab-ds-space-4) 0 0; color:var(--lab-ds-text-secondary); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
-.lab-resource-extras { flex-basis:100%; min-width:0; padding-top:var(--lab-ds-space-16); border-top:var(--lab-ds-stroke) solid var(--lab-ds-border); }
+.lab-resource-extras { grid-column:1/-1; min-width:0; padding-top:var(--lab-metadata-section-gap,var(--lab-ds-space-24)); border-top:var(--lab-ds-stroke) solid var(--lab-ds-border); }
 .lab-resource-state { display:flex; align-items:center; gap:var(--lab-ds-space-8); margin:0; color:var(--lab-ds-text-secondary); }
 .lab-resource-state[data-state=warning] .lab-ds-icon { color:var(--lab-ds-warning-text); }
 .lab-resource-loader { width:var(--lab-ds-icon-major); height:var(--lab-ds-icon-major); flex:none; }
@@ -27,7 +26,9 @@
 .lab-resource-download-link { display:inline-flex; align-items:center; gap:var(--lab-ds-space-8); min-width:0; overflow-wrap:anywhere; }
 .lab-resource-download-link .lab-ds-icon { flex:none; }
 .lab-resource-download-link::after { display:none!important; }
-.lab-resource-download-size { color:var(--lab-ds-text-secondary); }
+.lab-resource-download-size { flex:none; color:var(--lab-ds-text-secondary); white-space:nowrap; }
 @media(hover:hover) { .lab-resource-structure-table tbody tr:hover { background:var(--lab-ds-surface-subtle); } }
 
 .lab-resource-metadata a.lab-proposal-link,.lab-resource-download-link { text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
+@media(max-width:900px) { .lab-resource-metadata { grid-template-columns:repeat(2,minmax(0,1fr)); } .lab-resource-metadata-main { grid-column:1/-1; } }
+@media(max-width:600px) { .lab-resource-metadata { grid-template-columns:1fr; } .lab-resource-metadata-main { grid-column:auto; } }

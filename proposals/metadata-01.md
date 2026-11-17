@@ -6,7 +6,7 @@ Références : [Agents](../docs/references/agents-design-2026-10-20.md) (hiérar
 
 16 composants : les cinq DatasetInformation/*Section, DescriptionList/Term/Details dans la bibliothèque et dans cdata, DescriptionTerm, DescriptionDetails, DateRangeDetails, CopyButton et cdata/ContactPoint. Les propositions existantes de Tag, LicenseBadge et des composants qualité sont réutilisées. FormattedDate conserve son formatage source.
 
-Les sections partagent un titre 16/24 semi-gras en casse courante, un padding vertical 24 px et un séparateur neutre. Les listes séparent les libellés 14/20 gris #555 des valeurs 14/22 #161616, avec 6 px entre eux et 20/24 px entre champs. Leur grille dépend de la place disponible, jusqu’à trois colonnes. Les éléments sémantiques dl/dt/dd et les slots sont conservés. Les deux implémentations dupliquées utilisent le même style.
+Les sections partagent un titre 16/24 semi-gras en casse courante, un padding vertical 24 px et un séparateur neutre. Les listes séparent les libellés 14/20 gris #555 des valeurs 14/22 #161616, avec 6 px entre eux et 20/24 px entre champs. Leur grille dépend de la place disponible, jusqu’à deux colonnes. Les éléments sémantiques dl/dt/dd et les slots sont conservés. Les deux implémentations dupliquées utilisent le même style.
 
 Les identifiants et contacts longs reviennent à la ligne. DescriptionDetails perd sa hauteur fixe ; l’option withEllipsis reste disponible, avec un maximum de trois lignes plutôt qu’une seule. Sans cette option, le contenu est intégralement visible. Les mots-clés et licences réutilisent leurs propositions existantes.
 

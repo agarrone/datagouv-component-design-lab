@@ -4,13 +4,13 @@
     :to="license.url"
     class="lab-license-badge"
   >
-    {{ license.title }}
+    <span class="lab-license-badge-label">{{ license.title }}</span>
   </AppLink>
   <span
     v-else-if="license"
     class="lab-license-badge"
   >
-    {{ license.title }}
+    <span class="lab-license-badge-label">{{ license.title }}</span>
   </span>
 </template>
 

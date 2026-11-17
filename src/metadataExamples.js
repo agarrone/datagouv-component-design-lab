@@ -8,7 +8,7 @@ export const metadataVariants={
  [prefix+'DatasetInformationSection']:examples(prefix+'DatasetInformationSection',[
   ['Informations complètes',{dataset}],
   ['Identifiant et mots-clés longs',{dataset:{...dataset,id:'identifiant-de-jeu-de-donnees-tres-long-pour-verifier-le-retour-a-la-ligne',tags:['couverture-territoriale','population-municipale-des-communes-et-intercommunalites','données ouvertes','mobilités quotidiennes']}}],
-  ['Informations facultatives absentes',{dataset:{...dataset,tags:[],license:null}}],
+  ['Informations facultatives absentes',{dataset:{...dataset,tags:[],license:null,doi:null,extras:{}}}],
  ]),
  [prefix+'DatasetTemporalitySection']:examples(prefix+'DatasetTemporalitySection',[
   ['Année complète',{dataset}],

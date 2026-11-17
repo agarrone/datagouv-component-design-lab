@@ -15,7 +15,7 @@
 
   <!-- An OGC endpoint with nothing to export: its URL is the only useful thing to
        hand over, to paste into a GIS. -->
-  <CopyButton v-else-if="!groups.length" :text="resource.url" :label="t('Copier le lien')" :copied-label="t('Lien copié')" />
+  <CopyButton v-else-if="!groups.length" :text="resource.url" :label="t('Copier le lien')" :copied-label="t('Copié')" />
 
   <!-- A single downloadable format needs no menu: a plain download button links
        straight to it, matching the previous behaviour. -->
@@ -84,7 +84,7 @@
               </ProposalTextLink>
               <CopyButton
                 :label="t('Copier le lien')"
-                :copied-label="t('Lien copié')"
+                :copied-label="t('Copié')"
                 :text="item.url"
                 icon-only
                 class="mr-1.5 shrink-0 opacity-0 transition-opacity focus-visible:opacity-100 group-hover/dl:opacity-100"
@@ -98,7 +98,7 @@
             <div class="border-y lab-ds-u-border-gray-default lab-ds-u-bg-gray-some px-2 py-1.5 lab-ds-u-text-xs font-bold uppercase leading-tight lab-ds-u-text-gray-title">
               {{ t('Service') }}
             </div>
-            <CopyButton :text="resource.url" :label="t('Copier le lien du service')" :copied-label="t('Lien copié')" />
+            <CopyButton :text="resource.url" :label="t('Copier le lien du service')" :copied-label="t('Copié')" />
           </div>
         </PopoverPanel>
       </Teleport>

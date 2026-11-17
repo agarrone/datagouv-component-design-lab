@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import ProposalTextLink from '/proposals/components/AppLink.vue'
 import '../../shared/foundations.css'
+import '../../shared/metadata.css'
 import '../../shared/resource-details.css'
 
 import { computed } from 'vue'
 import type { Resource } from '/vendor/datagouv-components/src/types/resources'
 import CopyButton from '/proposals/components/CopyButton.vue'
+import MiddleTruncate from '/proposals/components/MiddleTruncate.vue'
 import FormattedDate from '/vendor/datagouv-components/src/components/FormattedDate.vue'
 import { filesize } from '/vendor/datagouv-components/src/functions/helpers'
-import ExtraAccordion from '/vendor/datagouv-components/src/components/ExtraAccordion.vue'
+import MetadataExtras from '/proposals/components/MetadataExtras.vue'
 import { getResourceLabel, getResourceFilesize } from '/vendor/datagouv-components/src/functions/resources'
 import { useTranslation } from '/vendor/datagouv-components/src/composables/useTranslation'
 
@@ -21,19 +23,19 @@ const resourceFilesize = computed(() => props.resource.filesize ?? getResourceFi
 
 const { t } = useTranslation()
 </script>
-<template><div class="lab-resource-metadata">
+<template><div class="lab-resource-metadata proposal-metadata-surface">
  <dl class="lab-resource-metadata-main">
-  <div class="lab-resource-detail"><dt>{{t('URL')}}<CopyButton icon-only :text="resource.url" :label="t('Copier le lien')" :copied-label="t('Lien copié')" /></dt><dd><ProposalTextLink class="lab-proposal-link lab-resource-code" :href="resource.url">{{resource.url}}</ProposalTextLink></dd></div>
-  <div class="lab-resource-detail"><dt>{{t('URL stable')}}<CopyButton icon-only :text="resource.latest" :label="t('Copier le lien stable')" :copied-label="t('Lien copié')" /></dt><dd><ProposalTextLink class="lab-proposal-link lab-resource-code" :href="resource.latest">{{resource.latest}}</ProposalTextLink><p class="lab-resource-hint">{{t("Cette URL redirige toujours vers la dernière version du fichier : privilégiez-la pour partager la ressource ou l’utiliser dans un script.")}}</p></dd></div>
-  <div class="lab-resource-detail"><dt>{{t('Identifiant')}}<CopyButton icon-only :text="resource.id" :label="t('Copier l’identifiant')" :copied-label="t('Identifiant copié')" /></dt><dd class="lab-resource-code">{{resource.id}}</dd></div>
-  <div v-if="resource.checksum" class="lab-resource-detail"><dt>{{resource.checksum.type}}<CopyButton icon-only :text="resource.checksum.value" :label="t('Copier la somme de contrôle')" :copied-label="t('Somme de contrôle copiée')" /></dt><dd class="lab-resource-code">{{resource.checksum.value}}</dd></div>
+  <div class="lab-resource-detail proposal-technical-copy"><dt>{{t('URL')}}</dt><dd><template v-if="resource.url"><span class="proposal-technical-line"><ProposalTextLink class="lab-proposal-link lab-resource-code" :href="resource.url"><MiddleTruncate :text="resource.url" /></ProposalTextLink><CopyButton icon-only compact :text="resource.url" :label="t('Copier le lien')" :copied-label="t('Copié')" /></span></template><span v-else>—</span></dd></div>
+  <div class="lab-resource-detail proposal-technical-copy"><dt>{{t('URL stable')}}</dt><dd><template v-if="resource.latest"><span class="proposal-technical-line"><ProposalTextLink class="lab-proposal-link lab-resource-code" :href="resource.latest"><MiddleTruncate :text="resource.latest" /></ProposalTextLink><CopyButton icon-only compact :text="resource.latest" :label="t('Copier le lien stable')" :copied-label="t('Copié')" /></span><p class="lab-resource-hint">{{t("Cette URL redirige toujours vers la dernière version du fichier : privilégiez-la pour partager la ressource ou l’utiliser dans un script.")}}</p></template><span v-else>—</span></dd></div>
+  <div class="lab-resource-detail proposal-technical-copy"><dt>{{t('Identifiant')}}</dt><dd class="lab-resource-code"><span v-if="resource.id" class="proposal-technical-line"><MiddleTruncate :text="resource.id" /><CopyButton icon-only compact :text="resource.id" :label="t('Copier l’identifiant')" :copied-label="t('Copié')" /></span><span v-else>—</span></dd></div>
+  <div v-if="resource.checksum" class="lab-resource-detail proposal-technical-copy"><dt>{{resource.checksum.type}}</dt><dd class="lab-resource-code"><span class="proposal-technical-line"><MiddleTruncate :text="resource.checksum.value" /><CopyButton icon-only compact :text="resource.checksum.value" :label="t('Copier la somme de contrôle')" :copied-label="t('Copié')" /></span></dd></div>
  </dl>
  <dl class="lab-resource-metadata-secondary">
-  <div class="lab-resource-detail"><dt>{{t('Créée le')}}</dt><dd><FormattedDate :date="resource.created_at" /></dd></div>
-  <div class="lab-resource-detail"><dt>{{t('Modifiée le')}}</dt><dd><FormattedDate :date="resource.last_modified" /></dd></div>
-  <div v-if="resourceFilesize !== null && resourceFilesize !== undefined" class="lab-resource-detail"><dt>{{t('Taille')}}</dt><dd class="lab-resource-code">{{filesize(resourceFilesize)}}</dd></div>
-  <div v-if="resource.type" class="lab-resource-detail"><dt>{{t('Type')}}</dt><dd>{{getResourceLabel(resource.type)}}</dd></div>
-  <div v-if="resource.mime" class="lab-resource-detail"><dt>{{t('Type MIME')}}</dt><dd class="lab-resource-code">{{resource.mime}}</dd></div>
+  <div class="lab-resource-detail"><dt>{{t('Créée le')}}</dt><dd><FormattedDate v-if="resource.created_at" :date="resource.created_at" /><span v-else>—</span></dd></div>
+  <div class="lab-resource-detail"><dt>{{t('Modifiée le')}}</dt><dd><FormattedDate v-if="resource.last_modified" :date="resource.last_modified" /><span v-else>—</span></dd></div>
+  <div class="lab-resource-detail"><dt>{{t('Taille')}}</dt><dd class="lab-resource-code">{{resourceFilesize !== null && resourceFilesize !== undefined ? filesize(resourceFilesize) : '—'}}</dd></div>
+  <div class="lab-resource-detail"><dt>{{t('Type')}}</dt><dd>{{resource.type ? getResourceLabel(resource.type) : '—'}}</dd></div>
+  <div class="lab-resource-detail"><dt>{{t('Type MIME')}}</dt><dd class="lab-resource-code">{{resource.mime || '—'}}</dd></div>
  </dl>
- <ExtraAccordion v-if="hasExtras" class="lab-resource-extras" :button-text="t('Voir les extras')" :title-text="t('Extras de la ressource')" title-level="h5" :extra="resource.extras" />
+ <MetadataExtras v-if="hasExtras" class="lab-resource-extras" :button-text="t('Voir les extras')" :title-text="t('Extras de la ressource')" title-level="h5" :extra="resource.extras" />
 </div></template>

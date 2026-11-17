@@ -1,5 +1,6 @@
 /* These selectors belong only to the proposed metadata/quality components. */
-.lab-license-badge { font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); white-space:normal; overflow-wrap:anywhere; }
+.lab-license-badge { display:inline-flex; align-items:center; min-width:0; max-width:100%; font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); vertical-align:top; white-space:nowrap; }
+.lab-license-badge-label { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .lab-license-badge,a.lab-license-badge.lab-text-link { color:var(--lab-ds-text); }
 a.lab-license-badge { background-image:none; text-decoration:underline; text-underline-offset:var(--lab-ds-space-optical); }
 a.lab-license-badge:hover { color:var(--lab-ds-brand); }

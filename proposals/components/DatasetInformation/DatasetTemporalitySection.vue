@@ -3,27 +3,39 @@
     <h3 class="proposal-metadata-heading">
       {{ t('Temporalité') }}
     </h3>
-    <DescriptionList>
+    <DescriptionList class="proposal-metadata-list-balanced">
       <div>
         <DescriptionListTerm>{{ t('Création') }}</DescriptionListTerm>
         <DescriptionListDetails>
-          <FormattedDate :date="dataset.created_at" />
-        </DescriptionListDetails>
-      </div>
-      <div v-if="dataset.frequency">
-        <DescriptionListTerm>{{ t('Fréquence') }}</DescriptionListTerm>
-        <DescriptionListDetails>{{ dataset.frequency.label }}</DescriptionListDetails>
-      </div>
-      <div v-if="dataset.temporal_coverage">
-        <DescriptionListTerm>{{ t('Couverture temporelle') }}</DescriptionListTerm>
-        <DescriptionListDetails>
-          <DateRangeDetails :range="dataset.temporal_coverage" />
+          <FormattedDate v-if="dataset.created_at" :date="dataset.created_at" /><span v-else>—</span>
         </DescriptionListDetails>
       </div>
       <div>
-        <DescriptionListTerm>{{ t('Dernière mise à jour') }}</DescriptionListTerm>
+        <DescriptionListTerm>{{ t('Dernière modification de la fiche') }}</DescriptionListTerm>
         <DescriptionListDetails>
-          <FormattedDate :date="dataset.last_update" />
+          <FormattedDate v-if="dataset.last_modified" :date="dataset.last_modified" /><span v-else>—</span>
+        </DescriptionListDetails>
+      </div>
+      <div>
+        <DescriptionListTerm>{{ t('Fréquence') }}</DescriptionListTerm>
+        <DescriptionListDetails>{{ dataset.frequency?.label || '—' }}</DescriptionListDetails>
+      </div>
+      <div>
+        <DescriptionListTerm>{{ t('Prochaine mise à jour prévue') }}</DescriptionListTerm>
+        <DescriptionListDetails>
+          <FormattedDate v-if="dataset.frequency_date" :date="dataset.frequency_date" /><span v-else>—</span>
+        </DescriptionListDetails>
+      </div>
+      <div>
+        <DescriptionListTerm>{{ t('Couverture temporelle') }}</DescriptionListTerm>
+        <DescriptionListDetails>
+          <DateRangeDetails v-if="dataset.temporal_coverage" :range="dataset.temporal_coverage" /><span v-else>—</span>
+        </DescriptionListDetails>
+      </div>
+      <div>
+        <DescriptionListTerm>{{ t('Dernière mise à jour des ressources') }}</DescriptionListTerm>
+        <DescriptionListDetails>
+          <FormattedDate v-if="dataset.last_update" :date="dataset.last_update" /><span v-else>—</span>
         </DescriptionListDetails>
       </div>
       <slot />

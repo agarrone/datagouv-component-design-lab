@@ -47,7 +47,7 @@
             />
             {{ t('Filtrer par cette valeur') }}
           </button>
-          <CopyButton :text="displayValue" :label="t('Copier la valeur')" :copied-label="t('Valeur copiée')" />
+          <CopyButton :text="displayValue" :label="t('Copier la valeur')" :copied-label="t('Copié')" />
         </div>
       </div>
     </Teleport>
