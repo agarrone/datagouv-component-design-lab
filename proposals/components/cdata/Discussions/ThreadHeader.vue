@@ -10,7 +10,7 @@
         <CopyButton
           icon-only
           :label="$t('Copier le lien vers cette discussion')"
-          :copied-label="$t('Lien copié')"
+          :copied-label="$t('Copié')"
           :text="getDiscussionUrl(thread.id, subject)"
         />
       </h3>

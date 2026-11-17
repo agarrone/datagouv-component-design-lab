@@ -12,7 +12,7 @@ function demoProps(id) {
  const decorate=organization=>({...organization,badges:[...(organization.badges || []).filter(b=>b.kind!=='certified'),...(certified.value?[{kind:'certified'}]:[])]});
  return Object.fromEntries(Object.entries(sample).map(([key,value])=>[key,key==='organization' && value ? decorate(value) : value?.organization ? {...value,organization:decorate(value.organization)} : value]));
 }
-const core=['DatasetCard','DataserviceCard','OrganizationCard','ReuseCard','ChartCard','PostCard','TopicCard'].map(id=>({id}));
+const core=['DatasetCard','DataserviceCard','OrganizationCard','ReuseCard','ChartCard','PostCard','TopicCard','SchemaCard'].map(id=>({id}));
 const adapters=[
  {id:'cdata/Dataservices/Card/Card',target:'DataserviceCard',note:'Adaptateur cdata conservé : il transmet les données, les URL et l’option de description au composant partagé.'},
  ...[['Dataservice','DataserviceCard'],['Dataset','DatasetCard'],['Organization','OrganizationCard'],['Reuse','ReuseCard']].map(([name,target])=>({id:`cdata/Embeds/${name}Card.global`,target,note:`Adaptateur cdata conservé : il charge les données depuis un slug et gère leur état de chargement avant d’afficher ${target}.`})),

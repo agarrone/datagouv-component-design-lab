@@ -9,6 +9,7 @@ import '@gouvfr/dsfr/dist/utility/icons/icons.min.css';
 import '@fontsource/noto-sans-mono/400.css';
 import '@fontsource/noto-sans-mono/500.css';
 import '@fontsource/noto-sans-mono/700.css';
+import 'vue-sonner/style.css';
 import './style.css';
 if(import.meta.env.PROD){
  try{installChunkRecovery(window,window.sessionStorage);}catch{/* Le chargement normal reste possible sans stockage de session. */}

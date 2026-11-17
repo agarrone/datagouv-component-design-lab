@@ -3606,5 +3606,16 @@
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/User/RotatePasswordModal.vue",
     "reviewUrl": ""
+  },
+  {
+    "id": "schema-card-02",
+    "component": "SchemaCard",
+    "title": "Aligner la carte de schéma sur les cartes de contenu",
+    "status": "brouillon",
+    "problem": "La carte de schéma conservait une composition et une hiérarchie distinctes des nouvelles cartes de contenu, et la section de métadonnées reconstruisait séparément une partie des mêmes informations.",
+    "intention": "Partager le cadre, le rayon, la typographie et le rythme des cartes récentes. Conserver le titre, l’identifiant technique, les labels, le type de standard, la description, les états de sélection et les destinations utiles. Réutiliser cette carte dans les métadonnées du jeu de données à la place du rendu de schéma spécifique.",
+    "sourceCommit": "127f07d383e89900768b5b475573934e6978c403",
+    "sourcePath": "datagouv-components/src/components/SchemaCard.vue",
+    "reviewUrl": ""
   }
 ]

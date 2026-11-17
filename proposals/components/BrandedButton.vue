@@ -18,7 +18,7 @@ const inactive=computed(()=>props.disabled||props.loading)
 function guard(event:Event){if(inactive.value){event.preventDefault();event.stopImmediatePropagation()}}
 </script>
 <template>
- <CopyButton v-if="$attrs['data-clipboard-text'] !== undefined" v-bind="$attrs" :text="String($attrs['data-clipboard-text'])" label="Copier le lien" copied-label="Lien copié" :disabled="inactive" />
+ <CopyButton v-if="$attrs['data-clipboard-text'] !== undefined" v-bind="$attrs" :text="String($attrs['data-clipboard-text'])" label="Copier le lien" copied-label="Copié" :disabled="inactive" />
  <component v-else :is="href?(inactive?'span':AppLink):'button'" v-bind="$attrs" class="lab-button" :data-size="size" :data-tone="tone" :data-loading="!!loading" :data-icon-action="iconOnly" :data-icon-right="iconRight" :to="inactive?undefined:href" :external-icon="false" appearance="control" :type="href?undefined:(type||'button')" :disabled="href?undefined:inactive" :role="href?'link':undefined" :tabindex="href&&inactive?-1:undefined" :aria-disabled="inactive?'true':undefined" :aria-busy="loading?'true':undefined" :aria-label="$attrs['aria-label'] || (iconOnly?$attrs.title:undefined)" :target="href&&newTab?'_blank':undefined" :rel="href&&newTab?'noopener noreferrer':undefined" @click.capture="guard">
   <span v-if="icon||loading" class="lab-button-symbol">
    <RiLoader4Line v-if="loading" class="lab-ds-icon lab-button-spinner" :data-icon-size="size==='lg'||size==='xl'?'major':'base'" aria-hidden="true" focusable="false" />
