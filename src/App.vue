@@ -4,6 +4,7 @@ import BannersDemo from './BannersDemo.vue';
 import TagsDemo from './TagsDemo.vue';
 import MetadataDemo from './MetadataDemo.vue';
 import GraphsDemo from './GraphsDemo.vue';
+import MarkdownInterpreter from './MarkdownInterpreter.vue';
 import { Toaster } from 'vue-sonner';
 import ProposalFoundations from "./ProposalFoundations.vue";
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue';
@@ -38,7 +39,7 @@ const raw = import.meta.glob(['../vendor/datagouv-components/src/components/**/*
 const view = ref('catalogue');
 const templateVersion=ref('current');
 const sectionId=ref('');
-const componentSection=computed(()=>view.value==='catalogue' || ['demo-cartes','demo-bandeaux','demo-tags','demo-metadonnees','demo-graphes'].includes(view.value) || view.value.startsWith('types/'));
+const componentSection=computed(()=>view.value==='catalogue' || ['demo-cartes','demo-bandeaux','demo-tags','demo-metadonnees','demo-graphes','markdown'].includes(view.value) || view.value.startsWith('types/'));
 const foundationSections=[['propositions','Fondamentaux des propositions'],['couleurs','Couleurs'],['typographie','Typographie'],['espacements','Espacements'],['responsive','Responsive'],['regles','Règles partagées'],['styles','Styles partagés'],['illustrations','Illustrations'],['labels','Labels'],['cartographie','Style cartographique'],['reference-agents','Référence Agents']];
 const typePage = computed(() => typePages[view.value.split('/')[1]]);
 const activeTemplate = computed(() => templates[sectionId.value] || templates.dataset);
@@ -56,6 +57,7 @@ const returnFamilyId = ref('');
 const returnFamily = computed(() => typePages[returnFamilyId.value] ? {id:returnFamilyId.value,...typePages[returnFamilyId.value]} : null);
 const reviewableInventory=inventory.filter(c=>catalog.components[c.id]?.status==='reviewable');
 const workingComponents=[
+  {label:'Interpréteur Markdown',href:'#markdown'},
   {label:'Graphiques',href:'#demo-graphes'},
   {label:'Avatar',href:'#Avatar'},
   {label:'Métadonnées',href:'#demo-metadonnees'},
@@ -157,6 +159,7 @@ function route() {
   if(page==='demo-tags'){selected.value=null;view.value='demo-tags';window.scrollTo(0,0);return;}
   if(page==='demo-metadonnees'){selected.value=null;view.value='demo-metadonnees';window.scrollTo(0,0);return;}
   if(page==='demo-graphes'){selected.value=null;view.value='demo-graphes';window.scrollTo(0,0);return;}
+  if(page==='markdown'){selected.value=null;view.value='markdown';window.scrollTo(0,0);return;}
   if(page==='comparateur') {navigate(); return;}
   if(page==='types' && typePages[section]) { selected.value=null; view.value=`types/${section}`; window.scrollTo(0,0); return; }
   if(['fondamentaux','incoherences','suivi','templates','travaux'].includes(page)) {
@@ -193,7 +196,7 @@ function downloadProposal(c) {
   <aside class="sidebar">
     <div class="sidebar-browse">
       <div class="context-nav-title">{{ componentSection ? 'Composants' : view==='fondamentaux' ? 'Fondamentaux' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Incohérences' }}</div>
-      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#demo-cartes" :class="{active:view==='demo-cartes'}" :aria-current="view==='demo-cartes'?'page':undefined">Démo des cartes</a><a href="#demo-bandeaux" :class="{active:view==='demo-bandeaux'}" :aria-current="view==='demo-bandeaux'?'page':undefined">Démo des bandeaux</a><a href="#demo-tags" :class="{active:view==='demo-tags'}" :aria-current="view==='demo-tags'?'page':undefined">Démo des tags et badges</a><a href="#demo-metadonnees" :class="{active:view==='demo-metadonnees'}" :aria-current="view==='demo-metadonnees'?'page':undefined">Démo des métadonnées</a><a href="#demo-graphes" :class="{active:view==='demo-graphes'}" :aria-current="view==='demo-graphes'?'page':undefined">Démo des graphes</a><a href="#" :class="{active:view==='catalogue' && !selected && !typePage}">Vue d’ensemble <span>{{ reviewableInventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
+      <nav v-if="componentSection" class="context-nav" aria-label="Catégories de composants"><a href="#markdown" :class="{active:view==='markdown'}" :aria-current="view==='markdown'?'page':undefined">Interpréteur Markdown</a><a href="#demo-cartes" :class="{active:view==='demo-cartes'}" :aria-current="view==='demo-cartes'?'page':undefined">Démo des cartes</a><a href="#demo-bandeaux" :class="{active:view==='demo-bandeaux'}" :aria-current="view==='demo-bandeaux'?'page':undefined">Démo des bandeaux</a><a href="#demo-tags" :class="{active:view==='demo-tags'}" :aria-current="view==='demo-tags'?'page':undefined">Démo des tags et badges</a><a href="#demo-metadonnees" :class="{active:view==='demo-metadonnees'}" :aria-current="view==='demo-metadonnees'?'page':undefined">Démo des métadonnées</a><a href="#demo-graphes" :class="{active:view==='demo-graphes'}" :aria-current="view==='demo-graphes'?'page':undefined">Démo des graphes</a><a href="#" :class="{active:view==='catalogue' && !selected && !typePage}">Vue d’ensemble <span>{{ reviewableInventory.length }}</span></a><a v-for="(page,id) in visibleTypePages" :key="id" :href="`#types/${id}`" :class="{active:view===`types/${id}` || selected && returnFamilyId===id}" :aria-current="view===`types/${id}`?'page':undefined">{{ page.label }}</a></nav>
       <nav v-else-if="view==='fondamentaux'" class="context-nav" aria-label="Sections des fondamentaux"><a href="#fondamentaux" :class="{active:!sectionId}">Vue d’ensemble</a><a v-for="[id,label] in foundationSections" :key="id" :href="`#fondamentaux/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'location':undefined">{{ label }}</a></nav>
       <nav v-else-if="view==='templates'" class="context-nav" aria-label="Templates"><a v-for="(template,id) in templates" :key="id" :href="`#templates/${id}`" :class="{active:sectionId===id}" :aria-current="sectionId===id?'page':undefined">{{template.title}}</a></nav>
       <nav v-else-if="view==='travaux'" class="context-nav" aria-label="Familles des travaux en cours"><a href="#travaux" :class="{active:!sectionId}" :aria-current="!sectionId?'page':undefined">Tous les travaux <span>{{ workGroups.reduce((n,g)=>n+g.components.length,0) }}</span></a><a v-for="group in workGroups" :key="group.key" :href="`#travaux/${group.key}`" :class="{active:sectionId===group.key}" :aria-current="sectionId===group.key?'page':undefined">{{group.label}} <span>{{group.components.length}}</span></a></nav>
@@ -213,9 +216,10 @@ function downloadProposal(c) {
     <div class="sidebar-source"><a href="https://github.com/agarrone/datagouv-component-design-lab" target="_blank" rel="noopener noreferrer">GitHub <RiArrowRightUpLine /></a><a :href="`${lock.repository}/commit/${lock.commit}`" target="_blank" rel="noopener noreferrer">Source · {{ lock.commit.slice(0,7) }} <RiExternalLinkLine /></a></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='demo-cartes' ? 'Démo des cartes' : view==='demo-bandeaux' ? 'Démo des bandeaux' : view==='demo-tags' ? 'Démo des tags et badges' : view==='demo-metadonnees' ? 'Démo des métadonnées' : view==='demo-graphes' ? 'Démo des graphes' : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Composants' }}</span></nav></header>
+    <header class="topbar"><nav class="breadcrumbs" aria-label="Fil d’Ariane"><template v-if="selected || typePage"><a href="#">Composants</a><span aria-hidden="true">/</span><template v-if="selected && returnFamily"><a :href="`#types/${returnFamily.id}`">{{ returnFamily.label }}</a><span aria-hidden="true">/</span></template><span aria-current="page">{{ selected ? selected.name : typePage.label }}</span></template><span v-else aria-current="page">{{ view==='markdown' ? 'Interpréteur Markdown' : view==='demo-cartes' ? 'Démo des cartes' : view==='demo-bandeaux' ? 'Démo des bandeaux' : view==='demo-tags' ? 'Démo des tags et badges' : view==='demo-metadonnees' ? 'Démo des métadonnées' : view==='demo-graphes' ? 'Démo des graphes' : view==='fondamentaux' ? 'Fondamentaux' : view==='incoherences' ? 'Incohérences' : view==='templates' ? 'Templates' : view==='suivi' ? 'Suivi' : view==='travaux' ? 'Travaux en cours' : 'Composants' }}</span></nav></header>
     <main id="main">
-      <CardsDemo v-if="view==='demo-cartes'" />
+      <MarkdownInterpreter v-if="view==='markdown'" />
+      <CardsDemo v-else-if="view==='demo-cartes'" />
       <BannersDemo v-else-if="view==='demo-bandeaux'" />
       <TagsDemo v-else-if="view==='demo-tags'" />
       <MetadataDemo v-else-if="view==='demo-metadonnees'" />
