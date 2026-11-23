@@ -188,12 +188,17 @@
         {
           "name": "text-caption",
           "value": "12px",
-          "usage": "Métadonnées et badges"
+          "usage": "Badges et indications secondaires"
+        },
+        {
+          "name": "text-technical",
+          "value": "13px",
+          "usage": "Valeurs techniques en monospace, compensées optiquement face au corps Marianne 14 px"
         },
         {
           "name": "leading-caption",
           "value": "18px",
-          "usage": "Interligne des métadonnées"
+          "usage": "Interligne des textes compacts et des valeurs techniques"
         },
         {
           "name": "text-body",

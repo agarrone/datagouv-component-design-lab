@@ -29,7 +29,7 @@ Le [guide des comportements](component-behaviors.md) documente treize familles :
 | États | Information, succès, attention et erreur ont chacun texte, fond et bordure. Toujours accompagner la couleur d’un libellé ou d’un pictogramme explicite. |
 | Catégories | Rose et turquoise expriment des catégories, pas un succès ou une erreur. Les couleurs des pictogrammes de formats de fichiers restent métier. |
 | Polices | Marianne pour l’interface ; Geist Mono pour le code et les glyphes de chargement, avec repli monospace. Code en 12/20. |
-| Hiérarchie | Titre de composant 16/24, graisse 600 ; corps 14/22, graisse 400 ; contrôle 14/20 ; métadonnées 12/18 ; section 24/32. |
+| Hiérarchie | Titre de composant 16/24, graisse 600 ; corps 14/22, graisse 400 ; contrôle 14/20 ; libellés de métadonnées 14/20 et valeurs 14/22 en graisse 400 ; valeurs techniques mono 13/18 ; section 24/32. |
 | Chiffres | Chiffres tabulaires pour dates, scores et comparaisons ; pas de monospace imposée à tout texte numérique. |
 | Espacement | Échelle 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64 px. Repères : icône/libellé 8 ; éléments liés 12 ; carte/bandeau 16 ; section 24. |
 | Coins | 4 px standard ; 2 px technique ; 999 px pilule ; 50 % cercle. Rayon intérieur de 3 px pour une image dans un cadre de 4 px avec bordure de 1 px. |
@@ -210,7 +210,7 @@ Champs et sélecteurs : fond gris DSFR (`background-contrast-grey`), ligne infé
 
 Toutes les icônes des propositions utilisent un dessin outline (Remix Line ou tracé de contour équivalent), y compris les états sélectionnés et les composants sources imbriqués. Un état se distingue par sa couleur, son fond, son libellé ou une coche, pas par le passage à une icône pleine. Les pictogrammes de formats utilisent les primitives Icons proposées. Les logos et illustrations restent des assets de marque, sans altération de leurs tracés.
 
-Détails de ressource : libellés et texte en Marianne 14/22 ; URL, identifiants, sommes de contrôle, formats et tailles en Geist Mono 12/18. Les listes gardent les liens soulignés et le bouton de copie partagé. Une structure tabulaire utilise un tableau sémantique à en-tête gris ; les messages d’absence ou d’erreur simples restent en ligne. Une taille nulle et une taille inconnue sont distinctes.
+Détails de ressource : libellés en Marianne 14/20 et texte en Marianne 14/22, graisse 400 ; URL, identifiants, sommes de contrôle, formats et tailles en Geist Mono 13/18, graisse 400. Les listes gardent les liens soulignés et le bouton de copie partagé. Une structure tabulaire utilise un tableau sémantique à en-tête gris ; les messages d’absence ou d’erreur simples restent en ligne. Une taille nulle et une taille inconnue sont distinctes.
 
 ## Navigation et informations contextuelles
 

@@ -222,7 +222,9 @@
 .lab-organization-vertical .lab-object-card-layout { flex-direction:column; }
 .lab-organization-vertical .lab-object-card-body { width:100%; }
 .lab-schema-tags { display:flex; flex-wrap:wrap; gap:var(--lab-ds-space-4); margin-block:var(--lab-ds-space-8); }
-@layer base { .lab-schema-card a.lab-text-link,.lab-schema-card a.lab-text-link:hover { color:var(--lab-ds-text)!important; } }
+@layer base { .lab-schema-card a.lab-text-link,.lab-schema-card a.lab-text-link:visited { color:var(--lab-ds-text)!important; } }
+@media(hover:hover) { .lab-schema-card a.lab-text-link:hover { color:var(--lab-ds-brand)!important; } }
+.lab-schema-card a.lab-text-link:active { color:var(--lab-ds-brand)!important; }
 .lab-discussion-message-card .lab-object-card-body { gap:var(--lab-ds-space-12); }
 .lab-discussion-message-card .lab-object-card-body > * { margin-block:0; }
 .lab-reuse-metadata { gap:var(--lab-ds-space-8) var(--lab-ds-space-12); }

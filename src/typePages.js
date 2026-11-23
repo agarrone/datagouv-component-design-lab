@@ -34,7 +34,7 @@ Object.assign(typePages, {
     { title: 'Pagination', items:items(['Pagination']) },
   ] },
   badges: { label: 'Badges et indicateurs', description: 'Les labels, formats, informations de qualité et jauges de progression.', sections: [
-    { title: 'Labels et identification', items:items(['Tag','DatasetLabelTag','LicenseBadge','ResourceIconBadge','OwnerType']) },
+    { title: 'Labels et identification', items:items(['Tag','Badge','DatasetLabelTag','LicenseBadge','ResourceIconBadge','OwnerType']) },
     { title: 'Qualité', items:[...items(['DatasetQualityInline','DataserviceQualityInline','QualityItem','QualityItemWarning']),...[0.3,0.78,1].map(score=>({id:'QualityScore',key:`quality-${score}`,label:`${Math.round(score*100)} %`,props:{score}}))] },
     { title: 'Progression', items:items(['ProgressBar']) },
   ] },
@@ -110,7 +110,7 @@ const librarySections={
  notifications:['Activité',['ActivityList/ActivityList','ActivityList/UserActivityList']],
  navigation:['Éléments de navigation',['AppLink','Tabs/Tab','Tabs/TabList','Tabs/TabPanel','Tabs/TabPanels']],
     cards:['Structure des cartes',['ObjectCard','CardMedia','ObjectCardMeta','ObjectCardMetric','ObjectCardMetrics','ObjectCardQuality','ObjectCardShortDescription']],
- badges:['Indicateurs de carte et de ressource',['ObjectCardBadge','ResourceAccordion/ResourceIcon']],
+ badges:['Indicateurs de carte et de ressource',['ObjectStatusBadge','ResourceAccordion/ResourceIcon']],
  editorial:['Lecture et mise en page',['MarkdownViewer','PaddedContainer']],
  resources:['Structure de l’explorateur',['ResourceAccordion/PreviewWrapper','ResourceExplorer/ResourceExplorerHeader','ResourceExplorer/ResourceExplorerSidebar','ResourceExplorer/ResourceExplorerViewer']],
 };

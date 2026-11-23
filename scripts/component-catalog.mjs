@@ -23,7 +23,7 @@ childrenOf('ResourceAccordion/', 'ResourceAccordion/ResourceAccordion');
 childrenOf('ResourceExplorer/', 'ResourceExplorer/ResourceExplorer');
 childrenOf('TabularExplorer/', 'TabularExplorer/TabularExplorer');
 
-relate('cdata/AdminBadge/AdminBadge', ['cdata/AccessTypes/AccessTypeBadge', 'cdata/AdminBadge/DataserviceBadge', 'cdata/AdminBadge/DatasetBadge', 'cdata/AdminBadge/ReuseBadge', 'cdata/Harvesters/HarvesterBadge', 'cdata/Harvesters/JobBadge', 'cdata/SuiviDePublication/HvdStatutBadge'], 'Variante métier du badge administratif.');
+relate('Badge', ['AccessTypeBadge', 'ChartBadge', 'DataserviceBadge', 'DatasetBadge', 'ObjectStatusBadge', 'OrganizationBadge', 'ReuseBadge', 'cdata/Datasets/ResourceAvailabilityBadge', 'cdata/Discussions/DiscussionStatusBadge', 'cdata/ExternalLinkBadge', 'cdata/Harvesters/HarvesterBadge', 'cdata/Harvesters/JobBadge', 'cdata/Organization/MemberRoleBadge'], 'Variante métier du badge partagé.');
 relate('Tooltip', ['cdata/AdminContentWithTooltip/AdminContentWithTooltip']);
 relate('Form/SearchableSelect', ['cdata/BadgeSelect']);
 relate('cdata/Breadcrumb/Breadcrumb', ['cdata/Breadcrumbs/AdminBreadcrumb', 'cdata/Breadcrumbs/BreadcrumbItem']);

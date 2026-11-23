@@ -110,116 +110,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "tag-01",
-    "component": "Tag",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Tag.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "datasetlabeltag-01",
-    "component": "DatasetLabelTag",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetLabelTag.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-accesstypes-accesstypebadge-01",
-    "component": "cdata/AccessTypes/AccessTypeBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AccessTypes/AccessTypeBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-adminbadge-adminbadge-01",
-    "component": "cdata/AdminBadge/AdminBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminBadge/AdminBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-adminbadge-dataservicebadge-01",
-    "component": "cdata/AdminBadge/DataserviceBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminBadge/DataserviceBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-adminbadge-datasetbadge-01",
-    "component": "cdata/AdminBadge/DatasetBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminBadge/DatasetBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-adminbadge-reusebadge-01",
-    "component": "cdata/AdminBadge/ReuseBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminBadge/ReuseBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-harvesters-harvesterbadge-01",
-    "component": "cdata/Harvesters/HarvesterBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Harvesters/HarvesterBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-harvesters-jobbadge-01",
-    "component": "cdata/Harvesters/JobBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Harvesters/JobBadge.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-suividepublication-hvdstatutbadge-01",
-    "component": "cdata/SuiviDePublication/HvdStatutBadge",
-    "title": "Harmoniser tags et badges en conservant leur sens métier",
-    "status": "brouillon",
-    "problem": "Les composants utilisent des formes, casses, espacements et tailles d’icônes différents. Certains labels sont traités comme des actions pleines alors qu’ils décrivent une catégorie ou un statut.",
-    "intention": "Socle partagé : corps 12 px, interligne 18 px, icônes 14 px, espaces 4 px, tailles compactes 20 px ou standard 24 px. Tags de catégorie en pill ; badges d’état à rayon 6 px, texte couleur accent et bordure légère. Suppression des capitales forcées. Les mappings de statut, propriétés, liens et priorités métier restent conservés. Références : Agents pour surfaces, neutres et états sémantiques, Jakub Krehel pour hiérarchie et lisibilité. Pas d’animation ajoutée. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/SuiviDePublication/HvdStatutBadge.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "avatar-01",
     "component": "Avatar",
     "title": "Une représentation cohérente des personnes et des automates",
@@ -264,17 +154,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "quality-licensebadge-01",
-    "component": "LicenseBadge",
-    "title": "Harmoniser les badges descriptifs",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Réutiliser Marianne, le rayon 6 px et les rôles de couleurs Agents. Masquer le pourcentage par défaut, garder le seuil et les critères métier, rendre les détails consultables au clavier et distinguer les critères satisfaits des points à compléter. Conserver les props et le masquage des avertissements. Les badges descriptifs conservent leur sens et leurs liens ; ils ne deviennent pas des statuts de qualité. Voir proposals/quality-and-metadata-01.md. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/LicenseBadge.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "quality-resourceiconbadge-01",
     "component": "ResourceIconBadge",
     "title": "Harmoniser les badges descriptifs",
@@ -305,17 +184,6 @@
     "intention": "Score et déclencheur sans boîte, détails et avertissements conservés. Voir proposals/coherence-components-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetQuality.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "quality-dataservicequality-01",
-    "component": "DataserviceQuality",
-    "title": "Des repères lisibles pour les métadonnées et leur qualité",
-    "status": "brouillon",
-    "problem": "Les indicateurs de qualité varient en disposition et en densité, le pourcentage est masqué visuellement et les critères mélangent plusieurs styles d’icônes. Les badges descriptifs utilisent des typographies et géométries différentes.",
-    "intention": "Score et déclencheur sans boîte, détails et avertissements conservés. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DataserviceQuality.vue",
     "reviewUrl": ""
   },
   {
@@ -665,7 +533,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSpatialSection.vue",
     "reviewUrl": ""
@@ -676,20 +544,9 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetTemporalitySection.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "metadata-datasetinformation-datasetschemasection-01",
-    "component": "DatasetInformation/DatasetSchemaSection",
-    "title": "Unifier la lecture des métadonnées",
-    "status": "brouillon",
-    "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
     "reviewUrl": ""
   },
   {
@@ -698,7 +555,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DescriptionList.vue",
     "reviewUrl": ""
@@ -709,7 +566,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DescriptionListTerm.vue",
     "reviewUrl": ""
@@ -720,7 +577,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DescriptionListDetails.vue",
     "reviewUrl": ""
@@ -731,7 +588,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DescriptionTerm.vue",
     "reviewUrl": ""
@@ -742,7 +599,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DescriptionDetails.vue",
     "reviewUrl": ""
@@ -753,7 +610,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les plages de dates gagnent à utiliser des chiffres tabulaires dans les blocs de métadonnées ; une valeur invalide ne doit pas provoquer une erreur de rendu.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/DateRangeDetails.vue",
     "reviewUrl": ""
@@ -764,7 +621,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Le libellé de copie n’apparaît qu’au survol et son état de confirmation change la géométrie du contrôle. L’accessibilité et la visibilité de cette action peuvent être harmonisées.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/CopyButton.vue",
     "reviewUrl": ""
@@ -775,7 +632,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les coordonnées longues sont tronquées et le rôle est présenté en italique entre parenthèses ; les informations de contact pourraient partager la hiérarchie des autres métadonnées.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/ContactPoint.vue",
     "reviewUrl": ""
@@ -786,7 +643,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/DescriptionList/DescriptionListDetails.vue",
     "reviewUrl": ""
@@ -797,7 +654,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/DescriptionList/DescriptionList.vue",
     "reviewUrl": ""
@@ -808,7 +665,7 @@
     "title": "Unifier la lecture des métadonnées",
     "status": "brouillon",
     "problem": "Les sections de métadonnées et leurs listes utilisent des titres en capitales, des libellés plus forts que les valeurs et une grille pilotée par la fenêtre. Dans une colonne étroite, les identifiants, licences et autres textes longs deviennent difficiles à lire. Les contrôles de copie sont peu explicites.",
-    "intention": "Partager des titres 16/24 semi-gras, des libellés discrets en 14/20 et des valeurs en 14/22. Adapter les listes à leur largeur réelle, laisser les valeurs longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
+    "intention": "Partager des titres 14/20 en graisse 500 et en capitales, des libellés discrets en 14/20 et des valeurs régulières en 14/22. Utiliser Geist Mono 13/18 en graisse 400 pour les valeurs techniques. Adapter les listes à leur largeur réelle, laisser les valeurs ordinaires longues revenir à la ligne, harmoniser les actions de copie et distinguer les surfaces techniques de code. Les listes bibliothèque et cdata conservent leurs éléments dl/dt/dd. Références Agents, Jakub Krehel et chiffres tabulaires. Propriétés, slots, règles d’affichage et valeurs source conservés ; détails dans proposals/metadata-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/DescriptionList/DescriptionListTerm.vue",
     "reviewUrl": ""
@@ -830,7 +687,7 @@
     "title": "Une identité d’organisation lisible dans toutes les largeurs",
     "status": "brouillon",
     "problem": "Le conteneur et le nom sont tronqués ; le cadre du logo ajoute un espacement qui varie fortement selon les usages.",
-    "intention": "Nom intégral avec retour à la ligne, logo non déformé, cadre neutre de rayon 6 px et espacement 8 px. Tailles base/sm/xs, couleur, lien, balise de titre, certification et option sans cadre conservés. Le logo est décoratif puisque le nom est adjacent. Références : Agents et Jakub Krehel.",
+    "intention": "Composant d’identité dédié réunissant logo, nom, badge du type d’organisation et badge de certification. L’identité complète constitue un lien vers l’organisation ; son focus porte sur l’ensemble et le survol souligne uniquement le nom. Le nom intégral revient à la ligne sans troncature ni déplacement du logo, tandis que les badges occupent une ligne stable sous le nom. Tailles base/sm/xs, couleur, balise de titre, variante sans lien et option sans cadre conservées. Le logo est décoratif puisque le nom est adjacent. Références : Agents et Jakub Krehel.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/OrganizationOwner.vue",
     "reviewUrl": ""
@@ -855,17 +712,6 @@
     "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Discussions/DiscussionCard.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "discussions-discussioncommentheader-01",
-    "component": "cdata/Discussions/DiscussionCommentHeader",
-    "title": "Unifier auteur, date et rôle",
-    "status": "brouillon",
-    "problem": "Les espacements, les métadonnées et les commandes du fil manquent de hiérarchie commune, notamment sur petit écran.",
-    "intention": "Surfaces neutres, rayon 6 px, titre 16/24, texte 14/22, métadonnées 12/18, identités lisibles et actions qui reviennent à la ligne. Fonctions et permissions natives conservées. Références Agents et Jakub Krehel.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Discussions/DiscussionCommentHeader.vue",
     "reviewUrl": ""
   },
   {
@@ -924,17 +770,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "inputs-01-Form-SelectGroup",
-    "component": "Form/SelectGroup",
-    "title": "Des champs cohérents et des états explicites",
-    "status": "brouillon",
-    "problem": "Géométries hétérogènes et associations incomplètes entre champs, aides et erreurs.",
-    "intention": "Champ 40 px, Marianne 14/20, rayon 6 px, bordure stable et focus commun. Erreurs prioritaires et aides reliées au champ. Modèles, événements et intégration aux formulaires conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/Form/SelectGroup.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "tables-01-cdata-AdminTable-Table-AdminTable",
     "component": "cdata/AdminTable/Table/AdminTable",
     "title": "Des tableaux cohérents avec l’explorateur de données",
@@ -987,61 +822,6 @@
     "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularSearchInput.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "tables-01-AdminDatasetsTable",
-    "component": "cdata/AdminTable/AdminDatasetsTable/AdminDatasetsTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminDatasetsTable/AdminDatasetsTable.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "tables-01-AdminDataservicesTable",
-    "component": "cdata/AdminTable/AdminDataservicesTable/AdminDataservicesTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminDataservicesTable/AdminDataservicesTable.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "tables-01-AdminReusesTable",
-    "component": "cdata/AdminTable/AdminReusesTable/AdminReusesTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminReusesTable/AdminReusesTable.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "tables-01-AdminContactPointsTable",
-    "component": "cdata/AdminTable/AdminContactPointsTable/AdminContactPointsTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminContactPointsTable/AdminContactPointsTable.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "tables-01-AdminDiscussionsTable",
-    "component": "cdata/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable",
-    "title": "Des tableaux cohérents avec l’explorateur de données",
-    "status": "brouillon",
-    "problem": "Densités, grilles, en-têtes et polices techniques divergent entre exploration et administration.",
-    "intention": "Surfaces blanches, en-têtes gris subtil, séparations fines, survol de ligne et focus visibles. Même densité compacte en 12/18 pour l’explorateur et l’administration, cellules espacées de 8 px verticalement et 12 px horizontalement, séparateurs de lignes et de colonnes communs. Valeurs numériques et dates en Geist Mono, chiffres tabulaires. Tri administratif annoncé avec aria-sort. Logique de données et comportements métier conservés.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AdminTable/AdminDiscussionsTable/AdminDiscussionsTable.vue",
     "reviewUrl": ""
   },
   {
@@ -1221,17 +1001,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "selection-01-cdata-ContactPointSelect",
-    "component": "cdata/ContactPointSelect",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/ContactPointSelect.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "selection-01-cdata-DataservicesSelect",
     "component": "cdata/DataservicesSelect",
     "title": "Une famille cohérente de champs et de choix",
@@ -1328,17 +1097,6 @@
     "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Support/Choice.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "selection-01-cdata-TagsSelect",
-    "component": "cdata/TagsSelect",
-    "title": "Une famille cohérente de champs et de choix",
-    "status": "brouillon",
-    "problem": "Les sélecteurs applicatifs présentent des géométries et focus différents des primitives communes.",
-    "intention": "Conserver les suggestions, permissions, modèles et actions métier source. Appliquer les styles partagés aux contrôles applicatifs et réutiliser les primitives proposées dans leurs compositions. Passe DSFR : couleurs liées aux variables officielles, statut informatif distinct du tag de catégorie ou de filtre ; géométrie commune conservée. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/TagsSelect.vue",
     "reviewUrl": ""
   },
   {
@@ -1474,28 +1232,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "badges-consumer-statbox",
-    "component": "StatBox",
-    "title": "Un indicateur compact avec période et historique explicites",
-    "status": "brouillon",
-    "problem": "Le dernier total mensuel est présenté comme une hausse, les zéros sont masqués et les deux tailles divergent. Le wrapper précédent ne traitait que le badge.",
-    "intention": "Hiérarchie 14/20, valeur 24/32 ou 16/24 en compact, chiffres tabulaires et formatage localisé. Période explicite, mini-historique bleu France et résumé accessible. Distinguer zéro, absence et chargement ; dernier total mensuel sans faux signe de hausse ni badge vert. Voir proposals/stat-box-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/StatBox.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "badges-consumer-resourceaccordion-schemabadge",
-    "component": "ResourceAccordion/SchemaBadge",
-    "title": "Harmoniser les badges et tags du composant",
-    "status": "brouillon",
-    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
-    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "datagouv-components/src/components/ResourceAccordion/SchemaBadge.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "badges-consumer-tabularexplorer-tabularactivefilters",
     "component": "TabularExplorer/TabularActiveFilters",
     "title": "Harmoniser les badges et tags du composant",
@@ -1504,17 +1240,6 @@
     "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "datagouv-components/src/components/TabularExplorer/TabularActiveFilters.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "badges-consumer-cdata-datasets-describedataset",
-    "component": "cdata/Datasets/DescribeDataset",
-    "title": "Harmoniser les badges et tags du composant",
-    "status": "brouillon",
-    "problem": "Les pastilles locales échappent aux composants de badge et tag déjà proposés.",
-    "intention": "Reprendre la géométrie commune et les couleurs DSFR, préserver la logique métier, les modèles et les actions. Voir proposals/badges-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/DescribeDataset.vue",
     "reviewUrl": ""
   },
   {
@@ -1606,17 +1331,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "bannernotif-01",
-    "component": "cdata/BannerNotif",
-    "title": "Une notification structurée et sans badge flottant",
-    "status": "brouillon",
-    "problem": "Le traitement initial diffère des bandeaux, notifications et actions déjà proposés.",
-    "intention": "Conserver une citation sémantique avec filet ; placer les actions sous le contenu, à droite. Voir proposals/coherence-components-02.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/BannerNotif.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "transferbanner-01",
     "component": "cdata/TransferBanner",
     "title": "Un avertissement de transfert cohérent avec BannerAction",
@@ -1625,17 +1339,6 @@
     "intention": "Réutiliser BannerAction warning avec icône outline, texte sémantique et action de transfert. Conserver la modale, les destinataires, le commentaire et les requêtes métier ; désactiver la confirmation sans destinataire, et afficher une erreur en cas d’échec.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/TransferBanner.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "cdata-accesstypes-accesstypepanel-01",
-    "component": "cdata/AccessTypes/AccessTypePanel",
-    "title": "Présenter clairement les conditions d’accès",
-    "status": "brouillon",
-    "problem": "La hiérarchie et la présentation initiales ne suivent pas les fondamentaux des propositions.",
-    "intention": "Réutiliser AccessTypeBadge et AccessAudienceCondition proposés, groupes espacés de 16 px, conditions explicites, action secondaire Demander un accès. Conserver les props, l’ordre des publics et les conditions d’affichage métier.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/AccessTypes/AccessTypePanel.vue",
     "reviewUrl": ""
   },
   {
@@ -2519,17 +2222,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-bannerreadonly-01",
-    "component": "cdata/BannerReadOnly",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/BannerReadOnly.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-brand-brandbanner-01",
     "component": "cdata/Brand/BrandBanner",
     "title": "Partager le rythme des pages publiques",
@@ -2673,28 +2365,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-datasetassignmenttable-01",
-    "component": "cdata/DatasetAssignmentTable",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/DatasetAssignmentTable.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-datasets-adminupdatedatasetpage-01",
-    "component": "cdata/Datasets/AdminUpdateDatasetPage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/AdminUpdateDatasetPage.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-datasets-completeresourcepublicationstep-01",
     "component": "cdata/Datasets/CompleteResourcePublicationStep",
     "title": "Harmoniser les formulaires et pages métier",
@@ -2747,17 +2417,6 @@
     "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Datasets/GeopfPullButton.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-datasets-geopfpushstatus-01",
-    "component": "cdata/Datasets/GeopfPushStatus",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Datasets/GeopfPushStatus.vue",
     "reviewUrl": ""
   },
   {
@@ -2978,17 +2637,6 @@
     "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/Harvesters/CompletePublicationStep.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-harvesters-jobpage-01",
-    "component": "cdata/Harvesters/JobPage",
-    "title": "Harmoniser les formulaires et pages métier",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Hiérarchie des titres et légendes, champs et actions partagés, espacements, surfaces et focus cohérents. Conserver validation, permissions et événements métier. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/Harvesters/JobPage.vue",
     "reviewUrl": ""
   },
   {
@@ -3553,17 +3201,6 @@
     "reviewUrl": ""
   },
   {
-    "id": "remaining-cdata-user-changeemailmodal-01",
-    "component": "cdata/User/ChangeEmailModal",
-    "title": "Unifier les surfaces de modales",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/User/ChangeEmailModal.vue",
-    "reviewUrl": ""
-  },
-  {
     "id": "remaining-cdata-user-changepasswordmodal-01",
     "component": "cdata/User/ChangePasswordModal",
     "title": "Unifier les surfaces de modales",
@@ -3572,17 +3209,6 @@
     "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
     "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
     "sourcePath": "components/User/ChangePasswordModal.vue",
-    "reviewUrl": ""
-  },
-  {
-    "id": "remaining-cdata-user-createapitokenmodal-01",
-    "component": "cdata/User/CreateApiTokenModal",
-    "title": "Unifier les surfaces de modales",
-    "status": "brouillon",
-    "problem": "Ce composant ne disposait pas de proposition dans le catalogue. Son intégration devait être examinée avec les conventions communes.",
-    "intention": "Surface blanche, titre 24/32, rayon et ombre communs. Réutiliser les champs et actions proposés ; conserver ouverture, fermeture, focus piégé, Échap et slots natifs. La proposition repose sur les composants enfants, sans ajouter de conteneur ni imposer une classe à une racine fragmentée. Voir proposals/remaining-components-01.md.",
-    "sourceCommit": "c3945a840af816ec4b958375119db57233db86d8",
-    "sourcePath": "components/User/CreateApiTokenModal.vue",
     "reviewUrl": ""
   },
   {
@@ -3608,14 +3234,14 @@
     "reviewUrl": ""
   },
   {
-    "id": "schema-card-02",
-    "component": "SchemaCard",
-    "title": "Aligner la carte de schéma sur les cartes de contenu",
+    "id": "metadata-datasetinformation-datasetschemasection-02",
+    "component": "DatasetInformation/DatasetSchemaSection",
+    "title": "Restaurer la carte du schéma de données",
     "status": "brouillon",
-    "problem": "La carte de schéma conservait une composition et une hiérarchie distinctes des nouvelles cartes de contenu, et la section de métadonnées reconstruisait séparément une partie des mêmes informations.",
-    "intention": "Partager le cadre, le rayon, la typographie et le rythme des cartes récentes. Conserver le titre, l’identifiant technique, les labels, le type de standard, la description, les états de sélection et les destinations utiles. Réutiliser cette carte dans les métadonnées du jeu de données à la place du rendu de schéma spécifique.",
-    "sourceCommit": "127f07d383e89900768b5b475573934e6978c403",
-    "sourcePath": "datagouv-components/src/components/SchemaCard.vue",
+    "problem": "La présentation en ligne issue de la dernière version amont réduit la visibilité du schéma et de sa documentation dans les métadonnées.",
+    "intention": "Présenter chaque schéma dans une carte dédiée avec son titre, ses labels, sa description et ses liens de documentation, tout en conservant les données et règles d’affichage amont.",
+    "sourceCommit": "0730e1a7f223314f4e77727de01198f4ad4f1a13",
+    "sourcePath": "datagouv-components/src/components/DatasetInformation/DatasetSchemaSection.vue",
     "reviewUrl": ""
   }
 ]

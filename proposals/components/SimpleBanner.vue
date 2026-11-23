@@ -99,4 +99,25 @@ const icon = computed(() => props.icon)
   min-width: 0;
   overflow-wrap: anywhere;
 }
+.proposed-simple-banner :deep(a),
+.proposed-simple-banner :deep(a:visited) {
+  color: inherit !important;
+  font-weight: var(--lab-ds-weight-regular);
+  text-decoration: underline;
+  text-decoration-thickness: var(--lab-ds-stroke);
+  text-underline-offset: var(--lab-ds-space-optical);
+}
+@media (hover: hover) {
+  .proposed-simple-banner :deep(a:hover) {
+    color: var(--lab-ds-brand) !important;
+  }
+}
+.proposed-simple-banner :deep(a:active),
+.proposed-simple-banner :deep(a:focus-visible) {
+  color: var(--lab-ds-brand) !important;
+}
+.proposed-simple-banner :deep(a:focus-visible) {
+  outline: var(--lab-ds-focus-width) solid var(--lab-ds-focus);
+  outline-offset: var(--lab-ds-focus-offset);
+}
 </style>

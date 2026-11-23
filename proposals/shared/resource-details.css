@@ -3,9 +3,11 @@
 .lab-resource-metadata-main,.lab-resource-metadata-secondary { min-width:0; }
 .lab-resource-metadata dl { display:flex; flex-direction:column; gap:var(--lab-metadata-row-gap,var(--lab-ds-space-20)); margin:0; padding:0; }
 .lab-resource-detail { min-width:0; }
-.lab-resource-detail dt { display:flex; align-items:center; gap:var(--lab-ds-space-4); margin:0 0 var(--lab-ds-space-6); padding:0!important; color:var(--lab-ds-text-secondary); font-size:var(--lab-metadata-label-size,var(--lab-ds-text-body)); font-weight:var(--lab-ds-weight-regular); }
-.lab-resource-detail dd { min-width:0; max-width:100%; margin:0; padding:0; color:var(--lab-ds-text); font-weight:var(--lab-ds-weight-medium); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.lab-resource-code { font-family:var(--lab-ds-font-mono); font-size:var(--lab-metadata-technical-size,var(--lab-ds-text-caption)); line-height:var(--lab-ds-leading-caption); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+.lab-resource-detail dt { display:flex; align-items:center; gap:var(--lab-ds-space-4); margin:0 0 var(--lab-ds-space-6); padding:0!important; color:var(--lab-ds-text-secondary); font-size:var(--lab-metadata-label-size,var(--lab-ds-text-body)); line-height:var(--lab-ds-leading-control); font-weight:var(--lab-ds-weight-regular); }
+.lab-resource-info { display:inline-flex; align-items:center; justify-content:center; flex:none; line-height:0; color:var(--lab-ds-text-secondary); }
+.lab-resource-info :is(span,svg) { display:inline-flex; width:var(--lab-ds-icon); height:var(--lab-ds-icon); }
+.lab-resource-detail dd { min-width:0; max-width:100%; margin:0; padding:0; color:var(--lab-ds-text); font-weight:var(--lab-ds-weight-regular); overflow:visible; text-overflow:clip; white-space:normal; overflow-wrap:anywhere; }
+.lab-resource-code { font-family:var(--lab-ds-font-mono); font-size:var(--lab-ds-text-technical); line-height:var(--lab-ds-leading-caption); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
 .lab-resource-hint { margin:var(--lab-ds-space-4) 0 0; color:var(--lab-ds-text-secondary); font-size:var(--lab-ds-text-caption); line-height:var(--lab-ds-leading-caption); }
 .lab-resource-extras { grid-column:1/-1; min-width:0; padding-top:var(--lab-metadata-section-gap,var(--lab-ds-space-24)); border-top:var(--lab-ds-stroke) solid var(--lab-ds-border); }
 .lab-resource-state { display:flex; align-items:center; gap:var(--lab-ds-space-8); margin:0; color:var(--lab-ds-text-secondary); }

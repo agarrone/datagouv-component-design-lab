@@ -30,16 +30,14 @@
     "cdata/Reuses/New/Step3CompletePublication"
   ],
   "badges": [
-    "cdata/AccessTypes/AccessTypeBadge",
-    "cdata/AdminBadge/AdminBadge",
-    "cdata/AdminBadge/DataserviceBadge",
-    "cdata/AdminBadge/DatasetBadge",
-    "cdata/AdminBadge/ReuseBadge",
     "cdata/Dataservices/AccessAudienceCondition",
     "cdata/Datasets/GeopfPushStatus",
+    "cdata/Datasets/ResourceAvailabilityBadge",
+    "cdata/Discussions/DiscussionStatusBadge",
+    "cdata/ExternalLinkBadge",
     "cdata/Harvesters/HarvesterBadge",
     "cdata/Harvesters/JobBadge",
-    "cdata/SuiviDePublication/HvdStatutBadge"
+    "cdata/Organization/MemberRoleBadge"
   ],
   "metadata": [
     "cdata/AccessTypes/AccessTypePanel",

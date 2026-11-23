@@ -3,11 +3,10 @@ import '../shared/foundations.css'
 import {RiCheckboxCircleLine} from '@remixicon/vue'
 import {getOrganizationType,isOrganizationCertified} from '../../vendor/datagouv-components/src/functions/organizations'
 import type {Organization,OrganizationReference} from '../../vendor/datagouv-components/src/types/organizations'
-import {useComponentsConfig} from '../../vendor/datagouv-components/src/config'
 import {useTranslation} from '../../vendor/datagouv-components/src/composables/useTranslation'
 import OwnerTypeIcon from '../../vendor/datagouv-components/src/components/OwnerTypeIcon.vue'
 import Tooltip from '../../vendor/datagouv-components/src/components/Tooltip.vue'
-const config=useComponentsConfig(),{t}=useTranslation()
+const config={name:'data.gouv.fr'}, {t}=useTranslation()
 withDefaults(defineProps<{organization:Organization|OrganizationReference;showCertificate?:boolean;showAcronym?:boolean;showType?:boolean;size?:'xl'|'base'|'sm'|'xs';colorClass?:string;as?:string}>(),{showCertificate:true,showAcronym:false,showType:true,size:'base',colorClass:'',as:'div'})
 </script>
 <template><div class="lab-organization-name" :data-size="size"><OwnerTypeIcon v-if="showType" :type="getOrganizationType(organization)"/><component :is="as" class="truncate lab-organization-name-label" :class="colorClass">{{organization.name}}<small v-if="organization.acronym && showAcronym"> {{organization.acronym}}</small></component><Tooltip class="lab-organization-certificate" v-if="showCertificate && isOrganizationCertified(organization)" :aria-label="t(`L'identité de ce service public est certifiée par {certifier}`,{certifier:config.name})"><RiCheckboxCircleLine class="lab-ds-icon" data-icon-size="base" aria-hidden="true" focusable="false"/><template #tooltip>{{t(`L'identité de ce service public est certifiée par {certifier}`,{certifier:config.name})}}</template></Tooltip></div></template>

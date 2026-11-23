@@ -1,11 +1,16 @@
 {
   "version": 1,
   "summary": {
-    "reviewable": 260,
-    "related": 134,
+    "related": 140,
+    "reviewable": 259,
     "technical": 53
   },
   "components": {
+    "AccessTypeBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "ActivityList/ActivityActor": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -35,6 +40,10 @@
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
     },
+    "Badge": {
+      "status": "reviewable",
+      "reason": "Surface de design autonome dans le catalogue."
+    },
     "BannerAction": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -60,6 +69,11 @@
       "primary": "Chart/ChartViewer",
       "reason": "Adaptateur de chargement du graphique."
     },
+    "ChartBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "ChartCard": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -71,6 +85,11 @@
     "CopyButton": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DataserviceBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "DataserviceCard": {
       "status": "reviewable",
@@ -87,6 +106,11 @@
     "DataserviceQualityTooltipContent": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
+    },
+    "DatasetBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "DatasetCard": {
       "status": "reviewable",
@@ -278,10 +302,6 @@
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
     },
-    "ObjectCardBadge": {
-      "status": "reviewable",
-      "reason": "Surface de design autonome dans le catalogue."
-    },
     "ObjectCardMeta": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -305,6 +325,11 @@
     "ObjectCardShortDescription": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
+    },
+    "ObjectStatusBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "OpenApiViewer/ContentTypeSelect": {
       "status": "related",
@@ -334,6 +359,11 @@
       "status": "related",
       "primary": "OpenApiViewer/OpenApiViewer",
       "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
+    },
+    "OrganizationBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "OrganizationCard": {
       "status": "reviewable",
@@ -558,6 +588,11 @@
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
     },
+    "ReuseBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "ReuseCard": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -767,11 +802,6 @@
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
     },
-    "cdata/AccessTypes/AccessTypeBadge": {
-      "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
-    },
     "cdata/AccessTypes/AccessTypePanel": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -791,25 +821,6 @@
     "cdata/Admin/AdminDeleteModal": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
-    },
-    "cdata/AdminBadge/AdminBadge": {
-      "status": "reviewable",
-      "reason": "Surface de design autonome dans le catalogue."
-    },
-    "cdata/AdminBadge/DataserviceBadge": {
-      "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
-    },
-    "cdata/AdminBadge/DatasetBadge": {
-      "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
-    },
-    "cdata/AdminBadge/ReuseBadge": {
-      "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
     },
     "cdata/AdminContentWithTooltip/AdminContentWithTooltip": {
       "status": "related",
@@ -1080,6 +1091,11 @@
       "status": "technical",
       "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
     },
+    "cdata/Datasets/ResourceAvailabilityBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "cdata/Datasets/Structured/Step1AssociateSchema": {
       "status": "technical",
       "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
@@ -1151,6 +1167,11 @@
       "reason": "Élément constitutif de l’expérience de discussion."
     },
     "cdata/Discussions/DiscussionCommentHeader": {
+      "status": "related",
+      "primary": "cdata/Discussions/DiscussionsList",
+      "reason": "Élément constitutif de l’expérience de discussion."
+    },
+    "cdata/Discussions/DiscussionStatusBadge": {
       "status": "related",
       "primary": "cdata/Discussions/DiscussionsList",
       "reason": "Élément constitutif de l’expérience de discussion."
@@ -1231,6 +1252,11 @@
       "primary": "Search/GlobalSearch",
       "reason": "Sous-composant ou adaptateur présenté avec le composant principal."
     },
+    "cdata/ExternalLinkBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "cdata/FileCard/FileCard": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
@@ -1286,13 +1312,13 @@
     },
     "cdata/Harvesters/HarvesterBadge": {
       "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "cdata/Harvesters/JobBadge": {
       "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
     },
     "cdata/Harvesters/JobPage": {
       "status": "technical",
@@ -1563,6 +1589,11 @@
       "status": "technical",
       "reason": "Écran applicatif complet, à examiner dans les templates plutôt que comme composant isolé."
     },
+    "cdata/Organization/MemberRoleBadge": {
+      "status": "related",
+      "primary": "Badge",
+      "reason": "Variante métier du badge partagé."
+    },
     "cdata/Organization/New/Step1CreateOrJoinOrganization": {
       "status": "technical",
       "reason": "Étape de parcours applicatif, conservée comme source du template correspondant."
@@ -1831,11 +1862,6 @@
     "cdata/Stepper/Stepper": {
       "status": "reviewable",
       "reason": "Surface de design autonome dans le catalogue."
-    },
-    "cdata/SuiviDePublication/HvdStatutBadge": {
-      "status": "related",
-      "primary": "cdata/AdminBadge/AdminBadge",
-      "reason": "Variante métier du badge administratif."
     },
     "cdata/Support/Card": {
       "status": "reviewable",

@@ -61,7 +61,7 @@ import type { Quality } from '../../vendor/datagouv-components/src/types/dataset
 import QualityItemWarning from './QualityItemWarning.vue'
 import QualityScore from '../../vendor/datagouv-components/src/components/QualityScore.vue'
 import Toggletip from '../shared/QualityDetailsPopover.vue'
-import DatasetQualityTooltipContent from '../../vendor/datagouv-components/src/components/DatasetQualityTooltipContent.vue'
+import DatasetQualityTooltipContent from './DatasetQualityTooltipContent.vue'
 import { useTranslation } from '../../vendor/datagouv-components/src/composables/useTranslation'
 
 withDefaults(defineProps<{
