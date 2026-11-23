@@ -59,7 +59,7 @@ import {isMeAdmin} from '/vendor/cdata-runtime/utils/auth.ts'
 
 import { ReadMore } from '@datagouv/components-next'
 import ReportModal from '/vendor/cdata-components/Spam/ReportModal.vue'
-import DiscussionCommentHeader from './DiscussionCommentHeader.vue'
+import DiscussionCommentHeader from '../../../../vendor/cdata-components/Discussions/DiscussionCommentHeader.vue'
 import DeleteCommentModal from '/vendor/cdata-components/Discussions/DeleteCommentModal.vue'
 import EditCommentModal from '/vendor/cdata-components/Discussions/EditCommentModal.vue'
 import type { Comment, DiscussionSubjectTypes, Thread } from '/vendor/cdata-runtime/types/discussions'

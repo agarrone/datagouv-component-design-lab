@@ -18,11 +18,11 @@ export const badgeVariants={
  ['Label avec lien',{badge:{kind:'hvd',label:'Données de forte valeur'},url:'https://www.data.gouv.fr/datasets/base-adresse-nationale'}],
  ['Libellé long',{badge:{kind:'example',label:'Un label au libellé particulièrement long pour vérifier le retour à la ligne'}}],
  ]),
- 'cdata/AdminBadge/AdminBadge':examples('cdata/AdminBadge/AdminBadge', ['primary','secondary','success','warning','danger','default','pink','teal'].flatMap(type=>['xs','sm'].map(size=>[`${type} · ${size}`,{type,size}]))),
- 'cdata/AccessTypes/AccessTypeBadge':examples('cdata/AccessTypes/AccessTypeBadge',['open','open_with_account','restricted'].map(accessType=>[accessType,{accessType}])),
- 'cdata/AdminBadge/DatasetBadge':examples('cdata/AdminBadge/DatasetBadge',publication('dataset')),
- 'cdata/AdminBadge/DataserviceBadge':examples('cdata/AdminBadge/DataserviceBadge',publication('dataservice')),
- 'cdata/AdminBadge/ReuseBadge':examples('cdata/AdminBadge/ReuseBadge',publication('reuse')),
+ 'Badge':examples('Badge', ['neutral','primary','success','warning','yellow','danger','pink','teal'].flatMap(tone=>['xs','sm'].map(size=>[`${tone} · ${size}`,{tone,size}]))),
+ 'AccessTypeBadge':examples('AccessTypeBadge',['open','open_with_account','restricted'].map(accessType=>[accessType,{accessType}])),
+ 'DatasetBadge':examples('DatasetBadge',publication('dataset')),
+ 'DataserviceBadge':examples('DataserviceBadge',publication('dataservice')),
+ 'ReuseBadge':examples('ReuseBadge',publication('reuse')),
  'cdata/Harvesters/JobBadge':examples('cdata/Harvesters/JobBadge',['pending','initializing','initialized','processing','done','done-errors','failed'].map(status=>[status,{job:{status}}])),
  'cdata/Harvesters/HarvesterBadge':examples('cdata/Harvesters/HarvesterBadge',[
  ['Supprimé',{harvester:{deleted:true,active:true,validation:{state:'accepted'}}}],
@@ -32,10 +32,5 @@ export const badgeVariants={
  ['Sans job',{harvester:{active:true,validation:{state:'accepted'},last_job:null}}],
  ['Dernier job terminé',{harvester:{active:true,validation:{state:'accepted'},last_job:{status:'done'}}}],
  ]),
- 'cdata/SuiviDePublication/HvdStatutBadge':examples('cdata/SuiviDePublication/HvdStatutBadge',[
- ['Sans statut',{statut:null,url:null,type:'default',linksToData:false}],
- ['Statut fourni par la page',{statut:'Publié',url:null,type:'success',linksToData:false}],
- ['Avec lien vers les données',{statut:'Publié',url:'https://www.data.gouv.fr/datasets/base-adresse-nationale',type:'success',linksToData:true}],
- ]),
- 'ObjectCardBadge':examples('ObjectCardBadge',[['Badge dans une carte',{icon:RiInformationLine}]]),
+ 'ObjectStatusBadge':examples('ObjectStatusBadge',['public','private','archived','deleted'].map(status=>[status,{status}])),
 };

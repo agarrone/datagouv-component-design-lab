@@ -1,4 +1,39 @@
 {
+  "AccessTypeBadge": {
+    "props": [
+      {
+        "name": "accessType",
+        "type": "AccessType",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 22
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "bare",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Table cells show the bare label, like the other statuses next to it",
+        "line": 25
+      }
+    ],
+    "unresolved": false
+  },
   "ActivityList/ActivityActor": {
     "props": [
       {
@@ -162,6 +197,75 @@
         "defaultValue": true,
         "comment": "",
         "line": 49
+      }
+    ],
+    "unresolved": false
+  },
+  "Badge": {
+    "props": [
+      {
+        "name": "tone",
+        "type": "BadgeTone",
+        "required": false,
+        "default": "'neutral'",
+        "defaultValue": "neutral",
+        "comment": "",
+        "line": 40
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 41
+      },
+      {
+        "name": "icon",
+        "type": "Component | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 42
+      },
+      {
+        "name": "iconRight",
+        "type": "Component | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 43
+      },
+      {
+        "name": "to",
+        "type": "RouteLocationRaw | null",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 44
+      },
+      {
+        "name": "medium",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "Business labels (access types, object statuses) are medium, plain informations stay regular",
+        "line": 46
+      },
+      {
+        "name": "wrap",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "defaultValue": false,
+        "comment": "",
+        "line": 47
       }
     ],
     "unresolved": false
@@ -401,6 +505,31 @@
     ],
     "unresolved": false
   },
+  "ChartBadge": {
+    "props": [
+      {
+        "name": "chart",
+        "type": "Chart",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
   "ChartCard": {
     "props": [
       {
@@ -409,7 +538,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 96
+        "line": 83
       },
       {
         "name": "chartUrl",
@@ -417,7 +546,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 97
+        "line": 84
       },
       {
         "name": "organizationUrl",
@@ -425,7 +554,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 98
+        "line": 85
       }
     ],
     "unresolved": false
@@ -490,6 +619,31 @@
     ],
     "unresolved": false
   },
+  "DataserviceBadge": {
+    "props": [
+      {
+        "name": "dataservice",
+        "type": "Dataservice",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
   "DataserviceCard": {
     "props": [
       {
@@ -498,7 +652,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 138
+        "line": 119
       },
       {
         "name": "dataserviceUrl",
@@ -506,7 +660,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 139
+        "line": 120
       },
       {
         "name": "organizationUrl",
@@ -514,7 +668,7 @@
         "required": false,
         "default": null,
         "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
-        "line": 141
+        "line": 122
       },
       {
         "name": "showDescription",
@@ -523,7 +677,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 142
+        "line": 123
       },
       {
         "name": "titleTag",
@@ -531,7 +685,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 143
+        "line": 124
       }
     ],
     "unresolved": false
@@ -544,7 +698,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 75
+        "line": 71
       },
       {
         "name": "hideWarnings",
@@ -553,7 +707,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 76
+        "line": 72
       }
     ],
     "unresolved": false
@@ -579,7 +733,32 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 67
+        "line": 62
+      }
+    ],
+    "unresolved": false
+  },
+  "DatasetBadge": {
+    "props": [
+      {
+        "name": "dataset",
+        "type": "Dataset | DatasetV2 | DatasetV2WithFullObject",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 15
       }
     ],
     "unresolved": false
@@ -592,7 +771,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 137
+        "line": 133
       },
       {
         "name": "datasetUrl",
@@ -600,7 +779,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 138
+        "line": 134
       },
       {
         "name": "datasetUrlInNewTab",
@@ -609,7 +788,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 139
+        "line": 135
       },
       {
         "name": "organizationUrl",
@@ -617,7 +796,7 @@
         "required": false,
         "default": null,
         "comment": "undefined falls back to the organization's data.gouv.fr page; pass null to render plain, non-linked text",
-        "line": 141
+        "line": 137
       },
       {
         "name": "showDescriptionShort",
@@ -626,7 +805,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 142
+        "line": 138
       },
       {
         "name": "titleTag",
@@ -634,7 +813,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 143
+        "line": 139
       }
     ],
     "unresolved": false
@@ -660,7 +839,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 60
+        "line": 56
       },
       {
         "name": "tagUrl",
@@ -668,7 +847,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 61
+        "line": 57
       }
     ],
     "unresolved": false
@@ -681,7 +860,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 66
+        "line": 63
       }
     ],
     "unresolved": false
@@ -720,7 +899,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 28
+        "line": 17
       },
       {
         "name": "url",
@@ -728,7 +907,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 29
+        "line": 18
       }
     ],
     "unresolved": false
@@ -1299,10 +1478,9 @@
         "name": "modelValue",
         "type": "string | boolean | null",
         "required": false,
-        "default": "undefined",
-        "comment": "",
-        "line": 86,
-        "model": true
+        "default": null,
+        "model": true,
+        "line": 92
       },
       {
         "name": "disabled",
@@ -1372,7 +1550,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 87
+        "line": 86
       },
       {
         "name": "required",
@@ -1381,7 +1559,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 88
+        "line": 87
       },
       {
         "name": "validText",
@@ -1390,7 +1568,7 @@
         "default": "''",
         "defaultValue": "",
         "comment": "",
-        "line": 89
+        "line": 88
       },
       {
         "name": "hideNullOption",
@@ -1399,7 +1577,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 90
+        "line": 89
       }
     ],
     "unresolved": false
@@ -1522,7 +1700,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 22
+        "line": 17
       }
     ],
     "unresolved": false
@@ -1679,35 +1857,6 @@
     ],
     "unresolved": false
   },
-  "ObjectCardBadge": {
-    "props": [
-      {
-        "name": "icon",
-        "type": "Component | null",
-        "required": false,
-        "default": null,
-        "comment": "",
-        "line": 20
-      },
-      {
-        "name": "tone",
-        "type": "'neutral' | 'info' | 'warning' | 'yellow' | 'danger'",
-        "required": false,
-        "default": "'neutral'",
-        "defaultValue": "neutral",
-        "choices": [
-          "neutral",
-          "info",
-          "warning",
-          "yellow",
-          "danger"
-        ],
-        "comment": "",
-        "line": 21
-      }
-    ],
-    "unresolved": false
-  },
   "ObjectCardMeta": {
     "props": [],
     "unresolved": false
@@ -1827,6 +1976,32 @@
     ],
     "unresolved": false
   },
+  "ObjectStatusBadge": {
+    "props": [
+      {
+        "name": "status",
+        "type": "ObjectStatus",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 23
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": "'sm'",
+        "defaultValue": "sm",
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 24
+      }
+    ],
+    "unresolved": false
+  },
   "OpenApiViewer/ContentTypeSelect": {
     "props": [
       {
@@ -1933,6 +2108,19 @@
         "default": null,
         "comment": "",
         "line": 62
+      }
+    ],
+    "unresolved": false
+  },
+  "OrganizationBadge": {
+    "props": [
+      {
+        "name": "organization",
+        "type": "Organization",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 20
       }
     ],
     "unresolved": false
@@ -2074,7 +2262,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 17
+        "line": 18
       }
     ],
     "unresolved": false
@@ -2886,7 +3074,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 114
+        "line": 118
       }
     ],
     "unresolved": false
@@ -3459,6 +3647,31 @@
     ],
     "unresolved": false
   },
+  "ReuseBadge": {
+    "props": [
+      {
+        "name": "reuse",
+        "type": "Reuse | ReuseV2",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
   "ReuseCard": {
     "props": [
       {
@@ -3467,7 +3680,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 105
+        "line": 92
       },
       {
         "name": "reuseUrl",
@@ -3475,7 +3688,7 @@
         "required": false,
         "default": null,
         "comment": "The reuseUrl is a route location object to allow Vue Router to navigate to the details of a reuse.\nIt is used as a separate prop to allow other sites using the package to define their own reuse pages.",
-        "line": 111
+        "line": 98
       },
       {
         "name": "organizationUrl",
@@ -3483,7 +3696,7 @@
         "required": false,
         "default": null,
         "comment": "The organizationUrl is an optional route location object to allow Vue Router to navigate to the details of the organization linked to tha reuse.\nIt is used as a separate prop to allow other sites using the package to define their own organization pages.\nPass null instead of a route to render the organization name as plain, non-linked text.",
-        "line": 118
+        "line": 105
       },
       {
         "name": "titleTag",
@@ -3492,7 +3705,7 @@
         "default": "'h3'",
         "defaultValue": "h3",
         "comment": "",
-        "line": 120
+        "line": 107
       },
       {
         "name": "horizontal",
@@ -3501,7 +3714,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "Puts the illustration beside the content instead of above it, for full-width lists.\nThe card falls back to the vertical layout when it gets too narrow.",
-        "line": 126
+        "line": 113
       }
     ],
     "unresolved": false
@@ -3527,7 +3740,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 84
+        "line": 80
       },
       {
         "name": "id",
@@ -3535,7 +3748,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 85
+        "line": 81
       },
       {
         "name": "selectable",
@@ -3544,7 +3757,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 86
+        "line": 82
       },
       {
         "name": "active",
@@ -3553,7 +3766,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "Highlighted by the keyboard inside the listbox, which is not the same as chosen",
-        "line": 88
+        "line": 84
       },
       {
         "name": "selected",
@@ -3562,7 +3775,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 89
+        "line": 85
       },
       {
         "name": "showLinks",
@@ -3571,7 +3784,7 @@
         "default": "false (Vue)",
         "defaultValue": false,
         "comment": "",
-        "line": 90
+        "line": 86
       }
     ],
     "unresolved": false
@@ -4085,7 +4298,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 172
+        "line": 174
       },
       {
         "name": "data",
@@ -4093,7 +4306,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 173
+        "line": 175
       },
       {
         "name": "type",
@@ -4105,7 +4318,7 @@
           "bar"
         ],
         "comment": "",
-        "line": 174
+        "line": 176
       },
       {
         "name": "size",
@@ -4113,7 +4326,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 175
+        "line": 177
       },
       {
         "name": "summary",
@@ -4121,7 +4334,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 176
+        "line": 178
       },
       {
         "name": "since",
@@ -4129,7 +4342,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 177
+        "line": 179
       }
     ],
     "unresolved": false
@@ -4601,19 +4814,36 @@
     "props": [
       {
         "name": "icon",
-        "type": "Component",
+        "type": "Component | string",
+        "required": false,
+        "default": null,
+        "comment": "A string is an image URL, e.g. the SVG of a dataset label",
+        "line": 43
+      },
+      {
+        "name": "to",
+        "type": "RouteLocationRaw",
         "required": false,
         "default": null,
         "comment": "",
-        "line": 21
+        "line": 44
       },
       {
-        "name": "type",
-        "type": "'secondary'",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 22
+        "name": "dismissible",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "Removes the tag on click: shows a cross in place of the icon",
+        "line": 46
+      },
+      {
+        "name": "pressed",
+        "type": "boolean | undefined",
+        "required": false,
+        "default": "undefined",
+        "model": true,
+        "line": 50
       }
     ],
     "unresolved": false
@@ -4815,19 +5045,6 @@
     ],
     "unresolved": false
   },
-  "cdata/AccessTypes/AccessTypeBadge": {
-    "props": [
-      {
-        "name": "accessType",
-        "type": "AccessType",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 14
-      }
-    ],
-    "unresolved": false
-  },
   "cdata/AccessTypes/AccessTypePanel": {
     "props": [
       {
@@ -4836,7 +5053,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 65
+        "line": 64
       },
       {
         "name": "hideAccessLabel",
@@ -4845,7 +5062,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 66
+        "line": 65
       }
     ],
     "unresolved": false
@@ -5049,103 +5266,6 @@
     ],
     "unresolved": false
   },
-  "cdata/AdminBadge/AdminBadge": {
-    "props": [
-      {
-        "name": "type",
-        "type": "AdminBadgeType",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 27
-      },
-      {
-        "name": "size",
-        "type": "'xs' | 'sm'",
-        "required": true,
-        "default": null,
-        "choices": [
-          "xs",
-          "sm"
-        ],
-        "comment": "",
-        "line": 28
-      },
-      {
-        "name": "icon",
-        "type": "Component",
-        "required": false,
-        "default": null,
-        "comment": "",
-        "line": 29
-      },
-      {
-        "name": "iconRight",
-        "type": "Component",
-        "required": false,
-        "default": null,
-        "comment": "",
-        "line": 30
-      },
-      {
-        "name": "noWrap",
-        "type": "boolean",
-        "required": false,
-        "default": "true",
-        "defaultValue": true,
-        "comment": "",
-        "line": 31
-      },
-      {
-        "name": "iconSize",
-        "type": "string",
-        "required": false,
-        "default": null,
-        "comment": "",
-        "line": 32
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/AdminBadge/DataserviceBadge": {
-    "props": [
-      {
-        "name": "dataservice",
-        "type": "Dataservice",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 6
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/AdminBadge/DatasetBadge": {
-    "props": [
-      {
-        "name": "dataset",
-        "type": "Dataset | DatasetV2 | DatasetV2WithFullObject",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 6
-      }
-    ],
-    "unresolved": false
-  },
-  "cdata/AdminBadge/ReuseBadge": {
-    "props": [
-      {
-        "name": "reuse",
-        "type": "Reuse | ReuseV2",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 6
-      }
-    ],
-    "unresolved": false
-  },
   "cdata/AdminContentWithTooltip/AdminContentWithTooltip": {
     "props": [],
     "unresolved": false
@@ -5201,7 +5321,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 210
+        "line": 209
       },
       {
         "name": "request",
@@ -5209,7 +5329,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 211
+        "line": 210
       },
       {
         "name": "showActions",
@@ -5217,7 +5337,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 212
+        "line": 211
       }
     ],
     "unresolved": false
@@ -5230,7 +5350,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 98
+        "line": 96
       }
     ],
     "unresolved": false
@@ -5312,7 +5432,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 105
+        "line": 93
       },
       {
         "name": "sortedBy",
@@ -5320,7 +5440,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 106
+        "line": 94
       },
       {
         "name": "sortDirection",
@@ -5328,7 +5448,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 107
+        "line": 95
       }
     ],
     "unresolved": false
@@ -5341,7 +5461,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 134
+        "line": 133
       },
       {
         "name": "organization",
@@ -5349,7 +5469,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 135
+        "line": 134
       }
     ],
     "unresolved": false
@@ -5362,7 +5482,7 @@
         "required": false,
         "default": "() => ({})",
         "comment": "",
-        "line": 121
+        "line": 124
       },
       {
         "name": "dataservices",
@@ -5370,7 +5490,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 122
+        "line": 125
       },
       {
         "name": "sortedBy",
@@ -5378,7 +5498,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 123
+        "line": 126
       },
       {
         "name": "sortDirection",
@@ -5386,7 +5506,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 124
+        "line": 127
       }
     ],
     "unresolved": false
@@ -5399,7 +5519,7 @@
         "required": false,
         "default": "() => ({})",
         "comment": "",
-        "line": 150
+        "line": 152
       },
       {
         "name": "datasets",
@@ -5407,7 +5527,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 151
+        "line": 153
       },
       {
         "name": "sortDirection",
@@ -5415,7 +5535,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 152
+        "line": 154
       },
       {
         "name": "sortedBy",
@@ -5423,7 +5543,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 153
+        "line": 155
       }
     ],
     "unresolved": false
@@ -5436,7 +5556,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 161
+        "line": 157
       },
       {
         "name": "sortDirection",
@@ -5444,7 +5564,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 162
+        "line": 158
       },
       {
         "name": "sortedBy",
@@ -5452,7 +5572,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 163
+        "line": 159
       },
       {
         "name": "subject",
@@ -5460,7 +5580,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 164
+        "line": 160
       }
     ],
     "unresolved": false
@@ -5473,7 +5593,7 @@
         "required": false,
         "default": "() => ({})",
         "comment": "",
-        "line": 115
+        "line": 117
       },
       {
         "name": "reuses",
@@ -5481,7 +5601,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 116
+        "line": 118
       },
       {
         "name": "sortedBy",
@@ -5489,7 +5609,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 117
+        "line": 119
       },
       {
         "name": "sortDirection",
@@ -5497,7 +5617,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 118
+        "line": 120
       }
     ],
     "unresolved": false
@@ -5611,7 +5731,7 @@
   "cdata/BannerNotif": {
     "props": [
       {
-        "name": "type",
+        "name": "tone",
         "type": "'warning' | 'primary'",
         "required": true,
         "default": null,
@@ -5620,7 +5740,7 @@
           "primary"
         ],
         "comment": "",
-        "line": 53
+        "line": 52
       },
       {
         "name": "icon",
@@ -5628,7 +5748,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 54
+        "line": 53
       },
       {
         "name": "badge",
@@ -5636,7 +5756,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 55
+        "line": 54
       },
       {
         "name": "date",
@@ -5644,7 +5764,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 56
+        "line": 55
       }
     ],
     "unresolved": false
@@ -6038,7 +6158,7 @@
         "required": false,
         "default": null,
         "model": true,
-        "line": 146
+        "line": 140
       },
       {
         "name": "organization",
@@ -6046,7 +6166,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 149
+        "line": 143
       },
       {
         "name": "errorText",
@@ -6054,7 +6174,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 150
+        "line": 144
       },
       {
         "name": "warningText",
@@ -6062,7 +6182,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 151
+        "line": 145
       }
     ],
     "unresolved": false
@@ -6300,7 +6420,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 68
+        "line": 70
       },
       {
         "name": "modelValue",
@@ -6308,7 +6428,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 71
+        "line": 73
       }
     ],
     "unresolved": false
@@ -6363,7 +6483,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 802
+        "line": 801
       },
       {
         "name": "submitLabel",
@@ -6371,7 +6491,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 805
+        "line": 804
       },
       {
         "name": "type",
@@ -6383,7 +6503,7 @@
           "update"
         ],
         "comment": "",
-        "line": 806
+        "line": 805
       },
       {
         "name": "badges",
@@ -6391,7 +6511,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 807
+        "line": 806
       },
       {
         "name": "canEdit",
@@ -6400,7 +6520,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 808
+        "line": 807
       },
       {
         "name": "readOnlyMessage",
@@ -6408,7 +6528,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 809
+        "line": 808
       }
     ],
     "unresolved": false
@@ -6771,6 +6891,19 @@
         "default": null,
         "comment": "",
         "line": 60
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Datasets/ResourceAvailabilityBadge": {
+    "props": [
+      {
+        "name": "resource",
+        "type": "Resource",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 14
       }
     ],
     "unresolved": false
@@ -7191,6 +7324,19 @@
     ],
     "unresolved": false
   },
+  "cdata/Discussions/DiscussionStatusBadge": {
+    "props": [
+      {
+        "name": "thread",
+        "type": "Thread",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 15
+      }
+    ],
+    "unresolved": false
+  },
   "cdata/Discussions/DiscussionsList": {
     "props": [
       {
@@ -7509,6 +7655,64 @@
         "default": null,
         "comment": "",
         "line": 21
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/ExternalLinkBadge": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 32
+      },
+      {
+        "name": "url",
+        "type": "string | null",
+        "required": true,
+        "default": null,
+        "comment": "Without an url, the badge is a plain label",
+        "line": 34
+      },
+      {
+        "name": "linkLabel",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "Where the link leads, for screen readers: a status badge does not say it on its own",
+        "line": 36
+      },
+      {
+        "name": "tone",
+        "type": "BadgeTone",
+        "required": false,
+        "default": null,
+        "comment": "",
+        "line": 37
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": null,
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 38
+      },
+      {
+        "name": "wrap",
+        "type": "boolean",
+        "required": false,
+        "default": "false (Vue)",
+        "defaultValue": false,
+        "comment": "",
+        "line": 39
       }
     ],
     "unresolved": false
@@ -8454,7 +8658,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 48
+        "line": 44
       },
       {
         "name": "showTitle",
@@ -8463,7 +8667,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 49
+        "line": 45
       },
       {
         "name": "size",
@@ -8479,7 +8683,7 @@
           "fullscreen"
         ],
         "comment": "",
-        "line": 50
+        "line": 46
       },
       {
         "name": "form",
@@ -8488,7 +8692,7 @@
         "default": "false",
         "defaultValue": false,
         "comment": "",
-        "line": 51
+        "line": 47
       },
       {
         "name": "modelValue",
@@ -8496,7 +8700,7 @@
         "required": false,
         "default": null,
         "model": true,
-        "line": 61
+        "line": 57
       }
     ],
     "unresolved": false
@@ -9315,6 +9519,40 @@
         "default": null,
         "comment": "The API request status",
         "line": 111
+      }
+    ],
+    "unresolved": false
+  },
+  "cdata/Organization/MemberRoleBadge": {
+    "props": [
+      {
+        "name": "role",
+        "type": "MemberRole",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 15
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "default": null,
+        "comment": "",
+        "line": 16
+      },
+      {
+        "name": "size",
+        "type": "'xs' | 'sm'",
+        "required": false,
+        "default": "'xs'",
+        "defaultValue": "xs",
+        "choices": [
+          "xs",
+          "sm"
+        ],
+        "comment": "",
+        "line": 17
       }
     ],
     "unresolved": false
@@ -10442,7 +10680,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 28
+        "line": 34
       },
       {
         "name": "action",
@@ -10450,7 +10688,15 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 29
+        "line": 35
+      },
+      {
+        "name": "next",
+        "type": "string",
+        "required": false,
+        "default": null,
+        "comment": "The page to land back on once signed in: udata redirects there after ProConnect.",
+        "line": 37
       }
     ],
     "unresolved": false
@@ -10964,43 +11210,6 @@
     ],
     "unresolved": false
   },
-  "cdata/SuiviDePublication/HvdStatutBadge": {
-    "props": [
-      {
-        "name": "statut",
-        "type": "string | null",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 40
-      },
-      {
-        "name": "url",
-        "type": "string | null",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 41
-      },
-      {
-        "name": "type",
-        "type": "AdminBadgeType",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 42
-      },
-      {
-        "name": "linksToData",
-        "type": "boolean",
-        "required": true,
-        "default": null,
-        "comment": "",
-        "line": 43
-      }
-    ],
-    "unresolved": false
-  },
   "cdata/Support/Card": {
     "props": [
       {
@@ -11114,7 +11323,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 42
+        "line": 43
       },
       {
         "name": "warningText",
@@ -11122,7 +11331,7 @@
         "required": false,
         "default": null,
         "comment": "",
-        "line": 43
+        "line": 44
       },
       {
         "name": "modelValue",
@@ -11130,7 +11339,7 @@
         "required": true,
         "default": null,
         "model": true,
-        "line": 45
+        "line": 46
       }
     ],
     "unresolved": false
@@ -11247,7 +11456,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 130
+        "line": 128
       },
       {
         "name": "showActions",
@@ -11256,7 +11465,7 @@
         "default": "true",
         "defaultValue": true,
         "comment": "",
-        "line": 131
+        "line": 129
       }
     ],
     "unresolved": false
@@ -11419,7 +11628,7 @@
         "required": true,
         "default": null,
         "comment": "",
-        "line": 262
+        "line": 240
       }
     ],
     "unresolved": false
@@ -11461,7 +11670,7 @@
         "required": true,
         "default": null,
         "comment": "udata refuses the switch from a session that didn't present the second factor of the account's trusted ProConnect identity.",
-        "line": 69
+        "line": 70
       }
     ],
     "unresolved": false

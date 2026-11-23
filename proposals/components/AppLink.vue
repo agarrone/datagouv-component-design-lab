@@ -14,11 +14,16 @@ const external=computed(()=>{
  try {const host=new URL(destination.value).hostname;return !['www.data.gouv.fr','data.gouv.fr','localhost','127.0.0.1'].includes(host)}catch{return false}
 })
 const appearance=computed(()=>props.appearance || (/lab-button|design-lab-tag|lab-card-title|lab-reuse-title|lab-organization-title|lab-aux-title|lab-admin-link|lab-link-card|sidebar|pagination|nav-link/.test(normalizeClass(attrs.class))?'control':'text'))
+const opensNewTab=computed(()=>external.value || attrs.target==='_blank')
+const nativeAnchor=computed(()=>opensNewTab.value || !!(props.href && props.to==null))
+const destinationProps=computed(()=>nativeAnchor.value
+ ? {href:destination.value,...(opensNewTab.value?{target:'_blank',rel:attrs.rel || 'noopener noreferrer'}:{})}
+ : {to:destination.value,replace:props.replace})
 </script>
 <template>
- <component :is="href && to==null ? 'a' : NativeLink" v-bind="{...$attrs,...(href && to==null ? {href} : {to:destination,replace})}" :data-link-kind="destination ? external?'external':'navigation':undefined" :data-link-appearance="destination?appearance:undefined" :class="{'lab-text-link':destination && appearance==='text'}">
+ <component :is="nativeAnchor ? 'a' : NativeLink" v-bind="{...$attrs,...destinationProps}" :data-link-kind="destination ? external?'external':'navigation':undefined" :data-link-appearance="destination?appearance:undefined" :class="{'lab-text-link':destination && appearance==='text'}">
   <slot />
-  <RiExternalLinkLine v-if="external && externalIcon && appearance==='text'" class="lab-ds-icon lab-link-external-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />
-  <span v-if="externalIcon && $attrs.target==='_blank'" class="sr-only"> (nouvel onglet)</span>
+  <RiExternalLinkLine v-if="opensNewTab && externalIcon && appearance==='text'" class="lab-ds-icon lab-link-external-icon" data-icon-size="compact" aria-hidden="true" focusable="false" />
+  <span v-if="externalIcon && opensNewTab" class="sr-only"> (nouvel onglet)</span>
  </component>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <BannerNotif
-      type="warning"
+      tone="warning"
       :icon="RiSendPlaneLine"
       class="mb-4"
       :badge="$t('Transfert en attente')"
@@ -59,7 +59,6 @@
           color="primary"
           size="xs"
           :icon="RiCheckLine"
-          :aria-controls="modalId"
           @click="isOpen = true"
         >
           {{ $t('Accepter') }}
@@ -69,7 +68,6 @@
           color="danger"
           size="xs"
           :icon="RiCloseLine"
-          :aria-controls="modalId"
           @click="isOpen = true"
         >
           {{ $t('Refuser') }}
@@ -77,7 +75,7 @@
       </template>
     </BannerNotif>
     <Modal
-      :modal-id="modalId"
+      :id="modalId"
       :opened="isOpen"
       :title="$t('Transfert en attente')"
       size="lg"

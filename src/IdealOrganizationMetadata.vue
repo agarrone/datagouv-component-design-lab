@@ -1,14 +1,11 @@
 <script setup>
+import { computed } from 'vue';
 import StatBox from '../proposals/components/StatBox.vue';
-import SectionCollapse from '../proposals/components/cdata/SectionCollapse.vue';
-import NativeSectionCollapse from '../vendor/cdata-components/SectionCollapse.vue';
+import Avatar from '../proposals/components/Avatar.vue';
 import CopyButton from '../proposals/components/CopyButton.vue';
 import MiddleTruncate from '../proposals/components/MiddleTruncate.vue';
-import AvatarWithName from '../proposals/components/AvatarWithName.vue';
-import MetadataExtras from '../proposals/components/MetadataExtras.vue';
 import CodeBlock from '../proposals/components/CodeBlock.vue';
-import { computed } from 'vue';
-import { stats } from './fixtures';
+import MemberRoleBadge from '../vendor/cdata-components/Organization/MemberRoleBadge.vue';
 import '../proposals/shared/foundations.css';
 import '../proposals/shared/metadata.css';
 
@@ -16,88 +13,105 @@ const props = defineProps({
   organization: { type: Object, required: true },
   organizationMembers: { type: Array, default: () => [] },
 });
-const formatDate = value => value ? new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value)) : '—';
-const embedCode = computed(() => `<div data-udata-organization="${props.organization.id}"></div><script data-udata="https://www.data.gouv.fr" src="https://www.data.gouv.fr/oembed.js" async defer><` + '/script>');
+
+const formatDate = value => value
+  ? new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value))
+  : '—';
 const roleLabel = role => ({ admin: 'Administration', editor: 'Édition', partial_editor: 'Édition limitée' }[role] || role);
+const months = ['2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01', '2026-04-01', '2026-05-01', '2026-06-01', '2026-07-01', '2026-08-01', '2026-09-01', '2026-10-01'];
+const series = values => Object.fromEntries(months.map((month, index) => [month, values[index]]));
+const audienceMetrics = {
+  datasetsViews: series([820, 910, 1040, 1160, 1240, 1390, 1510, 1640, 1720, 1880, 2050, 2180]),
+  downloads: series([410, 460, 520, 580, 640, 710, 780, 850, 920, 1010, 1120, 1240]),
+  dataservicesViews: series([120, 138, 154, 172, 188, 210, 234, 258, 282, 310, 342, 376]),
+  reusesViews: series([72, 81, 93, 108, 121, 139, 154, 170, 188, 209, 231, 256]),
+};
+const total = data => Object.values(data).reduce((sum, value) => sum + value, 0);
+const catalogSeries = computed(() => ({
+  datasets: props.organization.metrics?.datasets_by_months || series([12, 13, 14, 14, 15, 16, 17, 18, 19, 20, 22, 24]),
+  dataservices: props.organization.metrics?.dataservices_by_months || series([1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3]),
+  reuses: props.organization.metrics?.reuses_by_months || series([3, 3, 4, 4, 4, 5, 5, 5, 6, 7, 7, 8]),
+}));
+const embedCode = type => `<div data-udata-${type}="${props.organization.id}" data-height="1500" data-width="1200"></div><script data-udata="https://www.data.gouv.fr" src="https://www.data.gouv.fr/oembed.js" async defer><` + '/script>';
+const embeds = computed(() => [
+  { type: 'search-dataset', title: "La recherche de jeux de données de l’organisation" },
+  { type: 'search-dataservice', title: "La recherche des API de l’organisation" },
+  { type: 'list-reuse', title: "La liste des réutilisations de l’organisation" },
+]);
 </script>
 
 <template>
   <div class="ideal-organization-metadata proposal-metadata-surface">
-    <section class="proposal-metadata-section ideal-organization-overview">
-      <h3 class="proposal-metadata-heading">Informations générales</h3>
-      <dl class="proposal-metadata-list">
-        <div><dt class="proposal-metadata-term">Nom</dt><dd class="proposal-metadata-details">{{ organization.name || '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Acronyme</dt><dd class="proposal-metadata-details">{{ organization.acronym || '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Numéro SIRET</dt><dd class="proposal-metadata-details proposal-metadata-technical">{{ organization.business_number_id || '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Site internet</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.url" class="proposal-technical-line"><MiddleTruncate :text="organization.url" /><CopyButton icon-only compact :text="organization.url" label="Copier l’URL" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">Création</dt><dd class="proposal-metadata-details proposal-metadata-date">{{ formatDate(organization.created_at) }}</dd></div>
-        <div><dt class="proposal-metadata-term">Dernière mise à jour</dt><dd class="proposal-metadata-details proposal-metadata-date">{{ formatDate(organization.last_modified) }}</dd></div>
-        <div><dt class="proposal-metadata-term">Badges</dt><dd class="proposal-metadata-details">{{ organization.badges?.length ? organization.badges.map(badge => badge.kind || badge).join(', ') : '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Abonnés</dt><dd class="proposal-metadata-details">{{ Number(organization.metrics?.followers || 0).toLocaleString('fr-FR') }}</dd></div>
-        <div><dt class="proposal-metadata-term">Vues</dt><dd class="proposal-metadata-details">{{ Number(organization.metrics?.views || 0).toLocaleString('fr-FR') }}</dd></div>
-      </dl>
-    </section>
-    <section class="proposal-metadata-section ideal-organization-stats-section">
+    <section class="proposal-metadata-section ideal-organization-section">
       <div class="ideal-organization-heading-row">
         <h3 class="proposal-metadata-heading">Statistiques générales des 12 derniers mois</h3>
-        <div class="ideal-organization-actions">
-          <a href="#" @click.prevent>Télécharger les statistiques au format CSV</a>
-          <a href="#" @click.prevent>Voir les statistiques</a>
-        </div>
+        <button type="button" class="ideal-organization-download">Télécharger les statistiques au format CSV</button>
       </div>
-      <div class="ideal-organization-stats">
-        <StatBox title="Jeux de données" :data="stats" type="bar" :summary="organization.metrics?.datasets" />
-        <StatBox title="API" :data="stats" type="bar" :summary="organization.metrics?.dataservices" />
-        <StatBox title="Réutilisations" :data="stats" type="bar" :summary="organization.metrics?.reuses" />
+      <div class="ideal-organization-stats ideal-organization-catalog-stats">
+        <StatBox title="Jeux de données" :data="catalogSeries.datasets" type="bar" :summary="organization.metrics?.datasets" />
+        <StatBox title="API" :data="catalogSeries.dataservices" type="bar" :summary="organization.metrics?.dataservices" />
+        <StatBox title="Réutilisations" :data="catalogSeries.reuses" type="bar" :summary="organization.metrics?.reuses" />
+      </div>
+      <div class="ideal-organization-divider" />
+      <div class="ideal-organization-stats ideal-organization-audience-stats">
+        <StatBox title="Vues" :data="audienceMetrics.datasetsViews" type="line" :summary="total(audienceMetrics.datasetsViews)" />
+        <StatBox title="Téléchargements des données" :data="audienceMetrics.downloads" type="line" :summary="total(audienceMetrics.downloads)" />
+        <StatBox title="Nombre de visites des API" :data="audienceMetrics.dataservicesViews" type="line" :summary="total(audienceMetrics.dataservicesViews)" />
+        <StatBox title="Nombre de visites des réutilisations" :data="audienceMetrics.reusesViews" type="line" :summary="total(audienceMetrics.reusesViews)" />
       </div>
     </section>
 
-    <NativeSectionCollapse class="lab-small-disclosure" title="Membres" button-text="Voir les membres">
+    <section class="proposal-metadata-section ideal-organization-section">
+      <h3 class="proposal-metadata-heading">Membres</h3>
       <ul class="ideal-organization-members">
-        <li v-for="member in organizationMembers" :key="member.user.id"><AvatarWithName :user="member.user" :size="32" :with-link="false" /><span>{{ member.label || roleLabel(member.role) }} · {{ roleLabel(member.role) }}<small>Membre depuis le {{ formatDate(member.since) }}</small></span></li>
-        <li v-if="!organizationMembers.length">—</li>
+        <li v-for="member in organizationMembers" :key="member.user.id">
+          <Avatar :user="member.user" :size="60" rounded />
+          <div>
+            <p>{{ member.user.first_name }} {{ member.user.last_name }}</p>
+            <MemberRoleBadge :role="member.role" :label="member.label || roleLabel(member.role)" size="sm" />
+          </div>
+        </li>
       </ul>
-    </NativeSectionCollapse>
-    <SectionCollapse title="Informations techniques" button-text="Voir les informations techniques">
+    </section>
+
+    <section class="proposal-metadata-section ideal-organization-section">
+      <h3 class="proposal-metadata-heading">Informations techniques</h3>
       <dl class="proposal-metadata-list">
-        <div><dt class="proposal-metadata-term">Identifiant</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.id" class="proposal-technical-line"><MiddleTruncate :text="organization.id" /><CopyButton icon-only compact :text="organization.id" label="Copier l’identifiant" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">Slug</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.slug" class="proposal-technical-line"><MiddleTruncate :text="organization.slug" /><CopyButton icon-only compact :text="organization.slug" label="Copier le slug" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">URL</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.page || organization.url" class="proposal-technical-line"><MiddleTruncate :text="organization.page || organization.url" /><CopyButton icon-only compact :text="organization.page || organization.url" label="Copier l’URL" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">URI API</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.uri" class="proposal-technical-line"><MiddleTruncate :text="organization.uri" /><CopyButton icon-only compact :text="organization.uri" label="Copier l’URI" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">Logo</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.logo" class="proposal-technical-line"><MiddleTruncate :text="organization.logo" /><CopyButton icon-only compact :text="organization.logo" label="Copier l’URL du logo" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">Bannière</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span v-if="organization.banner_image" class="proposal-technical-line"><MiddleTruncate :text="organization.banner_image" /><CopyButton icon-only compact :text="organization.banner_image" label="Copier l’URL de la bannière" copied-label="Copié" /></span><span v-else>—</span></dd></div>
-        <div><dt class="proposal-metadata-term">Couleur de bannière</dt><dd class="proposal-metadata-details proposal-metadata-technical">{{ organization.banner_color || '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Position de bannière</dt><dd class="proposal-metadata-details">{{ organization.banner_image_position != null ? `${organization.banner_image_position} %` : '—' }}</dd></div>
-        <div><dt class="proposal-metadata-term">Suppression</dt><dd class="proposal-metadata-details">{{ organization.deleted ? formatDate(organization.deleted) : 'Non' }}</dd></div>
+        <div><dt class="proposal-metadata-term">Dernière mise à jour</dt><dd class="proposal-metadata-details proposal-metadata-date">{{ formatDate(organization.last_modified) }}</dd></div>
+        <div><dt class="proposal-metadata-term">Identifiant</dt><dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy"><span class="proposal-technical-line"><CopyButton icon-only compact :show-tooltip="false" :text="organization.id" label="Copier l’identifiant de l’organisation" copied-label="Identifiant de l’organisation copié"><MiddleTruncate :text="organization.id" /></CopyButton></span></dd></div>
+        <div><dt class="proposal-metadata-term">Date de création</dt><dd class="proposal-metadata-details proposal-metadata-date">{{ formatDate(organization.created_at) }}</dd></div>
       </dl>
-    </SectionCollapse>
-    <SectionCollapse title="Intégrer sur votre site" button-text="Voir les oembeds">
-      <CodeBlock :code="embedCode" language="HTML" copy-label="Copier" copied-label="Copié" />
-    </SectionCollapse>
-    <section v-if="Object.keys(organization.extras || {}).length" class="proposal-metadata-section ideal-organization-extras">
-      <MetadataExtras :extra="organization.extras" title-text="Extras" button-text="Voir les extras" title-level="h3" />
+    </section>
+
+    <section class="proposal-metadata-section ideal-organization-section ideal-organization-embeds">
+      <h3 class="proposal-metadata-heading">Intégrer sur votre site</h3>
+      <article v-for="embed in embeds" :key="embed.type">
+        <h4>{{ embed.title }}</h4>
+        <CodeBlock :code="embedCode(embed.type)" language="HTML" copy-label="Copier l’intégration" copied-label="Intégration copiée" />
+      </article>
     </section>
   </div>
 </template>
 
 <style scoped>
 .ideal-organization-metadata{max-width:960px}
-.ideal-organization-overview{padding-top:0}
+.ideal-organization-section:first-child{padding-top:0}
+.ideal-organization-section:last-child{padding-bottom:0;border-bottom:0}
 .ideal-organization-heading-row{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--lab-ds-space-16);margin-bottom:var(--lab-metadata-heading-gap)}
 .ideal-organization-heading-row .proposal-metadata-heading{margin:0}
-.ideal-organization-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:var(--lab-ds-space-8) var(--lab-ds-space-16);font-size:var(--lab-ds-text-body);line-height:var(--lab-ds-leading-control)}
-.ideal-organization-actions a{color:var(--lab-ds-brand);text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical)}
-.ideal-organization-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(var(--lab-metadata-column-min),calc((100% - var(--lab-metadata-column-gap))/2))),1fr));gap:var(--lab-metadata-row-gap) var(--lab-metadata-column-gap)}
+.ideal-organization-download{padding:0;border:0;background:transparent;color:var(--lab-ds-brand);font:var(--lab-ds-weight-regular) var(--lab-ds-text-body)/var(--lab-ds-leading-control) var(--lab-ds-font-sans);text-decoration:underline;text-underline-offset:var(--lab-ds-space-optical);cursor:pointer}
+.ideal-organization-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:var(--lab-ds-space-24)}
+.ideal-organization-catalog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ideal-organization-audience-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ideal-organization-divider{height:1px;margin:var(--lab-ds-space-24) 0;background:var(--lab-ds-border)}
 .ideal-organization-stats :deep(.lab-stat-box){gap:var(--lab-ds-space-4)}
-.ideal-organization-stats :deep(.lab-stat-title){font-size:var(--lab-metadata-label-size);line-height:var(--lab-ds-leading-control);font-weight:var(--lab-ds-weight-regular)}
-.ideal-organization-stats :deep(.lab-stat-value){font-size:var(--lab-metadata-value-size);line-height:var(--lab-ds-leading-body);font-weight:var(--lab-ds-weight-medium)}
-.ideal-organization-metadata :deep(.lab-small-disclosure){padding-block:var(--lab-metadata-section-gap)}
-.ideal-organization-metadata :deep(.lab-small-disclosure h2){font-size:var(--lab-metadata-title-size);line-height:var(--lab-metadata-title-leading);font-weight:var(--lab-ds-weight-medium);text-transform:uppercase}
-.ideal-organization-metadata :deep(.lab-small-disclosure p){font-size:var(--lab-metadata-value-size);line-height:var(--lab-ds-leading-body)}
-.ideal-organization-members{display:grid;gap:var(--lab-ds-space-12);margin:0;padding:0;list-style:none}
-.ideal-organization-members li{display:flex;align-items:center;justify-content:space-between;gap:var(--lab-ds-space-16);padding-block:var(--lab-ds-space-8);border-bottom:var(--lab-ds-stroke) solid var(--lab-ds-border)}
-.ideal-organization-members li>span{display:grid;text-align:right;font-size:var(--lab-ds-text-body);font-weight:var(--lab-ds-weight-medium)}
-.ideal-organization-members small{color:var(--lab-ds-text-secondary);font-size:var(--lab-ds-text-caption);font-weight:var(--lab-ds-weight-regular)}
-.ideal-organization-extras{padding-bottom:0;border-bottom:0}
-@media(max-width:700px){.ideal-organization-heading-row{display:grid}.ideal-organization-actions{justify-content:flex-start}}
+.ideal-organization-members{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--lab-ds-space-24);margin:0;padding:0;list-style:none}
+.ideal-organization-members li{display:flex;align-items:flex-start;gap:var(--lab-ds-space-16);min-width:0}
+.ideal-organization-members li+li{padding-left:var(--lab-ds-space-24);border-left:var(--lab-ds-stroke) solid var(--lab-ds-border)}
+.ideal-organization-members p{margin:0 0 var(--lab-ds-space-4);font-size:var(--lab-ds-text-body);font-weight:var(--lab-ds-weight-regular)}
+.ideal-organization-embeds{display:grid;gap:var(--lab-ds-space-24)}
+.ideal-organization-embeds>.proposal-metadata-heading{margin-bottom:0}
+.ideal-organization-embeds article{min-width:0}
+.ideal-organization-embeds h4{margin:0 0 var(--lab-ds-space-8);font-size:var(--lab-ds-text-body);font-weight:var(--lab-ds-weight-medium)}
+@media(max-width:760px){.ideal-organization-heading-row{display:grid}.ideal-organization-catalog-stats,.ideal-organization-audience-stats,.ideal-organization-members{grid-template-columns:1fr}.ideal-organization-members li+li{padding:var(--lab-ds-space-16) 0 0;border-left:0;border-top:var(--lab-ds-stroke) solid var(--lab-ds-border)}}
 </style>

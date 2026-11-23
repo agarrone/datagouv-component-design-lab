@@ -12,6 +12,7 @@ defineProps<{
   titleText: string
   buttonText: string
   titleLevel?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  defaultOpen?: boolean
 }>()
 
 function display(value: unknown) {
@@ -26,7 +27,7 @@ function display(value: unknown) {
 </script>
 
 <template>
-  <Disclosure v-slot="{ open }" as="section" class="proposal-metadata-extras">
+  <Disclosure v-slot="{ open }" as="section" class="proposal-metadata-extras" :default-open="defaultOpen">
     <header class="proposal-metadata-heading-row proposal-metadata-extras-heading">
       <component :is="titleLevel || 'h3'" class="proposal-metadata-heading">{{ titleText }}</component>
       <DisclosureButton
@@ -42,7 +43,7 @@ function display(value: unknown) {
         <div v-for="(value, key) in extra" :key="key">
           <dt class="proposal-metadata-term">{{ key }}</dt>
           <dd class="proposal-metadata-details proposal-metadata-technical proposal-technical-copy">
-            <span class="proposal-technical-line"><MiddleTruncate :text="display(value)" /><CopyButton icon-only compact :text="display(value)" :label="`Copier ${key}`" copied-label="Copié" /></span>
+            <span class="proposal-technical-line"><CopyButton icon-only compact :show-tooltip="false" :text="display(value)" :label="`Copier ${key}`" copied-label="Copié"><MiddleTruncate :text="display(value)" /></CopyButton></span>
           </dd>
         </div>
       </dl>
@@ -51,7 +52,7 @@ function display(value: unknown) {
 </template>
 
 <style scoped>
-.proposal-metadata-extras{min-width:0}
+.proposal-metadata-extras{min-width:0;padding-bottom:var(--lab-metadata-section-gap);border-bottom:var(--lab-ds-stroke) solid var(--lab-ds-border)}
 .proposal-metadata-extras-heading{justify-content:space-between;margin:0}
 .proposal-metadata-extras-trigger.lab-button[data-tone="tertiary"]{color:var(--lab-ds-text)!important}
 .proposal-metadata-extras-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(var(--lab-metadata-column-min),calc((100% - var(--lab-metadata-column-gap))/2))),1fr));gap:var(--lab-metadata-row-gap) var(--lab-metadata-column-gap);margin:var(--lab-metadata-heading-gap) 0 0;padding:var(--lab-metadata-heading-gap) 0 0}

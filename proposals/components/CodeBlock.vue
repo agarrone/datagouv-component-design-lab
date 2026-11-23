@@ -29,6 +29,7 @@ const visibleCopiedLabel = computed(() => props.copiedLabel || t('Copié'))
       <CopyButton
         class="proposal-code-block-copy"
         icon-only
+        :show-tooltip="false"
         :label="visibleCopyLabel"
         :copied-label="visibleCopiedLabel"
         :text="code"
@@ -45,7 +46,7 @@ const visibleCopiedLabel = computed(() => props.copiedLabel || t('Copié'))
   overflow: hidden;
   border: var(--lab-ds-stroke) solid var(--lab-ds-border);
   border-radius: var(--lab-ds-radius-technical);
-  background: var(--lab-ds-surface-subtle);
+  background: var(--lab-ds-surface);
 }
 
 .proposal-code-block-toolbar {
